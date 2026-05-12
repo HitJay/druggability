@@ -11,7 +11,6 @@ import pyalex
 from pyalex import Works
 import arxiv
 from Bio import Entrez
-from crossref.restful import Works as CRWorks
 from habanero import Crossref
 
 # ── OpenAlex ───────────────────────────────────────────────────────────
