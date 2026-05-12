@@ -3,7 +3,7 @@ litkit.druggability — 靶点可药性评估核心模块
 
 提供统一的 druggability 评估接口，集成多个数据源：
 - Open Targets tractability API（知识库可追踪性）
-- ChEMBL ligandability proxy（已知配体覆盖度）[DISABLED]
+- ChEMBL ligandability proxy（已知配体覆盖度）
 - fpocket 口袋检测（基于结构的分析）
 """
 
@@ -49,7 +49,7 @@ def assess_druggability(
     except Exception as e:
         result["tractability"] = {"error": str(e)}
 
-    # Tier 1: ChEMBL ligandability (currently disabled — returns placeholder)
+    # Tier 1: ChEMBL ligandability
     try:
         ligandability = assess_ligandability(query)
         result["ligandability"] = ligandability.to_dict()
