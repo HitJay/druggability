@@ -155,20 +155,15 @@ def test_score_from_ligand_count():
     assert _score_from_ligand_count(0) == 0.0
 
 
-@pytest.mark.network
-def test_assess_ligandability_egfr():
-    """EGFR 的 ligandability 评估应返回正数分数。"""
+def test_assess_ligandability_disabled():
+    """ligandability 当前被禁用，应返回占位结果。"""
     from litkit.druggability.ligandability import assess_ligandability
 
-    try:
-        result = assess_ligandability("EGFR")
-    except Exception as e:
-        pytest.skip(f"Network-dependent test skipped: {e}")
-
-    assert result.target_chembl_id.startswith("CHEMBL")
-    assert result.n_known_ligands > 0
-    assert result.ligandability_score > 0
-    assert len(result.top_compounds) > 0
+    result = assess_ligandability("EGFR")
+    assert result.target_chembl_id == ""  # 无真实数据
+    assert result.n_known_ligands == 0
+    assert result.ligandability_score == 0.0
+    assert result.top_compounds == []
 
 
 def test_ligandability_result_to_dict():

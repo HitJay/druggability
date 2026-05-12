@@ -168,28 +168,29 @@ def test_parse_module():
     console.print("[green]✓ 解析模块导入通过[/green]\n")
 
 
-def test_chembl():
-    """测试 ChEMBL API"""
-    console.rule("[bold blue]11. ChEMBL 靶点查询")
-    from chembl_webresource_client.new_client import new_client
-
-    target = new_client.target
-    results = target.search("EGFR")
-    hits = list(results[:3])
-    assert len(hits) > 0, "ChEMBL 应返回 EGFR 靶点！"
-
-    for h in hits:
-        console.print(
-            f"  • [cyan]{h.get('target_chembl_id', '')}[/cyan] "
-            f"{h.get('pref_name', '')} ({h.get('organism', '')})"
-        )
-    console.print("[green]✓ ChEMBL 通过[/green]\n")
+# [DISABLED] ChEMBL API 尚未就绪，暂时屏蔽
+# def test_chembl():
+#     """测试 ChEMBL API"""
+#     console.rule("[bold blue]11. ChEMBL 靶点查询")
+#     from chembl_webresource_client.new_client import new_client
+#
+#     target = new_client.target
+#     results = target.search("EGFR")
+#     hits = list(results[:3])
+#     assert len(hits) > 0, "ChEMBL 应返回 EGFR 靶点！"
+#
+#     for h in hits:
+#         console.print(
+#             f"  • [cyan]{h.get('target_chembl_id', '')}[/cyan] "
+#             f"{h.get('pref_name', '')} ({h.get('organism', '')})"
+#         )
+#     console.print("[green]✓ ChEMBL 通过[/green]\n")
 
 
 def main():
     console.print(Panel.fit(
         "[bold]🔬 Druggability 文献工具包 — 综合测试[/bold]\n"
-        "覆盖: OpenAlex / PubMed / arXiv / CrossRef / Unpaywall / NER / ChEMBL",
+        "覆盖: OpenAlex / PubMed / arXiv / CrossRef / Unpaywall / NER",
         border_style="blue",
     ))
 
@@ -206,7 +207,7 @@ def main():
         test_ner_regex,
         test_ner_pubtator,
         test_parse_module,
-        test_chembl,
+        # test_chembl,  # [DISABLED]
     ]
 
     for test_fn in tests:

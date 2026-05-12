@@ -1,8 +1,13 @@
 """
 ChEMBL Ligandability Proxy — 基于已知配体覆盖度的可药性评估
 
-利用 chembl-webresource-client 查询靶点的已知活性化合物数量，
-通过配体覆盖度间接估计靶点的 ligandability（配体能力）。
+[DISABLED] ChEMBL API 尚未就绪（chembl-webresource-client 可能无法正常工作，
+或需要单独配置环境）。当前模块仅返回占位结果，不发起网络请求。
+
+如需启用：
+1. 安装依赖: pip install chembl-webresource-client
+2. 移除 ligandability.py 中的 _CHEMBL_DISABLED = True
+3. 在 druggability/__init__.py 中恢复 ligandability 的导入和使用
 """
 
 from __future__ import annotations
@@ -16,6 +21,11 @@ from typing import Any
 from .utils import TargetNotFoundError, NetworkError
 
 logger = logging.getLogger(__name__)
+
+# ─── 禁用开关 ───────────────────────────────────────────────────────────
+# 设为 True 时，assess_ligandability 立即返回占位结果（不调 ChEMBL API）。
+# 化学信息学功能尚未就绪，暂时屏蔽。
+_CHEMBL_DISABLED = True
 
 # ─── 打分阈值配置 ───────────────────────────────────────────────────
 
@@ -85,8 +95,50 @@ def _get_chembl_client():
 
         # 全局默认 socket 超时（connect + read），避免网络不可用时永久挂起
         socket.setdefaulttimeout(30)
+
+        # ── 修复：禁用连接池复用 ──────────────────────────────────────
+        # chembl_webresource_client 底层使用 requests.Session，
+        # 默认启用了 HTTP 连接池。在特定网络环境下（如防火墙/代理），
+        # 复用 HTTPS 连接会导致后续请求永久阻塞（一直等待响应）。
+        #
+        # 解决方法：替换底层 requests.Session 的 HTTPAdapter，
+        # 设置 pool_connections=0 和 pool_maxsize=0，
+        # 强制每次请求都创建新连接（Connection: close）。
+        import requests
+
+        sess = requests.Session()
+        # 不缓存连接，每次用完即关闭
+        adapter = requests.adapters.HTTPAdapter(
+            pool_connections=0,
+            pool_maxsize=0,
+            max_retries=0,
+        )
+        sess.mount("https://", adapter)
+        sess.mount("http://", adapter)
+        # 将 custom session 赋值到 new_client 的内部 session
+        # 依赖 new_client 使用 self._session 或 client.session 发送请求
+        for attr in ("session", "_session", "session_factory"):
+            if hasattr(new_client, attr):
+                setattr(new_client, attr, sess)
+                break
+
+        # 更彻底的方案：patch 模块级的 Session 单例
+        # 也适用于新版本的 chembl_webresource_client
+        try:
+            from chembl_webresource_client import (
+                https_connection as _hc,
+            )
+
+            if hasattr(_hc, "_session"):
+                _hc._session = sess
+        except ImportError:
+            pass
+
         return new_client
-    except ImportError:
+    except ImportError as e:
+        # 如果连 requests 都无法导入，说明环境有问题
+        if "requests" in str(e):
+            raise ImportError("requests is required")
         raise ImportError(
             "chembl-webresource-client is required. Install with: "
             "pip install chembl-webresource-client"
@@ -245,27 +297,24 @@ def assess_ligandability(
     """
     对靶点进行 ligandability 评估。
 
-    通过查询 ChEMBL 数据库中靶点的已知活性化合物覆盖度，
-    返回 ligandability 打分（0-1）及相关详细信息。
-
-    Parameters
-    ----------
-    query : str
-        靶点标识（gene symbol 或 UniProt ID）
-    organism : str
-        物种过滤，默认为 "Homo sapiens"
-
-    Returns
-    -------
-    LigandabilityResult
-
-    Raises
-    ------
-    TargetNotFoundError
-        靶点在 ChEMBL 中未找到
-    NetworkError
-        API 请求失败
+    [DISABLED] 当前版本不执行真实的 ChEMBL 查询，直接返回占位结果。
     """
+    if _CHEMBL_DISABLED:
+        logger.warning(
+            "ChEMBL ligandability assessment is disabled. "
+            "Set _CHEMBL_DISABLED = False in ligandability.py to enable."
+        )
+        return LigandabilityResult(
+            target_chembl_id="",
+            pref_name=query,
+            organism=organism,
+            n_known_ligands=0,
+            n_approved_drugs=0,
+            ligandability_score=0.0,
+            strongest_activity=None,
+            top_compounds=[],
+        )
+
     try:
         target_info = _search_target(query, organism=organism)
     except Exception as e:
