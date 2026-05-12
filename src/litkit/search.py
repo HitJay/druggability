@@ -1,5 +1,5 @@
 """
-统一学术检索接口 — OpenAlex / Semantic Scholar / PubMed (Entrez) / arXiv / CrossRef
+统一学术检索接口 — OpenAlex / PubMed (Entrez) / arXiv / CrossRef
 """
 
 from __future__ import annotations
@@ -9,7 +9,6 @@ from typing import Any
 
 import pyalex
 from pyalex import Works
-from semanticscholar import SemanticScholar
 import arxiv
 from Bio import Entrez
 from crossref.restful import Works as CRWorks
@@ -44,40 +43,6 @@ def search_openalex(
         if len(results) >= limit:
             break
     return results[:limit]
-
-
-# ── Semantic Scholar ──────────────────────────────────────────────────
-_s2_client: SemanticScholar | None = None
-
-
-def _get_s2() -> SemanticScholar:
-    global _s2_client
-    if _s2_client is None:
-        api_key = os.getenv("S2_API_KEY")
-        _s2_client = SemanticScholar(api_key=api_key) if api_key else SemanticScholar()
-    return _s2_client
-
-
-def search_semantic_scholar(
-    query: str,
-    limit: int = 20,
-    fields: list[str] | None = None,
-) -> list[dict[str, Any]]:
-    """用 Semantic Scholar Graph API 搜索论文。
-
-    Args:
-        query: 搜索关键词
-        limit: 最大返回数量
-        fields: API 字段列表，默认 ['title','abstract','year','citationCount','externalIds']
-
-    Returns:
-        list[dict]
-    """
-    if fields is None:
-        fields = ["title", "abstract", "year", "citationCount", "externalIds"]
-    sch = _get_s2()
-    results = sch.search_paper(query, limit=limit, fields=fields)
-    return [r.raw_data for r in results] if results else []
 
 
 # ── PubMed (Entrez) ──────────────────────────────────────────────────
@@ -198,7 +163,6 @@ def search_crossref(query: str, limit: int = 20) -> list[dict[str, Any]]:
 # ── 统一入口 ──────────────────────────────────────────────────────────
 SOURCES = {
     "openalex": search_openalex,
-    "s2": search_semantic_scholar,
     "pubmed": search_pubmed,
     "arxiv": search_arxiv,
     "crossref": search_crossref,
@@ -215,7 +179,7 @@ def search(
 
     Args:
         query: 检索关键词
-        source: 数据源名，openalex / s2 / pubmed / arxiv / crossref
+        source: 数据源名，openalex / pubmed / arxiv / crossref
         limit: 最大返回
         **kwargs: 传给对应数据源的额外参数
 
