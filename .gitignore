@@ -27,6 +27,8 @@ Thumbs.db
 
 # Data (large files)
 data/raw/
+data/parsed/
+data/index/
 *.h5
 *.hdf5
 *.pkl
