@@ -7,17 +7,8 @@ from __future__ import annotations
 import os
 from typing import Any
 
-import pyalex
-from pyalex import Works
-import arxiv
-from Bio import Entrez
-from habanero import Crossref
 
 # ── OpenAlex ───────────────────────────────────────────────────────────
-# 设置 polite pool（加邮箱可获得更高速率）
-pyalex.config.email = os.getenv("OPENALEX_EMAIL", "your@email.com")
-
-
 def search_openalex(
     query: str,
     limit: int = 20,
@@ -33,6 +24,11 @@ def search_openalex(
     Returns:
         list[dict]: 每篇论文的元数据
     """
+    import pyalex
+    from pyalex import Works
+
+    pyalex.config.email = os.getenv("OPENALEX_EMAIL", "your@email.com")
+
     results = []
     for page in Works().search(query).paginate(per_page=min(limit, 200)):
         for work in page:
@@ -45,10 +41,6 @@ def search_openalex(
 
 
 # ── PubMed (Entrez) ──────────────────────────────────────────────────
-Entrez.email = os.getenv("NCBI_EMAIL", "your@email.com")
-Entrez.api_key = os.getenv("NCBI_API_KEY", None)
-
-
 def search_pubmed(query: str, limit: int = 20) -> list[dict[str, Any]]:
     """用 PubMed E-utilities 搜索论文，返回摘要级元数据。
 
@@ -59,6 +51,11 @@ def search_pubmed(query: str, limit: int = 20) -> list[dict[str, Any]]:
     Returns:
         list[dict]: 含 PMID, title, abstract 等
     """
+    from Bio import Entrez
+
+    Entrez.email = os.getenv("NCBI_EMAIL", "your@email.com")
+    Entrez.api_key = os.getenv("NCBI_API_KEY", None)
+
     handle = Entrez.esearch(db="pubmed", term=query, retmax=limit)
     record = Entrez.read(handle)
     handle.close()
@@ -100,7 +97,7 @@ def search_pubmed(query: str, limit: int = 20) -> list[dict[str, Any]]:
 def search_arxiv(
     query: str,
     limit: int = 20,
-    sort_by: arxiv.SortCriterion = arxiv.SortCriterion.Relevance,
+    sort_by: Any = None,
 ) -> list[dict[str, Any]]:
     """搜索 arXiv 论文。
 
@@ -112,6 +109,11 @@ def search_arxiv(
     Returns:
         list[dict]
     """
+    import arxiv
+
+    if sort_by is None:
+        sort_by = arxiv.SortCriterion.Relevance
+
     client = arxiv.Client()
     search = arxiv.Search(query=query, max_results=limit, sort_by=sort_by)
     results = []
@@ -130,6 +132,85 @@ def search_arxiv(
     return results
 
 
+# ── Semantic Scholar ─────────────────────────────────────────────────
+def search_semanticscholar(
+    query: str,
+    limit: int = 20,
+    min_citation_count: int | None = None,
+    fields: list[str] | None = None,
+    timeout: int = 30,
+) -> list[dict[str, Any]]:
+    """搜索 Semantic Scholar（直接 HTTP API 调用，避免 asyncio 在 Windows 上的问题）。
+
+    Args:
+        query: 检索关键词
+        limit: 最大返回
+        min_citation_count: 最小引用数过滤
+        fields: 需要的字段（None 返回默认字段）
+        timeout: 请求超时秒数
+
+    Returns:
+        list[dict]
+    """
+    import requests
+    import time
+
+    # Semantic Scholar 免费层 1 req/s，确保限流
+    time.sleep(1.1)
+
+    if fields is None:
+        fields = [
+            "title", "abstract", "externalIds", "url",
+            "citationCount", "publicationDate", "venue",
+            "authors", "fieldsOfStudy", "openAccessPdf",
+        ]
+
+    url = "https://api.semanticscholar.org/graph/v1/paper/search"
+    params = {
+        "query": query,
+        "limit": min(limit, 100),
+        "fields": ",".join(fields),
+    }
+
+    resp = requests.get(url, params=params, timeout=timeout)
+
+    if resp.status_code == 429:
+        import warnings
+        warnings.warn(
+            f"Semantic Scholar rate limited (429). "
+            f"Set S2_API_KEY env var for higher limits."
+        )
+        return []
+
+    resp.raise_for_status()
+    data = resp.json()
+    items = data.get("data", [])
+
+    results = []
+    for item in items:
+        if min_citation_count is not None:
+            cit = item.get("citationCount", 0) or 0
+            if cit < min_citation_count:
+                continue
+        authors_raw = item.get("authors") or []
+        results.append(
+            {
+                "paper_id": item.get("paperId", ""),
+                "title": item.get("title", ""),
+                "abstract": item.get("abstract", ""),
+                "url": item.get("url", ""),
+                "venue": item.get("venue", ""),
+                "publication_date": str(item.get("publicationDate") or ""),
+                "citation_count": item.get("citationCount", 0),
+                "authors": [
+                    a.get("name", str(a)) for a in authors_raw
+                ],
+                "fields_of_study": item.get("fieldsOfStudy") or [],
+            }
+        )
+    return results
+
+
 # ── CrossRef ──────────────────────────────────────────────────────────
 def search_crossref(query: str, limit: int = 20) -> list[dict[str, Any]]:
     """搜索 CrossRef（按 DOI 元数据检索）。
@@ -141,6 +222,8 @@ def search_crossref(query: str, limit: int = 20) -> list[dict[str, Any]]:
     Returns:
         list[dict]
     """
+    from habanero import Crossref
+
     cr = Crossref()
     raw = cr.works(query=query, limit=limit)
     items = raw.get("message", {}).get("items", [])
@@ -165,6 +248,7 @@ SOURCES = {
     "pubmed": search_pubmed,
     "arxiv": search_arxiv,
     "crossref": search_crossref,
+    "semanticscholar": search_semanticscholar,
 }
 
 

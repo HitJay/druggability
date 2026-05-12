@@ -61,6 +61,27 @@ def test_crossref_search():
         assert "doi" in results[0]
 
 
+def test_semanticscholar_search():
+    """Semantic Scholar 搜索应返回非空结果。"""
+    from litkit.search import search_semanticscholar
+
+    results = search_semanticscholar("druggability", limit=3)
+    assert isinstance(results, list), "返回类型应为 list"
+    if results:
+        assert "title" in results[0]
+        assert "paper_id" in results[0]
+
+
+def test_semanticscholar_min_citation():
+    """Semantic Scholar 的 min_citation_count 过滤应生效。"""
+    from litkit.search import search_semanticscholar
+
+    results = search_semanticscholar("EGFR inhibitor", limit=5, min_citation_count=50)
+    assert isinstance(results, list)
+    for r in results:
+        assert r.get("citation_count", 0) >= 50
+
+
 if __name__ == "__main__":
     import pytest
 
