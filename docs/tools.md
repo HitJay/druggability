@@ -99,9 +99,46 @@ pip install paper-qa            # 本地论文 RAG
 
 ## 六、Druggability 方向专用
 
-- **Open Targets Platform** — 靶点-疾病关联 + GraphQL API
-- **ChEMBL** — 化合物/活性数据
-- **DrugBank** — 药物本体（需许可）
-- **PubTator3** — 基因/疾病/化合物实体标注
-- **BenchSci** — AI 辅助找抗体/试剂文献
-- **Causaly** — 生医知识图谱检索
+### 知识库平台
+
+| 工具/平台 | 用途 | 访问方式 | 特色 |
+|---|---|---|---|
+| **Open Targets Platform** | 靶点-疾病关联，三级 tractability 评估 | GraphQL API；完全开源 | 整合遗传学、化学探针、功能基因组学；SM/AB/PROTAC 三级打分 |
+| **canSAR** | 多维 druggability 打分 + 3D 配体信息 | REST API | 含蛋白-配体 3D 结构匹配；癌症研究方向 |
+| **TTD (Therapeutic Target Database)** | 临床阶段分级靶点注释 | 网站查询 | druggability 分级：approved / clinical / preclinical / literature |
+| **ChEMBL** | 化合物-靶点活性数据库 | REST API (`chembl-webresource-client`) | 2.4M 化合物，18K+ 靶点；最全生物活性数据 |
+| **DGIdb 4.0** | 药物-基因相互作用 | API + 网站 | 含 druggable genome 分类，文献挖掘证据 |
+| **DrugBank** | 药物本体（需许可） | 网站/API | FDA 批准药物最全 |
+
+### 口袋检测 & Druggability 打分工具
+
+| 工具 | 类型 | 核心原理 | 推荐场景 |
+|---|---|---|---|
+| **fpocket** | 开源 CLI | Voronoi 镶嵌 + α-sphere → 口袋打分 | 批量口袋检测，黄金标准（1000+ 引用） |
+| **DoGSiteScorer** | Web | 高斯差分滤波 → 子口袋分解 → 打分 | 交互式可视化（Proteins.plus 平台） |
+| **PockDrug** | Web | 31 描述符逻辑回归 → druggability 打分 | 专为 druggability 打分优化 |
+| **PUResNet** | DL (PyTorch) | 深度残差网络 + 3D 网格输入 | 最先进 AI 口袋检测精度（GPU 加速） |
+| **pyKVFinder** | Python 包 | 3D 网格扫描 → 空腔检测 | Python 原生，易集成（Bioinformatics 2021） |
+| **DrugEBIlity** | Web | 贝叶斯模型，仅需序列 | 无需 PDB 结构即可预测 druggability |
+| **PocketDruggability** | 开源 Python | 13 个口袋描述符 → 结合亲和力预测 | 训练于 PDBbind |
+
+### 靶点识别与 NER
+
+| 工具 | 用途 | 链接 |
+|---|---|---|
+| **PubTator3** | 基因/疾病/化合物/细胞系/突变实体标注 | https://www.ncbi.nlm.nih.gov/research/pubtator3/ |
+| **scispacy** | 生医 NER Python 库 | https://github.com/allenai/scispacy |
+| **mygene** | 基因 ID 转换 (symbol/UniProt/Ensembl) | https://pypi.org/project/mygene/ |
+
+### 本项目已集成的 druggability 模块
+
+```bash
+# 这些已在 litkit/druggability/ 中实现
+# 详见 README.md 或源码
+├── src/litkit/druggability/
+│   ├── __init__.py       # assess_druggability() 统一入口
+│   ├── tractability.py   # Open Targets tractability
+│   ├── ligandability.py  # ChEMBL ligandability
+│   ├── pocket.py         # fpocket + AlphaFold
+│   └── utils.py          # ID 转换/缓存/异常
+```
