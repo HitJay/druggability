@@ -34,10 +34,8 @@ query TractabilityQuery($ensemblId: String!) {
     approvedName
     biotype
     tractability {
-      id
       label
       modality
-      category
     }
   }
 }
@@ -170,10 +168,8 @@ def query_tractability(
             modality_short = t.get("modality", "")
             modality = MODALITY_MAP.get(modality_short, modality_short.lower())
             info = {
-                "id": str(t.get("id", "")),
                 "label": str(t.get("label", "")),
                 "modality": modality,
-                "category": str(t.get("category", "")),
             }
             setattr(result, modality, info)
 

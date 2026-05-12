@@ -142,6 +142,9 @@ def search_semanticscholar(
 ) -> list[dict[str, Any]]:
     """搜索 Semantic Scholar（直接 HTTP API 调用，避免 asyncio 在 Windows 上的问题）。
 
+    需要设置环境变量 S2_API_KEY 以获得更高限速。
+    免费层：1 req/s（无 API key），带 key 时提升至 10 req/s。
+
     Args:
         query: 检索关键词
         limit: 最大返回
@@ -152,11 +155,19 @@ def search_semanticscholar(
     Returns:
         list[dict]
     """
+    import os
     import requests
     import time
 
-    # Semantic Scholar 免费层 1 req/s，确保限流
-    time.sleep(1.1)
+    api_key = os.environ.get("S2_API_KEY", "")
+    headers = {}
+    if api_key:
+        headers["x-api-key"] = api_key
+        # With API key: 10 req/s → sleep 0.15s
+        time.sleep(0.15)
+    else:
+        # Free tier: 1 req/s → sleep 1.1s
+        time.sleep(1.1)
 
     if fields is None:
         fields = [
@@ -172,7 +183,7 @@ def search_semanticscholar(
         "fields": ",".join(fields),
     }
 
-    resp = requests.get(url, params=params, timeout=timeout)
+    resp = requests.get(url, params=params, headers=headers, timeout=timeout)
 
     if resp.status_code == 429:
         import warnings

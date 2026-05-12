@@ -8,6 +8,7 @@ ChEMBL Ligandability Proxy — 基于已知配体覆盖度的可药性评估
 from __future__ import annotations
 
 import logging
+import socket
 import time
 from dataclasses import dataclass, field
 from typing import Any
@@ -70,10 +71,20 @@ def _score_from_ligand_count(n: int) -> float:
 def _get_chembl_client():
     """
     获取 ChEMBL webresource client 实例。
+
+    同时设置默认 socket 超时，防止 SSL 握手卡死；
+    并禁用 requests_cache（其 SQLite 后端在 Windows 上可能因文件锁挂起）。
     """
     try:
+        # 禁用 ChEMBL 内置的 requests_cache SQLite 后端，避免文件锁死
+        import os
+
+        os.environ.setdefault("CHEMBL_CACHE_DISABLED", "1")
+
         from chembl_webresource_client.new_client import new_client
 
+        # 全局默认 socket 超时（connect + read），避免网络不可用时永久挂起
+        socket.setdefaulttimeout(30)
         return new_client
     except ImportError:
         raise ImportError(
@@ -142,30 +153,33 @@ def _count_ligands(target_chembl_id: str) -> tuple[int, list[str]]:
     client = _get_chembl_client()
     activity = client.activity
 
-    # 分页查询活性数据
+    # 搭建 QuerySet（不执行）
+    qs = (
+        activity.filter(
+            target_chembl_id=target_chembl_id,
+            standard_type__in=ACTIVITY_TYPES,
+        )
+        .order_by("standard_value")
+        .only(["molecule_chembl_id"])
+    )
+
+    # 用 Python 切片分页（QuerySet 在 v0.10.9 不再支持 .offset/.limit）
     all_molecules: set[str] = set()
-    offset = 0
     batch_size = 100
+    start = 0
 
     while True:
         time.sleep(0.3)  # 速率限制
-        acts = list(
-            activity.filter(
-                target_chembl_id=target_chembl_id,
-                standard_type__in=ACTIVITY_TYPES,
-            )
-            .order_by("standard_value")
-            .only(["molecule_chembl_id"])
-            .offset(offset)
-            .limit(batch_size)
-        )
-        if not acts:
+        batch = list(qs[start : start + batch_size])
+        if not batch:
             break
-        for act in acts:
-            mol_id = act.get("molecule_chembl_id")
+        for item in batch:
+            mol_id = item.get("molecule_chembl_id")
             if mol_id:
                 all_molecules.add(str(mol_id))
-        offset += batch_size
+        start += batch_size
+        if len(batch) < batch_size:
+            break
 
     top_molecules = sorted(all_molecules)[:5]
     return len(all_molecules), top_molecules
@@ -180,15 +194,15 @@ def _get_strongest_activity(target_chembl_id: str) -> dict | None:
 
     try:
         time.sleep(0.3)
-        acts = list(
+        qs = (
             activity.filter(
                 target_chembl_id=target_chembl_id,
                 standard_type__in=ACTIVITY_TYPES,
             )
             .order_by("standard_value")
             .only(["standard_type", "standard_value", "standard_units"])
-            .limit(1)
         )
+        acts = list(qs[0:1])
         if acts:
             act = acts[0]
             val = act.get("standard_value")

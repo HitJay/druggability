@@ -60,10 +60,11 @@ Source = "https://github.com/HitJay/druggability"
 where = ["src"]
 
 [tool.pytest.ini_options]
+addopts = "-m 'not network'"
 timeout = 60
 timeout_method = "thread"
 markers = [
-    "network: marks tests that require network access (deselect with '-m \"not network\"')",
+    "network: marks tests that require network access (select with '-m network')",
 ]
 testpaths = ["tests"]
 
