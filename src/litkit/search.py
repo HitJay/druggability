@@ -160,18 +160,14 @@ def search_semanticscholar(
         list[dict]
     """
     import os
-    import requests
     import time
+
+    import requests
 
     api_key = os.environ.get("S2_API_KEY", "")
     headers = {}
     if api_key:
         headers["x-api-key"] = api_key
-        # With API key: 10 req/s → sleep 0.15s
-        time.sleep(0.15)
-    else:
-        # Free tier: 1 req/s → sleep 1.1s
-        time.sleep(1.1)
 
     if fields is None:
         fields = [
@@ -200,6 +196,11 @@ def search_semanticscholar(
     resp.raise_for_status()
     data = resp.json()
     items = data.get("data", [])
+
+    if api_key:
+        time.sleep(0.15)
+    else:
+        time.sleep(1.1)
 
     results = []
     for item in items:

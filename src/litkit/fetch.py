@@ -4,12 +4,15 @@
 
 from __future__ import annotations
 
+import logging
 import os
 from pathlib import Path
 from typing import Any
 
 import requests
 from tqdm import tqdm
+
+logger = logging.getLogger(__name__)
 
 
 def _safe_filename(doi_or_id: str) -> str:
@@ -56,8 +59,23 @@ def download_pdf(
                     f.write(chunk)
                     pbar.update(len(chunk))
         return out_path
+    except requests.exceptions.Timeout:
+        logger.warning("下载超时 %s (timeout=%ss)", url, timeout)
+        if out_path.exists():
+            out_path.unlink()
+        return None
+    except requests.exceptions.HTTPError as e:
+        logger.warning("下载失败 HTTP %s: %s", url, e)
+        if out_path.exists():
+            out_path.unlink()
+        return None
+    except OSError as e:
+        logger.error("下载失败 (磁盘/文件错误) %s: %s", url, e)
+        if out_path.exists():
+            out_path.unlink()
+        return None
     except Exception as e:
-        print(f"[fetch] 下载失败 {url}: {e}")
+        logger.error("下载失败 (未知错误) %s: %s", url, e)
         if out_path.exists():
             out_path.unlink()
         return None
@@ -114,7 +132,11 @@ def fetch_unpaywall_pdf_url(doi: str, email: str | None = None) -> str | None:
         data = resp.json()
         best = data.get("best_oa_location", {})
         return best.get("url_for_pdf") if best else None
-    except Exception:
+    except requests.exceptions.Timeout:
+        logger.warning("Unpaywall 请求超时 DOI=%s", doi)
+        return None
+    except requests.exceptions.RequestException as e:
+        logger.warning("Unpaywall 请求失败 DOI=%s: %s", doi, e)
         return None
 
 
@@ -141,8 +163,11 @@ def fetch_europe_pmc_xml(pmid: str, out_dir: str | Path = "data/raw") -> Path | 
         resp.raise_for_status()
         out_path.write_text(resp.text, encoding="utf-8")
         return out_path
-    except Exception as e:
-        print(f"[fetch] Europe PMC XML 获取失败 PMID={pmid}: {e}")
+    except requests.exceptions.Timeout:
+        logger.warning("Europe PMC 请求超时 PMID=%s", pmid)
+        return None
+    except requests.exceptions.RequestException as e:
+        logger.warning("Europe PMC XML 获取失败 PMID=%s: %s", pmid, e)
         return None
 
 

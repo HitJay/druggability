@@ -40,6 +40,10 @@ class InvalidStructureError(DruggabilityError):
     """输入结构文件无效或无法解析"""
 
 
+class DependencyMissingError(DruggabilityError):
+    """必需的依赖未安装"""
+
+
 # ─── ID 转换 ──────────────────────────────────────────────────────────
 
 
@@ -71,10 +75,10 @@ def gene_symbol_to_ensembl(gene_symbol: str) -> str | None:
         logger.warning("No Ensembl ID found for gene symbol: %s", gene_symbol)
         return None
     except ImportError:
-        logger.warning(
-            "mygene not installed; falling back to direct gene symbol lookup"
+        raise DependencyMissingError(
+            "mygene is required for gene symbol → Ensembl ID conversion. "
+            "Install with: pip install mygene"
         )
-        return None
     except Exception as e:
         logger.error("Error resolving gene symbol '%s': %s", gene_symbol, e)
         return None
@@ -113,8 +117,10 @@ def gene_symbol_to_uniprot(gene_symbol: str) -> str | None:
         logger.warning("No UniProt ID found for gene symbol: %s", gene_symbol)
         return None
     except ImportError:
-        logger.warning("mygene not installed; cannot resolve gene symbol to UniProt")
-        return None
+        raise DependencyMissingError(
+            "mygene is required for gene symbol → UniProt conversion. "
+            "Install with: pip install mygene"
+        )
     except Exception as e:
         logger.error("Error resolving gene symbol '%s' to UniProt: %s", gene_symbol, e)
         return None
@@ -149,7 +155,10 @@ def uniprot_to_ensembl(uniprot_id: str) -> str | None:
                 return str(ensg)
         return None
     except ImportError:
-        return None
+        raise DependencyMissingError(
+            "mygene is required for UniProt → Ensembl ID conversion. "
+            "Install with: pip install mygene"
+        )
     except Exception as e:
         logger.error("Error resolving UniProt '%s': %s", uniprot_id, e)
         return None
