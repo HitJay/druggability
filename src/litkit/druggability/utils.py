@@ -6,6 +6,7 @@ from __future__ import annotations
 
 import functools
 import logging
+import threading
 import time
 from typing import Any, Callable
 
@@ -187,21 +188,24 @@ def resolve_ensembl_id(query: str, query_type: str = "gene_symbol") -> str | Non
 
 def rate_limit(delay: float = 0.5) -> Callable:
     """
-    装饰器：在每次函数调用后等待 delay 秒，用于 API 速率限制。
+    装饰器：保证被装饰函数两次调用之间至少间隔 ``delay`` 秒。
+
+    带 ``threading.Lock`` 以在多线程环境（如 ThreadPoolExecutor）
+    中仍能正确限速，避免竞态。
     """
 
     def decorator(func: Callable) -> Callable:
-        last_call: float = 0.0
+        lock = threading.Lock()
+        last_call: list[float] = [0.0]  # 用 list 让闭包可变
 
         @functools.wraps(func)
         def wrapper(*args: Any, **kwargs: Any) -> Any:
-            nonlocal last_call
-            elapsed = time.time() - last_call
-            if elapsed < delay:
-                time.sleep(delay - elapsed)
-            result = func(*args, **kwargs)
-            last_call = time.time()
-            return result
+            with lock:
+                elapsed = time.time() - last_call[0]
+                if elapsed < delay:
+                    time.sleep(delay - elapsed)
+                last_call[0] = time.time()
+            return func(*args, **kwargs)
 
         return wrapper
 

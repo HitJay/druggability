@@ -3,30 +3,27 @@ litkit — 学术文献检索 + 解析 + 可药性评估工具包
 用于 druggability 研究的文献挖掘流水线
 """
 
-import os
 from pathlib import Path
 
-# ── 自动加载 .env 文件（若存在） ─────────────────────────────────
-_env_loaded = False
+# ── 自动加载 .env 文件（若存在）─────────────────────────────
+# 模块只会被 import 一次，不需要额外的 "loaded" flag。
 
 
 def _load_dotenv() -> None:
-    """查找并加载 .env 文件（从 CWD 或包目录向上递归）。"""
+    """查找并加载 .env 文件（优先 CWD，其次仓库根目录）。"""
     from dotenv import load_dotenv
 
-    candidates = [
+    candidates = (
         Path.cwd() / ".env",
-        Path(__file__).resolve().parent.parent.parent / ".env",
-    ]
-    for p in candidates:
-        if p.is_file():
-            load_dotenv(p, override=False)
-            break
+        Path(__file__).resolve().parents[2] / ".env",
+    )
+    for candidate in candidates:
+        if candidate.is_file():
+            load_dotenv(candidate, override=False)
+            return
 
 
-if not _env_loaded:
-    _load_dotenv()
-    _env_loaded = True
+_load_dotenv()
 
 
 __version__ = "0.1.0"

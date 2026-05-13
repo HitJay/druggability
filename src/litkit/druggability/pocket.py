@@ -39,13 +39,13 @@ ALPHAFOLD_URL_TEMPLATE = (
     "https://alphafold.ebi.ac.uk/files/AF-{uniprot_id}-F1-model_v4.pdb"
 )
 
-# fpocket 可执行文件路径（项目内）
-FPOcket_BINARY = shutil.which("fpocket") or str(
-    Path(__file__).parent.parent.parent.parent / "tools" / "fpocket"
-)
+# fpocket 可执行文件路径（项目内 fallback）
+# 注意：不要在模块加载时调用 shutil.which，便于测试时 mock；
+# 实际查找逻辑放在 _check_fpocket() 中。
+FPOCKET_FALLBACK_PATH = Path(__file__).resolve().parents[3] / "tools" / "fpocket"
 
 # fpocket 超时（秒）
-FPOcket_TIMEOUT = 120
+FPOCKET_TIMEOUT = 120
 
 # Druggability 分数分级
 DRUGGABILITY_GRADES: list[tuple[float, str]] = [
@@ -165,18 +165,33 @@ def _download_alphafold_structure(uniprot_id: str, output_dir: str) -> str:
 
 def _check_fpocket() -> str:
     """
-    检查 fpocket 可执行文件是否存在。"""
-    fpocket_path = FPOcket_BINARY
-    if not fpocket_path or not os.path.isfile(fpocket_path):
-        # 尝试从 PATH 查找
-        fpocket_path = shutil.which("fpocket")
-    if not fpocket_path:
-        raise FpocketNotFoundError(
-            "fpocket not found. Please install fpocket and place the binary at "
-            "tools/fpocket, or ensure 'fpocket' is in your PATH.\n"
-            "  Download: https://github.com/Discngine/fpocket/releases"
-        )
-    return str(fpocket_path)
+    定位 fpocket 可执行文件。
+
+    查找顺序：
+    1. PATH 环境变量中的 ``fpocket``
+    2. 项目 ``tools/fpocket`` 兜底路径
+
+    Raises
+    ------
+    FpocketNotFoundError
+        两个位置都未找到可执行的 fpocket。
+    """
+    # 1) PATH 优先
+    fpocket_path = shutil.which("fpocket")
+    if fpocket_path:
+        return fpocket_path
+
+    # 2) 项目内 fallback
+    if FPOCKET_FALLBACK_PATH.is_file() and os.access(
+        FPOCKET_FALLBACK_PATH, os.X_OK
+    ):
+        return str(FPOCKET_FALLBACK_PATH)
+
+    raise FpocketNotFoundError(
+        "fpocket not found. Please install fpocket and place the binary at "
+        f"{FPOCKET_FALLBACK_PATH}, or ensure 'fpocket' is in your PATH.\n"
+        "  Download: https://github.com/Discngine/fpocket/releases"
+    )
 
 
 def _run_fpocket(pdb_path: str, output_dir: str) -> dict:
@@ -211,11 +226,11 @@ def _run_fpocket(pdb_path: str, output_dir: str) -> dict:
             cwd=output_dir,
             capture_output=True,
             text=True,
-            timeout=FPOcket_TIMEOUT,
+            timeout=FPOCKET_TIMEOUT,
         )
     except subprocess.TimeoutExpired:
         raise FpocketTimeoutError(
-            f"fpocket timed out after {FPOcket_TIMEOUT}s on: {pdb_path}"
+            f"fpocket timed out after {FPOCKET_TIMEOUT}s on: {pdb_path}"
         )
 
     if result.returncode != 0:

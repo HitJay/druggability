@@ -29,8 +29,12 @@ def search_openalex(
 
     pyalex.config.email = os.getenv("OPENALEX_EMAIL", "your@email.com")
 
-    results = []
-    for page in Works().search(query).paginate(per_page=min(limit, 200)):
+    # 同时传 per_page 和 n_max：
+    # - per_page 限制单页大小（最大 200）
+    # - n_max 限制 pyalex 总拉取量，避免在 limit 较大时被动拉几十万条。
+    per_page = min(limit, 200)
+    results: list[dict[str, Any]] = []
+    for page in Works().search(query).paginate(per_page=per_page, n_max=limit):
         for work in page:
             results.append(work)
             if len(results) >= limit:
