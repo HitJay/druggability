@@ -7,19 +7,33 @@ litkit.druggability — 靶点可药性评估核心模块
 - fpocket 口袋检测（基于结构的分析）
 """
 
+from __future__ import annotations
+
+import logging
+
 from .tractability import query_tractability, TractabilityResult
 from .ligandability import assess_ligandability, LigandabilityResult
 from .pocket import detect_pockets, PocketAnalysisResult
+
+logger = logging.getLogger(__name__)
+
+# ─── 综合评分权重 ─────────────────────────────────────────────────────
+# 三个维度的默认权重（总和不必为 1，内部会归一化）
+DEFAULT_WEIGHTS = {
+    "tractability": 0.35,
+    "ligandability": 0.35,
+    "structure": 0.30,
+}
 
 
 def assess_druggability(
     query: str,
     query_type: str = "gene_symbol",
     structure_path: str | None = None,
-    include_structure_analysis: bool = True,
+    include_structure_analysis: bool = False,
 ) -> dict:
     """
-    统一入口：对靶点执行 Tier 1（结构无关）druggability 评估。
+    统一入口：对靶点执行多层 druggability 评估。
 
     Parameters
     ----------
@@ -31,6 +45,7 @@ def assess_druggability(
         PDB 文件路径。若提供则同时运行 fpocket 结构分析。
     include_structure_analysis : bool
         若为 True 且未提供 structure_path，尝试从 AlphaFold DB 自动获取结构。
+        **默认 False**（fpocket 需要额外安装）。
 
     Returns
     -------
@@ -42,74 +57,158 @@ def assess_druggability(
         "query_type": query_type,
     }
 
-    # Tier 1: Open Targets tractability
+    # ── Tier 1: Open Targets tractability ──
     try:
         tractability = query_tractability(query, query_type=query_type)
         result["tractability"] = tractability.to_dict()
     except Exception as e:
+        logger.warning("Tractability query failed for '%s': %s", query, e)
         result["tractability"] = {"error": str(e)}
 
-    # Tier 1: ChEMBL ligandability
+    # ── Tier 1: ChEMBL ligandability ──
     try:
         ligandability = assess_ligandability(query)
         result["ligandability"] = ligandability.to_dict()
     except Exception as e:
+        logger.warning("Ligandability query failed for '%s': %s", query, e)
         result["ligandability"] = {"error": str(e)}
 
-    # Tier 2: Structure-based pocket analysis
-    if include_structure_analysis or structure_path:
+    # ── Tier 2: Structure-based pocket analysis ──
+    if structure_path or include_structure_analysis:
         try:
+            pocket_input = structure_path
+            if pocket_input is None:
+                # 需要将 gene_symbol/ensembl_id 解析为 UniProt ID
+                pocket_input = _resolve_structure_input(query, query_type)
             pockets = detect_pockets(
-                structure_path=structure_path or query,
+                structure_path=pocket_input,
                 auto_download=structure_path is None,
             )
             result["pocket_analysis"] = pockets.to_dict()
         except Exception as e:
+            logger.warning("Pocket analysis failed for '%s': %s", query, e)
             result["pocket_analysis"] = {"error": str(e)}
 
-    # Composite score
+    # ── Composite score ──
     result["composite"] = _compute_composite(result)
     return result
+
+
+def _resolve_structure_input(query: str, query_type: str) -> str:
+    """
+    将靶点标识符解析为可用于结构下载的 UniProt ID。
+
+    Returns
+    -------
+    str
+        UniProt accession（如 "P00533"）
+
+    Raises
+    ------
+    ValueError
+        无法解析为 UniProt ID
+    """
+    from .utils import gene_symbol_to_uniprot
+
+    if query_type == "uniprot_id":
+        return query
+
+    if query_type == "gene_symbol":
+        uniprot_id = gene_symbol_to_uniprot(query)
+        if uniprot_id:
+            return uniprot_id
+        raise ValueError(
+            f"Cannot resolve gene symbol '{query}' to UniProt ID for structure download. "
+            f"Please provide a structure_path or UniProt ID directly."
+        )
+
+    if query_type == "ensembl_id":
+        # Ensembl → UniProt 需要额外查询，暂不支持自动
+        raise ValueError(
+            f"Automatic structure download from Ensembl ID is not yet supported. "
+            f"Please provide a structure_path or use query_type='gene_symbol'."
+        )
+
+    raise ValueError(f"Unknown query_type: {query_type}")
 
 
 def _compute_composite(result: dict) -> dict:
     """
     合成多来源 druggability 综合评分（0-1）。
-    """
-    scores: list[float] = []
 
+    评分逻辑：
+    - tractability: 取三个 modality（SM/AB/PROTAC）中的最高分
+    - ligandability: 直接使用 ligandability_score
+    - structure: 使用 best_druggability_score
+    - 最终分数为各维度加权平均（仅计算成功查询的维度）
+    """
+    dimension_scores: dict[str, float] = {}
+
+    # ── Tractability ──
     tractability = result.get("tractability", {})
     if tractability and "error" not in tractability:
-        # 映射 tractability category 到分数
-        cat_map = {
-            "Tractable with high-quality targets": 1.0,
-            "Clinical Precedence": 0.9,
-            "Discovery_Precedence": 0.7,
-            "Predicted Tractable": 0.5,
-            "Predicted to be tractable at high confidence": 0.5,
-            "Discovery Precedence": 0.7,
-        }
-        for modality in ["small_molecule", "antibody", "protac"]:
-            info = tractability.get(modality, {})
-            cat = info.get("category", "")
-            if cat in cat_map:
-                scores.append(cat_map[cat])
+        # 新结构：每个 modality 有 .score，取 best_score
+        best = tractability.get("best_score")
+        if best is not None and best > 0:
+            dimension_scores["tractability"] = float(best)
+        else:
+            # 尝试从各 modality 的 score 字段取
+            modality_scores = []
+            for mod in ["small_molecule", "antibody", "protac"]:
+                mod_info = tractability.get(mod, {})
+                if isinstance(mod_info, dict):
+                    s = mod_info.get("score", 0.0)
+                    if s > 0:
+                        modality_scores.append(s)
+            if modality_scores:
+                dimension_scores["tractability"] = max(modality_scores)
 
+    # ── Ligandability ──
     ligandability = result.get("ligandability", {})
     if ligandability and "error" not in ligandability:
-        scores.append(ligandability.get("ligandability_score", 0.0))
+        lig_score = ligandability.get("ligandability_score", 0.0)
+        if lig_score > 0:
+            dimension_scores["ligandability"] = float(lig_score)
 
+    # ── Structure (pocket) ──
     pocket_analysis = result.get("pocket_analysis", {})
     if pocket_analysis and "error" not in pocket_analysis:
-        best = pocket_analysis.get("best_druggability_score", 0.0)
-        scores.append(best)
+        best_pocket = pocket_analysis.get("best_druggability_score", 0.0)
+        if best_pocket > 0:
+            dimension_scores["structure"] = float(best_pocket)
 
-    overall = sum(scores) / len(scores) if scores else 0.0
+    # ── 加权平均 ──
+    if not dimension_scores:
+        return {
+            "overall_score": 0.0,
+            "confidence": "none",
+            "dimensions_available": 0,
+            "contributing_scores": {},
+        }
+
+    total_weight = sum(
+        DEFAULT_WEIGHTS.get(dim, 0.3) for dim in dimension_scores
+    )
+    weighted_sum = sum(
+        score * DEFAULT_WEIGHTS.get(dim, 0.3)
+        for dim, score in dimension_scores.items()
+    )
+    overall = weighted_sum / total_weight if total_weight > 0 else 0.0
+
+    # 置信度标签
+    n_dims = len(dimension_scores)
+    if n_dims >= 3:
+        confidence = "high"
+    elif n_dims == 2:
+        confidence = "medium"
+    else:
+        confidence = "low"
+
     return {
         "overall_score": round(overall, 3),
+        "confidence": confidence,
+        "dimensions_available": n_dims,
         "contributing_scores": {
-            "tractability": scores[0] if len(scores) > 0 else None,
-            "ligandability": scores[1] if len(scores) > 1 else None,
-            "structure": scores[2] if len(scores) > 2 else None,
+            dim: round(score, 3) for dim, score in dimension_scores.items()
         },
     }

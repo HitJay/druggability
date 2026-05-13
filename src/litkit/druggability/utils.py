@@ -80,6 +80,46 @@ def gene_symbol_to_ensembl(gene_symbol: str) -> str | None:
 
 
 @functools.lru_cache(maxsize=256)
+def gene_symbol_to_uniprot(gene_symbol: str) -> str | None:
+    """
+    使用 mygene.info 将基因 symbol 转为 UniProt Swiss-Prot accession。
+
+    Parameters
+    ----------
+    gene_symbol : str
+        基因符号，如 "EGFR", "KRAS"
+
+    Returns
+    -------
+    str | None
+        UniProt accession，如 "P00533"
+    """
+    try:
+        import mygene
+
+        mg = mygene.MyGeneInfo()
+        result = mg.query(
+            gene_symbol, species="human", fields="uniprot.Swiss-Prot", size=1
+        )
+        hits = result.get("hits", [])
+        if hits:
+            uniprot = hits[0].get("uniprot", {})
+            swissprot = uniprot.get("Swiss-Prot")
+            if isinstance(swissprot, list):
+                return str(swissprot[0])
+            elif swissprot:
+                return str(swissprot)
+        logger.warning("No UniProt ID found for gene symbol: %s", gene_symbol)
+        return None
+    except ImportError:
+        logger.warning("mygene not installed; cannot resolve gene symbol to UniProt")
+        return None
+    except Exception as e:
+        logger.error("Error resolving gene symbol '%s' to UniProt: %s", gene_symbol, e)
+        return None
+
+
+@functools.lru_cache(maxsize=256)
 def uniprot_to_ensembl(uniprot_id: str) -> str | None:
     """
     将 UniProt ID 转为 Ensembl gene ID。

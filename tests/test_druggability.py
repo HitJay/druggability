@@ -1,9 +1,10 @@
 """
-冒烟测试 — 验证 druggability 评估模块基本可用
+Druggability 评估模块测试
 
 运行: conda activate research && python -m pytest tests/test_druggability.py -v
 
-注意: 部分测试依赖外部 API（Open Targets、ChEMBL），网络不可用时跳过。
+注意: 标记为 @pytest.mark.network 的测试依赖外部 API，默认跳过。
+      手动执行: python -m pytest tests/test_druggability.py -v -m network
 """
 
 import sys
@@ -13,7 +14,9 @@ import pytest
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 
 
-# ─── Utils Tests ─────────────────────────────────────────────────────
+# ═══════════════════════════════════════════════════════════════════════
+# Utils Tests
+# ═══════════════════════════════════════════════════════════════════════
 
 
 def test_resolve_ensembl_id_ensembl():
@@ -27,7 +30,6 @@ def test_resolve_ensembl_id_ensembl():
 def test_resolve_ensembl_id_unknown_type():
     """未知 query_type 应抛出 ValueError。"""
     from litkit.druggability.utils import resolve_ensembl_id
-    import pytest
 
     with pytest.raises(ValueError, match="Unknown query_type"):
         resolve_ensembl_id("EGFR", query_type="invalid")
@@ -74,7 +76,9 @@ def test_rate_limit_decorator():
     assert elapsed >= 0.1  # 至少有一次延迟
 
 
-# ─── Exceptions Tests ────────────────────────────────────────────────
+# ═══════════════════════════════════════════════════════════════════════
+# Exceptions Tests
+# ═══════════════════════════════════════════════════════════════════════
 
 
 def test_druggability_error_hierarchy():
@@ -91,7 +95,77 @@ def test_druggability_error_hierarchy():
     assert issubclass(FpocketNotFoundError, DruggabilityError)
 
 
-# ─── Tractability Tests ─────────────────────────────────────────────
+# ═══════════════════════════════════════════════════════════════════════
+# Tractability Tests (P0 fix)
+# ═══════════════════════════════════════════════════════════════════════
+
+
+def test_label_to_score():
+    """label_to_score 应正确映射已知和未知 label。"""
+    from litkit.druggability.tractability import label_to_score
+
+    assert label_to_score("Approved Drug") == 1.0
+    assert label_to_score("Advanced Clinical") == 0.9
+    assert label_to_score("Phase 1 Clinical") == 0.8
+    assert label_to_score("High-Quality Pocket") == 0.6
+    assert label_to_score("Druggable Family") == 0.4
+    # 未知 label 应返回默认分
+    assert label_to_score("SomeUnknownLabel") == 0.2
+
+
+def test_modality_tractability_to_dict():
+    """ModalityTractability.to_dict() 应包含所有字段。"""
+    from litkit.druggability.tractability import ModalityTractability
+
+    mt = ModalityTractability(
+        modality="small_molecule",
+        labels=["Approved Drug", "High-Quality Pocket"],
+        top_label="Approved Drug",
+        score=1.0,
+    )
+    d = mt.to_dict()
+    assert d["modality"] == "small_molecule"
+    assert len(d["labels"]) == 2
+    assert d["top_label"] == "Approved Drug"
+    assert d["score"] == 1.0
+
+
+def test_tractability_result_to_dict():
+    """TractabilityResult.to_dict() 应含所有 modality 和 best_score。"""
+    from litkit.druggability.tractability import TractabilityResult, ModalityTractability
+
+    r = TractabilityResult(
+        ensembl_id="ENSG00000146648",
+        symbol="EGFR",
+        name="Epidermal growth factor receptor",
+        small_molecule=ModalityTractability(
+            modality="small_molecule",
+            labels=["Approved Drug", "Structure with Ligand"],
+            top_label="Approved Drug",
+            score=1.0,
+        ),
+        antibody=ModalityTractability(
+            modality="antibody",
+            labels=["UniProt loc"],
+            top_label="UniProt loc",
+            score=0.5,
+        ),
+    )
+    d = r.to_dict()
+    assert d["ensembl_id"] == "ENSG00000146648"
+    assert d["symbol"] == "EGFR"
+    assert d["small_molecule"]["score"] == 1.0
+    assert d["small_molecule"]["top_label"] == "Approved Drug"
+    assert d["antibody"]["score"] == 0.5
+    assert d["best_score"] == 1.0  # max(SM=1.0, AB=0.5, PROTAC=0.0)
+
+
+def test_tractability_result_best_score_empty():
+    """无任何 label 时 best_score 应为 0。"""
+    from litkit.druggability.tractability import TractabilityResult
+
+    r = TractabilityResult(symbol="UNKNOWN")
+    assert r.best_score == 0.0
 
 
 @pytest.mark.network
@@ -106,12 +180,11 @@ def test_query_tractability_egfr():
 
     assert result.ensembl_id.startswith("ENSG")
     assert result.symbol == "EGFR"
-    assert "small_molecule" in result.to_dict()
-    sm = result.small_molecule
-    assert isinstance(sm, dict)
-    # 应有 modality 字段
-    if sm:
-        assert sm.get("modality") == "small_molecule"
+    # SM modality 应有 labels
+    d = result.to_dict()
+    assert d["small_molecule"]["score"] > 0
+    assert len(d["small_molecule"]["labels"]) > 0
+    assert d["best_score"] > 0
 
 
 @pytest.mark.network
@@ -124,23 +197,9 @@ def test_query_tractability_invalid_target():
         query_tractability("NONEXISTENT_GENE_XYZ", query_type="gene_symbol")
 
 
-def test_tractability_result_to_dict():
-    """TractabilityResult.to_dict() 应包含所有关键字段。"""
-    from litkit.druggability.tractability import TractabilityResult
-
-    r = TractabilityResult(
-        ensembl_id="ENSG00000146648",
-        symbol="EGFR",
-        name="Epidermal growth factor receptor",
-        small_molecule={"modality": "small_molecule", "category": "Clinical Precedence"},
-    )
-    d = r.to_dict()
-    assert d["ensembl_id"] == "ENSG00000146648"
-    assert d["symbol"] == "EGFR"
-    assert d["small_molecule"]["category"] == "Clinical Precedence"
-
-
-# ─── Ligandability Tests ─────────────────────────────────────────────
+# ═══════════════════════════════════════════════════════════════════════
+# Ligandability Tests
+# ═══════════════════════════════════════════════════════════════════════
 
 
 def test_score_from_ligand_count():
@@ -187,7 +246,9 @@ def test_ligandability_result_to_dict():
     assert d["ligandability_score"] == 0.8
 
 
-# ─── Pocket Analysis Tests ───────────────────────────────────────────
+# ═══════════════════════════════════════════════════════════════════════
+# Pocket Analysis Tests
+# ═══════════════════════════════════════════════════════════════════════
 
 
 def test_grade_druggability():
@@ -244,7 +305,7 @@ def test_detect_pockets_no_fpocket():
     from litkit.druggability.pocket import detect_pockets
     from litkit.druggability.utils import FpocketNotFoundError
 
-    # 创建一个最小的有效 PDB 文件，使其能通过文件存在性检查
+    # 创建一个最小的有效 PDB 文件
     tmp = tempfile.NamedTemporaryFile(suffix=".pdb", delete=False, mode="w")
     tmp.write("ATOM      1  N   ALA A   1       1.000   1.000   1.000  1.00  0.00           N\n")
     tmp.write("ATOM      2  CA  ALA A   1       1.000   1.000   1.000  1.00  0.00           C\n")
@@ -258,29 +319,188 @@ def test_detect_pockets_no_fpocket():
         os.unlink(tmp.name)
 
 
-# ─── Unified Entry Point Tests ───────────────────────────────────────
+# ═══════════════════════════════════════════════════════════════════════
+# Composite Score Tests (P0 fix — 核心修复测试)
+# ═══════════════════════════════════════════════════════════════════════
 
 
-def test_assess_druggability_composite():
-    """assess_druggability 应生成包含 composite 分数的报告。"""
+class TestCompositeScore:
+    """_compute_composite 综合评分逻辑测试。"""
+
+    def test_empty_result(self):
+        """所有维度都失败时应返回 0 分和 'none' 置信度。"""
+        from litkit.druggability import _compute_composite
+
+        result = {
+            "tractability": {"error": "failed"},
+            "ligandability": {"error": "failed"},
+        }
+        composite = _compute_composite(result)
+        assert composite["overall_score"] == 0.0
+        assert composite["confidence"] == "none"
+        assert composite["dimensions_available"] == 0
+        assert composite["contributing_scores"] == {}
+
+    def test_tractability_only(self):
+        """仅 tractability 成功时应有 low 置信度。"""
+        from litkit.druggability import _compute_composite
+
+        result = {
+            "tractability": {
+                "best_score": 0.9,
+                "small_molecule": {"score": 0.9},
+                "antibody": {"score": 0.0},
+                "protac": {"score": 0.0},
+            },
+            "ligandability": {"error": "failed"},
+        }
+        composite = _compute_composite(result)
+        assert composite["overall_score"] == 0.9
+        assert composite["confidence"] == "low"
+        assert composite["dimensions_available"] == 1
+        assert "tractability" in composite["contributing_scores"]
+        assert composite["contributing_scores"]["tractability"] == 0.9
+
+    def test_two_dimensions(self):
+        """两个维度成功时应有 medium 置信度。"""
+        from litkit.druggability import _compute_composite
+
+        result = {
+            "tractability": {
+                "best_score": 1.0,
+                "small_molecule": {"score": 1.0},
+                "antibody": {"score": 0.5},
+                "protac": {"score": 0.0},
+            },
+            "ligandability": {
+                "ligandability_score": 0.8,
+            },
+        }
+        composite = _compute_composite(result)
+        assert composite["confidence"] == "medium"
+        assert composite["dimensions_available"] == 2
+        assert "tractability" in composite["contributing_scores"]
+        assert "ligandability" in composite["contributing_scores"]
+        # 加权平均: (1.0*0.35 + 0.8*0.35) / (0.35+0.35) = 0.9
+        assert abs(composite["overall_score"] - 0.9) < 0.01
+
+    def test_three_dimensions(self):
+        """三个维度成功时应有 high 置信度。"""
+        from litkit.druggability import _compute_composite
+
+        result = {
+            "tractability": {
+                "best_score": 1.0,
+                "small_molecule": {"score": 1.0},
+                "antibody": {"score": 0.0},
+                "protac": {"score": 0.0},
+            },
+            "ligandability": {
+                "ligandability_score": 0.8,
+            },
+            "pocket_analysis": {
+                "best_druggability_score": 0.6,
+            },
+        }
+        composite = _compute_composite(result)
+        assert composite["confidence"] == "high"
+        assert composite["dimensions_available"] == 3
+        # 加权: (1.0*0.35 + 0.8*0.35 + 0.6*0.30) / (0.35+0.35+0.30)
+        expected = (1.0 * 0.35 + 0.8 * 0.35 + 0.6 * 0.30) / 1.0
+        assert abs(composite["overall_score"] - expected) < 0.01
+
+    def test_no_pocket_analysis_key(self):
+        """未包含 pocket_analysis key 时不应报错。"""
+        from litkit.druggability import _compute_composite
+
+        result = {
+            "tractability": {"best_score": 0.5},
+            "ligandability": {"ligandability_score": 0.4},
+        }
+        composite = _compute_composite(result)
+        assert composite["dimensions_available"] == 2
+        assert "structure" not in composite["contributing_scores"]
+
+    def test_zero_scores_excluded(self):
+        """分数为 0 的维度不应参与加权。"""
+        from litkit.druggability import _compute_composite
+
+        result = {
+            "tractability": {
+                "best_score": 0.0,  # 0 分不计入
+                "small_molecule": {"score": 0.0},
+                "antibody": {"score": 0.0},
+                "protac": {"score": 0.0},
+            },
+            "ligandability": {
+                "ligandability_score": 0.6,
+            },
+        }
+        composite = _compute_composite(result)
+        assert composite["dimensions_available"] == 1
+        assert "tractability" not in composite["contributing_scores"]
+        assert composite["contributing_scores"]["ligandability"] == 0.6
+
+
+# ═══════════════════════════════════════════════════════════════════════
+# assess_druggability Entry Point Tests (P0 fix)
+# ═══════════════════════════════════════════════════════════════════════
+
+
+def test_assess_druggability_default_no_structure():
+    """默认不应跑结构分析（include_structure_analysis=False）。"""
     from litkit.druggability import assess_druggability
-    from litkit.druggability.utils import DruggabilityError
 
-    # 使用已知无效的查询来触发错误路径（不会真的发网络请求）
-    try:
-        result = assess_druggability(
-            "INVALID_GENE_99999",
-            include_structure_analysis=False,
-        )
-    except DruggabilityError:
-        result = {"error": "test"}
+    # 使用无效靶点——不会真正查到，但不应触发结构分析
+    result = assess_druggability(
+        "INVALID_GENE_99999",
+    )
+    # 不应包含 pocket_analysis key（因为默认不跑结构）
+    assert "pocket_analysis" not in result
+    assert "composite" in result
+    assert "overall_score" in result["composite"]
 
-    if "error" not in result:
-        assert "query" in result
-        assert "tractability" in result
-        assert "ligandability" in result
-        assert "composite" in result
-        assert "overall_score" in result["composite"]
+
+def test_assess_druggability_composite_present():
+    """assess_druggability 应总是生成 composite。"""
+    from litkit.druggability import assess_druggability
+
+    result = assess_druggability(
+        "INVALID_GENE_99999",
+        include_structure_analysis=False,
+    )
+    assert "query" in result
+    assert "tractability" in result
+    assert "ligandability" in result
+    assert "composite" in result
+    comp = result["composite"]
+    assert "overall_score" in comp
+    assert "confidence" in comp
+    assert "dimensions_available" in comp
+    assert "contributing_scores" in comp
+
+
+def test_resolve_structure_input_uniprot():
+    """UniProt ID 类型应直接返回。"""
+    from litkit.druggability import _resolve_structure_input
+
+    assert _resolve_structure_input("P00533", "uniprot_id") == "P00533"
+
+
+def test_resolve_structure_input_ensembl_raises():
+    """Ensembl ID 目前不支持自动结构下载，应 raise。"""
+    from litkit.druggability import _resolve_structure_input
+
+    with pytest.raises(ValueError, match="not yet supported"):
+        _resolve_structure_input("ENSG00000146648", "ensembl_id")
+
+
+def test_resolve_structure_input_unknown_type_raises():
+    """未知 query_type 应 raise ValueError。"""
+    from litkit.druggability import _resolve_structure_input
+
+    with pytest.raises(ValueError, match="Unknown query_type"):
+        _resolve_structure_input("EGFR", "invalid_type")
 
 
 if __name__ == "__main__":

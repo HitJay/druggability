@@ -48,6 +48,62 @@ MODALITY_MAP = {
     "PROTAC": "protac",
 }
 
+# ─── Tractability label → score 映射 ─────────────────────────────────
+# 分数基于 Open Targets 官方 tractability bucket 体系
+# 每个 modality 的 label 列表可能不同，但均映射到 0-1 分数
+
+TRACTABILITY_LABEL_SCORES: dict[str, float] = {
+    # ── Small Molecule (SM) 常见 labels ──
+    "Approved Drug": 1.0,
+    "Advanced Clinical": 0.9,
+    "Phase 1 Clinical": 0.8,
+    "Structure with Ligand": 0.7,
+    "High-Quality Ligand": 0.65,
+    "High-Quality Pocket": 0.6,
+    "Med-Quality Pocket": 0.5,
+    "Druggable Family": 0.4,
+    # ── Antibody (AB) 常见 labels ──
+    "UniProt loc": 0.5,
+    "GO CC": 0.45,
+    "UniProt SigP or TMHMM": 0.4,
+    "Human Protein Atlas loc": 0.35,
+    # ── PROTAC 常见 labels ──
+    "Literature": 0.5,
+    "UniProt Ubiquitination": 0.45,
+    "Database Ubiquitination": 0.4,
+    "Half-life Data": 0.35,
+    "Small Molecule Binder": 0.3,
+    # ── 通用 ──
+    "Clinical Precedence": 0.9,
+    "Discovery Precedence": 0.7,
+    "Predicted Tractable": 0.5,
+    "Predicted Tractable - High Confidence": 0.55,
+    "Predicted Tractable - Medium Confidence": 0.45,
+}
+
+
+def label_to_score(label: str) -> float:
+    """将 Open Targets tractability label 映射为 0-1 分数。"""
+    return TRACTABILITY_LABEL_SCORES.get(label, 0.2)
+
+
+@dataclass
+class ModalityTractability:
+    """单个 modality 的 tractability 信息"""
+
+    modality: str = ""
+    labels: list[str] = field(default_factory=list)
+    top_label: str = ""
+    score: float = 0.0
+
+    def to_dict(self) -> dict:
+        return {
+            "modality": self.modality,
+            "labels": self.labels,
+            "top_label": self.top_label,
+            "score": round(self.score, 3),
+        }
+
 
 @dataclass
 class TractabilityResult:
@@ -57,10 +113,25 @@ class TractabilityResult:
     symbol: str = ""
     name: str = ""
     biotype: str = ""
-    small_molecule: dict = field(default_factory=dict)
-    antibody: dict = field(default_factory=dict)
-    protac: dict = field(default_factory=dict)
+    small_molecule: ModalityTractability = field(
+        default_factory=lambda: ModalityTractability(modality="small_molecule")
+    )
+    antibody: ModalityTractability = field(
+        default_factory=lambda: ModalityTractability(modality="antibody")
+    )
+    protac: ModalityTractability = field(
+        default_factory=lambda: ModalityTractability(modality="protac")
+    )
     raw: dict | None = None
+
+    @property
+    def best_score(self) -> float:
+        """所有 modality 中的最高 tractability 分数。"""
+        return max(
+            self.small_molecule.score,
+            self.antibody.score,
+            self.protac.score,
+        )
 
     def to_dict(self) -> dict:
         return {
@@ -68,9 +139,10 @@ class TractabilityResult:
             "symbol": self.symbol,
             "name": self.name,
             "biotype": self.biotype,
-            "small_molecule": self.small_molecule or {},
-            "antibody": self.antibody or {},
-            "protac": self.protac or {},
+            "small_molecule": self.small_molecule.to_dict(),
+            "antibody": self.antibody.to_dict(),
+            "protac": self.protac.to_dict(),
+            "best_score": round(self.best_score, 3),
         }
 
 
@@ -162,15 +234,29 @@ def query_tractability(
         raw=target_data,
     )
 
-    tractability_list = target_data.get("tractability", [])
-    if tractability_list:
-        for t in tractability_list:
-            modality_short = t.get("modality", "")
-            modality = MODALITY_MAP.get(modality_short, modality_short.lower())
-            info = {
-                "label": str(t.get("label", "")),
-                "modality": modality,
-            }
-            setattr(result, modality, info)
+    # 聚合 tractability labels per modality
+    tractability_list = target_data.get("tractability", []) or []
+    modality_labels: dict[str, list[str]] = {
+        "small_molecule": [],
+        "antibody": [],
+        "protac": [],
+    }
+
+    for t in tractability_list:
+        modality_short = t.get("modality", "")
+        modality = MODALITY_MAP.get(modality_short, modality_short.lower())
+        label = str(t.get("label", ""))
+        if modality in modality_labels and label:
+            modality_labels[modality].append(label)
+
+    # 为每个 modality 计算最高分 label
+    for modality, labels in modality_labels.items():
+        mod_tract = getattr(result, modality)
+        mod_tract.labels = labels
+        if labels:
+            scored = [(lbl, label_to_score(lbl)) for lbl in labels]
+            best_label, best_score = max(scored, key=lambda x: x[1])
+            mod_tract.top_label = best_label
+            mod_tract.score = best_score
 
     return result
