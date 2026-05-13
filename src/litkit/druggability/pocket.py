@@ -6,7 +6,7 @@ fpocket Python Wrapper — 基于结构的口袋检测与 druggability 打分
 
 支持：
 - 本地 PDB 文件输入
-- UniProt ID 自动下载 AlphaFold 结构
+- UniProt ID 自动下载实验结构（UniProt REST API → RCSB PDB）
 """
 
 from __future__ import annotations
@@ -34,10 +34,11 @@ logger = logging.getLogger(__name__)
 
 # ─── 常量 ────────────────────────────────────────────────────────────
 
-# AlphaFold DB 下载模板
-ALPHAFOLD_URL_TEMPLATE = (
-    "https://alphafold.ebi.ac.uk/files/AF-{uniprot_id}-F1-model_v4.pdb"
+# AlphaFold DB 下载模板（已弃用 v4，改用 UniProt REST → RCSB fallback）
+UNIPROT_PDB_API = (
+    "https://rest.uniprot.org/uniprotkb/{uniprot_id}.json"
 )
+RCSB_DOWNLOAD_URL = "https://files.rcsb.org/download/{pdb_id}.pdb"
 
 # fpocket 可执行文件路径（项目内 fallback）
 # 注意：不要在模块加载时调用 shutil.which，便于测试时 mock；
@@ -112,7 +113,10 @@ class PocketAnalysisResult:
 
 def _download_alphafold_structure(uniprot_id: str, output_dir: str) -> str:
     """
-    从 AlphaFold DB 下载蛋白结构文件。
+    下载蛋白结构文件。
+
+    策略：先通过 UniProt REST API 获取该 UniProt ID 关联的 PDB ID，
+    再按分辨率排序（优先 X-ray < 3Å），最后从 RCSB 下载。
 
     Parameters
     ----------
@@ -131,66 +135,142 @@ def _download_alphafold_structure(uniprot_id: str, output_dir: str) -> str:
     DruggabilityError
         下载失败
     """
-    url = ALPHAFOLD_URL_TEMPLATE.format(uniprot_id=uniprot_id)
-    output_path = os.path.join(output_dir, f"AF-{uniprot_id}-F1-model_v4.pdb")
-
     try:
-        logger.info("Downloading AlphaFold structure from: %s", url)
-        resp = requests.get(url, timeout=60)
+        api_url = UNIPROT_PDB_API.format(uniprot_id=uniprot_id)
+        logger.info("Fetching UniProt cross-references: %s", api_url)
+        resp = requests.get(api_url, timeout=60, headers={
+            "Accept": "application/json",
+            "User-Agent": "python-requests/litkit-druggability",
+        })
+        resp.raise_for_status()
+        data = resp.json()
+    except requests.exceptions.RequestException as e:
+        raise DruggabilityError(
+            f"Failed to fetch UniProt entry for {uniprot_id}: {e}"
+        )
+
+    pdb_entries: list[dict] = []
+    refs = data.get("data", {}).get("results", [data])
+    for entry in refs:
+        for ref in entry.get("uniProtKBCrossReferences", []):
+            if ref.get("database") == "PDB":
+                properties = {p["key"]: p["value"] for p in ref.get("properties", [])}
+                pdb_entries.append({
+                    "pdb_id": ref["id"],
+                    "method": ref.get("experimentalMethod", "Unknown"),
+                    "resolution": properties.get("resolution"),
+                    "chains": properties.get("chains"),
+                })
+
+    if not pdb_entries:
+        raise DruggabilityError(
+            f"No PDB structures found for UniProt {uniprot_id}. "
+            "Cannot perform structure-based pocket analysis."
+        )
+
+    def resolution_key(entry: dict):
+        res = entry.get("resolution")
+        if res is None:
+            return (1, float("inf"))
+        if entry.get("method", "").lower() != "x-ray":
+            return (0, float(res))
+        return (1, float(res))
+
+    pdb_entries.sort(key=resolution_key)
+    chosen = pdb_entries[0]
+    pdb_id = chosen["pdb_id"]
+    method = chosen["method"]
+    resolution = chosen.get("resolution", "N/A")
+    logger.info(
+        "Selected PDB %s (method=%s, resolution=%s) for UniProt %s",
+        pdb_id, method, resolution, uniprot_id,
+    )
+
+    rcsb_url = RCSB_DOWNLOAD_URL.format(pdb_id=pdb_id)
+    output_path = os.path.join(output_dir, f"{pdb_id}.pdb")
+    try:
+        logger.info("Downloading from RCSB: %s", rcsb_url)
+        resp = requests.get(rcsb_url, timeout=60, headers={
+            "User-Agent": "python-requests/litkit-druggability",
+        })
         resp.raise_for_status()
 
-        with open(output_path, "wb") as f:
-            f.write(resp.content)
-
-        # 验证文件是否为有效的 PDB（以 ATOM 开头）
         content = resp.content.decode("utf-8", errors="ignore")
         if "ATOM" not in content and "HETATM" not in content:
             raise DruggabilityError(
-                f"Downloaded file does not appear to be a valid PDB structure "
-                f"(missing ATOM records) for UniProt: {uniprot_id}"
+                f"Downloaded file from {rcsb_url} does not appear to be a valid "
+                f"PDB structure (missing ATOM records) for PDB ID: {pdb_id}"
             )
+
+        with open(output_path, "w", encoding="utf-8") as f:
+            f.write(content)
 
         logger.info("Structure saved to: %s", output_path)
         return output_path
 
     except requests.exceptions.HTTPError as e:
         raise DruggabilityError(
-            f"Failed to download AlphaFold structure for {uniprot_id}: HTTP {e}"
+            f"Failed to download PDB {pdb_id} from RCSB: HTTP {e}"
         )
     except requests.exceptions.RequestException as e:
         raise DruggabilityError(
-            f"Network error downloading AlphaFold structure for {uniprot_id}: {e}"
+            f"Network error downloading PDB {pdb_id}: {e}"
         )
 
 
-def _check_fpocket() -> str:
+def _check_fpocket() -> tuple[str, bool]:
     """
     定位 fpocket 可执行文件。
 
     查找顺序：
     1. PATH 环境变量中的 ``fpocket``
     2. 项目 ``tools/fpocket`` 兜底路径
+    3. Docker 容器（自动检测 ``fpocket/fpocket`` 镜像）
+
+    Returns
+    -------
+    tuple[str, bool]
+        (可执行路径或镜像名, 是否使用 Docker)
 
     Raises
     ------
     FpocketNotFoundError
-        两个位置都未找到可执行的 fpocket。
+        所有方式都未找到可用的 fpocket。
     """
-    # 1) PATH 优先
+    # 1) PATH 优先（本地二进制）
     fpocket_path = shutil.which("fpocket")
     if fpocket_path:
-        return fpocket_path
+        logger.info("Using local fpocket: %s", fpocket_path)
+        return fpocket_path, False
 
     # 2) 项目内 fallback
     if FPOCKET_FALLBACK_PATH.is_file() and os.access(
         FPOCKET_FALLBACK_PATH, os.X_OK
     ):
-        return str(FPOCKET_FALLBACK_PATH)
+        logger.info("Using bundled fpocket: %s", FPOCKET_FALLBACK_PATH)
+        return str(FPOCKET_FALLBACK_PATH), False
+
+    # 3) Docker 兜底
+    try:
+        docker_path = shutil.which("docker")
+        if docker_path is None:
+            docker_path = "docker"
+        result = subprocess.run(
+            [docker_path, "run", "--rm", "fpocket/fpocket", "fpocket", "-h"],
+            capture_output=True,
+            text=True,
+            timeout=30,
+        )
+        if result.returncode == 0:
+            logger.info("Using Docker fpocket (fpocket/fpocket)")
+            return docker_path, True
+    except Exception as e:
+        logger.debug("Docker fpocket check failed: %s", e)
 
     raise FpocketNotFoundError(
-        "fpocket not found. Please install fpocket and place the binary at "
-        f"{FPOCKET_FALLBACK_PATH}, or ensure 'fpocket' is in your PATH.\n"
-        "  Download: https://github.com/Discngine/fpocket/releases"
+        "fpocket not found. Tried: local binary, tools/fpocket/, and Docker.\n"
+        f"  Local install: https://github.com/Discngine/fpocket/releases\n"
+        f"  Docker:        docker pull fpocket/fpocket"
     )
 
 
@@ -217,13 +297,27 @@ def _run_fpocket(pdb_path: str, output_dir: str) -> dict:
     InvalidStructureError
         PDB 结构无效
     """
-    fpocket_path = _check_fpocket()
+    fpocket_path, use_docker = _check_fpocket()
     logger.info("Running fpocket on: %s", pdb_path)
+
+    if use_docker:
+        docker_cmd = [
+            fpocket_path, "run", "--rm",
+            "-v", f"{os.path.abspath(output_dir).replace(chr(92), '/')}:/workspace",
+            "-w", "/workspace",
+            "fpocket/fpocket",
+            "fpocket", "-f", os.path.basename(pdb_path),
+        ]
+        cmd = docker_cmd
+        cwd = output_dir
+    else:
+        cmd = [fpocket_path, "-f", pdb_path]
+        cwd = output_dir
 
     try:
         result = subprocess.run(
-            [fpocket_path, "-f", pdb_path],
-            cwd=output_dir,
+            cmd,
+            cwd=cwd,
             capture_output=True,
             text=True,
             timeout=FPOCKET_TIMEOUT,
@@ -377,7 +471,7 @@ def detect_pockets(
     structure_path : str
         PDB 文件路径，或 UniProt ID（如 "P00533"）
     auto_download : bool
-        如果 structure_path 是 UniProt ID，是否自动从 AlphaFold DB 下载。
+        如果 structure_path 是 UniProt ID，是否自动从 UniProt REST → RCSB 下载。
         设为 False 且传入 UniProt ID 时会报错。
     keep_output : bool
         是否保留 fpocket 输出目录（默认删除临时文件）。
@@ -416,7 +510,7 @@ def detect_pockets(
                 )
             uniprot_id = structure_path
             pdb_path = _download_alphafold_structure(uniprot_id, work_dir)
-            input_label = f"UniProt:{uniprot_id} (AlphaFold)"
+            input_label = f"UniProt:{uniprot_id} (RCSB PDB)"
 
         # Step 2: 运行 fpocket
         raw_result = _run_fpocket(pdb_path, work_dir)

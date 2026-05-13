@@ -298,14 +298,19 @@ def test_pocket_analysis_result_to_dict():
     assert len(d["pockets"]) == 1
 
 
-def test_detect_pockets_no_fpocket():
-    """fpocket 未安装时应抛出 FpocketNotFoundError。"""
+def test_detect_pockets_no_fpocket(monkeypatch):
+    """fpocket 本地二进制和 Docker 都不可用时应抛出 FpocketNotFoundError。"""
     import tempfile
     import os
+    from unittest.mock import MagicMock
+
     from litkit.druggability.pocket import detect_pockets
     from litkit.druggability.utils import FpocketNotFoundError
 
-    # 创建一个最小的有效 PDB 文件
+    # Mock _check_fpocket 强制返回不可用
+    def fake_check():
+        raise FpocketNotFoundError("fpocket not found")
+
     tmp = tempfile.NamedTemporaryFile(suffix=".pdb", delete=False, mode="w")
     tmp.write("ATOM      1  N   ALA A   1       1.000   1.000   1.000  1.00  0.00           N\n")
     tmp.write("ATOM      2  CA  ALA A   1       1.000   1.000   1.000  1.00  0.00           C\n")
@@ -313,6 +318,8 @@ def test_detect_pockets_no_fpocket():
     tmp.close()
 
     try:
+        from litkit.druggability import pocket
+        monkeypatch.setattr(pocket, "_check_fpocket", fake_check)
         with pytest.raises(FpocketNotFoundError):
             detect_pockets(tmp.name, auto_download=False)
     finally:
