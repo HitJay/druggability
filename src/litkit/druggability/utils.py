@@ -168,18 +168,15 @@ def resolve_ensembl_id(query: str, query_type: str = "gene_symbol") -> str | Non
     """
     统一入口：将任意形式的靶点标识符转为 Ensembl ID。
 
-    Parameters
-    ----------
-    query : str
-        靶点标识符
-    query_type : str
-        标识符类型: "gene_symbol" | "uniprot_id" | "ensembl_id"
-
-    Returns
-    -------
-    str | None
-        对应的 Ensembl gene ID
+    优先通过 Open Targets search（单次 GraphQL），查不到时降级到 mygene.info。
     """
+    try:
+        from .tractability import resolve_target_info
+        info = resolve_target_info(query, query_type=query_type)
+        return info.ensembl_id if info else None
+    except Exception:
+        pass
+
     if query_type == "ensembl_id":
         if query.startswith("ENSG"):
             return query

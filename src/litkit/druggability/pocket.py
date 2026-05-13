@@ -111,9 +111,58 @@ class PocketAnalysisResult:
         }
 
 
+def _download_from_pdb_list(uniprot_id: str, pdb_ids: list[str], output_dir: str) -> str:
+    """
+    尝试下载 Open Targets 提供的 PDB IDs，按顺序尝试，成功即返回。
+
+    Parameters
+    ----------
+    uniprot_id : str
+    pdb_ids : list[str]
+        来自 Open Targets dbXrefs 的 PDB ID 列表
+    output_dir : str
+
+    Returns
+    -------
+    str
+        下载的 PDB 文件路径
+
+    Raises
+    ------
+    DruggabilityError
+        所有 PDB 下载均失败
+    """
+    tried: list[str] = []
+    for pdb_id in pdb_ids:
+        if not pdb_id:
+            continue
+        url = RCSB_DOWNLOAD_URL.format(pdb_id=pdb_id)
+        try:
+            resp = requests.get(url, timeout=30, headers={
+                "User-Agent": "python-requests/litkit-druggability",
+            })
+            resp.raise_for_status()
+            content = resp.content.decode("utf-8", errors="ignore")
+            if "ATOM" in content or "HETATM" in content:
+                output_path = os.path.join(output_dir, f"{pdb_id}.pdb")
+                with open(output_path, "w", encoding="utf-8") as f:
+                    f.write(content)
+                logger.info("Downloaded PDB %s from Open Targets xref: %s", pdb_id, url)
+                return output_path
+        except Exception as e:
+            logger.debug("PDB %s download failed: %s", pdb_id, e)
+            tried.append(pdb_id)
+
+    logger.warning(
+        "All %d Open Targets PDB IDs failed for UniProt %s, falling back to UniProt REST",
+        len(tried), uniprot_id,
+    )
+    return _download_alphafold_structure(uniprot_id, output_dir)
+
+
 def _download_alphafold_structure(uniprot_id: str, output_dir: str) -> str:
     """
-    下载蛋白结构文件。
+    下载蛋白结构文件（降级路径）。
 
     策略：先通过 UniProt REST API 获取该 UniProt ID 关联的 PDB ID，
     再按分辨率排序（优先 X-ray < 3Å），最后从 RCSB 下载。
@@ -253,6 +302,14 @@ def _check_fpocket() -> tuple[str, bool]:
     # 3) Docker 兜底
     try:
         docker_path = shutil.which("docker")
+        if docker_path is None:
+            for candidate in [
+                r"C:\Program Files\Docker\Docker\resources\bin\docker.exe",
+                r"C:\Program Files\Docker\Docker\resources\bin\docker",
+            ]:
+                if os.path.isfile(candidate):
+                    docker_path = candidate
+                    break
         if docker_path is None:
             docker_path = "docker"
         result = subprocess.run(
@@ -462,6 +519,7 @@ def detect_pockets(
     structure_path: str,
     auto_download: bool = True,
     keep_output: bool = False,
+    preferred_pdb_ids: list[str] | None = None,
 ) -> PocketAnalysisResult:
     """
     对蛋白结构进行口袋检测和 druggability 评估。
@@ -475,6 +533,9 @@ def detect_pockets(
         设为 False 且传入 UniProt ID 时会报错。
     keep_output : bool
         是否保留 fpocket 输出目录（默认删除临时文件）。
+    preferred_pdb_ids : list[str] | None
+        来自 Open Targets 的优先 PDB ID 列表。若提供则优先从这些 ID
+        中选择最优结构（按分辨率），RCSB 下载失败才降级到 UniProt REST。
 
     Returns
     -------
@@ -502,14 +563,16 @@ def detect_pockets(
             pdb_path = structure_path
             input_label = structure_path
         else:
-            # 当作 UniProt ID 处理
             if not auto_download:
                 raise InvalidStructureError(
                     f"'{structure_path}' is not a PDB file path and "
                     f"auto_download is False"
                 )
             uniprot_id = structure_path
-            pdb_path = _download_alphafold_structure(uniprot_id, work_dir)
+            if preferred_pdb_ids:
+                pdb_path = _download_from_pdb_list(uniprot_id, preferred_pdb_ids, work_dir)
+            else:
+                pdb_path = _download_alphafold_structure(uniprot_id, work_dir)
             input_label = f"UniProt:{uniprot_id} (RCSB PDB)"
 
         # Step 2: 运行 fpocket
