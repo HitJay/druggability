@@ -2,6 +2,7 @@
 ChEMBL Local Database — 本地 SQLite 数据库查询模块
 
 利用 chembl_downloader 下载和管理 ChEMBL 数据库，提供稳定的本地查询功能。
+支持配置自定义镜像源和数据库路径。
 """
 
 from __future__ import annotations
@@ -20,6 +21,18 @@ logger = logging.getLogger(__name__)
 # 活性标准 type 列表（与原 API 保持一致）
 ACTIVITY_TYPES = ["IC50", "EC50", "Ki", "Kd", "Potency", "ED50"]
 
+# 支持的镜像源配置
+MIRRORS = {
+    "ebi": "ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/releases",
+    "ebi_https": "https://ftp.ebi.ac.uk/pub/databases/chembl/ChEMBLdb/releases",
+    # 可添加其他镜像源，例如国内镜像
+}
+
+# 环境变量配置
+ENV_MIRROR = "CHEMBL_MIRROR"
+ENV_DB_PATH = "CHEMBL_DB_PATH"
+ENV_DATA_DIR = "CHEMBL_DATA_DIR"
+
 
 class ChemblLocalDB:
     """
@@ -31,6 +44,7 @@ class ChemblLocalDB:
         version: str = "36",
         db_path: Optional[str | Path] = None,
         data_dir: Optional[str | Path] = None,
+        mirror: Optional[str] = None,
     ):
         """
         初始化 ChEMBL 本地数据库管理器
@@ -39,11 +53,21 @@ class ChemblLocalDB:
             version: ChEMBL 版本号，默认 "36"
             db_path: 数据库文件路径，如果为 None 则使用 chembl_downloader 默认路径
             data_dir: 数据存储目录（仅当 db_path 为 None 时有效）
+            mirror: 镜像源名称（如 "ebi"、"ebi_https"），或自定义 URL（不含协议）
         """
         self.version = version
         self.db_path: Optional[Path] = Path(db_path) if db_path else None
         self.data_dir: Optional[Path] = Path(data_dir) if data_dir else None
+        self.mirror = mirror
         self._conn: Optional[sqlite3.Connection] = None
+
+        # 从环境变量加载默认值
+        if self.db_path is None and os.environ.get(ENV_DB_PATH):
+            self.db_path = Path(os.environ[ENV_DB_PATH])
+        if self.data_dir is None and os.environ.get(ENV_DATA_DIR):
+            self.data_dir = Path(os.environ[ENV_DATA_DIR])
+        if self.mirror is None and os.environ.get(ENV_MIRROR):
+            self.mirror = os.environ[ENV_MIRROR]
 
     def _ensure_db(self) -> Path:
         """
@@ -51,6 +75,11 @@ class ChemblLocalDB:
         """
         if self.db_path and self.db_path.exists():
             return self.db_path
+
+        # 如果设置了 db_path 但文件不存在，或者没有设置，我们需要下载
+        # 先尝试使用 chembl_downloader，如有必要则覆盖其镜像源
+        if self.mirror:
+            self._patch_chembl_downloader_mirror()
 
         try:
             import chembl_downloader
@@ -67,10 +96,34 @@ class ChemblLocalDB:
             self.db_path = Path(chembl_downloader.download_extract_sqlite(version=self.version))
         else:
             if not self.db_path.exists():
+                # 下载到临时位置，然后移动到指定路径
                 downloaded = chembl_downloader.download_extract_sqlite(version=self.version)
-                self.db_path = Path(downloaded)
+                # 将下载的文件复制到目标位置
+                import shutil
+                shutil.copy(downloaded, self.db_path)
 
         return self.db_path
+
+    def _patch_chembl_downloader_mirror(self):
+        """临时修改 chembl_downloader 的镜像源"""
+        try:
+            import chembl_downloader.api
+            # 保存原始值
+            original_host = getattr(chembl_downloader.api, "_CHEMBL_HOST", None)
+            
+            # 设置新镜像源
+            if self.mirror in MIRRORS:
+                new_host = MIRRORS[self.mirror]
+            else:
+                new_host = self.mirror  # 直接使用自定义 URL
+            
+            chembl_downloader.api._CHEMBL_HOST = new_host
+            logger.info(f"ChEMBL 镜像源已设置为: {new_host}")
+            
+            # 保存原始值，以便可能的恢复（虽然不需要）
+            setattr(self, "_original_chembl_host", original_host)
+        except Exception as e:
+            logger.warning(f"设置镜像源失败: {e}，将使用默认源")
 
     @contextmanager
     def connect(self) -> Generator[sqlite3.Connection, None, None]:
@@ -249,6 +302,7 @@ def get_db(
     version: str = "36",
     db_path: Optional[str | Path] = None,
     data_dir: Optional[str | Path] = None,
+    mirror: Optional[str] = None,
     reset: bool = False,
 ) -> ChemblLocalDB:
     """
@@ -258,6 +312,7 @@ def get_db(
         version: ChEMBL 版本号
         db_path: 数据库文件路径
         data_dir: 数据存储目录
+        mirror: 镜像源名称（如 "ebi"、"ebi_https"）
         reset: 是否重置全局实例
 
     Returns:
@@ -265,8 +320,21 @@ def get_db(
     """
     global _default_db
     if _default_db is None or reset:
-        _default_db = ChemblLocalDB(version=version, db_path=db_path, data_dir=data_dir)
+        _default_db = ChemblLocalDB(
+            version=version, db_path=db_path, data_dir=data_dir, mirror=mirror
+        )
     return _default_db
+
+
+def set_default_mirror(mirror: str):
+    """
+    全局设置默认的 ChEMBL 镜像源
+
+    Args:
+        mirror: 镜像源名称（如 "ebi"、"ebi_https"）或自定义 URL
+    """
+    os.environ[ENV_MIRROR] = mirror
+    logger.info(f"全局 ChEMBL 镜像源已设置为: {mirror}")
 
 
 # 便捷函数，无需显式创建 db 实例
@@ -309,4 +377,3 @@ def count_approved_drugs(
     if db is None:
         db = get_db()
     return db.count_approved_drugs(target_chembl_id)
-
