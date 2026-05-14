@@ -1,23 +1,26 @@
 """
 ChEMBL Ligandability Proxy — 基于已知配体覆盖度的可药性评估
 
-利用 chembl-webresource-client 查询靶点的已知活性化合物数量，
-通过配体覆盖度间接估计靶点的 ligandability（配体能力）。
+支持两种查询方式：
+1. 本地 SQLite 数据库（推荐，稳定高效）
+2. 在线 ChEMBL API（保留向后兼容）
 """
 
 from __future__ import annotations
 
 import logging
+import os
 import socket
 import time
 from dataclasses import dataclass, field
-from typing import Any
+from typing import Any, Optional, Literal, Union
 
 from .utils import TargetNotFoundError, NetworkError
+from . import chembl_local
 
 logger = logging.getLogger(__name__)
 
-# ─── 打分阈值配置 ───────────────────────────────────────────────────
+# ─── 配置和类型定义 ─────────────────────────────────────────────────
 
 # ligandability: n_ligands → score mapping
 LIGANDABILITY_THRESHOLDS: list[tuple[int, float]] = [
@@ -31,6 +34,9 @@ LIGANDABILITY_THRESHOLDS: list[tuple[int, float]] = [
 
 # 活性标准 type 列表
 ACTIVITY_TYPES = ["IC50", "EC50", "Ki", "Kd", "Potency", "ED50"]
+
+# 查询后端类型
+QueryBackend = Literal["local", "api", "auto"]
 
 
 @dataclass
@@ -46,6 +52,7 @@ class LigandabilityResult:
     strongest_activity: dict | None = None
     top_compounds: list[str] = field(default_factory=list)
     raw: dict | None = None
+    backend_used: str = ""
 
     def to_dict(self) -> dict:
         return {
@@ -57,6 +64,7 @@ class LigandabilityResult:
             "ligandability_score": self.ligandability_score,
             "strongest_activity": self.strongest_activity or {},
             "top_compounds": self.top_compounds[:5],
+            "backend_used": self.backend_used,
         }
 
 
@@ -68,6 +76,8 @@ def _score_from_ligand_count(n: int) -> float:
     return 0.0
 
 
+# ─── API 后端实现（保留向后兼容）────────────────────────────────────
+
 def _get_chembl_client():
     """
     获取 ChEMBL webresource client 实例。
@@ -77,8 +87,6 @@ def _get_chembl_client():
     """
     try:
         # 禁用 ChEMBL 内置的 requests_cache SQLite 后端，避免文件锁死
-        import os
-
         os.environ.setdefault("CHEMBL_CACHE_DISABLED", "1")
 
         from chembl_webresource_client.new_client import new_client
@@ -93,16 +101,10 @@ def _get_chembl_client():
         )
 
 
-def _search_target(
+def _search_target_api(
     query: str, organism: str = "Homo sapiens"
 ) -> dict | None:
-    """
-    搜索 ChEMBL 靶点，返回最佳匹配的 target 信息。
-
-    Returns
-    -------
-    dict with keys: target_chembl_id, pref_name, organism
-    """
+    """使用在线 API 搜索 ChEMBL 靶点"""
     client = _get_chembl_client()
     target = client.target
 
@@ -142,18 +144,11 @@ def _search_target(
     }
 
 
-def _count_ligands(target_chembl_id: str) -> tuple[int, list[str]]:
-    """
-    统计靶点的已知配体数量并返回代表性化合物。
-
-    Returns
-    -------
-    (n_unique_molecules, top_chembl_ids)
-    """
+def _count_ligands_api(target_chembl_id: str) -> tuple[int, list[str]]:
+    """使用在线 API 统计配体数量"""
     client = _get_chembl_client()
     activity = client.activity
 
-    # 搭建 QuerySet（不执行）
     qs = (
         activity.filter(
             target_chembl_id=target_chembl_id,
@@ -163,13 +158,12 @@ def _count_ligands(target_chembl_id: str) -> tuple[int, list[str]]:
         .only(["molecule_chembl_id"])
     )
 
-    # 用 Python 切片分页（QuerySet 在 v0.10.9 不再支持 .offset/.limit）
     all_molecules: set[str] = set()
     batch_size = 100
     start = 0
 
     while True:
-        time.sleep(0.3)  # 速率限制
+        time.sleep(0.3)
         batch = list(qs[start : start + batch_size])
         if not batch:
             break
@@ -185,10 +179,8 @@ def _count_ligands(target_chembl_id: str) -> tuple[int, list[str]]:
     return len(all_molecules), top_molecules
 
 
-def _get_strongest_activity(target_chembl_id: str) -> dict | None:
-    """
-    获取靶点的最强活性数据（最低 IC50/EC50/Ki/Kd 值）。
-    """
+def _get_strongest_activity_api(target_chembl_id: str) -> dict | None:
+    """使用在线 API 获取最强活性"""
     client = _get_chembl_client()
     activity = client.activity
 
@@ -218,10 +210,8 @@ def _get_strongest_activity(target_chembl_id: str) -> dict | None:
     return None
 
 
-def _count_approved_drugs(target_chembl_id: str) -> int:
-    """
-    统计靶点对应的已批准药物数量。
-    """
+def _count_approved_drugs_api(target_chembl_id: str) -> int:
+    """使用在线 API 统计已批准药物数量"""
     client = _get_chembl_client()
     drug = client.drug
 
@@ -239,8 +229,56 @@ def _count_approved_drugs(target_chembl_id: str) -> int:
         return 0
 
 
+# ─── 本地数据库后端实现 ─────────────────────────────────────────────
+
+def _search_target_local(
+    query: str,
+    organism: str = "Homo sapiens",
+    db: Optional[chembl_local.ChemblLocalDB] = None,
+) -> dict | None:
+    """使用本地数据库搜索 ChEMBL 靶点"""
+    if db is None:
+        db = chembl_local.get_db()
+    return db.search_target(query, organism=organism)
+
+
+def _count_ligands_local(
+    target_chembl_id: str,
+    db: Optional[chembl_local.ChemblLocalDB] = None,
+) -> tuple[int, list[str]]:
+    """使用本地数据库统计配体数量"""
+    if db is None:
+        db = chembl_local.get_db()
+    return db.count_ligands(target_chembl_id)
+
+
+def _get_strongest_activity_local(
+    target_chembl_id: str,
+    db: Optional[chembl_local.ChemblLocalDB] = None,
+) -> dict | None:
+    """使用本地数据库获取最强活性"""
+    if db is None:
+        db = chembl_local.get_db()
+    return db.get_strongest_activity(target_chembl_id)
+
+
+def _count_approved_drugs_local(
+    target_chembl_id: str,
+    db: Optional[chembl_local.ChemblLocalDB] = None,
+) -> int:
+    """使用本地数据库统计已批准药物数量"""
+    if db is None:
+        db = chembl_local.get_db()
+    return db.count_approved_drugs(target_chembl_id)
+
+
+# ─── 主要接口 ────────────────────────────────────────────────────────
+
 def assess_ligandability(
-    query: str, organism: str = "Homo sapiens"
+    query: str,
+    organism: str = "Homo sapiens",
+    backend: QueryBackend = "auto",
+    db: Optional[chembl_local.ChemblLocalDB] = None,
 ) -> LigandabilityResult:
     """
     对靶点进行 ligandability 评估。
@@ -254,6 +292,13 @@ def assess_ligandability(
         靶点标识（gene symbol 或 UniProt ID）
     organism : str
         物种过滤，默认为 "Homo sapiens"
+    backend : "local" | "api" | "auto"
+        查询后端：
+        - "local": 强制使用本地 SQLite 数据库（推荐，稳定高效）
+        - "api": 强制使用在线 API
+        - "auto": 自动选择（优先本地，失败则回退到 API）
+    db : ChemblLocalDB, optional
+        自定义本地数据库实例，仅当 backend="local" 或 "auto" 时有效
 
     Returns
     -------
@@ -264,41 +309,114 @@ def assess_ligandability(
     TargetNotFoundError
         靶点在 ChEMBL 中未找到
     NetworkError
-        API 请求失败
+        API 请求失败（仅当使用 API 后端时）
+    ImportError
+        所选后端的依赖未安装
     """
-    try:
-        target_info = _search_target(query, organism=organism)
-    except Exception as e:
-        raise NetworkError(f"Failed to search ChEMBL target '{query}': {e}")
+    backend_used = ""
+    last_error: Optional[Exception] = None
 
-    if target_info is None:
-        raise TargetNotFoundError(
-            f"Target '{query}' not found in ChEMBL for organism '{organism}'"
-        )
+    # 确定要尝试的后端顺序
+    backends_to_try: list[QueryBackend]
+    if backend == "auto":
+        backends_to_try = ["local", "api"]
+    elif backend == "local":
+        backends_to_try = ["local"]
+    elif backend == "api":
+        backends_to_try = ["api"]
+    else:
+        raise ValueError(f"Invalid backend: {backend}")
 
-    chembl_id = target_info["target_chembl_id"]
-    if not chembl_id:
-        raise TargetNotFoundError(
-            f"Target '{query}' found but no ChEMBL ID"
-        )
+    for current_backend in backends_to_try:
+        try:
+            if current_backend == "local":
+                backend_used = "local"
+                try:
+                    target_info = _search_target_local(query, organism=organism, db=db)
+                except ImportError:
+                    if backend == "local":
+                        raise
+                    last_error = ImportError("chembl-downloader not installed")
+                    continue
 
-    # 统计配体数量
-    n_ligands, top_compounds = _count_ligands(chembl_id)
-    lig_score = _score_from_ligand_count(n_ligands)
+                if target_info is None:
+                    raise TargetNotFoundError(
+                        f"Target '{query}' not found in ChEMBL for organism '{organism}'"
+                    )
 
-    # 最强活性
-    strongest = _get_strongest_activity(chembl_id)
+                chembl_id = target_info["target_chembl_id"]
+                if not chembl_id:
+                    raise TargetNotFoundError(
+                        f"Target '{query}' found but no ChEMBL ID"
+                    )
 
-    # 已批准药物
-    n_drugs = _count_approved_drugs(chembl_id)
+                n_ligands, top_compounds = _count_ligands_local(chembl_id, db=db)
+                lig_score = _score_from_ligand_count(n_ligands)
+                strongest = _get_strongest_activity_local(chembl_id, db=db)
+                n_drugs = _count_approved_drugs_local(chembl_id, db=db)
 
-    return LigandabilityResult(
-        target_chembl_id=chembl_id,
-        pref_name=target_info.get("pref_name", ""),
-        organism=target_info.get("organism", ""),
-        n_known_ligands=n_ligands,
-        n_approved_drugs=n_drugs,
-        ligandability_score=lig_score,
-        strongest_activity=strongest,
-        top_compounds=top_compounds,
-    )
+            else:  # api
+                backend_used = "api"
+                try:
+                    target_info = _search_target_api(query, organism=organism)
+                except Exception as e:
+                    if backend == "api":
+                        raise NetworkError(f"Failed to search ChEMBL target '{query}': {e}")
+                    last_error = e
+                    continue
+
+                if target_info is None:
+                    raise TargetNotFoundError(
+                        f"Target '{query}' not found in ChEMBL for organism '{organism}'"
+                    )
+
+                chembl_id = target_info["target_chembl_id"]
+                if not chembl_id:
+                    raise TargetNotFoundError(
+                        f"Target '{query}' found but no ChEMBL ID"
+                    )
+
+                n_ligands, top_compounds = _count_ligands_api(chembl_id)
+                lig_score = _score_from_ligand_count(n_ligands)
+                strongest = _get_strongest_activity_api(chembl_id)
+                n_drugs = _count_approved_drugs_api(chembl_id)
+
+            return LigandabilityResult(
+                target_chembl_id=chembl_id,
+                pref_name=target_info.get("pref_name", ""),
+                organism=target_info.get("organism", ""),
+                n_known_ligands=n_ligands,
+                n_approved_drugs=n_drugs,
+                ligandability_score=lig_score,
+                strongest_activity=strongest,
+                top_compounds=top_compounds,
+                backend_used=backend_used,
+            )
+
+        except TargetNotFoundError:
+            raise
+        except Exception as e:
+            last_error = e
+            if len(backends_to_try) == 1:
+                raise
+
+    if last_error:
+        raise last_error
+    raise RuntimeError("No backend available")
+
+
+# 保留原始函数名向后兼容
+def _search_target(*args, **kwargs):
+    return _search_target_api(*args, **kwargs)
+
+
+def _count_ligands(*args, **kwargs):
+    return _count_ligands_api(*args, **kwargs)
+
+
+def _get_strongest_activity(*args, **kwargs):
+    return _get_strongest_activity_api(*args, **kwargs)
+
+
+def _count_approved_drugs(*args, **kwargs):
+    return _count_approved_drugs_api(*args, **kwargs)

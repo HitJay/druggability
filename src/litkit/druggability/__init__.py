@@ -3,17 +3,19 @@ litkit.druggability — 靶点可药性评估核心模块
 
 提供统一的 druggability 评估接口，集成多个数据源：
 - Open Targets tractability API（知识库可追踪性）
-- ChEMBL ligandability proxy（已知配体覆盖度）
+- ChEMBL ligandability proxy（已知配体覆盖度，支持本地数据库）
 - fpocket 口袋检测（基于结构的分析）
 """
 
 from __future__ import annotations
 
 import logging
+from typing import Optional
 
 from .tractability import query_tractability, TractabilityResult, resolve_target_info
-from .ligandability import assess_ligandability, LigandabilityResult
+from .ligandability import assess_ligandability, LigandabilityResult, QueryBackend
 from .pocket import detect_pockets, PocketAnalysisResult
+from . import chembl_local
 
 logger = logging.getLogger(__name__)
 
@@ -31,6 +33,8 @@ def assess_druggability(
     query_type: str = "gene_symbol",
     structure_path: str | None = None,
     include_structure_analysis: bool = False,
+    chembl_backend: QueryBackend = "auto",
+    chembl_db: Optional[chembl_local.ChemblLocalDB] = None,
 ) -> dict:
     """
     统一入口：对靶点执行多层 druggability 评估。
@@ -46,6 +50,13 @@ def assess_druggability(
     include_structure_analysis : bool
         若为 True 且未提供 structure_path，尝试从 Open Targets → RCSB PDB
         自动获取结构。**默认 False**（fpocket 需要 Docker/本地安装）。
+    chembl_backend : "local" | "api" | "auto"
+        ChEMBL 查询后端：
+        - "local": 使用本地 SQLite 数据库（推荐，稳定高效）
+        - "api": 使用在线 ChEMBL API
+        - "auto": 自动选择（优先本地，失败则回退到 API）
+    chembl_db : ChemblLocalDB, optional
+        自定义本地数据库实例，仅当 chembl_backend="local" 或 "auto" 时有效
 
     Returns
     -------
@@ -82,9 +93,13 @@ def assess_druggability(
     # 优先用 Open Targets 提供的 ChEMBL ID 精准查询
     try:
         if chembl_id:
-            ligandability = assess_ligandability_by_chembl_id(chembl_id)
+            ligandability = assess_ligandability_by_chembl_id(
+                chembl_id, backend=chembl_backend, db=chembl_db
+            )
         else:
-            ligandability = assess_ligandability(query)
+            ligandability = assess_ligandability(
+                query, backend=chembl_backend, db=chembl_db
+            )
         result["ligandability"] = ligandability.to_dict()
     except Exception as e:
         logger.warning("Ligandability query failed for '%s': %s", query, e)
@@ -112,7 +127,11 @@ def assess_druggability(
     return result
 
 
-def assess_ligandability_by_chembl_id(chembl_id: str) -> LigandabilityResult:
+def assess_ligandability_by_chembl_id(
+    chembl_id: str,
+    backend: QueryBackend = "auto",
+    db: Optional[chembl_local.ChemblLocalDB] = None,
+) -> LigandabilityResult:
     """
     用 ChEMBL ID 直接查询 ligandability（绕过基因符号搜索）。
 
@@ -120,17 +139,53 @@ def assess_ligandability_by_chembl_id(chembl_id: str) -> LigandabilityResult:
     ----------
     chembl_id : str
         ChEMBL Target ID，如 "CHEMBL203"
+    backend : "local" | "api" | "auto"
+        查询后端，默认 "auto"
+    db : ChemblLocalDB, optional
+        自定义本地数据库实例
 
     Returns
     -------
     LigandabilityResult
     """
-    from .ligandability import _count_ligands, _get_strongest_activity, _count_approved_drugs
     from .ligandability import _score_from_ligand_count, LigandabilityResult as LR
 
-    n_ligands, top_compounds = _count_ligands(chembl_id)
-    strongest = _get_strongest_activity(chembl_id)
-    n_drugs = _count_approved_drugs(chembl_id)
+    backend_used = ""
+
+    if backend == "local" or backend == "auto":
+        try:
+            if db is None:
+                db = chembl_local.get_db()
+            n_ligands, top_compounds = chembl_local.count_ligands(db, chembl_id)
+            strongest = chembl_local.get_strongest_activity(db, chembl_id)
+            n_drugs = chembl_local.count_approved_drugs(db, chembl_id)
+            backend_used = "local"
+            return LR(
+                target_chembl_id=chembl_id,
+                pref_name="",
+                organism="",
+                n_known_ligands=n_ligands,
+                n_approved_drugs=n_drugs,
+                ligandability_score=_score_from_ligand_count(n_ligands),
+                strongest_activity=strongest,
+                top_compounds=top_compounds,
+                backend_used=backend_used,
+            )
+        except (ImportError, Exception):
+            if backend == "local":
+                raise
+
+    # Fallback to API
+    from .ligandability import (
+        _count_ligands_api,
+        _get_strongest_activity_api,
+        _count_approved_drugs_api,
+    )
+
+    backend_used = "api"
+    n_ligands, top_compounds = _count_ligands_api(chembl_id)
+    strongest = _get_strongest_activity_api(chembl_id)
+    n_drugs = _count_approved_drugs_api(chembl_id)
     return LR(
         target_chembl_id=chembl_id,
         pref_name="",
@@ -140,7 +195,9 @@ def assess_ligandability_by_chembl_id(chembl_id: str) -> LigandabilityResult:
         ligandability_score=_score_from_ligand_count(n_ligands),
         strongest_activity=strongest,
         top_compounds=top_compounds,
+        backend_used=backend_used,
     )
+
 
 
 def _resolve_structure_input(

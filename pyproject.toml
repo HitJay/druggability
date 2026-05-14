@@ -32,6 +32,7 @@ dependencies = [
     "pdfplumber>=0.10",
     # 生医方向
     "chembl-webresource-client>=0.10",
+    "chembl-downloader>=0.5",
     "mygene>=3.2",
     # 工具 & Notebook
     "python-dotenv>=1.0",
