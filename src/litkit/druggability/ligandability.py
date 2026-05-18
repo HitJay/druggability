@@ -9,9 +9,9 @@ ChEMBL Ligandability Proxy — 基于已知配体覆盖度的可药性评估
 
 from __future__ import annotations
 
-import concurrent.futures
 import logging
 import socket
+import threading
 import time
 from dataclasses import dataclass, field
 from typing import Any, Callable
@@ -82,29 +82,37 @@ def _call_with_timeout(
     timeout: float, func: Callable, *args: Any, **kwargs: Any
 ) -> Any:
     """
-    在独立线程中执行函数并强制执行超时。
+    在独立 daemon 线程中执行函数并强制执行超时。
 
     ChEMBL 的 requests 在 SSL 握手阶段可能永久挂起（尤其 Windows 上），
-    socket.setdefaulttimeout 对此无效。本函数通过 ThreadPoolExecutor
+    socket.setdefaulttimeout 对此无效。本函数通过 daemon 线程
     确保即使 SSL 层卡死也能在 timeout 秒后超时抛出 ``NetworkError``。
 
-    注意：超时后不等待 worker 线程退出（daemon 线程会被解释器自动清理），
-    避免 pool.shutdown(wait=True) 在 SSL 挂起时阻塞主线程。
+    daemon 线程在进程退出时由操作系统强制清理，不会阻塞 Python 退出，
+    避免了 ThreadPoolExecutor 的 pool.shutdown() 在 SSL 挂起时卡住主线程的问题。
     """
-    pool = concurrent.futures.ThreadPoolExecutor(max_workers=1)
-    fut = pool.submit(func, *args, **kwargs)
-    try:
-        return fut.result(timeout=timeout)
-    except concurrent.futures.TimeoutError:
-        pool.shutdown(wait=False)
+    result: list = []
+    exception: list = []
+
+    def worker():
+        try:
+            result.append(func(*args, **kwargs))
+        except BaseException as e:
+            exception.append(e)
+
+    t = threading.Thread(target=worker, daemon=True)
+    t.start()
+    t.join(timeout=timeout)
+
+    if t.is_alive():
         raise NetworkError(
             f"ChEMBL API call '{func.__name__}' timed out after {timeout}s"
         )
-    except Exception:
-        pool.shutdown(wait=False)
-        raise
-    else:
-        pool.shutdown(wait=False)
+
+    if exception:
+        raise exception[0]
+
+    return result[0]
 
 
 def _get_chembl_client():
