@@ -3,23 +3,32 @@ ChEMBL Ligandability Proxy — 基于已知配体覆盖度的可药性评估
 
 利用 chembl-webresource-client 查询靶点的已知活性化合物数量，
 通过配体覆盖度间接估计靶点的 ligandability（配体能力）。
+
+所有 ChEMBL API 调用均带有超时保护，网络不可用时会优雅降级。
 """
 
 from __future__ import annotations
 
+import concurrent.futures
 import logging
 import socket
 import time
 from dataclasses import dataclass, field
-from typing import Any
+from typing import Any, Callable
 
 from .utils import TargetNotFoundError, NetworkError
 
 logger = logging.getLogger(__name__)
 
+# ─── 超时配置 ─────────────────────────────────────────────────────────
+
+# 单个 ChEMBL API 调用的超时（秒）
+_CHEMBL_CALL_TIMEOUT = 45
+# 整体 assess_ligandability 的超时
+_ASSESS_TIMEOUT = 90
+
 # ─── 打分阈值配置 ───────────────────────────────────────────────────
 
-# ligandability: n_ligands → score mapping
 LIGANDABILITY_THRESHOLDS: list[tuple[int, float]] = [
     (1000, 1.0),
     (100, 0.8),
@@ -29,7 +38,6 @@ LIGANDABILITY_THRESHOLDS: list[tuple[int, float]] = [
     (0, 0.0),
 ]
 
-# 活性标准 type 列表
 ACTIVITY_TYPES = ["IC50", "EC50", "Ki", "Kd", "Potency", "ED50"]
 
 
@@ -68,22 +76,39 @@ def _score_from_ligand_count(n: int) -> float:
     return 0.0
 
 
+def _call_with_timeout(
+    timeout: float, func: Callable, *args: Any, **kwargs: Any
+) -> Any:
+    """
+    在独立线程中执行函数并强制执行超时。
+
+    ChEMBL 的 requests 在 SSL 握手阶段可能永久挂起（尤其 Windows 上），
+    socket.setdefaulttimeout 对此无效。本函数通过 ThreadPoolExecutor
+    确保即使 SSL 层卡死也能在 timeout 秒后超时抛出 ``NetworkError``。
+    """
+    with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
+        fut = pool.submit(func, *args, **kwargs)
+        try:
+            return fut.result(timeout=timeout)
+        except concurrent.futures.TimeoutError:
+            raise NetworkError(
+                f"ChEMBL API call '{func.__name__}' timed out after {timeout}s"
+            )
+
+
 def _get_chembl_client():
     """
     获取 ChEMBL webresource client 实例。
 
-    同时设置默认 socket 超时，防止 SSL 握手卡死；
-    并禁用 requests_cache（其 SQLite 后端在 Windows 上可能因文件锁挂起）。
+    设置默认 socket 超时并禁用 requests_cache 后端。
     """
     try:
-        # 禁用 ChEMBL 内置的 requests_cache SQLite 后端，避免文件锁死
         import os
 
         os.environ.setdefault("CHEMBL_CACHE_DISABLED", "1")
 
         from chembl_webresource_client.new_client import new_client
 
-        # 全局默认 socket 超时（connect + read），避免网络不可用时永久挂起
         socket.setdefaulttimeout(30)
         return new_client
     except ImportError:
@@ -107,14 +132,16 @@ def _search_target(
     target = client.target
 
     # Step 1: 精确过滤（gene synonym）
-    results = list(
-        target.filter(target_synonym__icontains=query)
-        .only(["target_chembl_id", "pref_name", "organism", "target_type"])
+    results = _call_with_timeout(
+        _CHEMBL_CALL_TIMEOUT,
+        lambda: list(
+            target.filter(target_synonym__icontains=query)
+            .only(["target_chembl_id", "pref_name", "organism", "target_type"])
+        ),
     )
 
     # Step 2: 按人源优先过滤
     human_matches = [r for r in results if r.get("organism") == organism]
-    # 再按 SINGLE PROTEIN 优先
     protein_matches = [
         r for r in (human_matches or results)
         if r.get("target_type") in ("SINGLE PROTEIN", "PROTEIN COMPLEX", "PROTEIN FAMILY")
@@ -124,7 +151,10 @@ def _search_target(
     if not candidates:
         # Step 3: 模糊搜索 fallback
         try:
-            fuzzy_results = list(target.search(query))
+            fuzzy_results = _call_with_timeout(
+                _CHEMBL_CALL_TIMEOUT,
+                lambda: list(target.search(query)),
+            )
             for r in fuzzy_results:
                 if r.get("organism") == organism:
                     candidates.append(r)
@@ -153,7 +183,6 @@ def _count_ligands(target_chembl_id: str) -> tuple[int, list[str]]:
     client = _get_chembl_client()
     activity = client.activity
 
-    # 搭建 QuerySet（不执行）
     qs = (
         activity.filter(
             target_chembl_id=target_chembl_id,
@@ -163,14 +192,16 @@ def _count_ligands(target_chembl_id: str) -> tuple[int, list[str]]:
         .only(["molecule_chembl_id"])
     )
 
-    # 用 Python 切片分页（QuerySet 在 v0.10.9 不再支持 .offset/.limit）
     all_molecules: set[str] = set()
     batch_size = 100
     start = 0
 
     while True:
-        time.sleep(0.3)  # 速率限制
-        batch = list(qs[start : start + batch_size])
+        time.sleep(0.3)
+        batch = _call_with_timeout(
+            _CHEMBL_CALL_TIMEOUT,
+            lambda s=start: list(qs[s : s + batch_size]),
+        )
         if not batch:
             break
         for item in batch:
@@ -202,7 +233,10 @@ def _get_strongest_activity(target_chembl_id: str) -> dict | None:
             .order_by("standard_value")
             .only(["standard_type", "standard_value", "standard_units"])
         )
-        acts = list(qs[0:1])
+        acts = _call_with_timeout(
+            _CHEMBL_CALL_TIMEOUT,
+            lambda: list(qs[0:1]),
+        )
         if acts:
             act = acts[0]
             val = act.get("standard_value")
@@ -227,11 +261,14 @@ def _count_approved_drugs(target_chembl_id: str) -> int:
 
     try:
         time.sleep(0.3)
-        drugs = list(
-            drug.filter(
-                target_chembl_id=target_chembl_id,
-                max_phase=4,
-            ).only(["molecule_chembl_id"])
+        drugs = _call_with_timeout(
+            _CHEMBL_CALL_TIMEOUT,
+            lambda: list(
+                drug.filter(
+                    target_chembl_id=target_chembl_id,
+                    max_phase=4,
+                ).only(["molecule_chembl_id"])
+            ),
         )
         return len(drugs)
     except Exception as e:
@@ -264,12 +301,28 @@ def assess_ligandability(
     TargetNotFoundError
         靶点在 ChEMBL 中未找到
     NetworkError
-        API 请求失败
+        API 请求失败或超时
     """
     try:
-        target_info = _search_target(query, organism=organism)
+        return _call_with_timeout(
+            _ASSESS_TIMEOUT,
+            _assess_ligandability_impl,
+            query,
+            organism,
+        )
+    except NetworkError:
+        raise
+    except TargetNotFoundError:
+        raise
     except Exception as e:
-        raise NetworkError(f"Failed to search ChEMBL target '{query}': {e}")
+        raise NetworkError(
+            f"ChEMBL ligandability assessment failed for '{query}': {e}"
+        )
+
+
+def _assess_ligandability_impl(query: str, organism: str) -> LigandabilityResult:
+    """assess_ligandability 的实际实现（内部使用，由超时包装）。"""
+    target_info = _search_target(query, organism=organism)
 
     if target_info is None:
         raise TargetNotFoundError(
@@ -282,14 +335,9 @@ def assess_ligandability(
             f"Target '{query}' found but no ChEMBL ID"
         )
 
-    # 统计配体数量
     n_ligands, top_compounds = _count_ligands(chembl_id)
     lig_score = _score_from_ligand_count(n_ligands)
-
-    # 最强活性
     strongest = _get_strongest_activity(chembl_id)
-
-    # 已批准药物
     n_drugs = _count_approved_drugs(chembl_id)
 
     return LigandabilityResult(
