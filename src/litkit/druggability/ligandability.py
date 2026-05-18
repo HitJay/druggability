@@ -22,8 +22,10 @@ logger = logging.getLogger(__name__)
 
 # ─── 超时配置 ─────────────────────────────────────────────────────────
 
-# 单个 ChEMBL API 调用的超时（秒）
+# 核心数据检索超时（配体计数）
 _CHEMBL_CALL_TIMEOUT = 45
+# 附加数据检索超时（最强活性、获批药物 — 降级友好，不拖慢主流程）
+_CHEMBL_EXTRA_TIMEOUT = 12
 # 整体 assess_ligandability 的超时
 _ASSESS_TIMEOUT = 90
 
@@ -85,15 +87,24 @@ def _call_with_timeout(
     ChEMBL 的 requests 在 SSL 握手阶段可能永久挂起（尤其 Windows 上），
     socket.setdefaulttimeout 对此无效。本函数通过 ThreadPoolExecutor
     确保即使 SSL 层卡死也能在 timeout 秒后超时抛出 ``NetworkError``。
+
+    注意：超时后不等待 worker 线程退出（daemon 线程会被解释器自动清理），
+    避免 pool.shutdown(wait=True) 在 SSL 挂起时阻塞主线程。
     """
-    with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
-        fut = pool.submit(func, *args, **kwargs)
-        try:
-            return fut.result(timeout=timeout)
-        except concurrent.futures.TimeoutError:
-            raise NetworkError(
-                f"ChEMBL API call '{func.__name__}' timed out after {timeout}s"
-            )
+    pool = concurrent.futures.ThreadPoolExecutor(max_workers=1)
+    fut = pool.submit(func, *args, **kwargs)
+    try:
+        return fut.result(timeout=timeout)
+    except concurrent.futures.TimeoutError:
+        pool.shutdown(wait=False)
+        raise NetworkError(
+            f"ChEMBL API call '{func.__name__}' timed out after {timeout}s"
+        )
+    except Exception:
+        pool.shutdown(wait=False)
+        raise
+    else:
+        pool.shutdown(wait=False)
 
 
 def _get_chembl_client():
@@ -234,7 +245,7 @@ def _get_strongest_activity(target_chembl_id: str) -> dict | None:
             .only(["standard_type", "standard_value", "standard_units"])
         )
         acts = _call_with_timeout(
-            _CHEMBL_CALL_TIMEOUT,
+            _CHEMBL_EXTRA_TIMEOUT,
             lambda: list(qs[0:1]),
         )
         if acts:
@@ -262,7 +273,7 @@ def _count_approved_drugs(target_chembl_id: str) -> int:
     try:
         time.sleep(0.3)
         drugs = _call_with_timeout(
-            _CHEMBL_CALL_TIMEOUT,
+            _CHEMBL_EXTRA_TIMEOUT,
             lambda: list(
                 drug.filter(
                     target_chembl_id=target_chembl_id,

@@ -258,6 +258,224 @@ def search_crossref(query: str, limit: int = 20) -> list[dict[str, Any]]:
     return results
 
 
+# ── Paperclip（生物医学论文 CLI）────────────────────────────────────
+def _parse_paperclip_output(output: str, limit: int = 20) -> list[dict[str, Any]]:
+    """解析 paperclip 搜索结果的文本输出格式。
+    
+    格式示例：
+        1. Title of paper
+           Author Names
+           ID · Source · Date
+           https://url.com
+           "Abstract text here"
+        
+        2. Another title
+           ...
+
+    Args:
+        output: paperclip search 命令的原始输出
+        limit: 最大返回论文数
+
+    Returns:
+        list[dict]: 标准化的论文元数据列表
+    """
+    import re
+
+    papers = []
+    lines = output.split("\n")
+    i = 0
+    
+    while i < len(lines) and len(papers) < limit:
+        line = lines[i].strip()
+        
+        # 找到论文编号行（如 "1. Title" 或 "  1. Title"）
+        match = re.match(r'^\s*\d+\.\s+(.+)$', line)
+        if match:
+            title = match.group(1).strip()
+            authors = ""
+            paper_id = ""
+            source = ""
+            pub_date = ""
+            url = ""
+            abstract = ""
+            
+            # 读取接下来的行来提取元数据
+            i += 1
+            while i < len(lines):
+                current_line = lines[i]
+                stripped = current_line.strip()
+                
+                # 如果遇到下一个论文编号或空行太多，停止
+                if re.match(r'^\s*\d+\.\s+', current_line):
+                    break
+                
+                # 空行或注释行，跳过
+                if not stripped or stripped.startswith("[") or stripped.startswith("💡") or stripped.startswith("Tip:"):
+                    i += 1
+                    if not stripped:
+                        # 连续空行可能表示论文结束
+                        next_i = i
+                        while next_i < len(lines) and not lines[next_i].strip():
+                            next_i += 1
+                        if next_i < len(lines) and not re.match(r'^\s*\d+\.\s+', lines[next_i]):
+                            i = next_i
+                        else:
+                            break
+                    continue
+                
+                # 作者行（通常是缩进的）
+                if authors == "" and current_line.startswith("     ") and not any(c in stripped for c in ["·", "http", "@"]):
+                    authors = stripped
+                    i += 1
+                    continue
+                
+                # ID · Source · Date 行（包含 ·）
+                if "·" in stripped:
+                    parts = stripped.split("·")
+                    if len(parts) >= 3:
+                        paper_id = parts[0].strip()
+                        source = parts[1].strip()
+                        pub_date = parts[2].strip() if len(parts) > 2 else ""
+                    i += 1
+                    continue
+                
+                # URL 行
+                if stripped.startswith("http"):
+                    url = stripped
+                    i += 1
+                    continue
+                
+                # 摘要行（通常用引号包围）
+                if stripped.startswith('"') and stripped.endswith('"'):
+                    abstract = stripped.strip('"')
+                    i += 1
+                    break  # 论文结束
+                
+                i += 1
+            
+            # 只有在有标题的情况下才添加
+            if title:
+                papers.append(
+                    {
+                        "title": title,
+                        "authors": authors,
+                        "paper_id": paper_id,
+                        "source": source,
+                        "publication_date": pub_date,
+                        "url": url,
+                        "abstract": abstract,
+                        "database": "paperclip",
+                    }
+                )
+        else:
+            i += 1
+    
+    return papers[:limit]
+
+
+def search_paperclip(
+    query: str,
+    limit: int = 20,
+    source_db: str | None = None,
+    timeout: int = 60,
+    use_wsl: bool = True,
+) -> list[dict[str, Any]]:
+    """用 Paperclip 搜索生物医学论文。
+
+    需要先在 WSL/Unix 中安装 paperclip:
+        wsl -d Ubuntu
+        curl -fsSL https://paperclip.gxl.ai/install.sh | bash
+
+    在 Windows 中运行本函数时，会自动通过 WSL 调用 paperclip。
+
+    Args:
+        query: 搜索关键词，如 "PROTAC druggability"
+        limit: 最大返回数量（paperclip 会根据可用性返回）
+        source_db: 指定数据源，如 'pmc', 'medline', 'fda' 等（可选）
+        timeout: 命令执行超时秒数
+        use_wsl: 在 Windows 上是否通过 WSL 调用 paperclip（推荐）
+
+    Returns:
+        list[dict]: 包含 title, abstract, url, source 等字段
+
+    Raises:
+        RuntimeError: paperclip 命令不存在或执行失败
+        ValueError: 查询为空
+    """
+    import json
+    import subprocess
+    import shutil
+    import platform
+
+    if not query or not query.strip():
+        raise ValueError("Query cannot be empty")
+
+    # 尝试找到 paperclip 命令
+    paperclip_path = shutil.which("paperclip")
+    is_windows = platform.system() == "Windows"
+
+    # 如果在 Windows 上且找不到 paperclip，尝试通过 WSL
+    if is_windows and not paperclip_path and use_wsl:
+        # 检查 wsl 命令是否可用
+        if shutil.which("wsl"):
+            # 在 WSL 中，paperclip 通常在 ~/.local/bin/paperclip
+            # 构建 WSL 命令版本，使用完整路径
+            cmd_parts = ["~/.local/bin/paperclip", "search", query]
+            if source_db:
+                cmd_parts.extend(["-s", source_db])
+            # 通过 bash -c 来处理 ~ 扩展和 PATH
+            bash_cmd = " ".join(f'"{p}"' if " " in p else p for p in cmd_parts)
+            cmd = ["wsl", "-d", "Ubuntu", "bash", "-c", bash_cmd]
+        else:
+            raise RuntimeError(
+                "paperclip not found on Windows and WSL is not available. "
+                "Install WSL (wsl --install) and paperclip (in WSL: curl -fsSL https://paperclip.gxl.ai/install.sh | bash)"
+            )
+    elif paperclip_path or (not is_windows):
+        # 直接调用 paperclip（Unix/Linux 或 Windows 上找到了）
+        cmd = ["paperclip", "search", query]
+        if source_db:
+            cmd.extend(["-s", source_db])
+    else:
+        raise RuntimeError(
+            "paperclip not found. Install it with: "
+            "wsl -d Ubuntu && curl -fsSL https://paperclip.gxl.ai/install.sh | bash"
+        )
+
+    try:
+        result = subprocess.run(
+            cmd,
+            capture_output=True, encoding="utf-8", errors="replace",
+            timeout=timeout,
+            check=False,
+        )
+
+        if result.returncode != 0:
+            # 只要搜索返回结果（即使空的），也不算错误
+            stderr = result.stderr.strip()
+            stdout = result.stdout if result.stdout else ""
+            if stderr and "not found" in stderr.lower():
+                raise RuntimeError(
+                    f"paperclip search failed: {stderr}"
+                )
+            # 返回空列表而不是抛出异常
+            if not stdout:
+                return []
+
+        # 解析输出（paperclip 返回格式化的文本，每篇论文几行）
+        output = result.stdout if result.stdout else ""
+        if not output:
+            return []
+
+        results = _parse_paperclip_output(output, limit)
+        return results
+
+    except subprocess.TimeoutExpired:
+        raise RuntimeError(f"paperclip search timed out after {timeout}s")
+    except FileNotFoundError:
+        raise RuntimeError("paperclip or wsl executable not found")
+
+
 # ── 统一入口 ──────────────────────────────────────────────────────────
 SOURCES = {
     "openalex": search_openalex,
@@ -265,6 +483,7 @@ SOURCES = {
     "arxiv": search_arxiv,
     "crossref": search_crossref,
     "semanticscholar": search_semanticscholar,
+    "paperclip": search_paperclip,
 }
 
 

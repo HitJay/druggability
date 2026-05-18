@@ -29,7 +29,7 @@ _load_dotenv()
 __version__ = "0.1.0"
 
 # ── 公开 API ─────────────────────────────────────────────────────
-from litkit.search import search, search_openalex, search_pubmed, search_arxiv, search_crossref, search_semanticscholar
+from litkit.search import search, search_openalex, search_pubmed, search_arxiv, search_crossref, search_semanticscholar, search_paperclip
 
 # 当 litkit.druggability 模块就绪时暴露
 try:
@@ -48,6 +48,7 @@ __all__ = [
     "search_arxiv",
     "search_crossref",
     "search_semanticscholar",
+    "search_paperclip",
     "assess_druggability",
     "druggability_available",
     "__version__",
