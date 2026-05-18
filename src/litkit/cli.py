@@ -7,6 +7,7 @@ litkit CLI — 快速检索、下载、解析、NER、druggability 评估
     litkit parse <pdf-path> [--method pymupdf]
     litkit ner <text> [--concept Gene,Disease,Chemical]
     litkit assess <target> [--gene-symbol]
+    litkit batch --targets EGFR,BRAF,KRAS
 
 环境变量:
     OPENALEX_EMAIL, NCBI_EMAIL, NCBI_API_KEY 等
@@ -15,7 +16,9 @@ litkit CLI — 快速检索、下载、解析、NER、druggability 评估
 from __future__ import annotations
 
 import argparse
+import csv
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -67,7 +70,7 @@ def _setup_parser() -> argparse.ArgumentParser:
     )
 
     # ── assess ──────────────────────────────────────────────────────
-    p_assess = sub.add_parser("assess", help="靶点可药性评估")
+    p_assess = sub.add_parser("assess", help="靶点可药性评估（单个靶点）")
     p_assess.add_argument("target", help="靶点标识（gene symbol / Ensembl ID / UniProt ID）")
     p_assess.add_argument(
         "--type", "-t",
@@ -78,6 +81,34 @@ def _setup_parser() -> argparse.ArgumentParser:
     )
     p_assess.add_argument("--no-structure", action="store_true", help="跳过结构分析")
     p_assess.add_argument("--json", action="store_true", help="输出 JSON 格式")
+
+    # ── batch ───────────────────────────────────────────────────────
+    p_batch = sub.add_parser("batch", help="批量靶点可药性评估")
+    input_group = p_batch.add_mutually_exclusive_group(required=True)
+    input_group.add_argument(
+        "--targets", "-t",
+        help="逗号分隔的靶点列表，如 EGFR,BRAF,KRAS",
+    )
+    input_group.add_argument(
+        "--file", "-f",
+        help="从文件读取靶点列表（每行一个）",
+    )
+    input_group.add_argument(
+        "--stdin", action="store_true",
+        help="从 stdin 读取靶点列表（每行一个）",
+    )
+    p_batch.add_argument(
+        "--type", "-T",
+        dest="query_type",
+        default="gene_symbol",
+        choices=["gene_symbol", "ensembl_id", "uniprot_id"],
+        help="标识符类型",
+    )
+    p_batch.add_argument("--workers", type=int, default=3, help="并发工作线程数")
+    p_batch.add_argument("--delay", type=float, default=0.5, help="API 请求间隔（秒）")
+    p_batch.add_argument("--no-progress", action="store_true", help="隐藏进度条")
+    p_batch.add_argument("--json", action="store_true", help="输出 JSON 格式")
+    p_batch.add_argument("--csv", action="store_true", help="输出 CSV 格式")
 
     return parser
 
@@ -105,14 +136,13 @@ def _cmd_search(args: argparse.Namespace) -> None:
             print(f"       DOI: {doi}")
         if pid := r.get("pmid") or r.get("paper_id"):
             print(f"       ID:  {pid}")
-        print()
+    print()
 
 
 def _cmd_download(args: argparse.Namespace) -> None:
     from litkit.fetch import download_pdf, fetch_unpaywall_pdf_url
 
     doi_or_url = args.doi_or_url
-    # 如果是 DOI（不含 http），走 Unpaywall 获取 PDF URL
     if not doi_or_url.startswith("http"):
         print(f"[download] 通过 Unpaywall 解析 DOI: {doi_or_url}")
         url = fetch_unpaywall_pdf_url(doi_or_url)
@@ -219,6 +249,106 @@ def _cmd_assess(args: argparse.Namespace) -> None:
         print(f"    Total volume:  {pocket.get('total_volume', 'N/A')}")
 
 
+def _cmd_batch(args: argparse.Namespace) -> None:
+    """批量评估多个靶点"""
+    from litkit.druggability.batch import assess_druggability_batch
+
+    targets: list[str] = []
+    if args.targets:
+        targets = [t.strip() for t in args.targets.split(",") if t.strip()]
+    elif args.file:
+        if not os.path.isfile(args.file):
+            print(f"[batch] 文件不存在: {args.file}")
+            sys.exit(1)
+        with open(args.file, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith("#") and not line.startswith("target"):
+                    targets.append(line)
+    elif args.stdin:
+        for line in sys.stdin:
+            line = line.strip()
+            if line:
+                targets.append(line)
+
+    if not targets:
+        print("[batch] 未读取到有效靶点列表")
+        sys.exit(1)
+
+    print(f"\n{'='*60}")
+    print(f"  Druggability Batch Assessment ({len(targets)} targets)")
+    print(f"{'='*60}\n")
+
+    results = assess_druggability_batch(
+        targets,
+        query_type=args.query_type,
+        max_workers=args.workers,
+        request_delay=args.delay,
+        show_progress=not args.no_progress,
+    )
+
+    if args.json:
+        print(json.dumps([r.to_dict() for r in results], ensure_ascii=False, indent=2))
+        return
+
+    if args.csv:
+        _output_batch_csv(results)
+        return
+
+    _output_batch_table(results)
+
+
+def _output_batch_table(results) -> None:
+    """终端表格输出"""
+    succeeded = [r for r in results if r.success]
+    failed = [r for r in results if not r.success]
+
+    header = f"{'Target':20s} {'Tractab':8s} {'Ligandab':8s} {'Overall':8s} {'Confidence':12s} {'Elapsed':8s}"
+    sep = "-" * len(header)
+    print(header)
+    print(sep)
+
+    for r in succeeded:
+        tract = f"{r.tractability_score:.3f}" if r.tractability_score is not None else "N/A"
+        lig = f"{r.ligandability_score:.3f}" if r.ligandability_score is not None else "N/A"
+        print(
+            f"{r.query:20s} {tract:>8s} {lig:>8s} "
+            f"{r.overall_score:>8.3f} {r.confidence:12s} {r.elapsed_seconds:>6.1f}s"
+        )
+
+    if failed:
+        print()
+        print(f"  Failed ({len(failed)}):")
+        for r in failed:
+            err = r.error[:60] if r.error else "unknown error"
+            print(f"    {r.query:20s} {err}")
+
+    total_elapsed = sum(r.elapsed_seconds for r in results)
+    print(f"\n  {len(succeeded)}/{len(results)} succeeded in {total_elapsed:.1f}s total")
+
+
+def _output_batch_csv(results) -> None:
+    """CSV 格式输出"""
+    writer = csv.writer(sys.stdout)
+    writer.writerow([
+        "query", "success", "overall_score", "confidence",
+        "tractability_score", "ligandability_score",
+        "ligandability_n_ligands", "elapsed_seconds", "error",
+    ])
+    for r in results:
+        writer.writerow([
+            r.query,
+            r.success,
+            r.overall_score,
+            r.confidence,
+            r.tractability_score or "",
+            r.ligandability_score or "",
+            r.ligandability_n_ligands,
+            round(r.elapsed_seconds, 2),
+            r.error or "",
+        ])
+
+
 def main() -> None:
     parser = _setup_parser()
     args = parser.parse_args()
@@ -229,6 +359,7 @@ def main() -> None:
         "parse": _cmd_parse,
         "ner": _cmd_ner,
         "assess": _cmd_assess,
+        "batch": _cmd_batch,
     }
     fn = dispatch.get(args.command)
     if fn:

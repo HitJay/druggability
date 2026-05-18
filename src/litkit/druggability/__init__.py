@@ -14,6 +14,7 @@ import logging
 from .tractability import query_tractability, TractabilityResult, resolve_target_info
 from .ligandability import assess_ligandability, LigandabilityResult
 from .pocket import detect_pockets, PocketAnalysisResult
+from .batch import assess_druggability_batch, BatchResult
 
 logger = logging.getLogger(__name__)
 
