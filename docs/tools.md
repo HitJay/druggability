@@ -140,5 +140,6 @@ pip install paper-qa            # 本地论文 RAG
 │   ├── tractability.py   # Open Targets tractability
 │   ├── ligandability.py  # ChEMBL ligandability
 │   ├── pocket.py         # fpocket + AlphaFold
+│   ├── batch.py          # 批量评估（并发 + CSV/JSON 输出）
 │   └── utils.py          # ID 转换/缓存/异常
 ```

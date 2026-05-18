@@ -31,6 +31,7 @@ druggability/
 │           ├── tractability.py   # Open Targets tractability (三级评估)
 │           ├── ligandability.py  # ChEMBL 配体覆盖度 → ligandability 打分
 │           ├── pocket.py         # fpocket 口袋检测 + AlphaFold 自动下载
+│           ├── batch.py          # 批量靶点可药性评估（并发 + CSV/JSON 输出）
 │           └── utils.py          # ID 转换 / 缓存 / 速率限制 / 异常定义
 └── tests/
     ├── test_search.py              # 冒烟测试
@@ -96,7 +97,40 @@ print(result["ligandability"]["ligandability_score"]) # 配体能力打分
 print(result["pocket_analysis"]["best_druggability_score"])  # 口袋质量
 ```
 
-### 5. 跑测试
+### 5. 批量评估多个靶点
+
+```python
+import sys; sys.path.insert(0, 'src')
+from litkit.druggability.batch import assess_druggability_batch
+
+# 一次评估多个靶点（自动并发查询）
+results = assess_druggability_batch(["EGFR", "BRAF", "KRAS"])
+
+for r in results:
+    if r.success:
+        print(f"{r.query:20s} overall={r.overall_score:.3f} confidence={r.confidence}")
+    else:
+        print(f"{r.query:20s} ERROR: {r.error}")
+```
+
+或在终端使用 CLI：
+
+```bash
+# 逗号分隔
+litkit batch --targets EGFR,BRAF,KRAS
+
+# 从文件读取
+litkit batch --file targets.txt
+
+# 从 stdin 读取
+echo -e "EGFR\nBRAF\nKRAS" | litkit batch --stdin
+
+# 输出 JSON / CSV
+litkit batch --targets EGFR,BRAF,KRAS --json
+litkit batch --targets EGFR,BRAF,KRAS --csv > batch_results.csv
+```
+
+### 6. 跑测试
 
 ```bash
 conda activate research
@@ -105,11 +139,14 @@ pip install pytest
 # 搜索模块测试
 python -m pytest tests/test_search.py -v
 
+# druggability 模块测试（含批量评估）
+python -m pytest tests/test_druggability.py tests/test_batch.py -v
+
 # 综合集成测试
 python tests/test_integration.py
 ```
 
-### 6. 打开 Notebook
+### 7. 打开 Notebook
 
 ```bash
 conda activate research
@@ -189,7 +226,8 @@ ChEMBL API → 查靶点/化合物   druggability/ → 靶点可药性评估
 ┌───────────────────────────────────────────┐
 │  Tier 1: 结构无关可药性扫描                  │
 │  ├─ Open Targets tractability (SM/AB/PROTAC)│
-│  └─ ChEMBL ligandability (已知配体覆盖度)     │
+│  ├─ ChEMBL ligandability (已知配体覆盖度)     │
+│  └─ batch 并发聚合 → CSV/JSON 输出           │
 └──────────────────┬─────────────────────────┘
                    │
                    ▼
