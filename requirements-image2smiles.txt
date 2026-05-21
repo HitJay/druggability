@@ -1,0 +1,6 @@
+# 独立 image-to-SMILES OCR 环境依赖。
+# 建议单独使用 Python 3.10 venv 安装，避免影响主环境。
+numpy<2
+huggingface_hub>=0.20
+molscribe==1.1.1
+pillow>=9.0

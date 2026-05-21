@@ -8,20 +8,26 @@
 druggability/
 ├── README.md               # 本文件
 ├── requirements.txt        # pip 依赖
+├── requirements-image2smiles.txt  # 可选 MolScribe OCR 独立环境依赖
 ├── .env.example            # API 配置模板 → 复制为 .env 填入你的信息
 ├── data/
 │   ├── raw/                # 下载的 PDF / XML
 │   ├── parsed/             # GROBID 解析结果 (JSON)
 │   └── index/              # 向量库 / 缓存
 ├── docs/
+│   ├── image-to-smiles.md  # 结构图批量转 SMILES 工作流
 │   ├── tools.md            # 学术检索工具大全 (50+ 工具整理)
 │   └── deep-research/
 │       └── target-druggability-assessment.md  # 靶点可药性深研报告
 ├── notebooks/
 │   └── 00_quickstart.ipynb # 快速上手：搜索 → 下载 → 解析 → NER
+├── scripts/
+│   └── setup_image2smiles_env.sh # 创建可选独立 MolScribe OCR 环境
 ├── src/
 │   └── litkit/             # 核心工具包
 │       ├── __init__.py
+│       ├── image2smiles.py # 结构图批量转 SMILES（主流程）
+│       ├── image2smiles_worker.py # MolScribe worker（独立环境执行）
 │       ├── search.py       # 统一检索 (OpenAlex/S2/PubMed/arXiv/CrossRef)
 │       ├── fetch.py        # 下载 PDF / Europe PMC XML / Unpaywall
 │       ├── parse.py        # PDF 解析 (PyMuPDF/pdfplumber/GROBID)
@@ -148,6 +154,38 @@ litkit batch --targets EGFR,BRAF,KRAS --csv > batch_results.csv
 
 ### 6. 跑测试
 
+### 6. 批量结构图转 SMILES
+
+这个工作流默认使用当前环境里的 **DECIMER**，适合直接批量处理结构图。如果你想尝试更重的模型后端，也可以额外创建独立的 MolScribe 环境。
+
+```bash
+# 1) 使用默认 DECIMER 后端批量处理一个目录中的结构图
+litkit image2smiles data/raw/structures --recursive \
+   --csv data/parsed/image_to_smiles.csv \
+   --sdf data/parsed/image_to_smiles.sdf
+
+# 2) 如果需要 MolScribe，可创建独立 OCR 环境
+bash scripts/setup_image2smiles_env.sh
+
+# 可选：预下载 MolScribe checkpoint（约 1.13 GB）
+DOWNLOAD_CHECKPOINT=1 bash scripts/setup_image2smiles_env.sh
+
+# 3) 使用 MolScribe 后端
+litkit image2smiles data/raw/example.png \
+   --backend molscribe \
+   --checkpoint data/index/molscribe/swin_base_char_aux_1m.pth \
+   --csv data/parsed/example.csv
+```
+
+输出说明：
+
+- CSV：保留每张图片的 `status / predicted_smiles / canonical_smiles / inchikey / confidence / error`
+- SDF：仅写入成功且可被 RDKit 解析的分子
+
+详细说明见 [docs/image-to-smiles.md](docs/image-to-smiles.md)。
+
+### 7. 跑测试
+
 ```bash
 conda activate research
 pip install pytest
@@ -162,7 +200,7 @@ python -m pytest tests/test_druggability.py tests/test_batch.py -v
 python tests/test_integration.py
 ```
 
-### 7. 打开 Notebook
+### 8. 打开 Notebook
 
 ```bash
 conda activate research

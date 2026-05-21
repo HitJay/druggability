@@ -8,6 +8,7 @@ litkit CLI — 快速检索、下载、解析、NER、druggability 评估
     litkit ner <text> [--concept Gene,Disease,Chemical]
     litkit assess <target> [--gene-symbol]
     litkit batch --targets EGFR,BRAF,KRAS
+    litkit image2smiles <image-or-dir> [<image-or-dir> ...] [--csv out.csv] [--sdf out.sdf]
 
 环境变量:
     OPENALEX_EMAIL, NCBI_EMAIL, NCBI_API_KEY 等
@@ -19,6 +20,7 @@ import argparse
 import csv
 import json
 import os
+import shutil
 import sys
 from pathlib import Path
 
@@ -109,6 +111,33 @@ def _setup_parser() -> argparse.ArgumentParser:
     p_batch.add_argument("--no-progress", action="store_true", help="隐藏进度条")
     p_batch.add_argument("--json", action="store_true", help="输出 JSON 格式")
     p_batch.add_argument("--csv", action="store_true", help="输出 CSV 格式")
+
+    # ── image2smiles ───────────────────────────────────────────────
+    p_i2s = sub.add_parser("image2smiles", help="将结构图批量转换为 SMILES")
+    p_i2s.add_argument("inputs", nargs="+", help="图片文件或目录")
+    p_i2s.add_argument(
+        "--backend",
+        default="decimer",
+        choices=["decimer", "molscribe"],
+        help="OCR 后端（默认 decimer；molscribe 为可选重型后端）",
+    )
+    p_i2s.add_argument(
+        "--ocr-python",
+        help="OCR 后端对应的 Python 可执行文件；decimer 默认当前 Python，molscribe 默认 .venv-chemocr/bin/python",
+    )
+    p_i2s.add_argument("--checkpoint", help="MolScribe checkpoint 路径；默认自动从 HuggingFace 下载")
+    p_i2s.add_argument(
+        "--device",
+        default="cpu",
+        choices=["cpu", "cuda"],
+        help="MolScribe 推理设备（默认 cpu；DECIMER 忽略该参数）",
+    )
+    p_i2s.add_argument("--recursive", "-r", action="store_true", help="递归扫描目录")
+    p_i2s.add_argument("--confidence", action="store_true", help="计算模型置信度")
+    p_i2s.add_argument("--hand-drawn", action="store_true", help="启用 DECIMER 手绘结构模式")
+    p_i2s.add_argument("--csv", help="保存 CSV 结果路径")
+    p_i2s.add_argument("--sdf", help="保存 SDF 结果路径（仅成功分子）")
+    p_i2s.add_argument("--json", action="store_true", help="打印 JSON 结果")
 
     return parser
 
@@ -298,6 +327,66 @@ def _cmd_batch(args: argparse.Namespace) -> None:
     _output_batch_table(results)
 
 
+def _cmd_image2smiles(args: argparse.Namespace) -> None:
+    from litkit.image2smiles import (
+        discover_image_paths,
+        run_image_to_smiles_batch,
+        write_results_csv,
+        write_results_sdf,
+    )
+
+    try:
+        image_paths = discover_image_paths(args.inputs, recursive=args.recursive)
+    except FileNotFoundError as exc:
+        print(f"[image2smiles] {exc}")
+        sys.exit(1)
+
+    if not image_paths:
+        print("[image2smiles] 未发现支持的图片文件（支持 png/jpg/jpeg/tif/tiff/bmp/webp）")
+        sys.exit(1)
+
+    ocr_python = args.ocr_python
+    if not ocr_python:
+        if args.backend == "decimer":
+            ocr_python = shutil.which("python") or sys.executable
+        else:
+            ocr_python = ".venv-chemocr/bin/python"
+
+    print(f"[image2smiles] 准备处理 {len(image_paths)} 张图片")
+    print(f"[image2smiles] Backend: {args.backend}")
+    print(f"[image2smiles] OCR Python: {ocr_python}")
+
+    try:
+        results = run_image_to_smiles_batch(
+            image_paths,
+            backend=args.backend,
+            ocr_python=ocr_python,
+            checkpoint=args.checkpoint,
+            device=args.device,
+            compute_confidence=args.confidence,
+            hand_drawn=args.hand_drawn,
+        )
+    except Exception as exc:
+        print(f"[image2smiles] 运行失败: {exc}")
+        if args.backend == "molscribe":
+            print("[image2smiles] 如未配置 MolScribe 环境，可先运行: bash scripts/setup_image2smiles_env.sh")
+        sys.exit(1)
+
+    if args.csv:
+        write_results_csv(results, args.csv)
+        print(f"[image2smiles] CSV 已保存: {args.csv}")
+
+    if args.sdf:
+        write_results_sdf(results, args.sdf)
+        print(f"[image2smiles] SDF 已保存: {args.sdf}")
+
+    if args.json:
+        print(json.dumps([r.to_dict() for r in results], ensure_ascii=False, indent=2))
+        return
+
+    _output_image2smiles_table(results)
+
+
 def _output_batch_table(results) -> None:
     """终端表格输出"""
     succeeded = [r for r in results if r.success]
@@ -349,6 +438,26 @@ def _output_batch_csv(results) -> None:
         ])
 
 
+def _output_image2smiles_table(results) -> None:
+    succeeded = [r for r in results if r.success]
+    failed = [r for r in results if not r.success]
+
+    header = f"{'Image':36s} {'Status':10s} {'Confidence':10s} {'SMILES / Error'}"
+    sep = "-" * len(header)
+    print(header)
+    print(sep)
+
+    for r in results:
+        image_name = Path(r.image_path).name[:36]
+        confidence = f"{r.confidence:.3f}" if r.confidence is not None else ""
+        detail = r.canonical_smiles or (r.error or "")
+        print(f"{image_name:36s} {r.status:10s} {confidence:10s} {detail[:80]}")
+
+    print(f"\n  {len(succeeded)}/{len(results)} images yielded valid SMILES")
+    if failed:
+        print(f"  {len(failed)} image(s) failed or returned invalid SMILES")
+
+
 def main() -> None:
     parser = _setup_parser()
     args = parser.parse_args()
@@ -360,6 +469,7 @@ def main() -> None:
         "ner": _cmd_ner,
         "assess": _cmd_assess,
         "batch": _cmd_batch,
+        "image2smiles": _cmd_image2smiles,
     }
     fn = dispatch.get(args.command)
     if fn:

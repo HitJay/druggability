@@ -22,6 +22,9 @@ pdfplumber>=0.10
 chembl-webresource-client>=0.10
 mygene>=3.2
 
+# ── Image-to-SMILES ───────────────────────────────────────────────
+decimer>=2.8.0
+
 # ── Druggability 评估 ──────────────────────────────────────────────
 # fpocket: 需单独编译安装（https://github.com/Discngine/fpocket）
 # 可选依赖：torch（PUResNet 推理）、selenium（DoGSiteScorer 批量）

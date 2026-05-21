@@ -9,6 +9,7 @@ build/
 
 # Virtual environments
 .venv/
+.venv-chemocr/
 venv/
 env/
 
@@ -49,3 +50,4 @@ skills-lock.json
 !.env.example
 *.log
 *.sdf
+image.png

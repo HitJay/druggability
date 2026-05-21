@@ -33,6 +33,8 @@ dependencies = [
     # 生医方向
     "chembl-webresource-client>=0.10",
     "mygene>=3.2",
+    # Image-to-SMILES（默认后端）
+    "decimer>=2.8.0",
     # 工具 & Notebook
     "python-dotenv>=1.0",
     "rich>=13.0",
