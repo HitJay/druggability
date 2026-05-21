@@ -48,8 +48,14 @@ MC4R（黑皮质素4受体）是调控能量稳态、性功能和疼痛的关键
 
 ### 3.2 BBiPP（Monash ERC）
 
-- **状态**：❌ Web server `bbipp.erc.monash.edu` 不可达，无公开 PyPI 包或 GitHub 仓库
-- **处理**：本次分析无 BBiPP 结果，已在局限性中注明
+- **状态**：❌ **永久下线**（已核实）
+- **核实方法**：
+  - DNS 查询 `bbipp.erc.monash.edu` → **NXDOMAIN**（域名不存在）
+  - DNS 查询父域 `erc.monash.edu` → **NXDOMAIN**（整个 ERC 子域已撤销）
+  - `monash.edu` 及 `github.com` 均可正常解析，排除本地网络屏蔽
+  - Wayback Machine 无任何存档快照
+- **结论**：Monash ERC 子域名已从 DNS 撤销，服务器永久下线，非暂时不可达
+- **处理**：本次分析无 BBiPP 结果
 
 ---
 
