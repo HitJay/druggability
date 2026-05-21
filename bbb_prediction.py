@@ -32,8 +32,9 @@ _COMBINED_CALC = Calculator(
 from xgboost import XGBClassifier, XGBRegressor
 
 # ── Compound SMILES ──────────────────────────────────────────────────────────
-# 4 compounds with known SMILES from ChEMBL
-# TCMCB07 and NN9161 (LAMA2) structures not publicly available in standard DBs
+# 5 compounds with known SMILES (ChEMBL / PubChem)
+# TCMCB07 structure not publicly available in standard DBs
+# NN9161: PubChem CID 70686774, CAS 1228015-10-8
 COMPOUNDS = {
     "setmelanotide": {
         "smiles": "CC(=O)N[C@@H](CCCNC(=N)N)C(=O)N[C@H]1CSSC[C@@H](C(N)=O)NC(=O)[C@H](Cc2c[nH]c3ccccc23)NC(=O)[C@H](CCCNC(=N)N)NC(=O)[C@@H](Cc2ccccc2)NC(=O)[C@H](Cc2c[nH]cn2)NC(=O)[C@@H](C)NC1=O",
@@ -66,11 +67,11 @@ COMPOUNDS = {
         "note": "Anti-cachexia; peripheral MC4R antagonist; structure not in public DB",
     },
     "NN9161_LAMA2": {
-        "smiles": None,
+        "smiles": "CCCC[C@@H](C(=O)N[C@H]1CCC(=O)NCCCC[C@H](NC(=O)[C@@H](NC(=O)[C@@H](NC(=O)[C@H](NC(=O)[C@@H]2C[C@H](CN2C1=O)O)CC3=CC=CC=C3)CCCNC(=N)N)CC4=CNC5=CC=CC=C54)C(=O)N)NC(=O)[C@H](CNC(=O)CN(CC(=O)O)CC(=O)O)NC(=O)[C@H](CC6=CN=CN6)NC(=O)[C@H](CCC(=O)N)NC(=O)[C@H](CO)NC(=O)CNC(=O)COCCOCCNC(=O)CCCCCCCCCCCCCCCC7=NN=NN7",
         "type": "lipidated peptide",
         "moa": "MC4R agonist",
-        "note": "Novo Nordisk investigational; complex lipidated peptide (C18+tetrazole+PEG); "
-                "structure not publicly deposited in ChEMBL/PubChem",
+        "note": "Novo Nordisk investigational; C18 fatty acid (tetrazole bioisostere) + PEG linker + cyclic peptide core; "
+                "PubChem CID 70686774; MW ~2200 Da; designed for SC injection / peripheral action",
     },
 }
 
@@ -78,18 +79,18 @@ MODEL_DIR = "/tmp/BrainPepPass/models/BrainPepPass_v2"
 
 
 def load_models():
-    """Load BrainPepPass v2 XGBoost models."""
+    """Load BrainPepPass v2 XGBoost models (JSON format, compatible with xgboost ≥3.1)."""
     pl_models = []
     for i in [1, 2, 3]:
         m = XGBRegressor()
-        m.load_model(f"{MODEL_DIR}/PL{i}_model.xgb")
+        m.load_model(f"{MODEL_DIR}/PL{i}_model.json")
         pl_models.append(m)
 
     clf = XGBClassifier()
-    clf.load_model(f"{MODEL_DIR}/classifier_model.xgb")
+    clf.load_model(f"{MODEL_DIR}/classifier_model.json")
 
     logd = XGBRegressor()
-    logd.load_model(f"{MODEL_DIR}/LogD_model.xgb")
+    logd.load_model(f"{MODEL_DIR}/LogD_model.json")
 
     return pl_models, clf, logd
 
@@ -114,7 +115,7 @@ def calculate_descriptors(mol, logd_model):
 
     # Predict LogD from FC-1 base features
     logd_input = np.array([MW, TPSA, LogP, HBA, HBD, nN, nO, nNO]).reshape(1, -1)
-    LogD = round(float(logd_model.predict(logd_input)), 3)
+    LogD = round(float(logd_model.predict(logd_input)[0]), 3)
 
     fc1 = [MW, TPSA, LogP, HBA, HBD, nN, nO, nNO, LogD]
 
