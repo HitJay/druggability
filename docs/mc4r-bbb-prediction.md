@@ -1,7 +1,7 @@
 # MC4R 激动剂血脑屏障通透性预测报告
 
-> 分析日期：2026-05-21  
-> 工具：BrainPepPass v2（本地复现）  
+> 分析日期：2026-05-21（NN9161 结构更新：2026-05-21）  
+> 工具：BrainPepPass v2（本地复现，xgboost 3.2.0 + NumPy 2.4 兼容版）  
 > 原始论文：*BrainPepPass: A framework based on supervised dimensionality reduction for predicting blood-brain barrier-penetrating peptides*  
 > 结果文件：`results/mc4r_bbb_predictions.csv`
 
@@ -44,7 +44,7 @@ MC4R（黑皮质素4受体）是调控能量稳态、性功能和疼痛的关键
 
 - **输出**：BBB+ / BBB−，附带概率
 - **训练数据**：天然及化学修饰肽，包含环状结构，典型分子量 100–1200 Da
-- **本地复现**：克隆 GitHub 模型文件（`/tmp/BrainPepPass/models/BrainPepPass_v2/*.xgb`），Python 3.10 + xgboost 3.0.2 + mordred
+- **本地复现**：克隆 GitHub 模型文件，原 `.xgb` 二进制格式已迁移为 `.json`（xgboost ≥3.1 要求）；Python 3.12 + xgboost 3.2.0 + mordred 1.2.0 + NumPy 2.4.6
 
 ### 3.2 BBiPP（Monash ERC）
 
@@ -63,14 +63,14 @@ MC4R（黑皮质素4受体）是调控能量稳态、性功能和疼痛的关键
 
 ### 4.1 BrainPepPass v2 预测
 
-| 化合物 | BBB预测 | P(BBB+) | MW | TPSA | SLogP | LogD(pred) | HBD | HBA |
-|---|---|---|---|---|---|---|---|---|
-| Setmelanotide | **BBB−** | 2.8% | 1116 | 494.8 | −2.76 | −7.14 | 17 | 14 |
-| Bremelanotide | **BBB−** | 18.3% | 1025 | 376.5 | −0.44 | −4.46 | 14 | 11 |
-| Afamelanotide | **BBB+** | 99.3% | 1646 | 643.0 | −4.10 | −10.79 | 23 | 21 |
-| Bivamelagon | **BBB−** | 10.2% | 628 | 73.4 | +5.39 | +3.96 | 0 | 5 |
-| TCMCB07 | N/A | — | 结构未公开入库 | | | | | |
-| NN9161 (LAMA2) | N/A | — | 结构未公开入库 | | | | | |
+| 化合物 | BBB预测 | P(BBB+) | MW | TPSA | SLogP | LogD(pred) | HBD | HBA | 可信度 |
+|---|---|---|---|---|---|---|---|---|---|
+| Setmelanotide | **BBB−** | 2.8% | 1116 | 494.8 | −2.76 | −7.14 | 17 | 14 | ✅ 可信 |
+| Bremelanotide | **BBB−** | 18.3% | 1025 | 376.5 | −0.44 | −4.46 | 14 | 11 | ⚠️ 可能假阴性 |
+| Afamelanotide | **BBB+** | 99.3% | 1646 | 643.0 | −4.10 | −10.79 | 23 | 21 | ❌ 域外假阳性 |
+| Bivamelagon | **BBB−** | 10.2% | 628 | 73.4 | +5.39 | +3.96 | 0 | 5 | ❌ 域外（非肽） |
+| TCMCB07 | N/A | — | 结构未公开 | — | — | — | — | — | — |
+| **NN9161** | **BBB+** | **83.1%** | **2091** | **811.5** | **−4.92** | **−13.74** | **26** | **29** | **❌ 域外假阳性** |
 
 ### 4.2 经典理化规则对照
 
@@ -80,6 +80,7 @@ MC4R（黑皮质素4受体）是调控能量稳态、性功能和疼痛的关键
 | Bremelanotide | ❌ | ❌ | ❌ | ✅ | **不可能穿越（被动扩散）** |
 | Afamelanotide | ❌ | ❌ | ❌ | ❌ | **不可能穿越（被动扩散）** |
 | Bivamelagon | ❌(628) | ✅ | ✅ | ✅ | **可能穿越**（偏大但其余均达标） |
+| **NN9161** | ❌(2091) | ❌(811) | ❌(26) | ❌ | **完全不可能穿越（被动扩散）** |
 
 ---
 
@@ -113,6 +114,18 @@ MC4R（黑皮质素4受体）是调控能量稳态、性功能和疼痛的关键
 
 BBB− (2.8%) 与现实一致：Setmelanotide 主要通过外周 MC4R 发挥部分作用，虽有报道显示某些情况下可进入中枢，但分子量大、极性强（TPSA=495，HBD=17）不利于被动穿越。
 
+### 5.5 NN9161 假阳性（BBB+ 83.1%）
+
+**反常**：NN9161 是诺和诺德研发的 SC 注射脂化修饰肽，MW=2091、TPSA=811、HBD=26，与 semaglutide 设计策略相同（C18 脂肪酸修饰延长半衰期），完全不具备穿越 BBB 的物化条件，设计意图也是**外周作用**。但模型给出 83.1% BBB+。
+
+**假阳性根因**：
+1. **分子量超出训练域**：BrainPepPass 训练集典型 MW < 1200 Da，NN9161 以 2091 Da 为模型极端外推
+2. **脂化修饰无训练先例**：C18 tetrazole 脂肪酸 + PEG 接头组合在训练集中不存在；模型可能将高亲脂性（LogP=−4.92 + 脂肪链）误判为 BBB 穿越特征
+3. **同类假阳性规律**：afamelanotide (MW=1646, BBB+ 99.3%) 与本结果属同一失效模式——超大肽一律假阳性
+4. **TPSA=811 物理上不可能**：文献报道 BBB 渗透 TPSA 截止值约 90 Å²；811 Å² 相当于截止值的 9 倍
+
+**结论**：NN9161 的 BrainPepPass 预测结果无参考价值，应忽略。
+
 ---
 
 ## 六、结构未知化合物说明
@@ -123,20 +136,23 @@ BBB− (2.8%) 与现实一致：Setmelanotide 主要通过外周 MC4R 发挥部�
 - **BBB设计意图**：刻意设计为**外周作用**，文献（Hu et al., *J Cachexia Sarcopenia Muscle* 2020, PMID 32725770）证实其经 OATP1A2 肠道吸收，但不穿越 BBB
 
 ### NN9161 (LAMA2, 0070-0002-0453)
-- **类型**：Novo Nordisk MC4R 激动剂，含 C18 脂肪酸（四唑修饰）+ PEG 接头的脂化修饰肽（~13 残基），结构如附图
-- **结构**：未在公共数据库（ChEMBL / PubChem）收录；需查阅诺和诺德专利申请
-- **BBB 预期**：脂化修饰通常用于延长半衰期（类似 semaglutide），会显著增加 MW 和亲脂性，BBB 通透性预测意义存疑，且模型无法处理此类非典型修饰
+- **类型**：Novo Nordisk MC4R 激动剂，含 C18 脂肪酸（四唑生物等排体）+ PEG 接头的脂化修饰肽（~13 残基）
+- **结构**：已获取，PubChem CID 70686774 / CAS 1228015-10-8；数据文件 `data/nn9161.csv`
+- **实测物化参数**（mordred/RDKit）：MW=2091 Da，TPSA=811 Å²，SLogP=−4.92，LogD(pred)=−13.74，HBD=26，HBA=29
+- **BrainPepPass 预测**：BBB+ 83.1% — **❌ 域外假阳性**，见第 5.5 节
+- **BBB 设计意图**：C18 脂肪酸修饰策略同 semaglutide，目的是延长血浆半衰期（白蛋白结合），**不针对 CNS 渗透**；皮下注射后作用于外周 MC4R
 
 ---
 
 ## 七、推荐后续分析
 
-| 分析 | 工具 | 适用对象 |
-|---|---|---|
-| 小分子 BBB 预测 | B3clf / SwissADME / pkCSM | Bivamelagon |
-| 主动转运评估 | P-gp efflux 预测（pkCSM） | Bremelanotide |
-| 脂肽 BBB 预测 | 无成熟工具，需实验验证 | NN9161 |
-| 多参数优化评分 | CNS-MPO score（6维评分） | 所有化合物 |
+| 分析 | 工具 | 适用对象 | 优先级 |
+|---|---|---|---|
+| 小分子 BBB 预测 | B3clf / SwissADME / pkCSM | Bivamelagon | 高 |
+| 主动转运评估 | P-gp efflux 预测（pkCSM） | Bremelanotide | 中 |
+| CNS-MPO 多参数评分 | CNS-MPO score（6维：LogP, LogD, MW, TPSA, HBD, pKa） | Setmelanotide, Bremelanotide, Bivamelagon | 中 |
+| 脂肽 BBB 评估 | 无成熟计算工具；须依赖实验数据（原位脑灌流、PAMPA-BBB） | NN9161 | 低（实验验证） |
+| TCMCB07 结构获取 | 专利数据库（USPTO/EPO）/ 诺和诺德专利申请 | TCMCB07 | 低 |
 
 ---
 
