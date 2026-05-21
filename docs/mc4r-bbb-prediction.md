@@ -23,8 +23,8 @@ MC4R（黑皮质素4受体）是调控能量稳态、性功能和疼痛的关键
 | **Bremelanotide** | PT-141, Vyleesi | 环状肽（内酰胺） | MC4R 激动剂 | ✅ 已上市（HSDD） |
 | **Afamelanotide** | Scenesse, CUV1647 | 线性肽（13肽） | MC1R/MC4R 激动剂 | ✅ 已上市（红细胞生成性原卟啉症） |
 | **Bivamelagon** | LB54640 | 口服小分子 | MC4R 激动剂 | 🔬 在研（礼来） |
-| **TCMCB07** | — | 环状肽 | **MC4R 拮抗剂** | 🔬 在研（缓解恶病质） |
-| **NN9161** | LAMA2, 0070-0002-0453 | 脂化修饰肽 | MC4R 激动剂 | 🔬 在研（诺和诺德） |
+| **TCMCB07** | — | 环状肽 | **MC4R 拮抗剂** | 🔬 在研（Endevica Bio，缓解恶病质） |
+| **NN9161** | LAMA2（NN 内部代号，非基因 LAMA2/laminin α2）, 0070-0002-0453 | 脂化修饰肽 | MC4R 激动剂 | 🔬 在研（诺和诺德） |
 
 > ⚠️ **TCMCB07 注意**：PubMed 文献（PMID 32544087, 35592439 等）明确显示 TCMCB07 是 MC4R **拮抗剂**，用于癌症/肾病恶病质，刻意设计为外周作用，**不穿越 BBB**。
 
@@ -152,7 +152,7 @@ BBB− (2.8%) 与现实一致：Setmelanotide 主要通过外周 MC4R 发挥部�
 | 主动转运评估 | P-gp efflux 预测（pkCSM） | Bremelanotide | 中 |
 | CNS-MPO 多参数评分 | CNS-MPO score（6维：LogP, LogD, MW, TPSA, HBD, pKa） | Setmelanotide, Bremelanotide, Bivamelagon | 中 |
 | 脂肽 BBB 评估 | 无成熟计算工具；须依赖实验数据（原位脑灌流、PAMPA-BBB） | NN9161 | 低（实验验证） |
-| TCMCB07 结构获取 | 专利数据库（USPTO/EPO）/ 诺和诺德专利申请 | TCMCB07 | 低 |
+| TCMCB07 结构获取 | 专利数据库（USPTO/EPO）/ Endevica Bio 专利申请 | TCMCB07 | 低 |
 
 ---
 
