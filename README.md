@@ -28,7 +28,10 @@ druggability/
 │       ├── ner.py          # 实体抽取 (PubTator3 API/正则/scispacy)
 │       └── druggability/   # 🆕 靶点可药性评估核心模块
 │           ├── __init__.py       # 统一入口 assess_druggability()
-│           ├── tractability.py   # Open Targets tractability (三级评估)
+│           ├── tractability.py   # Open Targets 全量靶点画像 (TargetProfile)
+│           │                     #   → tractability / expressions / knownDrugs
+│           │                     #   → safetyLiabilities / chemicalProbes / TEP
+│           │                     #   → subcellularLocations / pathways / GO
 │           ├── ligandability.py  # ChEMBL 配体覆盖度 → ligandability 打分
 │           ├── pocket.py         # fpocket 口袋检测 + AlphaFold 自动下载
 │           ├── batch.py          # 批量靶点可药性评估（并发 + CSV/JSON 输出）
@@ -90,11 +93,24 @@ result = assess_druggability("EGFR")
 # 结构分析需要 PDB 文件（或自动从 AlphaFold DB 下载）
 result = assess_druggability("KRAS", structure_path="path/to/kras.pdb")
 
-# 查看综合报告
+# 查看综合报告（五维评分）
 print(result["composite"]["overall_score"])        # 综合评分 0-1
+print(result["composite"]["contributing_scores"])  # 各维度分数
+
+# ── 基础维度 ──
 print(result["tractability"]["small_molecule"])     # 小分子 tractability
 print(result["ligandability"]["ligandability_score"]) # 配体能力打分
-print(result["pocket_analysis"]["best_druggability_score"])  # 口袋质量
+
+# ── Open Targets 全量数据（新增）──
+print(result["tractability"]["uniprot_ids"])         # UniProt IDs
+print(result["tractability"]["target_class"])        # 靶点分类 (Kinase/GPCR...)
+print(result["tractability"]["subcellular_locations"]) # 亚细胞定位 (UniProt/HPA)
+print(result["tractability"]["expression_summary"])  # 组织表达谱 (HPA + GTEx)
+print(result["tractability"]["n_known_drugs"])       # 已知药物数
+print(result["tractability"]["approved_drugs"])      # 已批准药物列表
+print(result["tractability"]["n_safety_events"])     # 安全性事件数
+print(result["tractability"]["top_diseases"])        # 疾病关联 top 10
+print(result["tractability"]["pathways"])            # 信号通路
 ```
 
 ### 5. 批量评估多个靶点
@@ -217,28 +233,44 @@ ChEMBL API → 查靶点/化合物   druggability/ → 靶点可药性评估
 [可选] paper-qa → LLM 论文问答   tractability + ligandability + pocket
 ```
 
-### Druggability 三级评估流水线
+### Druggability 五维评估流水线
 
 ```
 输入: 靶点 (gene symbol / UniProt ID / Ensembl ID / PDB 文件)
                     │
                     ▼
-┌───────────────────────────────────────────┐
-│  Tier 1: 结构无关可药性扫描                  │
-│  ├─ Open Targets tractability (SM/AB/PROTAC)│
-│  ├─ ChEMBL ligandability (已知配体覆盖度)     │
-│  └─ batch 并发聚合 → CSV/JSON 输出           │
-└──────────────────┬─────────────────────────┘
+┌────────────────────────────────────────────────────────┐
+│  Tier 1: Open Targets 全量靶点画像（单次 GraphQL）       │
+│  ├─ Tractability (SM / AB / PROTAC 三 modality)         │
+│  ├─ 蛋白信息: UniProt IDs / target class / 亚细胞定位    │
+│  ├─ 组织表达谱: HPA + GTEx → RNA/protein + τ 特异性      │
+│  ├─ 临床 precedence: knownDrugs / chemicalProbes / TEP  │
+│  ├─ 安全性: safetyLiabilities → safety score             │
+│  ├─ 疾病关联: top associated diseases + score            │
+│  └─ 通路 / GO / Hallmarks                               │
+├────────────────────────────────────────────────────────┤
+│  Tier 1b: ChEMBL ligandability (已知配体覆盖度)          │
+├────────────────────────────────────────────────────────┤
+│  batch 并发聚合 → CSV/JSON 输出                          │
+└──────────────────┬─────────────────────────────────────┘
                    │
                    ▼
-┌───────────────────────────────────────────┐
-│  Tier 2: 结构口袋分析                       │
-│  ├─ fpocket (Voronoi 镶嵌 + 几何打分)       │
-│  └─ AlphaFold 自动下载 (无 PDB 时)          │
-└──────────────────┬─────────────────────────┘
+┌────────────────────────────────────────────────────────┐
+│  Tier 2: 结构口袋分析（可选）                             │
+│  ├─ fpocket (Voronoi 镶嵌 + 几何打分)                    │
+│  └─ AlphaFold 自动下载 (无 PDB 时)                       │
+└──────────────────┬─────────────────────────────────────┘
                    │
                    ▼
-        综合评估报告: 复合评分 + 置信度 + modality 推荐
+    综合评估报告: 五维加权评分 + 置信度 + modality 推荐
+    ┌───────────────────────────────────────────┐
+    │  维度           │ 权重  │ 数据来源         │
+    │  tractability   │ 0.30  │ Open Targets     │
+    │  ligandability  │ 0.25  │ ChEMBL           │
+    │  structure      │ 0.20  │ fpocket          │
+    │  clinical       │ 0.15  │ Open Targets     │
+    │  safety         │ 0.10  │ Open Targets     │
+    └───────────────────────────────────────────┘
 ```
 
 ## 📝 License

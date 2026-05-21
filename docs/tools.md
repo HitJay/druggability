@@ -134,12 +134,45 @@ pip install paper-qa            # 本地论文 RAG
 
 ```bash
 # 这些已在 litkit/druggability/ 中实现
-# 详见 README.md 或源码
+# 详见 README.md 或 docs/design-opentargets-expansion.md
 ├── src/litkit/druggability/
-│   ├── __init__.py       # assess_druggability() 统一入口
-│   ├── tractability.py   # Open Targets tractability
+│   ├── __init__.py       # assess_druggability() 统一入口（五维评分）
+│   ├── tractability.py   # Open Targets 全量靶点画像 (TargetProfile)
 │   ├── ligandability.py  # ChEMBL ligandability
 │   ├── pocket.py         # fpocket + AlphaFold
 │   ├── batch.py          # 批量评估（并发 + CSV/JSON 输出）
 │   └── utils.py          # ID 转换/缓存/异常
 ```
+
+### Open Targets 全量数据集成（通过 GraphQL 单次查询）
+
+通过 Open Targets Platform GraphQL API，一次查询即可获取以下维度的数据：
+
+| 数据维度 | OT GraphQL 字段 | 上游来源 | 用途 |
+|---|---|---|---|
+| **Tractability** | `tractability { label modality }` | OT 自有 | SM/AB/PROTAC 三级评估 |
+| **蛋白 ID & 分类** | `proteinIds`, `targetClass` | UniProt | 靶点分类 (Kinase/GPCR/…) |
+| **亚细胞定位** | `subcellularLocations` | UniProt / HPA | 抗体/PROTAC 可达性判断 |
+| **组织表达谱** | `expressions { tissue rna protein }` | HPA + GTEx | 表达特异性 (τ 值) + 脱靶风险 |
+| **已知药物** | `knownDrugs { count rows { drug phase } }` | ChEMBL / DailyMed | 临床 precedence 打分 |
+| **化学探针** | `chemicalProbes { id isHighQuality }` | SGC / Chemical Probes Portal | 工具化合物质量 |
+| **TEP** | `tep { name uri }` | SGC | Target Enabling Package |
+| **安全性** | `safetyLiabilities { event datasource }` | 多源汇总 | safety score → 参与综合评分 |
+| **疾病关联** | `associatedDiseases { count rows { score disease } }` | OT 遗传学/文献 | 靶点-疾病证据强度 |
+| **通路 / GO** | `pathways`, `geneOntology` | Reactome / GO | 生物学通路上下文 |
+| **Cancer Hallmarks** | `hallmarks { cancerHallmarks { label impact } }` | 文献挖掘 | 肿瘤靶点评估 |
+| **功能描述** | `functionDescriptions` | UniProt | 蛋白功能摘要 |
+
+> **优势：** 无需分别调用 UniProt REST / HPA API / GTEx API，Open Targets 已将这些上游数据整合到单一 GraphQL endpoint，大幅降低网络请求数和维护成本。
+
+### 五维综合评分体系
+
+| 维度 | 权重 | 数据来源 | 打分逻辑 |
+|---|---|---|---|
+| **tractability** | 0.30 | Open Targets tractability | SM/AB/PROTAC 三 modality 取最高分 |
+| **ligandability** | 0.25 | ChEMBL | 已知活性配体数 → 分段映射 |
+| **structure** | 0.20 | fpocket | 最佳口袋 druggability score |
+| **clinical** | 0.15 | Open Targets knownDrugs / probes / TEP | Phase 4→1.0, Phase 3→0.85, ... |
+| **safety** | 0.10 | Open Targets safetyLiabilities | `max(1.0 - 0.2×n_events, 0.2)` |
+
+详见 [设计文档](design-opentargets-expansion.md)。
