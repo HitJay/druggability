@@ -309,14 +309,15 @@ flowchart TB
 | Celastrol | BBB+ | BBB- ✗ | BBB- ✗ | BBB+ ✓ | 0.131 | 2/3 |
 | Diazoxide | BBB- | BBB- ✓ | BBB+ ✗ | BBB+ ✗ | 0.187 | 2/3 |
 | GSK-598809 | BBB+ | BBB+ ✓ | BBB+ ✓ | BBB+ ✓ | 0.357 | 3/3 |
+| Naltrexone | BBB+ | — (3D失败) | BBB+ ✓ | BBB+ ✓ | -0.503 | 2/2 |
 
 **准确率汇总**：
 | 工具 | 准确率 | 方法类型 |
 |------|--------|----------|
-| B3clf（12-model 共识） | 7/10 = 70% | ML (PaDEL 描述符 + XGB/LR/DT/KNN) |
-| SwissADME BOILED-Egg | 6/10 = 60% | Rule-based (WLOGP/TPSA 椭圆) |
-| pkCSM | 7/10 = 70% | QSAR (图签名) |
-| 多数投票（2-of-3） | 6/10 = 60% | Ensemble |
+| B3clf（12-model 共识） | 7/10 = 70% | ML (PaDEL 描述符 + XGB/LR/DT/KNN)，Naltrexone 3D失败排除 |
+| SwissADME BOILED-Egg | 7/11 = 64% | Rule-based (WLOGP/TPSA 椭圆)，Naltrexone ✓ |
+| pkCSM | 8/11 = 73% | QSAR (图签名)，Naltrexone ✓ |
+| SwissADME + pkCSM 多数投票 | 7/11 = 64% | 2D-only Ensemble |
 
 **关键发现**：
 1. **MK-0493**：三个工具一致预测 BBB-，但实际 BBB+。该化合物为黑素皮质素-4受体（MC4R）激动剂三嗪类，MW=569，TPSA=112，结构超出所有模型训练域
@@ -324,9 +325,10 @@ flowchart TB
 3. **Diazoxide**：B3clf 正确 (BBB-)，但 SwissADME/pkCSM 错判 BBB+。其 K_ATP 通道开放剂理化性质看似利于 BBB 穿透但实际有 P-gp 外排
 4. **没有单一工具 >70% 准确率** — 验证了多工具交叉验证的必要性
 5. 三工具全部一致 (6/10) 的化合物全部预测正确 → **一致性是可信度指标**
+6. **Naltrexone**：B3clf 因桥环结构 3D embedding 失败，但 pkCSM (logBB=-0.503) 和 SwissADME (WLOGP=2.25, TPSA=70) 均正确预测 BBB+。证明多工具互补可兑底单一工具失败
 
 **输出文件**：
-- `results/sm_bbb_crossvalidation.csv`（10 行，三工具对比 + 多数投票）
+- `results/sm_bbb_crossvalidation.csv`（11 行，三工具对比 + 多数投票）
 
 #### Phase 2：肽类深度学习模型部署（第 2-4 周）
 

@@ -258,17 +258,18 @@ Ran all 11 SM compounds through B3clf 12-model ensemble + CNS-MPO. Script: `scri
 
 | Tool | Accuracy | Method |
 |------|----------|--------|
-| B3clf (12-model consensus) | 7/10 = 70% | ML (PaDEL descriptors + XGB/LR/DT/KNN) |
-| SwissADME BOILED-Egg | 6/10 = 60% | Rule-based (WLOGP/TPSA ellipse) |
-| pkCSM | 7/10 = 70% | QSAR (graph-based signatures) |
-| Majority vote (2-of-3) | 6/10 = 60% | Ensemble |
+| B3clf (12-model consensus) | 7/10 = 70% | ML (PaDEL descriptors + XGB/LR/DT/KNN); Naltrexone excluded (3D fail) |
+| SwissADME BOILED-Egg | 7/11 = 64% | Rule-based (WLOGP/TPSA ellipse); Naltrexone ✓ |
+| pkCSM | 8/11 = 73% | QSAR (graph-based signatures); Naltrexone ✓ |
+| Majority vote (2-of-3) | 6/10 = 60% | Ensemble (excl. Naltrexone) |
 
 Key findings:
-- No single tool exceeds 70% accuracy on this challenging validation set
+- No single tool exceeds 73% accuracy on this challenging validation set
 - 6/10 compounds have full 3-tool agreement — all 6 are correctly predicted → **consistency = confidence**
 - MK-0493 (MW=569, TPSA=112) is universally mispredicted → beyond applicability domain of all tools
 - Topiramate: only B3clf correct (active transport, not passive diffusion)
 - Diazoxide: only B3clf correct (P-gp efflux not captured by rule/QSAR models)
+- Naltrexone: B3clf fails (bridged morphinan 3D embedding), but pkCSM (logBB=-0.503) and SwissADME (WLOGP=2.25, TPSA=70) both correctly predict BBB+ → multi-tool complementarity validated
 
 ---
 
