@@ -139,7 +139,7 @@ def _download_from_pdb_list(uniprot_id: str, pdb_ids: list[str], output_dir: str
         url = RCSB_DOWNLOAD_URL.format(pdb_id=pdb_id)
         try:
             resp = requests.get(url, timeout=30, headers={
-                "User-Agent": "python-requests/litkit-druggability",
+                "User-Agent": "python-requests/bbbkit-druggability",
             })
             resp.raise_for_status()
             content = resp.content.decode("utf-8", errors="ignore")
@@ -189,7 +189,7 @@ def _download_alphafold_structure(uniprot_id: str, output_dir: str) -> str:
         logger.info("Fetching UniProt cross-references: %s", api_url)
         resp = requests.get(api_url, timeout=60, headers={
             "Accept": "application/json",
-            "User-Agent": "python-requests/litkit-druggability",
+            "User-Agent": "python-requests/bbbkit-druggability",
         })
         resp.raise_for_status()
         data = resp.json()
@@ -240,7 +240,7 @@ def _download_alphafold_structure(uniprot_id: str, output_dir: str) -> str:
     try:
         logger.info("Downloading from RCSB: %s", rcsb_url)
         resp = requests.get(rcsb_url, timeout=60, headers={
-            "User-Agent": "python-requests/litkit-druggability",
+            "User-Agent": "python-requests/bbbkit-druggability",
         })
         resp.raise_for_status()
 

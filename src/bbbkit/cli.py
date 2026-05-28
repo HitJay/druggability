@@ -1,14 +1,14 @@
 """
-litkit CLI — 快速检索、下载、解析、NER、druggability 评估
+bbbkit CLI — 快速检索、下载、解析、NER、druggability 评估
 
 用法:
-    litkit search <query> [--source openalex] [--limit 20]
-    litkit download <doi> [--out-dir data/raw]
-    litkit parse <pdf-path> [--method pymupdf]
-    litkit ner <text> [--concept Gene,Disease,Chemical]
-    litkit assess <target> [--gene-symbol]
-    litkit batch --targets EGFR,BRAF,KRAS
-    litkit image2smiles <image-or-dir> [<image-or-dir> ...] [--csv out.csv] [--sdf out.sdf]
+    bbbkit search <query> [--source openalex] [--limit 20]
+    bbbkit download <doi> [--out-dir data/raw]
+    bbbkit parse <pdf-path> [--method pymupdf]
+    bbbkit ner <text> [--concept Gene,Disease,Chemical]
+    bbbkit assess <target> [--gene-symbol]
+    bbbkit batch --targets EGFR,BRAF,KRAS
+    bbbkit image2smiles <image-or-dir> [<image-or-dir> ...] [--csv out.csv] [--sdf out.sdf]
 
 环境变量:
     OPENALEX_EMAIL, NCBI_EMAIL, NCBI_API_KEY 等
@@ -27,7 +27,7 @@ from pathlib import Path
 
 def _setup_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
-        prog="litkit",
+        prog="bbbkit",
         description="学术文献检索 + 解析 + 可药性评估工具包",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=__doc__,
@@ -143,7 +143,7 @@ def _setup_parser() -> argparse.ArgumentParser:
 
 
 def _cmd_search(args: argparse.Namespace) -> None:
-    from litkit.search import search
+    from bbbkit.search import search
 
     results = search(
         args.query,
@@ -169,7 +169,7 @@ def _cmd_search(args: argparse.Namespace) -> None:
 
 
 def _cmd_download(args: argparse.Namespace) -> None:
-    from litkit.fetch import download_pdf, fetch_unpaywall_pdf_url
+    from bbbkit.fetch import download_pdf, fetch_unpaywall_pdf_url
 
     doi_or_url = args.doi_or_url
     if not doi_or_url.startswith("http"):
@@ -196,7 +196,7 @@ def _cmd_parse(args: argparse.Namespace) -> None:
         print(f"[parse] 文件不存在: {pdf_path}")
         sys.exit(1)
 
-    from litkit.parse import extract_text_pymupdf, extract_text_pdfplumber
+    from bbbkit.parse import extract_text_pymupdf, extract_text_pdfplumber
 
     if args.method == "pymupdf":
         text = extract_text_pymupdf(pdf_path)
@@ -212,7 +212,7 @@ def _cmd_parse(args: argparse.Namespace) -> None:
 
 
 def _cmd_ner(args: argparse.Namespace) -> None:
-    from litkit.ner import annotate_with_pubtator
+    from bbbkit.ner import annotate_with_pubtator
 
     concepts = args.concept.split(",") if args.concept else None
     entities = annotate_with_pubtator(args.text, concepts=concepts)
@@ -229,7 +229,7 @@ def _cmd_ner(args: argparse.Namespace) -> None:
 
 
 def _cmd_assess(args: argparse.Namespace) -> None:
-    from litkit.druggability import assess_druggability
+    from bbbkit.druggability import assess_druggability
 
     result = assess_druggability(
         args.target,
@@ -280,7 +280,7 @@ def _cmd_assess(args: argparse.Namespace) -> None:
 
 def _cmd_batch(args: argparse.Namespace) -> None:
     """批量评估多个靶点"""
-    from litkit.druggability.batch import assess_druggability_batch
+    from bbbkit.druggability.batch import assess_druggability_batch
 
     targets: list[str] = []
     if args.targets:
@@ -328,7 +328,7 @@ def _cmd_batch(args: argparse.Namespace) -> None:
 
 
 def _cmd_image2smiles(args: argparse.Namespace) -> None:
-    from litkit.image2smiles import (
+    from bbbkit.image2smiles import (
         discover_image_paths,
         run_image_to_smiles_batch,
         write_results_csv,

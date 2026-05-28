@@ -1,6 +1,5 @@
 """
-litkit — 学术文献检索 + 解析 + 可药性评估工具包
-用于 druggability 研究的文献挖掘流水线
+bbbkit — 血脑屏障（BBB）通透性预测与药物设计工具包
 """
 
 from pathlib import Path
@@ -29,11 +28,11 @@ _load_dotenv()
 __version__ = "0.1.0"
 
 # ── 公开 API ─────────────────────────────────────────────────────
-from litkit.search import search, search_openalex, search_pubmed, search_arxiv, search_crossref, search_semanticscholar, search_paperclip
+from bbbkit.search import search, search_openalex, search_pubmed, search_arxiv, search_crossref, search_semanticscholar, search_paperclip
 
-# 当 litkit.druggability 模块就绪时暴露
+# 当 bbbkit.druggability 模块就绪时暴露
 try:
-    from litkit.druggability import assess_druggability  # type: ignore[import-untyped]
+    from bbbkit.druggability import assess_druggability  # type: ignore[import-untyped]
 
     druggability_available = True
 except ImportError:

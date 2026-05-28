@@ -133,9 +133,9 @@ pip install paper-qa            # 本地论文 RAG
 ### 本项目已集成的 druggability 模块
 
 ```bash
-# 这些已在 litkit/druggability/ 中实现
+# 这些已在 bbbkit/druggability/ 中实现
 # 详见 README.md 或 docs/design-opentargets-expansion.md
-├── src/litkit/druggability/
+├── src/bbbkit/druggability/
 │   ├── __init__.py       # assess_druggability() 统一入口（五维评分）
 │   ├── tractability.py   # Open Targets 全量靶点画像 (TargetProfile)
 │   ├── ligandability.py  # ChEMBL ligandability

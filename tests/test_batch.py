@@ -1,12 +1,12 @@
 """
-litkit.druggability.batch — 批量评估测试
+bbbkit.druggability.batch — 批量评估测试
 """
 
 from __future__ import annotations
 
 import pytest
 
-from litkit.druggability.batch import (
+from bbbkit.druggability.batch import (
     BatchResult,
     assess_druggability_batch,
     _assess_single,

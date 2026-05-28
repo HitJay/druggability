@@ -7,7 +7,7 @@ Paperclip 集成完整示例
 import sys
 sys.path.insert(0, 'src')
 
-from litkit.search import search, search_paperclip
+from bbbkit.search import search, search_paperclip
 import json
 
 print("=" * 70)

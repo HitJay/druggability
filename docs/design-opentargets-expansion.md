@@ -2,7 +2,7 @@
 
 > **日期:** 2026-05-13
 > **状态:** Approved → 待实现
-> **关联:** `src/litkit/druggability/tractability.py`
+> **关联:** `src/bbbkit/druggability/tractability.py`
 
 ---
 
@@ -244,8 +244,8 @@ safety 参与综合决策，作为加权维度影响 `overall_score`。
 
 | 文件 | 改动类型 | 描述 |
 |---|---|---|
-| `src/litkit/druggability/tractability.py` | **重构** | 扩 GraphQL query → `TARGET_QUERY`；`TractabilityResult` → `TargetProfile`；解析所有新字段；保留 `TractabilityResult` 别名 |
-| `src/litkit/druggability/__init__.py` | **扩展** | `DEFAULT_WEIGHTS` 增加 `clinical` / `safety`；`_compute_composite` 增加两个维度的解析分支；`assess_druggability` 无需改动（数据来自同一次 OT 调用） |
+| `src/bbbkit/druggability/tractability.py` | **重构** | 扩 GraphQL query → `TARGET_QUERY`；`TractabilityResult` → `TargetProfile`；解析所有新字段；保留 `TractabilityResult` 别名 |
+| `src/bbbkit/druggability/__init__.py` | **扩展** | `DEFAULT_WEIGHTS` 增加 `clinical` / `safety`；`_compute_composite` 增加两个维度的解析分支；`assess_druggability` 无需改动（数据来自同一次 OT 调用） |
 | `tests/test_druggability.py` | **扩展** | 新增 `TargetProfile` 解析测试；扩展 `TestCompositeScore` 覆盖 5 维；新增 mock fixture |
 | `tests/fixtures/opentargets_egfr.json` | **新增** | EGFR 的真实 OT 响应存档，用于离线测试 |
 | `docs/tools.md` | **更新** | 在 Druggability 专用一节补充 OT 全量数据说明 |
@@ -257,7 +257,7 @@ safety 参与综合决策，作为加权维度影响 `overall_score`。
 
 | 场景 | 处理方式 |
 |---|---|
-| 旧代码 `from litkit.druggability.tractability import TractabilityResult` | ✅ `TractabilityResult = TargetProfile` 别名 |
+| 旧代码 `from bbbkit.druggability.tractability import TractabilityResult` | ✅ `TractabilityResult = TargetProfile` 别名 |
 | 旧代码 `result.to_dict()["best_score"]` | ✅ `TargetProfile` 保留 `best_score` property |
 | 旧测试依赖 `query_tractability()` | ✅ 函数签名不变，返回类型变为超集 |
 | `assess_druggability()` 返回值 | ✅ 新增 key 不影响旧 key 的存在和含义 |

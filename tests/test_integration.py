@@ -22,7 +22,7 @@ console = Console()
 def test_openalex():
     """测试 OpenAlex 搜索"""
     console.rule("[bold blue]1. OpenAlex 搜索")
-    from litkit.search import search_openalex
+    from bbbkit.search import search_openalex
 
     results = search_openalex("PROTAC druggability", limit=5)
     assert len(results) > 0, "OpenAlex 返回为空！"
@@ -48,7 +48,7 @@ def test_openalex():
 def test_pubmed():
     """测试 PubMed 搜索"""
     console.rule("[bold blue]3. PubMed 搜索")
-    from litkit.search import search_pubmed
+    from bbbkit.search import search_pubmed
 
     results = search_pubmed("KRAS druggability", limit=3)
     assert len(results) > 0, "PubMed 返回为空！"
@@ -64,7 +64,7 @@ def test_pubmed():
 def test_arxiv():
     """测试 arXiv 搜索"""
     console.rule("[bold blue]4. arXiv 搜索")
-    from litkit.search import search_arxiv
+    from bbbkit.search import search_arxiv
 
     results = search_arxiv("drug discovery machine learning", limit=3)
     assert len(results) > 0, "arXiv 返回为空！"
@@ -79,7 +79,7 @@ def test_arxiv():
 def test_crossref():
     """测试 CrossRef 搜索"""
     console.rule("[bold blue]5. CrossRef 搜索")
-    from litkit.search import search_crossref
+    from bbbkit.search import search_crossref
 
     results = search_crossref("druggability", limit=3)
     assert len(results) > 0, "CrossRef 返回为空！"
@@ -94,7 +94,7 @@ def test_crossref():
 def test_unified_search():
     """测试统一搜索接口"""
     console.rule("[bold blue]6. 统一 search() 接口")
-    from litkit.search import search, SOURCES
+    from bbbkit.search import search, SOURCES
 
     console.print(f"  支持的数据源: {list(SOURCES.keys())}")
     for src in ["openalex", "crossref"]:
@@ -107,7 +107,7 @@ def test_unified_search():
 def test_unpaywall():
     """测试 Unpaywall OA 检测"""
     console.rule("[bold blue]7. Unpaywall OA 检测")
-    from litkit.fetch import fetch_unpaywall_pdf_url
+    from bbbkit.fetch import fetch_unpaywall_pdf_url
 
     # AlphaFold2 论文 (Nature, OA)
     doi = "10.1038/s41586-021-03819-2"
@@ -124,7 +124,7 @@ def test_unpaywall():
 def test_ner_regex():
     """测试正则 NER"""
     console.rule("[bold blue]8. 正则药物名识别")
-    from litkit.ner import regex_drug_entities
+    from bbbkit.ner import regex_drug_entities
 
     text = (
         "Erlotinib and sotorasib are approved drugs. "
@@ -140,7 +140,7 @@ def test_ner_regex():
 def test_ner_pubtator():
     """测试 PubTator3 API"""
     console.rule("[bold blue]9. PubTator3 API 实体标注")
-    from litkit.ner import annotate_with_pubtator
+    from bbbkit.ner import annotate_with_pubtator
 
     text = "EGFR mutations in non-small cell lung cancer can be targeted by erlotinib."
     entities = annotate_with_pubtator(text)
@@ -161,7 +161,7 @@ def test_ner_pubtator():
 def test_parse_module():
     """测试解析模块可导入"""
     console.rule("[bold blue]10. 解析模块导入检查")
-    from litkit.parse import extract_text_pymupdf, extract_text_pdfplumber, parse_with_grobid
+    from bbbkit.parse import extract_text_pymupdf, extract_text_pdfplumber, parse_with_grobid
     console.print("  extract_text_pymupdf  ✓")
     console.print("  extract_text_pdfplumber ✓")
     console.print("  parse_with_grobid     ✓ (需 GROBID Docker)")

@@ -3,9 +3,9 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "litkit"
+name = "bbbkit"
 version = "0.1.0"
-description = "学术文献检索 + 解析 + 可药性评估工具包 — 用于 druggability 研究的文献挖掘流水线"
+description = "血脑屏障（BBB）通透性预测与药物设计工具包"
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [
@@ -43,7 +43,7 @@ dependencies = [
 ]
 
 [project.scripts]
-litkit = "litkit.cli:main"
+bbbkit = "bbbkit.cli:main"
 
 [project.optional-dependencies]
 dev = [

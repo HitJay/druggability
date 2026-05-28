@@ -4,7 +4,7 @@
 
 ## 设计原则
 
-- 默认后端是 DECIMER，直接运行在当前 `litkit` 环境。
+- 默认后端是 DECIMER，直接运行在当前 `bbbkit` 环境。
 - 可选后端是 MolScribe，运行在独立 `.venv-chemocr` 中，避免与主环境冲突。
 - 主流程负责目录扫描、调度 OCR worker、输出 CSV / SDF。
 
@@ -13,7 +13,7 @@
 标准安装后即可直接使用：
 
 ```bash
-litkit image2smiles data/raw/structures --recursive \
+bbbkit image2smiles data/raw/structures --recursive \
   --csv data/parsed/image_to_smiles.csv \
   --sdf data/parsed/image_to_smiles.sdf
 ```
@@ -21,7 +21,7 @@ litkit image2smiles data/raw/structures --recursive \
 如果图片来自手绘或板书，可加：
 
 ```bash
-litkit image2smiles data/raw/handdrawn --recursive --hand-drawn
+bbbkit image2smiles data/raw/handdrawn --recursive --hand-drawn
 ```
 
 ## 2. 初始化可选 MolScribe 环境
@@ -50,13 +50,13 @@ DOWNLOAD_CHECKPOINT=1 bash scripts/setup_image2smiles_env.sh
 ## 3. 处理单张图片
 
 ```bash
-litkit image2smiles data/raw/example.png --csv data/parsed/example.csv
+bbbkit image2smiles data/raw/example.png --csv data/parsed/example.csv
 ```
 
 ## 4. 批量处理整个目录
 
 ```bash
-litkit image2smiles data/raw/structures --recursive \
+bbbkit image2smiles data/raw/structures --recursive \
   --csv data/parsed/image_to_smiles.csv \
   --sdf data/parsed/image_to_smiles.sdf
 ```
@@ -64,7 +64,7 @@ litkit image2smiles data/raw/structures --recursive \
 ## 5. 指定 MolScribe 后端、OCR Python 或 checkpoint
 
 ```bash
-litkit image2smiles data/raw/structures --recursive \
+bbbkit image2smiles data/raw/structures --recursive \
   --backend molscribe \
   --ocr-python .venv-chemocr/bin/python \
   --checkpoint data/index/molscribe/swin_base_char_aux_1m.pth \
@@ -97,7 +97,7 @@ SDF 属性：
 
 ### 默认到底用 DECIMER 还是 MolScribe
 
-默认是 DECIMER，直接用当前 `litkit` 环境。只有当你显式传入 `--backend molscribe` 时，才会调用独立 `.venv-chemocr`。
+默认是 DECIMER，直接用当前 `bbbkit` 环境。只有当你显式传入 `--backend molscribe` 时，才会调用独立 `.venv-chemocr`。
 
 ### MolScribe 在主 `.venv` 里装不上
 

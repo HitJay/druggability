@@ -21,7 +21,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 
 def test_resolve_ensembl_id_ensembl():
     """Ensembl ID 输入应原样返回。"""
-    from litkit.druggability.utils import resolve_ensembl_id
+    from bbbkit.druggability.utils import resolve_ensembl_id
 
     result = resolve_ensembl_id("ENSG00000146648", query_type="ensembl_id")
     assert result == "ENSG00000146648"
@@ -29,7 +29,7 @@ def test_resolve_ensembl_id_ensembl():
 
 def test_resolve_ensembl_id_unknown_type():
     """未知 query_type 应抛出 ValueError。"""
-    from litkit.druggability.utils import resolve_ensembl_id
+    from bbbkit.druggability.utils import resolve_ensembl_id
 
     with pytest.raises(ValueError, match="Unknown query_type"):
         resolve_ensembl_id("EGFR", query_type="invalid")
@@ -37,7 +37,7 @@ def test_resolve_ensembl_id_unknown_type():
 
 def test_simple_cache():
     """SimpleCache 的 get/set 应正确工作。"""
-    from litkit.druggability.utils import SimpleCache
+    from bbbkit.druggability.utils import SimpleCache
 
     cache = SimpleCache(ttl=60, maxsize=10)
     cache.set("key1", "value1")
@@ -47,7 +47,7 @@ def test_simple_cache():
 
 def test_simple_cache_expiry():
     """SimpleCache 应过期。"""
-    from litkit.druggability.utils import SimpleCache
+    from bbbkit.druggability.utils import SimpleCache
     import time
 
     cache = SimpleCache(ttl=0.1, maxsize=10)
@@ -58,7 +58,7 @@ def test_simple_cache_expiry():
 
 def test_rate_limit_decorator():
     """rate_limit 装饰器应在调用间引入延迟。"""
-    from litkit.druggability.utils import rate_limit
+    from bbbkit.druggability.utils import rate_limit
     import time
 
     call_count = 0
@@ -83,7 +83,7 @@ def test_rate_limit_decorator():
 
 def test_druggability_error_hierarchy():
     """异常继承关系应正确。"""
-    from litkit.druggability.utils import (
+    from bbbkit.druggability.utils import (
         DruggabilityError,
         TargetNotFoundError,
         NetworkError,
@@ -102,7 +102,7 @@ def test_druggability_error_hierarchy():
 
 def test_label_to_score():
     """label_to_score 应正确映射已知和未知 label。"""
-    from litkit.druggability.tractability import label_to_score
+    from bbbkit.druggability.tractability import label_to_score
 
     assert label_to_score("Approved Drug") == 1.0
     assert label_to_score("Advanced Clinical") == 0.9
@@ -115,7 +115,7 @@ def test_label_to_score():
 
 def test_modality_tractability_to_dict():
     """ModalityTractability.to_dict() 应包含所有字段。"""
-    from litkit.druggability.tractability import ModalityTractability
+    from bbbkit.druggability.tractability import ModalityTractability
 
     mt = ModalityTractability(
         modality="small_molecule",
@@ -132,7 +132,7 @@ def test_modality_tractability_to_dict():
 
 def test_tractability_result_to_dict():
     """TractabilityResult.to_dict() 应含所有 modality 和 best_score。"""
-    from litkit.druggability.tractability import TractabilityResult, ModalityTractability
+    from bbbkit.druggability.tractability import TractabilityResult, ModalityTractability
 
     r = TractabilityResult(
         ensembl_id="ENSG00000146648",
@@ -162,7 +162,7 @@ def test_tractability_result_to_dict():
 
 def test_tractability_result_best_score_empty():
     """无任何 label 时 best_score 应为 0。"""
-    from litkit.druggability.tractability import TractabilityResult
+    from bbbkit.druggability.tractability import TractabilityResult
 
     r = TractabilityResult(symbol="UNKNOWN")
     assert r.best_score == 0.0
@@ -171,7 +171,7 @@ def test_tractability_result_best_score_empty():
 @pytest.mark.network
 def test_query_tractability_egfr():
     """EGFR 的 tractability 查询应返回 small molecule 信息。"""
-    from litkit.druggability.tractability import query_tractability
+    from bbbkit.druggability.tractability import query_tractability
 
     try:
         result = query_tractability("EGFR", query_type="gene_symbol")
@@ -190,8 +190,8 @@ def test_query_tractability_egfr():
 @pytest.mark.network
 def test_query_tractability_invalid_target():
     """无效靶点应抛出 TargetNotFoundError。"""
-    from litkit.druggability.tractability import query_tractability
-    from litkit.druggability.utils import TargetNotFoundError
+    from bbbkit.druggability.tractability import query_tractability
+    from bbbkit.druggability.utils import TargetNotFoundError
 
     with pytest.raises(TargetNotFoundError):
         query_tractability("NONEXISTENT_GENE_XYZ", query_type="gene_symbol")
@@ -204,7 +204,7 @@ def test_query_tractability_invalid_target():
 
 def test_score_from_ligand_count():
     """ligandability 分数映射应正确。"""
-    from litkit.druggability.ligandability import _score_from_ligand_count
+    from bbbkit.druggability.ligandability import _score_from_ligand_count
 
     assert _score_from_ligand_count(2000) == 1.0
     assert _score_from_ligand_count(500) == 0.8
@@ -217,7 +217,7 @@ def test_score_from_ligand_count():
 @pytest.mark.network
 def test_assess_ligandability_egfr():
     """EGFR 的 ligandability 评估应返回正数分数。"""
-    from litkit.druggability.ligandability import assess_ligandability
+    from bbbkit.druggability.ligandability import assess_ligandability
 
     try:
         result = assess_ligandability("EGFR")
@@ -232,7 +232,7 @@ def test_assess_ligandability_egfr():
 
 def test_ligandability_result_to_dict():
     """LigandabilityResult.to_dict() 应包含关键字段。"""
-    from litkit.druggability.ligandability import LigandabilityResult
+    from bbbkit.druggability.ligandability import LigandabilityResult
 
     r = LigandabilityResult(
         target_chembl_id="CHEMBL2034",
@@ -253,7 +253,7 @@ def test_ligandability_result_to_dict():
 
 def test_grade_druggability():
     """druggability 分级逻辑应正确。"""
-    from litkit.druggability.pocket import _grade_druggability
+    from bbbkit.druggability.pocket import _grade_druggability
 
     assert _grade_druggability(0.9) == "Highly druggable"
     assert _grade_druggability(0.6) == "Druggable"
@@ -263,7 +263,7 @@ def test_grade_druggability():
 
 def test_pocket_info_to_dict():
     """PocketInfo.to_dict() 应包含所有字段。"""
-    from litkit.druggability.pocket import PocketInfo
+    from bbbkit.druggability.pocket import PocketInfo
 
     p = PocketInfo(
         rank=1,
@@ -281,7 +281,7 @@ def test_pocket_info_to_dict():
 
 def test_pocket_analysis_result_to_dict():
     """PocketAnalysisResult.to_dict() 应包含汇总统计。"""
-    from litkit.druggability.pocket import PocketAnalysisResult, PocketInfo
+    from bbbkit.druggability.pocket import PocketAnalysisResult, PocketInfo
 
     p = PocketInfo(rank=1, druggability_score=0.78, volume=850.0)
     r = PocketAnalysisResult(
@@ -304,8 +304,8 @@ def test_detect_pockets_no_fpocket(monkeypatch):
     import os
     from unittest.mock import MagicMock
 
-    from litkit.druggability.pocket import detect_pockets
-    from litkit.druggability.utils import FpocketNotFoundError
+    from bbbkit.druggability.pocket import detect_pockets
+    from bbbkit.druggability.utils import FpocketNotFoundError
 
     # Mock _check_fpocket 强制返回不可用
     def fake_check():
@@ -318,7 +318,7 @@ def test_detect_pockets_no_fpocket(monkeypatch):
     tmp.close()
 
     try:
-        from litkit.druggability import pocket
+        from bbbkit.druggability import pocket
         monkeypatch.setattr(pocket, "_check_fpocket", fake_check)
         with pytest.raises(FpocketNotFoundError):
             detect_pockets(tmp.name, auto_download=False)
@@ -336,7 +336,7 @@ class TestCompositeScore:
 
     def test_empty_result(self):
         """所有维度都失败时应返回 0 分和 'none' 置信度。"""
-        from litkit.druggability import _compute_composite
+        from bbbkit.druggability import _compute_composite
 
         result = {
             "tractability": {"error": "failed"},
@@ -350,7 +350,7 @@ class TestCompositeScore:
 
     def test_tractability_only(self):
         """仅 tractability 成功时应有 low 置信度。"""
-        from litkit.druggability import _compute_composite
+        from bbbkit.druggability import _compute_composite
 
         result = {
             "tractability": {
@@ -370,7 +370,7 @@ class TestCompositeScore:
 
     def test_two_dimensions(self):
         """两个维度成功时应有 medium 置信度。"""
-        from litkit.druggability import _compute_composite
+        from bbbkit.druggability import _compute_composite
 
         result = {
             "tractability": {
@@ -393,7 +393,7 @@ class TestCompositeScore:
 
     def test_three_dimensions(self):
         """三个维度成功时应有 high 置信度。"""
-        from litkit.druggability import _compute_composite
+        from bbbkit.druggability import _compute_composite
 
         result = {
             "tractability": {
@@ -418,7 +418,7 @@ class TestCompositeScore:
 
     def test_no_pocket_analysis_key(self):
         """未包含 pocket_analysis key 时不应报错。"""
-        from litkit.druggability import _compute_composite
+        from bbbkit.druggability import _compute_composite
 
         result = {
             "tractability": {"best_score": 0.5},
@@ -430,7 +430,7 @@ class TestCompositeScore:
 
     def test_zero_scores_excluded(self):
         """分数为 0 的维度不应参与加权。"""
-        from litkit.druggability import _compute_composite
+        from bbbkit.druggability import _compute_composite
 
         result = {
             "tractability": {
@@ -456,7 +456,7 @@ class TestCompositeScore:
 
 def test_assess_druggability_default_no_structure():
     """默认不应跑结构分析（include_structure_analysis=False）。"""
-    from litkit.druggability import assess_druggability
+    from bbbkit.druggability import assess_druggability
 
     # 使用无效靶点——不会真正查到，但不应触发结构分析
     result = assess_druggability(
@@ -470,7 +470,7 @@ def test_assess_druggability_default_no_structure():
 
 def test_assess_druggability_composite_present():
     """assess_druggability 应总是生成 composite。"""
-    from litkit.druggability import assess_druggability
+    from bbbkit.druggability import assess_druggability
 
     result = assess_druggability(
         "INVALID_GENE_99999",
@@ -489,14 +489,14 @@ def test_assess_druggability_composite_present():
 
 def test_resolve_structure_input_uniprot():
     """UniProt ID 类型应直接返回。"""
-    from litkit.druggability import _resolve_structure_input
+    from bbbkit.druggability import _resolve_structure_input
 
     assert _resolve_structure_input("P00533", "uniprot_id") == "P00533"
 
 
 def test_resolve_structure_input_ensembl_raises():
     """Ensembl ID 目前不支持自动结构下载，应 raise。"""
-    from litkit.druggability import _resolve_structure_input
+    from bbbkit.druggability import _resolve_structure_input
 
     with pytest.raises(ValueError, match="not yet supported"):
         _resolve_structure_input("ENSG00000146648", "ensembl_id")
@@ -504,7 +504,7 @@ def test_resolve_structure_input_ensembl_raises():
 
 def test_resolve_structure_input_unknown_type_raises():
     """未知 query_type 应 raise ValueError。"""
-    from litkit.druggability import _resolve_structure_input
+    from bbbkit.druggability import _resolve_structure_input
 
     with pytest.raises(ValueError, match="Unknown query_type"):
         _resolve_structure_input("EGFR", "invalid_type")

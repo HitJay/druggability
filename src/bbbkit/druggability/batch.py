@@ -2,7 +2,7 @@
 批量靶点可药性评估 — 支持多靶点并发查询与结果聚合
 
 用法:
-    from litkit.druggability.batch import assess_druggability_batch, BatchResult
+    from bbbkit.druggability.batch import assess_druggability_batch, BatchResult
 
     results = assess_druggability_batch(["EGFR", "BRAF", "KRAS"])
     for r in results:

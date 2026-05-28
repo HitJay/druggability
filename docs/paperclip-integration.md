@@ -49,7 +49,7 @@ paperclip login  # 如果 ~/.local/bin 在 PATH 中
 ```python
 import sys
 sys.path.insert(0, 'src')
-from litkit.search import search_paperclip
+from bbbkit.search import search_paperclip
 
 # 基础搜索
 results = search_paperclip("PROTAC druggability", limit=10)
@@ -65,7 +65,7 @@ for paper in results:
 #### 方法 2：使用统一接口 `search()`
 
 ```python
-from litkit import search
+from bbbkit import search
 
 # 指定 paperclip 作为数据源
 results = search("protein design", source="paperclip", limit=5)
@@ -150,7 +150,7 @@ paperclip search "protein"  # 使用简单关键词测试
 
 ```python
 import json
-from litkit import search_paperclip
+from bbbkit import search_paperclip
 
 results = search_paperclip("druggability", limit=100)
 
@@ -175,7 +175,7 @@ paperclip cat bio_d900ea5f6fb2
 ## 配合其他数据源使用
 
 ```python
-from litkit import search
+from bbbkit import search
 
 # 搜索多个来源
 sources = ["openalex", "paperclip", "pubmed"]
@@ -199,8 +199,8 @@ for source in sources:
 
 ### 在项目中的文件
 
-- `src/litkit/search.py` - 包含 `search_paperclip()` 和文本解析器
-- `src/litkit/__init__.py` - 导出 `search_paperclip` 公开 API
+- `src/bbbkit/search.py` - 包含 `search_paperclip()` 和文本解析器
+- `src/bbbkit/__init__.py` - 导出 `search_paperclip` 公开 API
 - `example_paperclip_usage.py` - 使用示例
 - `test_paperclip_integration.py` - 集成测试
 

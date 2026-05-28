@@ -6,7 +6,7 @@ import json
 
 sys.path.insert(0, 'src')
 
-from litkit.search import search_paperclip, search
+from bbbkit.search import search_paperclip, search
 
 print("=" * 60)
 print("测试 1: 直接调用 search_paperclip()")

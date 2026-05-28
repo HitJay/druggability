@@ -237,7 +237,7 @@ def _resolve_python_executable(ocr_python: str, backend: str) -> str:
 
 
 def _resolve_worker_launch(python_executable: str) -> tuple[str, str | None]:
-    relative_worker = Path("src/litkit/image2smiles_worker.py")
+    relative_worker = Path("src/bbbkit/image2smiles_worker.py")
     candidate_roots: list[Path] = []
 
     cwd = Path.cwd()

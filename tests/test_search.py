@@ -12,7 +12,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 
 def test_openalex_search_returns_results():
     """OpenAlex 搜索 'druggability' 应该返回非空结果。"""
-    from litkit.search import search_openalex
+    from bbbkit.search import search_openalex
 
     results = search_openalex("druggability", limit=3)
     assert isinstance(results, list), "返回类型应为 list"
@@ -24,7 +24,7 @@ def test_openalex_search_returns_results():
 
 def test_openalex_search_limit():
     """OpenAlex 搜索应尊重 limit 参数。"""
-    from litkit.search import search_openalex
+    from bbbkit.search import search_openalex
 
     results = search_openalex("kinase inhibitor", limit=5)
     assert len(results) <= 5, f"结果数量 {len(results)} 超过 limit=5"
@@ -32,7 +32,7 @@ def test_openalex_search_limit():
 
 def test_unified_search_interface():
     """统一 search() 接口应可正确路由。"""
-    from litkit.search import search, SOURCES
+    from bbbkit.search import search, SOURCES
 
     # 应支持 openalex
     assert "openalex" in SOURCES
@@ -44,7 +44,7 @@ def test_unified_search_interface():
 
 def test_unified_search_unknown_source():
     """未知数据源应抛出 ValueError。"""
-    from litkit.search import search
+    from bbbkit.search import search
     import pytest
 
     with pytest.raises(ValueError, match="Unknown source"):
@@ -53,7 +53,7 @@ def test_unified_search_unknown_source():
 
 def test_crossref_search():
     """CrossRef 搜索应返回含 DOI 的结果。"""
-    from litkit.search import search_crossref
+    from bbbkit.search import search_crossref
 
     results = search_crossref("druggability", limit=3)
     assert isinstance(results, list)
@@ -63,7 +63,7 @@ def test_crossref_search():
 
 def test_semanticscholar_search():
     """Semantic Scholar 搜索应返回非空结果。"""
-    from litkit.search import search_semanticscholar
+    from bbbkit.search import search_semanticscholar
 
     results = search_semanticscholar("druggability", limit=3)
     assert isinstance(results, list), "返回类型应为 list"
@@ -74,7 +74,7 @@ def test_semanticscholar_search():
 
 def test_semanticscholar_min_citation():
     """Semantic Scholar 的 min_citation_count 过滤应生效。"""
-    from litkit.search import search_semanticscholar
+    from bbbkit.search import search_semanticscholar
 
     results = search_semanticscholar("EGFR inhibitor", limit=5, min_citation_count=50)
     assert isinstance(results, list)

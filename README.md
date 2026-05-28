@@ -24,7 +24,7 @@ druggability/
 ├── scripts/
 │   └── setup_image2smiles_env.sh # 创建可选独立 MolScribe OCR 环境
 ├── src/
-│   └── litkit/             # 核心工具包
+│   └── bbbkit/             # 核心工具包
 │       ├── __init__.py
 │       ├── image2smiles.py # 结构图批量转 SMILES（主流程）
 │       ├── image2smiles_worker.py # MolScribe worker（独立环境执行）
@@ -72,7 +72,7 @@ cp .env.example .env
 
 ```python
 import sys; sys.path.insert(0, 'src')
-from litkit.search import search
+from bbbkit.search import search
 
 # OpenAlex 搜索
 results = search("PROTAC druggability", source="openalex", limit=5)
@@ -91,7 +91,7 @@ for r in results:
 
 ```python
 import sys; sys.path.insert(0, 'src')
-from litkit.druggability import assess_druggability
+from bbbkit.druggability import assess_druggability
 
 # 只需基因符号，自动查询多个数据源
 result = assess_druggability("EGFR")
@@ -123,7 +123,7 @@ print(result["tractability"]["pathways"])            # 信号通路
 
 ```python
 import sys; sys.path.insert(0, 'src')
-from litkit.druggability.batch import assess_druggability_batch
+from bbbkit.druggability.batch import assess_druggability_batch
 
 # 一次评估多个靶点（自动并发查询）
 results = assess_druggability_batch(["EGFR", "BRAF", "KRAS"])
@@ -139,17 +139,17 @@ for r in results:
 
 ```bash
 # 逗号分隔
-litkit batch --targets EGFR,BRAF,KRAS
+bbbkit batch --targets EGFR,BRAF,KRAS
 
 # 从文件读取
-litkit batch --file targets.txt
+bbbkit batch --file targets.txt
 
 # 从 stdin 读取
-echo -e "EGFR\nBRAF\nKRAS" | litkit batch --stdin
+echo -e "EGFR\nBRAF\nKRAS" | bbbkit batch --stdin
 
 # 输出 JSON / CSV
-litkit batch --targets EGFR,BRAF,KRAS --json
-litkit batch --targets EGFR,BRAF,KRAS --csv > batch_results.csv
+bbbkit batch --targets EGFR,BRAF,KRAS --json
+bbbkit batch --targets EGFR,BRAF,KRAS --csv > batch_results.csv
 ```
 
 ### 6. 跑测试
@@ -160,7 +160,7 @@ litkit batch --targets EGFR,BRAF,KRAS --csv > batch_results.csv
 
 ```bash
 # 1) 使用默认 DECIMER 后端批量处理一个目录中的结构图
-litkit image2smiles data/raw/structures --recursive \
+bbbkit image2smiles data/raw/structures --recursive \
    --csv data/parsed/image_to_smiles.csv \
    --sdf data/parsed/image_to_smiles.sdf
 
@@ -171,7 +171,7 @@ bash scripts/setup_image2smiles_env.sh
 DOWNLOAD_CHECKPOINT=1 bash scripts/setup_image2smiles_env.sh
 
 # 3) 使用 MolScribe 后端
-litkit image2smiles data/raw/example.png \
+bbbkit image2smiles data/raw/example.png \
    --backend molscribe \
    --checkpoint data/index/molscribe/swin_base_char_aux_1m.pth \
    --csv data/parsed/example.csv

@@ -172,7 +172,7 @@ Target druggability assessment（靶点可药性评估）是药物发现中判�
 
 ### 基于当前项目现状的可执行方案
 
-当前项目 (`litkit`) 已有：搜索（OpenAlex/PubMed/CrossRef）→ 下载（Unpaywall/EPMC）→ 解析（PyMuPDF/GROBID）→ NER（PubTator3），但**缺少 druggability 评估核心模块**。
+当前项目 (`bbbkit`) 已有：搜索（OpenAlex/PubMed/CrossRef）→ 下载（Unpaywall/EPMC）→ 解析（PyMuPDF/GROBID）→ NER（PubTator3），但**缺少 druggability 评估核心模块**。
 
 ### 优先级建议
 
@@ -192,7 +192,7 @@ Target druggability assessment（靶点可药性评估）是药物发现中判�
 一旦实现上述 P0 模块，用户可以通过一行代码评估任意靶点：
 
 ```python
-from litkit.druggability import assess_druggability
+from bbbkit.druggability import assess_druggability
 
 result = assess_druggability("EGFR")
 # => {

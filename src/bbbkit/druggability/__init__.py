@@ -1,5 +1,5 @@
 """
-litkit.druggability — 靶点可药性评估核心模块
+bbbkit.druggability — 靶点可药性评估核心模块
 
 提供统一的 druggability 评估接口，集成多个数据源：
 - Open Targets tractability API（知识库可追踪性）

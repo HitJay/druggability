@@ -7,7 +7,7 @@ from pathlib import Path
 
 from rdkit import Chem
 
-from litkit.image2smiles import (
+from bbbkit.image2smiles import (
     ImageToSmilesResult,
     discover_image_paths,
     run_image_to_smiles_batch,
@@ -55,7 +55,7 @@ def test_run_image_to_smiles_batch_normalizes_worker_output(monkeypatch, tmp_pat
         seen["cwd"] = cwd
         return subprocess.CompletedProcess(cmd, 0, stdout + "\n", "")
 
-    monkeypatch.setattr("litkit.image2smiles.subprocess.run", fake_run)
+    monkeypatch.setattr("bbbkit.image2smiles.subprocess.run", fake_run)
 
     results = run_image_to_smiles_batch([image], compute_confidence=True)
     assert len(results) == 1
