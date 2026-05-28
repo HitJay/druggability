@@ -1,7 +1,7 @@
 # BBB Permeability Prediction — Expansion Plan
 
 > Response to: Jiansheng Huang (2026-05-28)  
-> Author: Qiuye Ji  
+> Author: Qiuye Jin (Jay)  
 > Status: Draft Plan
 
 ---
