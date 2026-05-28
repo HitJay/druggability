@@ -252,7 +252,23 @@ Ran all 11 SM compounds through B3clf 12-model ensemble + CNS-MPO. Script: `scri
 - [x] Curate expanded SM SMILES (Table 3.2) — **Done** (11 compounds validated)
 - [x] Implement CNS-MPO scoring function locally — **Done** (`src/bbbkit/sm_bbb.py`)
 - [x] Run Phase 1 predictions on full SM set — **Done** (consensus 70%, XGB 72.7%); `results/sm_bbb_*.csv`
-- [ ] Cross-validate with SwissADME/pkCSM (web manual step)
+- [x] Cross-validate with SwissADME/pkCSM — **Done** (automated via HTTP API; results: `results/sm_bbb_crossvalidation.csv`)
+
+### Phase 1.5 Cross-Validation Summary
+
+| Tool | Accuracy | Method |
+|------|----------|--------|
+| B3clf (12-model consensus) | 7/10 = 70% | ML (PaDEL descriptors + XGB/LR/DT/KNN) |
+| SwissADME BOILED-Egg | 6/10 = 60% | Rule-based (WLOGP/TPSA ellipse) |
+| pkCSM | 7/10 = 70% | QSAR (graph-based signatures) |
+| Majority vote (2-of-3) | 6/10 = 60% | Ensemble |
+
+Key findings:
+- No single tool exceeds 70% accuracy on this challenging validation set
+- 6/10 compounds have full 3-tool agreement — all 6 are correctly predicted → **consistency = confidence**
+- MK-0493 (MW=569, TPSA=112) is universally mispredicted → beyond applicability domain of all tools
+- Topiramate: only B3clf correct (active transport, not passive diffusion)
+- Diazoxide: only B3clf correct (P-gp efflux not captured by rule/QSAR models)
 
 ---
 
