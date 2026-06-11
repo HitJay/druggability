@@ -112,6 +112,26 @@ def _setup_parser() -> argparse.ArgumentParser:
     p_batch.add_argument("--json", action="store_true", help="输出 JSON 格式")
     p_batch.add_argument("--csv", action="store_true", help="输出 CSV 格式")
 
+    # ── report ──────────────────────────────────────────────────────
+    p_report = sub.add_parser(
+        "report",
+        help="深度可药性评估报告（输入靶点 list → HTML + PPTX，含 LLM 叙述）",
+    )
+    report_input = p_report.add_mutually_exclusive_group(required=True)
+    report_input.add_argument(
+        "--targets", "-t",
+        help="逗号分隔的靶点列表，如 ADORA1,SSTR5,PTGFR",
+    )
+    report_input.add_argument(
+        "--file", "-f",
+        help="靶点文件：纯文本（每行一个）或 CSV（含 gene_name/gene_id 列）",
+    )
+    p_report.add_argument("--outdir", "-o", help="输出目录（默认 output/<date>/druggability_report）")
+    p_report.add_argument("--title", default="靶点深度可药性评估报告", help="报告标题")
+    p_report.add_argument("--structure", action="store_true", help="额外跑 fpocket 结构层（需装 fpocket）")
+    p_report.add_argument("--no-llm", action="store_true", help="禁用 LLM，叙述回退模板")
+    p_report.add_argument("--offline", action="store_true", help="不联网，仅生成脚手架")
+
     # ── image2smiles ───────────────────────────────────────────────
     p_i2s = sub.add_parser("image2smiles", help="将结构图批量转换为 SMILES")
     p_i2s.add_argument("inputs", nargs="+", help="图片文件或目录")
@@ -327,6 +347,95 @@ def _cmd_batch(args: argparse.Namespace) -> None:
     _output_batch_table(results)
 
 
+def _parse_target_list(args: argparse.Namespace) -> list[dict]:
+    """从 --targets / --file 解析靶点列表。
+
+    支持:
+      - --targets "ADORA1,SSTR5"  （逗号分隔 gene symbol）
+      - --file targets.txt        （每行一个 gene symbol / Ensembl ID）
+      - --file targets.csv        （含 gene_name/gene_id 列，可选 gwas_trait/genetics）
+    """
+    targets: list[dict] = []
+    if args.targets:
+        for tok in args.targets.split(","):
+            tok = tok.strip()
+            if tok:
+                key = "gene_id" if tok.upper().startswith("ENSG") else "gene_name"
+                targets.append({key: tok, "gene_name": tok if key == "gene_name" else "", "gene_id": tok if key == "gene_id" else ""})
+        return targets
+
+    path = args.file
+    if not os.path.isfile(path):
+        print(f"[report] 文件不存在: {path}")
+        sys.exit(1)
+
+    if path.lower().endswith(".csv"):
+        import pandas as pd
+
+        df = pd.read_csv(path)
+        cols = {c.lower(): c for c in df.columns}
+        for _, row in df.iterrows():
+            gene = str(row.get(cols.get("gene_name", ""), "") or "").strip()
+            ensembl = str(row.get(cols.get("gene_id", ""), "") or "").strip()
+            if not gene and not ensembl:
+                continue
+            targets.append({
+                "gene_name": gene or ensembl,
+                "gene_id": ensembl,
+                "gwas_trait": str(row.get(cols.get("genetics_traits", cols.get("gwas_trait", "")), "") or ""),
+                "genetics": bool(row.get(cols.get("genetics", ""), True)),
+            })
+    else:
+        with open(path, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line or line.startswith("#") or line.lower() in ("target", "gene_name"):
+                    continue
+                key = "gene_id" if line.upper().startswith("ENSG") else "gene_name"
+                targets.append({key: line, "gene_name": line if key == "gene_name" else "", "gene_id": line if key == "gene_id" else ""})
+    return targets
+
+
+def _cmd_report(args: argparse.Namespace) -> None:
+    """输入靶点 list → 跑深度评估 → 生成 HTML + PPTX 报告。"""
+    from datetime import date
+
+    from bbbkit.report import build_report
+
+    targets = _parse_target_list(args)
+    if not targets:
+        print("[report] 未读取到有效靶点")
+        sys.exit(1)
+
+    outdir = args.outdir or os.path.join("output", date.today().isoformat(), "druggability_report")
+
+    print(f"\n{'='*60}")
+    print(f"  Druggability Report ({len(targets)} targets)")
+    print(f"  输出目录: {outdir}")
+    print(f"{'='*60}\n")
+
+    def _progress(done: int, total: int, gene: str) -> None:
+        print(f"  [{done}/{total}] {gene} ...")
+
+    bundle = build_report(
+        targets,
+        outdir,
+        title=args.title,
+        include_structure=args.structure,
+        offline=args.offline,
+        use_llm=not args.no_llm,
+        on_progress=_progress,
+    )
+
+    print(f"\n  {bundle.llm_status}")
+    print(f"\n  报告已生成:")
+    print(f"    HTML:   {bundle.html_path}")
+    if bundle.pptx_path:
+        print(f"    PPTX:   {bundle.pptx_path}")
+    print(f"    Matrix: {bundle.matrix_csv}")
+    print(f"    Raw:    {bundle.raw_dir}")
+
+
 def _cmd_image2smiles(args: argparse.Namespace) -> None:
     from bbbkit.image2smiles import (
         discover_image_paths,
@@ -469,6 +578,7 @@ def main() -> None:
         "ner": _cmd_ner,
         "assess": _cmd_assess,
         "batch": _cmd_batch,
+        "report": _cmd_report,
         "image2smiles": _cmd_image2smiles,
     }
     fn = dispatch.get(args.command)
