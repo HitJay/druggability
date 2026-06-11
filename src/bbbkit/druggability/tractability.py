@@ -36,6 +36,7 @@ query TractabilityQuery($ensemblId: String!) {
     tractability {
       label
       modality
+      value
     }
     proteinIds {
       id
@@ -513,6 +514,11 @@ def query_tractability(
     }
 
     for t in tractability_list:
+        # Open Targets 的每个 tractability bucket 带一个布尔 `value`，
+        # 表示该 bucket 是否适用于此靶点。必须按 value 过滤，否则会把
+        # 全部可能的 bucket 都算上（导致每个靶点每个 modality 都满分）。
+        if not t.get("value", False):
+            continue
         modality_short = t.get("modality", "")
         modality = MODALITY_MAP.get(modality_short, modality_short.lower())
         label = str(t.get("label", ""))
