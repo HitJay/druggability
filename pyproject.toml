@@ -58,6 +58,13 @@ dev = [
 ]
 scispacy = ["scispacy"]
 paperqa = ["paper-qa"]
+# 肽性质预测平台（ESM-2 基座 + 轻量任务头）
+peptide = [
+    "torch>=2.0",
+    "fair-esm>=2.0",
+    "scikit-learn>=1.1",
+    "numpy>=1.23",
+]
 
 [project.urls]
 Homepage = "https://github.com/HitJay/druggability"

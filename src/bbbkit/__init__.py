@@ -40,6 +40,16 @@ except ImportError:
     druggability_available = False
 
 
+# 肽性质预测平台（ESM-2 基座 + 轻量任务头）；可选依赖 torch/fair-esm/sklearn
+try:
+    from bbbkit.peptide import get_tasks as peptide_tasks  # type: ignore[import-untyped]
+
+    peptide_available = True
+except ImportError:
+    peptide_tasks = None  # type: ignore[assignment]
+    peptide_available = False
+
+
 __all__ = [
     "search",
     "search_openalex",
@@ -50,5 +60,7 @@ __all__ = [
     "search_paperclip",
     "assess_druggability",
     "druggability_available",
+    "peptide_tasks",
+    "peptide_available",
     "__version__",
 ]

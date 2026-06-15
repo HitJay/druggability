@@ -159,6 +159,29 @@ def _setup_parser() -> argparse.ArgumentParser:
     p_i2s.add_argument("--sdf", help="保存 SDF 结果路径（仅成功分子）")
     p_i2s.add_argument("--json", action="store_true", help="打印 JSON 结果")
 
+    # ── peptide ─────────────────────────────────────────────────────
+    p_pep = sub.add_parser(
+        "peptide", help="肽性质预测平台（ESM-2 基座 + 轻量任务头）")
+    p_pep.add_argument(
+        "action", choices=["download", "benchmark", "tasks"],
+        help="download=下载数据集；benchmark=端到端评估；tasks=列出内置任务",
+    )
+    p_pep.add_argument(
+        "--data-dir", "-d", default="data/peptide",
+        help="数据集目录（默认 data/peptide）",
+    )
+    p_pep.add_argument(
+        "--tasks", "-t", default=None,
+        help="逗号分隔的任务键（默认全部），如 bbb,acp_main,amp,hemolytic",
+    )
+    p_pep.add_argument(
+        "--head", default="auto", choices=["auto", "linear", "mlp"],
+        help="任务头类型（auto=按训练集 CV 选 linear/mlp）",
+    )
+    p_pep.add_argument("--cache-dir", help="ESM 嵌入缓存目录")
+    p_pep.add_argument("--ckpt", help="ESM-2 权重路径（覆盖 ESM2_CKPT 环境变量）")
+    p_pep.add_argument("--json", action="store_true", help="输出 JSON 格式")
+
     return parser
 
 
@@ -567,6 +590,50 @@ def _output_image2smiles_table(results) -> None:
         print(f"  {len(failed)} image(s) failed or returned invalid SMILES")
 
 
+def _cmd_peptide(args: argparse.Namespace) -> None:
+    """肽性质预测平台：下载数据集 / 端到端 benchmark / 列出任务。"""
+    from bbbkit.peptide import tasks as peptide_tasks_mod
+
+    keys = [k.strip() for k in args.tasks.split(",")] if args.tasks else None
+
+    if args.action == "tasks":
+        rows = peptide_tasks_mod.get_tasks(keys)
+        if args.json:
+            print(json.dumps([{"key": t.key, "name": t.name, "property": t.prop,
+                               "source": t.source, "official_split": t.official_split,
+                               "sota": t.sota} for t in rows], ensure_ascii=False, indent=2))
+        else:
+            for t in rows:
+                sota = ", ".join(f"{k} {v}" for k, v in t.sota.items()) or "—"
+                print(f"  {t.key:14s} {t.name:24s} | official_split={t.official_split} | SOTA {sota}")
+        return
+
+    if args.action == "download":
+        from bbbkit.peptide import datasets as peptide_datasets
+        done = peptide_datasets.download(args.data_dir, keys)
+        print(f"已下载 / 规范化任务: {done} -> {args.data_dir}/<task>/{{train,test}}.csv")
+        if keys and "bbb" in keys:
+            print("注意：BBB（B3Pred）需自备 data-dir/bbb/{train,test}.csv（见文档）")
+        return
+
+    # benchmark
+    from bbbkit.peptide import run_benchmark
+    if run_benchmark is None:
+        print("错误：benchmark 需要可选依赖。请安装 `pip install 'bbbkit[peptide]'`")
+        return
+    results = run_benchmark(args.data_dir, keys, kind=args.head,
+                            cache_dir=args.cache_dir, ckpt=args.ckpt)
+    if args.json:
+        print(json.dumps(results, ensure_ascii=False, indent=2))
+        return
+    print(f"{'task':14s}{'head':7s}{'CV_AUC':>8}{'TEST_AUC':>9}{'TEST_MCC':>9}  SOTA")
+    for k, v in results.items():
+        b = v["best"]
+        sota = ", ".join(f"{kk} {vv}" for kk, vv in v["sota_ref"].items()) or "—"
+        print(f"{k:14s}{v['best_by_cv']:7s}{b['cv_auc']:8.3f}"
+              f"{b['test']['AUC']:9.3f}{b['test']['MCC']:9.3f}  {sota}")
+
+
 def main() -> None:
     parser = _setup_parser()
     args = parser.parse_args()
@@ -580,6 +647,7 @@ def main() -> None:
         "batch": _cmd_batch,
         "report": _cmd_report,
         "image2smiles": _cmd_image2smiles,
+        "peptide": _cmd_peptide,
     }
     fn = dispatch.get(args.command)
     if fn:
