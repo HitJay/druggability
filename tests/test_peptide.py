@@ -55,6 +55,54 @@ def test_top_level_export():
 
 
 # ═══════════════════════════════════════════════════════════════════════
+# 权重路径配置（config）
+# ═══════════════════════════════════════════════════════════════════════
+
+def test_config_defaults_and_known_models():
+    from bbbkit.peptide import config
+
+    assert config.DEFAULT_MODEL == "esm2_t30_150M_UR50D"
+    assert config.DEFAULT_MODEL in config.KNOWN_MODELS
+    assert config.KNOWN_MODELS["esm2_t30_150M_UR50D"] == 640
+
+
+def test_config_model_dir_env_override(monkeypatch, tmp_path):
+    from bbbkit.peptide import config
+
+    monkeypatch.setenv("BBBKIT_MODEL_DIR", str(tmp_path / "weights"))
+    assert config.model_dir() == tmp_path / "weights"
+
+
+def test_config_resolve_ckpt_priority(monkeypatch, tmp_path):
+    from bbbkit.peptide import config
+
+    # 无任何来源时返回 None
+    monkeypatch.delenv("ESM2_CKPT", raising=False)
+    monkeypatch.setenv("BBBKIT_MODEL_DIR", str(tmp_path / "empty"))
+    assert config.resolve_ckpt() is None
+
+    # 显式参数（存在的文件）优先
+    explicit = tmp_path / "explicit.pt"
+    explicit.write_bytes(b"x")
+    assert config.resolve_ckpt(explicit) == str(explicit)
+
+    # 其次 ESM2_CKPT 环境变量
+    env_ckpt = tmp_path / "from_env.pt"
+    env_ckpt.write_bytes(b"x")
+    monkeypatch.setenv("ESM2_CKPT", str(env_ckpt))
+    assert config.resolve_ckpt() == str(env_ckpt)
+
+
+def test_config_ensure_ckpt_no_download_raises(monkeypatch, tmp_path):
+    from bbbkit.peptide import config
+
+    monkeypatch.delenv("ESM2_CKPT", raising=False)
+    monkeypatch.setenv("BBBKIT_MODEL_DIR", str(tmp_path / "none"))
+    with pytest.raises(FileNotFoundError):
+        config.ensure_ckpt(auto_download=False)
+
+
+# ═══════════════════════════════════════════════════════════════════════
 # 数据集解析（纯函数）
 # ═══════════════════════════════════════════════════════════════════════
 
