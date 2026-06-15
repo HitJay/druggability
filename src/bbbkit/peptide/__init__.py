@@ -15,6 +15,7 @@ bbbkit.peptide — ESM-2 肽序列性质预测平台（一个基座，多个轻�
 
 from __future__ import annotations
 
+from . import config as config  # noqa: F401  (stdlib-only, always import-safe)
 from . import tasks as tasks  # noqa: F401  (always import-safe)
 from .tasks import PeptideTask, get_tasks, REGISTRY  # noqa: F401
 
@@ -48,6 +49,7 @@ __all__ = [
     "get_tasks",
     "REGISTRY",
     "tasks",
+    "config",
     "embed",
     "embed_sequences",
     "heads",

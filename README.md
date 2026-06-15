@@ -42,6 +42,14 @@ druggability/
 │           ├── pocket.py         # fpocket 口袋检测 + AlphaFold 自动下载
 │           ├── batch.py          # 批量靶点可药性评估（并发 + CSV/JSON 输出）
 │           └── utils.py          # ID 转换 / 缓存 / 速率限制 / 异常定义
+│       └── peptide/        # 🆕 肽性质预测平台（ESM-2 基座 + 轻量任务头）
+│           ├── __init__.py       # 公开 API + 优雅降级（可选依赖缺失时）
+│           ├── config.py         # ESM-2 权重路径解析 + fair-esm CDN 自动下载
+│           ├── embed.py          # ESM-2 嵌入服务（磁盘缓存，嵌入一次多头复用）
+│           ├── heads.py          # 轻量任务头（linear/MLP）+ CV + 超参选择
+│           ├── datasets.py       # 已发表 benchmark 下载/解析（官方划分）
+│           ├── tasks.py          # 任务注册表（数据源 / SOTA 引用）
+│           └── benchmark.py      # 端到端：嵌入 → 训练头 → 留出评估
 └── tests/
     ├── test_search.py              # 冒烟测试
     └── test_integration.py         # 综合集成测试
@@ -184,7 +192,62 @@ bbbkit image2smiles data/raw/example.png \
 
 详细说明见 [docs/image-to-smiles.md](docs/image-to-smiles.md)。
 
-### 7. 跑测试
+### 7. 肽性质预测平台（ESM-2 基座 + 轻量任务头）
+
+「一个蛋白质语言模型基座，多个轻量任务头」：把每条肽的 ESM-2 嵌入**计算一次并缓存到磁盘**，随后被所有下游肽性质任务头复用——昂贵的 GPU 步骤被摊薄到 N 个任务上。每个头是几秒可训练的轻量分类器。
+
+```bash
+# 安装可选依赖（torch + fair-esm + scikit-learn）
+pip install 'bbbkit[peptide]'
+
+# 下载 ESM-2 权重（经 fair-esm CDN，HuggingFace 被墙时仍可用；默认 150M）
+bbbkit peptide download-weights
+#   或手动指定：export ESM2_CKPT=/path/to/esm2_t30_150M_UR50D.pt
+
+# 列出内置 benchmark 任务
+bbbkit peptide tasks
+
+# 下载并规范化数据集（官方 train/test 划分；BBB 需自备，见下）
+bbbkit peptide download --tasks acp_main,amp,hemolytic --data-dir data/peptide
+
+# 端到端 benchmark（嵌入一次复用、训练头、留出评估；--head auto 按训练集 CV 选 linear/mlp）
+bbbkit peptide benchmark --tasks acp_main,amp,hemolytic --data-dir data/peptide
+```
+
+Python API：
+
+```python
+import sys; sys.path.insert(0, 'src')
+from bbbkit.peptide import embed, run_benchmark, get_tasks
+
+# 1) 取（带缓存的）ESM-2 嵌入——同一条肽只计算一次
+X = embed(["THRILRRLFNLC", "HAEGTFTSDVSSYLEGQAAKEFIAWLVKGR"])  # (2, 640)
+
+# 2) 端到端多任务评估
+results = run_benchmark("data/peptide", keys=["amp", "hemolytic"])
+for k, v in results.items():
+    t = v["best"]["test"]
+    print(f"{k:12s} head={v['best_by_cv']:6s} TEST AUC={t['AUC']} MCC={t['MCC']}")
+```
+
+**Benchmark 完整性**：仅采用已发表数据集，**官方 train/test 划分逐字沿用**，测试集不参与训练/选型；超参仅由训练集 5 折 CV 选择；仅 20 种标准氨基酸、肽长 5–50、跨集去重防泄漏。
+
+留出测试集成绩（冻结 ESM-2 + 轻量头，对比已发表的**专用** SOTA）：
+
+| 任务 | 数据集 | 留出 Test AUC | 已发表 SOTA | 说明 |
+|---|---|---|---|---|
+| BBB 穿透 | B3Pred (Kumar 2021) | **0.89** | ~0.87 | 持平/略超 |
+| 抗癌肽（alternate）| AntiCP 2.0 (Agrawal 2021) | **0.98** | ~0.98 | 持平 |
+| 抗癌肽（main，难）| AntiCP 2.0 main | 0.82 | ~0.82 | 接近（负样本为 AMP）|
+| 毒性 | ToxinPred v1 (Gupta 2013) | 0.85 | ~0.94 | 独立测试有分布漂移，诚实标注 |
+| 抗菌肽 AMP | LMPred / DRAMP 2.0 (Dee 2021) | **0.93** | ~0.98 | 低于专用 CNN |
+| 溶血肽 | HemoPI-1 (Chaudhary 2016) | **1.00** | ~0.95 | MCC 0.95 ≫ SOTA 0.73 |
+
+> MLP 头（按训练集 CV 选型）在难任务上提升最明显：抗癌-main AUC +0.033、毒性 AUC +0.021。详见 [docs/peptide-esm-platform.md](docs/peptide-esm-platform.md)。
+>
+> **注**：BBB 任务（B3Pred）数据需自备到 `data/peptide/bbb/{train,test}.csv`（列 `sequence,label`）；其余 5 个任务可经 `bbbkit peptide download` 自动获取。模型只认 20 种标准氨基酸——不含修饰 / D-氨基酸 / 环化 / 脂化。
+
+### 8. 跑测试
 
 ```bash
 conda activate research
@@ -196,11 +259,14 @@ python -m pytest tests/test_search.py -v
 # druggability 模块测试（含批量评估）
 python -m pytest tests/test_druggability.py tests/test_batch.py -v
 
+# 肽平台模块测试（非网络）
+python -m pytest tests/test_peptide.py -v
+
 # 综合集成测试
 python tests/test_integration.py
 ```
 
-### 8. 打开 Notebook
+### 9. 打开 Notebook
 
 ```bash
 conda activate research

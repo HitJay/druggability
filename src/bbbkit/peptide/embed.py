@@ -20,10 +20,12 @@ from pathlib import Path
 
 import numpy as np
 
+from . import config
+
 logger = logging.getLogger(__name__)
 
 # 默认 150M 模型（对短肽足够，且比 650M 快约 4 倍）
-MODEL_NAME = "esm2_t30_150M_UR50D"
+MODEL_NAME = config.DEFAULT_MODEL
 _DEFAULT_CACHE = Path(os.environ.get(
     "BBBKIT_ESM_CACHE", Path.home() / ".cache" / "bbbkit" / "esm_emb"))
 
@@ -36,27 +38,12 @@ def _key(seq: str) -> str:
     return hashlib.sha1(f"{MODEL_NAME}:{seq}".encode()).hexdigest()
 
 
-def _resolve_ckpt(ckpt: str | os.PathLike | None) -> str:
-    """解析 ESM-2 checkpoint 路径：参数 > 环境变量 ESM2_CKPT > 常见缓存位置。"""
-    if ckpt:
-        return str(ckpt)
-    env = os.environ.get("ESM2_CKPT")
-    if env:
-        return env
-    # 常见位置：torch hub 缓存
-    hub = Path.home() / ".cache" / "torch" / "hub" / "checkpoints" / f"{MODEL_NAME}.pt"
-    if hub.is_file():
-        return str(hub)
-    raise FileNotFoundError(
-        f"找不到 ESM-2 权重 '{MODEL_NAME}.pt'。请设置环境变量 ESM2_CKPT 指向本地权重，"
-        "或经 fair-esm 的 Facebook CDN 下载：\n"
-        "  curl -L -o esm2_t30_150M_UR50D.pt "
-        "https://dl.fbaipublicfiles.com/fair-esm/models/esm2_t30_150M_UR50D.pt"
-    )
+def load_model(ckpt: str | os.PathLike | None = None,
+               auto_download: bool = True):
+    """加载 ESM-2 模型（懒加载，全局单例）。需要 torch + fair-esm。
 
-
-def load_model(ckpt: str | os.PathLike | None = None):
-    """加载 ESM-2 模型（懒加载，全局单例）。需要 torch + fair-esm。"""
+    权重路径解析见 ``bbbkit.peptide.config``；缺失时默认从 fair-esm CDN 下载。
+    """
     global _MODEL, _ALPHABET, _BATCH_CONVERTER
     if _MODEL is not None:
         return
@@ -70,7 +57,8 @@ def load_model(ckpt: str | os.PathLike | None = None):
             f"（底层报错：{exc}）"
         ) from exc
 
-    state = torch.load(_resolve_ckpt(ckpt), map_location="cpu")
+    ckpt_path = config.ensure_ckpt(ckpt, MODEL_NAME, auto_download=auto_download)
+    state = torch.load(ckpt_path, map_location="cpu")
     # 用 core 加载并跳过 contact-regression 头（embedding 用不到，且该文件常不可得）
     model, alphabet = esm.pretrained.load_model_and_alphabet_core(
         MODEL_NAME, state, regression_data=None)
@@ -78,7 +66,7 @@ def load_model(ckpt: str | os.PathLike | None = None):
     _MODEL = model.to(device).eval()
     _ALPHABET = alphabet
     _BATCH_CONVERTER = alphabet.get_batch_converter()
-    logger.info("ESM-2 模型已加载到 %s", device)
+    logger.info("ESM-2 模型已加载到 %s（权重 %s）", device, ckpt_path)
 
 
 def _embed_batch(seqs: list[str]) -> list[np.ndarray]:

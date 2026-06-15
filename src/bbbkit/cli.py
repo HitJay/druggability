@@ -163,8 +163,9 @@ def _setup_parser() -> argparse.ArgumentParser:
     p_pep = sub.add_parser(
         "peptide", help="肽性质预测平台（ESM-2 基座 + 轻量任务头）")
     p_pep.add_argument(
-        "action", choices=["download", "benchmark", "tasks"],
-        help="download=下载数据集；benchmark=端到端评估；tasks=列出内置任务",
+        "action", choices=["download", "benchmark", "tasks", "download-weights"],
+        help="download=下载数据集；benchmark=端到端评估；tasks=列出内置任务；"
+             "download-weights=下载 ESM-2 权重",
     )
     p_pep.add_argument(
         "--data-dir", "-d", default="data/peptide",
@@ -614,6 +615,12 @@ def _cmd_peptide(args: argparse.Namespace) -> None:
         print(f"已下载 / 规范化任务: {done} -> {args.data_dir}/<task>/{{train,test}}.csv")
         if keys and "bbb" in keys:
             print("注意：BBB（B3Pred）需自备 data-dir/bbb/{train,test}.csv（见文档）")
+        return
+
+    if args.action == "download-weights":
+        from bbbkit.peptide import config as peptide_config
+        path = peptide_config.ensure_ckpt(args.ckpt, peptide_config.DEFAULT_MODEL)
+        print(f"ESM-2 权重就绪: {path}")
         return
 
     # benchmark
