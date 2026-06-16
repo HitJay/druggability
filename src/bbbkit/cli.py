@@ -163,9 +163,9 @@ def _setup_parser() -> argparse.ArgumentParser:
     p_pep = sub.add_parser(
         "peptide", help="肽性质预测平台（ESM-2 基座 + 轻量任务头）")
     p_pep.add_argument(
-        "action", choices=["download", "benchmark", "tasks", "download-weights"],
+        "action", choices=["download", "benchmark", "tasks", "download-weights", "report"],
         help="download=下载数据集；benchmark=端到端评估；tasks=列出内置任务；"
-             "download-weights=下载 ESM-2 权重",
+             "download-weights=下载 ESM-2 权重；report=端到端预测+自动报告",
     )
     p_pep.add_argument(
         "--data-dir", "-d", default="data/peptide",
@@ -182,6 +182,12 @@ def _setup_parser() -> argparse.ArgumentParser:
     p_pep.add_argument("--cache-dir", help="ESM 嵌入缓存目录")
     p_pep.add_argument("--ckpt", help="ESM-2 权重路径（覆盖 ESM2_CKPT 环境变量）")
     p_pep.add_argument("--json", action="store_true", help="输出 JSON 格式")
+    # report 专用
+    p_pep.add_argument("--input", "-i", help="report: 序列/预测 CSV（含 sequence 列则端到端预测；含 p_bbb 则直接报告）")
+    p_pep.add_argument("--outdir", "-o", help="report: 输出目录")
+    p_pep.add_argument("--pptx", action="store_true", help="report: 同时导出 PPTX")
+    p_pep.add_argument("--no-llm", action="store_true", help="report: 禁用 LLM（仅模板）")
+    p_pep.add_argument("--bootstrap", type=int, default=200, help="report: 端到端预测的 bootstrap 次数（默认 200）")
 
     return parser
 
@@ -596,6 +602,41 @@ def _cmd_peptide(args: argparse.Namespace) -> None:
     from bbbkit.peptide import tasks as peptide_tasks_mod
 
     keys = [k.strip() for k in args.tasks.split(",")] if args.tasks else None
+
+    if args.action == "report":
+        import csv as _csv
+        from bbbkit.peptide.report import build_bbb_report
+        if not args.input or not args.outdir:
+            print("error: report requires --input and --outdir")
+            return
+        with open(args.input, encoding="utf-8") as _f:
+            rows = list(_csv.DictReader(_f))
+        if not rows:
+            print("error: empty input CSV")
+            return
+        has_pred = any(k in rows[0] for k in ("p_bbb", "ESM2_P(BBB+)%", "P(BBB+)%"))
+        if has_pred:
+            preds = rows
+        else:
+            from bbbkit.peptide.predict import predict_bbb
+            seqs = [r.get("sequence", "") for r in rows]
+            names = [r.get("name") or r.get("id") for r in rows]
+            mods = [r.get("modification") for r in rows]
+            routes = [r.get("known_route") or r.get("known_central_route") for r in rows]
+            preds = predict_bbb(seqs, names=names, modifications=mods,
+                                known_routes=routes, ckpt=args.ckpt,
+                                cache_dir=args.cache_dir, n_bootstrap=args.bootstrap)
+        bundle = build_bbb_report(preds, args.outdir,
+                                  use_llm=not args.no_llm, pptx=args.pptx)
+        if args.json:
+            print(json.dumps(bundle.to_dict(), ensure_ascii=False, indent=2))
+        else:
+            print(f"HTML  -> {bundle.html_path}")
+            if bundle.pptx_path:
+                print(f"PPTX  -> {bundle.pptx_path}")
+            print(f"CSV   -> {bundle.matrix_csv}")
+            print(f"LLM   : {bundle.llm_status}")
+        return
 
     if args.action == "tasks":
         rows = peptide_tasks_mod.get_tasks(keys)

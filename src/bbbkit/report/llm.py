@@ -98,11 +98,13 @@ class LLMClient:
             return f"LLM enabled (model={self.config.model})"
         return f"LLM disabled — fallback to templates ({self._init_error})"
 
-    def chat(self, system: str, user: str, *, temperature: float | None = None, max_tokens: int = 1200) -> str | None:
+    def chat(self, system: str, user: str, *, temperature: float | None = None,
+             max_tokens: int = 1200, response_format: dict | None = None) -> str | None:
         """单轮 chat。失败返回 None (调用方应回退模板)。
 
         temperature 默认 None（不发送）—— 部分新模型 (如 claude opus 4.x) 已废弃该参数，
         发送会 400。若显式传入且模型拒绝，自动剥离后重试一次。
+        response_format 可传 {"type": "json_object"} 启用 JSON 模式（网关已验证支持）。
         """
         if not self.enabled:
             return None
@@ -117,15 +119,20 @@ class LLMClient:
         }
         if temperature is not None:
             base_kwargs["temperature"] = temperature
+        if response_format is not None:
+            base_kwargs["response_format"] = response_format
 
         try:
             resp = self._client.chat.completions.create(**base_kwargs)
             return (resp.choices[0].message.content or "").strip()
         except Exception as e:  # noqa: BLE001
             msg = str(e)
-            # 参数被模型拒绝 (deprecated/unsupported) → 剥离可选参数重试一次
+            # 参数被模型拒绝 (deprecated/unsupported) → 剥离可选采样参数重试一次
+            # （保留 response_format —— JSON 模式受支持且对结构化输出关键）
             if "deprecated" in msg or "unsupported" in msg or "temperature" in msg or "max_tokens" in msg:
                 minimal = {"model": self.config.model, "messages": base_kwargs["messages"]}
+                if response_format is not None:
+                    minimal["response_format"] = response_format
                 try:
                     resp = self._client.chat.completions.create(**minimal)
                     return (resp.choices[0].message.content or "").strip()
