@@ -69,10 +69,10 @@ def load_model(ckpt: str | os.PathLike | None = None,
     logger.info("ESM-2 模型已加载到 %s（权重 %s）", device, ckpt_path)
 
 
-def _embed_batch(seqs: list[str]) -> list[np.ndarray]:
+def _embed_batch(seqs: list[str], ckpt=None) -> list[np.ndarray]:
     import torch
 
-    load_model()
+    load_model(ckpt=ckpt)
     device = next(_MODEL.parameters()).device
     layer = _MODEL.num_layers
     data = [(f"s{i}", s) for i, s in enumerate(seqs)]
@@ -129,7 +129,7 @@ def embed(
     for b in range(0, len(todo_seq), batch_size):
         chunk = todo_seq[b:b + batch_size]
         idxs = todo_idx[b:b + batch_size]
-        for j, vec in zip(idxs, _embed_batch(chunk)):
+        for j, vec in zip(idxs, _embed_batch(chunk, ckpt=ckpt)):
             result[j] = vec
             np.save(cdir / (_key(sequences[j]) + ".npy"), vec)
 

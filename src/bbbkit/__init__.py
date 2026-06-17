@@ -9,8 +9,11 @@ from pathlib import Path
 
 
 def _load_dotenv() -> None:
-    """查找并加载 .env 文件（优先 CWD，其次仓库根目录）。"""
-    from dotenv import load_dotenv
+    """查找并加载 .env 文件（若存在）。python-dotenv 为可选依赖，缺失时静默跳过。"""
+    try:
+        from dotenv import load_dotenv
+    except ImportError:
+        return
 
     candidates = (
         Path.cwd() / ".env",

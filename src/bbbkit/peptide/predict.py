@@ -67,6 +67,7 @@ def predict_bbb(
     head_kind: str = "linear",
     n_bootstrap: int = 200,
     seed: int = 42,
+    apply_protraction: bool = False,
 ) -> list[dict]:
     """端到端预测查询肽的 BBB 通透性。
 
@@ -82,6 +83,10 @@ def predict_bbb(
         ESM-2 权重路径（覆盖 ESM2_CKPT 环境变量）。
     n_bootstrap : int
         训练集 bootstrap 重采样次数，用于 90% 置信区间（0 = 不算 CI）。
+    apply_protraction : bool
+        True 时对含修饰的肽叠加 protraction 惩罚（WS2 hybrid 基线）：
+        序列分 p_seq 作为骨架上界，p_bbb 变为下调后的 p_final；返回额外字段
+        p_seq / delta / is_protracted。无修饰肽 p_final == p_seq（零回归）。
 
     Returns
     -------
@@ -128,17 +133,28 @@ def predict_bbb(
 
     out = []
     for i, s in enumerate(sequences):
+        mod = modifications[i] if modifications and i < len(modifications) else None
+        p_seq = round(float(p[i]), 1)
+        p_bbb = p_seq
         rec = {
             "name": (names[i] if names and i < len(names) and names[i] else f"peptide_{i + 1}"),
             "sequence": s,
             "length": len(s),
-            "p_bbb": round(float(p[i]), 1),
-            "call": "BBB+" if p[i] >= 50 else "BBB-",
+            "p_bbb": p_bbb,
+            "call": "BBB+" if p_bbb >= 50 else "BBB-",
             "ci": ([round(float(lo[i]), 1), round(float(hi[i]), 1)]
                    if lo[i] is not None else None),
         }
-        if modifications and i < len(modifications) and modifications[i]:
-            rec["modification"] = modifications[i]
+        if apply_protraction and mod:
+            from .descriptors import protraction_adjust
+            adj = protraction_adjust(p_seq, mod)
+            if adj["delta"] > 0 and adj["p_final"] is not None:
+                rec["p_seq"] = p_seq          # 骨架上界
+                rec["p_bbb"] = adj["p_final"]  # 下调后的最终分
+                rec["protraction_delta"] = adj["delta"]
+                rec["call"] = "BBB+" if adj["p_final"] >= 50 else "BBB-"
+        if mod:
+            rec["modification"] = mod
         if known_routes and i < len(known_routes) and known_routes[i]:
             rec["known_route"] = known_routes[i]
         out.append(rec)

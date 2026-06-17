@@ -188,6 +188,7 @@ def _setup_parser() -> argparse.ArgumentParser:
     p_pep.add_argument("--pptx", action="store_true", help="report: 同时导出 PPTX")
     p_pep.add_argument("--no-llm", action="store_true", help="report: 禁用 LLM（仅模板）")
     p_pep.add_argument("--bootstrap", type=int, default=200, help="report: 端到端预测的 bootstrap 次数（默认 200）")
+    p_pep.add_argument("--protraction", action="store_true", help="report: 对含修饰肽叠加 protraction 惩罚（WS2 hybrid）")
 
     return parser
 
@@ -625,7 +626,8 @@ def _cmd_peptide(args: argparse.Namespace) -> None:
             routes = [r.get("known_route") or r.get("known_central_route") for r in rows]
             preds = predict_bbb(seqs, names=names, modifications=mods,
                                 known_routes=routes, ckpt=args.ckpt,
-                                cache_dir=args.cache_dir, n_bootstrap=args.bootstrap)
+                                cache_dir=args.cache_dir, n_bootstrap=args.bootstrap,
+                                apply_protraction=args.protraction)
         bundle = build_bbb_report(preds, args.outdir,
                                   use_llm=not args.no_llm, pptx=args.pptx)
         if args.json:

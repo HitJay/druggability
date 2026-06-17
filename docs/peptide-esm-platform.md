@@ -36,6 +36,8 @@ heads on top.
 | Dataset onboarding | `bbbkit/peptide/datasets.py` | published-benchmark download/parse into canonical `{train,test}.csv` (official splits) |
 | Task registry | `bbbkit/peptide/tasks.py` | dataset source, official-split flag, published SOTA refs |
 | Orchestrator | `bbbkit/peptide/benchmark.py` | `run_benchmark` / `run_task`: embed → CV-select head → held-out eval |
+| Predictor | `bbbkit/peptide/predict.py` | `predict_bbb`: sequence → ESM-2 → B3Pred-trained head → P(BBB+) + bootstrap CI |
+| Auto-report | `bbbkit/peptide/report.py` | applicability domain + Opus interpretation + self-contained HTML / PPTX |
 
 The on-disk cache is the key idea: a peptide that appears in two tasks is embedded
 **only once**, so the expensive GPU step is amortized. Re-embedding cached
@@ -110,6 +112,84 @@ from bbbkit.peptide import embed, run_benchmark
 X = embed(["THRILRRLFNLC"])                 # cached ESM-2 embedding (1, 640)
 results = run_benchmark("data/peptide", keys=["amp", "hemolytic"])
 ```
+
+## 6b. BBB auto-report pipeline (NEW · 2026-06-16)
+
+End-to-end: **peptide sequences → ESM-2 BBB prediction → applicability-domain
+flagging → LLM (Claude Opus 4.7) interpretation → self-contained HTML / PPTX**.
+Built on the same frozen-ESM-2 base; reuses `bbbkit.report.llm.LLMClient` (the
+OpenAI-compatible client wired to the internal Opus gateway).
+
+### What it adds
+
+| Piece | Role |
+|---|---|
+| `predict_bbb` (`predict.py`) | seq → ESM-2 (GPU) → B3Pred-trained linear head → P(BBB+) + bootstrap 90% CI |
+| `applicability_domain` (`report.py`) | rule flags from the B3Pred training distribution (405 peptides, median 13 aa, 80 % ≤ 20 aa, max 30): `in-domain` / `edge-extrapolation` / `out-of-domain-length` / `out-of-domain-modification` |
+| `build_bbb_report` (`report.py`) | per-peptide Opus narrative + executive summary → HTML (+ optional PPTX) + matrix CSV |
+
+### Honest-by-construction interpretation ("组合拳")
+
+The model is non-deterministic, so the report layer enforces quality structurally
+rather than trusting one free-form generation:
+
+1. **Numbers are code-owned** — the LLM writes prose only; every score / CI is
+   injected by code in `_assemble_peptide_narrative`. The model cannot hallucinate
+   a number into the report.
+2. **Structured JSON output** — `response_format={"type":"json_object"}` (verified
+   supported by the gateway; `temperature`/`seed` are rejected by Bedrock). The LLM
+   fills fixed fields (`reading` / `domain` / `caveat` / `literature`).
+3. **Deterministic validation** — `_validate_peptide_fields` rejects any prose that
+   contains a `%`/CI, omits "propensity", or (for out-of-domain inputs) fails to
+   flag the score as an upper bound.
+4. **Retry with self-correction** — on validation failure the reason is fed back
+   to the model; this drove the fallback rate from 20 % → **0 %** on the 10-peptide
+   panel.
+5. **Graceful fallback** — exhausted retries fall back to a deterministic English
+   template, so a report is always produced (works with no API / offline).
+6. **Few-shot golden examples** — anchor tone/depth (in-domain + out-of-domain).
+
+Reports are **English-only** by design (verified 0 Chinese chars in HTML / CSV /
+PPTX, including the PPTX theme fonts).
+
+### CLI
+
+```bash
+# A) input CSV has a `sequence` column → end-to-end GPU predict, then report
+bbbkit peptide report -i seqs.csv -o outdir --pptx --ckpt <abs path to esm2_t30_150M_UR50D.pt>
+
+# B) input CSV already has a `p_bbb` column → skip prediction, just write the report
+bbbkit peptide report -i predictions.csv -o outdir --pptx
+
+# --no-llm = templates only (no API); --bootstrap N = CI resamples (default 200)
+```
+
+### Two-stage wrapper (`scripts/run_e2e.sh`)
+
+No single environment has both the GPU stack and the LLM SDK, so the wrapper
+splits the run:
+
+- **Stage 1** — `/data/user/QYJI/miniforge3/bin/python` (torch + fair-esm + A100)
+  runs the ESM-2 prediction and writes the prediction CSV.
+- **Stage 2** — the repo `.venv` (openai SDK) reads that CSV and calls Opus to
+  render HTML / PPTX.
+
+```bash
+bash scripts/run_e2e.sh <sequences.csv> <outdir> [--pptx] [--no-llm] [--bootstrap N]
+```
+
+Verified end-to-end (2026-06-16): predictions reproduce the BRP reference exactly
+(native 87.5 %, scrambled 10.5 %, α-MSH 98.0 %, GLP-1 95.9 %); Opus narratives
+0 fallbacks; HTML + 4-slide PPTX, 0 Chinese. Tests: `tests/test_report.py`
+(28, all green; full peptide+report suite 44 pass).
+
+### ⚠️ Out-of-domain is flagged, not silently scored
+
+A lipidated / PEGylated / cyclized peptide (e.g. **NN9161**, C18+PEG ~2200 Da) is
+correctly returned **unscored** and badged `out-of-domain-modification` — ESM-2
+encodes only the 20 standard amino acids. Extending the tool to *score* such
+protracted analogs is the subject of the
+[protracted-peptide improvement plan](../output/2026-06-16/bbb_protracted_improvement_plan/improvement_plan.md).
 
 ## 7. How to extend
 
