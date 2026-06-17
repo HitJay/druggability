@@ -51,6 +51,48 @@ def test_domain_modification_patterns(mod):
     assert dom == "out-of-domain-modification"
 
 
+@pytest.mark.parametrize("mod", [
+    "small molecule", "small-molecule", "non-peptide", "non peptide",
+    "small molecule (non-peptide)", "SMILES input",
+])
+def test_domain_small_molecule_is_valid_not_ood(mod):
+    # 非肽 / 小分子 → 有效的 small-molecule 类别（B3clf 专用工具），不是 OOD
+    dom, reason = R.applicability_domain(None, mod, 405.0)
+    assert dom == "small-molecule"
+    assert "B3clf" in reason
+    assert not dom.startswith("out-of-domain")
+
+
+def test_domain_method_b3clf():
+    # 显式 method=b3clf → small-molecule，即便没有 modification 关键词
+    dom, reason = R.applicability_domain(None, "", 405.0, method="b3clf")
+    assert dom == "small-molecule"
+    assert "benchmark" in reason.lower()
+
+
+def test_record_small_molecule_confidence_benchmarked():
+    rec = R.PeptideRecord.from_dict({"name": "SR3335", "p_bbb": 41.1, "method": "b3clf"})
+    assert rec.domain == "small-molecule"
+    assert rec.confidence == "benchmarked"
+
+
+def test_domain_unsupported_modality_is_ood():
+    # 抗体/寡核苷酸等无专用工具的模态 → 真正 OOD-modality
+    dom, _ = R.applicability_domain(None, "antibody", 150000.0)
+    assert dom == "out-of-domain-modality"
+
+
+def test_assemble_small_molecule_uses_b3clf_label():
+    rec = R.PeptideRecord.from_dict({"name": "SR3335", "p_bbb": 41.1, "method": "b3clf"})
+    fields = {"reading": "moderate B3clf BBB classification",
+              "domain": "predicted by the benchmarked small-molecule tool",
+              "caveat": "confirm with brain PK", "literature": ""}
+    out = R._assemble_peptide_narrative(fields, rec)
+    assert "B3clf" in out
+    assert "41.1%" in out
+    assert "ESM-2" not in out
+
+
 def test_domain_native_label_not_flagged():
     # "native" / "none" 不应触发修饰判定
     dom, _ = R.applicability_domain(12, "native", None)
@@ -213,8 +255,108 @@ def test_narrative_falls_back_without_client():
 def test_exec_summary_falls_back_without_client():
     recs = [_rec_in(), _rec_ood()]
     out = R.generate_exec_summary(None, recs)
-    assert "peptides" in out.lower()
+    assert "peptide" in out.lower()
     assert not re.search(r"[\u4e00-\u9fff]", out)
+
+
+# ═══════════════════════════════════════════════════════════════════════
+# 自适应阅读注释（按模态 + 不确定性能力声明）
+# ═══════════════════════════════════════════════════════════════════════
+
+def test_adaptive_reading_note_peptide_only_mentions_bootstrap_ci():
+    recs = [
+        R.PeptideRecord.from_dict(
+            {"name": "BRP", "sequence": "THRILRRLFNLC", "p_bbb": 87.5, "ci": "[21.2, 99.8]"}
+        )
+    ]
+    note = R._adaptive_reading_note(recs).lower()
+    assert "bootstrap 90% ci" in note
+    assert "no calibrated per-compound confidence interval" not in note
+
+
+def test_adaptive_reading_note_small_molecule_mentions_uncertainty_gap():
+    recs = [R.PeptideRecord.from_dict({"name": "SR3335", "p_bbb": 41.1, "method": "b3clf"})]
+    note = R._adaptive_reading_note(recs).lower()
+    assert "benchmark-level" in note
+    assert "no calibrated per-compound confidence interval" in note
+
+
+def test_adaptive_reading_note_mixed_mentions_both_branches():
+    recs = [
+        R.PeptideRecord.from_dict({"name": "BRP", "sequence": "THRILRRLFNLC", "p_bbb": 87.5, "ci": "[21.2, 99.8]"}),
+        R.PeptideRecord.from_dict({"name": "SR3335", "p_bbb": 41.1, "method": "b3clf"}),
+    ]
+    note = R._adaptive_reading_note(recs).lower()
+    assert "mixed batch" in note
+    assert "bootstrap 90% ci" in note
+    assert "no calibrated per-compound ci yet" in note
+
+
+def test_display_len_ci_for_small_molecule_are_explicit_not_dash():
+    rec = R.PeptideRecord.from_dict({"name": "SR3335", "p_bbb": 41.1, "method": "b3clf"})
+    assert R._display_len(rec) == "SM"
+    assert R._display_ci(rec) == "N/A (benchmarked)"
+
+
+def test_display_len_ci_for_peptide_with_ci():
+    rec = R.PeptideRecord.from_dict(
+        {"name": "BRP", "sequence": "THRILRRLFNLC", "p_bbb": 87.5, "ci": "[21.2, 99.8]"}
+    )
+    assert R._display_len(rec) == "12"
+    assert R._display_ci(rec) == "[21.2, 99.8]"
+
+
+def test_parse_committee_votes_from_known_route_and_show_vote_ci():
+    rec = R.PeptideRecord.from_dict(
+        {
+            "name": "SR3335",
+            "p_bbb": 41.1,
+            "method": "b3clf",
+            "known_route": "B3clf 12-model consensus 5/12 BBB+ (strong borderline)",
+        }
+    )
+    assert rec.committee_pos == 5
+    assert rec.committee_n == 12
+    ci = R._display_ci(rec)
+    assert ci.startswith("Vote-CI90 [")
+    assert "(5/12)" in ci
+
+
+def test_parse_committee_votes_from_explicit_fields():
+    rec = R.PeptideRecord.from_dict(
+        {
+            "name": "SR1001",
+            "p_bbb": 20.3,
+            "method": "b3clf",
+            "vote_pos": 1,
+            "vote_total": 12,
+        }
+    )
+    assert rec.committee_pos == 1
+    assert rec.committee_n == 12
+    assert "Vote-CI90" in R._display_ci(rec)
+
+
+def test_adaptive_ci_header_peptide_only():
+    recs = [
+        R.PeptideRecord.from_dict({"name": "BRP", "sequence": "THRILRRLFNLC", "p_bbb": 87.5, "ci": "[21.2, 99.8]"})
+    ]
+    assert R._adaptive_ci_header(recs) == "90% CI"
+
+
+def test_adaptive_ci_header_small_molecule_only():
+    recs = [
+        R.PeptideRecord.from_dict({"name": "SR3335", "p_bbb": 41.1, "method": "b3clf", "known_route": "5/12 BBB+"})
+    ]
+    assert R._adaptive_ci_header(recs) == "Vote-CI90"
+
+
+def test_adaptive_ci_header_mixed():
+    recs = [
+        R.PeptideRecord.from_dict({"name": "BRP", "sequence": "THRILRRLFNLC", "p_bbb": 87.5, "ci": "[21.2, 99.8]"}),
+        R.PeptideRecord.from_dict({"name": "SR3335", "p_bbb": 41.1, "method": "b3clf", "known_route": "5/12 BBB+"}),
+    ]
+    assert R._adaptive_ci_header(recs) == "Uncertainty (90% CI / Vote-CI90)"
 
 
 # ═══════════════════════════════════════════════════════════════════════

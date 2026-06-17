@@ -26,6 +26,7 @@ import datetime as _dt
 import html as _html
 import json
 import logging
+import math
 import re
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -45,21 +46,60 @@ _MOD_PATTERNS = re.compile(
     re.IGNORECASE,
 )
 
+# 非肽 / 小分子标识（→ 走小分子专用工具 B3clf，而非 ESM 序列模型）
+_MODALITY_PATTERNS = re.compile(
+    r"small[\s-]?molecule|non[\s-]?peptide|smiles|\bsm\b|b3clf|cns-?mpo",
+    re.IGNORECASE,
+)
+# 序列模型确实无能为力、且无专用工具的模态（标 OOD-modality）
+_UNSUPPORTED_MODALITY = re.compile(
+    r"oligonucleotide|antibody|\bnce\b|\bsiRNA\b|\bmRNA\b",
+    re.IGNORECASE,
+)
+
+# B3clf 小分子工具 benchmark（既往验证：12-model 共识 70%，XGBoost ADASYN 72.7%）
+B3CLF_BENCHMARK = "B3clf small-molecule benchmark ~70-73% (12-model consensus 70%, XGBoost-ADASYN 72.7%)"
+
 
 def applicability_domain(
     length: int | None,
     modification: str | None = None,
     mw: float | None = None,
+    method: str | None = None,
 ) -> tuple[str, str]:
     """返回 (domain, reason)。
 
     domain ∈ {in-domain, edge-extrapolation, out-of-domain-length,
-              out-of-domain-modification}。修饰优先级最高（ESM-2 看不到修饰）。
+              out-of-domain-modification, out-of-domain-modality, small-molecule}。
+    优先级：method/modality 判定 > modification（修饰）> length（长度）。
+
+    小分子（method=b3clf/small_molecule 或 modification 含小分子标识）→ ``small-molecule``：
+    这是一个 **有效** 类别，预测来自专用工具 B3clf（已 benchmark），而非 ESM 序列模型；
+    不应被当作 out-of-domain/不可信。
     """
     reasons: list[str] = []
 
+    meth = (method or "").strip().lower()
     mod = (modification or "").strip()
+    is_sm = meth in {"b3clf", "small_molecule", "small-molecule", "sm", "cns-mpo"}
+    if not is_sm and mod and mod.lower() not in {"none", "native", "-", "l-backbone"}:
+        is_sm = bool(_MODALITY_PATTERNS.search(mod))
+
+    if is_sm:
+        return (
+            "small-molecule",
+            f"Non-peptide small molecule: predicted by the dedicated small-molecule "
+            f"tool (B3clf / CNS-MPO), not the ESM-2 sequence model. {B3CLF_BENCHMARK}.",
+        )
+
     if mod and mod.lower() not in {"none", "native", "-", "l-backbone"}:
+        # 无专用工具的非肽模态（抗体/寡核苷酸…）→ 真正 OOD
+        if _UNSUPPORTED_MODALITY.search(mod):
+            return (
+                "out-of-domain-modality",
+                f"Input '{mod}' is neither a standard peptide nor covered by the "
+                f"small-molecule tool; no validated BBB predictor applies here.",
+            )
         if _MOD_PATTERNS.search(mod):
             return (
                 "out-of-domain-modification",
@@ -121,6 +161,46 @@ def _parse_ci(ci: Any) -> tuple[float | None, float | None]:
     return None, None
 
 
+def _parse_committee_votes(d: dict[str, Any], known_route: str) -> tuple[int | None, int | None]:
+    """Parse committee votes from explicit fields or free text like '5/12 BBB+'."""
+    for a, b in (("vote_pos", "vote_total"), ("committee_pos", "committee_n")):
+        if d.get(a) not in (None, "") and d.get(b) not in (None, ""):
+            try:
+                pos = int(float(d[a]))
+                n = int(float(d[b]))
+                if 0 <= pos <= n and n > 0:
+                    return pos, n
+            except (TypeError, ValueError):
+                pass
+
+    packed = d.get("committee_votes", d.get("consensus_votes", ""))
+    m = re.search(r"(\d+)\s*/\s*(\d+)", str(packed))
+    if m:
+        pos, n = int(m.group(1)), int(m.group(2))
+        if 0 <= pos <= n and n > 0:
+            return pos, n
+
+    m = re.search(r"(\d+)\s*/\s*(\d+)\s*BBB\+", known_route, re.IGNORECASE)
+    if m:
+        pos, n = int(m.group(1)), int(m.group(2))
+        if 0 <= pos <= n and n > 0:
+            return pos, n
+    return None, None
+
+
+def _wilson_interval(pos: int, n: int, z: float = 1.645) -> tuple[float, float]:
+    """Wilson score interval for binomial proportion (default 90% with z=1.645)."""
+    if n <= 0:
+        return 0.0, 1.0
+    phat = pos / n
+    denom = 1.0 + (z * z) / n
+    center = (phat + (z * z) / (2.0 * n)) / denom
+    half = (z / denom) * math.sqrt((phat * (1.0 - phat) / n) + ((z * z) / (4.0 * n * n)))
+    lo = max(0.0, center - half)
+    hi = min(1.0, center + half)
+    return lo, hi
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # 记录规范化
 # ─────────────────────────────────────────────────────────────────────────────
@@ -139,10 +219,13 @@ class PeptideRecord:
     ci_high: float | None = None
     known_route: str = ""                # 文献生物学路由（[LITERATURE]）
     receptor: str = ""
+    method: str = "esm"                  # 预测来源：esm(默认肽序列) / b3clf(小分子)
     domain: str = ""
     domain_reason: str = ""
     confidence: str = ""
     ci_width: float | None = None
+    committee_pos: int | None = None
+    committee_n: int | None = None
     narrative: str = ""
 
     @classmethod
@@ -179,11 +262,16 @@ class PeptideRecord:
             ci_high=ci_high,
             known_route=str(d.get("known_route", d.get("known_central_route", "")) or ""),
             receptor=str(d.get("receptor", "") or ""),
+            method=str(d.get("method", "") or "esm").strip() or "esm",
         )
+        rec.committee_pos, rec.committee_n = _parse_committee_votes(d, rec.known_route)
         rec.domain, rec.domain_reason = applicability_domain(
-            rec.length, rec.modification, d.get("mw")
+            rec.length, rec.modification, d.get("mw"), method=rec.method
         )
         rec.confidence, rec.ci_width = confidence_from_ci(rec.ci_low, rec.ci_high)
+        # 小分子：置信度来自 B3clf benchmark（~70-73%），而非 CI 宽度
+        if rec.domain == "small-molecule" and rec.confidence == "unknown":
+            rec.confidence = "benchmarked"
         if not rec.call and rec.p_bbb is not None:
             rec.call = "BBB+" if rec.p_bbb >= 50 else "BBB-"
         return rec
@@ -201,6 +289,7 @@ class PeptideRecord:
             ),
             "confidence": self.confidence,
             "applicability_domain": self.domain,
+            "prediction_method": self.method,
             "domain_reason": self.domain_reason,
             "known_central_route_literature": self.known_route or None,
             "receptor": self.receptor or None,
@@ -225,6 +314,11 @@ _SYS_BBB_ANALYST = (
     "backbone-level UPPER BOUND, not a confident call.\n"
     "4. Write qualitative prose only. Do NOT include any numbers, percentages, or "
     "confidence intervals in your prose - those are inserted programmatically.\n"
+    "5. If applicability_domain == 'small-molecule', the input is a NON-PEPTIDE small "
+    "molecule predicted by the dedicated, BENCHMARKED small-molecule tool (B3clf / "
+    "CNS-MPO), NOT the ESM sequence model. Treat this as a VALID prediction from the "
+    "right tool (cite that it is a benchmarked small-molecule classifier) - do NOT call "
+    "it out-of-domain or untrustworthy. The ESM sequence model simply does not apply here.\n"
     "Write concise, professional English for a senior R&D audience."
 )
 
@@ -303,8 +397,8 @@ def _validate_peptide_fields(fields: dict, rec: "PeptideRecord") -> tuple[bool, 
     # 数字归代码：prose 不得含百分数 / 置信区间（防数字幻觉）
     if _PCT_RE.search(prose) or _CI_RE.search(prose):
         return False, "prose contains numeric score/CI (must be code-owned)"
-    # 必含 propensity 概念
-    if "propensity" not in prose.lower():
+    # 必含 propensity 概念（小分子除外：B3clf 是分类概率，非 ESM propensity）
+    if rec.domain != "small-molecule" and "propensity" not in prose.lower():
         return False, "missing 'propensity'"
     # OOD 必须点明"上界/域外/外推"
     if rec.domain.startswith("out-of-domain") or rec.domain == "edge-extrapolation":
@@ -317,7 +411,12 @@ def _validate_peptide_fields(fields: dict, rec: "PeptideRecord") -> tuple[bool, 
 
 def _assemble_peptide_narrative(fields: dict, rec: "PeptideRecord") -> str:
     """用确定性事实 + 校验过的 LLM prose 拼装最终叙述（数字全部由代码注入）。"""
-    if rec.p_bbb is not None:
+    if rec.domain == "small-molecule":
+        if rec.p_bbb is not None:
+            lead = f"[MODEL] {rec.name}: B3clf small-molecule P(BBB+) = {rec.p_bbb:.1f}% ({rec.call})."
+        else:
+            lead = f"[MODEL] {rec.name}: small molecule — use the B3clf small-molecule tool."
+    elif rec.p_bbb is not None:
         ci = (f", 90% bootstrap CI [{rec.ci_low:.1f}, {rec.ci_high:.1f}]"
               if rec.ci_low is not None else "")
         lead = f"[MODEL] {rec.name}: ESM-2 P(BBB+) = {rec.p_bbb:.1f}% ({rec.call}){ci}."
@@ -421,6 +520,24 @@ def generate_exec_summary(client, records: list[PeptideRecord], *, max_retries: 
 
 def _fallback_peptide_narrative(rec: PeptideRecord) -> str:
     parts: list[str] = []
+    # 小分子：B3clf 有效预测（非 ESM 序列模型，非 OOD）
+    if rec.domain == "small-molecule":
+        if rec.p_bbb is not None:
+            parts.append(
+                f"[MODEL] {rec.name}: B3clf small-molecule P(BBB+) = {rec.p_bbb:.1f}% "
+                f"({rec.call})."
+            )
+        parts.append(
+            "Applicability: non-peptide small molecule, predicted by the dedicated, "
+            "benchmarked B3clf / CNS-MPO tool (the ESM sequence model does not apply here)."
+        )
+        if rec.known_route:
+            parts.append(f"[LITERATURE] {rec.known_route}.")
+        parts.append(
+            "Caveat: an in-silico BBB classification; confirm with brain PK (Kp,uu) for borderline calls."
+        )
+        return " ".join(parts)
+
     if rec.p_bbb is not None:
         parts.append(
             f"[MODEL] {rec.name}: ESM-2 P(BBB+) = {rec.p_bbb:.1f}% ({rec.call})"
@@ -436,6 +553,7 @@ def _fallback_peptide_narrative(rec: PeptideRecord) -> str:
         "edge-extrapolation": "input near training maximum; score is edge extrapolation with reduced confidence.",
         "out-of-domain-length": "length beyond training maximum; score is extrapolation, not a confident call.",
         "out-of-domain-modification": "modification cannot be encoded by ESM-2; score is a backbone-level upper bound only.",
+        "out-of-domain-modality": "neither a standard peptide nor covered by the small-molecule tool; no validated predictor applies.",
     }.get(rec.domain, "")
     if dom_txt:
         parts.append(f"Applicability: {rec.domain} ({dom_txt})")
@@ -453,19 +571,25 @@ def _fallback_peptide_narrative(rec: PeptideRecord) -> str:
 def _fallback_exec_summary(records: list[PeptideRecord]) -> str:
     n = len(records)
     in_dom = [r.name for r in records if r.domain == "in-domain"]
+    sm = [r.name for r in records if r.domain == "small-molecule"]
     ood = [r.name for r in records if r.domain.startswith("out-of-domain")]
     pos = [r.name for r in records if r.call == "BBB+"]
-    return " ".join(
-        [
-            f"This batch covers {n} peptides.",
-            f"In-domain (trustworthy): {len(in_dom)} - {', '.join(in_dom) if in_dom else 'none'}.",
-            f"Out-of-domain (upper-bound / extrapolation only): {len(ood)} - {', '.join(ood) if ood else 'none'}.",
-            f"Predicted BBB+: {len(pos)}.",
-            "All scores are intrinsic, sequence-based penetration propensity, not "
-            "in-vivo brain exposure; out-of-domain entries must be read with "
-            "physicochemical / PK and literature context.",
-        ]
-    )
+    lines = [
+        f"This batch covers {n} entries.",
+        f"Peptide in-domain (trustworthy): {len(in_dom)} - {', '.join(in_dom) if in_dom else 'none'}.",
+    ]
+    if sm:
+        lines.append(
+            f"Small molecules via the dedicated B3clf tool (not the sequence model): "
+            f"{len(sm)} - {', '.join(sm)}."
+        )
+    lines += [
+        f"Out-of-domain for any validated predictor: {len(ood)} - {', '.join(ood) if ood else 'none'}.",
+        f"Predicted BBB+: {len(pos)}.",
+        "Peptide scores are intrinsic sequence-based penetration propensity, not "
+        "in-vivo brain exposure; small-molecule calls come from the benchmarked B3clf tool.",
+    ]
+    return " ".join(lines)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -477,8 +601,49 @@ _DOMAIN_BADGE = {
     "edge-extrapolation": ("edge", "#9a6a00", "#f5edda"),
     "out-of-domain-length": ("OOD · length", "#b3261e", "#f7e4e2"),
     "out-of-domain-modification": ("OOD · modification", "#b3261e", "#f7e4e2"),
+    "out-of-domain-modality": ("OOD · non-peptide", "#7a1f6e", "#f3e2f0"),
+    "small-molecule": ("small molecule · B3clf", "#0a6e8f", "#e2f0f5"),
 }
-_CONF_BADGE = {"high": "#0a8f5b", "medium": "#9a6a00", "low": "#b3261e", "unknown": "#5b6470"}
+_CONF_BADGE = {"high": "#0a8f5b", "medium": "#9a6a00", "low": "#b3261e", "unknown": "#5b6470", "benchmarked": "#0a6e8f"}
+
+
+def _adaptive_reading_note(records: list[PeptideRecord]) -> str:
+    """Build modality-aware reading note with explicit uncertainty capability limits."""
+    has_peptide = any(r.domain != "small-molecule" for r in records)
+    has_sm = any(r.domain == "small-molecule" for r in records)
+
+    common = (
+        "Interpret [LITERATURE] route context as external biology, not a model output. "
+        "Propensity/classification is not equivalent to in-vivo brain exposure."
+    )
+
+    if has_peptide and not has_sm:
+        return (
+            "Peptide branch: scores are intrinsic, sequence-based BBB penetration propensity "
+            "from a frozen ESM-2 model. Uncertainty is estimated by bootstrap 90% CI, which "
+            "captures sampling variance but does not capture domain shift or PK effects. "
+            "ESM-2 reads only the 20 standard amino acids, so lipidation / PEGylation / "
+            "cyclization / D-amino acids are not encoded; such entries are backbone-level upper bounds. "
+            + common
+        )
+
+    if has_sm and not has_peptide:
+        return (
+            "Small-molecule branch: calls come from the dedicated B3clf / CNS-MPO path, not ESM-2. "
+            "Current uncertainty is benchmark-level only (~70-73% historical performance); "
+            "there is no calibrated per-compound confidence interval in this branch yet. "
+            "Treat borderline probabilities as uncertain and prioritize brain PK confirmation (for example Kp,uu). "
+            + common
+        )
+
+    return (
+        "Mixed batch: peptide entries use ESM-2 sequence propensity with bootstrap 90% CI as the explicit "
+        "uncertainty signal (sampling variance only), while small-molecule entries use B3clf / CNS-MPO with "
+        "benchmark-level confidence only and no calibrated per-compound CI yet. "
+        "For modified peptides beyond ESM encoding, read scores as backbone upper bounds. "
+        "For borderline small-molecule probabilities, prioritize brain PK confirmation. "
+        + common
+    )
 
 
 def _esc(s: Any) -> str:
@@ -497,6 +662,39 @@ def _bar(p: float | None) -> str:
     )
 
 
+def _display_len(rec: PeptideRecord) -> str:
+    if rec.length is not None:
+        return str(rec.length)
+    if rec.domain == "small-molecule":
+        return "SM"
+    return "-"
+
+
+def _adaptive_ci_header(records: list[PeptideRecord]) -> str:
+    """Generate modality-aware CI column header."""
+    has_peptide = any(r.domain != "small-molecule" for r in records)
+    has_sm = any(r.domain == "small-molecule" for r in records)
+    if has_peptide and has_sm:
+        return "Uncertainty (90% CI / Vote-CI90)"
+    if has_sm:
+        return "Vote-CI90"
+    return "90% CI"
+
+
+def _display_ci(rec: PeptideRecord) -> str:
+    if rec.ci_low is not None and rec.ci_high is not None:
+        return f"[{rec.ci_low:.1f}, {rec.ci_high:.1f}]"
+    if rec.domain == "small-molecule":
+        if rec.committee_pos is not None and rec.committee_n:
+            lo, hi = _wilson_interval(rec.committee_pos, rec.committee_n)
+            return (
+                f"Vote-CI90 [{lo*100:.1f}, {hi*100:.1f}] "
+                f"({rec.committee_pos}/{rec.committee_n})"
+            )
+        return "N/A (benchmarked)"
+    return "N/A"
+
+
 def render_html(
     records: list[PeptideRecord],
     exec_summary: str,
@@ -508,15 +706,15 @@ def render_html(
 ) -> str:
     """渲染自包含 HTML 字符串。"""
     date = _dt.date.today().isoformat()
+    reading_note = _adaptive_reading_note(records)
 
     rows_html = []
     for r in records:
         badge_txt, badge_fg, badge_bg = _DOMAIN_BADGE.get(
             r.domain, (r.domain or "—", "#5b6470", "#eef1f6")
         )
-        ci_txt = (
-            f"[{r.ci_low:.1f}, {r.ci_high:.1f}]" if r.ci_low is not None else "—"
-        )
+        ci_txt = _display_ci(r)
+        len_txt = _display_len(r)
         conf_fg = _CONF_BADGE.get(r.confidence, "#5b6470")
         narrative_html = _esc(r.narrative).replace("\n", "<br>")
         # 高亮来源标签
@@ -528,7 +726,7 @@ def render_html(
             f"""
       <tr>
         <td><b>{_esc(r.name)}</b><div class="seq">{_esc(r.sequence)}</div></td>
-        <td class="num">{_esc(r.length) if r.length else '—'}</td>
+                <td class="num">{_esc(len_txt)}</td>
         <td style="min-width:140px">{_bar(r.p_bbb)}</td>
         <td class="num muted">{_esc(ci_txt)}</td>
         <td><span class="badge" style="color:{conf_fg};border-color:{conf_fg}">{_esc(r.confidence)}</span></td>
@@ -586,16 +784,12 @@ def render_html(
 
   <h2 class="sec">Per-peptide predictions &amp; interpretation</h2>
   <table>
-    <tr><th>Peptide</th><th>Len</th><th>ESM-2 P(BBB+)</th><th>90% CI</th><th>Conf.</th><th>Applicability</th></tr>
+        <tr><th>Entry</th><th>Len</th><th>P(BBB+)%</th><th>{_adaptive_ci_header(records)}</th><th>Conf.</th><th>Applicability</th></tr>
     {''.join(rows_html)}
   </table>
 
   <div class="caveat">
-    <b>Reading note.</b> Scores are <b>intrinsic, sequence-based penetration propensity</b> from a frozen
-    ESM-2 model — <b>not</b> in-vivo brain exposure or transport route. ESM-2 reads only the 20 standard
-    amino acids, so lipidation / PEGylation / cyclization / D-amino acids are not encoded; for such
-    out-of-domain inputs the score is a backbone-level <b>upper bound</b>. Wide confidence intervals
-    reflect genuine uncertainty. <b>[LITERATURE]</b> route context is provided as a sanity check, not a model output.
+        <b>Reading note.</b> {_esc(reading_note)}
   </div>
 
   <footer>Auto-generated by bbbkit.peptide.report · interpretation by Claude Opus 4.7 (graceful-degrades to templates).</footer>
@@ -622,6 +816,8 @@ _DOMAIN_SHORT = {
     "edge-extrapolation": ("edge", _PPTX_AMBER),
     "out-of-domain-length": ("OOD - length", _PPTX_RED),
     "out-of-domain-modification": ("OOD - modification", _PPTX_RED),
+    "out-of-domain-modality": ("OOD - non-peptide", (0x7A, 0x1F, 0x6E)),
+    "small-molecule": ("small molecule - B3clf", (0x0A, 0x6E, 0x8F)),
 }
 
 
@@ -677,6 +873,7 @@ def render_pptx(
 
     SLIDE_W, SLIDE_H = 12192000, 6858000
     date = _dt.date.today().isoformat()
+    reading_note = _adaptive_reading_note(records)
 
     def rgb(t):
         return RGBColor(*t)
@@ -735,7 +932,8 @@ def render_pptx(
     add_text(s, 600000, 250000, SLIDE_W - 1200000, 600000,
              "Per-peptide predictions", size=26, bold=True, color=_PPTX_WHITE,
              anchor=MSO_ANCHOR.MIDDLE)
-    headers = ["Peptide", "Len", "P(BBB+)%", "90% CI", "Conf.", "Applicability"]
+    ci_header = _adaptive_ci_header(records)
+    headers = ["Entry", "Len", "P(BBB+)%", ci_header, "Conf.", "Applicability"]
     widths = [3000000, 900000, 1700000, 2200000, 1400000, 2600000]
     nrows = len(records) + 1
     tbl = s.shapes.add_table(
@@ -754,10 +952,10 @@ def render_pptx(
         pr.font.color.rgb = rgb(_PPTX_WHITE)
     for i, rec in enumerate(records, start=1):
         dom_txt, dom_col = _DOMAIN_SHORT.get(rec.domain, (rec.domain or "-", _PPTX_GREY))
-        ci = (f"[{rec.ci_low:.1f}, {rec.ci_high:.1f}]"
-              if rec.ci_low is not None else "-")
+        ci = _display_ci(rec)
+        len_txt = _display_len(rec)
         p_txt = f"{rec.p_bbb:.1f}" if rec.p_bbb is not None else "-"
-        vals = [rec.name, str(rec.length or "-"), p_txt, ci,
+        vals = [rec.name, len_txt, p_txt, ci,
                 rec.confidence or "-", dom_txt]
         for j, v in enumerate(vals):
             c = tbl.cell(i, j)
@@ -778,15 +976,7 @@ def render_pptx(
     add_rect(s, 0, 0, SLIDE_W, 950000, _PPTX_AMBER)
     add_text(s, 600000, 250000, SLIDE_W - 1200000, 600000, "Reading note",
              size=26, bold=True, color=_PPTX_WHITE, anchor=MSO_ANCHOR.MIDDLE)
-    note = (
-        "Scores are intrinsic, sequence-based penetration propensity from a frozen "
-        "ESM-2 model - NOT in-vivo brain exposure or transport route.\n\n"
-        "ESM-2 reads only the 20 standard amino acids, so lipidation / PEGylation / "
-        "cyclization / D-amino acids are not encoded; for such out-of-domain inputs "
-        "the score is a backbone-level upper bound.\n\n"
-        "Wide confidence intervals reflect genuine uncertainty. [LITERATURE] route "
-        "context is provided as a sanity check, not a model output."
-    )
+    note = reading_note
     add_text(s, 600000, 1300000, SLIDE_W - 1200000, 4400000, note, size=16, color=_PPTX_INK)
     if llm_status:
         add_text(s, 600000, 6300000, SLIDE_W - 1200000, 350000,
