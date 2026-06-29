@@ -58,6 +58,7 @@ dev = [
 ]
 scispacy = ["scispacy"]
 paperqa = ["paper-qa"]
+biolib = ["pybiolib>=1.4"]
 # 肽性质预测平台（ESM-2 基座 + 轻量任务头）
 peptide = [
     "torch>=2.0",

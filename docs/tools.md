@@ -132,6 +132,8 @@ pip install paper-qa            # 本地论文 RAG
 
 ### 本项目已集成的 druggability 模块
 
+> 2026-06-29 更新：NN 内部 BioLib app 已作为可选 enrichment 层接入，详见 [BioLib 内部部署与 Druggability 接入记录](biolib-druggability-integration.md)。已验证 `@nn/SBTD/Target-Portal` 和 `@nn/DCD/Boltz-2`；`@nn/DCD/Automated-Tractability` 已接入但当前远端 app 在 DataHub/EDH 登录处失败。
+
 ```bash
 # 这些已在 bbbkit/druggability/ 中实现
 # 详见 README.md 或 docs/design-opentargets-expansion.md
