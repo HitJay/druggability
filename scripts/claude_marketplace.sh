@@ -62,6 +62,18 @@ for arg in "$@"; do
 done
 
 CLAUDE_ARGS=("$@")
+HAS_BARE=0
+for arg in "${CLAUDE_ARGS[@]}"; do
+  if [[ "$arg" == "--bare" ]]; then
+    HAS_BARE=1
+    break
+  fi
+done
+
+if [[ "${CLAUDE_MARKETPLACE_NO_BARE:-0}" != "1" && "$HAS_BARE" == "0" ]]; then
+  CLAUDE_ARGS=(--bare "${CLAUDE_ARGS[@]}")
+fi
+
 if [[ "$HAS_MODEL" == "0" ]]; then
   CLAUDE_ARGS=(--model "$MARKETPLACE_MODEL_NAME" "${CLAUDE_ARGS[@]}")
 fi
