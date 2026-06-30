@@ -44,6 +44,8 @@ python -c "import biolib; biolib.login()"
 
 ## Boltz-2 BioLib 部署
 
+更完整的功能研究报告见：`output/2026-06-29/boltz_function_research/boltz2_function_research.md`。
+
 BioLib 部署路径：
 
 ```python
