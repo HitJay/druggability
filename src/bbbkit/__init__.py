@@ -66,6 +66,11 @@ except ImportError:
     boltz_available = False
 
 
+# DrugCLIP 虚拟筛选（本地仓库部署，Python 3.8 + Uni-Core + torch）
+# 包装模块始终可 import；是否真正可用取决于环境是否已部署（见 drugclip.is_environment_ready）。
+from bbbkit import drugclip as drugclip  # noqa: F401
+
+
 __all__ = [
     "search",
     "search_openalex",
@@ -80,5 +85,6 @@ __all__ = [
     "peptide_available",
     "boltz",
     "boltz_available",
+    "drugclip",
     "__version__",
 ]
