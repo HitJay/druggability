@@ -53,6 +53,19 @@ except ImportError:
     peptide_available = False
 
 
+# Boltz-2 云端结构/亲和力预测（经 BioLib）；可选依赖 pybiolib
+# 模块本身始终可 import（biolib 惰性导入），biolib_available 仅标记依赖是否就绪。
+try:
+    import biolib as _biolib  # noqa: F401
+
+    from bbbkit import boltz as boltz  # noqa: F401
+
+    boltz_available = True
+except ImportError:
+    boltz = None  # type: ignore[assignment]
+    boltz_available = False
+
+
 __all__ = [
     "search",
     "search_openalex",
@@ -65,5 +78,7 @@ __all__ = [
     "druggability_available",
     "peptide_tasks",
     "peptide_available",
+    "boltz",
+    "boltz_available",
     "__version__",
 ]

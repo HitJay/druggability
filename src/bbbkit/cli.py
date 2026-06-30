@@ -9,6 +9,9 @@ bbbkit CLI — 快速检索、下载、解析、NER、druggability 评估
     bbbkit assess <target> [--gene-symbol]
     bbbkit batch --targets EGFR,BRAF,KRAS
     bbbkit image2smiles <image-or-dir> [<image-or-dir> ...] [--csv out.csv] [--sdf out.sdf]
+    bbbkit boltz login
+    bbbkit boltz predict --input input.yaml [--output boltz-output]
+    bbbkit boltz affinity --input affinity.yaml [--print-affinity]
 
 环境变量:
     OPENALEX_EMAIL, NCBI_EMAIL, NCBI_API_KEY 等
@@ -158,6 +161,24 @@ def _setup_parser() -> argparse.ArgumentParser:
     p_i2s.add_argument("--csv", help="保存 CSV 结果路径")
     p_i2s.add_argument("--sdf", help="保存 SDF 结果路径（仅成功分子）")
     p_i2s.add_argument("--json", action="store_true", help="打印 JSON 结果")
+
+    # ── boltz ───────────────────────────────────────────────────────
+    p_boltz = sub.add_parser(
+        "boltz", help="Boltz-2 云端结构/亲和力预测（经 BioLib）")
+    p_boltz.add_argument(
+        "action", choices=["login", "predict", "affinity"],
+        help="login=登录 BioLib；predict=结构预测（提交 YAML）；affinity=亲和力预测（提交 YAML）",
+    )
+    p_boltz.add_argument("--input", "-i", help="Boltz YAML 输入文件路径（predict/affinity）")
+    p_boltz.add_argument("--output", "-o", default="boltz-output", help="结果保存目录（默认 boltz-output）")
+    p_boltz.add_argument("--app-uri", help="覆盖 Boltz-2 app URI（默认 @nn/DCD/Boltz-2:0.0.37 或 BOLTZ_APP_URI）")
+    p_boltz.add_argument("--endpoint", help="BioLib API 端点（企业私有实例，或设 BIOLIB_API_URL）")
+    p_boltz.add_argument("--recycling-steps", default="3", help="recycling 步数（默认 3）")
+    p_boltz.add_argument("--diffusion-samples", default="1", help="扩散采样数（默认 1）")
+    p_boltz.add_argument("--sampling-steps", default="200", help="扩散步数（默认 200）")
+    p_boltz.add_argument("--templates", help="模板目录路径（YAML 中引用 templates/ 时传入）")
+    p_boltz.add_argument("--biolib-file", action="append", default=[], help="额外随任务上传的文件（可多次指定，如 custom.a3m）")
+    p_boltz.add_argument("--print-affinity", action="store_true", help="affinity: 任务完成后打印 affinity JSON")
 
     # ── peptide ─────────────────────────────────────────────────────
     p_pep = sub.add_parser(
@@ -598,6 +619,54 @@ def _output_image2smiles_table(results) -> None:
         print(f"  {len(failed)} image(s) failed or returned invalid SMILES")
 
 
+def _cmd_boltz(args: argparse.Namespace) -> None:
+    """Boltz-2 云端结构/亲和力预测（经 BioLib）。"""
+    import json as _json
+
+    from bbbkit import boltz as boltz_mod
+
+    if args.endpoint:
+        boltz_mod.set_endpoint(args.endpoint)
+
+    if args.action == "login":
+        boltz_mod.login()
+        print("[boltz] 已登录 BioLib")
+        return
+
+    # predict / affinity 都需要 --input
+    if not args.input:
+        print(f"[boltz] {args.action} 需要 --input <YAML>")
+        sys.exit(1)
+    if not os.path.isfile(args.input):
+        print(f"[boltz] 输入文件不存在: {args.input}")
+        sys.exit(1)
+
+    # 首次提交前确保已登录
+    boltz_mod.login()
+
+    print(f"[boltz] 提交 {args.action} 任务: {args.input}")
+    job = boltz_mod.predict(
+        args.input,
+        recycling_steps=args.recycling_steps,
+        diffusion_samples=args.diffusion_samples,
+        sampling_steps=args.sampling_steps,
+        templates=args.templates,
+        biolib_files=args.biolib_file or None,
+        app_uri=args.app_uri,
+    )
+
+    out = boltz_mod.save_results(job, args.output)
+    print(f"[boltz] 结果已保存到: {out}")
+
+    if args.action == "affinity" and args.print_affinity:
+        try:
+            affinity = boltz_mod.get_affinity(job)
+            print("[boltz] affinity:")
+            print(_json.dumps(affinity, ensure_ascii=False, indent=2))
+        except Exception as exc:
+            print(f"[boltz] 读取 affinity 失败: {exc}")
+
+
 def _cmd_peptide(args: argparse.Namespace) -> None:
     """肽性质预测平台：下载数据集 / 端到端 benchmark / 列出任务。"""
     from bbbkit.peptide import tasks as peptide_tasks_mod
@@ -697,6 +766,7 @@ def main() -> None:
         "batch": _cmd_batch,
         "report": _cmd_report,
         "image2smiles": _cmd_image2smiles,
+        "boltz": _cmd_boltz,
         "peptide": _cmd_peptide,
     }
     fn = dispatch.get(args.command)
