@@ -1,12 +1,21 @@
 #!/usr/bin/env python3
 """
-Build an interactive docking pose gallery HTML for the top 10 GRB10 SH2
-candidates.  Generates:
-  - 2D structure SVGs (inline, via RDKit)
-  - 3D NGL Viewer (CDN) with receptor + docked ligand pose embedded inline
-  - A tabbed/card UI to browse all 10 compounds
+Build a self-contained interactive docking pose gallery HTML for the top 10
+GRB10 SH2 candidates. The 3Dmol.js library is INLINED into the HTML so the
+single .html file works in any browser (Chrome file://, Firefox, etc.) with
+no external dependencies.
+
+Each card shows:
+  - 2D structure (RDKit SVG)
+  - 3D docking pose (3Dmol.js) with interactive controls:
+      Surface opacity slider (0-100%)
+      Receptor style: cartoon (spectrum/chain/ss), line, stick, hide
+      Ligand style: stick, thick stick, ball-stick, space-fill, line
+      Pocket mode: surface, residues (stick), both, none
+      Reset view button
+  - Global "Apply to all" surface opacity slider
 """
-import json, os, re, string
+import json, os, re
 
 from rdkit import Chem
 from rdkit.Chem import Draw, AllChem
@@ -36,11 +45,12 @@ TOP10 = [
 ]
 
 RUN_DIR = "/das/user/QYJI/druggability/output/2026-06-30/grb10_screening_expanded_chembl/vina_full/runs"
-OUTPUT_HTML = "/das/user/QYJI/druggability/output/2026-06-30/grb10_screening_expanded_chembl/vina_full/grb10_docking_gallery.html"
+OUTPUT_DIR = "/das/user/QYJI/druggability/output/2026-06-30/grb10_screening_expanded_chembl/vina_full"
+OUTPUT_HTML = os.path.join(OUTPUT_DIR, "grb10_docking_gallery.html")
+LIB_3DMOL = os.path.join(OUTPUT_DIR, "3Dmol-min.js")
 
 
 def generate_2d_svg(mol, size=(300, 225)):
-    """Return inline SVG string of the molecule's 2D structure."""
     try:
         AllChem.Compute2DCoords(mol)
     except Exception:
@@ -83,21 +93,21 @@ def get_2d_smiles(run_path):
     return ""
 
 
-# -- Helper: read template ------------------------------------------------
-def read_template(path):
-    with open(path) as f:
-        return f.read()
-
-
-# -- Build cards HTML -----------------------------------------------------
+# -- Build per-compound data ------------------------------------------------
+init_calls = []
 cards_html_parts = []
-js_data_parts = []
 
 for idx, cpd in enumerate(TOP10):
     run_path = os.path.join(RUN_DIR, "%s_%s" % (cpd["chembl"], cpd["name"]))
     if not os.path.isdir(run_path):
         print("  !! Run dir not found: %s" % run_path)
         continue
+
+    lig_sdf = extract_ligand_sdf(run_path)
+    rec_pdb = extract_receptor_pdb(run_path)
+
+    lig_js = json.dumps(lig_sdf)
+    rec_js = json.dumps(rec_pdb)
 
     smiles = get_2d_smiles(run_path)
     svg_data = ""
@@ -109,12 +119,6 @@ for idx, cpd in enumerate(TOP10):
             except Exception as e:
                 print("  !! SVG failed for %s: %s" % (cpd["name"], e))
 
-    lig_sdf = extract_ligand_sdf(run_path)
-    rec_pdb = extract_receptor_pdb(run_path)
-
-    lig_js = json.dumps(lig_sdf)
-    rec_js = json.dumps(rec_pdb)
-
     badge_cls = "elite" if cpd["tier"] == "elite" else "tier1"
     phase_clean = cpd["phase"]
     if phase_clean == "--":
@@ -124,7 +128,7 @@ for idx, cpd in enumerate(TOP10):
         phase_badge = '<span class="badge ph%s">%s</span>' % (phase_num, phase_clean)
 
     card = """
-<div class="cpd-card" data-idx="%d">
+<div class="cpd-card">
   <div class="cpd-header">
     <h3>%s</h3>
     <span class="badge %s">%s</span>
@@ -133,204 +137,341 @@ for idx, cpd in enumerate(TOP10):
   </div>
   <div class="cpd-body">
     <div class="cpd-2d">%s</div>
-    <div class="cpd-meta">
-      <div class="stat-row"><span class="stat-label">Vina</span><span class="stat-val">%.3f</span></div>
-      <div class="stat-row"><span class="stat-label">Boltz</span><span class="stat-val hboltz">%.3f</span></div>
-      <div class="stat-row"><span class="stat-label">LE</span><span class="stat-val">%.3f</span></div>
-      <div class="stat-row"><span class="stat-label">MW</span><span class="stat-val">%d</span></div>
-      <div class="stat-row"><span class="stat-label">clogP</span><span class="stat-val">%.2f</span></div>
-      <div class="stat-row"><span class="stat-label">CHEMBL</span><span class="stat-val cid"><code>%s</code></span></div>
+    <div class="cpd-3d-wrap">
+      <div class="cpd-3d" id="viewer%d"></div>
+      <div class="cpd-controls">
+        <div class="ctrl-row">
+          <label>Surface</label>
+          <input type="range" min="0" max="100" value="30" data-idx="%d" class="opacity-slider" title="Surface opacity">
+          <span class="ctrl-val" id="opval%d">30%%</span>
+        </div>
+        <div class="ctrl-row">
+          <label>Receptor</label>
+          <select data-idx="%d" class="rec-style">
+            <option value="cartoon-spectrum">Cartoon spectrum</option>
+            <option value="cartoon-chain">Cartoon by chain</option>
+            <option value="cartoon-ss">Cartoon by 2nd struct</option>
+            <option value="line">Lines</option>
+            <option value="stick">Sticks</option>
+            <option value="hide">Hide</option>
+          </select>
+        </div>
+        <div class="ctrl-row">
+          <label>Ligand</label>
+          <select data-idx="%d" class="lig-style">
+            <option value="stick">Stick</option>
+            <option value="stick-thick">Stick (thick)</option>
+            <option value="ball-stick">Ball &amp; stick</option>
+            <option value="sphere">Space-fill</option>
+            <option value="line">Line</option>
+          </select>
+        </div>
+        <div class="ctrl-row">
+          <label>Pocket</label>
+          <select data-idx="%d" class="pocket-mode">
+            <option value="surface">Surface</option>
+            <option value="residues">Residues (stick)</option>
+            <option value="both">Surface + residues</option>
+            <option value="none">None</option>
+          </select>
+          <button class="reset-btn" data-idx="%d" title="Reset view">Reset</button>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="cpd-footer">
-    <button class="view3d-btn" data-idx="%d">&#x1f52c; 3D Pose</button>
+  <div class="cpd-meta">
+    <div class="stat-item"><span class="stat-label">Vina</span><span class="stat-val">%.3f</span></div>
+    <div class="stat-item"><span class="stat-label">Boltz</span><span class="stat-val hboltz">%.3f</span></div>
+    <div class="stat-item"><span class="stat-label">LE</span><span class="stat-val">%.3f</span></div>
+    <div class="stat-item"><span class="stat-label">MW</span><span class="stat-val">%d</span></div>
+    <div class="stat-item"><span class="stat-label">clogP</span><span class="stat-val">%.2f</span></div>
+    <div class="stat-item"><span class="stat-label">CHEMBL</span><span class="stat-val cid">%s</span></div>
   </div>
-</div>""" % (idx, cpd["name"], badge_cls, cpd["tier"], phase_badge,
-             idx+1, svg_data,
+</div>""" % (cpd["name"], badge_cls, cpd["tier"], phase_badge,
+             idx+1, svg_data, idx,
+             idx, idx,  # opacity slider + val
+             idx,        # rec-style
+             idx,        # lig-style
+             idx, idx,   # pocket-mode + reset
              cpd["vina"], cpd["boltz"], cpd["le"], cpd["mw"], cpd["clogp"],
-             cpd["chembl"], idx)
-
+             cpd["chembl"])
     cards_html_parts.append(card)
 
-    js_data_parts.append("""
-const lig_%d = %s;
-const rec_%d = %s;
-const name_%d = "%s";
-const vina_%d = %f;
-const boltz_%d = %f;
-const chembl_%d = "%s";
-""" % (idx, lig_js, idx, rec_js, idx, cpd["name"],
-       idx, cpd["vina"], idx, cpd["boltz"], idx, cpd["chembl"]))
-
-    print("  ok %-20s  2D+3D data prepared" % cpd["name"])
+    init_calls.append("  initViewer(%d, %s, %s);" % (idx, rec_js, lig_js))
+    print("  ok %-20s  card + 3D data prepared" % cpd["name"])
 
 cards_html = "\n".join(cards_html_parts)
-js_data = "\n".join(js_data_parts)
+init_js = "\n".join(init_calls)
 
-# -- Template with $cards and $jsdata placeholders -- uses string.Template
-TEMPLATE = r"""<!DOCTYPE html>
+# -- Load 3Dmol.js library to inline it into HTML ---------------------------
+if not os.path.exists(LIB_3DMOL):
+    raise SystemExit("ERROR: 3Dmol-min.js not found at %s" % LIB_3DMOL)
+
+with open(LIB_3DMOL, 'r') as f:
+    inline_lib = f.read()
+
+# -- HTML template -----------------------------------------------------------
+# Structured as: CSS -> body -> INLINE 3Dmol.js lib -> our init script
+TEMPLATE = u"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>GRB10 SH2 — Top 10 Docking Pose Gallery</title>
-<script src="https://cdn.jsdelivr.net/npm/ngl@2.5.0/dist/ngl.js"></script>
+<title>GRB10 SH2 - Top 10 Docking Pose Gallery</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#0a0e17;color:#e2e8f0;line-height:1.6}
-.container{max-width:1400px;margin:0 auto;padding:24px 32px}
-.header{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);border-bottom:1px solid #1e3a5f;padding:28px 0}
-.header h1{font-size:24px;font-weight:700;color:#f1f5f9}
-.header .subtitle{font-size:13px;color:#94a3b8;margin-top:4px}
-.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:20px;margin:24px 0}
-.cpd-card{background:#131b2f;border:1px solid #1e293b;border-radius:12px;overflow:hidden;transition:border-color .2s}
-.cpd-card:hover{border-color:#38bdf855}
-.cpd-header{display:flex;align-items:center;gap:8px;padding:14px 16px 8px;background:#1a2236;border-bottom:1px solid #243048}
-.cpd-header h3{font-size:15px;font-weight:600;color:#f1f5f9;flex:1}
-.cpd-header .rank{font-size:12px;color:#64748b;font-weight:500}
-.cpd-body{display:flex;gap:16px;padding:16px}
-.cpd-2d{width:180px;min-width:180px;background:#0f172a;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:8px}
+body{font-family:-apple-system,BlinkMacSystemFont,sans-serif;background:#0a0e17;color:#e2e8f0;line-height:1.4}
+.container{max-width:1700px;margin:0 auto;padding:16px 24px}
+.header{background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);border-bottom:1px solid #1e3a5f;padding:20px 0}
+.header h1{font-size:22px;font-weight:700;color:#f1f5f9}
+.header .subtitle{font-size:13px;color:#94a3b8;margin-top:2px}
+.global-ctrl{background:#1a2236;border:1px solid #243048;border-radius:8px;padding:10px 14px;margin:12px 0;display:flex;align-items:center;gap:14px;font-size:12px}
+.global-ctrl label{color:#94a3b8;font-weight:500}
+.global-ctrl button{background:#1e3a5f;border:1px solid #38bdf866;color:#7dd3fc;padding:5px 12px;border-radius:4px;cursor:pointer;font-size:11px;font-weight:500}
+.global-ctrl button:hover{background:#2a4a7f;color:#bae6fd}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(760px,1fr));gap:16px;margin:16px 0}
+.cpd-card{background:#131b2f;border:1px solid #1e293b;border-radius:10px;overflow:hidden;transition:border-color .2s}
+.cpd-card:hover{border-color:#38bdf866}
+.cpd-header{display:flex;align-items:center;gap:8px;padding:10px 14px 6px;background:#1a2236;border-bottom:1px solid #243048}
+.cpd-header h3{font-size:14px;font-weight:600;color:#f1f5f9;flex:1}
+.cpd-header .rank{font-size:11px;color:#64748b;font-weight:500}
+.badge{display:inline-block;font-size:10px;font-weight:600;padding:1px 7px;border-radius:4px}
+.badge.elite{background:#1a3a2a;color:#4ade80;border:1px solid #4ade8044}
+.badge.tier1{background:#3a2a1a;color:#fbbf24;border:1px solid #fbbf2444}
+.badge.ph2{background:#1a2a3a;color:#60a5fa;border:1px solid #60a5fa44}
+.badge.ph3{background:#2a1a3a;color:#a78bfa;border:1px solid #a78bfa44}
+.badge.ph4{background:#2a3a1a;color:#a3e635;border:1px solid #a3e63544}
+.badge.ph1{background:#3a1a1a;color:#f87171;border:1px solid #f8717144}
+.cpd-body{display:flex;gap:12px;padding:10px 14px}
+.cpd-2d{width:160px;min-width:160px;background:#0f172a;border-radius:6px;display:flex;align-items:center;justify-content:center;padding:6px;align-self:flex-start}
 .cpd-2d svg{width:100%;height:auto}
-.cpd-meta{flex:1;display:flex;flex-direction:column;gap:3px;justify-content:center}
-.stat-row{display:flex;justify-content:space-between;padding:4px 8px;background:#0f172a;border-radius:4px;font-size:12px}
+.cpd-3d-wrap{flex:1;display:flex;flex-direction:column;gap:6px}
+.cpd-3d{width:100%;height:280px;min-height:280px;background:#0a0e17;border-radius:6px;overflow:hidden;position:relative}
+.cpd-controls{background:#0f172a;border-radius:6px;padding:6px 10px;display:grid;grid-template-columns:1fr 1fr;gap:4px 12px;font-size:11px}
+.ctrl-row{display:flex;align-items:center;gap:6px}
+.ctrl-row label{color:#64748b;font-weight:500;min-width:56px;font-size:10px;text-transform:uppercase;letter-spacing:.5px}
+.ctrl-row select{background:#131b2f;border:1px solid #243048;color:#e2e8f0;padding:2px 6px;border-radius:3px;font-size:11px;flex:1;cursor:pointer}
+.ctrl-row select:focus{outline:none;border-color:#38bdf8}
+.ctrl-row input[type=range]{flex:1;accent-color:#38bdf8;cursor:pointer}
+.ctrl-val{color:#38bdf8;font-variant-numeric:tabular-nums;min-width:36px;text-align:right;font-size:10px}
+.reset-btn{background:#1e293b;border:1px solid #38bdf866;color:#7dd3fc;padding:2px 8px;border-radius:3px;cursor:pointer;font-size:10px;font-weight:500}
+.reset-btn:hover{background:#38bdf822}
+.cpd-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:6px 14px 10px;border-top:1px solid #1e293b}
+.stat-item{display:flex;justify-content:space-between;padding:3px 8px;background:#0f172a;border-radius:4px;font-size:11px}
 .stat-label{color:#64748b;font-weight:500}
 .stat-val{color:#e2e8f0;font-variant-numeric:tabular-nums}
 .stat-val.hboltz{color:#4ade80;font-weight:600}
-.stat-row .cid code{color:#94a3b8;font-size:10px}
-.cpd-footer{padding:8px 16px 12px;display:flex;justify-content:center}
-.view3d-btn{background:#1e3a5f;border:1px solid #38bdf855;color:#38bdf8;padding:8px 20px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:500;transition:all .2s;width:100%}
-.view3d-btn:hover{background:#1e3a5f;border-color:#38bdf8;color:#7dd3fc}
-.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:#000000cc;z-index:1000;display:none;align-items:center;justify-content:center}
-.modal-overlay.active{display:flex}
-.modal-content{background:#131b2f;border:1px solid #1e293b;border-radius:12px;width:90vw;height:90vh;max-width:1200px;display:flex;flex-direction:column;overflow:hidden}
-.modal-header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid #243048;background:#1a2236}
-.modal-header h2{font-size:16px;font-weight:600;color:#f1f5f9}
-.modal-close{background:none;border:none;color:#94a3b8;font-size:22px;cursor:pointer;padding:4px 8px;border-radius:4px}
-.modal-close:hover{color:#f1f5f9;background:#243048}
-.modal-viewer{flex:1;position:relative}
-.modal-viewer .ngl-container{width:100%;height:100%}
-.modal-info{padding:12px 20px;border-top:1px solid #243048;background:#1a2236;display:flex;gap:20px;font-size:12px;color:#94a3b8}
-.section-title{font-size:18px;font-weight:600;color:#f1f5f9;margin:32px 0 16px;padding-bottom:8px;border-bottom:1px solid #1e293b}
-@media(max-width:800px){.cards-grid{grid-template-columns:1fr}.cpd-body{flex-direction:column}.cpd-2d{width:100%;min-width:auto}}
+.stat-val.cid{color:#94a3b8;font-size:10px}
+@media(max-width:800px){.cards-grid{grid-template-columns:1fr}.cpd-body{flex-direction:column}.cpd-2d{width:100%;min-width:auto}.cpd-3d{height:240px}}
 </style>
 </head>
 <body>
 
 <div class="header"><div class="container">
-<h1>GRB10 SH2 — Top 10 Docking Pose Gallery</h1>
-<div class="subtitle">Interactive 3D viewing of the best-ranked docked poses from 8490-compound ChEMBL screen</div>
+<h1>GRB10 SH2 - Top 10 Docking Pose Gallery</h1>
+<div class="subtitle">3D poses via 3Dmol.js (inlined) | per-card controls or global batch apply</div>
 </div></div>
 
 <div class="container">
 
-<div class="section-title">Top 10 Candidates <span style="font-size:13px;color:#64748b;font-weight:400">— sorted by Boltz-2 affinity probability</span></div>
+<div class="global-ctrl">
+  <label>Global:</label>
+  <label style="color:#64748b">Surface opacity</label>
+  <input type="range" min="0" max="100" value="30" id="globalOpacity" style="width:120px;accent-color:#38bdf8">
+  <span id="globalOpVal" style="color:#38bdf8;min-width:36px">30%%</span>
+  <button id="applyAllOpacity">Apply to all</button>
+  <span style="color:#64748b;margin-left:auto;font-size:11px">Drag = rotate, scroll = zoom, right-drag = pan (per viewport)</span>
+</div>
 
 <div class="cards-grid" id="cardsGrid">
-$cards
+CARDS_PLACEHOLDER
 </div>
-
-<p style="color:#64748b;font-size:12px;margin-top:16px;text-align:center">
-Click <strong>"🔬 3D Pose"</strong> on any card to view the docked binding pose in interactive 3D.<br>
-Use mouse to rotate, scroll to zoom, right-click drag to pan.
-</p>
 
 </div>
 
-<div class="modal-overlay" id="modalOverlay">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 id="modalTitle">Compound Name</h2>
-      <button class="modal-close" id="modalClose">&times;</button>
-    </div>
-    <div class="modal-viewer" id="modalViewer">
-      <div id="nglStage" class="ngl-container"></div>
-    </div>
-    <div class="modal-info">
-      <span id="modalScores">Vina: -- | Boltz: --</span>
-      <span id="modalChembl">CHEMBL: --</span>
-      <span style="flex:1"></span>
-      <span>Rotate: left-drag  |  Zoom: scroll  |  Pan: right-drag</span>
-    </div>
-  </div>
-</div>
+<!-- 3Dmol.js library inlined below (self-contained, works in Chrome file://) -->
+<script>
+INLINE_3DMOL_LIB
+</script>
 
 <script>
-$jsdata
+var viewers = {};
+var viewerState = {};
 
-var currentStage = null;
+function getRecStyle(mode) {
+  switch(mode) {
+    case 'cartoon-spectrum': return { cartoon: { color: 'spectrum', opacity: 0.9 } };
+    case 'cartoon-chain':    return { cartoon: { colorscheme: 'chain', opacity: 0.9 } };
+    case 'cartoon-ss':       return { cartoon: { colorscheme: 'ssJmol', opacity: 0.9 } };
+    case 'line':             return { line: { linewidth: 1.5 } };
+    case 'stick':            return { stick: { radius: 0.12, opacity: 0.7 } };
+    case 'hide':             return {};
+    default:                 return { cartoon: { color: 'spectrum', opacity: 0.9 } };
+  }
+}
 
-function openViewer(idx) {{
-  var overlay = document.getElementById('modalOverlay');
-  document.getElementById('modalTitle').textContent = window['name_' + idx];
-  document.getElementById('modalScores').textContent =
-    'Vina: ' + window['vina_' + idx].toFixed(3) + '  |  Boltz: ' + window['boltz_' + idx].toFixed(3);
-  document.getElementById('modalChembl').textContent =
-    'CHEMBL: ' + window['chembl_' + idx];
-  overlay.classList.add('active');
+function getLigStyle(mode) {
+  switch(mode) {
+    case 'stick':       return { stick: { colorscheme: 'default', radius: 0.18 } };
+    case 'stick-thick': return { stick: { colorscheme: 'default', radius: 0.28 } };
+    case 'ball-stick':  return { stick: { colorscheme: 'default', radius: 0.14 }, sphere: { colorscheme: 'default', radius: 0.35 } };
+    case 'sphere':      return { sphere: { colorscheme: 'default' } };
+    case 'line':        return { line: { linewidth: 2 } };
+    default:            return { stick: { colorscheme: 'default', radius: 0.18 } };
+  }
+}
 
-  var container = document.getElementById('nglStage');
-  container.innerHTML = '';
-  if (currentStage) {{ try {{ currentStage.dispose(); }} catch(e) {{ }} currentStage = null; }}
+function applyPocket(viewer, mode, opacity) {
+  viewer.removeAllSurfaces();
+  var op = opacity / 100.0;
+  if (mode === 'surface' || mode === 'both') {
+    if (op > 0.01) {
+      viewer.addSurface($3Dmol.SurfaceType.VDW, {
+        opacity: op,
+        color: 'white'
+      }, { model: 0, byres: true, within: { distance: 5, sel: { model: 1 } } });
+    }
+  }
+  if (mode === 'residues' || mode === 'both') {
+    viewer.addStyle({
+      model: 0,
+      byres: true,
+      within: { distance: 5, sel: { model: 1 } }
+    }, {
+      stick: { colorscheme: 'default', radius: 0.13 }
+    });
+  }
+}
 
-  setTimeout(function() {{
-    var stage = new NGL.Stage(container, {{ backgroundColor: '#0a0e17' }});
-    currentStage = stage;
-    stage.viewer.setRock(false);
-    stage.setParameters({{ clipNear: 0, clipFar: 100 }});
+function rebuildStyle(idx) {
+  var v = viewers[idx];
+  var st = viewerState[idx];
+  if (!v || !st) return;
+  v.setStyle({ model: 0 }, {});
+  v.setStyle({ model: 1 }, {});
+  v.setStyle({ model: 0 }, getRecStyle(st.recStyle));
+  v.setStyle({ model: 1 }, getLigStyle(st.ligStyle));
+  applyPocket(v, st.pocketMode, st.opacity);
+  v.render();
+}
 
-    var recBlob = new Blob([window['rec_' + idx]], {{ type: 'text/plain' }});
-    stage.loadFile(recBlob, {{ ext: 'pdb', name: 'Receptor' }}).then(function(comp) {{
-      comp.addRepresentation('cartoon', {{ color: 'residueindex', scale: 1.0 }});
-      comp.addRepresentation('surface', {{ opacity: 0.25, color: 'white', side: 'front' }});
-      comp.autoView();
-    }});
+function initViewer(idx, recData, ligData) {
+  var container = document.getElementById('viewer' + idx);
+  if (!container) { console.error('Container viewer' + idx + ' not found'); return; }
+  try {
+    var viewer = $3Dmol.createViewer(container, {
+      backgroundColor: '#0a0e17',
+      antialias: true
+    });
+    viewer.addModel(recData, 'pdb');
+    viewer.addModel(ligData, 'sdf');
+    viewers[idx] = viewer;
+    viewerState[idx] = {
+      opacity: 30,
+      recStyle: 'cartoon-spectrum',
+      ligStyle: 'stick',
+      pocketMode: 'surface'
+    };
+    rebuildStyle(idx);
+    viewer.zoomTo({ model: 1 });
+    viewer.zoom(0.7);
+    viewer.render();
+  } catch(err) {
+    console.error('Error init viewer ' + idx + ':', err);
+    container.innerHTML = '<div style="color:#f87171;padding:12px;font-size:12px">3D render failed: ' + err.message + '</div>';
+  }
+}
 
-    var ligBlob = new Blob([window['lig_' + idx]], {{ type: 'text/plain' }});
-    stage.loadFile(ligBlob, {{ ext: 'sdf', name: 'Ligand' }}).then(function(comp) {{
-      comp.addRepresentation('ball+stick', {{
-        color: 'element', radiusScale: 0.8,
-        multipleBond: true, bondScale: 1.0
-      }});
-      comp.autoView();
-    }});
-  }}, 100);
-}}
+function resetView(idx) {
+  var v = viewers[idx];
+  if (!v) return;
+  v.zoomTo({ model: 1 });
+  v.zoom(0.7);
+  v.render();
+}
 
-document.querySelectorAll('.view3d-btn').forEach(function(btn) {{
-  btn.addEventListener('click', function() {{
-    openViewer(parseInt(this.dataset.idx));
-  }});
-}});
+function attachControls() {
+  document.querySelectorAll('.opacity-slider').forEach(function(el) {
+    el.addEventListener('input', function() {
+      var idx = parseInt(this.dataset.idx);
+      var val = parseInt(this.value);
+      viewerState[idx].opacity = val;
+      document.getElementById('opval' + idx).textContent = val + '%';
+      rebuildStyle(idx);
+    });
+  });
+  document.querySelectorAll('.rec-style').forEach(function(el) {
+    el.addEventListener('change', function() {
+      var idx = parseInt(this.dataset.idx);
+      viewerState[idx].recStyle = this.value;
+      rebuildStyle(idx);
+    });
+  });
+  document.querySelectorAll('.lig-style').forEach(function(el) {
+    el.addEventListener('change', function() {
+      var idx = parseInt(this.dataset.idx);
+      viewerState[idx].ligStyle = this.value;
+      rebuildStyle(idx);
+    });
+  });
+  document.querySelectorAll('.pocket-mode').forEach(function(el) {
+    el.addEventListener('change', function() {
+      var idx = parseInt(this.dataset.idx);
+      viewerState[idx].pocketMode = this.value;
+      rebuildStyle(idx);
+    });
+  });
+  document.querySelectorAll('.reset-btn').forEach(function(el) {
+    el.addEventListener('click', function() {
+      resetView(parseInt(this.dataset.idx));
+    });
+  });
+  var g = document.getElementById('globalOpacity');
+  var gv = document.getElementById('globalOpVal');
+  g.addEventListener('input', function() {
+    gv.textContent = this.value + '%';
+  });
+  document.getElementById('applyAllOpacity').addEventListener('click', function() {
+    var val = parseInt(g.value);
+    Object.keys(viewerState).forEach(function(k) {
+      viewerState[k].opacity = val;
+      var slider = document.querySelector('.opacity-slider[data-idx="' + k + '"]');
+      if (slider) slider.value = val;
+      var lbl = document.getElementById('opval' + k);
+      if (lbl) lbl.textContent = val + '%';
+      rebuildStyle(parseInt(k));
+    });
+  });
+}
 
-document.getElementById('modalClose').addEventListener('click', function() {{
-  document.getElementById('modalOverlay').classList.remove('active');
-  if (currentStage) {{ try {{ currentStage.dispose(); }} catch(e) {{ }} currentStage = null; }}
-}});
-
-document.getElementById('modalOverlay').addEventListener('click', function(e) {{
-  if (e.target === this) {{
-    document.getElementById('modalOverlay').classList.remove('active');
-    if (currentStage) {{ try {{ currentStage.dispose(); }} catch(e) {{ }} currentStage = null; }}
-  }}
-}});
-
-document.addEventListener('keydown', function(e) {{
-  if (e.key === 'Escape') {{
-    document.getElementById('modalOverlay').classList.remove('active');
-    if (currentStage) {{ try {{ currentStage.dispose(); }} catch(e) {{ }} currentStage = null; }}
-  }}
-}});
+window.addEventListener('load', function() {
+  if (typeof $3Dmol === 'undefined') {
+    console.error('3Dmol.js library not loaded (inlined lib failed to execute)');
+    document.querySelectorAll('.cpd-3d').forEach(function(el) {
+      el.innerHTML = '<div style="color:#f87171;padding:12px;font-size:12px">3Dmol.js library failed to execute. Open browser console for details.</div>';
+    });
+    return;
+  }
+  console.log('Loading ' + INIT_COUNT + ' viewers...');
+INIT_PLACEHOLDER
+  attachControls();
+  console.log('All viewers initialized');
+});
 </script>
 </body>
-</html>
-"""
+</html>"""
 
-tmpl = string.Template(TEMPLATE)
-html = tmpl.substitute(cards=cards_html, jsdata=js_data)
+# -- Assemble HTML ----------------------------------------------------------
+html = TEMPLATE.replace("CARDS_PLACEHOLDER", cards_html)
+html = html.replace("INIT_PLACEHOLDER", init_js)
+html = html.replace("INIT_COUNT", str(len(init_calls)))
+# Inline the 3Dmol.js library LAST so it doesn't interfere with earlier replacements
+html = html.replace("INLINE_3DMOL_LIB", inline_lib)
 
 with open(OUTPUT_HTML, 'w') as f:
     f.write(html)
 
+# -- Verify ------------------------------------------------------------------
 total_dirs = sum(1 for cpd in TOP10 if os.path.isdir(
     os.path.join(RUN_DIR, "%s_%s" % (cpd["chembl"], cpd["name"]))))
 total_rec = sum(1 for cpd in TOP10 if os.path.isfile(
@@ -341,8 +482,10 @@ total_lig = sum(1 for cpd in TOP10 if os.path.isfile(
 size_kb = os.path.getsize(OUTPUT_HTML) / 1024
 print("")
 print("=" * 60)
-print("Output: %s" % OUTPUT_HTML)
-print("Size:   %.0f KB" % size_kb)
-print("Cards:  %d/10 SVGs generated" % total_dirs)
-print("3D:     %d/10 receptor PDBs + %d/10 ligand SDFs embedded" % (total_rec, total_lig))
+print("Output:  %s" % OUTPUT_HTML)
+print("Size:    %.0f KB (3Dmol.js %.0f KB inlined)" % (size_kb, len(inline_lib)/1024))
+print("Cards:   %d/10 SVGs generated" % total_dirs)
+print("3D:      %d/10 receptor PDBs + %d/10 ligand SDFs embedded" % (total_rec, total_lig))
+print("Self-contained: opens directly in Chrome / Firefox / any browser")
+print("Controls: opacity, rec/lig/pocket style, reset, global apply-all")
 print("=" * 60)
