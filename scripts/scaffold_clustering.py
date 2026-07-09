@@ -15,6 +15,11 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
+# ─── Add venv site-packages if running outside venv ─────────────────────────
+_VENV_SP = Path("/home/QYJI/das/druggability/.venv/lib/python3.12/site-packages")
+if _VENV_SP.exists() and str(_VENV_SP) not in sys.path:
+    sys.path.insert(0, str(_VENV_SP))
+
 from rdkit import Chem
 from rdkit.Chem.Scaffolds import MurckoScaffold
 
@@ -88,59 +93,6 @@ n_compounds = len(compounds)
 # ─── Step 3: Compute scaffolds ────────────────────────────────────────────────
 print("\nComputing Murcko scaffolds (generic) and Bemis-Murcko frameworks...")
 
-def get_scaffolds(mol):
-    """Return (murcko_scaffold_smiles, bemis_murcko_smiles) or (None, None)."""
-    try:
-        # Murcko scaffold (generic) — removes sidechains, keeps ring + linker topology
-        murcko = MurckoScaffold.GetScaffoldForMol(mol)
-        if murcko is None:
-            return None, None
-        murcko_smi = Chem.MolToSmiles(murcko, canonical=True)
-
-        # Bemis-Murcko framework — atom-type-sensitive, preserves heteroatom info
-        # This is MurckoScaffold.MakeScaffoldGeneric with atom typing
-        framework = MurckoScaffold.MakeScaffoldGeneric(murcko)
-        # Actually, for Bemis-Murcko framework (atom-type-sensitive), we want
-        # the framework with atom types preserved. Let's use MurckoScaffold.GetScaffoldForMol
-        # which keeps atom types by default, then the generic version removes them.
-        # For "Bemis-Murcko framework" we can also use:
-        from rdkit.Chem.Scaffolds.MurckoScaffold import MurckoScaffoldSmiles
-        
-        # Actually, MurckoScaffoldSmiles(smi) gives the Murcko scaffold SMILES (with atom types)
-        # GetScaffoldForMol gives the Mol object of the scaffold
-        # MakeScaffoldGeneric removes atom type info
-        # So "Murcko scaffold (generic)" = MakeScaffoldGeneric
-        # "Bemis-Murcko framework (atom-type-sensitive)" = regular scaffold with atom types
-        
-        # Let's be more explicit:
-        # Murcko generic: all atoms become carbon, all bonds single/double/aromatic kept
-        murcko_generic = MurckoScaffold.MakeScaffoldGeneric(murcko)
-        murcko_generic_smi = Chem.MolToSmiles(murcko_generic, canonical=True)
-        
-        # Bemis-Murcko framework: atom-type-sensitive version
-        # This is just the regular Murcko scaffold SMILES (preserves atom types)
-        murcko_atomtyped = MurckoScaffold.MurckoScaffoldSmiles(mol=mol)
-        # or equivalently: Chem.MolToSmiles(murcko, canonical=True)
-        
-        return murcko_generic_smi, murcko_atomtyped
-
-    except Exception as e:
-        return None, None
-
-# Actually let me reconsider. The user asked for:
-# 1) Murcko scaffold (generic) - using rdkit.Chem.Scaffolds.MurckoScaffold
-# 2) Bemis-Murcko framework (atom-type-sensitive)
-
-# In RDKit:
-# - MurckoScaffold.GetScaffoldForMol(mol) returns the Murcko scaffold Mol (preserves atom types by default)
-# - MurckoScaffold.MakeScaffoldGeneric(mol) makes all atoms carbon (generic)
-# - To get the SMILES of the scaffold: Chem.MolToSmiles(GetScaffoldForMol(mol))
-# 
-# Bemis-Murcko framework = The Murcko scaffold with atom types preserved = GetScaffoldForMol (default)
-# Murcko scaffold generic = MakeScaffoldGeneric = all carbons
-
-# Let me re-write the function cleanly:
-
 def compute_scaffolds(mol):
     """Return (murcko_generic_smiles, bemis_murcko_smiles) or (None, None)."""
     try:
@@ -148,7 +100,7 @@ def compute_scaffolds(mol):
         if scaffold_mol is None:
             return None, None
         
-        # Bemis-Murcko framework = scaffold with atom types (default)
+        # Bemis-Murcko framework = scaffold with atom types preserved (default)
         bm_smi = Chem.MolToSmiles(scaffold_mol, canonical=True)
         
         # Murcko generic = all atoms generic (carbon)
@@ -177,10 +129,6 @@ if no_scaffold:
 # ─── Step 4: Group by scaffold ────────────────────────────────────────────────
 print("\nGrouping by Murcko scaffold (generic)...")
 
-def compute_rank_key(c):
-    """Score for ranking: primary = Vina (more negative = better), secondary = LE (higher = better)."""
-    return (c["vina"], -c["le"])
-
 def group_and_score(compounds_list, scaffold_key):
     """Group compounds by a scaffold key function.
     Returns list of dicts with cluster info, sorted by cluster size desc."""
@@ -191,14 +139,7 @@ def group_and_score(compounds_list, scaffold_key):
     
     results = []
     for scaffold_smi, members in clusters.items():
-        # Sort members by rank key (best Vina first, then best LE)
-        members_sorted = sorted(members, key=compute_rank_key, reverse=True)
-        # Actually: more negative vina = better, so reverse on vina, positive on LE
-        # Let's fix: (more negative vina) should come first
-        # compute_rank_key returns (vina, -le). More negative vina = smaller = earlier in sort.
-        # But we want best first. So sort normally (ascending vina) then reverse LE priority.
-        # Actually let's just sort: primary by vina ascending (more negative first),
-        # secondary by LE descending (higher first).
+        # Sort by Vina ascending (more negative = better), then LE descending
         members_sorted = sorted(members, key=lambda c: (c["vina"], -c["le"]))
         
         best = members_sorted[0]
@@ -229,7 +170,7 @@ bm_clusters = group_and_score(scaffold_data, "bemis_murcko")
 print(f"  Murcko generic: {len(murcko_clusters)} clusters")
 print(f"  Bemis-Murcko:   {len(bm_clusters)} clusters")
 
-# ─── Step 5: Output ──────────────────────────────────────────────────────────
+# ─── Step 5: Output CSV ─────────────────────────────────────────────────────
 CSV_COLUMNS = [
     "scaffold_smiles",
     "cluster_size",
