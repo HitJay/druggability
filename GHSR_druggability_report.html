@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GHSR Druggability Assessment</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --surface2: #1c2129;
+  --border: #30363d;
+  --text: #e6edf3;
+  --text2: #8b949e;
+  --text3: #6e7681;
+  --accent: #58a6ff;
+  --accent2: #3fb950;
+  --red: #f85149;
+  --yellow: #d29922;
+  --green: #3fb950;
+  --purple: #a371f7;
+  --orange: #db6d28;
+  --radius: 8px;
+  --radius-sm: 4px;
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+/* ── Header ── */
+.header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 32px;
+  margin-bottom: 40px;
+}
+.header .eyebrow {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text3);
+  margin-bottom: 8px;
+}
+.header h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+.header .subtitle {
+  font-size: 16px;
+  color: var(--text2);
+  margin-top: 8px;
+}
+.header .meta {
+  display: flex;
+  gap: 24px;
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--text3);
+}
+
+/* ── Score Banner ── */
+.score-banner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.score-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+}
+.score-card .value {
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.score-card .label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+  margin-top: 8px;
+}
+.score-card .sub {
+  font-size: 13px;
+  color: var(--text2);
+  margin-top: 4px;
+}
+.score-card.accent .value { color: var(--accent); }
+.score-card.green .value { color: var(--green); }
+.score-card.red .value { color: var(--red); }
+.score-card.purple .value { color: var(--purple); }
+
+/* ── Sections ── */
+.section {
+  margin-bottom: 40px;
+}
+.section h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+}
+.section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 24px 0 12px;
+}
+.section p {
+  color: var(--text2);
+  margin-bottom: 12px;
+  max-width: 800px;
+}
+
+/* ── Info Grid ── */
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.info-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info-item .key {
+  font-size: 13px;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.info-item .val {
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 500;
+  text-align: right;
+}
+.info-item .val.mono {
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 13px;
+}
+
+/* ── Tables ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+thead th {
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text3);
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  font-weight: 600;
+}
+tbody td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  vertical-align: top;
+}
+tbody tr:hover { background: var(--surface2); }
+td.mono { font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace; font-size: 13px; }
+td.dim { color: var(--text2); }
+td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+.badge.green { background: rgba(63, 185, 80, 0.15); color: var(--green); }
+.badge.red { background: rgba(248, 81, 73, 0.15); color: var(--red); }
+.badge.yellow { background: rgba(210, 153, 34, 0.15); color: var(--yellow); }
+.badge.blue { background: rgba(88, 166, 255, 0.15); color: var(--accent); }
+.badge.purple { background: rgba(163, 113, 247, 0.15); color: var(--purple); }
+
+/* ── Pocket Cards ── */
+.pocket-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.pocket-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.pocket-card.top {
+  grid-column: 1 / -1;
+  border-color: var(--accent);
+  border-width: 1.5px;
+}
+.pocket-card h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.pocket-card .pdb-tag {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.pocket-card .meta-line {
+  font-size: 13px;
+  color: var(--text2);
+  margin-bottom: 6px;
+}
+.pocket-card .use-case {
+  margin-top: 10px;
+  padding: 8px 10px;
+  background: var(--surface2);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: var(--accent2);
+}
+
+/* ── Safety Comparison ── */
+.safety-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.safety-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+.safety-card .dir {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text3);
+  margin-bottom: 4px;
+}
+.safety-card .rating {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.safety-card .score {
+  font-size: 13px;
+  color: var(--text2);
+  margin-bottom: 12px;
+}
+.safety-card .kwd {
+  display: inline-block;
+  margin: 3px 4px 3px 0;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  background: rgba(248, 81, 73, 0.1);
+  color: var(--red);
+}
+
+/* ── Structure Table ── */
+.structure-table td:nth-child(2) { font-family: 'SF Mono', 'Fira Code', monospace; }
+
+/* ── Expression Bar ── */
+.expr-list {
+  margin-bottom: 20px;
+}
+.expr-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+.expr-row .tissue {
+  width: 180px;
+  font-size: 13px;
+  color: var(--text2);
+  text-align: right;
+  flex-shrink: 0;
+}
+.expr-row .bar-track {
+  flex: 1;
+  height: 18px;
+  background: var(--surface2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.expr-row .bar-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 3px;
+  transition: width 0.6s ease;
+}
+.expr-row .tpm {
+  width: 60px;
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.expr-row.zero .bar-fill { background: var(--border); width: 2px; }
+.expr-row.zero .tpm { color: var(--text3); }
+
+/* ── Key Insight Box ── */
+.insight-box {
+  background: rgba(88, 166, 255, 0.06);
+  border: 1px solid rgba(88, 166, 255, 0.2);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+.insight-box h4 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.insight-box p, .insight-box li {
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.7;
+}
+.insight-box ul {
+  margin-left: 18px;
+  margin-top: 8px;
+}
+
+/* ── Footer ── */
+.footer {
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+  margin-top: 40px;
+  font-size: 12px;
+  color: var(--text3);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ── Pocket Diagram ── */
+.pocket-diagram {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 24px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.tm-bundle {
+  position: relative;
+  width: 200px;
+  height: 280px;
+}
+.tm-helix {
+  position: absolute;
+  width: 24px;
+  background: rgba(88, 166, 255, 0.15);
+  border: 1px solid rgba(88, 166, 255, 0.3);
+  border-radius: 12px;
+  text-align: center;
+  font-size: 10px;
+  color: var(--accent);
+  padding-top: 6px;
+}
+.pocket-zone {
+  position: absolute;
+  background: rgba(63, 185, 80, 0.12);
+  border: 1.5px dashed var(--green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: var(--green);
+  font-weight: 600;
+}
+.state-label {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text2);
+  margin-top: 8px;
+}
+.arrow-between {
+  font-size: 24px;
+  color: var(--text3);
+}
+
+@media (max-width: 800px) {
+  .score-banner { grid-template-columns: repeat(2, 1fr); }
+  .info-grid { grid-template-columns: 1fr; }
+  .pocket-grid { grid-template-columns: 1fr; }
+  .safety-grid { grid-template-columns: 1fr; }
+  .pocket-diagram { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="eyebrow">Target Druggability Assessment</div>
+  <h1>GHSR — Growth Hormone Secretagogue Receptor</h1>
+  <div class="subtitle">Ghrelin Receptor · Class A GPCR · G<sub>q</sub>-coupled</div>
+  <div class="meta">
+    <span>Date: 2026-07-10</span>
+    <span>Author: QYJI</span>
+    <span>Ensembl: ENSG00000121853</span>
+    <span>UniProt: Q92847</span>
+  </div>
+</div>
+
+<!-- ═══════════ SCORE BANNER ═══════════ -->
+<div class="score-banner">
+  <div class="score-card accent">
+    <div class="value">1.00</div>
+    <div class="label">Small Molecule Tractability</div>
+    <div class="sub">Approved Drug</div>
+  </div>
+  <div class="score-card green">
+    <div class="value">0.80</div>
+    <div class="label">Ligandability</div>
+    <div class="sub">3,459 activities · 2 approved drugs</div>
+  </div>
+  <div class="score-card purple">
+    <div class="value">0.81</div>
+    <div class="label">Overall Druggability</div>
+    <div class="sub">Priority — Proceed</div>
+  </div>
+  <div class="score-card red">
+    <div class="value">RED</div>
+    <div class="label">Safety (both directions)</div>
+    <div class="sub">Narrow therapeutic window</div>
+  </div>
+</div>
+
+<!-- ═══════════ TARGET IDENTITY ═══════════ -->
+<div class="section">
+  <h2>Target Identity</h2>
+  <div class="info-grid">
+    <div class="info-item"><span class="key">Gene</span><span class="val">GHSR</span></div>
+    <div class="info-item"><span class="key">Protein</span><span class="val">Growth hormone secretagogue receptor type 1</span></div>
+    <div class="info-item"><span class="key">Family</span><span class="val">GPCR Class A (Rhodopsin-like)</span></div>
+    <div class="info-item"><span class="key">Signaling</span><span class="val">G<sub>q</sub> · G<sub>i</sub> · G<sub>o</sub> (promiscuous)</span></div>
+    <div class="info-item"><span class="key">Ligand</span><span class="val">Ghrelin (endogenous peptide hormone)</span></div>
+    <div class="info-item"><span class="key">Localization</span><span class="val">Cell membrane · multi-pass</span></div>
+    <div class="info-item"><span class="key">ChEMBL</span><span class="val mono">CHEMBL4616</span></div>
+    <div class="info-item"><span class="key">PDB Structures</span><span class="val">10 (2.52–3.30 Å)</span></div>
+  </div>
+  <p>GHSR is the receptor for ghrelin, the "hunger hormone." It regulates appetite, growth hormone secretion, gastric motility, and energy homeostasis. Constitutively active — signals even without ligand — which is rare among GPCRs and has implications for drug design.</p>
+</div>
+
+<!-- ═══════════ DRUGGABILITY ═══════════ -->
+<div class="section">
+  <h2>Druggability Verdict</h2>
+
+  <div class="insight-box">
+    <h4>Bottom Line</h4>
+    <p>GHSR scores <strong>5/5 on small-molecule druggability</strong> — an Approved Drug target with 10 high-resolution structures and rich SAR. It belongs to the most successful drug target family (Class A GPCR) and has 2 approved drugs + 3 in Phase 3 clinical trials. However, both agonism and antagonism carry RED safety flags, demanding careful indication selection and therapeutic window definition.</p>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Modality</th><th>Score</th><th>Top Evidence</th><th>Verdict</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Small Molecule</strong></td>
+        <td class="num"><span class="badge green">1.00</span></td>
+        <td>Approved Drug · Structure with Ligand · High-Quality Ligand · Druggable Family</td>
+        <td><span class="badge green">GO</span></td>
+      </tr>
+      <tr>
+        <td><strong>Antibody</strong></td>
+        <td class="num"><span class="badge yellow">0.40</span></td>
+        <td>UniProt SigP/TMHMM · GO CC high conf</td>
+        <td><span class="badge yellow">Limited</span></td>
+      </tr>
+      <tr>
+        <td><strong>PROTAC / Degrader</strong></td>
+        <td class="num"><span class="badge red">0.00</span></td>
+        <td>No ubiquitination or half-life data</td>
+        <td><span class="badge red">No</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Genetic Support</h3>
+  <table>
+    <thead><tr><th>Metric</th><th>Value</th><th>Interpretation</th></tr></thead>
+    <tbody>
+      <tr><td>LoF oe (gnomAD)</td><td class="num">0.688</td><td>LoF-tolerant — inhibition genetically viable</td></tr>
+      <tr><td>Missense oe</td><td class="num">0.991</td><td>Highly tolerant of missense variation</td></tr>
+      <tr><td>Genetic association score</td><td class="num">0.768</td><td>Strong GWAS links (short stature, skeletal abnormalities)</td></tr>
+      <tr><td>Associated diseases</td><td class="num">415</td><td>Broad disease spectrum: metabolic, cancer, GI, CNS</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════ CANDIDATE POCKETS ═══════════ -->
+<div class="section">
+  <h2>Candidate Pockets for Docking</h2>
+
+  <p>GHSR structures capture the <strong>orthosteric pocket in two distinct conformational states</strong> — inactive (TM6 unshifted, tight pocket) and active (TM6 outward, open pocket). The choice of structure should match your modality goal.</p>
+
+  <!-- Pocket visual diagram -->
+  <div class="pocket-diagram">
+    <div>
+      <div class="tm-bundle">
+        <div class="tm-helix" style="left:88px;top:10px;height:240px;">TM6</div>
+        <div class="tm-helix" style="left:62px;top:30px;height:220px;">TM5</div>
+        <div class="tm-helix" style="left:36px;top:50px;height:200px;">TM4</div>
+        <div class="tm-helix" style="left:10px;top:30px;height:220px;">TM3</div>
+        <div class="tm-helix" style="left:114px;top:50px;height:200px;">TM7</div>
+        <div class="tm-helix" style="left:140px;top:70px;height:180px;">TM1</div>
+        <div class="tm-helix" style="left:160px;top:120px;height:140px;">TM2</div>
+        <div class="pocket-zone" style="left:38px;top:80px;width:90px;height:65px;">Pocket</div>
+      </div>
+      <div class="state-label">Inactive State (7F83)<br>Tight pocket · Antagonist design</div>
+    </div>
+    <div class="arrow-between">→</div>
+    <div>
+      <div class="tm-bundle">
+        <div class="tm-helix" style="left:108px;top:10px;height:240px;">TM6</div>
+        <div class="tm-helix" style="left:62px;top:30px;height:220px;">TM5</div>
+        <div class="tm-helix" style="left:36px;top:50px;height:200px;">TM4</div>
+        <div class="tm-helix" style="left:10px;top:30px;height:220px;">TM3</div>
+        <div class="tm-helix" style="left:134px;top:50px;height:200px;">TM7</div>
+        <div class="tm-helix" style="left:155px;top:70px;height:180px;">TM1</div>
+        <div class="tm-helix" style="left:170px;top:120px;height:140px;">TM2</div>
+        <div class="pocket-zone" style="left:25px;top:75px;width:115px;height:75px;">Pocket</div>
+      </div>
+      <div class="state-label">Active State (8JSR / 7NA7)<br>Open pocket · Agonist / GPCR structural biology</div>
+    </div>
+  </div>
+
+  <!-- Pocket recommendation cards -->
+  <div class="pocket-grid">
+    <div class="pocket-card top">
+      <h4>🥇 Primary: Inactive-State Orthosteric Pocket</h4>
+      <div class="pdb-tag">7F83</div>
+      <div class="meta-line">X-ray · 2.94 Å · Inverse agonist 1KQ bound</div>
+      <p style="font-size:13px;color:var(--text2);margin-top:6px;">
+        <strong>Best for antagonist/inverse agonist discovery.</strong> Only inactive-state GHSR structure available. TM6 is in the "closed" position — the pocket shape is distinct from all active-state structures. Inverse agonist 1KQ provides validated starting geometry.
+      </p>
+      <div class="use-case">🎯 Use for: Antagonist docking · Inverse agonist screening · Structure-based VS</div>
+    </div>
+
+    <div class="pocket-card">
+      <h4>🥈 Active-State (Small Molecule)</h4>
+      <div class="pdb-tag">8JSR</div>
+      <div class="meta-line">Cryo-EM · 2.9 Å · Anamorelin bound · G<sub>q</sub></div>
+      <p style="font-size:13px;color:var(--text2);margin-top:6px;">
+        Approved drug Anamorelin co-crystallized in the active G<sub>q</sub>-coupled state. Gold standard for agonist docking — the pocket geometry reflects the therapeutically validated binding mode.
+      </p>
+      <div class="use-case">🎯 Use for: Agonist docking · Approved drug benchmarking</div>
+    </div>
+
+    <div class="pocket-card">
+      <h4>🥉 Active-State (Peptide)</h4>
+      <div class="pdb-tag">7F9Y</div>
+      <div class="meta-line">Cryo-EM · 2.9 Å · Ghrelin bound · G<sub>q</sub></div>
+      <p style="font-size:13px;color:var(--text2);margin-top:6px;">
+        Endogenous ligand ghrelin (28-aa peptide) reveals the full extent of the orthosteric pocket. Key for understanding peptide-SM overlap and designing peptide mimetics.
+      </p>
+      <div class="use-case">🎯 Use for: Peptide mimetic design · Pocket extent mapping</div>
+    </div>
+  </div>
+
+  <h3>All Available Structures</h3>
+  <table class="structure-table">
+    <thead>
+      <tr><th>PDB</th><th>Method</th><th>Res.</th><th>Bound Ligand</th><th>G Protein</th><th>State</th><th>Best For</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>7F83</td><td>X-ray</td><td class="num">2.94</td><td>1KQ (inverse agonist)</td><td>—</td><td><span class="badge blue">Inactive</span></td><td>Antagonist docking</td></tr>
+      <tr><td>9UY3</td><td>EM</td><td class="num">2.52</td><td>Anamorelin</td><td>G<sub>q</sub></td><td><span class="badge green">Active</span></td><td>Agonist (best res.)</td></tr>
+      <tr><td>9V2N</td><td>EM</td><td class="num">2.63</td><td>Macimorelin</td><td>G<sub>q</sub></td><td><span class="badge green">Active</span></td><td>Agonist (approved drug)</td></tr>
+      <tr><td>7NA7</td><td>EM</td><td class="num">2.70</td><td>Ghrelin + syn. agonist</td><td>G<sub>i</sub></td><td><span class="badge green">Active</span></td><td>G<sub>i</sub>-biased agonist</td></tr>
+      <tr><td>7NA8</td><td>EM</td><td class="num">2.70</td><td>1KD (syn. agonist)</td><td>G<sub>i</sub></td><td><span class="badge green">Active</span></td><td>G<sub>i</sub>-biased agonist</td></tr>
+      <tr><td>7W2Z</td><td>EM</td><td class="num">2.80</td><td>Ghrelin</td><td>G<sub>o</sub></td><td><span class="badge green">Active</span></td><td>G<sub>o</sub> selectivity</td></tr>
+      <tr><td>8JSR</td><td>EM</td><td class="num">2.90</td><td>Anamorelin</td><td>G<sub>q</sub></td><td><span class="badge green">Active</span></td><td>Agonist docking</td></tr>
+      <tr><td>7F9Y</td><td>EM</td><td class="num">2.90</td><td>Ghrelin</td><td>G<sub>q</sub></td><td><span class="badge green">Active</span></td><td>Peptide mimetic</td></tr>
+      <tr><td>7F9Z</td><td>EM</td><td class="num">3.20</td><td>GHRP-6 (synthetic peptide)</td><td>G<sub>q</sub></td><td><span class="badge green">Active</span></td><td>Peptide SAR</td></tr>
+      <tr><td>6KO5</td><td>X-ray</td><td class="num">3.30</td><td>Apo (Fab-bound)</td><td>—</td><td><span class="badge yellow">Apo</span></td><td>Not recommended</td></tr>
+    </tbody>
+  </table>
+
+  <div class="insight-box">
+    <h4>Docking Recommendation</h4>
+    <ul>
+      <li><strong>Antagonist / inverse agonist:</strong> Use <strong>7F83</strong> (only inactive-state structure, pocket is tighter). Consider ensemble docking with 8JSR to capture conformational flexibility.</li>
+      <li><strong>Agonist:</strong> Use <strong>8JSR</strong> (anamorelin, therapeutically validated) or <strong>9UY3</strong> (2.52 Å, best resolution) once released on RCSB.</li>
+      <li><strong>G<sub>i</sub>-biased agonist:</strong> Use <strong>7NA7</strong> or <strong>7NA8</strong> — distinct TM6 displacement from G<sub>q</sub>-coupled structures.</li>
+      <li><strong>Note:</strong> GHSR has high constitutive activity. Inverse agonists will have different pharmacology than neutral antagonists — factor this into your screening cascade.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══════════ EXPRESSION ═══════════ -->
+<div class="section">
+  <h2>Expression Profile (GTEx v8)</h2>
+  <p>GHSR expression is <strong>highly restricted</strong> — detected in only 6 of 54 tissues. This is favorable for target safety (low off-tissue risk).</p>
+
+  <div class="expr-list">
+    <div class="expr-row">
+      <div class="tissue">Pituitary</div>
+      <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+      <div class="tpm">5.26</div>
+    </div>
+    <div class="expr-row">
+      <div class="tissue">Hypothalamus</div>
+      <div class="bar-track"><div class="bar-fill" style="width:4%"></div></div>
+      <div class="tpm">0.21</div>
+    </div>
+    <div class="expr-row">
+      <div class="tissue">Nucleus accumbens</div>
+      <div class="bar-track"><div class="bar-fill" style="width:1.7%"></div></div>
+      <div class="tpm">0.09</div>
+    </div>
+    <div class="expr-row">
+      <div class="tissue">Testis</div>
+      <div class="bar-track"><div class="bar-fill" style="width:1.3%"></div></div>
+      <div class="tpm">0.07</div>
+    </div>
+    <div class="expr-row">
+      <div class="tissue">Pancreas</div>
+      <div class="bar-track"><div class="bar-fill" style="width:0.8%"></div></div>
+      <div class="tpm">0.04</div>
+    </div>
+    <div class="expr-row">
+      <div class="tissue">Hippocampus</div>
+      <div class="bar-track"><div class="bar-fill" style="width:0.2%"></div></div>
+      <div class="tpm">0.01</div>
+    </div>
+    <div class="expr-row zero">
+      <div class="tissue">48 other tissues</div>
+      <div class="bar-track"><div class="bar-fill" style="width:1px"></div></div>
+      <div class="tpm">0.00</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ CLINICAL LANDSCAPE ═══════════ -->
+<div class="section">
+  <h2>Clinical Landscape</h2>
+  <p>All clinical-stage GHSR drugs are <strong>agonists</strong>. No antagonist has reached late-stage trials — a potential opportunity for first-in-class development.</p>
+
+  <table>
+    <thead><tr><th>Drug</th><th>Phase</th><th>Action</th><th>Indication</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Macimorelin</strong> (AEZS-130)</td><td><span class="badge green">Approved</span></td><td>Agonist</td><td>GH deficiency diagnosis</td><td>FDA/EMA approved</td></tr>
+      <tr><td><strong>Anamorelin</strong></td><td><span class="badge green">Approved (JP)</span></td><td>Agonist</td><td>Cancer cachexia</td><td>Japan approved; Phase 3 elsewhere</td></tr>
+      <tr><td><strong>Ulimorelin</strong></td><td><span class="badge blue">Phase 3</span></td><td>Agonist</td><td>GI motility disorders</td><td>Phase 3 completed</td></tr>
+      <tr><td><strong>Ibutamoren</strong> (MK-0677)</td><td><span class="badge blue">Phase 2</span></td><td>Agonist</td><td>GH deficiency</td><td>Multiple Phase 2 completed</td></tr>
+      <tr><td><strong>—</strong></td><td><span class="badge red">None</span></td><td>Antagonist</td><td>—</td><td>No antagonist in clinical trials</td></tr>
+    </tbody>
+  </table>
+
+  <div class="insight-box">
+    <h4>Opportunity: First-in-Class GHSR Antagonist</h4>
+    <p>GHSR antagonism is genetically validated (LoF-tolerant, favorable metabolic KO phenotype in mice: lean, insulin-sensitive, β-cell protected) and clinically unexplored. Indications include obesity, Prader-Willi syndrome, and substance use disorders. The key challenge is avoiding complete GH axis suppression — a <strong>partial antagonist or biased ligand</strong> strategy may provide the best therapeutic window.</p>
+  </div>
+</div>
+
+<!-- ═══════════ SAFETY ═══════════ -->
+<div class="section">
+  <h2>Safety Assessment (3_safety Pipeline)</h2>
+  <p>Both inhibition and activation scored <span class="badge red">RED</span>. Risks are direction-dependent — understanding the specific liabilities informs indication selection and preclinical safety package design.</p>
+
+  <div class="safety-grid">
+    <div class="safety-card">
+      <div class="dir">Inhibition / Antagonism</div>
+      <div class="rating" style="color:var(--red);">🔴 RED</div>
+      <div class="score">Risk Score: 88 &nbsp;|&nbsp; 5 keywords matched</div>
+      <div>
+        <span class="kwd">hypotension (70)</span>
+        <span class="kwd">cardiac monitoring (45)</span>
+        <span class="kwd">hyperglycemia (40)</span>
+        <span class="kwd">pediatric (40)</span>
+        <span class="kwd">vomiting (30)</span>
+      </div>
+      <ul style="margin-top:12px;font-size:13px;color:var(--text2);margin-left:16px;">
+        <li>GH/IGF-1 axis suppression → short stature, hypoglycemia</li>
+        <li>Reduced LV contractility, hypotension</li>
+        <li>Increased anxiety-like behavior (VTA KO models)</li>
+        <li>✅ Favorable: lean phenotype, insulin sensitization, non-oncogenic</li>
+      </ul>
+    </div>
+
+    <div class="safety-card">
+      <div class="dir">Activation / Agonism</div>
+      <div class="rating" style="color:var(--red);">🔴 RED</div>
+      <div class="score">Risk Score: 84 &nbsp;|&nbsp; 3 keywords matched</div>
+      <div>
+        <span class="kwd">hypotension (70)</span>
+        <span class="kwd">hyperglycemia (40)</span>
+        <span class="kwd">nausea (30)</span>
+      </div>
+      <ul style="margin-top:12px;font-size:13px;color:var(--text2);margin-left:16px;">
+        <li>GH/IGF-1 overactivation → insulin resistance, acromegalic features</li>
+        <li>Hyperphagia, weight gain, increased adiposity</li>
+        <li>Mixed hemodynamics: hypotension + paradoxical hypertension</li>
+        <li>✅ Favorable: human clinical experience with agonists exists</li>
+      </ul>
+    </div>
+  </div>
+
+  <table>
+    <thead><tr><th>Dimension</th><th>Inhibition</th><th>Activation</th></tr></thead>
+    <tbody>
+      <tr><td>Rating</td><td><span class="badge red">RED (88)</span></td><td><span class="badge red">RED (84)</span></td></tr>
+      <tr><td>Core Risk</td><td>GH deficiency, growth impairment</td><td>GH excess, metabolic syndrome</td></tr>
+      <tr><td>Pediatric</td><td><span class="badge red">Contraindicated</span></td><td><span class="badge red">GH axis overstimulation</span></td></tr>
+      <tr><td>Oncogenicity</td><td><span class="badge green">Low (non-tumor suppressor)</span></td><td><span class="badge yellow">Monitor (GH-sensitive tumors)</span></td></tr>
+      <tr><td>Clinical Validation</td><td><span class="badge red">None</span></td><td><span class="badge green">2 approved drugs</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════ RECOMMENDATIONS ═══════════ -->
+<div class="section">
+  <h2>Strategic Recommendations</h2>
+
+  <table>
+    <thead><tr><th>#</th><th>Recommendation</th><th>Rationale</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="num">1</td>
+        <td><strong>Prioritize small-molecule modality</strong></td>
+        <td>SM tractability = 1.0; Approved Drug label; 10 structures; rich SAR. No need to consider antibody or PROTAC.</td>
+      </tr>
+      <tr>
+        <td class="num">2</td>
+        <td><strong>Pick indication before picking direction</strong></td>
+        <td>Inhibition → obesity, PWS, substance abuse. Activation → cachexia, GH deficiency. The direction determines the screening strategy.</td>
+      </tr>
+      <tr>
+        <td class="num">3</td>
+        <td><strong>Use 7F83 for antagonist docking</strong></td>
+        <td>Only inactive-state structure. If pursuing antagonism, dock against 7F83 first, then validate against 8JSR active state for selectivity.</td>
+      </tr>
+      <tr>
+        <td class="num">4</td>
+        <td><strong>Consider biased signaling</strong></td>
+        <td>GHSR couples to G<sub>q</sub>/G<sub>i</sub>/G<sub>o</sub> and β-arrestin. A G<sub>i</sub>-biased antagonist could suppress appetite without full GH axis shutdown.</td>
+      </tr>
+      <tr>
+        <td class="num">5</td>
+        <td><strong>Peripheral restriction may improve safety</strong></td>
+        <td>CNS-penetrant antagonists risk anxiety (VTA GHSR KO phenotype). A peripherally restricted antagonist avoids this while retaining metabolic benefit.</td>
+      </tr>
+      <tr>
+        <td class="num">6</td>
+        <td><strong>Preclinical package: cardiac + endocrine + CNS</strong></td>
+        <td>Required: cardiovascular telemetry, GH/IGF-1/glucose monitoring, neurobehavioral battery, pediatric tox if chronic indication.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  <span>GHSR Druggability Assessment · 2026-07-10</span>
+  <span>Sources: Open Targets · UniProt · ChEMBL · GTEx · gnomAD · RCSB PDB · 3_safety pipeline (anthropic_claude_opus_4_7)</span>
+  <span>QYJI · RIC Project</span>
+</div>
+
+</div>
+</body>
+</html>
