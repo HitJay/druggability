@@ -97,7 +97,7 @@ for i, (fname, cid) in enumerate(todo):
                      'delta_score': round(s7 - s8, 2), 'time_7F83': round(t7, 1),
                      'time_8JSR': round(t8, 1)})
     except Exception as e:
-        row['error'] = str(e)[:200]
+        row['error'] = str(e)[:200].replace('\n',' ').replace('\r',' ')
 
     append(CSV, row)
 
