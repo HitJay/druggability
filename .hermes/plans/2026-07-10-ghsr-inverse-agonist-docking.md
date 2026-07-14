@@ -202,17 +202,21 @@ df8 = pd.read_csv('results_8JSR.csv')
 df = df7.merge(df8, on='name', suffixes=('_7F83', '_8JSR'))
 
 # Core metric: delta score
+# Vina scores are negative (more negative = stronger binding).
+# delta = score_7F83 - score_8JSR.
+# Inverse agonists bind better to inactive (7F83): 7F83 << 8JSR → delta < 0.
+# Agonists bind better to active (8JSR): 8JSR << 7F83 → delta > 0.
 df['delta_score'] = df['score_7F83'] - df['score_8JSR']
 
-# Classification
+# Classification (fixed sign: negative delta = 7F83-preferred = inverse agonist)
 df['class'] = 'pan_binder'           # default
-df.loc[df['delta_score'] >  1.0, 'class'] = 'strong_inverse_agonist'
-df.loc[df['delta_score'] >  0.5, 'class'] = 'moderate_inverse_agonist'
-df.loc[df['delta_score'] < -0.5, 'class'] = 'active_state_preferring'
-df.loc[df['delta_score'] < -1.0, 'class'] = 'agonist_like'
+df.loc[df['delta_score'] < -1.0, 'class'] = 'strong_inverse_agonist'
+df.loc[df['delta_score'] < -0.5, 'class'] = 'moderate_inverse_agonist'
+df.loc[df['delta_score'] >  0.5, 'class'] = 'active_state_preferring'
+df.loc[df['delta_score'] >  1.0, 'class'] = 'agonist_like'
 
-# Rank: prioritize strong delta + good absolute 7F83 score
-df['priority'] = df['delta_score'] * 0.6 + (-df['score_7F83']) * 0.4
+# Rank: prioritize negative delta (inverse agonist) + strong 7F83 binding
+df['priority'] = -df['delta_score'] * 0.6 + (-df['score_7F83']) * 0.4
 df = df.sort_values('priority', ascending=False)
 ```
 
