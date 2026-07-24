@@ -377,6 +377,19 @@ ChEMBL API → 查靶点/化合物   druggability/ → 靶点可药性评估
     └───────────────────────────────────────────┘
 ```
 
+## 🧬 Binding / 结构评估能力（2026-07 新增）
+
+在靶点可药性评估之外，本仓库还跑通了一条"结构预测 + 结合评估"的能力链：
+
+- **复合物结构 + 亲和力预测**：BioLib `@nn/DCD/Boltz-2` 跑蛋白-蛋白/肽-受体复合物结构（`.cif` + confidence JSON），小分子场景可加 `affinity` 读数（binder 概率 + 近似 IC50）。
+- **MM/GBSA 结合自由能**：本地 OpenMM + PDBFixer + GBn2 隐式溶剂，对 Boltz-2 输出结构做能量最小化后计算 ΔG_binding。
+- **大规模小分子虚拟筛选**：BioLib `@nn/SmallMolecules/AutoDock-Vina` / 本地 `vina`，已在 GHSR 反向激动剂项目上跑通 7931 化合物 × 2 受体构象。
+- **PPI/adaptor 蛋白全链路筛选**：GRB10 项目验证了 Vina→Boltz-2→AI pose 评审→细胞可穿透性→liability 筛查的端到端流程。
+
+**关键局限（务必在任何报告中声明）**：Boltz-2 的 `iptm` 是结构合理性代理指标，**不是**结合强度/功能活性的验证过的预测；同源阴性对照（如 secretin 对 GIPR/GCGR）已证实其 iptm 可以高于真实激动剂。单构象 MM/GBSA ΔG 同理是方向性粗筛，不是验证过的亲和力排序。
+
+详见 [docs/binding-structure-assessment.md](docs/binding-structure-assessment.md)（能力矩阵、工作流、踩坑记录、已验证项目案例）。
+
 ## 📝 License
 
 MIT
