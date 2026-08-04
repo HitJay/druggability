@@ -1,0 +1,26 @@
+seed,pose_rank,score_kcal_mol,centroid_distance_A,box_size_A,pose_file
+20260803,1,-5.56,2.542,"[12.0, 12.0, 12.0]",/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_controls_restrained/poses/3_5_DHBA_9KT9_seed20260803.pdbqt
+20260803,2,-5.49,2.498,"[12.0, 12.0, 12.0]",/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_controls_restrained/poses/3_5_DHBA_9KT9_seed20260803.pdbqt
+20260803,3,-5.379,2.236,"[12.0, 12.0, 12.0]",/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_controls_restrained/poses/3_5_DHBA_9KT9_seed20260803.pdbqt
+20260803,4,-5.298,1.68,"[12.0, 12.0, 12.0]",/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_controls_restrained/poses/3_5_DHBA_9KT9_seed20260803.pdbqt
+20260803,5,-5.287,1.692,"[12.0, 12.0, 12.0]",/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_controls_restrained/poses/3_5_DHBA_9KT9_seed20260803.pdbqt
+1,1,-5.547,2.553,"[12.0, 12.0, 12.0]",/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_controls_restrained/poses/3_5_DHBA_9KT9_seed1.pdbqt
+1,2,-5.503,2.529,"[12.0, 12.0, 12.0]",/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_controls_restrained/poses/3_5_DHBA_9KT9_seed1.pdbqt
+1,3,-5.373,2.234,"[12.0, 12.0, 12.0]",/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_controls_restrained/poses/3_5_DHBA_9KT9_seed1.pdbqt
+1,4,-5.302,1.719,"[12.0, 12.0, 12.0]",/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_controls_restrained/poses/3_5_DHBA_9KT9_seed1.pdbqt
+1,5,-5.279,1.669,"[12.0, 12.0, 12.0]",/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_controls_restrained/poses/3_5_DHBA_9KT9_seed1.pdbqt
+2,1,-5.56,2.535,"[12.0, 12.0, 12.0]",/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_controls_restrained/poses/3_5_DHBA_9KT9_seed2.pdbqt
+2,2,-5.513,2.536,"[12.0, 12.0, 12.0]",/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_controls_restrained/poses/3_5_DHBA_9KT9_seed2.pdbqt
+2,3,-5.385,2.296,"[12.0, 12.0, 12.0]",/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_controls_restrained/poses/3_5_DHBA_9KT9_seed2.pdbqt
+2,4,-5.294,1.675,"[12.0, 12.0, 12.0]",/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_controls_restrained/poses/3_5_DHBA_9KT9_seed2.pdbqt
+2,5,-5.288,1.664,"[12.0, 12.0, 12.0]",/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_controls_restrained/poses/3_5_DHBA_9KT9_seed2.pdbqt
+3,1,-5.561,2.507,"[12.0, 12.0, 12.0]",/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_controls_restrained/poses/3_5_DHBA_9KT9_seed3.pdbqt
+3,2,-5.52,2.53,"[12.0, 12.0, 12.0]",/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_controls_restrained/poses/3_5_DHBA_9KT9_seed3.pdbqt
+3,3,-5.373,2.235,"[12.0, 12.0, 12.0]",/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_controls_restrained/poses/3_5_DHBA_9KT9_seed3.pdbqt
+3,4,-5.299,1.699,"[12.0, 12.0, 12.0]",/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_controls_restrained/poses/3_5_DHBA_9KT9_seed3.pdbqt
+3,5,-5.285,1.758,"[12.0, 12.0, 12.0]",/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_controls_restrained/poses/3_5_DHBA_9KT9_seed3.pdbqt
+4,1,-5.572,2.536,"[12.0, 12.0, 12.0]",/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_controls_restrained/poses/3_5_DHBA_9KT9_seed4.pdbqt
+4,2,-5.507,2.528,"[12.0, 12.0, 12.0]",/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_controls_restrained/poses/3_5_DHBA_9KT9_seed4.pdbqt
+4,3,-5.377,2.244,"[12.0, 12.0, 12.0]",/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_controls_restrained/poses/3_5_DHBA_9KT9_seed4.pdbqt
+4,4,-5.289,1.702,"[12.0, 12.0, 12.0]",/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_controls_restrained/poses/3_5_DHBA_9KT9_seed4.pdbqt
+4,5,-5.286,1.67,"[12.0, 12.0, 12.0]",/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_controls_restrained/poses/3_5_DHBA_9KT9_seed4.pdbqt

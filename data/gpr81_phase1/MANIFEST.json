@@ -1,0 +1,71 @@
+{
+  "project": "GPR81 / HCAR1 small-molecule agonist docking",
+  "phase": "Phase 1 - input discovery and normalization",
+  "generated_utc": "2026-08-03",
+  "identity_resolution": "identity_resolution.json",
+  "target": {
+    "gene_symbol": "HCAR1",
+    "aliases": [
+      "GPR81",
+      "HCA1",
+      "GPR104"
+    ],
+    "organism": "Homo sapiens",
+    "uniprot_accession": "Q9BXC0",
+    "sequence_length": 346,
+    "uniprot_url": "https://www.uniprot.org/uniprotkb/Q9BXC0",
+    "fasta": "sources/HCAR1_HUMAN_Q9BXC0.fasta"
+  },
+  "recommended_structures": [
+    {
+      "pdb_id": "8Z87",
+      "role": "CHBA-bound active-state reference",
+      "local_file": "structures/8Z87.cif"
+    },
+    {
+      "pdb_id": "9KT9",
+      "role": "3,5-DHBA-bound active-state reference",
+      "local_file": "structures/9KT9.pdb"
+    },
+    {
+      "pdb_id": "8Z8A",
+      "role": "lactate-bound active-state reference",
+      "local_file": "structures/8Z8A.pdb"
+    },
+    {
+      "pdb_id": "8Z8B",
+      "role": "apo-state reference",
+      "local_file": "structures/8Z8B.pdb"
+    }
+  ],
+  "tool_compounds_csv": "tool_compounds.csv",
+  "paper_inventory_csv": "paper_compound_inventory.csv",
+  "source_files": {
+    "request_email": "/TDE_TV/shared_folder/QYJI/druggability/GPR81/email_by_Huan.txt",
+    "tool_summary_pdf": "/TDE_TV/shared_folder/QYJI/druggability/GPR81/20260803_SM tool compounds summary.pdf",
+    "paper_pdf": "/TDE_TV/shared_folder/QYJI/druggability/GPR81/AZ (2020)_BMCL_Identification of novel GPR81 agonist lead series for target biology.pdf"
+  },
+  "known_gaps": [
+    "The 39 paper compounds are represented as drawings in the main PDF; SMILES/SDF have not been inferred from images.",
+    "The paper supplementary information was not present in the supplied folder and is needed to recover exact structures reliably.",
+    "AZ1 / CID 57422810 is confirmed as Davidsson 2020 paper compound 1; CID 86279608 / GPR81 agonist 1 is not Davidsson 2020 compound 2 and is instead linked to Takeda/Sakurai 2014 compound 2.",
+    "Docking receptor preparation, chain selection, pocket definition, and protonation are Phase 2 tasks."
+  ],
+  "validation_file": "validation.json",
+  "sha256": {
+    "ligands/3_5_DHBA_CID7424.sdf": "153da62924331289e0e26cfe09fe5dc03b9a1e78a0ea84ab5eba8e0fc78cc311",
+    "ligands/3_OBA_CID441.sdf": "45c2d8537731faf3c0a90f7f462e0c5f69ce6b28f8ea8892d8656ad3ba50c13c",
+    "ligands/AZ1_GPR81_agonist_2_CID57422810.sdf": "8067d6e36917d83b34de8eb101c4305bc67d1fa0b6ba6bef44e3474463b7495d",
+    "ligands/CHBA_CID13071646.sdf": "288a518510b1b84f9cbab9fb6f49188790576e1c124576a17b2b8710f2daf692",
+    "ligands/GPR81_agonist_1_CID86279608.sdf": "1d73b063b80c42fc136dfc1fba11af9e196e8154f0b6fc51ecafd7dc31f764c5",
+    "paper_compound_inventory.csv": "b1b8ea267ba5694fe3b2553c106a563f665530ef7c60ee178b9d3843bc173974",
+    "sources/HCAR1_HUMAN_Q9BXC0.fasta": "19c261f1abcc0704a6b83431aedcf92953c251bdc40f9ba9b3243fb765fbd957",
+    "structure_records.json": "ef386263eed59cbb3e206edca5ab0ece217f2085767457dbc2133f25bdcbf901",
+    "structures/8Z87.cif": "0216145002ab7a4e4f8e4f7c1c0cb4827e8b1e9e799f48c96b895043f3338ed6",
+    "structures/8Z8A.pdb": "e093aa9cb6dd9fcc35cf9d0fdd043a56f74076f898b8461cbd462a3403592acb",
+    "structures/8Z8B.pdb": "c82b4dbaa1f21bcf418067944233179b66f88495b9cc21db908ba19cd7d1721c",
+    "structures/9KT9.pdb": "dae1bdb9e4bb227594c5d87b68a1e73cc07d138f468be4e0983a74447293dcbd",
+    "tool_compounds.csv": "cb09ee59c9e774d21fad6bfee394c1f8acaba27db57c2176476f562cda1b2fa8",
+    "identity_resolution.json": "3d511d19c8dac9001d6b240858728163200e24c4ef4182e67766790acb81190f"
+  }
+}

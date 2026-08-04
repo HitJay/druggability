@@ -1,0 +1,16 @@
+compound_id,receptor_id,pose_rank,score_kcal_mol,aligned_pose
+3_5_DHBA,8Z87,1,-6.443,/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_aligned/poses/3_5_DHBA_8Z87_aligned_to_8Z87.pdbqt
+3_5_DHBA,9KT9,1,-5.649,/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_aligned/poses/3_5_DHBA_9KT9_aligned_to_8Z87.pdbqt
+3_5_DHBA,8Z8A,1,-6.28,/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_aligned/poses/3_5_DHBA_8Z8A_aligned_to_8Z87.pdbqt
+3_OBA,8Z87,1,-4.783,/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_aligned/poses/3_OBA_8Z87_aligned_to_8Z87.pdbqt
+3_OBA,9KT9,1,-4.013,/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_aligned/poses/3_OBA_9KT9_aligned_to_8Z87.pdbqt
+3_OBA,8Z8A,1,-4.638,/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_aligned/poses/3_OBA_8Z8A_aligned_to_8Z87.pdbqt
+AZ1_GPR81_agonist_2,8Z87,1,10.134,/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_aligned/poses/AZ1_GPR81_agonist_2_8Z87_aligned_to_8Z87.pdbqt
+AZ1_GPR81_agonist_2,9KT9,1,-0.843,/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_aligned/poses/AZ1_GPR81_agonist_2_9KT9_aligned_to_8Z87.pdbqt
+AZ1_GPR81_agonist_2,8Z8A,1,-3.94,/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_aligned/poses/AZ1_GPR81_agonist_2_8Z8A_aligned_to_8Z87.pdbqt
+CHBA,8Z87,1,-6.3,/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_aligned/poses/CHBA_8Z87_aligned_to_8Z87.pdbqt
+CHBA,9KT9,1,-5.908,/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_aligned/poses/CHBA_9KT9_aligned_to_8Z87.pdbqt
+CHBA,8Z8A,1,-5.929,/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_aligned/poses/CHBA_8Z8A_aligned_to_8Z87.pdbqt
+GPR81_agonist_1,8Z87,1,-4.856,/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_aligned/poses/GPR81_agonist_1_8Z87_aligned_to_8Z87.pdbqt
+GPR81_agonist_1,9KT9,1,-4.657,/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_aligned/poses/GPR81_agonist_1_9KT9_aligned_to_8Z87.pdbqt
+GPR81_agonist_1,8Z8A,1,-7.73,/das/user/QYJI/druggability/data/gpr81_phase1/phase3_5_aligned/poses/GPR81_agonist_1_8Z8A_aligned_to_8Z87.pdbqt

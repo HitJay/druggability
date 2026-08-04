@@ -1,0 +1,54 @@
+{
+  "controls": [
+    {
+      "compound_id": "CHBA",
+      "receptor_id": "8Z87",
+      "experimental_ligand": "A1D71",
+      "prepared_atom_count": 16,
+      "experimental_heavy_atoms": 11,
+      "redock_score_kcal_mol": -6.3,
+      "experimental_centroid_x": 97.266,
+      "experimental_centroid_y": 127.637,
+      "experimental_centroid_z": 125.044,
+      "predicted_centroid_x": 96.723,
+      "predicted_centroid_y": 128.18,
+      "predicted_centroid_z": 125.472,
+      "centroid_distance_A": 0.879,
+      "note": "centroid recovery; atom-mapped RMSD not asserted"
+    },
+    {
+      "compound_id": "3_5_DHBA",
+      "receptor_id": "9KT9",
+      "experimental_ligand": "34D",
+      "prepared_atom_count": 17,
+      "experimental_heavy_atoms": 11,
+      "redock_score_kcal_mol": -5.649,
+      "experimental_centroid_x": 118.974,
+      "experimental_centroid_y": 133.373,
+      "experimental_centroid_z": 147.361,
+      "predicted_centroid_x": 118.955,
+      "predicted_centroid_y": 135.191,
+      "predicted_centroid_z": 152.774,
+      "centroid_distance_A": 5.71,
+      "note": "centroid recovery; atom-mapped RMSD not asserted"
+    },
+    {
+      "compound_id": "lactate",
+      "receptor_id": "8Z8A",
+      "experimental_ligand": "2OP",
+      "prepared_atom_count": 12,
+      "experimental_heavy_atoms": 6,
+      "redock_score_kcal_mol": -4.361,
+      "experimental_centroid_x": 97.128,
+      "experimental_centroid_y": 126.554,
+      "experimental_centroid_z": 124.963,
+      "predicted_centroid_x": 95.58,
+      "predicted_centroid_y": 128.77,
+      "predicted_centroid_z": 125.973,
+      "centroid_distance_A": 2.886,
+      "note": "centroid recovery; atom-mapped RMSD not asserted"
+    }
+  ],
+  "method": "unconstrained Vina redocking in experimental ligand-derived box",
+  "limitation": "PDB/PubChem atom mapping was not asserted; centroid distance is reported instead of invented RMSD"
+}

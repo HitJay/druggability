@@ -1,0 +1,118 @@
+{
+  "AZ1_8Z87_clash_case": {
+    "n_clash_contacts": 7,
+    "n_close_contacts": 123,
+    "worst_clashes": [
+      {
+        "residue": "LEU92",
+        "atom": "CD2",
+        "ligand_element": "N",
+        "distance_A": 1.87,
+        "sum_vdw_A": 3.25,
+        "severity": 1.38
+      },
+      {
+        "residue": "TYR75",
+        "atom": "OH",
+        "ligand_element": "C",
+        "distance_A": 1.92,
+        "sum_vdw_A": 3.22,
+        "severity": 1.3
+      },
+      {
+        "residue": "LEU264",
+        "atom": "CB",
+        "ligand_element": "C",
+        "distance_A": 2.31,
+        "sum_vdw_A": 3.4,
+        "severity": 1.09
+      },
+      {
+        "residue": "LEU95",
+        "atom": "CD1",
+        "ligand_element": "S",
+        "distance_A": 2.52,
+        "sum_vdw_A": 3.5,
+        "severity": 0.98
+      },
+      {
+        "residue": "LEU92",
+        "atom": "CD2",
+        "ligand_element": "A",
+        "distance_A": 2.43,
+        "sum_vdw_A": 3.4,
+        "severity": 0.97
+      },
+      {
+        "residue": "PHE168",
+        "atom": "CD2",
+        "ligand_element": "O",
+        "distance_A": 2.33,
+        "sum_vdw_A": 3.22,
+        "severity": 0.89
+      },
+      {
+        "residue": "LEU264",
+        "atom": "CB",
+        "ligand_element": "C",
+        "distance_A": 2.54,
+        "sum_vdw_A": 3.4,
+        "severity": 0.86
+      }
+    ],
+    "ligand_heavy_atoms": 40,
+    "residues_involved": [
+      "LEU264",
+      "LEU92",
+      "LEU95",
+      "PHE168",
+      "TYR75"
+    ]
+  },
+  "AZ1_8Z8A_favorable_case": {
+    "n_clash_contacts": 1,
+    "n_close_contacts": 55,
+    "worst_clashes": [
+      {
+        "residue": "LEU92",
+        "atom": "CD1",
+        "ligand_element": "C",
+        "distance_A": 2.23,
+        "sum_vdw_A": 3.4,
+        "severity": 1.17
+      }
+    ],
+    "residues_in_close_contact": [
+      "ALA96",
+      "ARG99",
+      "ASN174",
+      "GLU153",
+      "HIS155",
+      "HIS177",
+      "LEU150",
+      "LEU92",
+      "LEU95",
+      "MET170",
+      "MET180",
+      "PHE168",
+      "SER167",
+      "TYR149"
+    ]
+  },
+  "Takeda_8Z8A_favorable_case": {
+    "n_clash_contacts": 0,
+    "n_close_contacts": 23,
+    "worst_clashes": [],
+    "residues_in_close_contact": [
+      "ASN174",
+      "CYS157",
+      "CYS7",
+      "GLU153",
+      "GLU166",
+      "HIS155",
+      "ILE9",
+      "MET170",
+      "SER167"
+    ]
+  }
+}

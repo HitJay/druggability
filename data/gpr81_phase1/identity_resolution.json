@@ -1,0 +1,75 @@
+{
+  "status": "confirmed_with_one_correction",
+  "target": {
+    "gene": "HCAR1",
+    "aliases": ["GPR81", "HCA1", "GPR104"],
+    "uniprot": "Q9BXC0"
+  },
+  "tool_compounds": [
+    {
+      "compound_id": "AZ1_GPR81_agonist_2",
+      "cid": 57422810,
+      "chembl_id": "CHEMBL4641579",
+      "request_label": "AZ1 / GPR81 agonist 2",
+      "identity_resolution": "confirmed_as_Davidsson_2020_paper_compound_1",
+      "evidence": [
+        "PubChem synonym list contains CHEMBL4641579.",
+        "ChEMBL activity record links CHEMBL4641579 to CHEMBL4610061 (Davidsson et al. 2020 BMCL) and human HCAR1 agonism.",
+        "ChEMBL reports human HCAR1 EC50 = 23.0 nM, matching paper Table 1 compound 1 = 0.023 uM.",
+        "The canonical SMILES in PubChem and ChEMBL are identical."
+      ],
+      "source_urls": [
+        "https://pubchem.ncbi.nlm.nih.gov/compound/57422810",
+        "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL4641579"
+      ]
+    },
+    {
+      "compound_id": "GPR81_agonist_1",
+      "cid": 86279608,
+      "chembl_id": "CHEMBL6177006",
+      "request_label": "GPR81 agonist 1",
+      "identity_resolution": "not_Davidsson_2020_compound_2; confirmed_as_Takeda_2014_paper_compound_2",
+      "evidence": [
+        "PubChem synonym list explicitly contains 'compound 2 [PMID: 24486398]'.",
+        "PMID 24486398 is Sakurai et al. 2014, Identification of a novel GPR81-selective agonist.",
+        "ChEMBL reports HCA1 EC50 approximately 50 nM for CHEMBL6177006, consistent with the Takeda lead description.",
+        "The molecule is structurally distinct from Davidsson 2020 compound 2 shown in the supplied paper."
+      ],
+      "source_urls": [
+        "https://pubchem.ncbi.nlm.nih.gov/compound/86279608",
+        "https://pubmed.ncbi.nlm.nih.gov/24486398/",
+        "https://www.ebi.ac.uk/chembl/explore/compound/CHEMBL6177006"
+      ]
+    },
+    {
+      "compound_id": "CHBA",
+      "cid": 13071646,
+      "identity_resolution": "confirmed_as_3_chloro_5_hydroxybenzoic_acid",
+      "structural_reference": "R-chain residue 401 in RCSB 8Z87 (CHBA-bound HCAR1-Gi1)"
+    },
+    {
+      "compound_id": "3_5_DHBA",
+      "cid": 7424,
+      "identity_resolution": "confirmed_as_3_5_dihydroxybenzoic_acid",
+      "structural_reference": "R-chain residue 401 in RCSB 9KT9 (3,5-DHBA-bound HCAR1-Gi)"
+    },
+    {
+      "compound_id": "3_OBA",
+      "cid": 441,
+      "identity_resolution": "confirmed_as_3_hydroxybutanoic_acid",
+      "structural_reference": "No matching co-complex reference in the downloaded structure set"
+    }
+  ],
+  "receptor_chain_validation": [
+    {"pdb_id": "8Z87", "receptor_chain": "R", "ligand_residue": "A1D71", "ligand_description": "3-chloro-5-hydroxybenzoic acid"},
+    {"pdb_id": "9KT9", "receptor_chain": "R", "ligand_residue": "34D", "ligand_description": "3,5-dihydroxybenzoate"},
+    {"pdb_id": "8Z8A", "receptor_chain": "R", "ligand_residue": "2OP", "ligand_description": "lactate"},
+    {"pdb_id": "8Z8B", "receptor_chain": "R", "ligand_residue": null, "ligand_description": "apo"}
+  ],
+  "phase_2_readiness": {
+    "tool_compounds": "ready_for_docking_input",
+    "receptor": "ready_for_chain_preparation_using_chain_R",
+    "paper_compounds_1_to_39": "not_ready_exact_structures_missing",
+    "recommended_next_step": "prepare receptor chain R and define pocket from 8Z87 and 9KT9; dock the five confirmed tool compounds first"
+  }
+}

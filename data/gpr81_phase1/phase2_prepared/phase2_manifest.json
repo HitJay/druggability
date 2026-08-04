@@ -1,0 +1,556 @@
+{
+  "target": "human HCAR1/GPR81",
+  "uniprot": "Q9BXC0",
+  "receptor_chain": "R",
+  "preparation": "protein standard residues only; G protein and experimental ligands removed from receptor PDB",
+  "pocket_definition": "protein residues with any non-hydrogen atom within 6.0 A of the experimental ligand",
+  "structures": [
+    {
+      "pdb_id": "8Z87",
+      "state": "CHBA-bound",
+      "source_file": "/das/user/QYJI/druggability/data/gpr81_phase1/structures/8Z87.cif",
+      "receptor_chain": "R",
+      "receptor_pdb": "/das/user/QYJI/druggability/data/gpr81_phase1/phase2_prepared/receptors/8Z87_chainR_protein.pdb",
+      "receptor_pdbqt": {
+        "path": "/das/user/QYJI/druggability/data/gpr81_phase1/phase2_prepared/receptors/8Z87_chainR_protein.pdbqt",
+        "atom_lines": 2670,
+        "non_atom_lines_removed": true
+      },
+      "reference_ligand": {
+        "ligand": "A1D71",
+        "chain": "R",
+        "residue_number": 401,
+        "atoms": 11
+      },
+      "ligand_geometry": {
+        "atom_count": 11,
+        "center_A": [
+          97.266,
+          127.637,
+          125.044
+        ],
+        "ligand_span_A": [
+          5.734,
+          3.674,
+          4.731
+        ],
+        "box_size_A": [
+          24.0,
+          24.0,
+          24.0
+        ]
+      },
+      "pocket_cutoff_A": 6.0,
+      "pocket_residues": [
+        {
+          "residue": "MET",
+          "number": 18,
+          "min_distance_A": 5.4
+        },
+        {
+          "residue": "ARG",
+          "number": 71,
+          "min_distance_A": 3.364
+        },
+        {
+          "residue": "TYR",
+          "number": 75,
+          "min_distance_A": 2.891
+        },
+        {
+          "residue": "LEU",
+          "number": 92,
+          "min_distance_A": 4.376
+        },
+        {
+          "residue": "LEU",
+          "number": 95,
+          "min_distance_A": 4.073
+        },
+        {
+          "residue": "ALA",
+          "number": 96,
+          "min_distance_A": 4.545
+        },
+        {
+          "residue": "ARG",
+          "number": 99,
+          "min_distance_A": 2.872
+        },
+        {
+          "residue": "CYS",
+          "number": 165,
+          "min_distance_A": 4.428
+        },
+        {
+          "residue": "GLU",
+          "number": 166,
+          "min_distance_A": 3.142
+        },
+        {
+          "residue": "SER",
+          "number": 167,
+          "min_distance_A": 2.956
+        },
+        {
+          "residue": "PHE",
+          "number": 168,
+          "min_distance_A": 3.513
+        },
+        {
+          "residue": "ILE",
+          "number": 169,
+          "min_distance_A": 5.744
+        },
+        {
+          "residue": "HIS",
+          "number": 177,
+          "min_distance_A": 4.935
+        },
+        {
+          "residue": "LEU",
+          "number": 260,
+          "min_distance_A": 4.821
+        },
+        {
+          "residue": "HIS",
+          "number": 261,
+          "min_distance_A": 3.456
+        },
+        {
+          "residue": "ILE",
+          "number": 262,
+          "min_distance_A": 5.402
+        },
+        {
+          "residue": "LEU",
+          "number": 264,
+          "min_distance_A": 3.502
+        },
+        {
+          "residue": "SER",
+          "number": 265,
+          "min_distance_A": 5.244
+        },
+        {
+          "residue": "THR",
+          "number": 267,
+          "min_distance_A": 5.23
+        },
+        {
+          "residue": "TYR",
+          "number": 268,
+          "min_distance_A": 2.524
+        }
+      ]
+    },
+    {
+      "pdb_id": "9KT9",
+      "state": "3,5-DHBA-bound",
+      "source_file": "/das/user/QYJI/druggability/data/gpr81_phase1/structures/9KT9.pdb",
+      "receptor_chain": "R",
+      "receptor_pdb": "/das/user/QYJI/druggability/data/gpr81_phase1/phase2_prepared/receptors/9KT9_chainR_protein.pdb",
+      "receptor_pdbqt": {
+        "path": "/das/user/QYJI/druggability/data/gpr81_phase1/phase2_prepared/receptors/9KT9_chainR_protein.pdbqt",
+        "atom_lines": 2714,
+        "non_atom_lines_removed": true
+      },
+      "reference_ligand": {
+        "ligand": "34D",
+        "chain": "R",
+        "residue_number": 401,
+        "atoms": 11
+      },
+      "ligand_geometry": {
+        "atom_count": 11,
+        "center_A": [
+          118.974,
+          133.373,
+          147.361
+        ],
+        "ligand_span_A": [
+          3.518,
+          3.789,
+          4.839
+        ],
+        "box_size_A": [
+          24.0,
+          24.0,
+          24.0
+        ]
+      },
+      "pocket_cutoff_A": 6.0,
+      "pocket_residues": [
+        {
+          "residue": "ARG",
+          "number": 71,
+          "min_distance_A": 3.179
+        },
+        {
+          "residue": "TYR",
+          "number": 75,
+          "min_distance_A": 2.809
+        },
+        {
+          "residue": "LEU",
+          "number": 92,
+          "min_distance_A": 4.653
+        },
+        {
+          "residue": "LEU",
+          "number": 95,
+          "min_distance_A": 3.266
+        },
+        {
+          "residue": "ALA",
+          "number": 96,
+          "min_distance_A": 4.954
+        },
+        {
+          "residue": "ARG",
+          "number": 99,
+          "min_distance_A": 5.977
+        },
+        {
+          "residue": "CYS",
+          "number": 165,
+          "min_distance_A": 5.01
+        },
+        {
+          "residue": "GLU",
+          "number": 166,
+          "min_distance_A": 3.357
+        },
+        {
+          "residue": "SER",
+          "number": 167,
+          "min_distance_A": 2.447
+        },
+        {
+          "residue": "PHE",
+          "number": 168,
+          "min_distance_A": 2.991
+        },
+        {
+          "residue": "ILE",
+          "number": 169,
+          "min_distance_A": 5.309
+        },
+        {
+          "residue": "HIS",
+          "number": 261,
+          "min_distance_A": 4.368
+        },
+        {
+          "residue": "LEU",
+          "number": 264,
+          "min_distance_A": 3.493
+        },
+        {
+          "residue": "TYR",
+          "number": 268,
+          "min_distance_A": 2.74
+        }
+      ]
+    },
+    {
+      "pdb_id": "8Z8A",
+      "state": "lactate-bound",
+      "source_file": "/das/user/QYJI/druggability/data/gpr81_phase1/structures/8Z8A.pdb",
+      "receptor_chain": "R",
+      "receptor_pdb": "/das/user/QYJI/druggability/data/gpr81_phase1/phase2_prepared/receptors/8Z8A_chainR_protein.pdb",
+      "receptor_pdbqt": {
+        "path": "/das/user/QYJI/druggability/data/gpr81_phase1/phase2_prepared/receptors/8Z8A_chainR_protein.pdbqt",
+        "atom_lines": 2657,
+        "non_atom_lines_removed": true
+      },
+      "reference_ligand": {
+        "ligand": "2OP",
+        "chain": "R",
+        "residue_number": 401,
+        "atoms": 6
+      },
+      "ligand_geometry": {
+        "atom_count": 6,
+        "center_A": [
+          97.128,
+          126.554,
+          124.963
+        ],
+        "ligand_span_A": [
+          2.878,
+          1.995,
+          1.315
+        ],
+        "box_size_A": [
+          24.0,
+          24.0,
+          24.0
+        ]
+      },
+      "pocket_cutoff_A": 6.0,
+      "pocket_residues": [
+        {
+          "residue": "ARG",
+          "number": 71,
+          "min_distance_A": 2.939
+        },
+        {
+          "residue": "TYR",
+          "number": 75,
+          "min_distance_A": 5.299
+        },
+        {
+          "residue": "GLY",
+          "number": 91,
+          "min_distance_A": 5.391
+        },
+        {
+          "residue": "LEU",
+          "number": 92,
+          "min_distance_A": 3.312
+        },
+        {
+          "residue": "LEU",
+          "number": 95,
+          "min_distance_A": 3.105
+        },
+        {
+          "residue": "ALA",
+          "number": 96,
+          "min_distance_A": 5.474
+        },
+        {
+          "residue": "ARG",
+          "number": 99,
+          "min_distance_A": 3.343
+        },
+        {
+          "residue": "CYS",
+          "number": 165,
+          "min_distance_A": 5.99
+        },
+        {
+          "residue": "SER",
+          "number": 167,
+          "min_distance_A": 3.031
+        },
+        {
+          "residue": "PHE",
+          "number": 168,
+          "min_distance_A": 3.335
+        },
+        {
+          "residue": "HIS",
+          "number": 261,
+          "min_distance_A": 5.7
+        },
+        {
+          "residue": "LEU",
+          "number": 264,
+          "min_distance_A": 3.602
+        },
+        {
+          "residue": "TYR",
+          "number": 268,
+          "min_distance_A": 2.759
+        }
+      ]
+    },
+    {
+      "pdb_id": "8Z8B",
+      "state": "apo",
+      "source_file": "/das/user/QYJI/druggability/data/gpr81_phase1/structures/8Z8B.pdb",
+      "receptor_chain": "R",
+      "receptor_pdb": "/das/user/QYJI/druggability/data/gpr81_phase1/phase2_prepared/receptors/8Z8B_chainR_protein.pdb",
+      "receptor_pdbqt": {
+        "path": "/das/user/QYJI/druggability/data/gpr81_phase1/phase2_prepared/receptors/8Z8B_chainR_protein.pdbqt",
+        "atom_lines": 2657,
+        "non_atom_lines_removed": true
+      },
+      "reference_ligand": {
+        "ligand": null,
+        "atoms": 0
+      },
+      "ligand_geometry": null,
+      "pocket_cutoff_A": 6.0,
+      "pocket_residues": []
+    }
+  ],
+  "ligand_anchored_consensus": [
+    {
+      "number": 18,
+      "structure_count": 1,
+      "structures": [
+        "8Z87"
+      ]
+    },
+    {
+      "number": 71,
+      "structure_count": 3,
+      "structures": [
+        "8Z87",
+        "8Z8A",
+        "9KT9"
+      ]
+    },
+    {
+      "number": 75,
+      "structure_count": 3,
+      "structures": [
+        "8Z87",
+        "8Z8A",
+        "9KT9"
+      ]
+    },
+    {
+      "number": 91,
+      "structure_count": 1,
+      "structures": [
+        "8Z8A"
+      ]
+    },
+    {
+      "number": 92,
+      "structure_count": 3,
+      "structures": [
+        "8Z87",
+        "8Z8A",
+        "9KT9"
+      ]
+    },
+    {
+      "number": 95,
+      "structure_count": 3,
+      "structures": [
+        "8Z87",
+        "8Z8A",
+        "9KT9"
+      ]
+    },
+    {
+      "number": 96,
+      "structure_count": 3,
+      "structures": [
+        "8Z87",
+        "8Z8A",
+        "9KT9"
+      ]
+    },
+    {
+      "number": 99,
+      "structure_count": 3,
+      "structures": [
+        "8Z87",
+        "8Z8A",
+        "9KT9"
+      ]
+    },
+    {
+      "number": 165,
+      "structure_count": 3,
+      "structures": [
+        "8Z87",
+        "8Z8A",
+        "9KT9"
+      ]
+    },
+    {
+      "number": 166,
+      "structure_count": 2,
+      "structures": [
+        "8Z87",
+        "9KT9"
+      ]
+    },
+    {
+      "number": 167,
+      "structure_count": 3,
+      "structures": [
+        "8Z87",
+        "8Z8A",
+        "9KT9"
+      ]
+    },
+    {
+      "number": 168,
+      "structure_count": 3,
+      "structures": [
+        "8Z87",
+        "8Z8A",
+        "9KT9"
+      ]
+    },
+    {
+      "number": 169,
+      "structure_count": 2,
+      "structures": [
+        "8Z87",
+        "9KT9"
+      ]
+    },
+    {
+      "number": 177,
+      "structure_count": 1,
+      "structures": [
+        "8Z87"
+      ]
+    },
+    {
+      "number": 260,
+      "structure_count": 1,
+      "structures": [
+        "8Z87"
+      ]
+    },
+    {
+      "number": 261,
+      "structure_count": 3,
+      "structures": [
+        "8Z87",
+        "8Z8A",
+        "9KT9"
+      ]
+    },
+    {
+      "number": 262,
+      "structure_count": 1,
+      "structures": [
+        "8Z87"
+      ]
+    },
+    {
+      "number": 264,
+      "structure_count": 3,
+      "structures": [
+        "8Z87",
+        "8Z8A",
+        "9KT9"
+      ]
+    },
+    {
+      "number": 265,
+      "structure_count": 1,
+      "structures": [
+        "8Z87"
+      ]
+    },
+    {
+      "number": 267,
+      "structure_count": 1,
+      "structures": [
+        "8Z87"
+      ]
+    },
+    {
+      "number": 268,
+      "structure_count": 3,
+      "structures": [
+        "8Z87",
+        "8Z8A",
+        "9KT9"
+      ]
+    }
+  ],
+  "next_step": "inspect pocket and prepare receptor PDBQT; do not interpret docking scores as agonism evidence"
+}

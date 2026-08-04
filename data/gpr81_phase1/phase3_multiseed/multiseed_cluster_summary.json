@@ -1,0 +1,122 @@
+[
+  {
+    "compound_id": "AZ1_GPR81_agonist_2",
+    "receptor_id": "8Z87",
+    "n_seeds": 8,
+    "total_poses": 8,
+    "n_distinct_pose_clusters": 1,
+    "best_score_overall": 9.984,
+    "top_3_clusters": [
+      {
+        "n_members": 8,
+        "best_score": 9.984,
+        "mean_score": 10.153
+      }
+    ]
+  },
+  {
+    "compound_id": "AZ1_GPR81_agonist_2",
+    "receptor_id": "9KT9",
+    "n_seeds": 8,
+    "total_poses": 28,
+    "n_distinct_pose_clusters": 4,
+    "best_score_overall": -1.572,
+    "top_3_clusters": [
+      {
+        "n_members": 6,
+        "best_score": -1.572,
+        "mean_score": 1.271
+      },
+      {
+        "n_members": 3,
+        "best_score": 0.723,
+        "mean_score": 3.165
+      },
+      {
+        "n_members": 12,
+        "best_score": 2.877,
+        "mean_score": 4.824
+      }
+    ]
+  },
+  {
+    "compound_id": "AZ1_GPR81_agonist_2",
+    "receptor_id": "8Z8A",
+    "n_seeds": 8,
+    "total_poses": 58,
+    "n_distinct_pose_clusters": 1,
+    "best_score_overall": -4.427,
+    "top_3_clusters": [
+      {
+        "n_members": 58,
+        "best_score": -4.427,
+        "mean_score": -3.034
+      }
+    ]
+  },
+  {
+    "compound_id": "GPR81_agonist_1",
+    "receptor_id": "8Z87",
+    "n_seeds": 8,
+    "total_poses": 25,
+    "n_distinct_pose_clusters": 2,
+    "best_score_overall": -4.826,
+    "top_3_clusters": [
+      {
+        "n_members": 15,
+        "best_score": -4.826,
+        "mean_score": -3.941
+      },
+      {
+        "n_members": 10,
+        "best_score": -3.452,
+        "mean_score": -2.294
+      }
+    ]
+  },
+  {
+    "compound_id": "GPR81_agonist_1",
+    "receptor_id": "9KT9",
+    "n_seeds": 8,
+    "total_poses": 60,
+    "n_distinct_pose_clusters": 5,
+    "best_score_overall": -5.281,
+    "top_3_clusters": [
+      {
+        "n_members": 20,
+        "best_score": -5.281,
+        "mean_score": -4.567
+      },
+      {
+        "n_members": 10,
+        "best_score": -5.116,
+        "mean_score": -4.536
+      },
+      {
+        "n_members": 14,
+        "best_score": -5.085,
+        "mean_score": -4.577
+      }
+    ]
+  },
+  {
+    "compound_id": "GPR81_agonist_1",
+    "receptor_id": "8Z8A",
+    "n_seeds": 8,
+    "total_poses": 63,
+    "n_distinct_pose_clusters": 2,
+    "best_score_overall": -7.738,
+    "top_3_clusters": [
+      {
+        "n_members": 56,
+        "best_score": -7.738,
+        "mean_score": -7.07
+      },
+      {
+        "n_members": 7,
+        "best_score": -7.149,
+        "mean_score": -5.88
+      }
+    ]
+  }
+]

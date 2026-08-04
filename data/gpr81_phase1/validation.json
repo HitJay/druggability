@@ -1,0 +1,65 @@
+{
+  "3_5_DHBA_CID7424.sdf": {
+    "molecules": 1,
+    "smiles": "[H]OC(=O)c1c([H])c(O[H])c([H])c(O[H])c1[H]"
+  },
+  "3_OBA_CID441.sdf": {
+    "molecules": 1,
+    "smiles": "[H]OC(=O)C([H])([H])[C@]([H])(O[H])C([H])([H])[H]"
+  },
+  "AZ1_GPR81_agonist_2_CID57422810.sdf": {
+    "molecules": 1,
+    "smiles": "[H]c1nn(-c2c([H])c(C(=O)N([H])C(=O)N([H])c3nc4c([H])c([H])c(S(=O)(=O)C5([H])C([H])([H])C([H])([H])N(C([H])([H])[H])C([H])([H])C5([H])[H])c([H])c4s3)c(Cl)c([H])c2OC([H])([H])C([H])([H])[H])c([H])c1[H]"
+  },
+  "CHBA_CID13071646.sdf": {
+    "molecules": 1,
+    "smiles": "[H]OC(=O)c1c([H])c(Cl)c([H])c(O[H])c1[H]"
+  },
+  "GPR81_agonist_1_CID86279608.sdf": {
+    "molecules": 1,
+    "smiles": "[H]c1sc(-c2nc(N([H])C(=O)[C@]3([H])C([H])([H])C([H])([H])[C@@]([H])(C([H])([H])[H])C([H])([H])C3([H])[H])sc2C([H])([H])C(=O)N2C([H])([H])C([H])([H])N(C([H])([H])[H])C([H])([H])C2([H])[H])c([H])c1[H]"
+  },
+  "8Z87.cif": {
+    "models": 1,
+    "chains": [
+      "R",
+      "A",
+      "B",
+      "G"
+    ],
+    "residues": 904
+  },
+  "8Z8A.pdb": {
+    "models": 1,
+    "chains": [
+      "R",
+      "A",
+      "B",
+      "G",
+      "S"
+    ],
+    "residues": 1138
+  },
+  "8Z8B.pdb": {
+    "models": 1,
+    "chains": [
+      "R",
+      "A",
+      "B",
+      "G",
+      "S"
+    ],
+    "residues": 1137
+  },
+  "9KT9.pdb": {
+    "models": 1,
+    "chains": [
+      "A",
+      "B",
+      "C",
+      "E",
+      "R"
+    ],
+    "residues": 1143
+  }
+}

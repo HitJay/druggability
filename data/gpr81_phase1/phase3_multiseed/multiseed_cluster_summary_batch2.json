@@ -1,0 +1,142 @@
+[
+  {
+    "compound_id": "CHBA",
+    "receptor_id": "8Z87",
+    "n_seeds": 8,
+    "total_poses": 64,
+    "n_distinct_pose_clusters": 2,
+    "best_score_overall": -6.311,
+    "top_3_clusters": [
+      {
+        "n_members": 62,
+        "best_score": -6.311,
+        "mean_score": -5.932
+      },
+      {
+        "n_members": 2,
+        "best_score": -5.422,
+        "mean_score": -5.409
+      }
+    ]
+  },
+  {
+    "compound_id": "CHBA",
+    "receptor_id": "9KT9",
+    "n_seeds": 8,
+    "total_poses": 64,
+    "n_distinct_pose_clusters": 5,
+    "best_score_overall": -5.911,
+    "top_3_clusters": [
+      {
+        "n_members": 7,
+        "best_score": -5.911,
+        "mean_score": -5.895
+      },
+      {
+        "n_members": 28,
+        "best_score": -5.614,
+        "mean_score": -5.439
+      },
+      {
+        "n_members": 21,
+        "best_score": -5.544,
+        "mean_score": -5.463
+      }
+    ]
+  },
+  {
+    "compound_id": "CHBA",
+    "receptor_id": "8Z8A",
+    "n_seeds": 8,
+    "total_poses": 64,
+    "n_distinct_pose_clusters": 2,
+    "best_score_overall": -5.964,
+    "top_3_clusters": [
+      {
+        "n_members": 55,
+        "best_score": -5.964,
+        "mean_score": -5.806
+      },
+      {
+        "n_members": 9,
+        "best_score": -5.571,
+        "mean_score": -5.523
+      }
+    ]
+  },
+  {
+    "compound_id": "3_OBA",
+    "receptor_id": "8Z87",
+    "n_seeds": 8,
+    "total_poses": 63,
+    "n_distinct_pose_clusters": 3,
+    "best_score_overall": -4.804,
+    "top_3_clusters": [
+      {
+        "n_members": 40,
+        "best_score": -4.804,
+        "mean_score": -4.465
+      },
+      {
+        "n_members": 12,
+        "best_score": -4.352,
+        "mean_score": -4.272
+      },
+      {
+        "n_members": 11,
+        "best_score": -4.352,
+        "mean_score": -4.33
+      }
+    ]
+  },
+  {
+    "compound_id": "3_OBA",
+    "receptor_id": "9KT9",
+    "n_seeds": 8,
+    "total_poses": 64,
+    "n_distinct_pose_clusters": 4,
+    "best_score_overall": -4.032,
+    "top_3_clusters": [
+      {
+        "n_members": 16,
+        "best_score": -4.032,
+        "mean_score": -3.971
+      },
+      {
+        "n_members": 8,
+        "best_score": -3.818,
+        "mean_score": -3.789
+      },
+      {
+        "n_members": 24,
+        "best_score": -3.769,
+        "mean_score": -3.718
+      }
+    ]
+  },
+  {
+    "compound_id": "3_OBA",
+    "receptor_id": "8Z8A",
+    "n_seeds": 8,
+    "total_poses": 64,
+    "n_distinct_pose_clusters": 4,
+    "best_score_overall": -4.64,
+    "top_3_clusters": [
+      {
+        "n_members": 45,
+        "best_score": -4.64,
+        "mean_score": -4.414
+      },
+      {
+        "n_members": 9,
+        "best_score": -4.401,
+        "mean_score": -4.342
+      },
+      {
+        "n_members": 7,
+        "best_score": -4.341,
+        "mean_score": -4.296
+      }
+    ]
+  }
+]

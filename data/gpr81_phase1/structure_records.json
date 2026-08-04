@@ -1,0 +1,30 @@
+[
+  {
+    "pdb_id": "8Z87",
+    "title": "Cryo-EM structure of the CHBA-bound human HCAR1-Gi1 complex",
+    "experimental_method": "ELECTRON MICROSCOPY",
+    "release_date": "2025-11-05T00:00:00.000+00:00",
+    "source_url": "https://www.rcsb.org/structure/8Z87"
+  },
+  {
+    "pdb_id": "8Z8A",
+    "title": "Cryo-EM structure of the Lactate-bound human HCAR1-Gi1 complex",
+    "experimental_method": "ELECTRON MICROSCOPY",
+    "release_date": "2025-10-29T00:00:00.000+00:00",
+    "source_url": "https://www.rcsb.org/structure/8Z8A"
+  },
+  {
+    "pdb_id": "8Z8B",
+    "title": "Cryo-EM structure of human HCAR1-Gi complex without ligand (apo state)",
+    "experimental_method": "ELECTRON MICROSCOPY",
+    "release_date": "2025-10-29T00:00:00.000+00:00",
+    "source_url": "https://www.rcsb.org/structure/8Z8B"
+  },
+  {
+    "pdb_id": "9KT9",
+    "title": "Cryo-EM structure of HCA1-Gi complex with 3,5-DHBA",
+    "experimental_method": "ELECTRON MICROSCOPY",
+    "release_date": "2025-12-10T00:00:00.000+00:00",
+    "source_url": "https://www.rcsb.org/structure/9KT9"
+  }
+]

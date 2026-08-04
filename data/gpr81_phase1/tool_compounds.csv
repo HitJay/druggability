@@ -1,0 +1,6 @@
+compound_id,name,cid,molecular_formula,molecular_weight,canonical_smiles,isomeric_smiles,source,source_url
+AZ1_GPR81_agonist_2,"2-chloro-4-ethoxy-N-[[6-(1-methylpiperidin-4-yl)sulfonyl-1,3-benzothiazol-2-yl]carbamoyl]-5-pyrazol-1-ylbenzamide",57422810,C26H27ClN6O5S2,603.1,CCOC1=C(C=C(C(=C1)Cl)C(=O)NC(=O)NC2=NC3=C(S2)C=C(C=C3)S(=O)(=O)C4CCN(CC4)C)N5C=CC=N5,CCOC1=C(C=C(C(=C1)Cl)C(=O)NC(=O)NC2=NC3=C(S2)C=C(C=C3)S(=O)(=O)C4CCN(CC4)C)N5C=CC=N5,PubChem PUG REST,https://pubchem.ncbi.nlm.nih.gov/compound/57422810
+GPR81_agonist_1,"4-methyl-N-[5-[2-(4-methylpiperazin-1-yl)-2-oxoethyl]-4-thiophen-2-yl-1,3-thiazol-2-yl]cyclohexane-1-carboxamide",86279608,C22H30N4O2S2,446.6,CC1CCC(CC1)C(=O)NC2=NC(=C(S2)CC(=O)N3CCN(CC3)C)C4=CC=CS4,CC1CCC(CC1)C(=O)NC2=NC(=C(S2)CC(=O)N3CCN(CC3)C)C4=CC=CS4,PubChem PUG REST,https://pubchem.ncbi.nlm.nih.gov/compound/86279608
+CHBA,3-chloro-5-hydroxybenzoic acid,13071646,C7H5ClO3,172.56,C1=C(C=C(C=C1O)Cl)C(=O)O,C1=C(C=C(C=C1O)Cl)C(=O)O,PubChem PUG REST,https://pubchem.ncbi.nlm.nih.gov/compound/13071646
+3_5_DHBA,"3,5-dihydroxybenzoic acid",7424,C7H6O4,154.12,C1=C(C=C(C=C1O)O)C(=O)O,C1=C(C=C(C=C1O)O)C(=O)O,PubChem PUG REST,https://pubchem.ncbi.nlm.nih.gov/compound/7424
+3_OBA,3-hydroxybutanoic acid,441,C4H8O3,104.10,CC(CC(=O)O)O,CC(CC(=O)O)O,PubChem PUG REST,https://pubchem.ncbi.nlm.nih.gov/compound/441

@@ -1,0 +1,4 @@
+compound_id,receptor_id,experimental_ligand,prepared_atom_count,experimental_heavy_atoms,redock_score_kcal_mol,experimental_centroid_x,experimental_centroid_y,experimental_centroid_z,predicted_centroid_x,predicted_centroid_y,predicted_centroid_z,centroid_distance_A,note
+CHBA,8Z87,A1D71,16,11,-6.3,97.266,127.637,125.044,96.723,128.18,125.472,0.879,centroid recovery; atom-mapped RMSD not asserted
+3_5_DHBA,9KT9,34D,17,11,-5.649,118.974,133.373,147.361,118.955,135.191,152.774,5.71,centroid recovery; atom-mapped RMSD not asserted
+lactate,8Z8A,2OP,12,6,-4.361,97.128,126.554,124.963,95.58,128.77,125.973,2.886,centroid recovery; atom-mapped RMSD not asserted

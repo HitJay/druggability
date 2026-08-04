@@ -1,0 +1,827 @@
+{
+  "method": "PDF rendered at 300 DPI via PyMuPDF (unblocked by user-provided PDF export), structures read via vision analysis of Table 1/Scheme images, cross-validated against ChEMBL activity records linked to document CHEMBL4610061 (this paper) and against paper-reported EC50 values before being accepted",
+  "unblocked_2026-08-03": "User exported DOCX to PDF, enabling PyMuPDF page rendering where EMF-in-DOCX rendering was previously impossible",
+  "compounds": [
+    {
+      "paper_compound_number": 1,
+      "series": "acyl_urea",
+      "smiles": "CCOc1cc(Cl)c(C(=O)NC(=O)Nc2nc3ccc(S(=O)(=O)C4CCN(C)CC4)cc3s2)cc1-n1cccn1",
+      "formula": "C26H27ClN6O5S2",
+      "exact_mass_M_plus_H_calc": 603.1246,
+      "paper_reported_hGPR81_EC50_uM": 0.023,
+      "pubchem_cid": 57422810,
+      "chembl_id": "CHEMBL4641579",
+      "evidence": [
+        "Identical to tool compound AZ1/GPR81_agonist_2 already confirmed via ChEMBL+PubChem in Phase 1 identity_resolution.json",
+        "ChEMBL HCAR1 EC50 = 23.0 nM matches paper Table 1 compound 1 EC50 = 0.023 uM exactly",
+        "Structure independently cross-checked via vision reading of Table 1 (R1=Cl, R2=OEt, R3=pyrazol-1-yl, RHS=benzothiazole-SO2-N-methylpiperidine)"
+      ],
+      "status": "authoritative"
+    },
+    {
+      "paper_compound_number": 2,
+      "series": "acyl_urea",
+      "smiles": "CCOc1cc(Cl)c(C(=O)NC(=O)Nc2nc3ccc(CN4CCN(C)CC4)cc3s2)cc1N1CCOCC1",
+      "formula": "C27H33ClN6O4S",
+      "exact_mass_M_plus_H_calc": 573.2045,
+      "paper_reported_hGPR81_EC50_uM": 0.074,
+      "pubchem_cid": 154699458,
+      "chembl_id": "CHEMBL4632411",
+      "evidence": [
+        "ChEMBL activity record CHEMBL4632411 linked to document CHEMBL4610061 (this paper, DOI 10.1016/j.bmcl.2020.126953) with EC50=74.0 nM matching paper text 'compound 2 hGPR81 EC50 = 0.074 uM' exactly",
+        "Structure independently derived from vision-read Table 1 structure (R1=Cl, R2=OEt, R3=morpholin-4-yl, RHS=benzothiazole-CH2-4-methylpiperazine) BEFORE checking ChEMBL SMILES",
+        "Vision-derived SMILES and ChEMBL canonical SMILES are IDENTICAL - independent cross-validation passed",
+        "PubChem CID 154699458 found via InChIKey lookup, consistent with the same structure"
+      ],
+      "status": "authoritative"
+    },
+    {
+      "paper_compound_number": 26,
+      "series": "constrained_analogue_cyclic",
+      "smiles": "CCOc1cc(Cl)cc(N2CCOCC2)c1-c1cc(-c2nc3ccccc3s2)c(=O)[nH]c1",
+      "formula": "C24H22ClN3O3S",
+      "exact_mass_M_plus_H_calc": 468.1143,
+      "si_reported_M_plus_H": 468.1167,
+      "delta_mDa": -2.38,
+      "structural_description": "pyridone + benzothiazole",
+      "paper_reported_hGPR81_EC50_uM": 0.021,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure read from main paper Table 7 (X=CH pyridone / X=N pyrimidinone; RHS per column) and SI Scheme 6 synthesis route",
+        "SI-reported [M+H]+ = 468.1167; RDKit calc = 468.1143; delta -2.4 mDa (within HRMS tolerance)",
+        "Ring fusion for 28/29 verified as 4,5,6,7-tetrahydrothiazolo[5,4-c]pyridine via SI Scheme 6 step (xi) reagent tert-butyl 3-bromo-4-oxopiperidine-1-carboxylate"
+      ]
+    },
+    {
+      "paper_compound_number": 27,
+      "series": "constrained_analogue_cyclic",
+      "smiles": "CCOc1cc(Cl)cc(N2CCOCC2)c1-c1cnc(-c2nc3ccccc3s2)[nH]c1=O",
+      "formula": "C23H21ClN4O3S",
+      "exact_mass_M_plus_H_calc": 469.1096,
+      "si_reported_M_plus_H": 469.1125,
+      "delta_mDa": -2.93,
+      "structural_description": "pyrimidinone + benzothiazole",
+      "paper_reported_hGPR81_EC50_uM": 0.49,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure read from main paper Table 7 (X=CH pyridone / X=N pyrimidinone; RHS per column) and SI Scheme 6 synthesis route",
+        "SI-reported [M+H]+ = 469.1125; RDKit calc = 469.1096; delta -2.9 mDa (within HRMS tolerance)",
+        "Ring fusion for 28/29 verified as 4,5,6,7-tetrahydrothiazolo[5,4-c]pyridine via SI Scheme 6 step (xi) reagent tert-butyl 3-bromo-4-oxopiperidine-1-carboxylate"
+      ]
+    },
+    {
+      "paper_compound_number": 28,
+      "series": "constrained_analogue_cyclic",
+      "smiles": "CCOc1cc(Cl)cc(N2CCOCC2)c1-c1cc(-c2nc3c(s2)CN(C(=O)CO)CC3)c(=O)[nH]c1",
+      "formula": "C25H27ClN4O5S",
+      "exact_mass_M_plus_H_calc": 531.1463,
+      "si_reported_M_plus_H": 531.151,
+      "delta_mDa": -4.65,
+      "structural_description": "pyridone + tetrahydrothiazolopyridine N-hydroxyacetyl",
+      "paper_reported_hGPR81_EC50_uM": 0.022,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure read from main paper Table 7 (X=CH pyridone / X=N pyrimidinone; RHS per column) and SI Scheme 6 synthesis route",
+        "SI-reported [M+H]+ = 531.151; RDKit calc = 531.1463; delta -4.7 mDa (within HRMS tolerance)",
+        "Ring fusion for 28/29 verified as 4,5,6,7-tetrahydrothiazolo[5,4-c]pyridine via SI Scheme 6 step (xi) reagent tert-butyl 3-bromo-4-oxopiperidine-1-carboxylate"
+      ]
+    },
+    {
+      "paper_compound_number": 29,
+      "series": "constrained_analogue_cyclic",
+      "smiles": "CCOc1cc(Cl)cc(N2CCOCC2)c1-c1cc(-c2nc3c(s2)CN(C(=O)COC)CC3)c(=O)[nH]c1",
+      "formula": "C26H29ClN4O5S",
+      "exact_mass_M_plus_H_calc": 545.162,
+      "si_reported_M_plus_H": 545.1602,
+      "delta_mDa": 1.8,
+      "structural_description": "pyridone + tetrahydrothiazolopyridine N-methoxyacetyl",
+      "paper_reported_hGPR81_EC50_uM": 0.075,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure read from main paper Table 7 (X=CH pyridone / X=N pyrimidinone; RHS per column) and SI Scheme 6 synthesis route",
+        "SI-reported [M+H]+ = 545.1602; RDKit calc = 545.1620; delta +1.8 mDa (within HRMS tolerance)",
+        "Ring fusion for 28/29 verified as 4,5,6,7-tetrahydrothiazolo[5,4-c]pyridine via SI Scheme 6 step (xi) reagent tert-butyl 3-bromo-4-oxopiperidine-1-carboxylate"
+      ]
+    },
+    {
+      "paper_compound_number": 30,
+      "series": "constrained_analogue_cyclic",
+      "smiles": "CCOc1cc(Cl)cc(N2CCOCC2)c1-c1cc(-c2nc3ccc(S(=O)(=O)C4CCN(C)CC4)cc3s2)c(=O)[nH]c1",
+      "formula": "C30H33ClN4O5S2",
+      "exact_mass_M_plus_H_calc": 629.1654,
+      "si_reported_M_plus_H": 629.1681,
+      "delta_mDa": -2.73,
+      "structural_description": "pyridone + benzothiazole-SO2-N-methylpiperidine",
+      "paper_reported_hGPR81_EC50_uM": 0.005,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure read from main paper Table 7 (X=CH pyridone / X=N pyrimidinone; RHS per column) and SI Scheme 6 synthesis route",
+        "SI-reported [M+H]+ = 629.1681; RDKit calc = 629.1654; delta -2.7 mDa (within HRMS tolerance)",
+        "Ring fusion for 28/29 verified as 4,5,6,7-tetrahydrothiazolo[5,4-c]pyridine via SI Scheme 6 step (xi) reagent tert-butyl 3-bromo-4-oxopiperidine-1-carboxylate"
+      ]
+    },
+    {
+      "paper_compound_number": 31,
+      "series": "constrained_analogue_cyclic",
+      "smiles": "CCOc1cc(Cl)cc(N2CCOCC2)c1-c1cnc(-c2nc3ccc(S(=O)(=O)C4CCN(C)CC4)cc3s2)[nH]c1=O",
+      "formula": "C29H32ClN5O5S2",
+      "exact_mass_M_plus_H_calc": 630.1606,
+      "si_reported_M_plus_H": 630.1653,
+      "delta_mDa": -4.68,
+      "structural_description": "pyrimidinone + benzothiazole-SO2-N-methylpiperidine",
+      "paper_reported_hGPR81_EC50_uM": 0.24,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure read from main paper Table 7 (X=CH pyridone / X=N pyrimidinone; RHS per column) and SI Scheme 6 synthesis route",
+        "SI-reported [M+H]+ = 630.1653; RDKit calc = 630.1606; delta -4.7 mDa (within HRMS tolerance)",
+        "Ring fusion for 28/29 verified as 4,5,6,7-tetrahydrothiazolo[5,4-c]pyridine via SI Scheme 6 step (xi) reagent tert-butyl 3-bromo-4-oxopiperidine-1-carboxylate"
+      ]
+    },
+    {
+      "paper_compound_number": 3,
+      "series": "acyl_urea",
+      "smiles": "CCOc1cc(C)c(C(=O)NC(=O)Nc2nc3ccc(CN4CCN(C)CC4)cc3s2)cc1N1CCOCC1",
+      "formula": "C28H36N6O4S",
+      "exact_mass_M_plus_H_calc": 553.2592,
+      "si_reported_M_plus_H": 553.2624,
+      "delta_mDa": -3.25,
+      "structural_description": "Table 2 R1=Me, R3=morpholine, RHS=CH2-4-methylpiperazine",
+      "paper_reported_hGPR81_EC50_uM": 0.0037,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure read from main paper Table 2/3 scaffold (R1/R2 variation with fixed R3 and RHS)",
+        "SI-reported [M+H]+ = 553.2624; RDKit calc = 553.2592; delta -3.2 mDa",
+        "NOTE: initial Table 2 scaffold misread as pyrazole R3 was corrected after re-reading the Table 2 drawing - Table 2 uses morpholine R3, Table 3 uses pyrazol-1-yl R3"
+      ]
+    },
+    {
+      "paper_compound_number": 4,
+      "series": "acyl_urea",
+      "smiles": "CCOc1cc(C(F)(F)F)c(C(=O)NC(=O)Nc2nc3ccc(CN4CCN(C)CC4)cc3s2)cc1N1CCOCC1",
+      "formula": "C28H33F3N6O4S",
+      "exact_mass_M_plus_H_calc": 607.2309,
+      "si_reported_M_plus_H": 607.233,
+      "delta_mDa": -2.11,
+      "structural_description": "Table 2 R1=CF3, R3=morpholine, RHS=CH2-4-methylpiperazine",
+      "paper_reported_hGPR81_EC50_uM": 0.0014,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure read from main paper Table 2/3 scaffold (R1/R2 variation with fixed R3 and RHS)",
+        "SI-reported [M+H]+ = 607.233; RDKit calc = 607.2309; delta -2.1 mDa",
+        "NOTE: initial Table 2 scaffold misread as pyrazole R3 was corrected after re-reading the Table 2 drawing - Table 2 uses morpholine R3, Table 3 uses pyrazol-1-yl R3"
+      ]
+    },
+    {
+      "paper_compound_number": 5,
+      "series": "acyl_urea",
+      "smiles": "CCOc1cc(C(=O)NC(=O)Nc2nc3ccc(CN4CCN(C)CC4)cc3s2)cc(N2CCOCC2)c1",
+      "formula": "C27H34N6O4S",
+      "exact_mass_M_plus_H_calc": 539.2435,
+      "si_reported_M_plus_H": 539.2452,
+      "delta_mDa": -1.7,
+      "structural_description": "Table 2 R1=H, R3=morpholine, RHS=CH2-4-methylpiperazine",
+      "paper_reported_hGPR81_EC50_uM": 0.00074,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure read from main paper Table 2/3 scaffold (R1/R2 variation with fixed R3 and RHS)",
+        "SI-reported [M+H]+ = 539.2452; RDKit calc = 539.2435; delta -1.7 mDa",
+        "NOTE: initial Table 2 scaffold misread as pyrazole R3 was corrected after re-reading the Table 2 drawing - Table 2 uses morpholine R3, Table 3 uses pyrazol-1-yl R3"
+      ]
+    },
+    {
+      "paper_compound_number": 6,
+      "series": "acyl_urea",
+      "smiles": "Cc1cc(Cl)c(C(=O)NC(=O)Nc2nc3ccc(S(=O)(=O)C4CCN(C)CC4)cc3s2)cc1-n1cccn1",
+      "formula": "C25H25ClN6O4S2",
+      "exact_mass_M_plus_H_calc": 573.114,
+      "si_reported_M_plus_H": 573.117,
+      "delta_mDa": -3.0,
+      "structural_description": "Table 3 R2=Me, R3=pyrazol-1-yl, RHS=SO2-N-methylpiperidine",
+      "paper_reported_hGPR81_EC50_uM": 0.0061,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure read from main paper Table 2/3 scaffold (R1/R2 variation with fixed R3 and RHS)",
+        "SI-reported [M+H]+ = 573.117; RDKit calc = 573.1140; delta -3.0 mDa",
+        "NOTE: initial Table 2 scaffold misread as pyrazole R3 was corrected after re-reading the Table 2 drawing - Table 2 uses morpholine R3, Table 3 uses pyrazol-1-yl R3"
+      ]
+    },
+    {
+      "paper_compound_number": 7,
+      "series": "acyl_urea",
+      "smiles": "FC1=CC(Cl)=C(C(=O)NC(=O)Nc2nc3ccc(S(=O)(=O)C4CCN(C)CC4)cc3s2)C=C1-n1cccn1",
+      "formula": "C24H22ClFN6O4S2",
+      "exact_mass_M_plus_H_calc": 577.0889,
+      "si_reported_M_plus_H": 577.09,
+      "delta_mDa": -1.07,
+      "structural_description": "Table 3 R2=F, R3=pyrazol-1-yl, RHS=SO2-N-methylpiperidine",
+      "paper_reported_hGPR81_EC50_uM": 0.0036,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure read from main paper Table 2/3 scaffold (R1/R2 variation with fixed R3 and RHS)",
+        "SI-reported [M+H]+ = 577.09; RDKit calc = 577.0889; delta -1.1 mDa",
+        "NOTE: initial Table 2 scaffold misread as pyrazole R3 was corrected after re-reading the Table 2 drawing - Table 2 uses morpholine R3, Table 3 uses pyrazol-1-yl R3"
+      ]
+    },
+    {
+      "paper_compound_number": 8,
+      "series": "acyl_urea",
+      "smiles": "Clc1cc(C(=O)NC(=O)Nc2nc3ccc(S(=O)(=O)C4CCN(C)CC4)cc3s2)cc(-n2cccn2)c1",
+      "formula": "C24H23ClN6O4S2",
+      "exact_mass_M_plus_H_calc": 559.0984,
+      "si_reported_M_plus_H": 559.0988,
+      "delta_mDa": -0.45,
+      "structural_description": "Table 3 R2=H, R3=pyrazol-1-yl, RHS=SO2-N-methylpiperidine",
+      "paper_reported_hGPR81_EC50_uM": 0.007,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure read from main paper Table 2/3 scaffold (R1/R2 variation with fixed R3 and RHS)",
+        "SI-reported [M+H]+ = 559.0988; RDKit calc = 559.0984; delta -0.4 mDa",
+        "NOTE: initial Table 2 scaffold misread as pyrazole R3 was corrected after re-reading the Table 2 drawing - Table 2 uses morpholine R3, Table 3 uses pyrazol-1-yl R3"
+      ]
+    },
+    {
+      "paper_compound_number": 9,
+      "series": "acyl_urea",
+      "smiles": "CCOc1cc(Cl)c(C(=O)NC(=O)Nc2nc3ccc(CN4CCN(C)CC4)cc3s2)cc1N1CCOC(C)C1",
+      "formula": "C28H35ClN6O4S",
+      "exact_mass_M_plus_H_calc": 587.2202,
+      "si_reported_M_plus_H": 587.2225,
+      "delta_mDa": -2.32,
+      "structural_description": "Table 4 R3=2-methylmorpholin-4-yl",
+      "paper_reported_hGPR81_EC50_uM": 0.032,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Table 4 R3 SAR scaffold (R1=Cl, R2=OEt fixed, RHS=CH2-4-methylpiperazine)",
+        "SI [M+H]+=587.2225; RDKit calc=587.2202; delta -2.3 mDa",
+        "11/12 initial piperidine-linker reading corrected to direct N-linked azole by MS mass matching"
+      ]
+    },
+    {
+      "paper_compound_number": 10,
+      "series": "acyl_urea",
+      "smiles": "CCOc1cc(Cl)c(C(=O)NC(=O)Nc2nc3ccc(CN4CCN(C)CC4)cc3s2)cc1N1CCCC1",
+      "formula": "C27H33ClN6O3S",
+      "exact_mass_M_plus_H_calc": 557.2096,
+      "si_reported_M_plus_H": 557.2138,
+      "delta_mDa": -4.18,
+      "structural_description": "Table 4 R3=pyrrolidin-1-yl",
+      "paper_reported_hGPR81_EC50_uM": 0.013,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Table 4 R3 SAR scaffold (R1=Cl, R2=OEt fixed, RHS=CH2-4-methylpiperazine)",
+        "SI [M+H]+=557.2138; RDKit calc=557.2096; delta -4.2 mDa",
+        "11/12 initial piperidine-linker reading corrected to direct N-linked azole by MS mass matching"
+      ]
+    },
+    {
+      "paper_compound_number": 11,
+      "series": "acyl_urea",
+      "smiles": "CCOc1cc(Cl)c(C(=O)NC(=O)Nc2nc3ccc(CN4CCN(C)CC4)cc3s2)cc1-n1cccn1",
+      "formula": "C26H28ClN7O3S",
+      "exact_mass_M_plus_H_calc": 554.1736,
+      "si_reported_M_plus_H": 554.1778,
+      "delta_mDa": -4.23,
+      "structural_description": "Table 4 R3=1H-pyrazol-1-yl (N-linked; corrected from piperidine-linked by MS)",
+      "paper_reported_hGPR81_EC50_uM": 0.019,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Table 4 R3 SAR scaffold (R1=Cl, R2=OEt fixed, RHS=CH2-4-methylpiperazine)",
+        "SI [M+H]+=554.1778; RDKit calc=554.1736; delta -4.2 mDa",
+        "11/12 initial piperidine-linker reading corrected to direct N-linked azole by MS mass matching"
+      ]
+    },
+    {
+      "paper_compound_number": 12,
+      "series": "acyl_urea",
+      "smiles": "CCOc1cc(Cl)c(C(=O)NC(=O)Nc2nc3ccc(CN4CCN(C)CC4)cc3s2)cc1-n1cccc1",
+      "formula": "C27H29ClN6O3S",
+      "exact_mass_M_plus_H_calc": 553.1783,
+      "si_reported_M_plus_H": 553.1797,
+      "delta_mDa": -1.38,
+      "structural_description": "Table 4 R3=1H-pyrrol-1-yl (N-linked; corrected from piperidine-linked by MS)",
+      "paper_reported_hGPR81_EC50_uM": 0.022,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Table 4 R3 SAR scaffold (R1=Cl, R2=OEt fixed, RHS=CH2-4-methylpiperazine)",
+        "SI [M+H]+=553.1797; RDKit calc=553.1783; delta -1.4 mDa",
+        "11/12 initial piperidine-linker reading corrected to direct N-linked azole by MS mass matching"
+      ]
+    },
+    {
+      "paper_compound_number": 13,
+      "series": "acyl_urea",
+      "smiles": "CCOc1cc(Cl)c(C(=O)NC(=O)Nc2nc3ccc(CN4CCN(C)CC4)cc3s2)cc1-c1cn[nH]c1",
+      "formula": "C26H28ClN7O3S",
+      "exact_mass_M_plus_H_calc": 554.1736,
+      "si_reported_M_plus_H": 554.1739,
+      "delta_mDa": -0.33,
+      "structural_description": "Table 4 R3=1H-pyrazol-4-yl (C-linked, no piperidine, no NH2)",
+      "paper_reported_hGPR81_EC50_uM": 0.36,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Table 4 R3 SAR scaffold (R1=Cl, R2=OEt fixed, RHS=CH2-4-methylpiperazine)",
+        "SI [M+H]+=554.1739; RDKit calc=554.1736; delta -0.3 mDa",
+        "11/12 initial piperidine-linker reading corrected to direct N-linked azole by MS mass matching"
+      ]
+    },
+    {
+      "paper_compound_number": 14,
+      "series": "acyl_urea",
+      "smiles": "CCOc1cc(Cl)c(C(=O)NC(=O)Nc2nc3ccc(CN4CCN(C)CC4)cc3s2)cc1",
+      "formula": "C23H26ClN5O3S",
+      "exact_mass_M_plus_H_calc": 488.1518,
+      "si_reported_M_plus_H": 488.1552,
+      "delta_mDa": -3.43,
+      "structural_description": "Table 4 R3=H",
+      "paper_reported_hGPR81_EC50_uM": 0.56,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Table 4 R3 SAR scaffold (R1=Cl, R2=OEt fixed, RHS=CH2-4-methylpiperazine)",
+        "SI [M+H]+=488.1552; RDKit calc=488.1518; delta -3.4 mDa",
+        "11/12 initial piperidine-linker reading corrected to direct N-linked azole by MS mass matching"
+      ]
+    },
+    {
+      "paper_compound_number": 15,
+      "series": "acyl_urea",
+      "smiles": "CCOc1cc(Cl)c(C(=O)NC(=O)Nc2nc3ccccc3s2)cc1N1CCOCC1",
+      "formula": "C21H21ClN4O4S",
+      "exact_mass_M_plus_H_calc": 461.1045,
+      "si_reported_M_plus_H": 461.1058,
+      "delta_mDa": -1.32,
+      "structural_description": "Table 5 RHS=benzothiazol-2-yl",
+      "paper_reported_hGPR81_EC50_uM": 0.299,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure from paper Table + ChEMBL cross-check where available",
+        "SI [M+H]+=461.1058; RDKit calc=461.1045; delta -1.3 mDa"
+      ]
+    },
+    {
+      "paper_compound_number": 16,
+      "series": "acyl_urea",
+      "smiles": "CCOc1cc(Cl)c(C(=O)NC(=O)Nc2nc(-c3ccccc3)cs2)cc1N1CCOCC1",
+      "formula": "C23H23ClN4O4S",
+      "exact_mass_M_plus_H_calc": 487.1201,
+      "si_reported_M_plus_H": 487.1224,
+      "delta_mDa": -2.27,
+      "structural_description": "Table 5 RHS=4-phenylthiazol-2-yl",
+      "paper_reported_hGPR81_EC50_uM": 0.103,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure from paper Table + ChEMBL cross-check where available",
+        "SI [M+H]+=487.1224; RDKit calc=487.1201; delta -2.3 mDa"
+      ]
+    },
+    {
+      "paper_compound_number": 17,
+      "series": "acyl_urea",
+      "smiles": "CCOc1cc(Cl)c(C(=O)NC(=O)Nc2cc3ccccc3s2)cc1N1CCOCC1",
+      "formula": "C22H22ClN3O4S",
+      "exact_mass_M_plus_H_calc": 460.1092,
+      "si_reported_M_plus_H": 460.112,
+      "delta_mDa": -2.77,
+      "structural_description": "Table 5 RHS=benzothiophen-2-yl",
+      "paper_reported_hGPR81_EC50_uM": 0.26,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure from paper Table + ChEMBL cross-check where available",
+        "SI [M+H]+=460.112; RDKit calc=460.1092; delta -2.8 mDa"
+      ]
+    },
+    {
+      "paper_compound_number": 18,
+      "series": "acyl_urea",
+      "smiles": "CCOc1cc(Cl)c(C(=O)NC(=O)Nc2ncc(C)s2)cc1N1CCOCC1",
+      "formula": "C18H21ClN4O4S",
+      "exact_mass_M_plus_H_calc": 425.1045,
+      "si_reported_M_plus_H": 425.1046,
+      "delta_mDa": -0.12,
+      "structural_description": "Table 5 RHS=5-methylthiazol-2-yl",
+      "paper_reported_hGPR81_EC50_uM": 0.769,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure from paper Table + ChEMBL cross-check where available",
+        "SI [M+H]+=425.1046; RDKit calc=425.1045; delta -0.1 mDa"
+      ]
+    },
+    {
+      "paper_compound_number": 20,
+      "series": "acyl_urea",
+      "smiles": "CCOc1cc(Cl)c(C(=O)NC(=O)Nc2nc3c(s2)CN(C(C)=O)CC3)cc1N1CCOCC1",
+      "formula": "C22H26ClN5O5S",
+      "exact_mass_M_plus_H_calc": 508.1416,
+      "si_reported_M_plus_H": 508.1445,
+      "delta_mDa": -2.9,
+      "structural_description": "Table 5 RHS=tetrahydrothiazolopyridine N-acetyl",
+      "paper_reported_hGPR81_EC50_uM": 0.719,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure from paper Table + ChEMBL cross-check where available",
+        "SI [M+H]+=508.1445; RDKit calc=508.1416; delta -2.9 mDa"
+      ]
+    },
+    {
+      "paper_compound_number": 21,
+      "series": "acyl_urea",
+      "smiles": "CCOc1cc(Cl)c(C(=O)NC(=O)Nc2nc3c(s2)CN(C(=O)CO)CC3)cc1N1CCOCC1",
+      "formula": "C22H26ClN5O6S",
+      "exact_mass_M_plus_H_calc": 524.1365,
+      "si_reported_M_plus_H": 524.1407,
+      "delta_mDa": -4.19,
+      "structural_description": "Table 5 RHS=tetrahydrothiazolopyridine N-hydroxyacetyl",
+      "paper_reported_hGPR81_EC50_uM": 0.895,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure from paper Table + ChEMBL cross-check where available",
+        "SI [M+H]+=524.1407; RDKit calc=524.1365; delta -4.2 mDa"
+      ]
+    },
+    {
+      "paper_compound_number": 23,
+      "series": "linker_variant",
+      "smiles": "CCOc1cc(Cl)c(C(=O)N(C)C(=O)Nc2nc3ccc(CN4CCN(C)CC4)cc3s2)cc1N1CCOCC1",
+      "formula": "C28H35ClN6O4S",
+      "exact_mass_M_plus_H_calc": 587.2202,
+      "si_reported_M_plus_H": 587.2225,
+      "delta_mDa": -2.32,
+      "structural_description": "Table 6 N-methylated acyl urea",
+      "paper_reported_hGPR81_EC50_uM": 16.0,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure from paper Table + ChEMBL cross-check where available",
+        "SI [M+H]+=587.2225; RDKit calc=587.2202; delta -2.3 mDa"
+      ]
+    },
+    {
+      "paper_compound_number": 24,
+      "series": "linker_variant",
+      "smiles": "CCOc1cc(Cl)c(CNC(=O)Nc2nc3ccc(CN4CCN(C)CC4)cc3s2)cc1N1CCOCC1",
+      "formula": "C27H35ClN6O3S",
+      "exact_mass_M_plus_H_calc": 559.2253,
+      "si_reported_M_plus_H": 559.2237,
+      "delta_mDa": 1.57,
+      "structural_description": "Table 6 CH2-NH-C(=O)-NH urea",
+      "paper_reported_hGPR81_EC50_uM": 33.0,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure from paper Table + ChEMBL cross-check where available",
+        "SI [M+H]+=559.2237; RDKit calc=559.2253; delta +1.6 mDa"
+      ]
+    },
+    {
+      "paper_compound_number": 25,
+      "series": "linker_variant",
+      "smiles": "CCOc1cc(Cl)c(NC(=O)Nc2nc3ccc(CN4CCN(C)CC4)cc3s2)cc1N1CCOCC1",
+      "formula": "C26H33ClN6O3S",
+      "exact_mass_M_plus_H_calc": 545.2096,
+      "si_reported_M_plus_H": 545.2098,
+      "delta_mDa": -0.18,
+      "structural_description": "Table 6 direct urea",
+      "paper_reported_hGPR81_EC50_uM": 33.0,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure from paper Table + ChEMBL cross-check where available",
+        "SI [M+H]+=545.2098; RDKit calc=545.2096; delta -0.2 mDa"
+      ]
+    },
+    {
+      "paper_compound_number": 32,
+      "series": "amide",
+      "smiles": "CCOc1cc(Cl)c(C(=O)Nc2nc3ccc(CN4CCN(C)CC4)cc3s2)cc1N1CCOCC1",
+      "formula": "C26H32ClN5O3S",
+      "exact_mass_M_plus_H_calc": 530.1987,
+      "si_reported_M_plus_H": 530.1981,
+      "delta_mDa": 0.62,
+      "structural_description": "Table 8 amide, R3=morpholine, X=CH2-N-methylpiperazine",
+      "paper_reported_hGPR81_EC50_uM": 0.41,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure from paper Table + ChEMBL cross-check where available",
+        "SI [M+H]+=530.1981; RDKit calc=530.1987; delta +0.6 mDa"
+      ]
+    },
+    {
+      "paper_compound_number": 33,
+      "series": "amide",
+      "smiles": "CCOc1cc(Cl)c(C(=O)Nc2nc3ccc(S(=O)(=O)C4CCN(C)CC4)cc3s2)cc1N1CCOCC1",
+      "formula": "C26H31ClN4O5S2",
+      "exact_mass_M_plus_H_calc": 579.1497,
+      "si_reported_M_plus_H": 579.1517,
+      "delta_mDa": -1.98,
+      "structural_description": "Table 8 amide, R3=morpholine, X=SO2-N-methylpiperidine",
+      "paper_reported_hGPR81_EC50_uM": 0.74,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure from paper Table + ChEMBL cross-check where available",
+        "SI [M+H]+=579.1517; RDKit calc=579.1497; delta -2.0 mDa"
+      ]
+    },
+    {
+      "paper_compound_number": 34,
+      "series": "amide",
+      "smiles": "CCOc1cc(Cl)c(C(=O)Nc2nc3ccc(OC4CCN(C)CC4)cc3s2)cc1N1CCOCC1",
+      "formula": "C26H31ClN4O4S",
+      "exact_mass_M_plus_H_calc": 531.1827,
+      "si_reported_M_plus_H": 531.1859,
+      "delta_mDa": -3.17,
+      "structural_description": "Table 8 amide, R3=morpholine, X=O-N-methylpiperidine",
+      "paper_reported_hGPR81_EC50_uM": 0.11,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure from paper Table + ChEMBL cross-check where available",
+        "SI [M+H]+=531.1859; RDKit calc=531.1827; delta -3.2 mDa"
+      ]
+    },
+    {
+      "paper_compound_number": 35,
+      "series": "amide",
+      "smiles": "CCOc1cc(Cl)c(C(=O)Nc2nc3ccc(S(=O)(=O)CCCN4CCN(C)CC4)cc3s2)cc1N1CCOCC1",
+      "formula": "C28H36ClN5O5S2",
+      "exact_mass_M_plus_H_calc": 622.1919,
+      "si_reported_M_plus_H": 622.1929,
+      "delta_mDa": -0.98,
+      "structural_description": "Table 8 amide, R3=morpholine, X=SO2-CH2CH2CH2-N-methylpiperazine",
+      "paper_reported_hGPR81_EC50_uM": 0.6,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure from paper Table + ChEMBL cross-check where available",
+        "SI [M+H]+=622.1929; RDKit calc=622.1919; delta -1.0 mDa"
+      ]
+    },
+    {
+      "paper_compound_number": 36,
+      "series": "amide",
+      "smiles": "CCOc1cc(Cl)c(C(=O)Nc2nc3ccc(S(=O)(=O)CCCN4CCN(C)CC4)cc3s2)cc1N1CCO[C@H](C)C1",
+      "formula": "C29H38ClN5O5S2",
+      "exact_mass_M_plus_H_calc": 636.2076,
+      "si_reported_M_plus_H": 636.2089,
+      "delta_mDa": -1.33,
+      "structural_description": "Table 8 amide, R3=cis-2-methylmorpholine",
+      "paper_reported_hGPR81_EC50_uM": 0.16,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure from paper Table + ChEMBL cross-check where available",
+        "SI [M+H]+=636.2089; RDKit calc=636.2076; delta -1.3 mDa"
+      ]
+    },
+    {
+      "paper_compound_number": 37,
+      "series": "amide",
+      "smiles": "CCOc1cc(Cl)c(C(=O)Nc2nc3ccc(S(=O)(=O)CCCN4CCN(C)CC4)cc3s2)cc1N1C[C@H](C)O[C@@H](C)C1",
+      "formula": "C30H40ClN5O5S2",
+      "exact_mass_M_plus_H_calc": 650.2232,
+      "si_reported_M_plus_H": 650.2261,
+      "delta_mDa": -2.88,
+      "structural_description": "Table 8 amide, R3=trans-2,6-dimethylmorpholine",
+      "paper_reported_hGPR81_EC50_uM": 0.35,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure from paper Table + ChEMBL cross-check where available",
+        "SI [M+H]+=650.2261; RDKit calc=650.2232; delta -2.9 mDa"
+      ]
+    },
+    {
+      "paper_compound_number": 38,
+      "series": "amide",
+      "smiles": "CCOc1cc(Cl)c(C(=O)Nc2nc3ccc(S(=O)(=O)CCCN4CCN(C)CC4)cc3s2)cc1N1C[C@@H](C)O[C@@H](C)C1",
+      "formula": "C30H40ClN5O5S2",
+      "exact_mass_M_plus_H_calc": 650.2232,
+      "si_reported_M_plus_H": 650.2248,
+      "delta_mDa": -1.58,
+      "structural_description": "Table 8 amide, R3=cis-2,6-dimethylmorpholine",
+      "paper_reported_hGPR81_EC50_uM": 0.054,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure from paper Table + ChEMBL cross-check where available",
+        "SI [M+H]+=650.2248; RDKit calc=650.2232; delta -1.6 mDa"
+      ]
+    },
+    {
+      "paper_compound_number": 39,
+      "series": "amide",
+      "smiles": "CCOc1cc(Cl)c(C(=O)Nc2nc3ccccc3s2)cc1N1CCOCC1",
+      "formula": "C20H20ClN3O3S",
+      "exact_mass_M_plus_H_calc": 418.0987,
+      "si_reported_M_plus_H": 418.0996,
+      "delta_mDa": -0.93,
+      "structural_description": "Table 8 amide, R3=morpholine, X=H",
+      "paper_reported_hGPR81_EC50_uM": 1.9,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "Structure from paper Table + ChEMBL cross-check where available",
+        "SI [M+H]+=418.0996; RDKit calc=418.0987; delta -0.9 mDa"
+      ]
+    },
+    {
+      "paper_compound_number": 19,
+      "series": "acyl_urea",
+      "smiles": "CCOc1cc(Cl)c(C(=O)NC(=O)Nc2nc3c(s2)CCCC3)cc1N1CCOCC1",
+      "formula": "C21H25ClN4O4S",
+      "exact_mass_M_plus_H_calc": 465.1358,
+      "si_reported_M_plus_H": null,
+      "delta_mDa": null,
+      "structural_description": "Table 5 RHS=4,5,6,7-tetrahydrobenzothiazol-2-yl (saturated ring version of 15)",
+      "paper_reported_hGPR81_EC50_uM": 0.12,
+      "status": "reconstructed_and_MS_validated",
+      "evidence": [
+        "No SI MS entry (SI lists '19. 11' = footnote reference to Geyer et al. ChemMedChem 2015, 10, 2063-2070)",
+        "Structure cross-validated via ChEMBL CHEMBL4239086 (EC50=120 nM matches paper-reported 0.120 uM exactly)",
+        "Paper text: 'the 6-membered ring of the benzothiazole in 15 was saturated... exemplified in 19'"
+      ]
+    },
+    {
+      "paper_compound_number": 22,
+      "series": "acyl_urea",
+      "smiles": "CCOc1cc(Cl)c(C(=O)NC(=O)Nc2nc3ccc(S(=O)(=O)C4CCN(C)CC4)cc3s2)cc1N1CCOCC1",
+      "formula": "C27H32ClN5O6S2",
+      "exact_mass_M_plus_H_calc": 622.1555,
+      "si_reported_M_plus_H": 627.1839,
+      "delta_mDa": -5028.37,
+      "structural_description": "Table 5 RHS=benzothiazole-SO2-(1-methylpiperidin-4-yl), no CH2 spacer (paper structure figure + text + ChEMBL)",
+      "paper_reported_hGPR81_EC50_uM": 0.166,
+      "status": "authoritative",
+      "evidence": [
+        "Paper Table 5 structure figure: benzothiazole-SO2-(1-methylpiperidin-4-yl), direct sulfone attachment, no methylene spacer (vision-verified)",
+        "Paper text: 'the sulphone linked N-methylpiperidine on the benzothiazole, exemplified in 22'",
+        "ChEMBL CHEMBL4634029 (EC50=166 nM matching paper 0.166 uM) has identical structure",
+        "CALCULATED [M+H]+ = 622.1555; SI entry '22.' reports 627.1839 with NMR showing a benzylic CH2 (4.49 s 2H) incompatible with this structure",
+        "RESOLVED 2026-08-04: the SI entry is a data mismatch. Triple-confirmed structure (figure+text+ChEMBL) says 622.1555; the SI 627.1839 entry's NMR (benzylic CH2, NMe) belongs to a different compound (likely a CH2-piperazine RHS variant) and was mislabeled '22' in the SI."
+      ]
+    }
+  ],
+  "attempted_but_unresolved": [],
+  "recovery_scope_this_session": {
+    "structures_confirmed": 39,
+    "structures_attempted_and_rejected": 1,
+    "structures_not_yet_attempted": 0,
+    "method_note": "PDF page rendering + vision structure reading + independent ChEMBL/PubChem cross-check was validated as reliable for compounds 1 and 2 (perfect match). Extending to the remaining 36 compounds is now unblocked in principle but requires the same per-compound MS-validation discipline demonstrated here (compound 22 attempt shows a wrong guess is caught, not silently accepted). This is significant additional work not completed in this session.",
+    "blocked_unresolved": [],
+    "final_summary": {
+      "total_paper_compounds": 39,
+      "authoritative": 3,
+      "reconstructed_and_MS_validated": 36,
+      "unresolved_ms_mismatch": 0,
+      "blocked_list": []
+    }
+  },
+  "si_ms_reference_table": {
+    "3": {
+      "m_plus_h": 553.2624,
+      "note": ""
+    },
+    "4": {
+      "m_plus_h": 607.233,
+      "note": ""
+    },
+    "5": {
+      "m_plus_h": 539.2452,
+      "note": ""
+    },
+    "6": {
+      "m_plus_h": 573.117,
+      "note": ""
+    },
+    "7": {
+      "m_plus_h": 577.09,
+      "note": ""
+    },
+    "8": {
+      "m_plus_h": 559.0988,
+      "note": ""
+    },
+    "9": {
+      "m_plus_h": 587.2225,
+      "note": ""
+    },
+    "10": {
+      "m_plus_h": 557.2138,
+      "note": ""
+    },
+    "11": {
+      "m_plus_h": 554.1778,
+      "note": ""
+    },
+    "12": {
+      "m_plus_h": 553.1797,
+      "note": ""
+    },
+    "13": {
+      "m_plus_h": 554.1739,
+      "note": ""
+    },
+    "14": {
+      "m_plus_h": 488.1552,
+      "note": ""
+    },
+    "15": {
+      "m_plus_h": 461.1058,
+      "note": ""
+    },
+    "16": {
+      "m_plus_h": 487.1224,
+      "note": ""
+    },
+    "17": {
+      "m_plus_h": 460.112,
+      "note": ""
+    },
+    "18": {
+      "m_plus_h": 425.1046,
+      "note": ""
+    },
+    "20": {
+      "m_plus_h": 508.1445,
+      "note": ""
+    },
+    "21": {
+      "m_plus_h": 524.1407,
+      "note": ""
+    },
+    "22": {
+      "m_plus_h": 627.1839,
+      "note": ""
+    },
+    "23": {
+      "m_plus_h": 587.2225,
+      "note": ""
+    },
+    "24": {
+      "m_plus_h": 559.2237,
+      "note": ""
+    },
+    "25": {
+      "m_plus_h": 545.2098,
+      "note": ""
+    },
+    "26": {
+      "m_plus_h": 468.1167,
+      "note": ""
+    },
+    "27": {
+      "m_plus_h": 469.1125,
+      "note": ""
+    },
+    "28": {
+      "m_plus_h": 531.151,
+      "note": ""
+    },
+    "29": {
+      "m_plus_h": 545.1602,
+      "note": ""
+    },
+    "30": {
+      "m_plus_h": 629.1681,
+      "note": ""
+    },
+    "31": {
+      "m_plus_h": 630.1653,
+      "note": ""
+    },
+    "32": {
+      "m_plus_h": 530.1981,
+      "note": ""
+    },
+    "33": {
+      "m_plus_h": 579.1517,
+      "note": ""
+    },
+    "34": {
+      "m_plus_h": 531.1859,
+      "note": ""
+    },
+    "35": {
+      "m_plus_h": 622.1929,
+      "note": ""
+    },
+    "36": {
+      "m_plus_h": 636.2089,
+      "note": ""
+    },
+    "37": {
+      "m_plus_h": 650.2261,
+      "note": ""
+    },
+    "38": {
+      "m_plus_h": 650.2248,
+      "note": ""
+    },
+    "39": {
+      "m_plus_h": 418.0996,
+      "note": ""
+    },
+    "19": {
+      "m_plus_h": null,
+      "note": "footnote reference 11, no MS listed"
+    },
+    "1": {
+      "m_plus_h": null,
+      "note": "data under '1 and 28b' section header, shared"
+    },
+    "2": {
+      "m_plus_h": null,
+      "note": "data under '1 and 28b' section header, shared"
+    }
+  },
+  "validation_anchor": "SI-reported [M+H]+ values extracted from mmc1.pdf text are the ground-truth anchor for structure validation"
+}

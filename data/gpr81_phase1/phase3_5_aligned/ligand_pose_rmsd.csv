@@ -1,0 +1,16 @@
+compound_id,reference_receptor,moving_receptor,pose_rank,ligand_heavy_atom_count,ligand_rmsd_A,alignment_rmsd_A,status
+3_5_DHBA,8Z87,8Z87,1,14,0.0,0.0,ok
+3_5_DHBA,8Z87,9KT9,1,14,10.445,1.018,ok
+3_5_DHBA,8Z87,8Z8A,1,14,3.595,0.587,ok
+3_OBA,8Z87,8Z87,1,9,0.0,0.0,ok
+3_OBA,8Z87,9KT9,1,9,9.219,1.018,ok
+3_OBA,8Z87,8Z8A,1,9,0.865,0.587,ok
+AZ1_GPR81_agonist_2,8Z87,8Z87,1,42,0.0,0.0,ok
+AZ1_GPR81_agonist_2,8Z87,9KT9,1,42,16.757,1.018,ok
+AZ1_GPR81_agonist_2,8Z87,8Z8A,1,42,14.181,0.587,ok
+CHBA,8Z87,8Z87,1,13,0.0,0.0,ok
+CHBA,8Z87,9KT9,1,13,12.086,1.018,ok
+CHBA,8Z87,8Z8A,1,13,4.243,0.587,ok
+GPR81_agonist_1,8Z87,8Z87,1,31,0.0,0.0,ok
+GPR81_agonist_1,8Z87,9KT9,1,31,4.021,1.018,ok
+GPR81_agonist_1,8Z87,8Z8A,1,31,3.495,0.587,ok

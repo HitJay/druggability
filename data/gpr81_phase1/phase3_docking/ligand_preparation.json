@@ -1,0 +1,32 @@
+[
+  {
+    "source": "/das/user/QYJI/druggability/data/gpr81_phase1/ligands/AZ1_GPR81_agonist_2_CID57422810.sdf",
+    "output": "/das/user/QYJI/druggability/data/gpr81_phase1/phase3_docking/ligands_pdbqt/AZ1_GPR81_agonist_2.pdbqt",
+    "atoms": 67,
+    "pdbqt_bytes": 4023
+  },
+  {
+    "source": "/das/user/QYJI/druggability/data/gpr81_phase1/ligands/GPR81_agonist_1_CID86279608.sdf",
+    "output": "/das/user/QYJI/druggability/data/gpr81_phase1/phase3_docking/ligands_pdbqt/GPR81_agonist_1.pdbqt",
+    "atoms": 60,
+    "pdbqt_bytes": 2980
+  },
+  {
+    "source": "/das/user/QYJI/druggability/data/gpr81_phase1/ligands/CHBA_CID13071646.sdf",
+    "output": "/das/user/QYJI/druggability/data/gpr81_phase1/phase3_docking/ligands_pdbqt/CHBA.pdbqt",
+    "atoms": 16,
+    "pdbqt_bytes": 1290
+  },
+  {
+    "source": "/das/user/QYJI/druggability/data/gpr81_phase1/ligands/3_5_DHBA_CID7424.sdf",
+    "output": "/das/user/QYJI/druggability/data/gpr81_phase1/phase3_docking/ligands_pdbqt/3_5_DHBA.pdbqt",
+    "atoms": 17,
+    "pdbqt_bytes": 1408
+  },
+  {
+    "source": "/das/user/QYJI/druggability/data/gpr81_phase1/ligands/3_OBA_CID441.sdf",
+    "output": "/das/user/QYJI/druggability/data/gpr81_phase1/phase3_docking/ligands_pdbqt/3_OBA.pdbqt",
+    "atoms": 15,
+    "pdbqt_bytes": 977
+  }
+]

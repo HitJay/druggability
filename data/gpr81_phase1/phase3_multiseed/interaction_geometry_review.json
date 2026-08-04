@@ -1,0 +1,62 @@
+{
+  "AZ1_8Z8A": {
+    "n_ligand_polar_atoms": 13,
+    "n_hbond_candidates": 5,
+    "hbond_candidates": [
+      {
+        "residue": "ARG99",
+        "residue_atom": "NH2",
+        "role": "donor+",
+        "ligand_element": "O",
+        "ligand_autodock_type": "OA",
+        "distance_A": 2.91
+      },
+      {
+        "residue": "GLU153",
+        "residue_atom": "OE1",
+        "role": "acceptor-",
+        "ligand_element": "N",
+        "ligand_autodock_type": "NA",
+        "distance_A": 3.0
+      },
+      {
+        "residue": "ARG99",
+        "residue_atom": "NH2",
+        "role": "donor+",
+        "ligand_element": "N",
+        "ligand_autodock_type": "NA",
+        "distance_A": 3.07
+      },
+      {
+        "residue": "HIS177",
+        "residue_atom": "NE2",
+        "role": "donor/acceptor",
+        "ligand_element": "N",
+        "ligand_autodock_type": "N",
+        "distance_A": 3.34
+      },
+      {
+        "residue": "ASN174",
+        "residue_atom": "ND2",
+        "role": "donor",
+        "ligand_element": "N",
+        "ligand_autodock_type": "N",
+        "distance_A": 3.45
+      }
+    ]
+  },
+  "Takeda_8Z8A": {
+    "n_ligand_polar_atoms": 8,
+    "n_hbond_candidates": 1,
+    "hbond_candidates": [
+      {
+        "residue": "GLU153",
+        "residue_atom": "OE1",
+        "role": "acceptor-",
+        "ligand_element": "N",
+        "ligand_autodock_type": "NA",
+        "distance_A": 2.84
+      }
+    ]
+  }
+}
