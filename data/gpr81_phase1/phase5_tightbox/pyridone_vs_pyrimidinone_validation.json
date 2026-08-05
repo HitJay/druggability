@@ -1,0 +1,42 @@
+{
+  "title": "c30 (pyridone) vs c31 (pyrimidinone) on 8Z8A - second-layer validation",
+  "date": "2026-08-04",
+  "method": "Vina 1.2.7 energy decomposition (total/inter/intra/torsions) + per-atom electrostatic environment analysis of the docked pose",
+  "why_not_MMGBSA": "OpenMM 8.3.1 + PDBFixer available but no ambertools/openff-toolkit installable (pip mirror + direct PyPI both blocked by Novo network); GAFF parametrization of small molecules impossible. Replaced with Vina energy decomposition as the second scoring layer.",
+  "compounds": {
+    "c30": {"smiles": "CCOc1cc(Cl)cc(N2CCOCC2)c1-c1cc(-c2nc3ccc(S(=O)(=O)C4CCN(C)CC4)cc3s2)c(=O)[nH]c1", "series": "constrained_cyclic pyridone", "paper_EC50_uM": 0.005},
+    "c31": {"smiles": "CCOc1cc(Cl)cc(N2CCOCC2)c1-c1cnc(-c2nc3ccc(S(=O)(=O)C4CCN(C)CC4)cc3s2)[nH]c1=O", "series": "constrained_cyclic pyrimidinone", "paper_EC50_uM": 0.24}
+  },
+  "vina_energy_decomposition_8Z8A_24A_box": {
+    "c30_seed4": {"total": -5.643, "inter": -7.952, "intra": -0.495, "torsions": 2.309},
+    "c30_seed7": {"total": -6.009, "inter": -8.467, "intra": -1.218, "torsions": 2.459},
+    "c31_seed4": {"total": -2.841, "inter": -4.004, "intra": -1.609, "torsions": 1.163},
+    "c31_seed7": {"total": -2.829, "inter": -3.987, "intra": -1.616, "torsions": 1.158}
+  },
+  "inter_delta": {
+    "mean_c30_inter_kcal": -8.21,
+    "mean_c31_inter_kcal": -4.00,
+    "delta_inter_kcal": 4.2,
+    "note": "inter = intermolecular interaction energy; the entire total-score gap comes from inter, NOT intra (c31 intra is actually better). Pyrimidinone insertion degrades the binding interface itself."
+  },
+  "electrostatic_environment": {
+    "c31_pyrimidinone_N3_atom": "aromatic N at RDKit idx 18 (unique to pyrimidinone; element-MCS diff atom)",
+    "distance_to_GLU153_carboxyl": {
+      "seed_20260803": 3.80, "seed_1": 3.83, "seed_2": 3.79, "seed_3": 3.81,
+      "seed_4": 3.78, "seed_5": 3.80, "seed_6": 3.78, "seed_7": 3.75,
+      "note": "Angstrom, min over GLU153 OE1/OE2/CD; 8/8 seeds 3.75-3.83 A = systematic, not pose noise"
+    },
+    "interpretation": "Pyrimidinone ring N3 lone pair sits 3.8 A from the negatively charged GLU153 carboxylate -> electrostatic repulsion; pyridone counterpart is a C-H at the same position (no lone pair). Consistent with the ~4 kcal/mol inter penalty and the 47x EC50 loss (5 nM vs 240 nM)."
+  },
+  "evidence_levels": {
+    "inter_energy_gap": "OBS (direct computation, 2 seeds each)",
+    "N3-GLU153_3.8A_8of8_seeds": "OBS",
+    "electrostatic_repulsion_mechanism": "MECH (consistent with both score gap and paper EC50)",
+    "experimental_47x_EC50": "FACT (paper Table 7)"
+  },
+  "caveats": [
+    "Single rigid cryo-EM conformation; no induced fit or explicit solvent.",
+    "Vina inter is not a free energy; treat the 4 kcal/mol as directional structural evidence.",
+    "MM/GBSA remains the preferred quantitative check once ambertools/openff is available in this environment."
+  ]
+}

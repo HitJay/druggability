@@ -9,14 +9,16 @@
         "mean_24A_box": -3.744,
         "binding_region": "TM56_EXTRACELLULAR",
         "validity": "OK",
-        "verdict": "TM5-TM6 region pose, CHBA-bound state"
+        "verdict": "TM5-TM6 region pose, CHBA-bound state",
+        "consensus_region_multi_seed": "TM56_EXTRACELLULAR"
       },
       "8Z8A": {
         "best_24A_box": -7.084,
         "mean_24A_box": -6.417,
         "binding_region": "TM56_EXTRACELLULAR",
         "validity": "OK",
-        "verdict": "TM5-TM6 region pose, lactate-bound state"
+        "verdict": "TM5-TM6 region pose, lactate-bound state",
+        "consensus_region_multi_seed": "TM56_EXTRACELLULAR"
       }
     }
   },
@@ -30,14 +32,16 @@
         "mean_24A_box": -1.318,
         "binding_region": "TM56_EXTRACELLULAR",
         "validity": "OK",
-        "verdict": "TM5-TM6 region pose, CHBA-bound state"
+        "verdict": "TM5-TM6 region pose, CHBA-bound state",
+        "consensus_region_multi_seed": "TM56_EXTRACELLULAR"
       },
       "8Z8A": {
         "best_24A_box": -6.952,
         "mean_24A_box": -5.18,
         "binding_region": "TM56_EXTRACELLULAR",
         "validity": "OK",
-        "verdict": "TM5-TM6 region pose, lactate-bound state"
+        "verdict": "TM5-TM6 region pose, lactate-bound state",
+        "consensus_region_multi_seed": "TM56_EXTRACELLULAR"
       }
     }
   },
@@ -51,14 +55,16 @@
         "mean_24A_box": 12.247,
         "binding_region": "TM56_EXTRACELLULAR",
         "validity": "CLASH",
-        "verdict": "clash-incompatible in CHBA-bound state (TM5-TM6 region); known agonist - NOT a non-binder"
+        "verdict": "clash-incompatible in CHBA-bound state (TM5-TM6 region); known agonist - NOT a non-binder",
+        "consensus_region_multi_seed": "ORTHO_POCKET(unstable,clash)"
       },
       "8Z8A": {
         "best_24A_box": -4.917,
         "mean_24A_box": -4.289,
         "binding_region": "MIXED",
         "validity": "OK",
-        "verdict": "TM5-TM6 region pose, lactate-bound state"
+        "verdict": "TM5-TM6 region pose, lactate-bound state",
+        "consensus_region_multi_seed": "MIXED"
       }
     }
   },
@@ -72,14 +78,16 @@
         "mean_24A_box": -2.754,
         "binding_region": "TM56_EXTRACELLULAR",
         "validity": "OK",
-        "verdict": "TM5-TM6 region pose, CHBA-bound state"
+        "verdict": "TM5-TM6 region pose, CHBA-bound state",
+        "consensus_region_multi_seed": "TM56_EXTRACELLULAR"
       },
       "8Z8A": {
         "best_24A_box": -7.25,
         "mean_24A_box": -6.217,
         "binding_region": "TM56_EXTRACELLULAR",
         "validity": "OK",
-        "verdict": "TM5-TM6 region pose, lactate-bound state"
+        "verdict": "TM5-TM6 region pose, lactate-bound state",
+        "consensus_region_multi_seed": "TM56_EXTRACELLULAR"
       }
     }
   },
@@ -93,14 +101,16 @@
         "mean_24A_box": -2.974,
         "binding_region": "TM56_EXTRACELLULAR",
         "validity": "OK",
-        "verdict": "TM5-TM6 region pose, CHBA-bound state"
+        "verdict": "TM5-TM6 region pose, CHBA-bound state",
+        "consensus_region_multi_seed": "TM56_EXTRACELLULAR"
       },
       "8Z8A": {
         "best_24A_box": -7.473,
         "mean_24A_box": -6.484,
         "binding_region": "TM56_EXTRACELLULAR",
         "validity": "OK",
-        "verdict": "TM5-TM6 region pose, lactate-bound state"
+        "verdict": "TM5-TM6 region pose, lactate-bound state",
+        "consensus_region_multi_seed": "TM56_EXTRACELLULAR"
       }
     }
   },
@@ -114,14 +124,16 @@
         "mean_24A_box": 3.258,
         "binding_region": "TM56_EXTRACELLULAR",
         "validity": "CLASH",
-        "verdict": "clash-incompatible in CHBA-bound state (TM5-TM6 region); known agonist - NOT a non-binder"
+        "verdict": "clash-incompatible in CHBA-bound state (TM5-TM6 region); known agonist - NOT a non-binder",
+        "consensus_region_multi_seed": "TM56_EXTRACELLULAR"
       },
       "8Z8A": {
         "best_24A_box": -6.009,
         "mean_24A_box": -5.134,
         "binding_region": "TM56_EXTRACELLULAR",
         "validity": "OK",
-        "verdict": "TM5-TM6 region pose, lactate-bound state"
+        "verdict": "TM5-TM6 region pose, lactate-bound state",
+        "consensus_region_multi_seed": "TM56_EXTRACELLULAR"
       }
     }
   },
@@ -135,14 +147,16 @@
         "mean_24A_box": 16.944,
         "binding_region": "TM56_EXTRACELLULAR",
         "validity": "CLASH",
-        "verdict": "clash-incompatible in CHBA-bound state (TM5-TM6 region); known agonist - NOT a non-binder"
+        "verdict": "clash-incompatible in CHBA-bound state (TM5-TM6 region); known agonist - NOT a non-binder",
+        "consensus_region_multi_seed": "TM56_EXTRACELLULAR"
       },
       "8Z8A": {
         "best_24A_box": -2.841,
         "mean_24A_box": -1.578,
         "binding_region": "TM56_EXTRACELLULAR",
         "validity": "OK",
-        "verdict": "TM5-TM6 region pose, lactate-bound state"
+        "verdict": "TM5-TM6 region pose, lactate-bound state",
+        "consensus_region_multi_seed": "TM56_EXTRACELLULAR"
       }
     }
   },
@@ -156,14 +170,16 @@
         "mean_24A_box": 2.842,
         "binding_region": "TM56_EXTRACELLULAR",
         "validity": "CLASH",
-        "verdict": "clash-incompatible in CHBA-bound state (TM5-TM6 region); known agonist - NOT a non-binder"
+        "verdict": "clash-incompatible in CHBA-bound state (TM5-TM6 region); known agonist - NOT a non-binder",
+        "consensus_region_multi_seed": "TM56_EXTRACELLULAR"
       },
       "8Z8A": {
         "best_24A_box": -5.17,
         "mean_24A_box": -3.909,
         "binding_region": "ORTHO_POCKET",
         "validity": "OK",
-        "verdict": "reaches orthosteric pocket in lactate-bound state"
+        "verdict": "reaches orthosteric pocket in lactate-bound state",
+        "consensus_region_multi_seed": "ORTHO_POCKET"
       }
     }
   },
@@ -177,14 +193,16 @@
         "mean_24A_box": 5.774,
         "binding_region": "TM56_EXTRACELLULAR",
         "validity": "CLASH",
-        "verdict": "clash-incompatible in CHBA-bound state (TM5-TM6 region); known agonist - NOT a non-binder"
+        "verdict": "clash-incompatible in CHBA-bound state (TM5-TM6 region); known agonist - NOT a non-binder",
+        "consensus_region_multi_seed": "TM56_EXTRACELLULAR"
       },
       "8Z8A": {
         "best_24A_box": -5.197,
         "mean_24A_box": -3.844,
         "binding_region": "ORTHO_POCKET",
         "validity": "OK",
-        "verdict": "reaches orthosteric pocket in lactate-bound state"
+        "verdict": "reaches orthosteric pocket in lactate-bound state",
+        "consensus_region_multi_seed": "ORTHO_POCKET"
       }
     }
   },
@@ -198,14 +216,16 @@
         "mean_24A_box": 7.562,
         "binding_region": "TM56_EXTRACELLULAR",
         "validity": "CLASH",
-        "verdict": "clash-incompatible in CHBA-bound state (TM5-TM6 region); known agonist - NOT a non-binder"
+        "verdict": "clash-incompatible in CHBA-bound state (TM5-TM6 region); known agonist - NOT a non-binder",
+        "consensus_region_multi_seed": "TM56_EXTRACELLULAR"
       },
       "8Z8A": {
         "best_24A_box": -5.24,
         "mean_24A_box": -3.923,
         "binding_region": "ORTHO_POCKET",
         "validity": "OK",
-        "verdict": "reaches orthosteric pocket in lactate-bound state"
+        "verdict": "reaches orthosteric pocket in lactate-bound state",
+        "consensus_region_multi_seed": "ORTHO_POCKET"
       }
     }
   },
@@ -219,15 +239,18 @@
         "mean_24A_box": 8.699,
         "binding_region": "TM56_EXTRACELLULAR",
         "validity": "CLASH",
-        "verdict": "clash-incompatible in CHBA-bound state (TM5-TM6 region); known agonist - NOT a non-binder"
+        "verdict": "clash-incompatible in CHBA-bound state (TM5-TM6 region); known agonist - NOT a non-binder",
+        "consensus_region_multi_seed": "TM56_EXTRACELLULAR"
       },
       "8Z8A": {
         "best_24A_box": -4.511,
         "mean_24A_box": -3.373,
         "binding_region": "ORTHO_POCKET",
         "validity": "OK",
-        "verdict": "reaches orthosteric pocket in lactate-bound state"
+        "verdict": "reaches orthosteric pocket in lactate-bound state",
+        "consensus_region_multi_seed": "ORTHO_POCKET"
       }
     }
-  }
+  },
+  "_method_note": "consensus_region_multi_seed: majority classification over 8 seeds x 5 poses (40 poses), cutoff 4.5A, region fractions >= 0.4; added 2026-08-04 (T2)"
 }
