@@ -50,5 +50,14 @@
     }
   ],
   "method": "unconstrained Vina redocking in experimental ligand-derived box",
-  "limitation": "PDB/PubChem atom mapping was not asserted; centroid distance is reported instead of invented RMSD"
+  "limitation": "PDB/PubChem atom mapping was not asserted; centroid distance is reported instead of invented RMSD",
+  "note": "centroid recovery; atom-mapped RMSD not asserted",
+  "remediation_2026_08_04": {
+    "root_cause": "9KT9 24A-box search artifact (deep-insert global optimum 5.7A from experimental pose)",
+    "fix": "tight-box protocol (12A box centered on co-crystal 34D), see phase5_tightbox/9kt9_small_acid_redock.json",
+    "3_5_DHBA_9KT9_best_centroid_recovery_A_after_fix": 1.671,
+    "CHBA_9KT9_best_centroid_recovery_A_after_fix": 1.047,
+    "3_OBA_9KT9_best_centroid_recovery_A_after_fix": 0.969,
+    "verdict": "9KT9 receptor prep was NOT the problem; box/search-space artifact confirmed and fixed"
+  }
 }

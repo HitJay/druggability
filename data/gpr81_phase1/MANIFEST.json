@@ -46,10 +46,11 @@
     "paper_pdf": "/TDE_TV/shared_folder/QYJI/druggability/GPR81/AZ (2020)_BMCL_Identification of novel GPR81 agonist lead series for target biology.pdf"
   },
   "known_gaps": [
-    "The 39 paper compounds are represented as drawings in the main PDF; SMILES/SDF have not been inferred from images.",
-    "The paper supplementary information was not present in the supplied folder and is needed to recover exact structures reliably.",
+    "RESOLVED 2026-08-04: the 39 paper compounds were previously only drawings in the main PDF; they are now recovered in paper_structures_recovered.json + paper_ligands/*.sdf (3 authoritative + 36 reconstructed_and_MS_validated).",
+    "RESOLVED 2026-08-04: paper SI structures were recovered via PDF render + vision + ChEMBL + [M+H]+ cross-validation (see next_step_plan_after_supplement.md).",
     "AZ1 / CID 57422810 is confirmed as Davidsson 2020 paper compound 1; CID 86279608 / GPR81 agonist 1 is not Davidsson 2020 compound 2 and is instead linked to Takeda/Sakurai 2014 compound 2.",
-    "Docking receptor preparation, chain selection, pocket definition, and protonation are Phase 2 tasks."
+    "9KT9 24A-box docking produced out-of-pocket poses (root cause: large-box search artifact; fixed by adaptive tight-box protocol in phase5_tightbox/, see REVIEW_2026-08-04.md).",
+    "8Z87 shows systematic positive scores for large Davidsson-series molecules (clash-incompatible with the CHBA sub-pocket, not non-binding; see REVIEW_2026-08-04.md)."
   ],
   "validation_file": "validation.json",
   "sha256": {

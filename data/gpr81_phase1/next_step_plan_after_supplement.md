@@ -1,5 +1,12 @@
 # GPR81 next-step plan after supplementary-material discovery
 
+## Status update — 2026-08-04 (this document is now largely historical)
+
+- **Priority 1 (structure recovery): COMPLETE.** `paper_structures_recovered.json` now records **39/39** compounds recovered: 3 `authoritative` (1, 2, 22) + 36 `reconstructed_and_MS_validated`. Compound 22, previously `unresolved_MS_mismatch`, was later resolved and upgraded to `authoritative`. SDFs: `paper_ligands/compound_*.sdf`. The remaining detail in Priority 1 below describes the (then-valid) blocker history and the validated recovery method — keep the method, ignore the "only 1-2 recovered" scope note.
+- **Priority 2 (docking validation design): COMPLETE for the redock controls.** `phase3_5_controls/redocking_controls.json` (unconstrained) and `phase3_5_controls_restrained/` (tight-box, best centroid recovery 1.66 A for 3,5-DHBA→9KT9). Root cause of the 9KT9 drift identified as a large-box search artifact — see `REVIEW_2026-08-04.md` (P0) and the Phase 5 remediation `phase5_tightbox/`.
+- **Priority 3 (tool-compound comparison v2): IN PROGRESS via Phase 5 tight-box results.**
+- **Priority 4 (paper reverse-validation): IN PROGRESS** — matched pairs docked in `phase4_matched_pairs/` (8Z87/8Z8A) and re-docked under the tight-box protocol in `phase5_tightbox/`.
+
 ## Newly confirmed input
 
 Supporting material:

@@ -1,0 +1,40 @@
+{
+  "protocol": "tight-box (12A, centered on 34D co-crystal centroid), exhaustiveness 32, 3 seeds",
+  "rationale": "9KT9 24A-box deep-insert artifact (see REVIEW_2026-08-04.md P0); tight box valid only for orthosteric-pocket small acids",
+  "redock_control_3_5_DHBA": {
+    "best_centroid_recovery_A": 1.671,
+    "best_recovery_score": -5.285,
+    "all_distances": [
+      2.52,
+      2.526,
+      2.327,
+      1.709,
+      1.671,
+      2.539,
+      2.534,
+      2.301,
+      1.708,
+      1.676,
+      2.536,
+      2.527,
+      2.298,
+      1.702,
+      1.685
+    ]
+  },
+  "per_compound": {
+    "CHBA": {
+      "best_score": -5.579,
+      "best_centroid_recovery_A": 1.047
+    },
+    "3_5_DHBA": {
+      "best_score": -5.574,
+      "best_centroid_recovery_A": 1.671
+    },
+    "3_OBA": {
+      "best_score": -3.95,
+      "best_centroid_recovery_A": 0.969
+    }
+  },
+  "note": "AZ1 / GPR81_agonist_1 / paper compounds deliberately excluded: they bind the TM5-TM6 extracellular region, not the orthosteric pocket."
+}

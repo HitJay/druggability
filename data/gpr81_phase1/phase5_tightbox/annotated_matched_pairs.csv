@@ -1,0 +1,23 @@
+compound,receptor,ec50_uM,series,best_24A_box,mean_24A_box,binding_region,validity,verdict
+15,8Z87,0.299,acyl_urea,-5.066,-3.744,TM56_EXTRACELLULAR,OK,"TM5-TM6 region pose, CHBA-bound state"
+15,8Z8A,0.299,acyl_urea,-7.084,-6.417,TM56_EXTRACELLULAR,OK,"TM5-TM6 region pose, lactate-bound state"
+21,8Z87,0.895,acyl_urea,-3.164,-1.318,TM56_EXTRACELLULAR,OK,"TM5-TM6 region pose, CHBA-bound state"
+21,8Z8A,0.895,acyl_urea,-6.952,-5.18,TM56_EXTRACELLULAR,OK,"TM5-TM6 region pose, lactate-bound state"
+22,8Z87,0.166,acyl_urea,7.534,12.247,TM56_EXTRACELLULAR,CLASH,clash-incompatible in CHBA-bound state (TM5-TM6 region); known agonist - NOT a non-binder
+22,8Z8A,0.166,acyl_urea,-4.917,-4.289,MIXED,OK,"TM5-TM6 region pose, lactate-bound state"
+26,8Z87,0.021,constrained_cyclic,-3.969,-2.754,TM56_EXTRACELLULAR,OK,"TM5-TM6 region pose, CHBA-bound state"
+26,8Z8A,0.021,constrained_cyclic,-7.25,-6.217,TM56_EXTRACELLULAR,OK,"TM5-TM6 region pose, lactate-bound state"
+28,8Z87,0.022,constrained_cyclic,-3.306,-2.974,TM56_EXTRACELLULAR,OK,"TM5-TM6 region pose, CHBA-bound state"
+28,8Z8A,0.022,constrained_cyclic,-7.473,-6.484,TM56_EXTRACELLULAR,OK,"TM5-TM6 region pose, lactate-bound state"
+30,8Z87,0.005,constrained_cyclic,2.074,3.258,TM56_EXTRACELLULAR,CLASH,clash-incompatible in CHBA-bound state (TM5-TM6 region); known agonist - NOT a non-binder
+30,8Z8A,0.005,constrained_cyclic,-6.009,-5.134,TM56_EXTRACELLULAR,OK,"TM5-TM6 region pose, lactate-bound state"
+31,8Z87,0.24,constrained_cyclic,12.743,16.944,TM56_EXTRACELLULAR,CLASH,clash-incompatible in CHBA-bound state (TM5-TM6 region); known agonist - NOT a non-binder
+31,8Z8A,0.24,constrained_cyclic,-2.841,-1.578,TM56_EXTRACELLULAR,OK,"TM5-TM6 region pose, lactate-bound state"
+35,8Z87,0.6,amide,1.481,2.842,TM56_EXTRACELLULAR,CLASH,clash-incompatible in CHBA-bound state (TM5-TM6 region); known agonist - NOT a non-binder
+35,8Z8A,0.6,amide,-5.17,-3.909,ORTHO_POCKET,OK,reaches orthosteric pocket in lactate-bound state
+36,8Z87,0.16,amide,2.576,5.774,TM56_EXTRACELLULAR,CLASH,clash-incompatible in CHBA-bound state (TM5-TM6 region); known agonist - NOT a non-binder
+36,8Z8A,0.16,amide,-5.197,-3.844,ORTHO_POCKET,OK,reaches orthosteric pocket in lactate-bound state
+37,8Z87,0.35,amide,4.986,7.562,TM56_EXTRACELLULAR,CLASH,clash-incompatible in CHBA-bound state (TM5-TM6 region); known agonist - NOT a non-binder
+37,8Z8A,0.35,amide,-5.24,-3.923,ORTHO_POCKET,OK,reaches orthosteric pocket in lactate-bound state
+38,8Z87,0.054,amide,5.958,8.699,TM56_EXTRACELLULAR,CLASH,clash-incompatible in CHBA-bound state (TM5-TM6 region); known agonist - NOT a non-binder
+38,8Z8A,0.054,amide,-4.511,-3.373,ORTHO_POCKET,OK,reaches orthosteric pocket in lactate-bound state
