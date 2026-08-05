@@ -21,8 +21,6 @@ FIGDIR = BASE / "figures"
 
 sc = json.load(open(BASE / "gpr81_compound_scorecard.json"))
 pairs = json.load(open(BASE / "data/gpr81_pocket_analysis_pairs.json"))["pairs"]
-rec = json.load(open(BASE / "gpr81_optimization_recommendations.md".replace(
-    "gpr81_optimization_recommendations.md", "gpr81_optimization_recommendations.md"))) if False else None
 
 COMPOUNDS = sc["compounds"]
 # read recommendations MD for section 4
@@ -80,7 +78,7 @@ def build_pair_cards():
     for pr in pairs:
         fig = FIGDIR / f"pocket_{pr['pair_id']}.png"
         img_html = (f"<img src='{img_b64(fig)}' alt='{esc(pr['pair_id'])}' "
-                    f"style='width:100%%;border:1px solid #ddd;border-radius:6px;'>"
+                    f"style='width:100%;border:1px solid #ddd;border-radius:6px;'>"
                     if fig.exists() else "<p class='muted'>figure missing</p>")
         ec = ("%.3g nM" % pr["ec50_nM"]) if pr.get("ec50_nM") is not None else "—"
         if pr.get("emax_pct"):

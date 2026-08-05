@@ -252,10 +252,10 @@ def render_3d(ax, lig_atoms, rec_atoms, polar, hyd_res):
 
     ax.set_axis_off()
     ax.set_aspect("equal")
-    # equalize axis limits
-    xs = [proj(np.array(a[-3:]))[0] for a in lig_atoms + pocket]
-    ys = [proj(np.array(a[-3:]))[1] for a in lig_atoms + pocket]
-    pad = 1.2
+    # equalize axis limits; generous pad so edge labels/sticks are never clipped
+    xs = [proj(np.array(a[-3:]))[0] for a in lig_atoms + pdraw]
+    ys = [proj(np.array(a[-3:]))[1] for a in lig_atoms + pdraw]
+    pad = 3.0
     ax.set_xlim(min(xs) - pad, max(xs) + pad)
     ax.set_ylim(min(ys) - pad, max(ys) + pad)
 
