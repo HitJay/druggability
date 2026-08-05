@@ -1,0 +1,29 @@
+{
+  "protocol": "tight-box (12A centered on 34D co-crystal centroid), exhaustiveness 32, 3 seeds",
+  "compound": "L-lactate (endogenous HCAR1 agonist; cognate co-crystal 2OP in 8Z8A)",
+  "receptor": "9KT9 (3,5-DHBA-bound HCAR1-Gi, 34D orthosteric pocket)",
+  "note": "cross-structure control: does the endogenous ligand recover the orthosteric pocket on a second active-state structure?",
+  "best_score_kcal_mol": -3.781,
+  "best_centroid_recovery_A": 2.793,
+  "all_centroid_A": [
+    3.795,
+    2.815,
+    5.282,
+    3.512,
+    3.696,
+    3.782,
+    2.833,
+    5.292,
+    3.531,
+    3.684,
+    3.781,
+    2.793,
+    5.301,
+    3.535,
+    3.721
+  ],
+  "comparison_8Z8A_cognate": {
+    "score": -4.361,
+    "centroid_recovery_A": 2.886
+  }
+}

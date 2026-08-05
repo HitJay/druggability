@@ -1,0 +1,16 @@
+compound,receptor,seed,pose_rank,score_kcal_mol,centroid_distance_A,pose_file
+lactate,9KT9,20260803,1,-3.776,3.795,/das/user/QYJI/druggability/data/gpr81_phase1/followup_2026-08/data/poses/lactate_9KT9_tight_seed20260803.pdbqt
+lactate,9KT9,20260803,2,-3.631,2.815,/das/user/QYJI/druggability/data/gpr81_phase1/followup_2026-08/data/poses/lactate_9KT9_tight_seed20260803.pdbqt
+lactate,9KT9,20260803,3,-3.548,5.282,/das/user/QYJI/druggability/data/gpr81_phase1/followup_2026-08/data/poses/lactate_9KT9_tight_seed20260803.pdbqt
+lactate,9KT9,20260803,4,-3.513,3.512,/das/user/QYJI/druggability/data/gpr81_phase1/followup_2026-08/data/poses/lactate_9KT9_tight_seed20260803.pdbqt
+lactate,9KT9,20260803,5,-3.459,3.696,/das/user/QYJI/druggability/data/gpr81_phase1/followup_2026-08/data/poses/lactate_9KT9_tight_seed20260803.pdbqt
+lactate,9KT9,1,1,-3.777,3.782,/das/user/QYJI/druggability/data/gpr81_phase1/followup_2026-08/data/poses/lactate_9KT9_tight_seed1.pdbqt
+lactate,9KT9,1,2,-3.634,2.833,/das/user/QYJI/druggability/data/gpr81_phase1/followup_2026-08/data/poses/lactate_9KT9_tight_seed1.pdbqt
+lactate,9KT9,1,3,-3.554,5.292,/das/user/QYJI/druggability/data/gpr81_phase1/followup_2026-08/data/poses/lactate_9KT9_tight_seed1.pdbqt
+lactate,9KT9,1,4,-3.523,3.531,/das/user/QYJI/druggability/data/gpr81_phase1/followup_2026-08/data/poses/lactate_9KT9_tight_seed1.pdbqt
+lactate,9KT9,1,5,-3.474,3.684,/das/user/QYJI/druggability/data/gpr81_phase1/followup_2026-08/data/poses/lactate_9KT9_tight_seed1.pdbqt
+lactate,9KT9,2,1,-3.781,3.781,/das/user/QYJI/druggability/data/gpr81_phase1/followup_2026-08/data/poses/lactate_9KT9_tight_seed2.pdbqt
+lactate,9KT9,2,2,-3.636,2.793,/das/user/QYJI/druggability/data/gpr81_phase1/followup_2026-08/data/poses/lactate_9KT9_tight_seed2.pdbqt
+lactate,9KT9,2,3,-3.551,5.301,/das/user/QYJI/druggability/data/gpr81_phase1/followup_2026-08/data/poses/lactate_9KT9_tight_seed2.pdbqt
+lactate,9KT9,2,4,-3.51,3.535,/das/user/QYJI/druggability/data/gpr81_phase1/followup_2026-08/data/poses/lactate_9KT9_tight_seed2.pdbqt
+lactate,9KT9,2,5,-3.456,3.721,/das/user/QYJI/druggability/data/gpr81_phase1/followup_2026-08/data/poses/lactate_9KT9_tight_seed2.pdbqt
