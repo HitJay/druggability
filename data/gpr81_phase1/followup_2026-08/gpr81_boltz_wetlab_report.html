@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>GPR81 (HCAR1) three-layer ranking — Vina · Boltz-2 · wet-lab benchmark plan</title>
+<style>
+    body{font-family:'Segoe UI',Arial,sans-serif;margin:0;background:#f4f6f8;color:#222}
+    .wrap{max-width:1400px;margin:0 auto;padding:18px}
+    header{background:#0f3b5e;color:#fff;padding:22px 28px;border-radius:10px;margin-bottom:18px}
+    header h1{margin:0 0 6px;font-size:25px}
+    header p{margin:2px 0;color:#cfe0ef;font-size:13px}
+    h2{color:#0f3b5e;border-bottom:2px solid #0f3b5e;padding-bottom:4px;margin-top:26px}
+    h3{color:#14537e;margin:14px 0 6px}
+    table{border-collapse:collapse;width:100%;background:#fff;font-size:11.5px}
+    th,td{border:1px solid #d5dbe1;padding:3px 5px;text-align:left}
+    th{background:#0f3b5e;color:#fff}
+    th[colspan]{text-align:center}
+    tr:nth-child(even){background:#f0f4f7}
+    td.stat{color:#8a6d3b;font-style:italic}
+    .note{background:#fff8e1;border-left:4px solid #f0ad4e;padding:10px 14px;border-radius:4px;font-size:13px}
+    .fact{background:#e8f4fd;border-left:4px solid #2e86c1;padding:8px 12px;border-radius:4px;font-size:12.5px;margin:8px 0}
+    ul{margin:4px 0 10px 20px;font-size:13.5px}
+    li{margin:3px 0}
+    code,pre{font-family:Consolas,monospace;font-size:12px}
+    pre{background:#f0f3f5;border:1px solid #d5dbe1;border-radius:5px;padding:10px;overflow-x:auto}
+    .muted{color:#777;font-size:12px}
+    </style></head><body><div class="wrap">
+<header>
+<h1>GPR81 (HCAR1) compound ranking — computational layers &amp; wet-lab benchmark</h1>
+<p>45 compounds (39 Davidsson 2020 + 5 leads + lactate) · Layer 1 Vina docking (done) ·
+Layer 2 Boltz-2 structure/affinity (pending) · Layer 3 wet-lab benchmark (planned)</p>
+<p>Generated 2026-08-05 · audit files: gpr81_compound_scorecard.json · data/boltz_results.csv ·
+run_gpr81_boltz_45.py · build_boltz_wetlab_report.py</p>
+</header>
+
+<h2>1 · Three-layer comparison table</h2>
+<div class="note"><b>Boltz-2 layer: 0/45 compounds computed (PENDING until run).</b> Layer 1 (Vina) is complete; Layer 2 requires a
+BioLib login + one script run (instructions in §3); Layer 3 columns fill in after wet-lab
+measurements. Boltz values are structural-model estimates — never read them as measured
+affinities.</div>
+<table id='layers'><thead><tr><th rowspan='2'>Rank</th><th rowspan='2'>ID</th><th rowspan='2'>Series</th><th colspan='2'>Wet-lab (paper)</th><th colspan='3'>Layer 1 · Vina (done)</th><th colspan='3'>Layer 2 · Boltz-2 (pending run)</th><th colspan='2'>Layer 3 · Wet-lab benchmark (planned)</th><th rowspan='2'>Status</th></tr><tr><th>EC50 nM</th><th>Emax</th><th>8Z8A score</th><th>Region</th><th>Tier</th><th>aff. prob</th><th>conf</th><th>ligand iptm</th><th>measured EC50</th><th>consistency</th></tr></thead><tbody><tr><td>1</td><td><b>c05</b></td><td>acyl_urea</td><td>0.740 nM</td><td>47%</td><td>-5.602</td><td>ORTHO_POCKET</td><td>B</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>2</td><td><b>c04</b></td><td>acyl_urea</td><td>1.400 nM</td><td>—</td><td>-2.985</td><td>TM56_EXTRACELLULAR</td><td>A</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>3</td><td><b>c07</b></td><td>acyl_urea</td><td>3.600 nM</td><td>70%</td><td>-8.460</td><td>TM56_EXTRACELLULAR</td><td>B</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>4</td><td><b>c03</b></td><td>acyl_urea</td><td>3.700 nM</td><td>—</td><td>-5.130</td><td>TM56_EXTRACELLULAR</td><td>A</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>5</td><td><b>c30</b></td><td>constrained_analogue_cyclic</td><td>5.000 nM</td><td>—</td><td>-5.811</td><td>TM56_EXTRACELLULAR</td><td>B</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>6</td><td><b>c06</b></td><td>acyl_urea</td><td>6.100 nM</td><td>70%</td><td>-4.443</td><td>TM56_EXTRACELLULAR</td><td>B</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>7</td><td><b>c08</b></td><td>acyl_urea</td><td>7.000 nM</td><td>74%</td><td>-6.343</td><td>TM56_EXTRACELLULAR</td><td>B</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>8</td><td><b>c10</b></td><td>acyl_urea</td><td>13.000 nM</td><td>—</td><td>-6.687</td><td>TM56_EXTRACELLULAR</td><td>A</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>9</td><td><b>c11</b></td><td>acyl_urea</td><td>19.000 nM</td><td>—</td><td>-4.359</td><td>TM56_EXTRACELLULAR</td><td>A</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>10</td><td><b>c26</b></td><td>constrained_analogue_cyclic</td><td>21.000 nM</td><td>—</td><td>-7.183</td><td>TM56_EXTRACELLULAR</td><td>A</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>11</td><td><b>c12</b></td><td>acyl_urea</td><td>22.000 nM</td><td>—</td><td>-4.680</td><td>TM56_EXTRACELLULAR</td><td>A</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>12</td><td><b>c28</b></td><td>constrained_analogue_cyclic</td><td>22.000 nM</td><td>—</td><td>-7.443</td><td>TM56_EXTRACELLULAR</td><td>A</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>13</td><td><b>c01</b></td><td>acyl_urea</td><td>23.000 nM</td><td>—</td><td>-5.283</td><td>MIXED</td><td>B</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>14</td><td><b>t01</b></td><td>lead/tool compound</td><td>23.000 nM</td><td>—</td><td>-3.940</td><td>—</td><td>A</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>15</td><td><b>c09</b></td><td>acyl_urea</td><td>32.000 nM</td><td>—</td><td>-4.804</td><td>TM56_EXTRACELLULAR</td><td>A</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>16</td><td><b>t02</b></td><td>lead/tool compound</td><td>50.000 nM</td><td>—</td><td>-7.730</td><td>—</td><td>A</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>17</td><td><b>c38</b></td><td>amide</td><td>54.000 nM</td><td>—</td><td>-4.491</td><td>ORTHO_POCKET</td><td>B</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>18</td><td><b>c02</b></td><td>acyl_urea</td><td>74.000 nM</td><td>—</td><td>-4.097</td><td>TM56_EXTRACELLULAR</td><td>B</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>19</td><td><b>c29</b></td><td>constrained_analogue_cyclic</td><td>75.000 nM</td><td>—</td><td>-7.749</td><td>TM56_EXTRACELLULAR</td><td>B</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>20</td><td><b>c16</b></td><td>acyl_urea</td><td>103.000 nM</td><td>—</td><td>-7.353</td><td>TM56_EXTRACELLULAR</td><td>C</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>21</td><td><b>c34</b></td><td>amide</td><td>110.000 nM</td><td>—</td><td>-5.805</td><td>TM56_EXTRACELLULAR</td><td>C</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>22</td><td><b>c19</b></td><td>acyl_urea</td><td>120.000 nM</td><td>—</td><td>-7.554</td><td>TM56_EXTRACELLULAR</td><td>C</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>23</td><td><b>c36</b></td><td>amide</td><td>160.000 nM</td><td>—</td><td>-5.152</td><td>ORTHO_POCKET</td><td>C</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>24</td><td><b>c22</b></td><td>acyl_urea</td><td>166.000 nM</td><td>—</td><td>-0.882</td><td>MIXED</td><td>C</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>25</td><td><b>c31</b></td><td>constrained_analogue_cyclic</td><td>240.000 nM</td><td>—</td><td>-2.832</td><td>TM56_EXTRACELLULAR</td><td>C</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>26</td><td><b>c17</b></td><td>acyl_urea</td><td>260.000 nM</td><td>—</td><td>-8.150</td><td>TM56_EXTRACELLULAR</td><td>C</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>27</td><td><b>c15</b></td><td>acyl_urea</td><td>299.000 nM</td><td>—</td><td>-8.202</td><td>TM56_EXTRACELLULAR</td><td>C</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>28</td><td><b>c37</b></td><td>amide</td><td>350.000 nM</td><td>—</td><td>-5.151</td><td>ORTHO_POCKET</td><td>C</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>29</td><td><b>c13</b></td><td>acyl_urea</td><td>360.000 nM</td><td>—</td><td>-5.063</td><td>TM56_EXTRACELLULAR</td><td>C</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>30</td><td><b>c32</b></td><td>amide</td><td>410.000 nM</td><td>—</td><td>-4.236</td><td>TM56_EXTRACELLULAR</td><td>C</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>31</td><td><b>c27</b></td><td>constrained_analogue_cyclic</td><td>490.000 nM</td><td>—</td><td>-6.577</td><td>TM56_EXTRACELLULAR</td><td>C</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>32</td><td><b>c14</b></td><td>acyl_urea</td><td>560.000 nM</td><td>47%</td><td>-7.376</td><td>TM56_EXTRACELLULAR</td><td>C</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>33</td><td><b>c35</b></td><td>amide</td><td>600.000 nM</td><td>—</td><td>-5.189</td><td>ORTHO_POCKET</td><td>C</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>34</td><td><b>c20</b></td><td>acyl_urea</td><td>719.000 nM</td><td>—</td><td>-6.722</td><td>TM56_EXTRACELLULAR</td><td>C</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>35</td><td><b>c33</b></td><td>amide</td><td>740.000 nM</td><td>—</td><td>-3.413</td><td>ORTHO_POCKET</td><td>C</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>36</td><td><b>c18</b></td><td>acyl_urea</td><td>769.000 nM</td><td>—</td><td>-7.473</td><td>TM56_EXTRACELLULAR</td><td>C</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>37</td><td><b>c21</b></td><td>acyl_urea</td><td>895.000 nM</td><td>—</td><td>-6.781</td><td>TM56_EXTRACELLULAR</td><td>C</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>38</td><td><b>c39</b></td><td>amide</td><td>1900.000 nM</td><td>—</td><td>-6.979</td><td>TM56_EXTRACELLULAR</td><td>C</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>39</td><td><b>c23</b></td><td>linker_variant</td><td>16000.000 nM</td><td>—</td><td>-6.963</td><td>TM56_EXTRACELLULAR</td><td>C</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>40</td><td><b>c24</b></td><td>linker_variant</td><td>33000.000 nM</td><td>—</td><td>-6.715</td><td>TM56_EXTRACELLULAR</td><td>C</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>41</td><td><b>c25</b></td><td>linker_variant</td><td>33000.000 nM</td><td>—</td><td>-4.638</td><td>MIXED</td><td>C</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>—</td><td><b>t03</b></td><td>lead/tool compound</td><td>—</td><td>—</td><td>-5.929</td><td>—</td><td>—</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>—</td><td><b>t04</b></td><td>lead/tool compound</td><td>—</td><td>—</td><td>-6.280</td><td>—</td><td>—</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>—</td><td><b>t05</b></td><td>lead/tool compound</td><td>—</td><td>—</td><td>-4.638</td><td>—</td><td>—</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr><tr><td>—</td><td><b>lac</b></td><td>endogenous</td><td>—</td><td>—</td><td>-4.361</td><td>ORTHO_POCKET (co-crystal)</td><td>—</td><td>PENDING</td><td>PENDING</td><td>PENDING</td><td>—</td><td>—</td><td class='stat'>waiting</td></tr></tbody></table>
+
+<h2>2 · Boltz-2 tier rule (provisional)</h2>
+<ul>
+<li>Primary signal: <b>affinity_probability_binary</b> (Boltz-2's binder probability).</li>
+<li>Tier assignment: data-driven <b>tertiles</b> of the 45-compound distribution once the run
+finishes — top tertile = A, middle = B, bottom = C; compounds with confidence_score &lt; 0.5
+downgraded one tier (low structural confidence).</li>
+<li>Supporting columns: confidence_score (structure confidence), ligand_iptm (interface
+quality).</li>
+<li>This rule mirrors the Vina tier transparency: thresholds are explicit and will be
+re-calibrated against wet-lab data in Layer 3.</li>
+</ul>
+
+<h2>3 · Wet-lab benchmark plan</h2>
+
+<h3>Goal</h3>
+<p>Calibrate the two computational layers (Vina docking score, Boltz-2 affinity probability)
+against measured hGPR81 EC50/Emax so future tier assignments rest on experimentally
+validated signals, not model assumptions.</p>
+<h3>Protocol (proposed)</h3>
+<ul>
+<li><b>Compound subset:</b> full 45 if feasible, otherwise a stratified pick — all tier-A/B
+leads (c03,c04,c07,c10,c11,c26,c28,c29,c30,c38...) + boundary compounds + 4 reference
+ligands (CHBA, 3,5-DHBA, 3-OBA, lactate) as assay controls.</li>
+<li><b>Assay:</b> functional hGPR81 agonism (cAMP inhibition or β-arrestin), EC50 + Emax;
+GPR109A + GHS-R1a counterscreens for every measured analog.</li>
+<li><b>Evaluation metrics:</b>
+  <ul>
+  <li>Spearman rank correlation of each layer's signal vs log10(EC50) — global and
+  within acyl-urea / constrained / amide series.</li>
+  <li>Tier confusion matrix: computed tier (A/B/C) vs experimental tertiles
+  (potent &le; 10 nM / moderate 10–100 nM / weak &gt; 100 nM).</li>
+  <li>Partial-agonist flagging: does either layer separate full (Emax &ge; 80%) from
+  partial (Emax &lt; 60%) compounds? (c5–c8 are the natural test set.)</li>
+  </ul></li>
+<li><b>Threshold calibration:</b> if a layer's signal correlates with EC50, derive
+operational cutoffs from the benchmark distribution; otherwise keep that layer as
+binding-mode evidence only (current convention for Vina).</li>
+<li><b>Deliverable:</b> this table updated with measured EC50/Emax + a benchmark
+summary section (correlations, confusion matrix, calibration plot).</li>
+</ul>
+<h3>Layer 2 run instructions (Boltz-2)</h3>
+{noformat}
+# 1. log in to BioLib once (browser OAuth):
+cd /das/user/QYJI/druggability && .venv/bin/biolib login
+# 2. run the 45-compound Boltz-2 cross-validation (resumable, incremental CSV):
+cd /das/user/QYJI/druggability/data/gpr81_phase1/followup_2026-08
+/das/user/QYJI/druggability/.venv/bin/python run_gpr81_boltz_45.py --parallel 3
+# 3. rebuild this report once results exist:
+/das/user/QYJI/druggability/.venv/bin/python build_boltz_wetlab_report.py
+{noformat}
+<p class="muted">Boltz layer caveat: affinity_probability / ligand_iptm are structural-model
+estimates, not measured affinities (same discipline as Vina scores). Boltz tier cutoffs are
+provisional and will be set as tertiles of the observed distribution, gated by confidence_score.</p>
+
+
+<p class="muted" style="margin-top:16px">Companion files in the same folder:
+gpr81_followup_report.html (full 46-pair pocket analysis, Vina layer) ·
+gpr81_optimization_recommendations.md · run_gpr81_boltz_45.py (Layer 2 runner).</p>
+</div></body></html>
