@@ -1,0 +1,161 @@
+{
+  "method": "pose-1 (seed 20260803), region classification cutoff 4.5A, fractions >= 0.4",
+  "compounds": {
+    "c01": {
+      "8Z8A": "MIXED",
+      "9KT9": "TM56_EXTRACELLULAR"
+    },
+    "c02": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "ORTHO_POCKET"
+    },
+    "c03": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "TM56_EXTRACELLULAR"
+    },
+    "c04": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "ORTHO_POCKET"
+    },
+    "c05": {
+      "8Z8A": "ORTHO_POCKET",
+      "9KT9": "ORTHO_POCKET"
+    },
+    "c06": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "TM56_EXTRACELLULAR"
+    },
+    "c07": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "ORTHO_POCKET"
+    },
+    "c08": {
+      "8Z8A": "ORTHO_POCKET",
+      "9KT9": "ORTHO_POCKET"
+    },
+    "c09": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "ORTHO_POCKET"
+    },
+    "c10": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "TM56_EXTRACELLULAR"
+    },
+    "c11": {
+      "8Z8A": "ORTHO_POCKET",
+      "9KT9": "ORTHO_POCKET"
+    },
+    "c12": {
+      "8Z8A": "MIXED",
+      "9KT9": "ORTHO_POCKET"
+    },
+    "c13": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "TM56_EXTRACELLULAR"
+    },
+    "c14": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "TM56_EXTRACELLULAR"
+    },
+    "c15": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "TM56_EXTRACELLULAR"
+    },
+    "c16": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "TM56_EXTRACELLULAR"
+    },
+    "c17": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "TM56_EXTRACELLULAR"
+    },
+    "c18": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "TM56_EXTRACELLULAR"
+    },
+    "c19": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "TM56_EXTRACELLULAR"
+    },
+    "c20": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "TM56_EXTRACELLULAR"
+    },
+    "c21": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "TM56_EXTRACELLULAR"
+    },
+    "c22": {
+      "8Z8A": "ORTHO_POCKET",
+      "9KT9": "ORTHO_POCKET"
+    },
+    "c23": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "TM56_EXTRACELLULAR"
+    },
+    "c24": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "TM56_EXTRACELLULAR"
+    },
+    "c25": {
+      "8Z8A": "MIXED",
+      "9KT9": "TM56_EXTRACELLULAR"
+    },
+    "c26": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "ORTHO_POCKET"
+    },
+    "c27": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "TM56_EXTRACELLULAR"
+    },
+    "c28": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "TM56_EXTRACELLULAR"
+    },
+    "c29": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "ORTHO_POCKET"
+    },
+    "c30": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "ORTHO_POCKET"
+    },
+    "c31": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "TM56_EXTRACELLULAR"
+    },
+    "c32": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "TM56_EXTRACELLULAR"
+    },
+    "c33": {
+      "8Z8A": "ORTHO_POCKET",
+      "9KT9": "MIXED"
+    },
+    "c34": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "TM56_EXTRACELLULAR"
+    },
+    "c35": {
+      "8Z8A": "ORTHO_POCKET",
+      "9KT9": "ORTHO_POCKET"
+    },
+    "c36": {
+      "8Z8A": "ORTHO_POCKET",
+      "9KT9": "TM56_EXTRACELLULAR"
+    },
+    "c37": {
+      "8Z8A": "ORTHO_POCKET",
+      "9KT9": "ORTHO_POCKET"
+    },
+    "c38": {
+      "8Z8A": "ORTHO_POCKET",
+      "9KT9": "ORTHO_POCKET"
+    },
+    "c39": {
+      "8Z8A": "TM56_EXTRACELLULAR",
+      "9KT9": "TM56_EXTRACELLULAR"
+    }
+  }
+}

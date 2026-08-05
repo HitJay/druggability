@@ -59,7 +59,7 @@ for rid in ["8Z8A", "9KT9"]:
 
 # series-level
 print("\n=== series-level (8Z8A best score vs EC50) ===")
-for series in ["acyl_urea", "constrained_cyclic", "amide", "linker_variant"]:
+for series in ["acyl_urea", "constrained_analogue_cyclic", "amide", "linker_variant"]:
     items = [(c, EC50[c], best.get((c, "8Z8A"))) for c in EC50 if SERIES.get(c) == series]
     items = [(c, ec, s) for c, ec, s in items if s is not None]
     if len(items) < 3:

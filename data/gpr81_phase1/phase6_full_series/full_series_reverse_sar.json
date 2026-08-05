@@ -1,0 +1,81 @@
+{
+  "correlations": {
+    "8Z8A": {
+      "n": 39,
+      "pearson_r": -0.114,
+      "pearson_p": 0.49,
+      "spearman_rho": -0.128,
+      "spearman_p": 0.439
+    },
+    "9KT9": {
+      "n": 39,
+      "pearson_r": -0.181,
+      "pearson_p": 0.271,
+      "spearman_rho": -0.211,
+      "spearman_p": 0.197
+    }
+  },
+  "series": {},
+  "top_outside_matched": [
+    {
+      "compound": 7,
+      "score_8Z8A": -8.46,
+      "ec50_uM": 0.0036,
+      "series": "acyl_urea"
+    },
+    {
+      "compound": 17,
+      "score_8Z8A": -8.15,
+      "ec50_uM": 0.26,
+      "series": "acyl_urea"
+    },
+    {
+      "compound": 29,
+      "score_8Z8A": -7.749,
+      "ec50_uM": 0.075,
+      "series": "constrained_analogue_cyclic"
+    },
+    {
+      "compound": 19,
+      "score_8Z8A": -7.554,
+      "ec50_uM": 0.12,
+      "series": "acyl_urea"
+    },
+    {
+      "compound": 18,
+      "score_8Z8A": -7.473,
+      "ec50_uM": 0.769,
+      "series": "acyl_urea"
+    },
+    {
+      "compound": 14,
+      "score_8Z8A": -7.376,
+      "ec50_uM": 0.56,
+      "series": "acyl_urea"
+    },
+    {
+      "compound": 16,
+      "score_8Z8A": -7.353,
+      "ec50_uM": 0.103,
+      "series": "acyl_urea"
+    },
+    {
+      "compound": 39,
+      "score_8Z8A": -6.979,
+      "ec50_uM": 1.9,
+      "series": "amide"
+    },
+    {
+      "compound": 23,
+      "score_8Z8A": -6.963,
+      "ec50_uM": 16.0,
+      "series": "linker_variant"
+    },
+    {
+      "compound": 20,
+      "score_8Z8A": -6.722,
+      "ec50_uM": 0.719,
+      "series": "acyl_urea"
+    }
+  ]
+}

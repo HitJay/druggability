@@ -31,7 +31,7 @@ The strongest Phase-2 starting points are experimental human HCAR1-Gi cryo-EM st
 - Phase 3.5: aligned pose comparison + redocking controls (`phase3_5_aligned/`, `phase3_5_controls/`, `phase3_5_controls_restrained/`)
 - Phase 4: matched-pair reverse validation (`phase4_matched_pairs/`; 8Z87/8Z8A only)
 - Phase 5: tight-box redocking remediation (`phase5_tightbox/`) — see `REVIEW_2026-08-04.md` for rationale
-- Phase 6: full-series docking of all 39 paper compounds (`phase6_full_series/`; 8Z8A + 9KT9)
+- Phase 6: full-series docking of all 39 paper compounds (`phase6_full_series/`; 8Z8A + 9KT9, DONE 2026-08-04, positional QC passed)
 - Safety: HCAR1 activation-direction assessment (`safety/`; 3_safety-style companion)
 
 ## Pipeline state map (which data is trustworthy under which protocol)
