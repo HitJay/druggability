@@ -1,0 +1,139 @@
+{
+  "pocket_orthosteric": [
+    {
+      "hcar1": "ARG71",
+      "hcar1_res": "R",
+      "hcar2_pos": 83,
+      "hcar2_res": "L"
+    },
+    {
+      "hcar1": "TYR75",
+      "hcar1_res": "Y",
+      "hcar2_pos": 87,
+      "hcar2_res": "Y"
+    },
+    {
+      "hcar1": "LEU92",
+      "hcar1_res": "L",
+      "hcar2_pos": 104,
+      "hcar2_res": "L"
+    },
+    {
+      "hcar1": "LEU95",
+      "hcar1_res": "L",
+      "hcar2_pos": 107,
+      "hcar2_res": "L"
+    },
+    {
+      "hcar1": "ALA96",
+      "hcar1_res": "A",
+      "hcar2_pos": 108,
+      "hcar2_res": "A"
+    },
+    {
+      "hcar1": "ARG99",
+      "hcar1_res": "R",
+      "hcar2_pos": 111,
+      "hcar2_res": "R"
+    },
+    {
+      "hcar1": "GLU166",
+      "hcar1_res": "E",
+      "hcar2_pos": 178,
+      "hcar2_res": "S"
+    },
+    {
+      "hcar1": "SER167",
+      "hcar1_res": "S",
+      "hcar2_pos": 179,
+      "hcar2_res": "S"
+    },
+    {
+      "hcar1": "PHE168",
+      "hcar1_res": "F",
+      "hcar2_pos": 180,
+      "hcar2_res": "F"
+    },
+    {
+      "hcar1": "HIS261",
+      "hcar1_res": "H",
+      "hcar2_pos": 277,
+      "hcar2_res": "F"
+    },
+    {
+      "hcar1": "LEU264",
+      "hcar1_res": "L",
+      "hcar2_pos": 280,
+      "hcar2_res": "L"
+    },
+    {
+      "hcar1": "TYR268",
+      "hcar1_res": "Y",
+      "hcar2_pos": 284,
+      "hcar2_res": "Y"
+    }
+  ],
+  "tm56_region": [
+    {
+      "hcar1": "GLU153",
+      "hcar1_res": "E",
+      "hcar2_pos": 165,
+      "hcar2_res": "K"
+    },
+    {
+      "hcar1": "HIS155",
+      "hcar1_res": "H",
+      "hcar2_pos": 167,
+      "hcar2_res": "M"
+    },
+    {
+      "hcar1": "CYS157",
+      "hcar1_res": "C",
+      "hcar2_pos": 169,
+      "hcar2_res": "I"
+    },
+    {
+      "hcar1": "SER164",
+      "hcar1_res": "S",
+      "hcar2_pos": 176,
+      "hcar2_res": "L"
+    },
+    {
+      "hcar1": "GLU166",
+      "hcar1_res": "E",
+      "hcar2_pos": 178,
+      "hcar2_res": "S"
+    },
+    {
+      "hcar1": "ILE169",
+      "hcar1_res": "I",
+      "hcar2_pos": 181,
+      "hcar2_res": "S"
+    },
+    {
+      "hcar1": "MET170",
+      "hcar1_res": "M",
+      "hcar2_pos": 182,
+      "hcar2_res": "I"
+    },
+    {
+      "hcar1": "GLU171",
+      "hcar1_res": "E",
+      "hcar2_pos": 183,
+      "hcar2_res": "C"
+    },
+    {
+      "hcar1": "ASN174",
+      "hcar1_res": "N",
+      "hcar2_pos": 186,
+      "hcar2_res": "F"
+    },
+    {
+      "hcar1": "HIS177",
+      "hcar1_res": "H",
+      "hcar2_pos": 189,
+      "hcar2_res": "H"
+    }
+  ],
+  "identity_fraction": 0.565
+}

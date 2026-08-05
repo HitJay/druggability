@@ -1,0 +1,41 @@
+{
+  "source": "Davidsson et al. 2020, Bioorg. Med. Chem. Lett. 30:126953 (PII S0960894X20300068), Tables 1, 5, 6, 7, 8",
+  "transcribed": "2026-08-04",
+  "targets": "hGPR81 (HCAR1) EC50; hGPR109A (HCAR2) EC50; hGHS-R1a (GHSR) IC50",
+  "note": "GPR109A agonism is the niacin-flush liability; GHS-R1a was the HTS cross-screen. Selectivity fold = GPR109A(or GHS-R1a) value / hGPR81 EC50.",
+  "table1_hts_hits": {
+    "1 (AZ1/CID57422810)": {"hGPR81_EC50_uM": 0.023, "hGPR109A_EC50_uM": 0.123, "fold_GPR109A": 5.3, "hGHS-R1a_IC50_uM": 0.008, "fold_GHSR": 0.3, "sol_uM": 0.2, "logD": 3.0, "lle": 4.6, "comment": "potent but NOT selective: GHS-R1a 0.008 uM = 3x more potent than GPR81; GPR109A only 5.3x"},
+    "2": {"hGPR81_EC50_uM": 0.074, "hGPR109A_EC50_uM": 2.16, "fold_GPR109A": 29, "hGHS-R1a_IC50_uM": 0.096, "fold_GHSR": 1.3, "sol_uM": 4, "logD": 2.9, "lle": 4.2, "comment": "better GPR109A selectivity but GHS-R1a still unselective"}
+  },
+  "table7_constrained": {
+    "26": {"hGPR81_EC50_uM": 0.021, "hGPR109A_EC50_uM": 0.61, "fold_GPR109A": 29, "hGHS-R1a_IC50_uM": 1.3, "fold_GHSR": 62, "lle": 3.9, "comment": "pyridone; text says 100-fold vs GHS-R1a"},
+    "27": {"hGPR81_EC50_uM": 0.49, "hGPR109A_EC50_uM": 22.0, "fold_GPR109A": 45, "hGHS-R1a_IC50_uM": 5.2, "fold_GHSR": 11, "lle": 2.4, "comment": "pyrimidinone; text says >45-fold GPR109A, very weak GPR109A activity"},
+    "28": {"hGPR81_EC50_uM": 0.022, "hGPR109A_EC50_uM": 0.91, "fold_GPR109A": 41, "hGHS-R1a_IC50_uM": 1.8, "fold_GHSR": 82, "lle": 5.3, "comment": "text: 41- and 82-fold, 'very interesting compound for further evaluation'"},
+    "29": {"hGPR81_EC50_uM": 0.075, "hGPR109A_EC50_uM": 1.9, "fold_GPR109A": 25, "hGHS-R1a_IC50_uM": 50.0, "fold_GHSR": 667, "lle": 4.5},
+    "30": {"hGPR81_EC50_uM": 0.005, "hGPR109A_EC50_uM": 0.037, "fold_GPR109A": 7.4, "comment": "MOST POTENT but GPR109A selectivity only 7.4x - the best compound is the least selective here"},
+    "31": {"hGPR81_EC50_uM": 0.24, "hGPR109A_EC50_uM": 1.44, "fold_GPR109A": 6, "comment": "pyrimidinone; text: 6-fold GPR109A selectivity, large variation vs 27 (>45x)"}
+  },
+  "table8_amides": {
+    "32": {"hGPR81_EC50_uM": 0.41, "hGPR109A_EC50_uM": 11.0, "fold_GPR109A": 27, "hGHS-R1a_IC50_uM": 50.0, "fold_GHSR": 122, "sol_uM": 1.5},
+    "33": {"hGPR81_EC50_uM": 0.74, "hGPR109A_EC50_uM": 9.0, "fold_GPR109A": 12, "hGHS-R1a_IC50_uM": 50.0, "fold_GHSR": 68, "sol_uM": 1},
+    "34": {"hGPR81_EC50_uM": 0.11, "hGPR109A_EC50_uM": 1.6, "fold_GPR109A": 15, "hGHS-R1a_IC50_uM": 30.0, "fold_GHSR": 273, "sol_uM": 5},
+    "35": {"hGPR81_EC50_uM": 0.60, "hGPR109A_EC50_uM": 6.3, "fold_GPR109A": 11, "hGHS-R1a_IC50_uM": 50.0, "fold_GHSR": 83, "sol_uM": 323},
+    "36": {"hGPR81_EC50_uM": 0.16, "hGPR109A_EC50_uM": 1.4, "fold_GPR109A": 9, "hGHS-R1a_IC50_uM": 21.0, "fold_GHSR": 131},
+    "37": {"hGPR81_EC50_uM": 0.35, "comment": "trans-2,6-diMe morpholine; ~3-fold more potent than 35; no GPR109A/GHSR selectivity improvement"},
+    "38": {"hGPR81_EC50_uM": 0.054, "fold_GPR109A": 10, "fold_GHSR": 500, "sol_uM": 95, "comment": "cis-2,6-diMe morpholine; 10x more potent than 35; excellent 500-fold GHS-R1a selectivity; NO GPR109A improvement (~10x)"}
+  },
+  "table5_other": {
+    "15": {"hGPR81_EC50_uM": 0.299, "hGHS-R1a_IC50_uM": 0.378, "fold_GHSR": 1.3, "hGPR109A_EC50_uM": 7.5, "fold_GPR109A": 25, "comment": "no GHS-R1a selectivity; >25-fold GPR109A"}
+  },
+  "series_summary_from_text": {
+    "acyl_ureas": "GHS-R1a selectivity generally poor; GPR109A ~10-30x",
+    "constrained": "pyridone 26/28 good (29-41x GPR109A, 62-82x GHSR); c30 best potency but worst GPR109A selectivity (7.4x); pyrimidinones 27 >45x GPR109A",
+    "amides": "GHS-R1a selectivity excellent (>70x, up to 500x for 38); GPR109A only ~10x (common SAR between GPR81 and GPR109A for amide linker)",
+    "key": "c28 = best overall balance (22 nM, LLE 5.3, 41x GPR109A, 82x GHSR). c38 = best GHS-R1a (500x) but GPR109A still ~10x. c30 = most potent (5 nM) but least selective (7.4x GPR109A)."
+  },
+  "relevance_to_docking_project": {
+    "c30_vs_c31": "pyrimidinone 27/31 improve GPR109A selectivity (>45x / 6x) but lose GPR81 potency - the GLU153 electrostatic penalty we computed for pyrimidinone N3 may trade potency for selectivity (HYP)",
+    "region_selectivity_hypothesis": "amides (orthosteric-pocket binders on 8Z8A) show >70x GHS-R1a selectivity while acyl ureas (TM5-TM6 binders) do not - binding-site difference may underlie GHS-R1a selectivity (HYP, untested)",
+    "c30_caveat": "the docking campaign's most potent compound has only 7.4x GPR109A selectivity - relevant for any lead nomination"
+  }
+}

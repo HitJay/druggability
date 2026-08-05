@@ -99,12 +99,16 @@ immune monitoring are secondary watch items.
   flush as a dose-limiting side effect. [FACT, IUPHAR PMID 21454438; Si-containing
   GPR81/GPR109A agonists PMID 26459194]
 - The Davidsson 2020 paper reports selectivity for its series (compound 38 noted as a
-  "potent/selective example" in this project's inventory); **exact GPR109A EC50 values are
-  in the paper but were not transcribed into this repo** — extract them for the final
-  deliverable. [GAP]
-- Structural angle: this project's docking is on HCAR1 only. An HCAR2 pocket comparison
-  (AlphaFold3 or homology model of HCAR2 vs the cryo-EM HCAR1 structures) would let the
-  docking campaign speak to selectivity directly; currently it cannot. [GAP → optional next step]
+  "potent/selective example" in this project's inventory). **Transcribed 2026-08-04**:
+  see `davidsson2020_selectivity_transcription.json`. Key numbers: c30 (5 nM) has only
+  7.4x GPR109A selectivity; c28 (22 nM) is the best balance (41x GPR109A, 82x GHS-R1a,
+  LLE 5.3); c38 (54 nM) has 500x GHS-R1a but only ~10x GPR109A; amides overall >70x
+  GHS-R1a but ~10x GPR109A.
+- Structural angle: HCAR2 pocket comparison done 2026-08-04 (AlphaFold HCAR2 vs cryo-EM
+  HCAR1) — see `hcar1_hcar2_pocket_comparison.md`. Key: HCAR2 lost the ARG71 carboxylate
+  anchor (Leu83) in the orthosteric pocket, and 9/10 TM5-TM6 extracellular residues differ
+  (GLU153→Lys165 charge flip) — the latter explains why the large-molecule series shows
+  cross-activity (c30 7.4x) and gives a testable docking target for improving selectivity.
 
 ## Provenance
 - `HCAR1_ot_platform_2026-08-04.json` — raw OT Platform v4 target pull (this folder).

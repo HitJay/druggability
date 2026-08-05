@@ -1,0 +1,504 @@
+{
+  "method": "consensus over 2 seeds x 5 poses (10 poses), cutoff 4.5A, fraction >= 0.4; phase6 full-series",
+  "compounds": {
+    "c01": {
+      "8Z8A": {
+        "consensus": "MIXED",
+        "fraction": 0.5,
+        "n_poses": 4
+      },
+      "9KT9": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 0.6,
+        "n_poses": 5
+      }
+    },
+    "c02": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 0.67,
+        "n_poses": 9
+      },
+      "9KT9": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 1.0,
+        "n_poses": 4
+      }
+    },
+    "c03": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 1.0,
+        "n_poses": 10
+      },
+      "9KT9": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 1.0,
+        "n_poses": 4
+      }
+    },
+    "c04": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 0.75,
+        "n_poses": 8
+      },
+      "9KT9": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 1.0,
+        "n_poses": 5
+      }
+    },
+    "c05": {
+      "8Z8A": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 0.7,
+        "n_poses": 10
+      },
+      "9KT9": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 0.8,
+        "n_poses": 5
+      }
+    },
+    "c06": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 0.86,
+        "n_poses": 7
+      },
+      "9KT9": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 0.71,
+        "n_poses": 7
+      }
+    },
+    "c07": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 1.0,
+        "n_poses": 5
+      },
+      "9KT9": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 0.86,
+        "n_poses": 7
+      }
+    },
+    "c08": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 0.44,
+        "n_poses": 9
+      },
+      "9KT9": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 1.0,
+        "n_poses": 8
+      }
+    },
+    "c09": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 0.75,
+        "n_poses": 8
+      },
+      "9KT9": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 1.0,
+        "n_poses": 6
+      }
+    },
+    "c10": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 1.0,
+        "n_poses": 10
+      },
+      "9KT9": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 1.0,
+        "n_poses": 9
+      }
+    },
+    "c11": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 0.71,
+        "n_poses": 7
+      },
+      "9KT9": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 1.0,
+        "n_poses": 5
+      }
+    },
+    "c12": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 0.62,
+        "n_poses": 8
+      },
+      "9KT9": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 0.67,
+        "n_poses": 3
+      }
+    },
+    "c13": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 0.67,
+        "n_poses": 6
+      },
+      "9KT9": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 1.0,
+        "n_poses": 5
+      }
+    },
+    "c14": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 0.7,
+        "n_poses": 10
+      },
+      "9KT9": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 0.86,
+        "n_poses": 7
+      }
+    },
+    "c15": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 1.0,
+        "n_poses": 9
+      },
+      "9KT9": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 0.67,
+        "n_poses": 6
+      }
+    },
+    "c16": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 1.0,
+        "n_poses": 10
+      },
+      "9KT9": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 0.89,
+        "n_poses": 9
+      }
+    },
+    "c17": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 1.0,
+        "n_poses": 8
+      },
+      "9KT9": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 1.0,
+        "n_poses": 5
+      }
+    },
+    "c18": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 1.0,
+        "n_poses": 10
+      },
+      "9KT9": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 0.7,
+        "n_poses": 10
+      }
+    },
+    "c19": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 1.0,
+        "n_poses": 10
+      },
+      "9KT9": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 0.8,
+        "n_poses": 5
+      }
+    },
+    "c20": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 1.0,
+        "n_poses": 8
+      },
+      "9KT9": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 0.5,
+        "n_poses": 10
+      }
+    },
+    "c21": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 1.0,
+        "n_poses": 10
+      },
+      "9KT9": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 1.0,
+        "n_poses": 8
+      }
+    },
+    "c22": {
+      "8Z8A": {
+        "consensus": "MIXED",
+        "fraction": 0.56,
+        "n_poses": 9
+      },
+      "9KT9": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 1.0,
+        "n_poses": 3
+      }
+    },
+    "c23": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 0.8,
+        "n_poses": 10
+      },
+      "9KT9": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 0.67,
+        "n_poses": 6
+      }
+    },
+    "c24": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 0.7,
+        "n_poses": 10
+      },
+      "9KT9": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 1.0,
+        "n_poses": 6
+      }
+    },
+    "c25": {
+      "8Z8A": {
+        "consensus": "MIXED",
+        "fraction": 0.5,
+        "n_poses": 6
+      },
+      "9KT9": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 0.78,
+        "n_poses": 9
+      }
+    },
+    "c26": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 1.0,
+        "n_poses": 8
+      },
+      "9KT9": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 0.6,
+        "n_poses": 10
+      }
+    },
+    "c27": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 1.0,
+        "n_poses": 8
+      },
+      "9KT9": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 0.5,
+        "n_poses": 2
+      }
+    },
+    "c28": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 1.0,
+        "n_poses": 5
+      },
+      "9KT9": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 0.56,
+        "n_poses": 9
+      }
+    },
+    "c29": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 1.0,
+        "n_poses": 5
+      },
+      "9KT9": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 0.7,
+        "n_poses": 10
+      }
+    },
+    "c30": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 0.75,
+        "n_poses": 4
+      },
+      "9KT9": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 1.0,
+        "n_poses": 10
+      }
+    },
+    "c31": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 0.5,
+        "n_poses": 4
+      },
+      "9KT9": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 0.8,
+        "n_poses": 5
+      }
+    },
+    "c32": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 0.67,
+        "n_poses": 6
+      },
+      "9KT9": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 1.0,
+        "n_poses": 4
+      }
+    },
+    "c33": {
+      "8Z8A": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 0.8,
+        "n_poses": 10
+      },
+      "9KT9": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 0.5,
+        "n_poses": 6
+      }
+    },
+    "c34": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 0.78,
+        "n_poses": 9
+      },
+      "9KT9": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 1.0,
+        "n_poses": 2
+      }
+    },
+    "c35": {
+      "8Z8A": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 0.75,
+        "n_poses": 8
+      },
+      "9KT9": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 1.0,
+        "n_poses": 9
+      }
+    },
+    "c36": {
+      "8Z8A": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 0.57,
+        "n_poses": 7
+      },
+      "9KT9": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 0.86,
+        "n_poses": 7
+      }
+    },
+    "c37": {
+      "8Z8A": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 1.0,
+        "n_poses": 8
+      },
+      "9KT9": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 0.75,
+        "n_poses": 8
+      }
+    },
+    "c38": {
+      "8Z8A": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 0.78,
+        "n_poses": 9
+      },
+      "9KT9": {
+        "consensus": "ORTHO_POCKET",
+        "fraction": 0.71,
+        "n_poses": 7
+      }
+    },
+    "c39": {
+      "8Z8A": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 1.0,
+        "n_poses": 7
+      },
+      "9KT9": {
+        "consensus": "TM56_EXTRACELLULAR",
+        "fraction": 0.7,
+        "n_poses": 10
+      }
+    }
+  },
+  "_9KT9_deep_insert_gate": {
+    "finding": "19 of 22 compounds classified ORTHO_POCKET on 9KT9 have pose-1 centroids >4A from the 34D co-crystal center (up to 14A) - 24A-box deep-insert artifact, same class of failure as the small tool acids",
+    "gate": "9KT9 ORTHO_POCKET labels are only trustworthy if a tight-box redock (centered on 34D) reproduces a negative-score pose within 3A; verified compounds below",
+    "tight_box_verified": {
+      "c26": {
+        "centroid_A": [
+          1.3,
+          1.28
+        ],
+        "best_score": -4.185,
+        "verdict": "genuine orthosteric-pocket binder candidate on 9KT9"
+      },
+      "c29": {
+        "centroid_A": [
+          2.52,
+          2.5
+        ],
+        "best_score": -1.171,
+        "verdict": "orthosteric-adjacent but weak score; low confidence"
+      },
+      "c30": {
+        "centroid_A": [
+          2.02,
+          1.97
+        ],
+        "best_score": 7.698,
+        "verdict": "POSITIVE score in tight box - cannot fit 9KT9 orthosteric pocket; its 8Z8A TM5-TM6 site is the relevant one"
+      }
+    },
+    "conclusion": "8Z8A region labels (30 TM56 + 6 ORTHO + 3 MIXED) stand. 9KT9 large-molecule 24A results must be treated with the deep-insert caveat; only c26 has passed the tight-box gate so far."
+  }
+}

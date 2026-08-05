@@ -5,20 +5,24 @@
 > on 8Z8A (primary) and 9KT9 (fills the phase-4 gap). Matched pairs (11 compounds)
 > additionally carry the 8-seed phase-4 data.
 
-## 1. Positional QC — 9KT9 is usable for large molecules under 24A
+## 1. Positional QC — 9KT9 large-molecule results need a deep-insert gate
 
-Unlike the small tool acids (which deep-inserted under the 24A box on 9KT9),
-all 39 large paper compounds dock to defined regions — **zero N-terminal drift**:
+The phase-4-era deep-insert artifact (small acids under the 24A box on 9KT9)
+**reproduces for large molecules**: of 22 compounds whose 24A poses classify as
+orthosteric pocket on 9KT9, **19 have pose centroids > 4 A from the 34D
+co-crystal center (up to 14 A)** — forced/deep poses, not binding. Only c26,
+c29, c30 sat within 3 A. Tight-box re-dock (centered on 34D) then showed:
 
-| Receptor | TM5-TM6 extracellular | Orthosteric pocket | Mixed |
+| Compound | tight-box centroid (2 seeds) | best score | verdict |
 |---|---|---|---|
-| 8Z8A (pose 1, seed 20260803) | 27 | 9 | 3 |
-| 9KT9 (pose 1, seed 20260803) | 23 | 15 | 1 |
+| c26 (21 nM, pyridone) | 1.30 / 1.28 A | -4.19 | **genuine orthosteric-pocket candidate on 9KT9** |
+| c29 (75 nM) | 2.52 / 2.50 A | -1.17 | orthosteric-adjacent, weak score, low confidence |
+| c30 (5 nM) | 2.02 / 1.97 A | **+7.70** | cannot fit the 9KT9 orthosteric pocket; its 8Z8A TM5-TM6 site is the relevant one |
 
-[OBS] 9KT9 (3,5-DHBA-bound) accommodates more compounds in the orthosteric
-pocket (15 vs 9) — a state-specific difference worth noting, not an error.
-Per-compound region labels: `phase6_full_series/9kt9_positional_qc.json` (in
-`full_series_positional_qc.json`).
+**Net:** 8Z8A region labels (30 TM56 + 6 ORTHO + 3 MIXED, 2-seed consensus) stand
+as the primary map. 9KT9 large-molecule 24A results carry the deep-insert caveat;
+c26 is the only tight-box-verified orthosteric binder there so far.
+Full data: `full_series_region_consensus_2seed.json` (+ `_9KT9_deep_insert_gate`).
 
 ## 2. Score vs potency — no global correlation (expected)
 

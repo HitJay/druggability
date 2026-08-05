@@ -56,6 +56,11 @@ Key conclusions so far (2026-08-04):
 - c30 (pyridone, 5 nM) vs c31 (pyrimidinone, 240 nM): pyrimidinone N3 sits 3.8 A from GLU153
   carboxylate (8/8 seeds) -> electrostatic repulsion, inter-energy penalty ~4 kcal/mol.
 - HCAR1 activation carries mechanism-based tumor/cachexia + liver-fibrosis risk (see `safety/`).
+- 9KT9 large-molecule 24A results need a deep-insert gate: 19/22 orthosteric labels are
+  forced poses (>4 A from 34D); only c26 passed tight-box verification (1.3 A, -4.2 kcal/mol).
+- Selectivity (paper): c30 only 7.4x vs GPR109A; c28 best balance (22 nM, 41x GPR109A,
+  82x GHS-R1a); c38 500x GHS-R1a. HCAR2 lost the ARG71 anchor (Leu83) + 9/10 TM5-TM6
+  residues differ -> structural basis for the cross-activity (see `safety/`).
 
 ## Review status
 `REVIEW_2026-08-04.md` documents a full-chain audit: 9KT9 pose drift under the 24A box (fixed by tight-box protocol in Phase 5), systematic positive scores for large molecules on 8Z87 (clash-incompatible with the CHBA sub-pocket, not non-binders), and stale-doc issues.
