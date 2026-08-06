@@ -49,6 +49,20 @@ Davidsson 2020 (BMCL) 的 GPR81 激动剂系列做分子对接分析——包括
 | `phase6_full_series/` | 39 化合物全量 docking + reverse-SAR |
 | `safety/` | HCAR1 安全性 + 选择性转录 + HCAR2 口袋对比 |
 
+## 2026-08-05 follow-up 交付（UHYG 请求：排名 + 口袋分析 + 优化建议）
+
+| 文件 | 内容 |
+|---|---|
+| `followup_2026_08/gpr81_followup_report.html` | 45 化合物整体排名 + 46 对口袋分析图（自包含，CIFS 有归档） |
+| `followup_2026_08/gpr81_compound_scorecard.csv/.json` | 45 化合物排名（EC50 主排名 + Tier A/B/C） |
+| `followup_2026_08/gpr81_pocket_analysis_pairs.csv/.json` | 46 对配体-受体结合参数 |
+| `followup_2026_08/gpr81_optimization_recommendations.md` | 优化与发展建议（证据分级） |
+| `followup_2026_08/gpr81_boltz_wetlab_report.html` | 三层报告：Vina tier × Boltz-2 tier × 湿实验 benchmark 计划 |
+| `followup_2026_08/data/boltz_results.csv/.json` | Boltz-2 45 化合物亲和力概率/置信度（BioLib 云端） |
+| `followup_2026_08/wetlab_benchmark_subset.csv` | 湿实验 20 化合物子集清单（可直接给 assay） |
+
+**Boltz-2 层关键发现**：45/45 全部完成；affinity probability 与 EC50 无相关（r=-0.044，Vina 同样 r=-0.114）——两个计算层都不能排序效力；最强化合物（c30 5 nM / c28 22 nM）落在 Boltz tier C。Boltz 预测结合位点（29/45 正位口袋，含 Arg71 锚点）与 Vina 8Z8A 主区域（TM5-TM6 胞外）系统性分歧——大分子激动剂真实结合位点待湿实验裁定（Arg71/Glu153 突变或共晶）。全链路数据真实性审计 20/20 通过（`followup_2026_08/audit_data_integrity.py`）。
+
 ## 给 Huan 的建议（一句话版）
 
 大分子系列结合胞外位点的假设值得用 TM5-TM6 突变实验验证；推进化合物优先看 c28

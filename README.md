@@ -385,6 +385,7 @@ ChEMBL API → 查靶点/化合物   druggability/ → 靶点可药性评估
 - **MM/GBSA 结合自由能**：本地 OpenMM + PDBFixer + GBn2 隐式溶剂，对 Boltz-2 输出结构做能量最小化后计算 ΔG_binding。
 - **大规模小分子虚拟筛选**：BioLib `@nn/SmallMolecules/AutoDock-Vina` / 本地 `vina`，已在 GHSR 反向激动剂项目上跑通 7931 化合物 × 2 受体构象。
 - **PPI/adaptor 蛋白全链路筛选**：GRB10 项目验证了 Vina→Boltz-2→AI pose 评审→细胞可穿透性→liability 筛查的端到端流程。
+- **小分子靶点系列交叉验证**：GPR81/HCAR1 项目 45 化合物跑通 Vina（本地多构象）→ Boltz-2（BioLib affinity 读数，45/45）→ 三层 tier 对照 → 湿实验 benchmark 子集设计（`data/gpr81_phase1/followup_2026_08/`）；Boltz-2 affinity probability 与 EC50 无相关（r=-0.044），与 Vina（r=-0.114）同为非效力排序信号。
 
 **关键局限（务必在任何报告中声明）**：Boltz-2 的 `iptm` 是结构合理性代理指标，**不是**结合强度/功能活性的验证过的预测；同源阴性对照（如 secretin 对 GIPR/GCGR）已证实其 iptm 可以高于真实激动剂。单构象 MM/GBSA ΔG 同理是方向性粗筛，不是验证过的亲和力排序。
 

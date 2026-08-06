@@ -18,6 +18,7 @@ Output: gpr81_boltz_wetlab_report.html (self-contained; figures not needed).
 """
 import csv, json, os
 from pathlib import Path
+from collections import Counter
 import html as H
 
 BASE = Path(__file__).resolve().parent
@@ -154,6 +155,30 @@ def build_wetlab_subset():
             f"<tbody>{''.join(body)}</tbody></table>")
 
 
+def build_site_comparison():
+    """Section 7: Boltz-2 predicted binding site vs Vina docking region."""
+    csv_path = BASE / "data/boltz_site_vs_vina.csv"
+    if not csv_path.exists():
+        return "<p class='muted'>run build_boltz_site_comparison.py first</p>"
+    rows = list(csv.DictReader(open(csv_path)))
+    ag = Counter(r["agree"] for r in rows if r.get("agree"))
+    body = []
+    for r in sorted(rows, key=lambda x: x["entry_id"]):
+        agree = r.get("agree", "")
+        cls = {"YES": "class='ok'", "NO": "class='diff'"}.get(agree, "")
+        body.append(
+            f"<tr {cls}><td><b>{esc(r['entry_id'])}</b></td>"
+            f"<td>{esc(r.get('boltz_region') or '—')}</td>"
+            f"<td>{esc(r.get('vina_8Z8A_region') or '—')}</td>"
+            f"<td>{esc(agree)}</td><td>{esc(r.get('ec50_nM') or '—')}</td>"
+            f"<td class='muted'>{esc(r.get('boltz_contact_residues') or '—')}</td></tr>")
+    return ("<table id='sitecmp'><thead><tr><th>ID</th><th>Boltz region</th>"
+            "<th>Vina 8Z8A region</th><th>Agree</th><th>EC50 nM</th>"
+            "<th>Boltz contact residues</th></tr></thead>"
+            f"<tbody>{''.join(body)}</tbody></table>"
+            f"<p class='muted'>agreement: {ag.get('YES', 0)} YES / {ag.get('NO', 0)} NO / {ag.get('n/a', 0)} n/a (tools without Vina consensus)</p>")
+
+
 def build_layer_comparison():
     """Headline numbers comparing the two computational layers against paper EC50."""
     import math
@@ -288,6 +313,8 @@ def main():
     th{background:#0f3b5e;color:#fff}
     th[colspan]{text-align:center}
     tr:nth-child(even){background:#f0f4f7}
+    tr.ok{background:#e6f4ea}
+    tr.diff{background:#fdf3f3}
     td.stat{color:#8a6d3b;font-style:italic}
     .note{background:#fff8e1;border-left:4px solid #f0ad4e;padding:10px 14px;border-radius:4px;font-size:13px}
     .fact{background:#e8f4fd;border-left:4px solid #2e86c1;padding:8px 12px;border-radius:4px;font-size:12.5px;margin:8px 0}
@@ -302,6 +329,7 @@ def main():
     feats_html = build_biolib_features()
     compare_html = build_layer_comparison()
     subset_html = build_wetlab_subset()
+    site_html = build_site_comparison()
     n_boltz = sum(1 for r in COMPOUNDS if boltz.get(r["entry_id"]) and
                   (boltz[r["entry_id"]].get("boltz_affinity_probability_binary") or
                    boltz[r["entry_id"]].get("boltz_confidence_score")))
@@ -359,6 +387,22 @@ any, carries experimental signal.</div>
 Listed as <i>candidates</i> for follow-up work — none beyond Boltz-2 have been exercised yet;
 inputs/outputs and access constraints of each app still need verification before use.</div>
 {feats_html}
+
+<h2>7 · Binding-site agreement — Boltz-2 prediction vs Vina docking region</h2>
+<div class="note"><b>Systematic site disagreement between the two computational layers.</b>
+Boltz-2 (de-novo complex prediction from sequence+SMILES) places 29/45 compounds in the
+orthosteric pocket — including Arg71, the small-acid carboxylate anchor (contacted in 39/45
+models) — while Vina docking on the experimental 8Z8A (lactate-bound) structure places the
+large series in the TM5–TM6 extracellular region, 12–14 Å away. Only 2/40 comparable pairs
+agree (c05, c22).
+<b>Reading:</b> (1) Boltz reproduces the orthosteric binding of the reference acids (CHBA/
+3,5-DHBA contact the experimental pocket, incl. Arg71) — a validation of the model on known
+anchors; (2) for the large agonists the site is genuinely undecided: the experimental
+co-crystals only cover small acids, so whether nM agonists engage the Arg71 anchor, the
+TM5–TM6 site, or both cannot be settled computationally. This is a testable wet-lab question
+(mutagenesis of Arg71 / Glu153, or co-crystallization) and is now part of the benchmark
+panel's design rationale.</div>
+{site_html}
 
 <p class="muted" style="margin-top:16px">Companion files in the same folder:
 gpr81_followup_report.html (full 46-pair pocket analysis, Vina layer) ·
