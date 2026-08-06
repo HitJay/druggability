@@ -148,6 +148,32 @@ provisional and will be set as tertiles of the observed distribution, gated by c
 """
 
 
+def build_biolib_features():
+    """Candidate BioLib platform applications (screenshot 2026-08-05, featured apps page)."""
+    rows = [
+        ("DCD/Boltz-2", "Biomolecular structure + binding-affinity prediction (small-molecule aware)",
+         "IN USE — Layer 2 of this report (45-compound HCAR1 cross-validation running)."),
+        ("DCD/AlphaFold", "Single-protein structure prediction",
+         "Recompute HCAR2 / HCAR3 (GPR109B) models instead of AlphaFold DB download when the pocket-comparison or selectivity work is extended."),
+        ("DCD/StructurePredictor", "General structure prediction",
+         "Backup; experimental cryo-EM structures (8Z8A/9KT9/8Z87) already cover HCAR1 — no immediate need."),
+        ("DCD/Automated-Tractability", "Target tractability assessment",
+         "Independent third-party tractability view to cross-check the druggability assessment."),
+        ("SBTD/Target-Portal", "Target information portal",
+         "Cross-verify HCAR1/HCAR2 target annotations (IDs, expression, links) during evidence gathering."),
+        ("SBTD/QTL-GWAS-Explorer", "QTL / GWAS genetic evidence queries",
+         "Internal data source for the genetics-evidence layer of the 3_safety-style target assessment (pQTL/PheWAS), parallel to Open Targets."),
+        ("BioSeqTools/SequenceRetrieval · SequenceSearch · MSA", "Sequence tools",
+         "Routine; low priority for current stage."),
+        ("NAAP/RIPLI", "Not inspected",
+         "Listed on the featured page; capability unknown — check if a use case appears."),
+    ]
+    body = "\n".join(
+        f"<tr><td><b>{esc(a)}</b></td><td>{esc(d)}</td><td>{esc(u)}</td></tr>" for a, d, u in rows)
+    return (f"<table id='biolib-features'><thead><tr><th>Application</th><th>Description</th>"
+            f"<th>Relevance to GPR81 project</th></tr></thead><tbody>{body}</tbody></table>")
+
+
 def main():
     css = """
     body{font-family:'Segoe UI',Arial,sans-serif;margin:0;background:#f4f6f8;color:#222}
@@ -173,6 +199,7 @@ def main():
     """
     table_html = build_table()
     plan_html = build_benchmark_plan()
+    feats_html = build_biolib_features()
     n_boltz = sum(1 for r in COMPOUNDS if boltz.get(r["entry_id"]) and
                   (boltz[r["entry_id"]].get("boltz_affinity_probability_binary") or
                    boltz[r["entry_id"]].get("boltz_confidence_score")))
@@ -212,6 +239,12 @@ re-calibrated against wet-lab data in Layer 3.</li>
 
 <h2>3 · Wet-lab benchmark plan</h2>
 {plan_html}
+
+<h2>4 · BioLib platform capabilities (candidate features)</h2>
+<div class="fact">Featured applications visible on the BioLib platform (screenshot 2026-08-05).
+Listed as <i>candidates</i> for follow-up work — none beyond Boltz-2 have been exercised yet;
+inputs/outputs and access constraints of each app still need verification before use.</div>
+{feats_html}
 
 <p class="muted" style="margin-top:16px">Companion files in the same folder:
 gpr81_followup_report.html (full 46-pair pocket analysis, Vina layer) ·
