@@ -1,0 +1,48 @@
+{
+ "hcar2": {
+  "accession": "Q8TDS4",
+  "length": 363,
+  "job_id": "218a1e1e-4d51-4063-b55f-b3f0cea06fd9",
+  "exit": 0,
+  "files": [
+   "result/confidence_model_1_pred_0.json",
+   "result/confidence_model_2_pred_0.json",
+   "result/confidence_model_3_pred_0.json",
+   "result/confidence_model_4_pred_0.json",
+   "result/confidence_model_5_pred_0.json",
+   "result/features.pkl",
+   "result/metrics.csv",
+   "result/msas/mgnify_hits.sto",
+   "result/msas/pdb_hits.hhr",
+   "result/msas/small_bfd_hits.sto",
+   "result/msas/uniref90_hits.sto",
+   "result/novocif/ranked_0.cif",
+   "result/novocif/ranked_1.cif",
+   "result/novocif/ranked_2.cif",
+   "result/novocif/ranked_3.cif"
+  ]
+ },
+ "hcar3": {
+  "accession": "Q8TDS5",
+  "length": 384,
+  "job_id": "d1c428f8-fb4a-400e-a694-4c2b8bf75bee",
+  "exit": 0,
+  "files": [
+   "result/confidence_model_1_pred_0.json",
+   "result/confidence_model_2_pred_0.json",
+   "result/confidence_model_3_pred_0.json",
+   "result/confidence_model_4_pred_0.json",
+   "result/confidence_model_5_pred_0.json",
+   "result/metrics.csv",
+   "result/novocif/ranked_0.cif",
+   "result/novocif/ranked_1.cif",
+   "result/novocif/ranked_2.cif",
+   "result/novocif/ranked_3.cif",
+   "result/novocif/ranked_4.cif",
+   "result/ranked_0.cif",
+   "result/ranked_0.pdb",
+   "result/ranked_1.cif",
+   "result/ranked_1.pdb"
+  ]
+ }
+}

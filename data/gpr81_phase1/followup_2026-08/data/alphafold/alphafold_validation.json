@@ -1,0 +1,25 @@
+{
+ "method": "BioLib AlphaFold ranked_0 vs local AlphaFold DB v6 (safety/), Kabsch C\u03b1 RMSD; pLDDT from B-factor col",
+ "results": {
+  "hcar2": {
+   "accession": "Q8TDS4",
+   "mean": 83.4,
+   "median": 91.8,
+   "tm40_330": 90.9,
+   "disordered_pct": 12.4,
+   "n_common_ca": 363,
+   "rmsd_all_vs_afdb_A": 8.09,
+   "rmsd_tm40_330_vs_afdb_A": 2.92
+  },
+  "hcar3": {
+   "accession": "Q8TDS5",
+   "mean": 82.6,
+   "median": 90.2,
+   "tm40_330": 75.2,
+   "disordered_pct": 11.8,
+   "n_common_ca": 384,
+   "rmsd_all_vs_afdb_A": 5.08,
+   "rmsd_tm40_330_vs_afdb_A": 0.53
+  }
+ }
+}
