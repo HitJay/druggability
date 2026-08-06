@@ -75,6 +75,10 @@ data/gpr81_phase1/followup_2026-08/data/boltz_inputs/
 data/gpr81_phase1/followup_2026-08/data/boltz_runs/
 data/gpr81_phase1/followup_2026-08/data/boltz_logs/
 
+# GPR81 AlphaFold model outputs (regenerable via run_alphafold_hcar2_3.py; fasta + results json are audit)
+data/gpr81_phase1/followup_2026-08/data/alphafold/hcar2/
+data/gpr81_phase1/followup_2026-08/data/alphafold/hcar3/
+
 # GPR81 supplementary 2D renders (regenerable from paper_structures_recovered.json via build_gpr81_supplementary*.py)
 data/gpr81_phase1/supplementary/structures_2d/
 data/gpr81_phase1/supplementary/*_grid.png
