@@ -1,0 +1,21 @@
+entry_id,name,series,ec50_nM,emax_pct,vina_tier,vina_8Z8A_score,boltz_prob,boltz_tier,gpr109a_fold,ghsr_fold,rationale,counterscreen
+c28,Davidsson 2020 compound 28,constrained_analogue_cyclic,22.0,,A,-7.443,0.03532186523079872,C,41,82,"lead: best balance (22nM, 41x GPR109A, 82x GHSR, LLE 5.3)",GPR109A + GHS-R1a
+c26,Davidsson 2020 compound 26,constrained_analogue_cyclic,21.0,,A,-7.183,0.1033528596162796,C,29,62,"lead: 21nM, 29x/62x",GPR109A + GHS-R1a
+c29,Davidsson 2020 compound 29,constrained_analogue_cyclic,75.0,,B,-7.749,0.019678452983498573,C,25,667,"lead: 75nM, 25x/667x GHSR",GPR109A + GHS-R1a
+c30,Davidsson 2020 compound 30,constrained_analogue_cyclic,5.0,,B,-5.811,0.014422238804399967,C,7.4,,lead: most potent 5nM (7.4x GPR109A only),GPR109A + GHS-R1a
+c38,Davidsson 2020 compound 38,amide,54.0,,B,-4.491,0.1401335746049881,C,10,500,"lead: amide series, 54nM, 500x GHSR, sol 95uM",GPR109A + GHS-R1a
+c04,Davidsson 2020 compound 4,acyl_urea,1.4,,A,-2.985,0.19361649453639984,B,,,potent acyl-urea 1.4nM (selectivity unknown),GPR109A + GHS-R1a
+c07,Davidsson 2020 compound 7,acyl_urea,3.6,70,B,-8.46,0.21453365683555603,B,,,"potent acyl-urea 3.6nM, Emax 70% (selectivity unknown)",GPR109A + GHS-R1a
+c10,Davidsson 2020 compound 10,acyl_urea,13.0,,A,-6.687,0.45699524879455566,A,,,potent acyl-urea 13nM,GPR109A + GHS-R1a
+c11,Davidsson 2020 compound 11,acyl_urea,19.0,,A,-4.359,0.2821611762046814,B,,,potent acyl-urea 19nM,GPR109A + GHS-R1a
+c05,Davidsson 2020 compound 5,acyl_urea,0.74,47,B,-5.602,0.13030578196048737,C,,,"partial-agonist probe: 0.74nM, Emax 47%",GPR109A + GHS-R1a
+c08,Davidsson 2020 compound 8,acyl_urea,7.0,74,B,-6.343,0.49022769927978516,A,,,"partial-agonist probe: 7nM, Emax 74%",GPR109A + GHS-R1a
+c27,Davidsson 2020 compound 27,constrained_analogue_cyclic,490.0,,C,-6.577,0.34993281960487366,B,45,11,mechanism pair: pyrimidinone vs c26 (21x loss),GPR109A + GHS-R1a
+c31,Davidsson 2020 compound 31,constrained_analogue_cyclic,240.0,,C,-2.832,0.07613004744052887,C,6,,mechanism pair: pyrimidinone vs c30 (47x loss),GPR109A + GHS-R1a
+c24,Davidsson 2020 compound 24,linker_variant,33000.0,,C,-6.715,0.08642007410526276,C,,,mechanism pair: linker-variant collapse (33uM),GPR109A + GHS-R1a
+t02,GPR81_agonist_1,lead/tool compound,50.0,,A,-7.73,0.5859662890434265,A,,,Boltz control: highest affinity prob 0.586 (Takeda ~50nM),GPR109A + GHS-R1a
+c35,Davidsson 2020 compound 35,amide,600.0,,C,-5.189,0.5488600730895996,A,11,83,Boltz control: prob 0.549 but weak potency 600nM,GPR109A + GHS-R1a
+t03,CHBA,lead/tool compound,,,,-5.929,0.3764955401420593,A,,,reference acid CHBA (8Z87 co-crystal),GPR109A + GHS-R1a
+t04,3_5_DHBA,lead/tool compound,,,,-6.28,0.3882133662700653,A,,,"reference acid 3,5-DHBA (9KT9 co-crystal)",GPR109A + GHS-R1a
+t05,3_OBA,lead/tool compound,,,,-4.638,0.30488234758377075,B,,,reference acid 3-OBA,GPR109A + GHS-R1a
+lac,L-lactate (endogenous ligand),endogenous,,,,-4.361,0.4525619149208069,A,,,"endogenous ligand lactate (8Z8A co-crystal, assay control)",GPR109A + GHS-R1a
