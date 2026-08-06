@@ -54,6 +54,7 @@ skills-lock.json
 *.log
 *.sdf
 image.png
+image copy.png
 
 # GPR81 docking intermediates (regenerable from RCSB/PubChem + scripts; keep repo lean)
 *.pdbqt
@@ -68,6 +69,11 @@ docs/monthly_report_2026_05_draft.md
 # GPR81 follow-up deliverables (regenerable from build_*.py scripts; CIFS archive copy under output/2026-08-05/)
 data/gpr81_phase1/followup_2026-08/figures
 data/gpr81_phase1/followup_2026-08/gpr81_followup_report.html
+
+# GPR81 Boltz-2 intermediates (regenerable via run_gpr81_boltz_45.py; only boltz_results.csv/.json are audit)
+data/gpr81_phase1/followup_2026-08/data/boltz_inputs/
+data/gpr81_phase1/followup_2026-08/data/boltz_runs/
+data/gpr81_phase1/followup_2026-08/data/boltz_logs/
 
 # GPR81 supplementary 2D renders (regenerable from paper_structures_recovered.json via build_gpr81_supplementary*.py)
 data/gpr81_phase1/supplementary/structures_2d/
