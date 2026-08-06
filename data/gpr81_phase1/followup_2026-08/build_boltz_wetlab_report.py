@@ -38,14 +38,43 @@ def esc(x):
     return H.escape(str(x)) if x is not None else ""
 
 
-def boltz_tier(prob, conf):
-    """Provisional rule: tertile cutoffs applied to the full set after the run;
-    per-row here we only gate on confidence when prob is available."""
-    if prob is None:
+def _f(x):
+    try:
+        return float(x)
+    except (TypeError, ValueError):
         return None
-    if conf is not None and float(conf) < 0.5:
-        return "C (low conf)"
-    return None  # tertile assigned post-hoc
+
+
+def boltz_tertile_cutoffs():
+    """Data-driven tertiles of affinity_probability over the completed run."""
+    probs = sorted(_f(r.get("boltz_affinity_probability_binary")) for r in boltz.values()
+                   if _f(r.get("boltz_affinity_probability_binary")) is not None)
+    if len(probs) < 9:
+        return None, None
+    n = len(probs)
+    return probs[n // 3], probs[2 * n // 3]
+
+
+CUT_LO, CUT_HI = boltz_tertile_cutoffs()
+
+
+def boltz_tier(prob, conf):
+    """A = top tertile of affinity probability; B = middle; C = bottom.
+    confidence_score < 0.5 downgrades one tier (low structural confidence).
+    Explicitly NOT a potency ranking — see layer-comparison section."""
+    p = _f(prob)
+    if p is None or CUT_LO is None:
+        return None
+    if p >= CUT_HI:
+        t = "A"
+    elif p >= CUT_LO:
+        t = "B"
+    else:
+        t = "C"
+    c = _f(conf)
+    if c is not None and c < 0.5:
+        t = {"A": "B", "B": "C", "C": "C"}[t] + "*"
+    return t
 
 
 def fmt(x, nd=3):
@@ -69,11 +98,11 @@ def build_table():
         prob = b.get("boltz_affinity_probability_binary")
         conf = b.get("boltz_confidence_score")
         has_boltz = bool(prob or conf)
+        b_tier = boltz_tier(prob, conf)
         # wet-lab columns: paper EC50 exists; measured EC50 reserved
         wetlab = f"{fmt(c.get('ec50_nM'), 3)} nM" if c.get("ec50_nM") is not None else "—"
         emax = f"{c['emax_pct']}%" if c.get("emax_pct") is not None else "—"
         v_tier = c.get("tier") or "—"
-        # highlight: tier A rows light green, Boltz-ready rows with a marker
         return (
             f"<tr><td>{esc(c.get('potency_rank') or '—')}</td>"
             f"<td><b>{esc(bid)}</b></td><td>{esc(c['series'])}</td>"
@@ -82,6 +111,7 @@ def build_table():
             f"<td>{fmt(prob) if prob else 'PENDING'}</td>"
             f"<td>{fmt(conf) if conf else 'PENDING'}</td>"
             f"<td>{fmt(b.get('boltz_ligand_iptm')) if b.get('boltz_ligand_iptm') else 'PENDING'}</td>"
+            f"<td>{esc(b_tier) if b_tier else '—'}</td>"
             f"<td>—</td><td>—</td>"
             f"<td class='stat'>{'Boltz run' if has_boltz else 'waiting'}</td></tr>"
         )
@@ -94,14 +124,64 @@ def build_table():
             "<th rowspan='2'>Rank</th><th rowspan='2'>ID</th><th rowspan='2'>Series</th>"
             "<th colspan='2'>Wet-lab (paper)</th>"
             "<th colspan='3'>Layer 1 · Vina (done)</th>"
-            "<th colspan='3'>Layer 2 · Boltz-2 (pending run)</th>"
+            "<th colspan='4'>Layer 2 · Boltz-2 (done)</th>"
             "<th colspan='2'>Layer 3 · Wet-lab benchmark (planned)</th>"
             "<th rowspan='2'>Status</th></tr><tr>"
             "<th>EC50 nM</th><th>Emax</th>"
             "<th>8Z8A score</th><th>Region</th><th>Tier</th>"
-            "<th>aff. prob</th><th>conf</th><th>ligand iptm</th>"
+            "<th>aff. prob</th><th>conf</th><th>ligand iptm</th><th>Boltz tier</th>"
             "<th>measured EC50</th><th>consistency</th></tr></thead>"
             f"<tbody>{''.join(rows_html)}</tbody></table>")
+
+
+def build_layer_comparison():
+    """Headline numbers comparing the two computational layers against paper EC50."""
+    import math
+    sc2 = json.load(open(BASE / "gpr81_compound_scorecard.json"))
+    ec = {c["entry_id"]: c.get("ec50_nM") for c in sc2["compounds"]}
+    pairs_v, pairs_b = [], []
+    for r in COMPOUNDS:
+        e = ec.get(r["entry_id"])
+        if e is None:
+            continue
+        v = _f(r.get("dock_8Z8A_best"))
+        b = _f(boltz.get(r["entry_id"], {}).get("boltz_affinity_probability_binary"))
+        if v is not None:
+            pairs_v.append((math.log10(e), v))
+        if b is not None:
+            pairs_b.append((math.log10(e), b))
+
+    def pearson(pairs):
+        if len(pairs) < 5:
+            return None
+        xs = [x for x, _ in pairs]; ys = [y for _, y in pairs]
+        mx, my = sum(xs) / len(xs), sum(ys) / len(ys)
+        num = sum((x - mx) * (y - my) for x, y in zip(xs, ys))
+        den = math.sqrt(sum((x - mx) ** 2 for x in xs) * sum((y - my) ** 2 for y in ys))
+        return num / den if den else None
+
+    rv, rb = pearson(pairs_v), pearson(pairs_b)
+    # Boltz-tier paradox examples
+    paradox = ("<li><b>Boltz tier C holds the most potent compounds</b>: c30 (5 nM, prob 0.014), "
+               "c28 (22 nM, 0.035), c26 (21 nM, 0.103) all sit in the bottom tertile, while "
+               "t02 (Takeda ~50 nM, 0.586) and c35 (600 nM, 0.549) top the probability ranking — "
+               "the layer's binder probability does not follow potency.</li>")
+    return f"""
+<h3>Headline findings (45-compound Boltz-2 run, 2026-08-05)</h3>
+<ul>
+<li><b>Boltz-2 affinity probability vs paper EC50: no correlation</b>
+(Pearson r = {rb:.3f} vs log10 EC50, n = {len(pairs_b)}; Vina 8Z8A score r = {rv:.3f}).
+Both computational layers fail to rank potency across the series — consistent with the
+project convention that neither is an affinity predictor.</li>
+<li>Boltz structural confidence is uniformly high (conf 0.74–0.87): the model predicts a
+plausible complex for every compound and does not discriminate within this series.</li>
+{paradox}
+<li><b>Implication for the wet-lab benchmark:</b> with both layers showing null correlation,
+the benchmark's value is not "which layer ranks potency" but (a) testing whether any
+layer-specific signal (e.g. per-series, per-binding-region) holds up experimentally,
+and (b) calibrating tier cutoffs on real EC50 data before either layer informs lead choice.</li>
+</ul>
+"""
 
 
 def build_benchmark_plan():
@@ -200,6 +280,7 @@ def main():
     table_html = build_table()
     plan_html = build_benchmark_plan()
     feats_html = build_biolib_features()
+    compare_html = build_layer_comparison()
     n_boltz = sum(1 for r in COMPOUNDS if boltz.get(r["entry_id"]) and
                   (boltz[r["entry_id"]].get("boltz_affinity_probability_binary") or
                    boltz[r["entry_id"]].get("boltz_confidence_score")))
@@ -213,7 +294,7 @@ def main():
 <header>
 <h1>GPR81 (HCAR1) compound ranking — computational layers &amp; wet-lab benchmark</h1>
 <p>45 compounds (39 Davidsson 2020 + 5 leads + lactate) · Layer 1 Vina docking (done) ·
-Layer 2 Boltz-2 structure/affinity (pending) · Layer 3 wet-lab benchmark (planned)</p>
+Layer 2 Boltz-2 structure/affinity (done, 45/45) · Layer 3 wet-lab benchmark (planned)</p>
 <p>Generated 2026-08-05 · audit files: gpr81_compound_scorecard.json · data/boltz_results.csv ·
 run_gpr81_boltz_45.py · build_boltz_wetlab_report.py</p>
 </header>
@@ -225,22 +306,25 @@ measurements. Boltz values are structural-model estimates — never read them as
 affinities.</div>
 {table_html}
 
-<h2>2 · Boltz-2 tier rule (provisional)</h2>
+<h2>2 · Layer comparison — both computational layers vs paper EC50</h2>
+{compare_html}
+
+<h2>3 · Boltz-2 tier rule (computed)</h2>
 <ul>
 <li>Primary signal: <b>affinity_probability_binary</b> (Boltz-2's binder probability).</li>
-<li>Tier assignment: data-driven <b>tertiles</b> of the 45-compound distribution once the run
-finishes — top tertile = A, middle = B, bottom = C; compounds with confidence_score &lt; 0.5
-downgraded one tier (low structural confidence).</li>
-<li>Supporting columns: confidence_score (structure confidence), ligand_iptm (interface
-quality).</li>
-<li>This rule mirrors the Vina tier transparency: thresholds are explicit and will be
-re-calibrated against wet-lab data in Layer 3.</li>
+<li>Tier assignment: data-driven <b>tertiles</b> of the 45-compound distribution — top
+tertile (prob &ge; {CUT_HI:.3f}) = A, middle ({CUT_LO:.3f}–{CUT_HI:.3f}) = B, bottom (&lt; {CUT_LO:.3f}) = C;
+compounds with confidence_score &lt; 0.5 downgraded one tier (none in this run — conf 0.74–0.87).</li>
+<li>Supporting columns: confidence_score (structure confidence), ligand_iptm (interface quality).</li>
+<li><b>Not a potency ranking</b> — see §2: Boltz probability shows no correlation with EC50
+and the most potent compounds (c30/c28/c26) sit in tier C. Wet-lab data (§4) is the only
+calibrator for any tier rule.</li>
 </ul>
 
-<h2>3 · Wet-lab benchmark plan</h2>
+<h2>4 · Wet-lab benchmark plan</h2>
 {plan_html}
 
-<h2>4 · BioLib platform capabilities (candidate features)</h2>
+<h2>5 · BioLib platform capabilities (candidate features)</h2>
 <div class="fact">Featured applications visible on the BioLib platform (screenshot 2026-08-05).
 Listed as <i>candidates</i> for follow-up work — none beyond Boltz-2 have been exercised yet;
 inputs/outputs and access constraints of each app still need verification before use.</div>
