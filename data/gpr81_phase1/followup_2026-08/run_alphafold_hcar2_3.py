@@ -38,21 +38,44 @@ def main() -> None:
     import biolib
     app = biolib.load("@nn/DCD/AlphaFold")
     results = {}
+    prev = {}
+    if (OUT / "alphafold_results.json").exists():
+        prev = json.loads((OUT / "alphafold_results.json").read_text(encoding="utf-8"))
     for name, acc in ACCESSION.items():
+        if prev.get(name, {}).get("exit") == 0:
+            print(f"[SKIP] {name} already complete", flush=True)
+            results[name] = prev[name]
+            continue
         seq = fetch_sequence(acc)
         fasta = OUT / f"{name}.fasta"
         fasta.write_text(f">sp|{acc}|{name}\n{seq}\n", encoding="utf-8")
         run_dir = OUT / name
         print(f"[SUBMIT] {name} ({acc}, {len(seq)} aa)", flush=True)
         try:
-            job = app.run(input=str(fasta.resolve()), biolib_check=False, biolib_stream_logs=False)
+            job = app.run(fasta_paths=str(fasta.resolve()), model_preset="monomer",
+                          biolib_check=False, biolib_stream_logs=False)
             exit_code = job.get_exit_code()
             print(f"[DONE] {name} exit={exit_code} job={job.id}", flush=True)
             if exit_code == 0:
                 if run_dir.exists():
                     shutil.rmtree(run_dir)
                 run_dir.mkdir(parents=True, exist_ok=True)
-                job.save_files(str(run_dir), overwrite=True)
+                # retry the download once (a partial_biolib_download crash wiped a
+                # mid-transfer file on 2026-08-06 for hcar3 job 2c525a56...)
+                for attempt in (1, 2):
+                    try:
+                        job.save_files(str(run_dir), overwrite=True)
+                        break
+                    except Exception as e:
+                        print(f"[RETRY] {name} save_files attempt {attempt}: {str(e)[:120]}", flush=True)
+                        if attempt == 2:
+                            raise
+                # keep only the audit-relevant outputs; drop multi-GB intermediates
+                for p in list(run_dir.rglob("*.pkl")) + list(run_dir.rglob("features.pkl")):
+                    p.unlink(missing_ok=True)
+                msa_dir = run_dir / "result/msas"
+                if msa_dir.exists():
+                    shutil.rmtree(msa_dir)
                 files = sorted(str(p.relative_to(run_dir)) for p in run_dir.rglob("*") if p.is_file())
                 results[name] = {"accession": acc, "length": len(seq), "job_id": str(job.id),
                                  "exit": exit_code, "files": files[:15]}
