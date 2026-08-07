@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>GPR81 (HCAR1) druggability — Project summary</title>
+<style>
+  html, body { width: 1920px; height: 1080px; margin: 0; padding: 0; overflow: hidden;
+               font-family: 'Segoe UI', 'Microsoft YaHei', Arial, sans-serif; background: #eef1f6; color: #222; }
+  .page { width: 1920px; height: 1080px; display: grid;
+          grid-template-rows: 100px 100px 800px; gap: 12px;
+          padding: 16px 20px; box-sizing: border-box; }
+
+  header { background: linear-gradient(100deg, #0f3b5e, #14537e); color: #fff;
+           border-radius: 10px; padding: 10px 24px; display: flex; align-items: center;
+           justify-content: space-between; }
+  header h1 { margin: 0; font-size: 26px; letter-spacing: 0.5px; }
+  header .sub { margin-top: 3px; font-size: 13.5px; color: #cfe0ef; }
+  header .attr { text-align: right; font-size: 12px; line-height: 1.6; color: #dbe7f2; }
+
+  .metrics { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+  .metric { background: #fff; border-radius: 10px; padding: 10px 16px; box-shadow: 0 1px 4px rgba(15,59,94,.12);
+            display: flex; flex-direction: column; justify-content: center; border-top: 4px solid #14537e; }
+  .metric .v { font-size: 30px; font-weight: 700; color: #0f3b5e; line-height: 1.05; }
+  .metric .l { font-size: 12px; color: #556; margin-top: 3px; }
+
+  main { display: grid; grid-template-columns: 1.02fr 1.25fr 1.02fr; gap: 12px; min-height: 0; }
+  .card { background: #fff; border-radius: 10px; padding: 12px 16px; box-shadow: 0 1px 4px rgba(15,59,94,.10);
+          display: flex; flex-direction: column; overflow: hidden; }
+  .col1-stack { grid-column: 1/2; grid-row: 1/3; display: flex; flex-direction: column; gap: 12px; min-height: 0; }
+  .col1-stack > .card:first-child { flex: 0 0 auto; }
+  .col1-stack > .card:last-child  { flex: 1 1 0; min-height: 0; }
+  .col2 { grid-column: 2/3; grid-row: 1/3; }
+  .col3-stack { grid-column: 3/4; grid-row: 1/3; display: flex; flex-direction: column; gap: 12px; min-height: 0; }
+  .col3-stack > .card { flex: 1 1 0; min-height: 0; }
+
+  h2 { margin: 0 0 6px; font-size: 15px; color: #0f3b5e; border-bottom: 2px solid #14537e;
+       padding-bottom: 3px; }
+  h3 { margin: 8px 0 4px; font-size: 13px; color: #14537e; }
+  ul { margin: 3px 0 6px; padding-left: 18px; font-size: 12.5px; line-height: 1.5; }
+  li { margin: 2px 0; }
+  .tag { display: inline-block; font-size: 9.5px; font-weight: 700; color: #fff; border-radius: 3px;
+         padding: 0 4px; margin-right: 4px; vertical-align: 1px; }
+  .tag.FACT { background: #1e7e34; } .tag.OBS { background: #b06d00; }
+  .tag.MECH { background: #14537e; } .tag.HYP { background: #7b3fa0; }
+  table { border-collapse: collapse; width: 100%; font-size: 12px; margin: 4px 0 6px; }
+  th, td { border: 1px solid #d5dbe1; padding: 3px 6px; text-align: left; }
+  th { background: #0f3b5e; color: #fff; font-weight: 600; }
+  tr:nth-child(even) { background: #f0f4f7; }
+  .callout { background: #fff8e1; border-left: 4px solid #f0ad4e; padding: 8px 12px; border-radius: 4px;
+             font-size: 12px; line-height: 1.5; margin: 4px 0; }
+  .callout.blue { background: #e8f4fd; border-left-color: #2e86c1; }
+  .callout.purple { background: #f3ecfa; border-left-color: #7b3fa0; }
+  .muted { color: #666; font-size: 11px; }
+  .kpi { display: flex; gap: 10px; margin: 5px 0; }
+  .kpi .box { flex: 1; background: #f0f4f7; border-radius: 6px; padding: 6px 10px; text-align: center; }
+  .kpi .box .b { font-size: 20px; font-weight: 700; color: #0f3b5e; }
+  .kpi .box .bl { font-size: 10px; color: #556; }
+  .flex-spacer { flex: 1 1 auto; min-height: 0; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div>
+      <h1>GPR81 / HCAR1 Druggability — Project Summary</h1>
+      <div class="sub">Follow-up deliverables: 45-compound ranking · 46 pocket analyses · Boltz-2 cross-validation · wet-lab benchmark plan</div>
+    </div>
+    <div class="attr">RIC-396 · Requester UHYG (Yang Huan)<br>Analyst QYJI · 2026-08-06 · full-chain data audit 20/20 passed</div>
+  </header>
+
+  <div class="metrics">
+    <div class="metric"><div class="v">45</div><div class="l">Compounds ranked (39 paper + 5 leads + lactate)</div></div>
+    <div class="metric"><div class="v">46</div><div class="l">Ligand–receptor pocket analyses (figure per pair)</div></div>
+    <div class="metric"><div class="v">45/45</div><div class="l">Boltz-2 cross-validation done (BioLib cloud)</div></div>
+    <div class="metric"><div class="v">20</div><div class="l">Wet-lab benchmark subset (ready for assay)</div></div>
+    <div class="metric"><div class="v">3</div><div class="l">Experimental cryo-EM structures (8Z8A/9KT9/8Z87)</div></div>
+    <div class="metric"><div class="v">c28</div><div class="l">Best-balanced lead (22 nM, LLE 5.3)</div></div>
+  </div>
+
+  <main>
+    <!-- ============ Column 1 ============ -->
+    <div class="col1-stack">
+      <div class="card">
+        <h2>Key findings</h2>
+        <ul>
+          <li><span class="tag FACT">FACT</span><b>c28 is the best-balanced lead</b>: 22 nM, 41x GPR109A, 82x GHSR, LLE 5.3</li>
+          <li><span class="tag FACT">FACT</span>c30 most potent (5 nM) but only 7.4x GPR109A-selective — must be resolved before advancing</li>
+          <li><span class="tag FACT">FACT</span>c5 (0.74 nM) is a partial agonist (Emax 47%) — tool compound, not a lead</li>
+          <li><span class="tag OBS">OBS</span><b>Neither computational layer ranks potency</b>: Vina score–EC50 r = −0.114; Boltz-2 affinity prob–EC50 r = −0.044 (both ≈ 0)</li>
+          <li><span class="tag OBS">OBS</span>Boltz ranks the most potent compounds lowest: c30/c28/c26 → Boltz tier C; 600 nM c35 tops the probability ranking</li>
+          <li><span class="tag OBS">OBS</span>SAR: pyridone ≫ pyrimidinone (N3–Glu153 clash, 47x potency cliff, 8/8 seeds)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Binding-site disagreement (wet-lab to settle)</h2>
+        <div class="callout purple" style="margin-top:4px">
+          <span class="tag OBS">OBS</span>Boltz-2 predicts 29/45 compounds in the <b>orthosteric pocket</b>
+          (39/45 contact Arg71, the carboxylate anchor shared with lactate)<br>
+          <span class="tag OBS">OBS</span>Vina (8Z8A experimental structure) places the large series in the
+          <b>TM5–TM6 extracellular region</b>, 12–14 Å away; only 2/40 agree (c05, c22)<br>
+          <span class="tag FACT">FACT</span>Reference acids (CHBA/3,5-DHBA) are orthosteric in both models — consistent
+          with the co-crystals; the disagreement is specific to the large molecules<br>
+          <span class="tag HYP">HYP</span>nM agonists may engage the Arg71 anchor — settle via <b>Arg71/Glu153
+          mutagenesis</b> or co-crystallization
+        </div>
+        <h3>Boltz models available (BioLib AlphaFold)</h3>
+        <ul>
+          <li>HCAR2 (Q8TDS4): TM-core pLDDT 90.9, Cα RMSD 2.92 Å vs AlphaFold DB v6</li>
+          <li>HCAR3 (Q8TDS5): TM-core pLDDT 75.2, Cα RMSD 0.53 Å — internally reproducible alternatives</li>
+        </ul>
+        <div class="flex-spacer"></div>
+        <h3>Methods &amp; data quality</h3>
+        <ul>
+          <li>Sources: Davidsson 2020 (BMCL) EC50/Emax/selectivity transcription + ChEMBL cross-check; 3 experimental cryo-EM structures (8Z8A/9KT9/8Z87)</li>
+          <li>Vina: multi-conformation × multi-seed (best-of-seeds per receptor); Boltz-2: BioLib cloud 45/45 (affinity probability + confidence)</li>
+          <li>Full-chain audit audit_data_integrity.py: 20/20 checks pass (EC50/score/region/tier/Boltz metrics re-verified from sources)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ============ Column 2 ============ -->
+    <div class="card col2">
+      <h2>Ranking &amp; leads (EC50 primary + Tier A/B/C)</h2>
+      <table>
+        <tr><th>ID</th><th>EC50 (nM)</th><th>Emax</th><th>GPR109A ×</th><th>GHSR ×</th><th>Tier</th><th>Comment</th></tr>
+        <tr><td><b>c05</b></td><td>0.74</td><td>47%</td><td>—</td><td>—</td><td>B</td><td>Partial agonist (most potent, low Emax)</td></tr>
+        <tr><td><b>c04</b></td><td>1.4</td><td>—</td><td>—</td><td>—</td><td>A</td><td>Potent acyl-urea (selectivity unknown)</td></tr>
+        <tr><td><b>c30</b></td><td>5.0</td><td>—</td><td>7.4</td><td>—</td><td>B</td><td>Most potent, insufficient selectivity</td></tr>
+        <tr><td><b>c28</b></td><td>22</td><td>—</td><td>41</td><td>82</td><td><b>A</b></td><td><b>Best-balanced lead (LLE 5.3)</b></td></tr>
+        <tr><td><b>c26</b></td><td>21</td><td>—</td><td>29</td><td>62</td><td>A</td><td>Candidate lead</td></tr>
+        <tr><td><b>c38</b></td><td>54</td><td>—</td><td>10</td><td>500</td><td>B</td><td>Amide series + cis-morpholine (sol 95 µM)</td></tr>
+        <tr><td><b>c29</b></td><td>75</td><td>—</td><td>25</td><td>667</td><td>B</td><td>High GHSR selectivity</td></tr>
+        <tr><td><b>c31</b></td><td>240</td><td>—</td><td>—</td><td>—</td><td>C</td><td>Pyrimidinone control (47x loss vs c30)</td></tr>
+      </table>
+      <p class="muted">Ranking basis: paper hGPR81 EC50 (ascending); Tier A = EC50 ≤ 50 nM AND Emax ≥ 80% AND both
+      selectivities ≥ 25x/50x; B = ≤ 100 nM with a liability; C = rest. Reference acids (CHBA/3,5-DHBA/3-OBA/lactate)
+      listed separately — no comparable potency assay. × = selectivity fold vs hGPR81. — not reported.
+      LLE = ligand lipophilicity efficiency.</p>
+
+      <h3>Optimization directions (SAR rules)</h3>
+      <ul>
+        <li><span class="tag FACT">FACT</span>Keep the constrained pyridone template (Table 7); acyclic acyl-urea loses the intramolecular H-bond network → potency collapse (16–33 µM)</li>
+        <li><span class="tag MECH">MECH</span><b>Selectivity handle</b>: Glu153(HCAR1) → Lys165(HCAR2) charge flip — design vectors repelled by Lys165 using the HCAR2 model</li>
+        <li><span class="tag FACT">FACT</span>Keep cis-2,6-dimethylmorpholine stereochemistry (c38: 54 nM / 500x GHSR / sol 95 µM vs trans c37: 350 nM)</li>
+        <li><span class="tag OBS">OBS</span>Design caps: MW ≤ 550, clogP ≤ 4, LLE ≥ 5; counterscreen every analog (GPR109A + GHS-R1a)</li>
+      </ul>
+    </div>
+
+    <!-- ============ Column 3 ============ -->
+    <div class="col3-stack">
+      <div class="card">
+        <h2>Recommendation — wet-lab benchmark (20-compound panel)</h2>
+        <div class="kpi">
+          <div class="box"><div class="b">9</div><div class="bl">Leads</div></div>
+          <div class="box"><div class="b">2</div><div class="bl">Partial-agonist probes</div></div>
+          <div class="box"><div class="b">3</div><div class="bl">Mechanism pairs</div></div>
+          <div class="box"><div class="b">2</div><div class="bl">Boltz controls</div></div>
+          <div class="box"><div class="b">4</div><div class="bl">Reference acids</div></div>
+        </div>
+        <ul>
+          <li>Includes Vina/Boltz <b>tier-disagreement pairs</b> (c28: A/C, c35: C/A, c08: B/A) — core test: which layer carries experimental signal</li>
+          <li>Full counterscreen (GPR109A + GHS-R1a); plus <b>Arg71/Glu153 mutant lines</b> to settle the binding site</li>
+          <li>Calibration: Spearman + tier confusion matrix + partial-agonism window (Emax 47–70%)</li>
+          <li>Panel CSV ready for the assay team (wetlab_benchmark_subset.csv)</li>
+        </ul>
+        <h3>Safety (mechanistic risk — mandatory in preclinical)</h3>
+        <div class="callout blue" style="margin-top:4px">
+          Mechanism-based <b>tumor/cachexia</b> + <b>liver-fibrosis</b> risk (HCAR1 pathway); mitigation: tuned partial
+          agonism + bias profiling; preclinical carcinogenicity + fibrosis markers are mandatory.
+        </div>
+      </div>
+      <div class="card">
+        <h2>Deliverables</h2>
+        <table>
+          <tr><th>File</th><th>Content</th></tr>
+          <tr><td>gpr81_followup_report.html</td><td>Main report: ranking + 46 pocket analyses (46 figures embedded)</td></tr>
+          <tr><td>gpr81_boltz_wetlab_report.html</td><td>Three-layer report: Vina × Boltz-2 × wet-lab plan (7 sections)</td></tr>
+          <tr><td>gpr81_compound_scorecard.csv/.json</td><td>45-compound ranking (Tier stratified)</td></tr>
+          <tr><td>gpr81_pocket_analysis_pairs.csv/.json</td><td>46-pair binding parameters</td></tr>
+          <tr><td>gpr81_optimization_recommendations.md</td><td>Recommendations (evidence-tagged)</td></tr>
+          <tr><td>wetlab_benchmark_subset.csv</td><td>20-compound assay panel</td></tr>
+          <tr><td>audit_data_integrity.py</td><td>Full-chain data audit (20/20 checks pass)</td></tr>
+        </table>
+        <p class="muted">Shared drive: /TDE_TV/shared_folder/QYJI/druggability/GPR81/readout/ (accessible to colleagues)<br>
+        Audit trail: /das/user/QYJI/druggability/data/gpr81_phase1/followup_2026_08/ · details in RIC-396</p>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

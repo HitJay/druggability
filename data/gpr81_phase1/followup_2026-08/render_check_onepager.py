@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
-"""Render the GPR81 one-pager at 1920x1080 and run deterministic layout checks."""
+"""Render a fixed 1920x1080 one-pager HTML and run deterministic layout checks.
+
+Usage: render_check_onepager.py <html_path> [png_path]
+"""
+import sys
 from playwright.sync_api import sync_playwright
 import numpy as np
 from PIL import Image
 
-URL = "file:///das/user/QYJI/druggability/data/gpr81_phase1/followup_2026-08/gpr81_onepager_summary.html"
-PNG = "/tmp/gpr81_onepager.png"
+URL = "file://" + sys.argv[1]
+PNG = sys.argv[2] if len(sys.argv) > 2 else "/tmp/gpr81_onepager.png"
 
 with sync_playwright() as p:
     b = p.chromium.launch()
