@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>GPR81 (HCAR1) druggability — 项目总结</title>
+<style>
+  html, body { width: 1920px; height: 1080px; margin: 0; padding: 0; overflow: hidden;
+               font-family: 'Segoe UI', 'Microsoft YaHei', Arial, sans-serif; background: #eef1f6; color: #222; }
+  .page { width: 1920px; height: 1080px; display: grid;
+          grid-template-rows: 100px 100px 800px; gap: 12px;
+          padding: 16px 20px; box-sizing: border-box; }
+
+  header { background: linear-gradient(100deg, #0f3b5e, #14537e); color: #fff;
+           border-radius: 10px; padding: 10px 24px; display: flex; align-items: center;
+           justify-content: space-between; }
+  header h1 { margin: 0; font-size: 26px; letter-spacing: 0.5px; }
+  header .sub { margin-top: 3px; font-size: 13.5px; color: #cfe0ef; }
+  header .attr { text-align: right; font-size: 12px; line-height: 1.6; color: #dbe7f2; }
+
+  .metrics { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+  .metric { background: #fff; border-radius: 10px; padding: 10px 16px; box-shadow: 0 1px 4px rgba(15,59,94,.12);
+            display: flex; flex-direction: column; justify-content: center; border-top: 4px solid #14537e; }
+  .metric .v { font-size: 30px; font-weight: 700; color: #0f3b5e; line-height: 1.05; }
+  .metric .l { font-size: 12px; color: #556; margin-top: 3px; }
+
+  main { display: grid; grid-template-columns: 1.02fr 1.25fr 1.02fr; gap: 12px; min-height: 0; }
+  .card { background: #fff; border-radius: 10px; padding: 12px 16px; box-shadow: 0 1px 4px rgba(15,59,94,.10);
+          display: flex; flex-direction: column; overflow: hidden; }
+  .col1-stack { grid-column: 1/2; grid-row: 1/3; display: flex; flex-direction: column; gap: 12px; min-height: 0; }
+  .col1-stack > .card:first-child { flex: 0 0 auto; }
+  .col1-stack > .card:last-child  { flex: 1 1 0; min-height: 0; }
+  .col2 { grid-column: 2/3; grid-row: 1/3; }
+  .col3-stack { grid-column: 3/4; grid-row: 1/3; display: flex; flex-direction: column; gap: 12px; min-height: 0; }
+  .col3-stack > .card { flex: 1 1 0; min-height: 0; }
+
+  h2 { margin: 0 0 6px; font-size: 15px; color: #0f3b5e; border-bottom: 2px solid #14537e;
+       padding-bottom: 3px; }
+  h3 { margin: 8px 0 4px; font-size: 13px; color: #14537e; }
+  ul { margin: 3px 0 6px; padding-left: 18px; font-size: 12.5px; line-height: 1.5; }
+  li { margin: 2px 0; }
+  .tag { display: inline-block; font-size: 9.5px; font-weight: 700; color: #fff; border-radius: 3px;
+         padding: 0 4px; margin-right: 4px; vertical-align: 1px; }
+  .tag.FACT { background: #1e7e34; } .tag.OBS { background: #b06d00; }
+  .tag.MECH { background: #14537e; } .tag.HYP { background: #7b3fa0; }
+  table { border-collapse: collapse; width: 100%; font-size: 12px; margin: 4px 0 6px; }
+  th, td { border: 1px solid #d5dbe1; padding: 3px 6px; text-align: left; }
+  th { background: #0f3b5e; color: #fff; font-weight: 600; }
+  tr:nth-child(even) { background: #f0f4f7; }
+  .callout { background: #fff8e1; border-left: 4px solid #f0ad4e; padding: 8px 12px; border-radius: 4px;
+             font-size: 12px; line-height: 1.5; margin: 4px 0; }
+  .callout.blue { background: #e8f4fd; border-left-color: #2e86c1; }
+  .callout.purple { background: #f3ecfa; border-left-color: #7b3fa0; }
+  .muted { color: #666; font-size: 11px; }
+  .kpi { display: flex; gap: 10px; margin: 5px 0; }
+  .kpi .box { flex: 1; background: #f0f4f7; border-radius: 6px; padding: 6px 10px; text-align: center; }
+  .kpi .box .b { font-size: 20px; font-weight: 700; color: #0f3b5e; }
+  .kpi .box .bl { font-size: 10px; color: #556; }
+  .flex-spacer { flex: 1 1 auto; min-height: 0; }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div>
+      <h1>GPR81 / HCAR1 可药性评估 — 项目总结</h1>
+      <div class="sub">Follow-up 交付：45 化合物排名 · 46 对口袋分析 · Boltz-2 交叉验证 · 湿实验 benchmark 计划</div>
+    </div>
+    <div class="attr">RIC-396 · 请求人 UHYG (Yang Huan)<br>分析师 QYJI · 2026-08-06 · 数据全链路审计 20/20 通过</div>
+  </header>
+
+  <div class="metrics">
+    <div class="metric"><div class="v">45</div><div class="l">化合物整体排名（39 论文 + 5 先导 + lactate）</div></div>
+    <div class="metric"><div class="v">46</div><div class="l">配体-受体口袋分析对（每对含结构图）</div></div>
+    <div class="metric"><div class="v">45/45</div><div class="l">Boltz-2 交叉验证完成（BioLib 云端）</div></div>
+    <div class="metric"><div class="v">20</div><div class="l">湿实验 benchmark 子集（待 assay）</div></div>
+    <div class="metric"><div class="v">3</div><div class="l">实验 cryo-EM 结构（8Z8A / 9KT9 / 8Z87）</div></div>
+    <div class="metric"><div class="v">c28</div><div class="l">综合最优 lead（22 nM，LLE 5.3）</div></div>
+  </div>
+
+  <main>
+    <!-- ============ Column 1 ============ -->
+    <div class="col1-stack">
+      <div class="card">
+        <h2>核心结论</h2>
+        <ul>
+          <li><span class="tag FACT">FACT</span><b>c28 为综合最优 lead</b>：22 nM，GPR109A 41×，GHSR 82×，LLE 5.3</li>
+          <li><span class="tag FACT">FACT</span>c30 最强（5 nM）但 GPR109A 选择性仅 7.4× — 推进前必须解决</li>
+          <li><span class="tag FACT">FACT</span>c5（0.74 nM）为部分激动剂（Emax 47%），宜作工具分子不作 lead</li>
+          <li><span class="tag OBS">OBS</span><b>两个计算层均不能排序效力</b>：Vina score–EC50 r = −0.114；Boltz-2 affinity prob–EC50 r = −0.044（均 ≈ 0）</li>
+          <li><span class="tag OBS">OBS</span>Boltz 将最强化合物排到最低：c30/c28/c26 → Boltz tier C；600 nM 的 c35 反而概率最高</li>
+          <li><span class="tag OBS">OBS</span>结构-活性规则：pyridone ≫ pyrimidinone（N3–Glu153 排斥，47× 效力悬崖，8/8 seeds 复现）</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>结合位点分歧（wet-lab 待裁定）</h2>
+        <div class="callout purple" style="margin-top:4px">
+          <span class="tag OBS">OBS</span>Boltz-2 预测 29/45 化合物结合<b>正位口袋</b>（39/45 接触 Arg71 羧酸锚点，
+          与 lactate 共享）<br>
+          <span class="tag OBS">OBS</span>Vina（8Z8A 实验结构）把大分子系列放在<b>TM5–TM6 胞外区</b>，距正位 12–14 Å；
+          仅 2/40 一致（c05, c22）<br>
+          <span class="tag FACT">FACT</span>参考酸（CHBA/3,5-DHBA）两个模型均给正位 — 与共晶一致，分歧只在大分子<br>
+          <span class="tag HYP">HYP</span>nM 级激动剂可能经 Arg71 锚点正位结合 — 用 <b>Arg71/Glu153 突变</b>或共晶实验裁定
+        </div>
+        <h3>Boltz 模型可用性（BioLib AlphaFold）</h3>
+        <ul>
+          <li>HCAR2 (Q8TDS4)：TM 核心 pLDDT 90.9，vs AlphaFold DB v6 RMSD 2.92 Å</li>
+          <li>HCAR3 (Q8TDS5)：TM 核心 pLDDT 75.2，vs AF-DB v6 RMSD 0.53 Å — 可作内部可复现替代</li>
+        </ul>
+        <div class="flex-spacer"></div>
+        <h3>方法与数据质量</h3>
+        <ul>
+          <li>数据源：Davidsson 2020 (BMCL) 论文 EC50/Emax/选择性转录 + ChEMBL 交叉验证；3 个实验 cryo-EM 结构（8Z8A/9KT9/8Z87）</li>
+          <li>Vina 协议：多构象 × 多 seeds（每对 best-of-seeds）；Boltz-2：BioLib 云端 45/45（affinity probability + confidence）</li>
+          <li>全链路审计 audit_data_integrity.py：20/20 通过（EC50/score/region/tier/Boltz 指标全量复核）</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ============ Column 2 ============ -->
+    <div class="card col2">
+      <h2>排名与先导（EC50 主排名 + Tier A/B/C）</h2>
+      <table>
+        <tr><th>ID</th><th>EC50 (nM)</th><th>Emax</th><th>GPR109A ×</th><th>GHSR ×</th><th>Tier</th><th>点评</th></tr>
+        <tr><td><b>c05</b></td><td>0.74</td><td>47%</td><td>—</td><td>—</td><td>B</td><td>部分激动剂（最强但 Emax 低）</td></tr>
+        <tr><td><b>c04</b></td><td>1.4</td><td>—</td><td>—</td><td>—</td><td>A</td><td>acyl-urea 强效（选择性未知）</td></tr>
+        <tr><td><b>c30</b></td><td>5.0</td><td>—</td><td>7.4</td><td>—</td><td>B</td><td>最强，选择性不足</td></tr>
+        <tr><td><b>c28</b></td><td>22</td><td>—</td><td>41</td><td>82</td><td><b>A</b></td><td><b>综合最优 lead（LLE 5.3）</b></td></tr>
+        <tr><td><b>c26</b></td><td>21</td><td>—</td><td>29</td><td>62</td><td>A</td><td>候选 lead</td></tr>
+        <tr><td><b>c38</b></td><td>54</td><td>—</td><td>10</td><td>500</td><td>B</td><td>amide 系列 + 顺式吗啉（sol 95 µM）</td></tr>
+        <tr><td><b>c29</b></td><td>75</td><td>—</td><td>25</td><td>667</td><td>B</td><td>GHSR 选择性高</td></tr>
+        <tr><td><b>c31</b></td><td>240</td><td>—</td><td>—</td><td>—</td><td>C</td><td>pyrimidinone 对照（vs c30 47× 差）</td></tr>
+      </table>
+      <p class="muted">排名依据：论文实验 hGPR81 EC50（ascending）；Tier A = EC50 ≤ 50 nM 且 Emax ≥ 80% 且双选择性 ≥ 25×/50×；
+      B = ≤ 100 nM 有缺陷；C = 其余。参考酸（CHBA/3,5-DHBA/3-OBA/lactate）无同量纲效力数据，单列。
+      × = 相对 hGPR81 的选择性倍数（fold）。— 论文未报。LLE = ligand lipophilicity efficiency。</p>
+
+      <h3>优化方向（结构-活性规则）</h3>
+      <ul>
+        <li><span class="tag FACT">FACT</span>保留约束型 pyridone 模板（Table 7）；开链 acyl-urea 丢失分子内氢键网络 → 效力崩塌（16–33 µM）</li>
+        <li><span class="tag MECH">MECH</span><b>选择性手柄</b>：Glu153(HCAR1) → Lys165(HCAR2) 电荷翻转 — 借 HCAR2 模型设计被 Lys165 排斥的向量</li>
+        <li><span class="tag FACT">FACT</span>保留 cis-2,6-二甲基吗啉立体化学（c38 54 nM / 500× GHSR / sol 95 µM vs trans c37 350 nM）</li>
+        <li><span class="tag OBS">OBS</span>设计上限：MW ≤ 550，clogP ≤ 4，LLE ≥ 5；每个类似物双反筛（GPR109A + GHS-R1a）</li>
+      </ul>
+    </div>
+
+    <!-- ============ Column 3 ============ -->
+    <div class="col3-stack">
+      <div class="card">
+        <h2>建议 — 湿实验 benchmark（20 化合物面板）</h2>
+        <div class="kpi">
+          <div class="box"><div class="b">9</div><div class="bl">先导</div></div>
+          <div class="box"><div class="b">2</div><div class="bl">部分激动剂探针</div></div>
+          <div class="box"><div class="b">3</div><div class="bl">机制对</div></div>
+          <div class="box"><div class="b">2</div><div class="bl">Boltz 对照</div></div>
+          <div class="box"><div class="b">4</div><div class="bl">参考酸</div></div>
+        </div>
+        <ul>
+          <li>含 Vina/Boltz <b>tier 分歧对</b>（c28: A/C、c35: C/A、c08: B/A）— 核心检验：哪一层有实验信号</li>
+          <li>全部化合物双反筛（GPR109A + GHS-R1a）；同时测 <b>Arg71/Glu153 突变株</b>裁定结合位点</li>
+          <li>校准指标：Spearman 相关 + tier 混淆矩阵 + 部分激动剂区间（Emax 47–70%）</li>
+          <li>清单：wetlab_benchmark_subset.csv（可直接给 assay 团队）</li>
+        </ul>
+        <h3>安全（机制性风险，临床前必查）</h3>
+        <div class="callout blue" style="margin-top:4px">
+          机制性<b>肿瘤/恶病质</b> + <b>肝纤维化</b>风险（HCAR1 通路）；缓解方向：调节部分激动区间 + 信号偏向（bias）谱；
+          临床前必须做致癌性与纤维化标志物。
+        </div>
+      </div>
+      <div class="card">
+        <h2>交付物</h2>
+        <table>
+          <tr><th>文件</th><th>内容</th></tr>
+          <tr><td>gpr81_followup_report.html</td><td>主报告：排名 + 46 对口袋分析（46 图内嵌）</td></tr>
+          <tr><td>gpr81_boltz_wetlab_report.html</td><td>三层报告：Vina × Boltz-2 × 湿实验计划（7 节）</td></tr>
+          <tr><td>gpr81_compound_scorecard.csv/.json</td><td>45 化合物排名（Tier 分层）</td></tr>
+          <tr><td>gpr81_pocket_analysis_pairs.csv/.json</td><td>46 对结合参数</td></tr>
+          <tr><td>gpr81_optimization_recommendations.md</td><td>优化建议（证据分级）</td></tr>
+          <tr><td>wetlab_benchmark_subset.csv</td><td>20 化合物 assay 面板</td></tr>
+          <tr><td>audit_data_integrity.py</td><td>全链路数据审计（20/20 通过）</td></tr>
+        </table>
+        <p class="muted">共享盘：/TDE_TV/shared_folder/QYJI/druggability/output/2026-08-05/followup_2026_08/（同事可访问）<br>
+        审计路径：/das/user/QYJI/druggability/data/gpr81_phase1/followup_2026_08/ · 详情见 RIC-396</p>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+</html>
