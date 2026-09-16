@@ -1,0 +1,16 @@
+{
+  "system": "OXTR_OXT_Gly",
+  "length_ns": 1.0,
+  "n_frames": 50,
+  "speed_ns_day": 285.7,
+  "rec_ca_rmsd_mean_A": 1.79,
+  "rec_ca_rmsd_std_A": 0.43,
+  "pep_bb_rmsd_mean_A": 1.24,
+  "pep_bb_rmsd_std_A": 0.37,
+  "pep_bb_rmsd_final_A": 1.49,
+  "tyr2_kink_dist_mean_A": 0.0,
+  "tyr2_kink_dist_final_A": 0.0,
+  "hbond_formed_fraction": 1.0,
+  "drift_mean_A": 68.42,
+  "drift_final_A": 68.55
+}

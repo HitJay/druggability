@@ -1,0 +1,10 @@
+{
+  "redock_protocol": "tight_box_14A",
+  "score_native_minimized": -7.92,
+  "redocked_top_score": -8.94,
+  "pose_1_centroid_dist_A": 0.54,
+  "pose_3_centroid_dist_A": 0.649,
+  "pose_4_centroid_dist_A": 0.409,
+  "qc_gate_passed": true,
+  "gate_threshold_A": 2.0
+}

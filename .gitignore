@@ -60,6 +60,8 @@ image copy.png
 *.pdbqt
 *.pdb
 *.cif
+*.dcd
+OXTR_assessment/fep_setup/*.xml
 
 # Generated documents (marp / reports)
 *.pptx

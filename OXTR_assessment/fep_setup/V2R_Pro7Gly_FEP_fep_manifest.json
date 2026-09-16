@@ -1,0 +1,85 @@
+{
+  "system": "V2R_Pro7Gly_FEP",
+  "n_alchemical_atoms": 9,
+  "alchemical_atoms": [
+    4444,
+    4445,
+    4446,
+    4447,
+    4448,
+    4449,
+    4450,
+    4451,
+    4452
+  ],
+  "lambda_schedule": [
+    {
+      "window": 0,
+      "lambda_electrostatics": 1.0,
+      "lambda_sterics": 1.0,
+      "state": "Native Pro7"
+    },
+    {
+      "window": 1,
+      "lambda_electrostatics": 0.8,
+      "lambda_sterics": 1.0,
+      "state": "Charge decoupling"
+    },
+    {
+      "window": 2,
+      "lambda_electrostatics": 0.6,
+      "lambda_sterics": 1.0,
+      "state": "Charge decoupling"
+    },
+    {
+      "window": 3,
+      "lambda_electrostatics": 0.4,
+      "lambda_sterics": 1.0,
+      "state": "Charge decoupling"
+    },
+    {
+      "window": 4,
+      "lambda_electrostatics": 0.2,
+      "lambda_sterics": 1.0,
+      "state": "Charge decoupling"
+    },
+    {
+      "window": 5,
+      "lambda_electrostatics": 0.0,
+      "lambda_sterics": 1.0,
+      "state": "Discharged Pro7"
+    },
+    {
+      "window": 6,
+      "lambda_electrostatics": 0.0,
+      "lambda_sterics": 0.8,
+      "state": "Steric softcore decoupling"
+    },
+    {
+      "window": 7,
+      "lambda_electrostatics": 0.0,
+      "lambda_sterics": 0.6,
+      "state": "Steric softcore decoupling"
+    },
+    {
+      "window": 8,
+      "lambda_electrostatics": 0.0,
+      "lambda_sterics": 0.4,
+      "state": "Steric softcore decoupling"
+    },
+    {
+      "window": 9,
+      "lambda_electrostatics": 0.0,
+      "lambda_sterics": 0.2,
+      "state": "Steric softcore decoupling"
+    },
+    {
+      "window": 10,
+      "lambda_electrostatics": 0.0,
+      "lambda_sterics": 0.0,
+      "state": "Decoupled (Gly7 dummy)"
+    }
+  ],
+  "protocol": "Hamiltonian Replica Exchange (HREX) / Multi-State Bennett Acceptance Ratio (MBAR)",
+  "recommended_sampling_per_window_ns": 5.0
+}

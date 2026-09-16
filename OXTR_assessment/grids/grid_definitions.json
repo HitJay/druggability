@@ -1,0 +1,54 @@
+{
+  "full_orthosteric": {
+    "center": [
+      141.7,
+      140.25,
+      175.26
+    ],
+    "size": [
+      23.71,
+      16.99,
+      24.2
+    ],
+    "description": "Encompasses entire 9-mer OXT binding groove from deep TM cavity to ECL3"
+  },
+  "core_subpocket": {
+    "center": [
+      139.79,
+      141.12,
+      173.4
+    ],
+    "size": [
+      19.5,
+      16.99,
+      20.64
+    ],
+    "description": "Cyclic core (Cys1-Cys6), Tyr2 crevice (TM7 kink contact), Ile3 hydrophobic pocket"
+  },
+  "vestibule_exit": {
+    "center": [
+      146.37,
+      138.11,
+      179.79
+    ],
+    "size": [
+      14.37,
+      11.83,
+      16.07
+    ],
+    "description": "Extracellular vestibule (Pro7-Leu8-Gly9), Lys8 lipid conjugation exit vector"
+  },
+  "retosiban_inactive": {
+    "center": [
+      138.27,
+      140.67,
+      171.11
+    ],
+    "size": [
+      15.48,
+      15.96,
+      19.64
+    ],
+    "description": "Retosiban antagonist binding site in 6TPK (aligned coordinates)"
+  }
+}
