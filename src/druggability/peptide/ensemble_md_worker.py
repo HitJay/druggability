@@ -170,7 +170,6 @@ def main():
     pep_indices = top.select("chainid 1 and not water and not (name NA or name CL)")
 
     if len(rec_indices) == 0 or len(pep_indices) == 0:
-        # Fallback to general solute selection
         chains = list(top.chains)
         solute_chains = [c for c in chains if not any(r.is_water for r in c.residues)]
         solute_chains.sort(key=lambda c: c.n_residues, reverse=True)
@@ -203,6 +202,116 @@ def main():
 
     mean_pep_rmsd = float(np.mean(pep_rmsd_angstrom))
     final_pep_rmsd = float(pep_rmsd_angstrom[-1])
+
+    # ── P2 Feature 1: Dynamic Hydrogen Bond Persistence Matrix ──
+    logger.info("Computing dynamic hydrogen bond persistence network...")
+    raw_hbonds = md.baker_hubbard(traj, freq=0.0, exclude_water=True)
+    inter_hbonds = {}
+    for h in raw_hbonds:
+        d, h_atom, a = h
+        d_res = top.atom(d).residue
+        a_res = top.atom(a).residue
+        # Check if one is in receptor and the other is in peptide
+        d_in_rec = top.atom(d).index in rec_indices
+        a_in_rec = top.atom(a).index in rec_indices
+        d_in_pep = top.atom(d).index in pep_indices
+        a_in_pep = top.atom(a).index in pep_indices
+
+        if (d_in_rec and a_in_pep) or (d_in_pep and a_in_rec):
+            donor_str = f"{d_res.name}{d_res.resSeq}@{top.atom(d).name}"
+            acceptor_str = f"{a_res.name}{a_res.resSeq}@{top.atom(a).name}"
+            pair_key = (donor_str, acceptor_str)
+            inter_hbonds[pair_key] = inter_hbonds.get(pair_key, 0) + 1
+
+    hbond_persistence_list = []
+    for (donor, acceptor), count in sorted(inter_hbonds.items(), key=lambda x: x[1], reverse=True):
+        pct = round((count / n_frames) * 100.0, 1)
+        if pct >= 50.0:
+            classification = "Strong / Persistent"
+        elif pct >= 20.0:
+            classification = "Moderate"
+        else:
+            classification = "Transient / Fluctuating"
+        hbond_persistence_list.append({
+            "donor": donor,
+            "acceptor": acceptor,
+            "frame_count": count,
+            "total_frames": n_frames,
+            "persistence_pct": pct,
+            "classification": classification,
+        })
+
+    # ── P2 Feature 2: Per-Residue Interaction Energy Decomposition ──
+    logger.info("Computing per-residue interaction energy decomposition...")
+    nb_force = next(f for f in system.getForces() if isinstance(f, mm.NonbondedForce))
+    q_list, sig_list, eps_list = [], [], []
+    for i in range(nb_force.getNumParticles()):
+        q, sig, eps = nb_force.getParticleParameters(i)
+        q_list.append(q.value_in_unit(unit.elementary_charge))
+        sig_list.append(sig.value_in_unit(unit.nanometers))
+        eps_list.append(eps.value_in_unit(unit.kilojoules_per_mole))
+
+    q_arr = np.array(q_list)
+    sig_arr = np.array(sig_list)
+    eps_arr = np.array(eps_list)
+
+    pep_res_groups = {}
+    for a_idx in pep_indices:
+        r = top.atom(a_idx).residue
+        r_key = (r.resSeq, r.name)
+        pep_res_groups.setdefault(r_key, []).append(a_idx)
+
+    ONE_4PI_EPS0 = 138.935456
+    KJ_TO_KCAL = 0.239005736
+
+    per_res_trajs = {k: [] for k in pep_res_groups}
+    for f_idx in range(n_frames):
+        box = traj.unitcell_lengths[f_idx]
+        frame_xyz = traj.xyz[f_idx]
+        for r_key, p_indices in pep_res_groups.items():
+            p_idx = np.array(p_indices)
+            p_pos = frame_xyz[p_idx]
+            r_pos = frame_xyz[rec_indices]
+
+            # Minimum image displacement for PBC
+            diff = p_pos[:, None, :] - r_pos[None, :, :]
+            diff -= np.round(diff / box) * box
+            dists = np.linalg.norm(diff, axis=-1)
+            mask = dists < 1.0  # 1.0 nm cutoff
+
+            q_prod = q_arr[p_idx, None] * q_arr[None, rec_indices]
+            e_coul = np.sum((ONE_4PI_EPS0 * q_prod / np.maximum(dists, 0.08)) * mask)
+
+            sig_comb = 0.5 * (sig_arr[p_idx, None] + sig_arr[None, rec_indices])
+            eps_comb = np.sqrt(eps_arr[p_idx, None] * eps_arr[None, rec_indices])
+            sr6 = (sig_comb / np.maximum(dists, 0.08)) ** 6
+            sr12 = sr6 ** 2
+            e_lj = np.sum((4.0 * eps_comb * (sr12 - sr6)) * mask)
+
+            tot_kcal = float((e_coul + e_lj) * KJ_TO_KCAL)
+            per_res_trajs[r_key].append(tot_kcal)
+
+    per_residue_decomposition = []
+    for (r_seq, r_name), e_vals in sorted(per_res_trajs.items(), key=lambda x: np.mean(x[1])):
+        m_e = round(float(np.mean(e_vals)), 2)
+        s_e = round(float(np.std(e_vals)), 2)
+        if m_e <= -25.0:
+            role = "Major Interaction Anchor"
+        elif m_e <= -10.0:
+            role = "Strong Contributor"
+        elif m_e <= -2.0:
+            role = "Moderate Contributor"
+        else:
+            role = "Solvent-Exposed / Weak"
+
+        per_residue_decomposition.append({
+            "res_label": f"{r_name}{r_seq}",
+            "res_seq": r_seq,
+            "res_name": r_name,
+            "mean_energy_kcal_mol": m_e,
+            "std_energy_kcal_mol": s_e,
+            "role": role,
+        })
 
     temp_complex_pdb = out_dir / "temp_solute_complex.pdb"
     temp_rec_pdb = out_dir / "temp_solute_rec.pdb"
@@ -249,23 +358,12 @@ def main():
     min_dg = round(float(np.min(delta_gs)), 2)
     max_dg = round(float(np.max(delta_gs)), 2)
 
-    # Clean up temp PDBs
     for p in [temp_complex_pdb, temp_rec_pdb, temp_pep_pdb]:
         if p.exists():
             p.unlink()
 
-    # Stable binder heuristic: RMSD < 2.5 A and favorable mean ΔG < -10 kcal/mol
     is_stable = bool(mean_pep_rmsd < 2.5 and mean_dg < -10.0)
-
     elapsed_total = round(time.time() - t_start, 2)
-    logger.info(
-        "Ensemble MM/GBSA done: <ΔG> = %.2f ± %.2f kcal/mol (Range: [%.2f, %.2f]), Peptide RMSD = %.2f A",
-        mean_dg,
-        std_dg,
-        min_dg,
-        max_dg,
-        mean_pep_rmsd,
-    )
 
     result_data = {
         "ok": True,
@@ -282,6 +380,8 @@ def main():
         "mean_pep_rmsd": round(mean_pep_rmsd, 2),
         "final_pep_rmsd": round(final_pep_rmsd, 2),
         "pep_rmsd_trajectory": [round(x, 2) for x in pep_rmsd_angstrom],
+        "per_residue_decomposition": per_residue_decomposition,
+        "hbond_persistence": hbond_persistence_list,
         "is_stable_binder": is_stable,
         "ns_per_day": round(ns_per_day, 1),
         "production_dcd": str(dcd_path),

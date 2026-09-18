@@ -35,6 +35,8 @@ from druggability.peptide import (  # noqa: F401
     scan_position_mutations,
     EnsembleMDResult,
     run_ensemble_mmgbsa,
+    ResidueDecompositionEntry,
+    HBondPersistenceEntry,
     ResidueSelectivityEntry,
     SelectivityAuditResult,
     audit_peptide_selectivity,

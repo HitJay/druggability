@@ -33,7 +33,12 @@ from .scan import (  # noqa: F401
     run_alanine_scanning,
     scan_position_mutations,
 )
-from .ensemble_md import EnsembleMDResult, run_ensemble_mmgbsa  # noqa: F401
+from .ensemble_md import (  # noqa: F401
+    EnsembleMDResult,
+    HBondPersistenceEntry,
+    ResidueDecompositionEntry,
+    run_ensemble_mmgbsa,
+)
 from .selectivity import (  # noqa: F401
     ResidueSelectivityEntry,
     SelectivityAuditResult,

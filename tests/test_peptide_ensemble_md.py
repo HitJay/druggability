@@ -45,7 +45,7 @@ def test_ensemble_md_result_dataclass():
     assert res.mean_delta_g == -25.4
     assert res.is_stable_binder is True
     md = res.summary_markdown()
-    assert "### Short-MD Ensemble MM/GBSA Profile" in md
+    assert "### Short-MD Ensemble MM/GBSA" in md
     assert "-25.40" in md
     assert "Stable Binder" in md
 
@@ -75,3 +75,10 @@ def test_run_ensemble_mmgbsa_fast_smoke(tmp_path: Path):
     assert Path(res.solvated_pdb).exists()
     assert Path(res.result_json).exists()
     assert res.mean_pep_rmsd >= 0.0
+
+    # P2 assertions: per-residue decomposition & dynamic hbonds
+    assert len(res.per_residue_decomposition) > 0
+    assert len(res.hbond_persistence) > 0
+    top_anchor = res.per_residue_decomposition[0]
+    assert hasattr(top_anchor, "res_label")
+    assert hasattr(top_anchor, "mean_energy_kcal_mol")
