@@ -19,8 +19,17 @@ from . import config as config  # noqa: F401  (stdlib-only, always import-safe)
 from . import tasks as tasks  # noqa: F401  (always import-safe)
 from . import descriptors as descriptors  # noqa: F401  (stdlib-only, always import-safe)
 from . import affinity as affinity  # noqa: F401  (stdlib-only, always import-safe)
+from . import scan as scan  # noqa: F401  (stdlib-only, always import-safe)
 from .tasks import PeptideTask, get_tasks, REGISTRY  # noqa: F401
 from .affinity import PeptideAffinityResult, ResidueHotspot, predict_peptide_affinity  # noqa: F401
+from .scan import (  # noqa: F401
+    AlaScanEntry,
+    AlaScanResult,
+    MutationCandidate,
+    PositionScanResult,
+    run_alanine_scanning,
+    scan_position_mutations,
+)
 
 # embed / heads / benchmark 依赖 torch / sklearn，做优雅降级
 try:
