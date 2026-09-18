@@ -161,11 +161,51 @@ def _setup_parser() -> argparse.ArgumentParser:
 
     # ── peptide ─────────────────────────────────────────────────────
     p_pep = sub.add_parser(
-        "peptide", help="肽性质预测平台（ESM-2 基座 + 轻量任务头）")
+        "peptide", help="多肽性质预测与结构药理学评估平台（PRODIGY亲和力、突变扫描、脂化审计、一键流水线）")
     p_pep.add_argument(
-        "action", choices=["download", "benchmark", "tasks", "download-weights", "report"],
-        help="download=下载数据集；benchmark=端到端评估；tasks=列出内置任务；"
-             "download-weights=下载 ESM-2 权重；report=端到端预测+自动报告",
+        "action", choices=[
+            "download", "benchmark", "tasks", "download-weights", "report",
+            "affinity", "scan", "lipidation", "selectivity", "pipeline",
+        ],
+        help="affinity=接触亲和力(PRODIGY); scan=突变热点/Ala扫描; lipidation=3D脂化出射向量探测; "
+             "selectivity=亚型对抗审计; pipeline=端到端一键评估; report=序列性质报告; benchmark=模型基准",
+    )
+    p_pep.add_argument(
+        "--complex", help="复合物 PDB 结构路径 (用于 affinity / scan / lipidation / pipeline)"
+    )
+    p_pep.add_argument(
+        "--target-complex", help="主靶点复合物 PDB 路径 (用于 selectivity)"
+    )
+    p_pep.add_argument(
+        "--counter-complex", help="反筛受体复合物 PDB 路径 (用于 selectivity)"
+    )
+    p_pep.add_argument(
+        "--pos", type=int, help="多肽残基序号 (用于 scan position 模式或 lipidation 审计)"
+    )
+    p_pep.add_argument(
+        "--mode", choices=["ala", "position"], default="ala",
+        help="scan 模式: ala (全序列丙氨酸扫描) 或 position (单点20种突变矩阵)",
+    )
+    p_pep.add_argument(
+        "--peptide-name", default=None, help="多肽候选标识 (如 OXT_Gly)"
+    )
+    p_pep.add_argument(
+        "--target-name", default="Primary_Target", help="主靶点名称 (如 OXTR)"
+    )
+    p_pep.add_argument(
+        "--counter-name", default="Counter_Screen", help="反筛受体名称 (如 V2R)"
+    )
+    p_pep.add_argument(
+        "--counter-screens", nargs="+", default=[],
+        help="反筛靶点配置 (NAME=PATH_TO_PDB)，如 V2R=v2r.pdb (用于 pipeline)",
+    )
+    p_pep.add_argument(
+        "--html", help="自包含 3Dmol.js HTML 报告输出路径"
+    )
+    p_pep.add_argument(
+        "--protraction-type", default="C18_diacid_gammaGlu",
+        choices=["C16_monoacid", "C18_diacid_gammaGlu", "C20_diacid_gammaGlu_2xOEG"],
+        help="长效化修饰类型 (用于 lipidation 审计或 pipeline)",
     )
     p_pep.add_argument(
         "--data-dir", "-d", default="data/peptide",
@@ -664,6 +704,93 @@ def _cmd_peptide(args: argparse.Namespace) -> None:
         from druggability.peptide import config as peptide_config
         path = peptide_config.ensure_ckpt(args.ckpt, peptide_config.DEFAULT_MODEL)
         print(f"ESM-2 权重就绪: {path}")
+        return
+
+    # ── 结构药理学与结合力评估动作 ──
+    if args.action == "affinity":
+        if not args.complex:
+            print("error: affinity requires --complex <pdb>")
+            return
+        from druggability.peptide.affinity import predict_peptide_affinity
+        res = predict_peptide_affinity(args.complex)
+        if args.json:
+            print(json.dumps(res.to_dict(), indent=2, ensure_ascii=False))
+        else:
+            print(res.summary_markdown())
+        return
+
+    if args.action == "scan":
+        if not args.complex:
+            print("error: scan requires --complex <pdb>")
+            return
+        from druggability.peptide.scan import run_alanine_scanning, scan_position_mutations
+        if args.mode == "ala":
+            s_res = run_alanine_scanning(args.complex)
+        else:
+            if args.pos is None:
+                print("error: position scan requires --pos <int>")
+                return
+            s_res = scan_position_mutations(args.complex, res_seq=args.pos)
+        if args.json:
+            print(json.dumps(s_res.to_dict(), indent=2, ensure_ascii=False))
+        else:
+            print(s_res.summary_markdown())
+        return
+
+    if args.action == "lipidation":
+        if not args.complex or args.pos is None:
+            print("error: lipidation requires --complex <pdb> and --pos <int>")
+            return
+        from druggability.peptide.chem_mod import audit_peptide_lipidation
+        l_res = audit_peptide_lipidation(args.complex, res_seq=args.pos, protraction_type=args.protraction_type, target_name=args.target_name)
+        if args.json:
+            print(json.dumps(l_res.to_dict(), indent=2, ensure_ascii=False))
+        else:
+            print(l_res.summary_markdown())
+        return
+
+    if args.action == "selectivity":
+        if not args.target_complex or not args.counter_complex:
+            print("error: selectivity requires --target-complex <pdb> and --counter-complex <pdb>")
+            return
+        from druggability.peptide.selectivity import audit_peptide_selectivity
+        sel_res = audit_peptide_selectivity(
+            target_complex_pdb=args.target_complex,
+            counter_complex_pdb=args.counter_complex,
+            target_name=args.target_name,
+            counter_name=args.counter_name,
+            peptide_name=args.peptide_name,
+            html_out=args.html,
+        )
+        if args.json:
+            print(json.dumps(sel_res.to_dict(), indent=2, ensure_ascii=False))
+        else:
+            print(sel_res.summary_markdown())
+        return
+
+    if args.action == "pipeline":
+        if not args.complex:
+            print("error: pipeline requires --complex <pdb>")
+            return
+        from druggability.peptide.pipeline import assess_peptide_candidate
+        counter_dict = {}
+        for c in args.counter_screens:
+            if "=" in c:
+                cn, cp = c.split("=", 1)
+                counter_dict[cn.strip()] = cp.strip()
+        pip_res = assess_peptide_candidate(
+            complex_pdb=args.complex,
+            peptide_name=args.peptide_name,
+            target_name=args.target_name,
+            counter_complexes=counter_dict,
+            lipidation_position=args.pos,
+            protraction_type=args.protraction_type,
+            out_dir=args.outdir,
+        )
+        if args.json:
+            print(json.dumps(pip_res.to_dict(), indent=2, ensure_ascii=False))
+        else:
+            print(pip_res.summary_markdown())
         return
 
     # benchmark
