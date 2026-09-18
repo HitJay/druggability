@@ -20,6 +20,7 @@ from pathlib import Path
 from typing import Any, Sequence
 
 from .affinity import PeptideAffinityResult, predict_peptide_affinity
+from .chem_mod import LipidationAuditResult, audit_peptide_lipidation
 from .ensemble_md import EnsembleMDResult, run_ensemble_mmgbsa
 from .scan import (
     AlaScanResult,
@@ -46,6 +47,7 @@ class CandidateAssessmentReport:
     position_scans: dict[int, PositionScanResult] = field(default_factory=dict)
     selectivity_audits: dict[str, SelectivityAuditResult] = field(default_factory=dict)
     ensemble_md: EnsembleMDResult | None = None
+    lipidation_audit: LipidationAuditResult | None = None
     verdict: str = ""
     recommendations: list[str] = field(default_factory=list)
     html_report_path: str = ""
@@ -63,6 +65,7 @@ class CandidateAssessmentReport:
             name: audit.to_dict() for name, audit in self.selectivity_audits.items()
         }
         data["ensemble_md"] = self.ensemble_md.to_dict() if self.ensemble_md else None
+        data["lipidation_audit"] = self.lipidation_audit.to_dict() if self.lipidation_audit else None
         return data
 
     def summary_markdown(self) -> str:
@@ -146,6 +149,8 @@ def assess_peptide_candidate(
     scan_positions: Sequence[int] | None = None,
     run_ensemble_md: bool = False,
     ensemble_md_length_ns: float = 1.0,
+    lipidation_position: int | None = None,
+    protraction_type: str = "C18_diacid_gammaGlu",
     gpu_id: int = 0,
     out_dir: str | Path | None = None,
     html_report: bool = True,
@@ -266,9 +271,28 @@ def assess_peptide_candidate(
             peptide_chain=affinity_res.peptide_chain,
         )
 
-    # ── Stage 5: 综合药理学裁决与工程建议生成 ──
+    # ── Stage 5: 3D 脂化修饰与长效化出射向量审计 (Layer 3b, 可选) ──
     recommendations = []
     verdict = "🟢 Highly Potent & Favorable"
+
+    lipidation_res = None
+    if lipidation_position is not None:
+        logger.info("Executing Layer 3b: Lipidation 3D clearance audit at position %d...", lipidation_position)
+        lipidation_res = audit_peptide_lipidation(
+            complex_pdb=pdb_path,
+            res_seq=lipidation_position,
+            protraction_type=protraction_type,
+            target_name=target_name,
+            receptor_chain=affinity_res.receptor_chain,
+            peptide_chain=affinity_res.peptide_chain,
+        )
+        if lipidation_res.ok:
+            recommendations.append(
+                f"Lipidation clearance audit at `{lipidation_res.site_label}`: {lipidation_res.clearance_status}. "
+                f"Potency loss risk: {lipidation_res.potency_loss_risk}. Expected half-life: {lipidation_res.hsa_binding_profile.get('typical_half_life', 'N/A')}."
+            )
+
+    # ── Stage 6: 综合药理学裁决与工程建议生成 ──
 
     if affinity_res.delta_g < -9.5:
         recommendations.append(
@@ -332,6 +356,7 @@ def assess_peptide_candidate(
         position_scans=pos_scans,
         selectivity_audits=selectivity_audits,
         ensemble_md=ensemble_res,
+        lipidation_audit=lipidation_res,
         verdict=verdict,
         recommendations=recommendations,
         html_report_path=html_path_str,

@@ -25,6 +25,7 @@
 | 多肽全序列丙氨酸与单点突变扫描 | `druggability.peptide.scan` (`scripts/run_peptide_scan.py`) | ✅ 生产可用 | In silico Ala-scan 自动标定 Critical Hotspot vs Tolerant Exit Vector，20种氨基酸替换矩阵 | 用于多肽先导化合物 SAR 评估与酰化/偶联修饰位点筛选 |
 | GPU 加速短轨迹动力学系综 MM/GBSA | `druggability.peptide.ensemble_md` (`scripts/run_peptide_ensemble_md.py`) | ✅ 生产可用 | 显式水 NPT 生产采样 (>2,100 ns/day on A100) + 隐式 GBn2 系综均值 <ΔG> ± σ 与多肽 RMSD 轨迹 | 彻底消除静态单构象未松弛真空腔伪影 |
 | 多肽亚型对抗选择性审计与 3D 交付 | `druggability.peptide.selectivity` (`scripts/run_peptide_selectivity.py`) | ✅ 生产可用 | 双受体并行对抗审计、ΔΔG_selectivity、差异接触指纹、位阻冲突警告、独立 3Dmol.js HTML | 用于评估中分子多肽交叉反应性与脱靶安全性风险 |
+| 非天然氨基酸 (ncAA) 与长效化脂化冲突审计 | `druggability.peptide.chem_mod` (`scripts/run_peptide_lipidation_audit.py`) | ✅ 生产可用 | 3D 生长锥 (15 Å, 60°) 探测受体 ECL 环碰撞、活性损耗风险 (<3x vs >100x)、C16/C18/C20 白蛋白半衰期预估 | 深度适配诺和诺德特色中分子长效化多肽化学修饰工程 |
 
 ## 典型工作流
 

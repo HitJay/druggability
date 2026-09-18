@@ -77,6 +77,19 @@ def parse_args():
         help="Residue sequence numbers to run 20-amino-acid deep mutational matrix",
     )
     parser.add_argument(
+        "--lipidation-pos",
+        type=int,
+        default=None,
+        help="Position to audit 3D conical clearance for fatty-acid lipidation",
+    )
+    parser.add_argument(
+        "--protraction",
+        type=str,
+        default="C18_diacid_gammaGlu",
+        choices=["C16_monoacid", "C18_diacid_gammaGlu", "C20_diacid_gammaGlu_2xOEG"],
+        help="Protraction type for lipidation audit (default: C18_diacid_gammaGlu)",
+    )
+    parser.add_argument(
         "--no-ala-scan",
         action="store_true",
         help="Skip full alanine scanning stage",
@@ -144,6 +157,8 @@ def main():
         scan_positions=args.scan_positions,
         run_ensemble_md=args.ensemble_md,
         ensemble_md_length_ns=args.md_length,
+        lipidation_position=args.lipidation_pos,
+        protraction_type=args.protraction,
         gpu_id=args.gpu,
         out_dir=out_dir,
     )

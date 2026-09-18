@@ -42,6 +42,11 @@ from druggability.peptide import (  # noqa: F401
     audit_peptide_selectivity,
     CandidateAssessmentReport,
     assess_peptide_candidate,
+    chem_mod,
+    LipidationAuditResult,
+    NcAAScanResult,
+    audit_peptide_lipidation,
+    get_ncaa_info,
 )
 from .tasks import PeptideTask, get_tasks, REGISTRY  # noqa: F401
 
