@@ -22,6 +22,7 @@ from . import affinity as affinity  # noqa: F401  (stdlib-only, always import-sa
 from . import scan as scan  # noqa: F401  (stdlib-only, always import-safe)
 from . import ensemble_md as ensemble_md  # noqa: F401  (always import-safe)
 from . import selectivity as selectivity  # noqa: F401  (always import-safe)
+from . import pipeline as pipeline  # noqa: F401  (always import-safe)
 from .tasks import PeptideTask, get_tasks, REGISTRY  # noqa: F401
 from .affinity import PeptideAffinityResult, ResidueHotspot, predict_peptide_affinity  # noqa: F401
 from .scan import (  # noqa: F401
@@ -37,6 +38,10 @@ from .selectivity import (  # noqa: F401
     ResidueSelectivityEntry,
     SelectivityAuditResult,
     audit_peptide_selectivity,
+)
+from .pipeline import (  # noqa: F401
+    CandidateAssessmentReport,
+    assess_peptide_candidate,
 )
 
 # embed / heads / benchmark 依赖 torch / sklearn，做优雅降级

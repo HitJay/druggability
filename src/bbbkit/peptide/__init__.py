@@ -23,6 +23,7 @@ from druggability.peptide import (  # noqa: F401
     scan,
     ensemble_md,
     selectivity,
+    pipeline,
     PeptideAffinityResult,
     ResidueHotspot,
     predict_peptide_affinity,
@@ -37,6 +38,8 @@ from druggability.peptide import (  # noqa: F401
     ResidueSelectivityEntry,
     SelectivityAuditResult,
     audit_peptide_selectivity,
+    CandidateAssessmentReport,
+    assess_peptide_candidate,
 )
 from .tasks import PeptideTask, get_tasks, REGISTRY  # noqa: F401
 

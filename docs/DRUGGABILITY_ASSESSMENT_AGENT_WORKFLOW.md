@@ -87,6 +87,15 @@ Do not rely on a single scoring function. Screen across four orthogonal tiers:
 | **Tier 3: Explicit MD** | OpenMM (Amber14SB + TIP3P + 0.15M NaCl) on A100 | Backbone RMSD, H-bond persistence | **The Decisive Proof**: 1.0–5.0 ns production at 310 K, 1 bar. Cognate complexes remain stable (RMSD $< 1.5\text{ \AA}$, H-bond 100%); clashing subtypes show steric pushout. |
 | **Tier 4: Alchemical FEP** | `openmmtools.alchemy` | Dual-topology $\Delta\Delta G$ | Formulate thermodynamic cycle: soft-core vdW ($\alpha=0.5, \beta=12$) + electrostatic decoupling over 11 $\lambda$ windows ($1.0 \to 0.0$). Export serialized XMLs. |
 
+### End-to-End Peptide Assessment Pipeline (`druggability.peptide.pipeline`)
+
+For therapeutic peptide candidates and engineered analogs, invoke the unified orchestrator `assess_peptide_candidate()` (`scripts/run_peptide_assessment_pipeline.py`):
+1. **Layer 1: Contact Affinity & Hotspots**: Evaluates PRODIGY-based 6-class intermolecular contact networks, $\Delta G$, and $K_d$ in milliseconds;
+2. **Layer 2: Alanine Scanning & Mutational Matrix**: Automatically delineates Critical Hotspots ($\Delta\Delta G \ge 1.5\text{ kcal/mol}$) vs Permissive Exit Vectors ($\Delta\Delta G \le 0.5\text{ kcal/mol}$);
+3. **Layer 4: Dual-Receptor Selectivity Audit**: Cross-checks against homologous counter-screens (e.g. V2R), flags steric constriction and outputs differential contact fingerprints;
+4. **Layer 3: Optional A100 GPU Ensemble MD**: Executes 1.0–2.0 ns explicit TIP3P dynamics + Amber14SB/GBn2 snapshot evaluation (>2,100 ns/day);
+5. **Standalone Delivery**: Produces single-file self-contained 3Dmol.js interactive HTML dossier.
+
 ### Stage 4: Automated Delivery & Governance
 
 1. **Interactive 3D HTML Deliverable**:

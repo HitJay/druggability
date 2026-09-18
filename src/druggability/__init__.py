@@ -30,6 +30,7 @@ from .drugclip import (
     screen_drugclip,
     write_pocket_lmdb,
 )
+from .peptide.pipeline import CandidateAssessmentReport, assess_peptide_candidate
 
 # 暴露核心子模块
 from . import peptide
