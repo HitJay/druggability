@@ -21,6 +21,7 @@ from . import descriptors as descriptors  # noqa: F401  (stdlib-only, always imp
 from druggability.peptide import (  # noqa: F401
     affinity,
     scan,
+    ensemble_md,
     PeptideAffinityResult,
     ResidueHotspot,
     predict_peptide_affinity,
@@ -30,6 +31,8 @@ from druggability.peptide import (  # noqa: F401
     PositionScanResult,
     run_alanine_scanning,
     scan_position_mutations,
+    EnsembleMDResult,
+    run_ensemble_mmgbsa,
 )
 from .tasks import PeptideTask, get_tasks, REGISTRY  # noqa: F401
 
