@@ -72,6 +72,9 @@ This document formalizes the production-grade **Autonomous Agent Workflow for Ta
      * **Full Orthosteric Box**: Covers the global cavity from deep TM crevice to ECL loops.
      * **Core Sub-Pocket**: Deep cavity accommodating the aromatic activation trigger (e.g., Tyr2, Retosiban overlap).
      * **Vestibule Exit Box**: Extracellular entrance harboring subtype-specific residues and solvent-exposed exit vectors.
+3. **Ultra-Large Screening Tool: DrugCLIP (NeurIPS 2023)**:
+   - For novel target pockets without rich known chemical seeds, invoke `bbbkit.druggability.drugclip.screen_drugclip()` (`scripts/run_drugclip_screen.py`).
+   - Rapidly filters 2.94M commercial/virtual compound library down to Top-K (e.g. 500) candidates via Pocket-Ligand contrastive representation space in seconds, before feeding into tight-box Vina docking and Boltz-2 cross-validation.
 
 ### Stage 3: Multi-Tier In Silico Assessment & Dynamics
 

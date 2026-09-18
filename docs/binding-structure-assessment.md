@@ -20,7 +20,7 @@
 | Scaffold 聚类 / 结果去冗余 | `scripts/scaffold_clustering.py`（RDKit Murcko/Bemis-Murcko） | ✅ 生产可用 | scaffold-level 分组 CSV/JSON | — |
 | PPI/adaptor 蛋白小分子筛选全链路 | GRB10 项目：ChEMBL种子库→Vina→Boltz-2→AI pose review v3→细胞可穿透性打分→liability筛查 | ✅ 全流程跑通，产出可讨论候选（hymecromone） | 多层筛选评分表 + 候选评审报告 | 目前是"计算假设"，未经生化/细胞实验确认，报告中明确标注不可称为"hit" |
 | 相对结合自由能 (RBFE/FEP) | OpenFE + OpenMM，GRB14 项目 | ⚠️ 仅 smoke test，非生产 | 网络规划 + 极简参数下的执行验证（3 lambda窗/0.001ns，无科学意义） | complex leg 未产出正式结果；需要真实 lambda/replica/ns 设置重跑 |
-| Embedding 检索式虚拟筛选 (DrugCLIP) | 官方 repo + Uni-Core，独立 venv | ⚠️ 环境/CLI 验证通过，未产出生产筛选结果 | import/CLI smoke test 通过；checkpoint+数据下载完成 | 尚未接入实际化合物库产出候选 |
+| Embedding 检索式虚拟筛选 (DrugCLIP) | NeurIPS 2023 官方模型 + 统一 Agent Wrapper (`bbbkit.druggability.drugclip`) | ✅ 生产可用 | 毫秒级海量库筛选 Top-K SMILES/Scores，自动 PDB 口袋截取 + GPU 推理 | 检索得分为对比学习余弦相似度，建议作为海量初筛（Ultra-large screening），下游必须串联 Vina 对接与 Boltz-2 验证 |
 
 ## 典型工作流
 
@@ -96,7 +96,7 @@ GHSR 反向激动剂筛选实例：7931 个 ChEMBL 化合物 × 2 个受体构�
 | GHSR 反向激动剂虚拟筛选 | `output/2026-07-10/ghsr_inverse_agonist_docking/` | AutoDock Vina 大规模筛选 + Boltz-2 交叉验证 + 阳性对照 |
 | GRB10 PPI 小分子筛选 | `output/2026-06-29/grb10_inhibition_cmpd_research/`、`output/2026-06-30/grb10_*` | Vina 对接 + Boltz-2 + AI pose 评审 v3 + 细胞可穿透性 + liability 筛查 全链路 |
 | GRB14 FEP 方法探针 | `output/2026-07-01/grb14_openfe_fep_probe/` | OpenFE/OpenMM RBFE smoke test（仅方法验证，非生产结果） |
-| DrugCLIP 环境安装 | `output/2026-07-02/drugclip_install_probe/` | Embedding 检索式虚拟筛选工具链（环境就绪，待接入生产筛选） |
+| DrugCLIP 环境安装与 Agent 工具链 | `output/2026-07-02/drugclip_install_probe/`, `src/bbbkit/druggability/drugclip.py` | Embedding 检索式虚拟筛选工具链（已封装为生产级 Agent Tool，通过全流程测试） |
 
 ## 下一步建议
 

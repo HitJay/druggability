@@ -15,6 +15,13 @@ from .tractability import query_tractability, TractabilityResult, resolve_target
 from .ligandability import assess_ligandability, LigandabilityResult
 from .pocket import detect_pockets, PocketAnalysisResult
 from .batch import assess_druggability_batch, BatchResult
+from .drugclip import (
+    DrugCLIPHit,
+    DrugCLIPResult,
+    extract_pocket_from_pdb,
+    screen_drugclip,
+    write_pocket_lmdb,
+)
 
 logger = logging.getLogger(__name__)
 

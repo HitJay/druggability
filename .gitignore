@@ -48,6 +48,7 @@ skills-lock.json
 
 # Environment (包含敏感 API key，绝对不提交）
 .env
+uv.lock
 .env.local
 .env.*.local
 !.env.example
