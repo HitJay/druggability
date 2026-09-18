@@ -20,7 +20,11 @@
 | Scaffold 聚类 / 结果去冗余 | `scripts/scaffold_clustering.py`（RDKit Murcko/Bemis-Murcko） | ✅ 生产可用 | scaffold-level 分组 CSV/JSON | — |
 | PPI/adaptor 蛋白小分子筛选全链路 | GRB10 项目：ChEMBL种子库→Vina→Boltz-2→AI pose review v3→细胞可穿透性打分→liability筛查 | ✅ 全流程跑通，产出可讨论候选（hymecromone） | 多层筛选评分表 + 候选评审报告 | 目前是"计算假设"，未经生化/细胞实验确认，报告中明确标注不可称为"hit" |
 | 相对结合自由能 (RBFE/FEP) | OpenFE + OpenMM，GRB14 项目 | ⚠️ 仅 smoke test，非生产 | 网络规划 + 极简参数下的执行验证（3 lambda窗/0.001ns，无科学意义） | complex leg 未产出正式结果；需要真实 lambda/replica/ns 设置重跑 |
-| Embedding 检索式虚拟筛选 (DrugCLIP) | NeurIPS 2023 官方模型 + 统一 Agent Wrapper (`bbbkit.druggability.drugclip`) | ✅ 生产可用 | 毫秒级海量库筛选 Top-K SMILES/Scores，自动 PDB 口袋截取 + GPU 推理 | 检索得分为对比学习余弦相似度，建议作为海量初筛（Ultra-large screening），下游必须串联 Vina 对接与 Boltz-2 验证 |
+| Embedding 检索式虚拟筛选 (DrugCLIP) | NeurIPS 2023 官方模型 + 统一 Agent Wrapper (`druggability.drugclip`) | ✅ 生产可用 | 毫秒级海量库筛选 Top-K SMILES/Scores，自动 PDB 口袋截取 + GPU 推理 | 检索得分为对比学习余弦相似度，建议作为海量初筛（Ultra-large screening），下游必须串联 Vina 对接与 Boltz-2 验证 |
+| 多肽接触亲和力与热点残基分析 (PRODIGY) | `druggability.peptide.affinity` (`scripts/run_peptide_affinity.py`) | ✅ 生产可用 | 结合能 ΔG (kcal/mol)、离解常数 Kd、6类原子接触网络(ICs)、多肽热点残基(Hotspots)贡献谱 | 纯 Python 毫秒级计算，解决 Boltz-2 iptm 无法预测结合强度的缺陷 |
+| 多肽全序列丙氨酸与单点突变扫描 | `druggability.peptide.scan` (`scripts/run_peptide_scan.py`) | ✅ 生产可用 | In silico Ala-scan 自动标定 Critical Hotspot vs Tolerant Exit Vector，20种氨基酸替换矩阵 | 用于多肽先导化合物 SAR 评估与酰化/偶联修饰位点筛选 |
+| GPU 加速短轨迹动力学系综 MM/GBSA | `druggability.peptide.ensemble_md` (`scripts/run_peptide_ensemble_md.py`) | ✅ 生产可用 | 显式水 NPT 生产采样 (>2,100 ns/day on A100) + 隐式 GBn2 系综均值 <ΔG> ± σ 与多肽 RMSD 轨迹 | 彻底消除静态单构象未松弛真空腔伪影 |
+| 多肽亚型对抗选择性审计与 3D 交付 | `druggability.peptide.selectivity` (`scripts/run_peptide_selectivity.py`) | ✅ 生产可用 | 双受体并行对抗审计、ΔΔG_selectivity、差异接触指纹、位阻冲突警告、独立 3Dmol.js HTML | 用于评估中分子多肽交叉反应性与脱靶安全性风险 |
 
 ## 典型工作流
 
