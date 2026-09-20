@@ -7,9 +7,9 @@ Left: OXTR : OXT_Gly (Stable, locked in deep activation pocket, RMSD ~0.35 Å)
 Right: V2R : OXT_Gly (Severe 3.51 Å TM1 clash -> Steric Ejection & Unbinding -> 70.8 Å Drift)
 
 Layout enhancements:
+- Zero line overlaps: All floating annotations have dedicated background pills (bbox) that cut through lines.
 - Zero text collisions: Status HUD cards in top-right corners; bottom timeline clean.
 - Zero bounding box overflow: TM1 helix box perfectly wraps its text.
-- Zero peptide/label occlusion: Ejection path is completely clear of text.
 - 100% strictly uniform 1800x900 resolution across all 42 frames.
 """
 
@@ -70,10 +70,11 @@ for idx, t in enumerate(time_points):
     ax1.add_patch(tm1_oxtr)
     ax1.text(-8.25, 4.0, "TM1\nOPEN\nTHROAT", ha='center', va='center', fontsize=7.5, fontweight='bold', color='#93C5FD', linespacing=1.2)
 
-    # ECL3 Lys306 (Flexible, swings outward)
+    # ECL3 Lys306 (Flexible, swings outward, clean pill bbox)
     ax1.annotate('', xy=(8.5, 5.5), xytext=(6.8, 3.2),
-                 arrowprops=dict(arrowstyle="->", color='#34D399', lw=2.2, connectionstyle="arc3,rad=-0.2"))
-    ax1.text(7.6, 2.5, "ECL3 Lys306\n(Swings Out)", ha='center', va='top', fontsize=7.5, fontweight='bold', color='#34D399', linespacing=1.2)
+                 arrowprops=dict(arrowstyle="->", color='#34D399', lw=2.2, connectionstyle="arc3,rad=-0.2"), zorder=3)
+    ax1.text(8.0, 2.3, "ECL3 Lys306\n(Swings Out)", ha='center', va='center', fontsize=7.2, fontweight='bold', color='#34D399', linespacing=1.2,
+             bbox=dict(boxstyle="round,pad=0.2", facecolor="#0F172A", edgecolor="#34D399", lw=0.8), zorder=5)
 
     # Deep Pocket Annotation (Clean at bottom)
     ax1.text(0, -8.3, "Deep Pocket Core (Gln119, Ala318, Phe291)", ha='center', fontsize=7.5, color='#64748B')
@@ -99,10 +100,11 @@ for idx, t in enumerate(time_points):
     ax1.scatter([o_gly7[0]], [o_gly7[1]], s=220, color='#10B981', edgecolors='#FFFFFF', lw=1.5, zorder=5)
     ax1.text(o_gly7[0], o_gly7[1], "Gly7", ha='center', va='center', fontsize=7.5, fontweight='bold', color='#FFFFFF', zorder=6)
 
-    # Exit vector arrow
+    # Exit vector arrow & clean pill
     ax1.annotate('', xy=(7.0, 7.0), xytext=(o_leu8[0], o_leu8[1]),
-                 arrowprops=dict(arrowstyle="->", color='#38BDF8', lw=2.2, linestyle='--'))
-    ax1.text(5.8, 7.5, "C18 Exit Vector\n(To Solvent)", fontsize=7.5, fontweight='bold', color='#38BDF8', linespacing=1.2)
+                 arrowprops=dict(arrowstyle="->", color='#38BDF8', lw=2.2, linestyle='--'), zorder=3)
+    ax1.text(6.0, 7.8, "C18 Exit Vector\n(To Solvent)", ha='center', va='center', fontsize=7.2, fontweight='bold', color='#38BDF8', linespacing=1.2,
+             bbox=dict(boxstyle="round,pad=0.2", facecolor="#0F172A", edgecolor="#38BDF8", lw=0.8), zorder=5)
 
     # HUD Status Card (Top-Right, Isolated from bottom text)
     hud_oxtr = patches.FancyBboxPatch((4.2, 7.2), 6.2, 2.2, boxstyle="round,pad=0.2",
@@ -138,10 +140,11 @@ for idx, t in enumerate(time_points):
     ax2.add_patch(tm1_v2r)
     ax2.text(-4.95, 4.0, "TM1\nINWARD\n-3.51 Å", ha='center', va='center', fontsize=7.5, fontweight='black', color='#FCA5A5', linespacing=1.2)
 
-    # Inward shift indicator
-    ax2.annotate('', xy=(-3.5, 7.0), xytext=(-6.8, 7.0),
-                 arrowprops=dict(arrowstyle="->", color='#EF4444', lw=2.0))
-    ax2.text(-5.15, 7.6, "Narrowed", fontsize=7, fontweight='bold', color='#EF4444', ha='center')
+    # Inward shift indicator (COMPLETELY PREVENT LINE OVERLAPPING WITH BBOX PILL)
+    ax2.annotate('', xy=(-3.6, 6.7), xytext=(-6.8, 6.7),
+                 arrowprops=dict(arrowstyle="->", color='#EF4444', lw=1.8), zorder=3)
+    ax2.text(-5.2, 7.7, "Narrowed Throat", fontsize=6.8, fontweight='bold', color='#FCA5A5', ha='center', va='center',
+             bbox=dict(boxstyle="round,pad=0.22", facecolor="#1E1E2E", edgecolor="#EF4444", lw=0.8), zorder=5)
 
     # Leu302 Clamp (rigid, at x = 4.2)
     leu302 = patches.FancyBboxPatch((3.5, 0.8), 2.4, 4.4, boxstyle="round,pad=0.2",
@@ -227,7 +230,7 @@ for idx, t in enumerate(time_points):
     ax2.text(-10.2, -9.3, f"A100 MD: {min(1.0, t):.2f} ns / 1.00 ns  |  System: 61,034 atoms in TIP3P", 
              fontsize=8, fontweight='bold', color='#94A3B8')
 
-    ax2.set_title("B. Vasopressin V2R (Counter-Screen)\nTM1 Constricted • Severe Clashing Leads to Ejection", 
+    ax2.set_title("B. Vasopressin V2R (Counter-Screen)\nTM1 Constriction • Severe Clashing Leads to Ejection", 
                   fontsize=11, fontweight='bold', color='#F87171', pad=8)
 
     # Supertitle (Positioned safely at y=0.95, clean margin to titles below)
