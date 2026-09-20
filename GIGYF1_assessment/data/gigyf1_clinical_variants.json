@@ -1,0 +1,52 @@
+{
+  "target": "GIGYF1",
+  "uniprot_id": "O75420",
+  "gene_symbol": "GIGYF1",
+  "ensembl_id": "ENSG00000146830",
+  "disease": "Type 2 Diabetes Mellitus (T2D)",
+  "phenotype_evidence": "Loss-of-function (LoF) and deleterious missense variants strongly predispose to T2D with OR = 5.91 (95% CI: 3.86-9.04, P = 2.0e-16; UK Biobank 450k WES; Zhao et al., Nature 2021, PMID: 34163065). Wild-type GIGYF1 acts as an endogenous metabolic shield against T2D.",
+  "gyf_domain_coordinates": {
+    "start": 474,
+    "end": 522,
+    "length": 49,
+    "sequence": "ARKWFYKDPQGEIQGPFTTQEMAEWFQAGYFSMSLLVKRGCDEGFQPLG",
+    "core_aromatic_triad": ["TRP477", "PHE478", "TYR479", "TRP494", "PHE495", "TYR498", "PHE499"]
+  },
+  "clinical_variants": [
+    {
+      "mutation": "p.Ser474Ter",
+      "hgvsp": "p.Ser474*",
+      "type": "Nonsense / Protein Truncating (LoF)",
+      "domain_location": "GYF domain N-terminal boundary",
+      "clinical_impact": "Completely abolishes the entire GYF domain, destroying GRB10/14 binding and leading to ~6-fold increase in T2D risk."
+    },
+    {
+      "mutation": "p.Trp494Arg",
+      "hgvsp": "p.Trp494Arg",
+      "type": "Deleterious Missense",
+      "domain_location": "GYF aromatic binding cleft (Trp494)",
+      "clinical_impact": "Substitutes essential aromatic stacking residue Trp494 with basic Arg, severely disrupting hydrophobic polyproline (PPII) recognition."
+    },
+    {
+      "mutation": "p.Tyr498Cys",
+      "hgvsp": "p.Tyr498Cys",
+      "type": "Deleterious Missense",
+      "domain_location": "GYF aromatic binding cleft (Tyr498)",
+      "clinical_impact": "Ablates key tyrosine phenolic hydroxyl / aromatic face that packs against GRB10 proline residues."
+    },
+    {
+      "mutation": "p.Phe495Leu",
+      "hgvsp": "p.Phe495Leu",
+      "type": "Missense",
+      "domain_location": "GYF hydrophobic core",
+      "clinical_impact": "Reduces structural stability of the central α-helix in the GYF fold."
+    },
+    {
+      "mutation": "p.Gly485Arg",
+      "hgvsp": "p.Gly485Arg",
+      "type": "Missense",
+      "domain_location": "GYF loop region",
+      "clinical_impact": "Introduces bulky positive charge into the flexible turn region, altering entrance accessibility."
+    }
+  ]
+}
