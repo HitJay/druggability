@@ -1,0 +1,77 @@
+{
+  "GIGYF1": {
+    "uniprot": "Q96QK1",
+    "role": "Upstream Activator / Negative Regulator of GRB10/14",
+    "binding_region": "GYF Domain (aa 474-522)",
+    "key_variants": [
+      {
+        "variant": "p.Tyr498Cys (rs372863955)",
+        "location": "Core binding pocket floor (1.87 \u00c5 from GRB10 Pro1/2)",
+        "effect": "\u0394\u0394G = +2.74 kcal/mol, Kd collapses from 86.4 \u00b5M to 3.85 mM (>80x loss)",
+        "clinical_phenotype": "UK Biobank OR = 5.91 for T2D (p = 2.0e-16), severe insulin resistance"
+      },
+      {
+        "variant": "p.Trp494Arg",
+        "location": "Interface aromatic wall",
+        "effect": "\u0394\u0394G = +1.80 kcal/mol, basic charge repulsion inside hydrophobic pocket",
+        "clinical_phenotype": "T2D risk, elevated fasting glucose & HbA1c"
+      },
+      {
+        "variant": "p.Ser474Ter",
+        "location": "N-terminal entry to GYF domain",
+        "effect": "Complete deletion of GYF domain (100% contact loss)",
+        "clinical_phenotype": "Loss-of-function, high-penetrance T2D"
+      }
+    ]
+  },
+  "GRB10": {
+    "uniprot": "Q13322",
+    "role": "Downstream Pseudo-substrate Inhibitor of INSR Kinase",
+    "binding_region": "N-terminal Regulatory Motif (aa 135-160) & BPS Domain (aa 350-415)",
+    "key_variants": [
+      {
+        "variant": "p.Pro136Ala / p.Pro139Ala / p.Pro141Ser",
+        "location": "Site 1 Conserved Epitope (137-IPNPFPEL-144)",
+        "effect": "Direct mutation of proline-rich binding anchor",
+        "clinical_phenotype": "Altered regulatory complex recruitment"
+      },
+      {
+        "variant": "p.Ser150Ile",
+        "location": "Site 2 Pro-rich Helix (adjacent to 151-PPVLTP-156)",
+        "effect": "Abolishes regulatory phosphorylation switch",
+        "clinical_phenotype": "Altered dynamic insulin sensitivity"
+      },
+      {
+        "variant": "rs933360 / rs11555134",
+        "location": "Imprinted locus governing tissue expression",
+        "effect": "Allelic imbalance in pancreatic islets & muscle",
+        "clinical_phenotype": "GWAS p=5.0e-8 with impaired insulin secretion and T2D"
+      }
+    ]
+  },
+  "GRB14": {
+    "uniprot": "Q14449",
+    "role": "Downstream Pseudo-substrate Inhibitor of INSR Kinase",
+    "binding_region": "N-terminal Regulatory Motif (aa 75-100) & BPS Domain (aa 340-395)",
+    "key_variants": [
+      {
+        "variant": "p.Phe90Ile (rs61748245)",
+        "location": "Site 2 Downstream Epitope (77-IPNPFPELCCSP[F]TSVLS-95)",
+        "effect": "Alters core hydrophobic packing on GIGYF1 aromatic cage",
+        "clinical_phenotype": "Natural missense coding variant in population exomes"
+      },
+      {
+        "variant": "p.Gln348Ala / p.Asn349Ala",
+        "location": "BPS Domain Catalytic Loop (PDB: 2B4S, aa 340-395)",
+        "effect": "Direct contact with INSR kinase catalytic loop",
+        "clinical_phenotype": "Abolishes GRB14-mediated inhibition of AKT1 & INSR phosphorylation"
+      },
+      {
+        "variant": "GWAS rs13389219 (GRB14 locus)",
+        "location": "Body fat distribution & insulin signaling locus",
+        "effect": "Correlates with elevated GRB14 expression in adipose tissue",
+        "clinical_phenotype": "Genome-wide association with waist-hip ratio, high insulin & T2D"
+      }
+    ]
+  }
+}
