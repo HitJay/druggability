@@ -9,7 +9,7 @@ style: |
   section {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: 19px;
-    padding: 32px 48px;
+    padding: 30px 48px;
     color: #1E293B;
   }
   section.title {
@@ -29,21 +29,21 @@ style: |
     font-weight: 400;
   }
   h1 { font-size: 30px; color: #001965; }
-  h2 { font-size: 24px; color: #001965; border-bottom: 2px solid #00857C; padding-bottom: 4px; margin-top: 0; margin-bottom: 12px; }
-  h3 { font-size: 18px; color: #0A2540; margin-bottom: 4px; }
-  table { font-size: 14px; border-collapse: collapse; width: 100%; margin-top: 8px; }
-  th { background: #001965; color: #FFFFFF; padding: 5px 8px; font-weight: 600; text-align: left; }
+  h2 { font-size: 23px; color: #001965; border-bottom: 2px solid #00857C; padding-bottom: 3px; margin-top: 0; margin-bottom: 10px; }
+  h3 { font-size: 17px; color: #0A2540; margin-bottom: 3px; }
+  table { font-size: 13.5px; border-collapse: collapse; width: 100%; margin-top: 6px; }
+  th { background: #001965; color: #FFFFFF; padding: 4px 8px; font-weight: 600; text-align: left; }
   td { padding: 4px 8px; border: 1px solid #CBD5E1; }
   tr:nth-child(even) { background: #F8FAFC; }
-  .grid-2 { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 18px; margin-top: 10px; }
-  .grid-4 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px; }
-  .card { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 6px; padding: 10px 14px; border-left: 4px solid #001965; }
-  .card-teal { background: #F0FDFA; border: 1px solid #CCFBF1; border-radius: 6px; padding: 10px 14px; border-left: 4px solid #00857C; }
-  .card-red { background: #FEF2F2; border: 1px solid #FEE2E2; border-radius: 6px; padding: 10px 14px; border-left: 4px solid #D9383A; }
-  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 13px; font-weight: bold; }
+  .grid-2 { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 16px; margin-top: 8px; }
+  .grid-4 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
+  .card { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 6px; padding: 8px 12px; border-left: 4px solid #001965; }
+  .card-teal { background: #F0FDFA; border: 1px solid #CCFBF1; border-radius: 6px; padding: 8px 12px; border-left: 4px solid #00857C; }
+  .card-red { background: #FEF2F2; border: 1px solid #FEE2E2; border-radius: 6px; padding: 8px 12px; border-left: 4px solid #D9383A; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; }
   .badge-go { background: #DCFCE7; color: #166534; }
   .badge-tier1 { background: #E0E7FF; color: #3730A3; }
-  .small { font-size: 13.5px; line-height: 1.35; }
+  .small { font-size: 13px; line-height: 1.32; }
   img { max-width: 100%; height: auto !important; object-fit: contain; }
 ---
 
@@ -56,15 +56,16 @@ style: |
 
 **Novo Nordisk Research Insights China (RIC)**
 **Project Code: RIC-407 · Target Class: Individual Target · Requester: JXDL (Jiang)**
-Computational Biophysics Platform · September 2026
+Computational Biophysics & Virtual Screening Platform · September 2026
 
 ---
 
 ## 1. Executive Summary & Project Decision
 
-<div style="margin-bottom: 8px;">
-  <span class="badge badge-go">RECOMMENDATION: GO</span>
+<div style="margin-bottom: 6px;">
+  <span class="badge badge-go">RECOMMENDATION: GO (亮绿灯推进)</span>
   <span class="badge badge-tier1" style="margin-left: 8px;">TIER 1 HIGH TRACTABILITY</span>
+  <span class="badge badge-go" style="margin-left: 8px; background:#FEF3C7; color:#92400E;">ACTION: LAUNCH IN SILICO SCREENING</span>
 </div>
 
 <div class="grid-4">
@@ -93,11 +94,11 @@ Computational Biophysics Platform · September 2026
     </p>
   </div>
   <div class="card">
-    <h3 style="color: #001965; margin-top: 0;">INSR Disinhibition</h3>
+    <h3 style="color: #001965; margin-top: 0;">INSR Disinhibition & VS Path</h3>
     <p class="small" style="margin: 0;">
       Locked complex physically disinhibits insulin receptor (PDB: 2B4S).<br>
       • Glue locking creates massive steric clash with INSR kinase domain<br>
-      • Prevents GRB10/14 BPS domain from entering catalytic cleft
+      • In-house <b>DrugCLIP + OpenMM</b> platform ready for 1M+ virtual screen
     </p>
   </div>
 </div>
@@ -219,20 +220,26 @@ Computational Biophysics Platform · September 2026
 
 ---
 
-## 6. Recommended 4-Tier Wet-Lab Screening Cascade
+## 6. End-to-End Campaign Strategy: In Silico Prioritization to Wet-Lab Proof
+
+<div class="card-teal small" style="margin-bottom: 8px; border-left: 4px solid #00857C;">
+  <b style="color: #00857C; font-size: 14.5px;">RECOMMENDED IMMEDIATE STEP: Tier 0 In Silico Virtual Screening (DrugCLIP + Ternary Docking + MM/GBSA)</b><br>
+  • <b>Platform Capability</b>: Screen 1M+ commercial/diverse small molecules against the 445 Å³ composite pocket within 48h using A100 GPU.<br>
+  • <b>Impact on Wet-Lab</b>: Triage down to Top 300 diverse hits, boosting wet-lab hit rate from ~0.05% (blind screen) to <b>>5–10%</b>, saving months and cost.
+</div>
 
 <div class="grid-4 small">
   <div class="card" style="border-top: 3px solid #001965; border-left: 1px solid #E2E8F0;">
-    <h3 style="color: #001965; font-size: 16px; margin-top: 0;">Tier 1: HTS Screen</h3>
+    <h3 style="color: #001965; font-size: 15px; margin-top: 0;">Tier 1: Focused HTS</h3>
     <p style="margin: 0;">
       • Format: TR-FRET / AlphaScreen<br>
+      • Input: Top 300 in silico hits<br>
       • Constructs: GYF-biotin + GRB10-GST<br>
-      • Library: 100k+ diverse small molecules<br>
       • Gate: <b>>3.0x signal boost</b> at 10 µM
     </p>
   </div>
   <div class="card-teal" style="border-top: 3px solid #00857C; border-left: 1px solid #E2E8F0;">
-    <h3 style="color: #00857C; font-size: 16px; margin-top: 0;">Tier 2: Biophysics</h3>
+    <h3 style="color: #00857C; font-size: 15px; margin-top: 0;">Tier 2: Biophysics</h3>
     <p style="margin: 0;">
       • Format: SPR (Biacore) or BLI<br>
       • Metrics: <i>k</i><sub>on</sub>, <i>k</i><sub>off</sub>, cooperativity α<br>
@@ -241,7 +248,7 @@ Computational Biophysics Platform · September 2026
     </p>
   </div>
   <div class="card" style="border-top: 3px solid #0A2540; border-left: 1px solid #E2E8F0;">
-    <h3 style="color: #0A2540; font-size: 16px; margin-top: 0;">Tier 3: Cell Efficacy</h3>
+    <h3 style="color: #0A2540; font-size: 15px; margin-top: 0;">Tier 3: Cell Efficacy</h3>
     <p style="margin: 0;">
       • Model: Primary Hepatocytes / HepG2<br>
       • Readout: AlphaLISA / Western<br>
@@ -250,7 +257,7 @@ Computational Biophysics Platform · September 2026
     </p>
   </div>
   <div class="card-red" style="border-top: 3px solid #D9383A; border-left: 1px solid #E2E8F0;">
-    <h3 style="color: #D9383A; font-size: 16px; margin-top: 0;">Tier 4: In Vivo Proof</h3>
+    <h3 style="color: #D9383A; font-size: 15px; margin-top: 0;">Tier 4: In Vivo Proof</h3>
     <p style="margin: 0;">
       • Model: DIO or <i>db/db</i> mice<br>
       • Endpoints: OGTT, fasting glucose, HOMA-IR<br>
@@ -259,8 +266,6 @@ Computational Biophysics Platform · September 2026
   </div>
 </div>
 
-<div class="card-teal small" style="margin-top: 10px; padding: 6px 12px;">
-  <b>Shared Deliverable Path & Jira Tracker</b>:<br>
-  • Interactive 3D HTML: <code>R:\DT\TDE_TV\shared_folder\QYJI\druggability\GIGYF1_assessment\reports\GIGYF1_GRB10_Molecular_Glue_Feasibility_Report.html</code><br>
-  • Jira Tracker: <b>RIC-407</b> (Individual Target · Requester: JXDL)
+<div class="card small" style="margin-top: 8px; padding: 5px 10px; font-size: 12px;">
+  <b>Shared Deliverables</b>: <code>R:\DT\TDE_TV\shared_folder\QYJI\druggability\GIGYF1_assessment\reports\GIGYF1_GRB10_Molecular_Glue_Feasibility_Report.html</code> | <b>Jira</b>: <b>RIC-407</b>
 </div>
