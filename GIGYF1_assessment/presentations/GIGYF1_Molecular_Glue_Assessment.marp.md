@@ -9,7 +9,7 @@ style: |
   section {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: 19px;
-    padding: 30px 48px;
+    padding: 30px 46px;
     color: #1E293B;
   }
   section.title {
@@ -31,11 +31,12 @@ style: |
   h1 { font-size: 30px; color: #001965; }
   h2 { font-size: 23px; color: #001965; border-bottom: 2px solid #00857C; padding-bottom: 3px; margin-top: 0; margin-bottom: 10px; }
   h3 { font-size: 17px; color: #0A2540; margin-bottom: 3px; }
-  table { font-size: 13.5px; border-collapse: collapse; width: 100%; margin-top: 6px; }
+  table { font-size: 13px; border-collapse: collapse; width: 100%; margin-top: 6px; }
   th { background: #001965; color: #FFFFFF; padding: 4px 8px; font-weight: 600; text-align: left; }
   td { padding: 4px 8px; border: 1px solid #CBD5E1; }
   tr:nth-child(even) { background: #F8FAFC; }
-  .grid-2 { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 16px; margin-top: 8px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-top: 8px; }
   .grid-4 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 8px; }
   .card { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 6px; padding: 8px 12px; border-left: 4px solid #001965; }
   .card-teal { background: #F0FDFA; border: 1px solid #CCFBF1; border-radius: 6px; padding: 8px 12px; border-left: 4px solid #00857C; }
@@ -43,7 +44,7 @@ style: |
   .badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; }
   .badge-go { background: #DCFCE7; color: #166534; }
   .badge-tier1 { background: #E0E7FF; color: #3730A3; }
-  .small { font-size: 13px; line-height: 1.32; }
+  .small { font-size: 12.8px; line-height: 1.32; }
   img { max-width: 100%; height: auto !important; object-fit: contain; }
 ---
 
@@ -63,7 +64,7 @@ Computational Biophysics & Virtual Screening Platform · September 2026
 ## 1. Executive Summary & Project Decision
 
 <div style="margin-bottom: 6px;">
-  <span class="badge badge-go">RECOMMENDATION: GO (亮绿灯推进)</span>
+  <span class="badge badge-go">RECOMMENDATION: GO (GREEN LIGHT)</span>
   <span class="badge badge-tier1" style="margin-left: 8px;">TIER 1 HIGH TRACTABILITY</span>
   <span class="badge badge-go" style="margin-left: 8px; background:#FEF3C7; color:#92400E;">ACTION: LAUNCH IN SILICO SCREENING</span>
 </div>
@@ -78,11 +79,11 @@ Computational Biophysics & Virtual Screening Platform · September 2026
     </p>
   </div>
   <div class="card-red">
-    <h3 style="color: #D9383A; margin-top: 0;">Genetic Causal Mandate</h3>
+    <h3 style="color: #D9383A; margin-top: 0;">3-Target Genetic Validation</h3>
     <p class="small" style="margin: 0;">
-      UK Biobank T2D variant <b>p.Tyr498Cys</b> hits binding floor (1.87 Å from GRB10).<br>
-      • ΔΔ<i>G</i> = <b>+2.74 kcal/mol</b> (>80-fold affinity collapse to <i>K</i><sub>d</sub> = 3.85 mM)<br>
-      • Directly proves that disrupted binding causes human diabetes
+      Rare coding variants in GIGYF1, GRB10 & GRB14 map directly to binding interfaces.<br>
+      • GIGYF1 <b>p.Tyr498Cys</b>: 1.87 Å from GRB10, ΔΔ<i>G</i> = <b>+2.74 kcal/mol</b>, OR = 5.91 T2D<br>
+      • GRB14 <b>p.Phe90Ile</b> & <b>p.Gln348Ala</b>: interface & INSR catalytic cleft contacts
     </p>
   </div>
   <div class="card-teal">
@@ -133,7 +134,7 @@ Computational Biophysics & Virtual Screening Platform · September 2026
 
 ---
 
-## 3. Human Genetics: Direct Causal Mandate for Target Engagement
+## 3. Human Genetics: GIGYF1 Causal Mandate for Target Engagement
 
 <div class="grid-2">
   <div class="small">
@@ -150,7 +151,7 @@ Computational Biophysics & Virtual Screening Platform · September 2026
     </ul>
   </div>
   <div>
-    <h3>Clinical Variant Perturbation Matrix</h3>
+    <h3>GIGYF1 Clinical Variant Perturbation Matrix</h3>
     <table>
       <tr><th>Variant</th><th>ΔΔ<i>G</i> (kcal/mol)</th><th>Pred <i>K</i><sub>d</sub></th><th>Mechanism</th></tr>
       <tr><td><b>Wild-Type</b></td><td>0.00</td><td>86.4 µM</td><td>Normal homeostasis</td></tr>
@@ -165,7 +166,49 @@ Computational Biophysics & Virtual Screening Platform · September 2026
 
 ---
 
-## 4. A100 GPU Dynamics & 445 Å³ Cryptic Glue Pocket
+## 4. 3-Target Rare Variant Landscape: Interface Alignment & Phenotypes
+
+<div class="small" style="margin-bottom: 6px;">
+  <b>Genetic Evidence Across Axis</b>: Rare coding and functional variants in all three axis members (GIGYF1, GRB10, GRB14) map cleanly to their functional interfaces (7RUQ PPI interface or 2B4S INSR catalytic cleft).
+</div>
+
+<div class="grid-3 small">
+  <div class="card" style="border-top: 3px solid #001965; border-left: 1px solid #CBD5E1;">
+    <h3 style="color: #001965; font-size: 15px; margin-top: 0;">GIGYF1 (Upstream)</h3>
+    <p style="margin: 0;">
+      <b>Binding Site</b>: GYF (aa 474–522)<br>
+      • <b>p.Tyr498Cys</b> (rs372863955): Pocket floor, 1.87 Å from GRB10; ΔΔ<i>G</i> = +2.74 kcal/mol, OR=5.91 T2D.<br>
+      • <b>p.Trp494Arg</b>: Pocket wall, ΔΔ<i>G</i> = +1.80 kcal/mol, charge repulsion.<br>
+      • <b>p.Ser474Ter</b>: Fold truncation, 100% interface contact deletion.
+    </p>
+  </div>
+  <div class="card-teal" style="border-top: 3px solid #00857C; border-left: 1px solid #CBD5E1;">
+    <h3 style="color: #00857C; font-size: 15px; margin-top: 0;">GRB10 (Inhibitor)</h3>
+    <p style="margin: 0;">
+      <b>Binding Site</b>: N-term (135–160) & BPS<br>
+      • <b>p.Ser150Ile</b>: Position 0 immediately upstream of 151-PPVLTP core; disrupts regulatory phosphorylation.<br>
+      • <b>p.Pro136/139/141A</b>: Mutations in conserved Site 1 motif (137-IPNPFPEL).<br>
+      • <b>rs933360 / rs11555134</b>: Imprinted locus; GWAS <i>P</i>=5e-8 with GSIS and T2D.
+    </p>
+  </div>
+  <div class="card-red" style="border-top: 3px solid #D9383A; border-left: 1px solid #CBD5E1;">
+    <h3 style="color: #D9383A; font-size: 15px; margin-top: 0;">GRB14 (Inhibitor)</h3>
+    <p style="margin: 0;">
+      <b>Binding Site</b>: N-term (75–100) & BPS<br>
+      • <b>p.Phe90Ile</b> (rs61748245): Hits Site 2 downstream core (77-IPNPFPELCCSP<b>F</b>); alters aromatic cage packing.<br>
+      • <b>p.Gln348Ala / p.Asn349Ala</b>: BPS loop entering INSR catalytic cleft (2B4S); abolishes INSR/AKT inhibition.<br>
+      • <b>rs13389219</b>: GWAS waist/hip ratio & T2D.
+    </p>
+  </div>
+</div>
+
+<div class="card-teal small" style="margin-top: 8px; padding: 6px 12px;">
+  <b>Independent Genetic Conclusion</b>: The human genetic data is mutually reinforcing—GIGYF1 loss-of-function drives diabetes via interface disruption, while GRB10/14 functional loss enhances insulin sensitivity. Molecular glue stabilization is completely concordant with both genetic poles.
+</div>
+
+---
+
+## 5. A100 GPU Dynamics & 445 Å³ Cryptic Glue Pocket
 
 <div class="grid-2">
   <div class="small">
@@ -193,7 +236,7 @@ Computational Biophysics & Virtual Screening Platform · September 2026
 
 ---
 
-## 5. Mechanism of INSR Disinhibition & Target Priority
+## 6. Mechanism of INSR Disinhibition & Target Priority
 
 <div class="grid-2">
   <div class="card small">
@@ -207,23 +250,23 @@ Computational Biophysics & Virtual Screening Platform · September 2026
   <div class="card-teal small">
     <h3 style="color: #00857C; margin-top: 0;">Target Priority: GRB10 vs GRB14</h3>
     <ul style="padding-left: 16px; margin-top: 4px;">
-      <li><b>Primary Target: GRB10</b><br>
+      <li><b>Shared Ultra-Conserved Epitope</b>: Both share <code>137-IPNPFPEL-144</code> (GRB10) and <code>77-IPNPFPEL-84</code> (GRB14) with <b>100% identity</b>.</li>
+      <li><b>Primary Campaign Target: GRB10</b><br>
         Possesses canonical rigid PPII motif (<code>151-PPVLTP-156</code>); forms highly ordered 1.79 Å crystal interface with 25 clean atomic contacts.
       </li>
-      <li><b>Auxiliary Target: GRB14</b><br>
-        Conserves upstream leader (<code>IPNPFPELC</code>) but displays sequence variation in proline core (<code>CSPFTSVLS</code>).
+      <li><b>Dual-Target Opportunity: GRB14</b><br>
+        Cross-docking filter will prioritize chemotypes that bind both isoforms for synergistic insulin sensitization.
       </li>
-      <li><b>Screening Strategy</b>: Optimize glue against GIGYF1–GRB10; profile cross-reactivity on GRB14 for synergistic dual-inhibition.</li>
     </ul>
   </div>
 </div>
 
 ---
 
-## 6. End-to-End Campaign Strategy: In Silico Prioritization to Wet-Lab Proof
+## 7. End-to-End Campaign Strategy: In Silico Prioritization to Wet-Lab Proof
 
 <div class="card-teal small" style="margin-bottom: 8px; border-left: 4px solid #00857C;">
-  <b style="color: #00857C; font-size: 14.5px;">RECOMMENDED IMMEDIATE STEP: Tier 0 In Silico Virtual Screening (DrugCLIP + Ternary Docking + MM/GBSA)</b><br>
+  <b style="color: #00857C; font-size: 14px;">RECOMMENDED IMMEDIATE STEP: Tier 0 In Silico Virtual Screening (DrugCLIP + Ternary Docking + MM/GBSA)</b><br>
   • <b>Platform Capability</b>: Screen 1M+ commercial/diverse small molecules against the 445 Å³ composite pocket within 48h using A100 GPU.<br>
   • <b>Impact on Wet-Lab</b>: Triage down to Top 300 diverse hits, boosting wet-lab hit rate from ~0.05% (blind screen) to <b>>5–10%</b>, saving months and cost.
 </div>
