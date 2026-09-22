@@ -138,83 +138,88 @@ ax_a.set_ylim(1.1, 8.2)
 ax_a.axis("off")
 
 # ----------------------------------------------------------------------
-# Panel B: Ternary Co-Occupancy & Steric Exclusion
+# Panel B: Ternary Co-Occupancy & Steric Exclusion (ENLARGED HIGH-LEGIBILITY FONTS)
 # ----------------------------------------------------------------------
 ax_b = fig.add_subplot(gs[0, 1], facecolor=NN_BG)
 ax_b.set_title("B. Ternary Co-Occupancy (Lactate+Agonist 1) vs AZ1 Steric Clash", 
-               fontsize=12, fontweight="bold", color=NN_NAVY, pad=10, loc="left")
+               fontsize=13.5, fontweight="bold", color=NN_NAVY, pad=10, loc="left")
 
 # Left box: Lactate + Agonist 1
-box_left = patches.FancyBboxPatch((0.6, 1.0), 3.9, 5.4, boxstyle="round,pad=0.08", facecolor="#FFFFFF", edgecolor="#16A34A", lw=1.3)
+box_left = patches.FancyBboxPatch((0.5, 0.7), 4.1, 5.7, boxstyle="round,pad=0.08", facecolor="#FFFFFF", edgecolor="#16A34A", lw=1.5)
 ax_b.add_patch(box_left)
-ax_b.text(2.55, 6.05, "Lactate + Agonist 1 (ago-PAM)\n[Co-Occupancy Allowed]", ha="center", fontsize=8.5, fontweight="bold", color="#15803D")
+ax_b.text(2.55, 6.05, "Lactate + Agonist 1 (ago-PAM)\n[Co-Occupancy Allowed]", ha="center", va="top", fontsize=11.5, fontweight="bold", color="#15803D", linespacing=1.2)
 
-ax_b.scatter([1.7], [4.5], s=220, color="#16A34A", edgecolors=NN_NAVY, lw=1.3, zorder=5)
-ax_b.text(1.7, 3.85, "Lactate\n(Ortho)", ha="center", fontsize=8, fontweight="bold", color="#15803D")
+ax_b.scatter([1.6], [4.4], s=350, color="#16A34A", edgecolors=NN_NAVY, lw=1.5, zorder=5)
+ax_b.text(1.6, 3.75, "Lactate\n(Ortho)", ha="center", va="top", fontsize=10.5, fontweight="bold", color="#15803D")
 
-ax_b.scatter([3.4], [4.8], s=240, color=NN_AMBER, edgecolors=NN_NAVY, lw=1.3, zorder=5)
-ax_b.text(3.4, 4.05, "Agonist 1\n(Allo)", ha="center", fontsize=8, fontweight="bold", color="#B45309")
+ax_b.scatter([3.5], [4.7], s=380, color=NN_AMBER, edgecolors=NN_NAVY, lw=1.5, zorder=5)
+ax_b.text(3.5, 4.05, "Agonist 1\n(Allo)", ha="center", va="top", fontsize=10.5, fontweight="bold", color="#B45309")
 
-ax_b.annotate("", xy=(3.2, 4.8), xytext=(1.9, 4.5),
-              arrowprops=dict(arrowstyle="<->", color="#16A34A", lw=1.8, mutation_scale=9))
-ax_b.text(2.55, 5.1, "d_min = 7.71 Å\n(Clean Gap)", ha="center", fontsize=7.5, fontweight="bold", color="#16A34A")
+ax_b.annotate("", xy=(3.3, 4.7), xytext=(1.8, 4.4),
+              arrowprops=dict(arrowstyle="<->", color="#16A34A", lw=2.2, mutation_scale=12))
+ax_b.text(2.55, 5.15, "d_min = 7.71 Å\n(Clean Gap)", ha="center", va="bottom", fontsize=10.0, fontweight="bold", color="#16A34A")
 
-ax_b.text(2.55, 1.8, "• Zero Steric Clash\n• Independent Pockets\n• Synergistic Activation", 
-          ha="center", fontsize=7.5, color="#15803D", bbox=dict(boxstyle="round,pad=0.25", facecolor="#DCFCE7", edgecolor="#86EFAC"))
+ax_b.text(2.55, 1.45, "• Zero Steric Clash · Both Sites Filled\n• Synergistic Functional Potentiation", 
+          ha="center", va="bottom", fontsize=9.8, fontweight="bold", color="#15803D",
+          bbox=dict(boxstyle="round,pad=0.35", facecolor="#DCFCE7", edgecolor="#86EFAC", lw=1.0))
 
 # Right box: AZ1 + Agonist 1
-box_right = patches.FancyBboxPatch((5.1, 1.0), 4.1, 5.4, boxstyle="round,pad=0.08", facecolor="#FFFFFF", edgecolor=NN_CORAL, lw=1.3)
+box_right = patches.FancyBboxPatch((5.0, 0.7), 4.1, 5.7, boxstyle="round,pad=0.08", facecolor="#FFFFFF", edgecolor=NN_CORAL, lw=1.5)
 ax_b.add_patch(box_right)
-ax_b.text(7.15, 6.05, "AZ1 (Ortho) + Agonist 1 (Allo)\n[Steric Exclusion]", ha="center", fontsize=8.5, fontweight="bold", color=NN_CORAL)
+ax_b.text(7.05, 6.05, "AZ1 (Ortho) + Agonist 1 (Allo)\n[Steric Exclusion]", ha="center", va="top", fontsize=11.5, fontweight="bold", color=NN_CORAL, linespacing=1.2)
 
-ax_b.scatter([6.3], [4.4], s=260, color="#2563EB", edgecolors=NN_NAVY, lw=1.3, zorder=5)
-ax_b.text(6.1, 3.75, "AZ1\n(MW 603)", ha="center", fontsize=8, fontweight="bold", color="#1D4ED8")
+ax_b.scatter([6.1], [4.3], s=400, color="#2563EB", edgecolors=NN_NAVY, lw=1.5, zorder=5)
+ax_b.text(6.1, 3.65, "AZ1\n(MW 603)", ha="center", va="top", fontsize=10.5, fontweight="bold", color="#1D4ED8")
 
-ax_b.scatter([7.8], [4.8], s=240, color=NN_AMBER, edgecolors=NN_NAVY, lw=1.3, zorder=5)
-ax_b.text(8.0, 4.05, "Agonist 1\n(MW 446)", ha="center", fontsize=8, fontweight="bold", color="#B45309")
+ax_b.scatter([8.0], [4.7], s=380, color=NN_AMBER, edgecolors=NN_NAVY, lw=1.5, zorder=5)
+ax_b.text(8.0, 4.05, "Agonist 1\n(MW 446)", ha="center", va="top", fontsize=10.5, fontweight="bold", color="#B45309")
 
-ax_b.annotate("", xy=(7.6, 4.7), xytext=(6.5, 4.5),
-              arrowprops=dict(arrowstyle="<->", color=NN_CORAL, lw=1.8, mutation_scale=9))
-ax_b.text(7.1, 5.1, "d_min = 2.60 Å\n(Steric Clash!)", ha="center", fontsize=7.5, fontweight="bold", color=NN_CORAL)
+ax_b.annotate("", xy=(7.8, 4.6), xytext=(6.3, 4.4),
+              arrowprops=dict(arrowstyle="<->", color=NN_CORAL, lw=2.2, mutation_scale=12))
+ax_b.text(7.05, 5.15, "d_min = 2.60 Å\n(Steric Collision!)", ha="center", va="bottom", fontsize=10.0, fontweight="bold", color=NN_CORAL)
 
-ax_b.text(7.15, 1.8, "• Severe Steric Collision\n• Vestibule Exclusion\n• Mutual Displacement", 
-          ha="center", fontsize=7.5, color=NN_CORAL, bbox=dict(boxstyle="round,pad=0.25", facecolor="#FEE2E2", edgecolor="#FCA5A5"))
+ax_b.text(7.05, 1.45, "• Severe Extracellular Vestibule Clash\n• Mutual Competitive Displacement", 
+          ha="center", va="bottom", fontsize=9.8, fontweight="bold", color="#B91C1C",
+          bbox=dict(boxstyle="round,pad=0.35", facecolor="#FEE2E2", edgecolor="#FCA5A5", lw=1.0))
 
 ax_b.set_xlim(0, 9.6)
-ax_b.set_ylim(0.5, 6.8)
+ax_b.set_ylim(0.4, 6.8)
 ax_b.axis("off")
 
 # ----------------------------------------------------------------------
-# Panel C: HCAR1 vs HCAR2 Selectivity (Triple-Lysine Positive Wall)
+# Panel C: HCAR1 vs HCAR2 Selectivity (ENLARGED HIGH-LEGIBILITY FONTS)
 # ----------------------------------------------------------------------
 ax_c = fig.add_subplot(gs[1, 0], facecolor=NN_BG)
-ax_c.set_title("C. HCAR1 vs HCAR2 Selectivity: Anti-Flushing Charge-Flip Mechanism", 
-               fontsize=12, fontweight="bold", color=NN_NAVY, pad=10, loc="left")
+ax_c.set_title("C. HCAR1 vs HCAR2: Anti-Flushing Selectivity Mechanism", 
+               fontsize=13.0, fontweight="bold", color=NN_NAVY, pad=10, loc="left")
 
-box_h1 = patches.FancyBboxPatch((0.5, 3.5), 4.0, 2.9, boxstyle="round,pad=0.08", facecolor="#FFFFFF", edgecolor="#0284C7", lw=1.3)
+box_h1 = patches.FancyBboxPatch((0.4, 3.2), 4.3, 3.3, boxstyle="round,pad=0.08", facecolor="#FFFFFF", edgecolor="#0284C7", lw=1.5)
 ax_c.add_patch(box_h1)
-ax_c.text(2.5, 6.0, "HCAR1 (GPR81) — Agonist Tolerant", ha="center", fontsize=8.5, fontweight="bold", color="#0369A1")
-ax_c.text(2.5, 5.3, "Allosteric Pocket Motif (TM5-ECL2):", ha="center", fontsize=8, color="#475569")
-ax_c.text(2.5, 4.4, "Leu152 — Glu153 — Asn154", ha="center", fontsize=10, fontweight="bold", color="#15803D",
-          bbox=dict(boxstyle="round,pad=0.25", facecolor="#DCFCE7", edgecolor="#86EFAC"))
-ax_c.text(2.5, 3.75, "Glu153 (-1): d=2.50 Å (Strong -6.2 kcal/mol anchor)", ha="center", fontsize=7.5, color="#15803D")
+ax_c.text(2.55, 6.20, "HCAR1 (GPR81) — Agonist Tolerant", ha="center", va="top", fontsize=11.5, fontweight="bold", color="#0369A1")
+ax_c.text(2.55, 5.45, "Allosteric Pocket Motif (TM5-ECL2):", ha="center", va="top", fontsize=9.8, color="#475569")
+ax_c.text(2.55, 4.80, "Leu152 — Glu153 — Asn154", ha="center", va="top", fontsize=13.0, fontweight="bold", color="#15803D",
+          bbox=dict(boxstyle="round,pad=0.3", facecolor="#DCFCE7", edgecolor="#86EFAC", lw=1.1))
+ax_c.text(2.55, 3.75, "Glu153 (-1 charge): d = 2.50 Å\nStrong -6.2 kcal/mol H-bond Anchor", ha="center", va="top", fontsize=9.2, fontweight="bold", color="#15803D", linespacing=1.25)
 
-box_h2 = patches.FancyBboxPatch((4.9, 3.5), 4.2, 2.9, boxstyle="round,pad=0.08", facecolor="#FFFFFF", edgecolor=NN_CORAL, lw=1.3)
+box_h2 = patches.FancyBboxPatch((5.1, 3.2), 4.3, 3.3, boxstyle="round,pad=0.08", facecolor="#FFFFFF", edgecolor=NN_CORAL, lw=1.5)
 ax_c.add_patch(box_h2)
-ax_c.text(7.0, 6.0, "HCAR2 (GPR109A) — Severe Flushing", ha="center", fontsize=8.5, fontweight="bold", color=NN_CORAL)
-ax_c.text(7.0, 5.3, "Homologous Motif (PDB 8J6P):", ha="center", fontsize=8, color="#475569")
-ax_c.text(7.0, 4.4, "Lys164 — Lys165 — Lys166", ha="center", fontsize=10, fontweight="bold", color=NN_CORAL,
-          bbox=dict(boxstyle="round,pad=0.25", facecolor="#FEE2E2", edgecolor="#FCA5A5"))
-ax_c.text(7.0, 3.75, "Triple Basic (+3): Lys165 at 3.29 Å (Repulsion & Clash)", ha="center", fontsize=7.5, color=NN_CORAL)
+ax_c.text(7.25, 6.20, "HCAR2 (GPR109A) — Severe Flushing", ha="center", va="top", fontsize=11.5, fontweight="bold", color=NN_CORAL)
+ax_c.text(7.25, 5.45, "Homologous Motif (Cryo-EM PDB 8J6P):", ha="center", va="top", fontsize=9.8, color="#475569")
+ax_c.text(7.25, 4.80, "Lys164 — Lys165 — Lys166", ha="center", va="top", fontsize=13.0, fontweight="bold", color=NN_CORAL,
+          bbox=dict(boxstyle="round,pad=0.3", facecolor="#FEE2E2", edgecolor="#FCA5A5", lw=1.1))
+ax_c.text(7.25, 3.75, "Triple Basic (+3 net charge):\nLys165 (3.29 Å) Repulsion & Clash", ha="center", va="top", fontsize=9.2, fontweight="bold", color="#B91C1C", linespacing=1.25)
 
-ax_c.text(4.7, 1.8, 
-          "MOLECULAR MECHANISM FOR FLUSHING AVOIDANCE:\n"
-          "The +3 positive lysine wall (Lys164-Lys165-Lys166) in HCAR2 acts as an electrostatic barrier.\n"
-          "GPR81 agonists carrying neutral/basic RHS elements are repelled by HCAR2, eliminating flushing.",
-          ha="center", fontsize=7.8, color=NN_NAVY, bbox=dict(boxstyle="round,pad=0.35", facecolor="#EFF6FF", edgecolor="#BFDBFE"))
+ax_c.text(4.90, 1.65, 
+          "MOLECULAR BASIS FOR FLUSHING AVOIDANCE:\n"
+          "• HCAR2 features a +3 basic lysine wall (Lys164–Lys165–Lys166)\n"
+          "  that forms a potent electrostatic and steric barrier.\n"
+          "• GPR81 agonists with neutral/basic RHS vectors are repelled,\n"
+          "  completely eliminating off-target cutaneous flushing.",
+          ha="center", va="center", fontsize=9.2, fontweight="bold", linespacing=1.35,
+          bbox=dict(boxstyle="round,pad=0.40", facecolor="#EFF6FF", edgecolor="#BFDBFE", lw=1.2))
 
-ax_c.set_xlim(0, 9.5)
-ax_c.set_ylim(0.8, 6.8)
+ax_c.set_xlim(0, 10.0)
+ax_c.set_ylim(0.6, 6.8)
 ax_c.axis("off")
 
 # ----------------------------------------------------------------------

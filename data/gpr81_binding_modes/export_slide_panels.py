@@ -23,8 +23,8 @@ mid_y = int(H * 0.50)
 quadrants = {
     "panel_a_domain_topology.png": (0, mid_y, 0, mid_x),
     "panel_b_ternary_cooccupancy.png": (0, mid_y, mid_x, W),
-    "panel_c_hcar1_vs_hcar2_selectivity.png": (mid_y, H, 0, mid_x),
-    "panel_d_45_compound_landscape.png": (mid_y, H, mid_x, W)
+    "panel_c_hcar1_vs_hcar2_selectivity.png": (mid_y, H, 0, 2260),
+    "panel_d_45_compound_landscape.png": (mid_y, H, 2350, W)
 }
 
 PAD = 40
