@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Generate comprehensive 300 DPI publication figure with 4 panels:
-Panel A: 2D Structural Domain Architecture & Ligand Binding Sites
+Panel A: 2D Structural Domain Architecture & Ligand Binding Sites (Completely Zero-Overlap Redesign)
 Panel B: Ternary Co-Occupancy & Steric Exclusion (Lactate+Agonist1 Co-binding vs AZ1 Clash)
 Panel C: HCAR1 vs HCAR2 Subtype Selectivity & Anti-Flushing Mechanism (Triple-Basic Wall)
 Panel D: Full 45-Compound Series Landscape (Ortho vs Allo vs Bitopic / Dualsteric)
@@ -26,7 +26,6 @@ plt.rcParams["axes.linewidth"] = 0.8
 
 # Fixed canvas size 16x12 at 300 DPI
 fig = plt.figure(figsize=(16, 12), dpi=300, facecolor="#FFFFFF")
-# Set explicit margins: left=0.07, right=0.93, top=0.92, bottom=0.08
 gs = GridSpec(2, 2, figure=fig, hspace=0.30, wspace=0.24, 
               left=0.065, right=0.935, top=0.92, bottom=0.07)
 
@@ -38,57 +37,104 @@ NN_PURPLE = "#7C3AED"
 NN_BG = "#F8FAFC"
 
 # ----------------------------------------------------------------------
-# Panel A: 2D Domain Architecture & Ligand Sites
+# Panel A: 2D Domain Architecture & Ligand Sites (ZERO OVERLAP REDESIGN)
 # ----------------------------------------------------------------------
 ax_a = fig.add_subplot(gs[0, 0], facecolor=NN_BG)
 ax_a.set_title("A. GPR81 Structural Domains & Dual Pocket Organization", 
                fontsize=12, fontweight="bold", color=NN_NAVY, pad=10, loc="left")
 
-ax_a.axhspan(2.5, 5.5, color="#E2E8F0", alpha=0.7, zorder=1)
-ax_a.text(0.3, 5.2, "EXTRACELLULAR SPACE (Aqueous)", fontsize=8, fontweight="bold", color="#475569")
-ax_a.text(0.3, 4.0, "MEMBRANE (POPC Bilayer)", fontsize=8, fontweight="bold", color="#64748B")
-ax_a.text(0.3, 2.2, "CYTOPLASM (Gi Coupling)", fontsize=8, fontweight="bold", color="#475569")
+# Bilayer span
+ax_a.axhspan(2.6, 5.4, color="#E2E8F0", alpha=0.65, zorder=1)
+ax_a.text(0.35, 4.0, "LIPID\nBILAYER\n(POPC)", ha="center", va="center", fontsize=7.5, fontweight="bold", color="#64748B", zorder=2)
 
+# Helices
 tm_names = ["TM1", "TM2", "TM3", "TM4", "TM5", "TM6", "TM7"]
-tm_x = [1.2, 2.2, 3.2, 4.2, 5.2, 6.2, 7.2]
+tm_x = [1.2, 2.3, 3.4, 4.6, 5.8, 6.9, 8.0]
 tm_ranges = ["22-42", "50-70", "90-110", "131-151", "183-203", "221-241", "262-281"]
 
 for x, name, rng in zip(tm_x, tm_names, tm_ranges):
-    rect = patches.FancyBboxPatch((x-0.28, 2.5), 0.56, 3.0, boxstyle="round,pad=0.04",
-                                  facecolor="#CBD5E1", edgecolor=NN_NAVY, linewidth=1.1, zorder=2)
+    rect = patches.FancyBboxPatch((x-0.34, 2.6), 0.68, 2.8, boxstyle="round,pad=0.04",
+                                  facecolor="#CBD5E1", edgecolor=NN_NAVY, linewidth=1.2, zorder=3)
     ax_a.add_patch(rect)
-    ax_a.text(x, 4.0, f"{name}\n({rng})", ha="center", va="center", fontsize=7.5, fontweight="bold", color=NN_NAVY, zorder=3)
+    ax_a.text(x, 4.25, name, ha="center", va="center", fontsize=9.0, fontweight="bold", color=NN_NAVY, zorder=4)
+    ax_a.text(x, 3.40, f"({rng})", ha="center", va="center", fontsize=6.8, color="#334155", zorder=4)
+
+# Key Anchor residue markers (positioned outside helix center to prevent text collision)
+# Arg71 on TM2 (annotated to the left)
+ax_a.scatter([2.3], [5.05], s=70, color="#16A34A", edgecolors=NN_NAVY, lw=1.1, zorder=6)
+ax_a.text(1.78, 5.05, "Arg71", ha="right", va="center", fontsize=7.2, fontweight="bold", color="#15803D",
+          bbox=dict(boxstyle="round,pad=0.18", facecolor="#DCFCE7", edgecolor="#16A34A", lw=0.7), zorder=7)
+
+# Glu153 on TM4/5 (annotated to the right)
+ax_a.scatter([5.8], [5.05], s=70, color=NN_AMBER, edgecolors=NN_NAVY, lw=1.1, zorder=6)
+ax_a.text(6.32, 5.05, "Glu153", ha="left", va="center", fontsize=7.2, fontweight="bold", color="#B45309",
+          bbox=dict(boxstyle="round,pad=0.18", facecolor="#FEF3C7", edgecolor="#D97706", lw=0.7), zorder=7)
+
+# Intracellular motifs
+ax_a.scatter([3.4], [2.85], s=45, color=NN_PURPLE, edgecolors=NN_NAVY, lw=0.9, zorder=6)
+ax_a.text(3.4, 2.98, "DRY", ha="center", va="bottom", fontsize=6.5, fontweight="bold", color="#6D28D9", zorder=7)
+
+ax_a.scatter([8.0], [2.85], s=45, color=NN_PURPLE, edgecolors=NN_NAVY, lw=0.9, zorder=6)
+ax_a.text(8.0, 2.98, "NPxxY", ha="center", va="bottom", fontsize=6.5, fontweight="bold", color="#6D28D9", zorder=7)
 
 # Loops
-ax_a.add_patch(patches.Arc((2.7, 5.5), 1.0, 1.2, theta1=0, theta2=180, color=NN_NAVY, lw=1.5, zorder=2))
-ax_a.add_patch(patches.Arc((4.7, 5.5), 1.0, 2.0, theta1=0, theta2=180, color=NN_CORAL, lw=2.0, ls="--", zorder=2))
-ax_a.text(4.7, 6.6, "ECL2 (Active Gate: Phe168/Ser167)", ha="center", fontsize=8, fontweight="bold", color=NN_CORAL)
-ax_a.add_patch(patches.Arc((6.7, 5.5), 1.0, 1.0, theta1=0, theta2=180, color=NN_NAVY, lw=1.5, zorder=2))
+# ECL1 (TM2 - TM3)
+ax_a.add_patch(patches.Arc((2.85, 5.4), 1.1, 0.7, theta1=0, theta2=180, color=NN_NAVY, lw=1.5, zorder=3))
+ax_a.text(2.85, 5.82, "ECL1", ha="center", fontsize=7.0, color="#475569", zorder=4)
 
-ax_a.add_patch(patches.Arc((1.7, 2.5), 1.0, 0.8, theta1=180, theta2=360, color=NN_NAVY, lw=1.5, zorder=2))
-ax_a.add_patch(patches.Arc((3.7, 2.5), 1.0, 0.8, theta1=180, theta2=360, color=NN_NAVY, lw=1.5, zorder=2))
-ax_a.add_patch(patches.Arc((5.7, 2.5), 1.0, 0.8, theta1=180, theta2=360, color=NN_NAVY, lw=1.5, zorder=2))
+# ECL2 (TM4 - TM5)
+ax_a.add_patch(patches.Arc((5.2, 5.4), 1.2, 1.2, theta1=0, theta2=180, color=NN_CORAL, lw=2.0, ls="--", zorder=3))
+ax_a.text(5.2, 6.08, "ECL2 Lid (Phe168/Ser167)", ha="center", fontsize=7.5, fontweight="bold", color=NN_CORAL, zorder=4)
 
-# Pockets
-ortho_bubble = patches.FancyBboxPatch((1.65, 4.4), 1.6, 1.3, boxstyle="round,pad=0.08",
-                                      facecolor="#DCFCE7", edgecolor="#16A34A", lw=1.3, alpha=0.9, zorder=4)
-ax_a.add_patch(ortho_bubble)
-ax_a.text(2.45, 5.15, "ORTHOSTERIC CORE\nAnchor: Arg71 (TM2/3)\nLactate & AZ1 (Ortho)", 
-          ha="center", va="center", fontsize=7.5, fontweight="bold", color="#15803D", zorder=5)
+# ECL3 (TM6 - TM7)
+ax_a.add_patch(patches.Arc((7.45, 5.4), 1.1, 0.7, theta1=0, theta2=180, color=NN_NAVY, lw=1.5, zorder=3))
+ax_a.text(7.45, 5.82, "ECL3", ha="center", fontsize=7.0, color="#475569", zorder=4)
 
-allo_bubble = patches.FancyBboxPatch((4.75, 4.75), 2.1, 1.4, boxstyle="round,pad=0.08",
-                                     facecolor="#FEF3C7", edgecolor="#D97706", lw=1.3, alpha=0.9, zorder=4)
-ax_a.add_patch(allo_bubble)
-ax_a.text(5.80, 5.60, "ALLOSTERIC CREVICE (ago-PAM)\nAnchor: Glu153 / Met170 / His177\nAgonist 1 (Takeda)", 
-          ha="center", va="center", fontsize=7.5, fontweight="bold", color="#B45309", zorder=5)
+# ICLs
+ax_a.add_patch(patches.Arc((1.75, 2.6), 1.1, 0.6, theta1=180, theta2=360, color=NN_NAVY, lw=1.5, zorder=3))
+ax_a.add_patch(patches.Arc((4.0, 2.6), 1.2, 0.6, theta1=180, theta2=360, color=NN_NAVY, lw=1.5, zorder=3))
+ax_a.add_patch(patches.Arc((6.35, 2.6), 1.1, 0.7, theta1=180, theta2=360, color=NN_PURPLE, lw=2.0, zorder=3))
+ax_a.text(6.35, 2.12, "ICL3 (Gi coupling)", ha="center", fontsize=7.0, fontweight="bold", color="#6D28D9", zorder=4)
 
-ax_a.annotate("", xy=(4.75, 5.15), xytext=(3.3, 4.8),
-              arrowprops=dict(arrowstyle="<->", color=NN_CORAL, lw=1.8, mutation_scale=10), zorder=6)
-ax_a.text(3.95, 5.25, "17.7 Å\nVector", ha="center", fontsize=8, fontweight="bold", color=NN_CORAL,
-          bbox=dict(boxstyle="round,pad=0.2", facecolor="#FFF", edgecolor=NN_CORAL, lw=0.8), zorder=7)
+# Pockets Cards in Extracellular space (cleanly separated at top)
+# Orthosteric Box (Top-Left)
+box_ortho = patches.FancyBboxPatch((0.85, 6.45), 2.95, 1.45, boxstyle="round,pad=0.08",
+                                   facecolor="#DCFCE7", edgecolor="#16A34A", lw=1.3, zorder=5)
+ax_a.add_patch(box_ortho)
+ax_a.text(2.32, 7.55, "ORTHOSTERIC CORE", ha="center", fontsize=8.5, fontweight="bold", color="#15803D", zorder=6)
+ax_a.text(2.32, 7.15, "Lactate (Endogenous) · AZ1 (Ortho)", ha="center", fontsize=7.2, fontweight="bold", color="#166534", zorder=6)
+ax_a.text(2.32, 6.70, "• TM2, TM3, TM7 Deep Cavity\n• Anchor: Arg71 Salt-Bridge\n• Covered by ECL2 Active Lid", 
+          ha="center", fontsize=6.6, color="#14532D", zorder=6)
+# Guide arrow pointing into pocket mouth
+ax_a.annotate("", xy=(2.7, 5.5), xytext=(2.32, 6.45),
+              arrowprops=dict(arrowstyle="->", color="#16A34A", lw=1.4, mutation_scale=9), zorder=6)
 
-ax_a.set_xlim(0, 8.2)
-ax_a.set_ylim(1.5, 7.2)
+# Allosteric Box (Top-Right)
+box_allo = patches.FancyBboxPatch((5.45, 6.45), 3.45, 1.45, boxstyle="round,pad=0.08",
+                                  facecolor="#FEF3C7", edgecolor="#D97706", lw=1.3, zorder=5)
+ax_a.add_patch(box_allo)
+ax_a.text(7.17, 7.55, "ALLOSTERIC CREVICE (ago-PAM)", ha="center", fontsize=8.5, fontweight="bold", color="#B45309", zorder=6)
+ax_a.text(7.17, 7.15, "GPR81 Agonist 1 (Takeda Tool Compound)", ha="center", fontsize=7.2, fontweight="bold", color="#92400E", zorder=6)
+ax_a.text(7.17, 6.70, "• TM5, TM6 Extracellular Cleft\n• Anchor: Glu153 H-bond + Met170\n• Independent Synergistic Site", 
+          ha="center", fontsize=6.6, color="#78350F", zorder=6)
+# Guide arrow pointing into crevice mouth
+ax_a.annotate("", xy=(6.5, 5.5), xytext=(6.5, 6.45),
+              arrowprops=dict(arrowstyle="->", color="#D97706", lw=1.4, mutation_scale=9), zorder=6)
+
+# Separation vector between pockets in upper center
+ax_a.annotate("", xy=(5.40, 7.18), xytext=(3.85, 7.18),
+              arrowprops=dict(arrowstyle="<->", color=NN_CORAL, lw=1.8, mutation_scale=10), zorder=8)
+ax_a.text(4.62, 7.42, "17.7 Å Distance", ha="center", fontsize=7.5, fontweight="bold", color=NN_CORAL,
+          bbox=dict(boxstyle="round,pad=0.2", facecolor="#FFFFFF", edgecolor=NN_CORAL, lw=0.8), zorder=9)
+ax_a.text(4.62, 6.85, "Independent\nSites", ha="center", fontsize=6.5, fontweight="bold", color="#991B1B", zorder=9)
+
+# Bottom banner
+ax_a.text(4.6, 1.45, "CYTOPLASM: Gi Coupling · Activation switches: DRY (TM3) & NPxxY (TM7) → 4.8 Å TM6 opening",
+          ha="center", fontsize=7.2, fontweight="bold", color=NN_NAVY,
+          bbox=dict(boxstyle="round,pad=0.28", facecolor="#EFF6FF", edgecolor="#BFDBFE", lw=0.9), zorder=5)
+
+ax_a.set_xlim(0.0, 9.2)
+ax_a.set_ylim(1.1, 8.2)
 ax_a.axis("off")
 
 # ----------------------------------------------------------------------
@@ -191,7 +237,7 @@ for b, c in zip(bars, counts):
 
 ax_d.set_ylabel("Compound Count (N = 45)", fontsize=9, color="#475569")
 ax_d.set_ylim(0, 42)
-ax_d.set_xlim(-0.6, 2.6) # explicit xlim to guarantee margins
+ax_d.set_xlim(-0.6, 2.6)
 ax_d.grid(True, axis="y", ls="--", alpha=0.5, color="#CBD5E1")
 
 # Clean annotation placed in the UPPER-LEFT/CENTER to avoid right-edge overflow
