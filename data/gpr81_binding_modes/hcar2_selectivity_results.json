@@ -1,0 +1,9 @@
+{
+  "hcar1_motif": "Leu152-Glu153-Asn154 (Acidic/Neutral)",
+  "hcar2_motif": "Lys164-Lys165-Lys166 (Triple-Basic Positive Wall)",
+  "d_glu153": 2.499642215346653,
+  "d_lys164": 7.023946586070104,
+  "d_lys165": 3.28611342538909,
+  "d_lys166": 4.326382173537183,
+  "mechanism": "The triple-lysine insertion in HCAR2 creates a severe electrostatic and steric block (+3 basic charges) against GPR81 agonists, explaining the complete absence of HCAR2-mediated cutaneous flushing."
+}

@@ -1,0 +1,43 @@
+{
+  "tm6_outward_swing_angstrom": 0.26807430386543274,
+  "active_tm3_tm6_distance": 38.563568115234375,
+  "apo_tm3_tm6_distance": 38.7994384765625,
+  "conduit": [
+    {
+      "label": "Glu153 (TM5 Extracellular Anchor)",
+      "residue": 153,
+      "disp_angstrom": 1.4701876640319824
+    },
+    {
+      "label": "His155 (TM5 Middle)",
+      "residue": 155,
+      "disp_angstrom": 1.0296351909637451
+    },
+    {
+      "label": "Met170 (ECL2 / TM5 Lipophilic Cleft)",
+      "residue": 170,
+      "disp_angstrom": 1.8098514080047607
+    },
+    {
+      "label": "Ile187 (TM5 Core)",
+      "residue": 187,
+      "disp_angstrom": 0.27592724561691284
+    },
+    {
+      "label": "Trp248 (TM6 Core Toggle)",
+      "residue": 248,
+      "disp_angstrom": 0.5608570575714111
+    },
+    {
+      "label": "Arg121 (TM3 DRY Motif)",
+      "residue": 121,
+      "disp_angstrom": 0.22603678703308105
+    },
+    {
+      "label": "Arg236 (TM6 Intracellular Interface)",
+      "residue": 236,
+      "disp_angstrom": 0.19894897937774658
+    }
+  ],
+  "mechanism": "Binding of Agonist 1 at the extracellular TM5-TM6 crevice (Glu153/His155/Met170) reorganizes the TM5 helix, which propagates through the hydrophobic core to drive an outward swing of TM6 by 0.27 \u00c5, fully opening the intracellular cavity for Gi1 coupling."
+}

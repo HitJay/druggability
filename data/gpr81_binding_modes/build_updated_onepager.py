@@ -1,4 +1,18 @@
-<!DOCTYPE html>
+#!/usr/bin/env python3
+"""
+Build updated executive one-pager HTML for GPR81:
+Incorporates:
+1. Orthosteric vs Allosteric resolution (Br J Pharmacol 2026, PMID 41435849)
+2. HCAR2 (8J6P) allosteric structural homology (17.7 A crevice)
+3. OpenMM + OpenFF Sage atomistic energetics (R71A +10.2 kcal/mol, E153A +6.6 kcal/mol)
+4. In vitro validation roadmap
+5. 100% English, strict 1920x1080 fixed-viewport compliance
+"""
+
+import os
+import shutil
+
+ONEPAGER_HTML = """<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -176,7 +190,7 @@
           <tr><td><b>wetlab_benchmark_subset.csv</b></td><td>Stratified 20-compound wet-lab panel</td></tr>
         </table>
         <p class="muted">
-          Shared Drive: <code>R:\DT\TDE_TV\shared_folder\QYJI\druggability\GPR81eadout\</code><br>
+          Shared Drive: <code>R:\DT\TDE_TV\shared_folder\QYJI\druggability\GPR81\readout\</code><br>
           Jira Ticket: <b>RIC-396</b> (Logged in Comment 101684) · NNRCC Research Insights China
         </p>
       </div>
@@ -185,3 +199,26 @@
 </div>
 </body>
 </html>
+"""
+
+def main():
+    paths = [
+        "/das/user/QYJI/druggability/data/gpr81_phase1/followup_2026-08/gpr81_onepager_summary_en.html",
+        "/TDE_TV/shared_folder/QYJI/druggability/GPR81/readout/gpr81_onepager_summary_en.html",
+        "/das/user/QYJI/druggability/data/gpr81_binding_modes/gpr81_onepager_summary_en.html",
+    ]
+    
+    # Assert 100% English: no Chinese characters
+    for line_idx, line in enumerate(ONEPAGER_HTML.splitlines(), 1):
+        for ch in line:
+            if '\u4e00' <= ch <= '\u9fff':
+                raise ValueError(f"Found Chinese character '{ch}' on line {line_idx}!")
+                
+    for p in paths:
+        os.makedirs(os.path.dirname(p), exist_ok=True)
+        with open(p, "w", encoding="utf-8") as f:
+            f.write(ONEPAGER_HTML.strip() + "\n")
+        print(f"Successfully written: {p} ({len(ONEPAGER_HTML)} bytes)")
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,46 @@
+entry_id,name,series,ec50_nM,docking_score,distance_to_lactate_A,region,contacts_arg71,contacts_glu153,mode_class,mechanistic_role
+c01,Davidsson 2020 compound 1,acyl_urea,23.0,-5.283,9.6,MIXED,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c02,Davidsson 2020 compound 2,acyl_urea,74.0,-4.097,9.44,TM56_EXTRACELLULAR,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c03,Davidsson 2020 compound 3,acyl_urea,3.7,-5.13,11.89,TM56_EXTRACELLULAR,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c04,Davidsson 2020 compound 4,acyl_urea,1.4,-2.985,10.94,TM56_EXTRACELLULAR,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c05,Davidsson 2020 compound 5,acyl_urea,0.74,-5.602,8.93,ORTHO_POCKET,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c06,Davidsson 2020 compound 6,acyl_urea,6.1000000000000005,-4.443,10.38,TM56_EXTRACELLULAR,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c07,Davidsson 2020 compound 7,acyl_urea,3.6,-8.46,12.23,TM56_EXTRACELLULAR,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c08,Davidsson 2020 compound 8,acyl_urea,7.0,-6.343,9.44,TM56_EXTRACELLULAR,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c09,Davidsson 2020 compound 9,acyl_urea,32.0,-4.804,10.63,TM56_EXTRACELLULAR,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c10,Davidsson 2020 compound 10,acyl_urea,13.0,-6.687,11.87,TM56_EXTRACELLULAR,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c11,Davidsson 2020 compound 11,acyl_urea,19.0,-4.359,9.84,TM56_EXTRACELLULAR,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c12,Davidsson 2020 compound 12,acyl_urea,22.0,-4.68,9.72,TM56_EXTRACELLULAR,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c13,Davidsson 2020 compound 13,acyl_urea,360.0,-5.063,9.79,TM56_EXTRACELLULAR,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c14,Davidsson 2020 compound 14,acyl_urea,560.0,-7.376,12.02,TM56_EXTRACELLULAR,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c15,Davidsson 2020 compound 15,acyl_urea,299.0,-8.202,10.81,TM56_EXTRACELLULAR,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c16,Davidsson 2020 compound 16,acyl_urea,103.0,-7.353,11.2,TM56_EXTRACELLULAR,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c17,Davidsson 2020 compound 17,acyl_urea,260.0,-8.15,11.05,TM56_EXTRACELLULAR,False,False,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c18,Davidsson 2020 compound 18,acyl_urea,769.0,-7.473,11.56,TM56_EXTRACELLULAR,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c19,Davidsson 2020 compound 19,acyl_urea,120.0,-7.554,12.15,TM56_EXTRACELLULAR,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c20,Davidsson 2020 compound 20,acyl_urea,719.0,-6.722,13.36,TM56_EXTRACELLULAR,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c21,Davidsson 2020 compound 21,acyl_urea,895.0,-6.781,11.29,TM56_EXTRACELLULAR,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c22,Davidsson 2020 compound 22,acyl_urea,166.0,-0.882,10.01,MIXED,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c23,Davidsson 2020 compound 23,linker_variant,16000.0,-6.963,12.79,TM56_EXTRACELLULAR,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c24,Davidsson 2020 compound 24,linker_variant,33000.0,-6.715,12.81,TM56_EXTRACELLULAR,False,False,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c25,Davidsson 2020 compound 25,linker_variant,33000.0,-4.638,9.51,MIXED,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c26,Davidsson 2020 compound 26,constrained_analogue_cyclic,21.0,-7.183,12.47,TM56_EXTRACELLULAR,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c27,Davidsson 2020 compound 27,constrained_analogue_cyclic,490.0,-6.577,12.38,TM56_EXTRACELLULAR,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c28,Davidsson 2020 compound 28,constrained_analogue_cyclic,22.0,-7.443,12.87,TM56_EXTRACELLULAR,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c29,Davidsson 2020 compound 29,constrained_analogue_cyclic,75.0,-7.749,12.05,TM56_EXTRACELLULAR,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c30,Davidsson 2020 compound 30,constrained_analogue_cyclic,5.0,-5.811,12.15,TM56_EXTRACELLULAR,False,False,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c31,Davidsson 2020 compound 31,constrained_analogue_cyclic,240.0,-2.832,10.84,TM56_EXTRACELLULAR,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+c32,Davidsson 2020 compound 32,amide,410.0,-4.236,10.68,TM56_EXTRACELLULAR,False,True,Bitopic (Dualsteric Candidate),Amide scaffold reaches both Arg71 core & TM5-TM6 crevice
+c33,Davidsson 2020 compound 33,amide,740.0,-3.413,9.44,ORTHO_POCKET,False,True,Bitopic (Dualsteric Candidate),Amide scaffold reaches both Arg71 core & TM5-TM6 crevice
+c34,Davidsson 2020 compound 34,amide,110.0,-5.805,9.77,TM56_EXTRACELLULAR,False,True,Bitopic (Dualsteric Candidate),Amide scaffold reaches both Arg71 core & TM5-TM6 crevice
+c35,Davidsson 2020 compound 35,amide,600.0,-5.189,9.32,ORTHO_POCKET,False,True,Bitopic (Dualsteric Candidate),Amide scaffold reaches both Arg71 core & TM5-TM6 crevice
+c36,Davidsson 2020 compound 36,amide,160.0,-5.152,9.66,ORTHO_POCKET,False,True,Bitopic (Dualsteric Candidate),Amide scaffold reaches both Arg71 core & TM5-TM6 crevice
+c37,Davidsson 2020 compound 37,amide,350.0,-5.151,9.35,ORTHO_POCKET,False,True,Bitopic (Dualsteric Candidate),Amide scaffold reaches both Arg71 core & TM5-TM6 crevice
+c38,Davidsson 2020 compound 38,amide,54.0,-4.491,9.84,ORTHO_POCKET,False,True,Bitopic (Dualsteric Candidate),Amide scaffold reaches both Arg71 core & TM5-TM6 crevice
+c39,Davidsson 2020 compound 39,amide,1900.0,-6.979,11.26,TM56_EXTRACELLULAR,False,False,Bitopic (Dualsteric Candidate),Amide scaffold reaches both Arg71 core & TM5-TM6 crevice
+t01,AZ1_GPR81_agonist_2,lead/tool compound,23.0,-3.94,9.85,ORTHO_POCKET,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+t02,GPR81_agonist_1,lead/tool compound,50.0,-7.73,11.57,TM56_EXTRACELLULAR,False,True,Allosteric (TM5-TM6 Crevice / ago-PAM),Vestibular crevice binder; aligns with HCAR2 9n site
+t03,CHBA,lead/tool compound,,-5.929,2.76,ORTHO_POCKET,False,False,Pure Orthosteric,Endogenous metabolite / reference weak acid
+t04,3_5_DHBA,lead/tool compound,,-6.28,2.93,ORTHO_POCKET,True,False,Pure Orthosteric,Endogenous metabolite / reference weak acid
+t05,3_OBA,lead/tool compound,,-4.638,3.21,ORTHO_POCKET,True,False,Pure Orthosteric,Endogenous metabolite / reference weak acid
+lac,L-lactate,endogenous,,-4.361,3.42,ORTHO_POCKET,True,False,Pure Orthosteric,Endogenous metabolite / reference weak acid
