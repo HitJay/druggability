@@ -96,37 +96,37 @@ ax_a.add_patch(patches.Arc((4.0, 2.6), 1.2, 0.6, theta1=180, theta2=360, color=N
 ax_a.add_patch(patches.Arc((6.35, 2.6), 1.1, 0.7, theta1=180, theta2=360, color=NN_PURPLE, lw=2.0, zorder=3))
 ax_a.text(6.35, 2.12, "ICL3 (Gi coupling)", ha="center", fontsize=7.0, fontweight="bold", color="#6D28D9", zorder=4)
 
-# Pockets Cards in Extracellular space (cleanly separated at top)
+# Pockets Cards in Extracellular space (cleanly separated at top with generous line gaps)
 # Orthosteric Box (Top-Left)
-box_ortho = patches.FancyBboxPatch((0.85, 6.45), 2.95, 1.45, boxstyle="round,pad=0.08",
+box_ortho = patches.FancyBboxPatch((0.80, 6.20), 3.05, 1.75, boxstyle="round,pad=0.08",
                                    facecolor="#DCFCE7", edgecolor="#16A34A", lw=1.3, zorder=5)
 ax_a.add_patch(box_ortho)
-ax_a.text(2.32, 7.55, "ORTHOSTERIC CORE", ha="center", fontsize=8.5, fontweight="bold", color="#15803D", zorder=6)
-ax_a.text(2.32, 7.15, "Lactate (Endogenous) · AZ1 (Ortho)", ha="center", fontsize=7.2, fontweight="bold", color="#166534", zorder=6)
-ax_a.text(2.32, 6.70, "• TM2, TM3, TM7 Deep Cavity\n• Anchor: Arg71 Salt-Bridge\n• Covered by ECL2 Active Lid", 
-          ha="center", fontsize=6.6, color="#14532D", zorder=6)
+ax_a.text(2.32, 7.82, "ORTHOSTERIC CORE", ha="center", va="top", fontsize=8.6, fontweight="bold", color="#15803D", zorder=6)
+ax_a.text(2.32, 7.46, "Lactate (Endogenous) · AZ1 (Ortho)", ha="center", va="top", fontsize=7.2, fontweight="bold", color="#166534", zorder=6)
+ax_a.text(2.32, 7.10, "• TM2, TM3, TM7 Deep Cavity\n• Anchor: Arg71 Salt-Bridge\n• Covered by ECL2 Active Lid", 
+          ha="center", va="top", linespacing=1.35, fontsize=6.6, color="#14532D", zorder=6)
 # Guide arrow pointing into pocket mouth
-ax_a.annotate("", xy=(2.7, 5.5), xytext=(2.32, 6.45),
+ax_a.annotate("", xy=(2.7, 5.5), xytext=(2.32, 6.20),
               arrowprops=dict(arrowstyle="->", color="#16A34A", lw=1.4, mutation_scale=9), zorder=6)
 
 # Allosteric Box (Top-Right)
-box_allo = patches.FancyBboxPatch((5.45, 6.45), 3.45, 1.45, boxstyle="round,pad=0.08",
+box_allo = patches.FancyBboxPatch((5.35, 6.20), 3.65, 1.75, boxstyle="round,pad=0.08",
                                   facecolor="#FEF3C7", edgecolor="#D97706", lw=1.3, zorder=5)
 ax_a.add_patch(box_allo)
-ax_a.text(7.17, 7.55, "ALLOSTERIC CREVICE (ago-PAM)", ha="center", fontsize=8.5, fontweight="bold", color="#B45309", zorder=6)
-ax_a.text(7.17, 7.15, "GPR81 Agonist 1 (Takeda Tool Compound)", ha="center", fontsize=7.2, fontweight="bold", color="#92400E", zorder=6)
-ax_a.text(7.17, 6.70, "• TM5, TM6 Extracellular Cleft\n• Anchor: Glu153 H-bond + Met170\n• Independent Synergistic Site", 
-          ha="center", fontsize=6.6, color="#78350F", zorder=6)
+ax_a.text(7.17, 7.82, "ALLOSTERIC CREVICE (ago-PAM)", ha="center", fontsize=8.6, fontweight="bold", color="#B45309", zorder=6)
+ax_a.text(7.17, 7.46, "GPR81 Agonist 1 (Takeda Tool Compound)", ha="center", va="top", fontsize=7.2, fontweight="bold", color="#92400E", zorder=6)
+ax_a.text(7.17, 7.10, "• TM5, TM6 Extracellular Cleft\n• Anchor: Glu153 H-bond + Met170\n• Independent Synergistic Site", 
+          ha="center", va="top", linespacing=1.35, fontsize=6.6, color="#78350F", zorder=6)
 # Guide arrow pointing into crevice mouth
-ax_a.annotate("", xy=(6.5, 5.5), xytext=(6.5, 6.45),
+ax_a.annotate("", xy=(6.5, 5.5), xytext=(6.5, 6.20),
               arrowprops=dict(arrowstyle="->", color="#D97706", lw=1.4, mutation_scale=9), zorder=6)
 
 # Separation vector between pockets in upper center
-ax_a.annotate("", xy=(5.40, 7.18), xytext=(3.85, 7.18),
+ax_a.annotate("", xy=(5.30, 7.18), xytext=(3.90, 7.18),
               arrowprops=dict(arrowstyle="<->", color=NN_CORAL, lw=1.8, mutation_scale=10), zorder=8)
-ax_a.text(4.62, 7.42, "17.7 Å Distance", ha="center", fontsize=7.5, fontweight="bold", color=NN_CORAL,
+ax_a.text(4.60, 7.42, "17.7 Å Distance", ha="center", fontsize=7.5, fontweight="bold", color=NN_CORAL,
           bbox=dict(boxstyle="round,pad=0.2", facecolor="#FFFFFF", edgecolor=NN_CORAL, lw=0.8), zorder=9)
-ax_a.text(4.62, 6.85, "Independent\nSites", ha="center", fontsize=6.5, fontweight="bold", color="#991B1B", zorder=9)
+ax_a.text(4.60, 6.85, "Independent\nSites", ha="center", fontsize=6.5, fontweight="bold", color="#991B1B", zorder=9)
 
 # Bottom banner
 ax_a.text(4.6, 1.45, "CYTOPLASM: Gi Coupling · Activation switches: DRY (TM3) & NPxxY (TM7) → 4.8 Å TM6 opening",
