@@ -334,7 +334,41 @@ Novo Nordisk Research Centre China (NNRCC) · September 2026 · Ticket: RIC-396
 
 ---
 
-## Recommended In Vitro Validation Roadmap (Target Discovery)
+## 12. Congeneric OpenFEP Strategy: In Silico Pocket &amp; Lead Profiling
+
+<div class="grid-2">
+<div>
+
+### Strategy A: True-Site Validation via Cross-Pocket FEP
+* **The Core Innovation**:
+  * Run relative FEP (RBFE) on **congeneric pairs** inside *both* candidate pockets to see which pocket reproduces experimental SAR!
+* **Benchmark Pair: c30 vs c31 (48-Fold Potency Cliff)**:
+  * Single atom substitution (pyridone CH ➔ pyrimidinone N-3).
+  * Experimental free energy drop: **$\Delta\Delta G_{\text{exp}} \approx +2.3$ kcal/mol**.
+* **Pocket Decisiveness Criterion**:
+  * **In Allosteric Pocket (TM5–TM6)**: OpenFEP captures the Glu153 clash, matching the +2.3 kcal/mol penalty ($R^2 > 0.7$).
+  * **In Orthosteric Pocket (TM2/3/7)**: OpenFEP fails to reproduce SAR (null/reversed correlation).
+  * **Conclusion**: The pocket that matches SAR is the true binding site!
+
+</div>
+<div>
+
+### Strategy B: Congeneric Lead Optimization (OpenFE 1.12)
+* **Allosteric Pyridone Optimization Network**:
+  * Perturbation map linking c28 (22 nM lead), c26, c30, and c38.
+  * Rapid in silico screening of novel R-group modifications before wet-lab chemical synthesis.
+* **Orthosteric Acyl-Urea Optimization Network**:
+  * Perturbation map among AstraZeneca series (AZ1 ➔ AZ2114 ➔ AZ7136).
+  * Optimizes orthosteric core interactions around Arg71.
+* **Platform Ready**:
+  * OpenFE 1.12.0 + Lomap mapper deployed on HPC; sub-kcal/mol accuracy for congeneric series.
+
+</div>
+</div>
+
+---
+
+## 13. Recommended In Vitro Validation Roadmap (Target Discovery)
 
 <div class="grid-2">
 <div>
@@ -342,8 +376,8 @@ Novo Nordisk Research Centre China (NNRCC) · September 2026 · Ticket: RIC-396
 ### Step 1: Functional Schild Curve-Shift (cAMP)
 * **Objective**: Measure L-lactate concentration-response curves in the presence of fixed concentrations of Agonist 1 (0, 10 nM, 100 nM, 1 µM).
 * **Expected ago-PAM Outcome**:
-  * Saturable leftward EC50 shift (cooperativity factor $\alpha$ &gt; 1);
-  * Potential baseline elevation / Emax increase (efficacy factor $\beta$ &gt; 1);
+  * Saturable leftward EC50 shift (cooperativity factor $\alpha$ > 1);
+  * Potential baseline elevation / Emax increase (efficacy factor $\beta$ > 1);
   * Supra-additive activation at sub-threshold doses.
 * **Contrast with AZ1**: AZ1 will act as a competitive agonist displacing lactate.
 
@@ -355,16 +389,16 @@ Novo Nordisk Research Centre China (NNRCC) · September 2026 · Ticket: RIC-396
   * **R71A**: Orthosteric pocket knockout;
   * **E153A / H177A**: TM5–TM6 allosteric crevice knockout.
 * **Decisive Proof Gate**:
-  * **AZ1 (Orthosteric)**: Activity collapses on R71A (&gt;100-fold EC50 loss); fully active on E153A.
+  * **AZ1 (Orthosteric)**: Activity collapses on R71A (>100-fold EC50 loss); fully active on E153A.
   * **Agonist 1 (Allosteric)**: Activity collapses on E153A; fully active on R71A.
-* **1:1 experimental closure** of the computational predictions.
+* **1:1 experimental closure** of computational predictions.
 
 </div>
 </div>
 
 ---
 
-## Key References, Audited PDBs &amp; Shared Deliverables
+## 14. Key References, Audited PDBs &amp; Shared Deliverables
 
 <div style="font-size:14.5px;">
 
