@@ -187,39 +187,52 @@ ax_b.set_ylim(0.4, 6.8)
 ax_b.axis("off")
 
 # ----------------------------------------------------------------------
-# Panel C: HCAR1 vs HCAR2 Selectivity (ENLARGED HIGH-LEGIBILITY FONTS)
+# Panel C: HCAR1 vs HCAR2 Selectivity (SPACIOUS BREATHABLE DUAL-CARD DESIGN)
 # ----------------------------------------------------------------------
 ax_c = fig.add_subplot(gs[1, 0], facecolor=NN_BG)
 ax_c.set_title("C. HCAR1 vs HCAR2: Anti-Flushing Selectivity Mechanism", 
-               fontsize=13.0, fontweight="bold", color=NN_NAVY, pad=10, loc="left")
+               fontsize=13.0, fontweight="bold", color=NN_NAVY, pad=12, loc="left")
 
-box_h1 = patches.FancyBboxPatch((0.4, 3.2), 4.3, 3.3, boxstyle="round,pad=0.08", facecolor="#FFFFFF", edgecolor="#0284C7", lw=1.5)
+# Box HCAR1 (Left) - Clean, uncluttered, poster-like
+box_h1 = patches.FancyBboxPatch((0.5, 0.7), 3.9, 4.9, boxstyle="round,pad=0.10",
+                                facecolor="#FFFFFF", edgecolor="#0284C7", lw=1.6)
 ax_c.add_patch(box_h1)
-ax_c.text(2.55, 6.20, "HCAR1 (GPR81) — Agonist Tolerant", ha="center", va="top", fontsize=11.5, fontweight="bold", color="#0369A1")
-ax_c.text(2.55, 5.45, "Allosteric Pocket Motif (TM5-ECL2):", ha="center", va="top", fontsize=9.8, color="#475569")
-ax_c.text(2.55, 4.80, "Leu152 — Glu153 — Asn154", ha="center", va="top", fontsize=13.0, fontweight="bold", color="#15803D",
-          bbox=dict(boxstyle="round,pad=0.3", facecolor="#DCFCE7", edgecolor="#86EFAC", lw=1.1))
-ax_c.text(2.55, 3.75, "Glu153 (-1 charge): d = 2.50 Å\nStrong -6.2 kcal/mol H-bond Anchor", ha="center", va="top", fontsize=9.2, fontweight="bold", color="#15803D", linespacing=1.25)
 
-box_h2 = patches.FancyBboxPatch((5.1, 3.2), 4.3, 3.3, boxstyle="round,pad=0.08", facecolor="#FFFFFF", edgecolor=NN_CORAL, lw=1.5)
+ax_c.text(2.45, 5.15, "HCAR1 (GPR81)", ha="center", va="top", fontsize=13.5, fontweight="bold", color=NN_NAVY)
+ax_c.text(2.45, 4.65, "Target Agonism Profile", ha="center", va="top", fontsize=10.5, fontweight="bold", color="#0284C7")
+
+ax_c.text(2.45, 3.90, "Leu152 — Glu153 — Asn154", ha="center", va="top", fontsize=12.5, fontweight="bold", color="#15803D",
+          bbox=dict(boxstyle="round,pad=0.30", facecolor="#DCFCE7", edgecolor="#86EFAC", lw=1.1))
+
+ax_c.text(2.45, 2.75, "Glu153 (-1 Acidic Anchor)\nΔG = -6.2 kcal/mol", ha="center", va="top", fontsize=10.5, fontweight="bold", color="#166534", linespacing=1.3)
+
+ax_c.text(2.45, 1.25, "ACTIVE ON-TARGET", ha="center", va="center", fontsize=10.0, fontweight="bold", color="#15803D",
+          bbox=dict(boxstyle="round,pad=0.35", facecolor="#DCFCE7", edgecolor="#16A34A", lw=1.2))
+
+# Box HCAR2 (Right) - Clean, uncluttered, poster-like
+box_h2 = patches.FancyBboxPatch((5.2, 0.7), 3.9, 4.9, boxstyle="round,pad=0.10",
+                                facecolor="#FFFFFF", edgecolor=NN_CORAL, lw=1.6)
 ax_c.add_patch(box_h2)
-ax_c.text(7.25, 6.20, "HCAR2 (GPR109A) — Severe Flushing", ha="center", va="top", fontsize=11.5, fontweight="bold", color=NN_CORAL)
-ax_c.text(7.25, 5.45, "Homologous Motif (Cryo-EM PDB 8J6P):", ha="center", va="top", fontsize=9.8, color="#475569")
-ax_c.text(7.25, 4.80, "Lys164 — Lys165 — Lys166", ha="center", va="top", fontsize=13.0, fontweight="bold", color=NN_CORAL,
-          bbox=dict(boxstyle="round,pad=0.3", facecolor="#FEE2E2", edgecolor="#FCA5A5", lw=1.1))
-ax_c.text(7.25, 3.75, "Triple Basic (+3 net charge):\nLys165 (3.29 Å) Repulsion & Clash", ha="center", va="top", fontsize=9.2, fontweight="bold", color="#B91C1C", linespacing=1.25)
 
-ax_c.text(4.90, 1.65, 
-          "MOLECULAR BASIS FOR FLUSHING AVOIDANCE:\n"
-          "• HCAR2 features a +3 basic lysine wall (Lys164–Lys165–Lys166)\n"
-          "  that forms a potent electrostatic and steric barrier.\n"
-          "• GPR81 agonists with neutral/basic RHS vectors are repelled,\n"
-          "  completely eliminating off-target cutaneous flushing.",
-          ha="center", va="center", fontsize=9.2, fontweight="bold", linespacing=1.35,
-          bbox=dict(boxstyle="round,pad=0.40", facecolor="#EFF6FF", edgecolor="#BFDBFE", lw=1.2))
+ax_c.text(7.15, 5.15, "HCAR2 (GPR109A)", ha="center", va="top", fontsize=13.5, fontweight="bold", color=NN_NAVY)
+ax_c.text(7.15, 4.65, "Flushing Spared (Off-Target)", ha="center", va="top", fontsize=10.5, fontweight="bold", color=NN_CORAL)
 
-ax_c.set_xlim(0, 10.0)
-ax_c.set_ylim(0.6, 6.8)
+ax_c.text(7.15, 3.90, "Lys164 — Lys165 — Lys166", ha="center", va="top", fontsize=12.5, fontweight="bold", color=NN_CORAL,
+          bbox=dict(boxstyle="round,pad=0.30", facecolor="#FEE2E2", edgecolor="#FCA5A5", lw=1.1))
+
+ax_c.text(7.15, 2.75, "Triple Basic (+3 Positive Wall)\nΔΔG = +45.2 kcal/mol Clash", ha="center", va="top", fontsize=10.5, fontweight="bold", color="#991B1B", linespacing=1.3)
+
+ax_c.text(7.15, 1.25, "FLUSHING ELIMINATED", ha="center", va="center", fontsize=10.0, fontweight="bold", color="#B91C1C",
+          bbox=dict(boxstyle="round,pad=0.35", facecolor="#FEE2E2", edgecolor="#DC2626", lw=1.2))
+
+# Center Charge-Flip badge between the two boxes
+ax_c.annotate("", xy=(5.15, 3.90), xytext=(4.45, 3.90),
+              arrowprops=dict(arrowstyle="->", color=NN_NAVY, lw=2.0, mutation_scale=12))
+ax_c.text(4.8, 4.35, "Charge\nFlip", ha="center", va="bottom", fontsize=8.5, fontweight="bold", color=NN_NAVY)
+ax_c.text(4.8, 3.50, "-1 ➔ +3", ha="center", va="top", fontsize=8.5, fontweight="bold", color=NN_CORAL)
+
+ax_c.set_xlim(0.0, 9.6)
+ax_c.set_ylim(0.4, 5.9)
 ax_c.axis("off")
 
 # ----------------------------------------------------------------------

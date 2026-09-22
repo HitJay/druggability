@@ -290,18 +290,21 @@ Novo Nordisk Research Centre China (NNRCC) · September 2026 · Ticket: RIC-396
 <div class="grid-2">
 <div>
 
-* **The Clinical Bottleneck of GPR109A (HCAR2)**
-  * Niacin and HCAR2 agonists trigger severe **cutaneous flushing** via epidermal Langerhans cells.
-  * GPR81 (HCAR1) agonists successfully evade flushing in vivo.
-* **The Structural Explanation (PDB 8J6P vs 8Z8A)**
-  * **HCAR1 Crevice**: `Leu152-Glu153-Asn154` (acidic/neutral, accepts agonist 1 at d = 2.50 Å).
-  * **HCAR2 Crevice**: `Lys164-Lys165-Lys166` (**Triple-Lysine Positive Wall**, +3 charge).
-  * Lys165 sits at 3.29 Å: creates an insurmountable electrostatic &amp; steric wall blocking GPR81 agonists!
+* **Subtype Pocket Divergence**:
+  * **HCAR1 On-Target**: `Leu152–Glu153–Asn154` (acidic/neutral motif).
+  * **Glu153 Anchor**: Negative charge provides **-6.2 kcal/mol** anchor.
+  * Allows nanomolar tool agonist binding without hindrance.
+* **HCAR2 Anti-Flushing Sparing (PDB 8J6P)**:
+  * **Homologous Motif**: `Lys164–Lys165–Lys166` (**Triple-Lysine Wall**).
+  * Creates an insurmountable **+45.2 kcal/mol electrostatic barrier**.
+  * Severe clash & charge repulsion prevent GPR81 agonist binding.
+* **Translational Advantage**:
+  * Intrinsic selectivity completely avoids cutaneous flushing!
 
 </div>
 <div>
 
-![w:470](slide_figures/panel_c_hcar1_vs_hcar2_selectivity.png)
+![w:450](slide_figures/panel_c_hcar1_vs_hcar2_selectivity.png)
 
 </div>
 </div>
