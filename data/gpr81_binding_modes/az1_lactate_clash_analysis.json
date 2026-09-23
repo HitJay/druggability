@@ -1,0 +1,26 @@
+{
+  "pair": "AZ1 vs L-Lactate",
+  "tested_states": [
+    {
+      "description": "AZ1 (Orthosteric Boltz-2 pose) vs Lactate (8Z8A Co-crystal)",
+      "centroid_distance_angstrom": 4.99,
+      "minimum_atomic_distance_angstrom": 0.89,
+      "atom_pairs_under_2_0_angstrom": 8,
+      "atom_pairs_under_1_0_angstrom": 2,
+      "clashing_atom_pairs": [
+        {"lactate_atom": "C2", "az1_atom": "C34", "distance_angstrom": 0.89},
+        {"lactate_atom": "C4", "az1_atom": "C33", "distance_angstrom": 0.93},
+        {"lactate_atom": "C2", "az1_atom": "N35", "distance_angstrom": 1.47},
+        {"lactate_atom": "C4", "az1_atom": "C7", "distance_angstrom": 1.51}
+      ],
+      "steric_consequence": "Direct spatial penetration into the identical Arg71 binding subpocket; complete mutual exclusion."
+    },
+    {
+      "description": "AZ1 (Allosteric Vina pose) vs Lactate (8Z8A Co-crystal)",
+      "centroid_distance_angstrom": 9.82,
+      "minimum_atomic_distance_angstrom": 0.83,
+      "steric_consequence": "Even in an exosite pose, the bulky tail of AZ1 (MW 603) penetrates the orthosteric vestibule and clashes with Lactate at 0.83 A."
+    }
+  ],
+  "pharmacological_verdict": "AZ1 cannot co-exist with Lactate under any binding mode on a single protomer. It is a strictly competitive orthosteric agonist that physically displaces endogenous lactate."
+}

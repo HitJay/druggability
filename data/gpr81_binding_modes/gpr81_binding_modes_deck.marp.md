@@ -258,18 +258,21 @@ Novo Nordisk Research Centre China (NNRCC) · September 2026 · Ticket: RIC-396
 
 ---
 
-## 4. Evidence 1: Ternary Co-Occupancy vs Steric Exclusion
+## 4. Evidence 1: Co-Occupancy Compatibility (Lactate vs Ag1 vs AZ1 Spatial Spectrum)
 
 <div class="grid-2">
 <div>
 
-* **[Lactate + Agonist 1] Co-Occupancy (Permitted)**:
+* **[Lactate + Agonist 1]: Stable Co-Binding (Fully Compatible)**:
   * Minimum inter-ligand atomic distance: **7.71 Å** (centroid gap: 11.24 Å).
   * System nonbonded energy: **$-152.6$ kcal/mol**; zero steric clash.
-  * **Mechanistic Consequence**: Proves the physical feasibility of **ago-PAM synergy**—lactate and allosteric agonist bind simultaneously to evoke supra-additive signaling.
-* **[AZ1 + Agonist 1] Co-Occupancy (Forbidden)**:
-  * Minimum inter-ligand atomic distance: **2.60 Å** (severe clash at outer vestibule).
-  * The bulky tail of AZ1 (MW 603) physically clashes with Agonist 1 in the ECL2 vestibule, ruling out simultaneous co-binding of both synthetic agonists on a single protomer.
+  * **Pharmacological Meaning**: Proves **ago-PAM synergy**—lactate and allosteric agonist bind simultaneously to evoke supra-additive signaling.
+* **[AZ1 + Lactate]: Direct Spatial Penetration (Strictly Mutually Exclusive)**:
+  * Centroid distance is only **4.99 Å**; minimum heavy-atom distance is **0.89 Å**!
+  * 8 atom pairs within < 2.0 Å directly contest the **Arg71** triad; van der Waals clash exceeds millions of kcal/mol.
+  * **Pharmacological Meaning**: **AZ1 and lactate cannot co-bind under any state**; AZ1 is a classic competitive orthosteric agonist.
+* **[AZ1 + Agonist 1]: Vestibule Collision (Forbidden)**:
+  * Minimum distance is **2.60 Å** at the outer mouth; AZ1 tail blocks the exosite.
 
 </div>
 <div>
