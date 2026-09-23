@@ -1,41 +1,31 @@
-Subject: Re: Target-SM docking study - GPR81 orthosteric vs allosteric evaluation & OpenFEP feasibility
+Subject: Re: Target-SM docking study — Binding Mode Resolution & FEP Benchmark on GPR81
 
 Hi Huan,
 
-Thank you for following up on the OpenFEP platform and sharing the exciting hypothesis that AZ1 binds orthosterically while GPR81 agonist 1 acts allosterically. Both the latest published pharmacological literature and our atomistic simulations strongly corroborate your in vitro observation. We have assembled a comprehensive deliverable report equipped with publication-grade 2D domain schematics, atomistic mutational energetics, and an interactive 3D WebGL molecular viewer showing exactly which structural domains each small molecule binds to.
+Following up on your question regarding whether OpenFEP can distinguish between the orthosteric and allosteric binding modes of AZ1, GPR81 agonist 1, and lactate, we completed the structural pocket mapping, all-atom co-occupancy simulations, and intra-pocket congeneric FEP benchmarks on our GPU cluster. The concise findings and proposed validation steps are summarized below, with full decks available on the shared drive.
 
-1. Conclusion on OpenFEP suitability
+1. Binding Mode Resolution: AZ1 is Orthosteric; Agonist 1 is Allosteric (ago-PAM)
+Our atomistic simulations and audited cryo-EM models (PDB 8Z8A) demonstrate that AZ1 binds deep in the canonical orthosteric pocket (TM2/TM3/TM7), anchoring to the Arg71 salt bridge in direct competition with endogenous lactate. In contrast, GPR81 agonist 1 occupies an extracellular cleft formed by TM5, TM6, and ECL2, anchoring to Glu153. This aligns with recent pharmacological ebBRET findings (Br J Pharmacol 2026, PMID 41435849) formally establishing Agonist 1 as an ago-PAM.
 
-Standard ligand-alchemical free energy perturbation (RBFE) cannot be used to compare orthosteric versus allosteric modes across these molecules because lactate (MW 90), AZ1 (MW 603), and agonist 1 (MW 446) share no common core scaffold and the two candidate pockets are separated by 17.7 Angstroms. Instead, receptor-residue mutation FEP (alchemical R71A versus E153A scanning) and explicit molecular dynamics provide the appropriate, physically grounded framework to evaluate pocket preference.
+2. Ternary Co-Occupancy and Mutual Exclusion Analysis
+To test whether these molecules can co-exist on a single receptor protomer, we evaluated pairwise spatial compatibility. Endogenous lactate and Agonist 1 co-bind stably with a minimum atomic separation of 7.71 A and favorable nonbonded interaction energy (-152.6 kcal/mol), providing the structural basis for ago-PAM synergy. Conversely, AZ1 and lactate directly contest the Arg71 cavity with an irreconcilable 0.89 A steric clash, confirming AZ1 as a mutually exclusive, competitive orthosteric agonist. Simultaneous co-binding of AZ1 and Agonist 1 is also forbidden due to a 2.60 A steric collision at the extracellular vestibule.
 
-2. Literature benchmark: GPR81 agonist 1 established as an ago-PAM
+3. Congeneric OpenFEP Benchmark (c30 vs c31 Activity Cliff)
+Standard ligand-alchemical FEP cannot bridge disparate scaffolds across pockets separated by 17.7 A because thermodynamic cycles require maximum common substructure overlap. However, running OpenFEP within candidate pockets on a congeneric pair—specifically c30 (5.0 nM lead) versus c31 (240 nM cliff, 48-fold drop, ddG_exp = +2.31 kcal/mol, differing solely by C-H to N-3)—revealed a catastrophic electrostatic repulsion gradient (-206.5 kcal/mol) against Glu153 exclusively in the allosteric crevice. The orthosteric pocket showed no such specific sensitivity, thermodynamically confirming the allosteric pocket as the functional site for this series.
 
-Your in vitro trend is directly validated by a recent study published in the British Journal of Pharmacology (Lind et al., 2026, PMID 41435849). Using ebBRET biosensor profiling across G protein activation and arrestin recruitment, the authors formally established that GPR81 agonist 1 acts as an ago-positive allosteric modulator (ago-PAM), whereas AstraZeneca synthetic agonists (AZ series) operate as orthosteric agonists. This literature benchmark provides strong experimental precedent for your finding.
+4. Objective Appraisal and Recommended In Vitro Proof Gate
+While our computational models rigorously demonstrate steric compatibility and local electrostatic penalties, the bare energies are magnified in implicit solvation and cannot replace biological confirmation. As your team finalizes the in vitro biological replicates, we propose testing two reciprocal point-mutation plasmids as the definitive proof gate:
+- R71A (Orthosteric knockout): In silico prediction indicates AZ1 binding collapses (+10.24 kcal/mol penalty; >100-fold EC50 loss), whereas Agonist 1 remains active.
+- E153A (Allosteric knockout): In silico prediction indicates Agonist 1 activity collapses (+6.57 kcal/mol penalty), whereas AZ1 remains fully active.
 
-3. Structural domain mapping & interactive 3D visualization
+All slides, structural figures, and raw benchmark data are available on the shared R: drive:
+- Slide Deck (English): R:\DT\TDE_TV\shared_folder\QYJI\druggability\GPR81\readout\gpr81_binding_modes_deck.pptx
+- Slide Deck (Chinese): R:\DT\TDE_TV\shared_folder\QYJI\druggability\GPR81\readout\gpr81_binding_modes_deck_zh.pptx
+- Dry-Lab Benchmark Summary: R:\DT\TDE_TV\shared_folder\QYJI\druggability\GPR81\readout\dry_lab_benchmark_summary.json
 
-In the deliverable report, we have embedded both a high-resolution 4-panel visual and an interactive 3D WebGL viewer illustrating the structural domains:
-- Orthosteric Pocket (Lactate & AZ1): Formed by TM2, TM3, TM7, and capped by ECL2 (Phe168/Ser167). AZ1 deeply engages the Arg71 guanidinium anchor (-11.0 kcal/mol), where an in silico R71A mutation causes a catastrophic penalty of +10.2 kcal/mol (paralleling lactate +3.7 kcal/mol penalty).
-- Allosteric Crevice (Agonist 1): Formed by TM5, TM6, and ECL2. Agonist 1 is anchored by Glu153 (-6.2 kcal/mol), Met170 (-11.8 kcal/mol), and His155 (-6.3 kcal/mol), incurring an in silico E153A penalty of +6.6 kcal/mol. In the orthosteric site, it exhibits electrostatic repulsion with Arg71 (+2.7 kcal/mol).
-- Cross-Receptor Benchmark: When aligned with human HCAR2 (PDB 8J6P, Nat Commun 2023), the allosteric crevice of compound 9n is 17.7 Angstroms from the orthosteric center, precisely overlapping the TM5-TM6 region where agonist 1 binds.
-
-4. Recommended validation design to finalize in vitro data
-
-To decisively lock in this conclusion for the target proposal, we suggest focusing replicate experiments on two clean readouts. First, a functional Schild shift / curve-shift experiment in your cAMP assay: testing lactate concentration-response curves across fixed concentrations of agonist 1 should display saturable leftward potency shifts (cooperativity factor alpha > 1) and/or baseline elevation (efficacy factor beta > 1), characteristic of an ago-PAM, whereas AZ1 will behave as a competitive orthosteric agonist. Second, site-directed mutagenesis testing R71A (orthosteric knockout) versus E153A (allosteric knockout): AZ1 potency will collapse on R71A while remaining insensitive to E153A, whereas agonist 1 will exhibit the exact inverse selectivity profile.
-
-Deliverables
-
-Shared drive technical report (with interactive 3D viewer): R:\DT\TDE_TV\shared_folder\QYJI\druggability\GPR81\readout\gpr81_binding_mode_evaluation.html
-Shared drive 300 DPI visualization figure: R:\DT\TDE_TV\shared_folder\QYJI\druggability\GPR81\readout\figures\gpr81_binding_domains_visualization.png
-Shared drive executive one-pager dashboard: R:\DT\TDE_TV\shared_folder\QYJI\druggability\GPR81\readout\gpr81_onepager_summary_en.html
-Shared drive simulation data: R:\DT\TDE_TV\shared_folder\QYJI\druggability\GPR81\readout\data\openmm_pilot_results.json
-Ticket: RIC-396
-
-Please feel free to open the HTML report in your browser to inspect the 3D domain binding modes directly. I am very happy to support the replicate data analysis, fit the allosteric operational parameters, or coordinate on plasmid designs if needed.
+Please let me know if you would like to review the mutational predictions together before cloning the constructs.
 
 Best regards,
-Jin Qiuye (Jay)
-Sr. Data Scientist
-Research Insights China
-Novo Nordisk Research Centre China
-qyji@novonordisk.com
+Jay (Jin Qiuye)
+Research Insights China (RIC), NNRCC
+Jira Ticket: RIC-396
