@@ -1,0 +1,118 @@
+{
+  "benchmark": {
+    "compound_A": "c30",
+    "compound_B": "c31",
+    "c30_EC50_nM": 5.0,
+    "c31_EC50_nM": 240.0,
+    "potency_fold_change": 48.0,
+    "ddG_exp_kcal_mol": 2.307859840104061
+  },
+  "fep_legs": {
+    "solvent": {
+      "leg_name": "Solvent_Aqueous",
+      "dG_ti_kcal_mol": NaN,
+      "error_kcal_mol": NaN,
+      "lambdas": [
+        0.0,
+        0.15,
+        0.35,
+        0.5,
+        0.65,
+        0.85,
+        1.0
+      ],
+      "dU_dlambda_means": [
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+      ],
+      "dU_dlambda_stds": [
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+      ],
+      "elapsed_seconds": 6.368637800216675
+    },
+    "allosteric": {
+      "leg_name": "Allosteric_TM5_TM6",
+      "dG_ti_kcal_mol": NaN,
+      "error_kcal_mol": NaN,
+      "lambdas": [
+        0.0,
+        0.15,
+        0.35,
+        0.5,
+        0.65,
+        0.85,
+        1.0
+      ],
+      "dU_dlambda_means": [
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+      ],
+      "dU_dlambda_stds": [
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+      ],
+      "elapsed_seconds": 35.12157964706421
+    },
+    "orthosteric": {
+      "leg_name": "Orthosteric_TM2_TM7",
+      "dG_ti_kcal_mol": NaN,
+      "error_kcal_mol": NaN,
+      "lambdas": [
+        0.0,
+        0.15,
+        0.35,
+        0.5,
+        0.65,
+        0.85,
+        1.0
+      ],
+      "dU_dlambda_means": [
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+      ],
+      "dU_dlambda_stds": [
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN,
+        NaN
+      ],
+      "elapsed_seconds": 35.14707970619202
+    }
+  },
+  "relative_binding_free_energies": {
+    "ddG_allosteric_kcal_mol": NaN,
+    "ddG_orthosteric_kcal_mol": NaN,
+    "error_allosteric_vs_exp": NaN,
+    "error_orthosteric_vs_exp": NaN,
+    "true_site_verdict": "ORTHOSTERIC_POCKET"
+  }
+}
