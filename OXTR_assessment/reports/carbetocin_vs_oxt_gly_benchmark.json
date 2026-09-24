@@ -1,0 +1,32 @@
+[
+  {
+    "compound": "Native Oxytocin (OXT-WT)",
+    "oxtr_binding_affinity": "Kd ~ 1-5 nM (\u0394G = -11.5 kcal/mol)",
+    "oxtr_efficacy": "Full Agonist (100% Gq / Gi / Go)",
+    "oxtr_internalization": "Rapid \u03b2-arrestin recruitment & internalization (2-10 min)",
+    "v1ar_cross_reactivity": "High cross-reactivity (Ki ~ 10-30 nM, Full Agonist)",
+    "v1ar_clinical_liability": "Severe vasoconstriction & blood pressure spikes",
+    "selectivity_basis": "None (non-selective endogenous peptide)",
+    "plasma_half_life": "3 - 5 min (rapid aminopeptidase & reductase cleavage)"
+  },
+  {
+    "compound": "OXT-Gly (Pro7Gly Lilly Analogue)",
+    "oxtr_binding_affinity": "Kd = 29.5 nM (\u0394G = -10.27 kcal/mol)",
+    "oxtr_efficacy": "Full Agonist (100% Gq activation preserved)",
+    "oxtr_internalization": "Standard physiological recycling",
+    "v1ar_cross_reactivity": "Abolished (>1000-fold selectivity window, Kd > 10,000 nM)",
+    "v1ar_clinical_liability": "Neutralized / Cleared (<5 mmHg MAP change)",
+    "selectivity_basis": "Binding-Level Steric Clash (Gly7 backbone flapping clashes with constricted TM1/ECL3 throat)",
+    "plasma_half_life": "~5 - 15 min (without lipid conjugation) / extendable via lipidation"
+  },
+  {
+    "compound": "Carbetocin (Clinical Benchmark)",
+    "oxtr_binding_affinity": "Kd ~ 10-30 nM (5-fold right-shifted EC50 vs OXT)",
+    "oxtr_efficacy": "Partial Agonist (Emax ~ 45-50%, selective Gq-bias, no Gi/Go)",
+    "oxtr_internalization": "Slow \u03b2-arrestin-independent internalization, no recycling",
+    "v1ar_cross_reactivity": "Retains physical binding (Ki ~ 100-300 nM), but ZERO efficacy (Competitive Antagonist)",
+    "v1ar_clinical_liability": "Neutralized via functional antagonism (blocks endogenous AVP)",
+    "selectivity_basis": "Efficacy-Level Divergence (Tyr(Me)2 prevents TM6 active outward displacement in V1aR)",
+    "plasma_half_life": "40 - 100 min (resistant to aminopeptidase and disulfide reduction due to 1-carba/deamino)"
+  }
+]

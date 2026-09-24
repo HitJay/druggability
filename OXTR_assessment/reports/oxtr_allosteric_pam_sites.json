@@ -1,0 +1,92 @@
+[
+  {
+    "site_id": "Site-1",
+    "name": "Extracellular Vestibule Site (ECL2 / TM2 / TM7 Entrance)",
+    "center": [
+      133.77,
+      149.74,
+      177.52
+    ],
+    "key_residues": [
+      "Phe103",
+      "Trp188",
+      "Arg192",
+      "Ala193",
+      "Phe284",
+      "Tyr200",
+      "Thr313"
+    ],
+    "druggability_score": 0.84,
+    "volume_A3": 540,
+    "mechanism": "Positive Allosteric Modulation via 'Lid Effect'. Binds atop orthosteric OXT, slowing down its dissociation rate (k_off reduction) and selectively stabilizing agonist engagement.",
+    "subtype_divergence": "High (ECL2 and TM1-TM2 loop show <35% sequence identity and 3.5 \u00c5 backbone shift vs V1aR/V1bR).",
+    "desensitization_mitigation": "Ceiling effect: does not drive constitutive over-activation; preserves endogenous pulsatility.",
+    "recommended_modality": "Small-molecule PAM (e.g. fused indoles / biaryl amides)."
+  },
+  {
+    "site_id": "Site-2",
+    "name": "Extrahelical Lipid-Facing Site (TM4-TM5 / CNC 45o Cholesterol Pocket)",
+    "center": [
+      125.48,
+      136.64,
+      160.27
+    ],
+    "key_residues": [
+      "Leu160",
+      "Val164",
+      "Trp167",
+      "Ile210",
+      "Phe214",
+      "Leu218"
+    ],
+    "druggability_score": 0.88,
+    "volume_A3": 620,
+    "mechanism": "Mimics endogenous cholesterol/CHS positive allosteric modulation. Deep hydrophobic cavity that allosterically couples to TM5 outward swing, locking OXTR in the high-affinity state.",
+    "subtype_divergence": "Moderate-to-High (Outer-leaflet lipid-facing residue patterns differ across OXTR vs V2R/V1aR).",
+    "desensitization_mitigation": "Conformational clamp with minimal GRK/arrestin recruitment bias.",
+    "recommended_modality": "Lipophilic small molecules / steroid mimetics / lipid-conjugated scaffolds."
+  },
+  {
+    "site_id": "Site-3",
+    "name": "Intracellular Juxtamembrane Site (ICL2 / TM3-TM5-TM6 Interface)",
+    "center": [
+      119.52,
+      126.5,
+      148.84
+    ],
+    "key_residues": [
+      "Arg137",
+      "Leu141",
+      "Phe144",
+      "Tyr241",
+      "Arg248"
+    ],
+    "druggability_score": 0.76,
+    "volume_A3": 480,
+    "mechanism": "Direct intracellular stabilizer of Gq heterotrimer coupling. Selectively promotes Gq pathway activation while sterically hindering beta-arrestin scaffolding.",
+    "subtype_divergence": "High (ICL2 and intracellular helical tips exhibit distinct electrostatic topologies across vasopressin family).",
+    "desensitization_mitigation": "Functional arrestin-desensitization resistance (Gq-biased signaling).",
+    "recommended_modality": "Cell-permeable small-molecule intracellular allosteric modulators."
+  },
+  {
+    "site_id": "Site-4",
+    "name": "Core Divalent Cation Coordination Switch (Mg2+ / Zn2+ Network)",
+    "center": [
+      150.08,
+      135.79,
+      169.56
+    ],
+    "key_residues": [
+      "Glu42",
+      "Asp93",
+      "Asp100",
+      "Ser107"
+    ],
+    "druggability_score": 0.71,
+    "volume_A3": 390,
+    "mechanism": "Allosteric cation network essential for full OXTR activation. Single conserved residue determines cation dependency vs V1aR.",
+    "subtype_divergence": "High in cation sensitivity (V1aR does not require Mg2+ for activation).",
+    "desensitization_mitigation": "Physiological cofactor tuning.",
+    "recommended_modality": "Cation-coordinating chelator-pharmacophore hybrids."
+  }
+]
