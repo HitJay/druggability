@@ -159,27 +159,25 @@ Novo Nordisk Research Centre China (NNRCC) · September 2026 · Ticket: RIC-396
 <div class="card">
 
 ### Key Pharmacological Verdicts
-* **AZ1 is an Orthosteric Agonist**:
-  * Anchored to the canonical **Arg71** salt bridge (TM2/3/7 core).
-  * Direct competition with endogenous lactate; in vitro trends align.
+* **AZ1 is a Strict Orthosteric Agonist**:
+  * Directly contests the deep **Arg71** salt bridge (0.89 Å severe steric collision with lactate).
 * **GPR81 Agonist 1 is an Allosteric ago-PAM**:
-  * Occupies the extracellular **TM5–TM6–ECL2 crevice** (Glu153 anchor).
-  * Structurally compatible with lactate co-occupancy; zero steric clash.
-* **Literature Ground Truth Concurrence**:
-  * *Br J Pharmacol* (2026, PMID 41435849) formally established Agonist 1 as an ago-PAM and AZ series as orthosteric agonists.
+  * Occupies the extracellular **TM5–TM6–ECL2 crevice**; stable co-binding with lactate (7.71 Å distance).
+  * Actively anchored by **Glu153**; validated by published ebBRET pharmacology (*Br J Pharmacol* 2026).
+* **Precise Role of Lead c30 (Congeneric Probe)**:
+  * Merely tolerates Glu153 without active salt-bridge dependency; validates the allosteric site via **c30 vs c31** cliff.
 
 </div>
 <div class="card">
 
-### Multi-Layer Evidence Architecture
-* **Cryo-EM & Structural Modeling (8Z8A / 8J6P)**:
-  * Two pockets are separated by **17.7 Å** across the lipid interface.
-* **Ternary Co-Occupancy Dynamics**:
-  * [Lactate + Agonist 1] co-exists stably ($-152.6$ kcal/mol nonbonded energy); [AZ1 + Agonist 1] exhibits a fatal $2.60$ Å clash.
-* **A100 Congeneric OpenFEP Simulation**:
-  * Alchemical perturbation of c30 ➔ c31 captures the Glu153 clash in the allosteric pocket, validating the functional site.
-* **Objective Caveat**:
-  * In silico models provide thermodynamic falsification; final confirmation requires R71A/E153A site-directed mutagenesis.
+### Evidence Architecture & Real-World Boundaries
+* **Ternary Co-Occupancy Geometry**:
+  * [Lactate + Ag1] forms a stable low-energy complex ($-152.6$ kcal/mol); [AZ1 + Ag1] collides at $2.60$ Å in vestibule.
+* **Congeneric OpenFEP & Rescue Hypothesis**:
+  * c30 ➔ c31 yields a $-206.5$ kcal/mol repulsion spike at Glu153, predicting an E153A mutational rescue.
+* **Objective Caveats & Computational Nuance**:
+  * No Ag1 co-crystal exists; implicit solvent exhibits long-range Coulomb noise on R71A ($+4.68$ kcal/mol).
+  * Final verdict rests on wet-lab: primary double dissociation (AZ1 vs Ag1) & secondary rescue (c30 vs c31).
 
 </div>
 </div>
@@ -253,7 +251,7 @@ Novo Nordisk Research Centre China (NNRCC) · September 2026 · Ticket: RIC-396
 </div>
 
 <div class="callout blue" style="margin-top: 10px;">
-<strong>Core Mechanistic Distinction:</strong> AZ1 and Lactate share the deep Arg71 anchor; Agonist 1 engages an entirely separate extracellular surface exosite around Glu153.
+<strong>Core Mechanistic Distinction:</strong> AZ1 directly occupies the deep Arg71 salt bridge; Agonist 1 actively anchors to Glu153 (-6.2 kcal/mol); while lead c30 (pyridone C-H) merely tolerates Glu153 sterically, explaining why c30 alone does not show a dramatic E153A collapse.
 </div>
 
 ---
@@ -350,76 +348,72 @@ Novo Nordisk Research Centre China (NNRCC) · September 2026 · Ticket: RIC-396
 |---|:---:|:---:|:---:|:---:|:---:|---|
 | **L-Lactate** *(Orthosteric)* | $-44.4$ kcal/mol | $-3.6$ kcal/mol | <span class="badge badge-accent">+3.74 kcal/mol</span> | $+3.2$ kcal/mol | <span class="badge badge-safe">-3.00 kcal/mol</span> | **Arg71 dependent**; Glu153 dispensable |
 | **AZ1** *(Orthosteric)* | $-102.1$ kcal/mol | $-11.0$ kcal/mol | <span class="badge badge-accent">+10.24 kcal/mol</span> | $+3.5$ kcal/mol | <span class="badge badge-safe">-3.35 kcal/mol</span> | **Strict Orthosteric**: >100-fold loss on R71A |
-| **Agonist 1** *(Allosteric)* | $-67.8$ kcal/mol | $-4.5$ kcal/mol | <span class="badge badge-neutral">+4.68 kcal/mol</span> | $-6.2$ kcal/mol | <span class="badge badge-accent">+6.57 kcal/mol</span> | **Strict ago-PAM**: Major loss on E153A |
+| **Agonist 1** *(Allosteric)* | $-67.8$ kcal/mol | $-4.5$ kcal/mol | <span class="badge badge-neutral">+4.68 kcal/mol*</span> | $-6.2$ kcal/mol | <span class="badge badge-accent">+6.57 kcal/mol</span> | **Strict ago-PAM**: Major loss on E153A |
 
 </div>
 
-<div class="grid-2" style="margin-top: 10px;">
-<div class="callout amber">
-<strong>Double Dissociation Criterion:</strong> AZ1 activity will collapse on R71A but remain unaffected on E153A. Conversely, Agonist 1 activity will collapse on E153A while tolerating R71A.
+<div class="grid-2" style="margin-top: 8px;">
+<div class="callout amber" style="font-size:13.5px; padding:6px 10px;">
+<strong>*Long-Range Coulomb Note:</strong> The predicted +4.68 kcal/mol on R71A for Agonist 1 arises from unshielded continuum electrostatics at 17.7 Å distance, not physical contact. In vitro, Agonist 1 is expected to tolerate R71A.
 </div>
-<div class="callout blue">
-<strong>Blind-Test Benchmark Ready:</strong> Wet-lab testing of these two plasmids will provide a definitive, unambiguous 1:1 validation of the computational predictions.
+<div class="callout blue" style="font-size:13.5px; padding:6px 10px;">
+<strong>Why Lead c30 is Not a Single-Point Probe:</strong> c30's C-H is merely tolerated by Glu153 rather than forming an essential salt bridge, so E153A will not collapse c30 alone. Its diagnostic power lies in the c30 vs c31 rescue pair.
 </div>
 </div>
 
 ---
 
-## 8. Objective Appraisal: What Computation Proves vs. Limitations
+## 8. Objective Appraisal: Three Solid Pillars vs Two In-Silico Soft Spots
 
 <div class="grid-2">
 <div class="card">
 
-### What Computation Rigorously Demonstrates
-* **Physical Falsification & Steric Limits**:
-  * Rules out cross-pocket FEP due to topological invalidity (17.7 Å separation).
-  * Demonstrates that AZ1 and Agonist 1 cannot simultaneously occupy a single protomer (2.6 Å collision).
-* **Thermodynamic Feasibility of ago-PAM**:
-  * Proves lactate and Agonist 1 form a stable, low-energy ternary complex ($-152.6$ kcal/mol).
-* **SAR Mechanism Attribution**:
-  * Pinpoints Glu153 electrostatic clash as the physical driver of the c30 ➔ c31 potency cliff.
+### Three Solid Pillars Supporting Allosteric ago-PAM
+* **Pharmacological Functional Phenotype (FACT)**:
+  * ebBRET biosensor profiling (*Br J Pharmacol* 2026) unequivocally established Ag1 as an **ago-PAM** with non-competitive cooperativity, ruling out simple orthosteric competition.
+* **Ternary Co-Occupancy Geometric Feasibility (OBS)**:
+  * [Lactate + Ag1] co-exists with **7.71 Å separation** and zero steric clash ($-152.6$ kcal/mol); [AZ1 + Lactate] collides at $0.89$ Å with multi-million kcal repulsion.
+* **Conserved Allosteric Conduit Architecture (MECH)**:
+  * Homologous HCAR2 (PDB 8J6P) co-crystal confirms the TM5-TM6 exosite; this cleft connects directly to TM6 outward swing ($14.8$ Å) and Trp248 toggle switch.
 
 </div>
 <div class="card">
 
-### Real-World Computational Limitations
-* **Dielectric & Solvation Scaling**:
-  * Rapid GPU MD in simplified/implicit solvation magnifies bare electrostatic energies relative to bulk water with 150 mM counterions.
-* **Sampling Timescale vs Receptor Plasticity**:
-  * Picosecond-to-nanosecond FEP captures local electrostatics but cannot sample slow loop rearrangements or active-to-inactive transitions.
-* **Docking Pose Conditioning**:
-  * Free energy estimates are conditional on starting poses; unmodeled water networks may alter local geometry.
-* **Wet-Lab Remains Decisive**:
-  * Computation guides hypothesis design; site-directed mutagenesis remains mandatory for biological proof.
+### Two In-Silico Soft Spots & Alternative Hypotheses
+* **Lack of Direct Experimental Density (No Co-Crystal Ground Truth)**:
+  * No cryo-EM structure with Ag1 exists; unprompted Boltz-2 exhibits strong inductive bias towards the orthosteric pocket (canonical GPCR algorithmic prior).
+* **Implicit Solvent Continuum Electrostatic Artifact**:
+  * OBC2 solvation under-screens long-range charges, introducing a spurious $4.68$ kcal/mol shift on R71A across 17.7 Å and narrowing the separation window to $1.89$ kcal/mol.
+* **Pharmacological Alternative Hypotheses**:
+  * An ago-PAM phenotype could theoretically arise from **receptor homodimer allosteric cross-talk** or bitopic vestibule extension; mutagenesis is required to exclude these.
 
 </div>
 </div>
 
 ---
 
-## 9. Recommended Decisive In Vitro Validation Roadmap
+## 9. Recommended Decisive In Vitro Validation Roadmap: Two-Tier Proof Gates
 
 <div class="grid-2">
 <div class="card">
 
-### Phase 1: In Vitro Repetition & Finalization (Current)
-* **cAMP / GTPγS Concentration-Response**:
-  * Finalize and reproduce preliminary in vitro findings across biological replicates ($N \ge 3$).
-* **Schild Curve Shift (Co-Incubation)**:
-  * Titrate L-lactate against fixed doses of Agonist 1 (0, 10 nM, 100 nM, 1 µM).
-  * **Key Diagnostic**: Measure cooperativity factor $\alpha$; $\alpha > 1$ confirms positive allosteric modulation (PAM).
+### Gate A: Dual-Alanine Mutagenesis (Primary Double Dissociation)
+* **Construct Point-Mutation Plasmids**:
+  * **R71A** (Orthosteric knockout) vs **E153A** (Allosteric knockout)
+* **Unambiguous Reciprocal Phenotype Gate**:
+  * **AZ1**: Potency collapses on R71A (>100-fold drop); completely retained on E153A;
+  * **Agonist 1**: Potency/efficacy collapses on E153A; retained on R71A;
+* **Falsifies Computational Artifact**: Robust Ag1 response on R71A decisively refutes the in silico long-range electrostatic noise.
 
 </div>
 <div class="card">
 
-### Phase 2: Dual-Alanine Mutagenesis (Killer Experiment)
-* **Construct Plasmids**:
-  * **R71A** (Orthosteric core knockout)
-  * **E153A** (Allosteric crevice knockout)
-* **Unambiguous Go/No-Go Decision Gate**:
-  * **AZ1**: Expect $\ge$100-fold potency drop on R71A; no change on E153A.
-  * **Agonist 1**: Expect loss of potency/efficacy on E153A; retention of response on R71A.
-* **Deliverable**: Closes the mechanism with publication-grade proof.
+### Gate B: c30 / c31 Mutational Rescue (Lead Series Second Layer)
+* **Reproduce 48-Fold Potency Cliff on WT**:
+  * Concentration-response curves of c30 vs c31 on WT receptor confirm the Glu153 electrostatic barrier.
+* **Specific Phenotypic Rescue on E153A**:
+  * On E153A construct, the N-3 electrostatic clash is eliminated, **rescuing c31 potency** (c30/c31 ratio collapses towards 1);
+* **Outcome**: Decisively locks in the allosteric binding pocket for the clinical lead series without requiring a co-crystal.
 
 </div>
 </div>

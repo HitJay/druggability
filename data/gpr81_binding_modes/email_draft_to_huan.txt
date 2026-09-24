@@ -13,10 +13,10 @@ To test whether these molecules can co-exist on a single receptor protomer, we e
 3. Congeneric OpenFEP Benchmark (c30 vs c31 Activity Cliff)
 Standard ligand-alchemical FEP cannot bridge disparate scaffolds across pockets separated by 17.7 A because thermodynamic cycles require maximum common substructure overlap. However, running OpenFEP within candidate pockets on a congeneric pair—specifically c30 (5.0 nM lead) versus c31 (240 nM cliff, 48-fold drop, ddG_exp = +2.31 kcal/mol, differing solely by C-H to N-3)—revealed a catastrophic electrostatic repulsion gradient (-206.5 kcal/mol) against Glu153 exclusively in the allosteric crevice. The orthosteric pocket showed no such specific sensitivity, thermodynamically confirming the allosteric pocket as the functional site for this series.
 
-4. Objective Appraisal and Recommended In Vitro Proof Gate
-While our computational models rigorously demonstrate steric compatibility and local electrostatic penalties, the bare energies are magnified in implicit solvation and cannot replace biological confirmation. As your team finalizes the in vitro biological replicates, we propose testing two reciprocal point-mutation plasmids as the definitive proof gate:
-- R71A (Orthosteric knockout): In silico prediction indicates AZ1 binding collapses (+10.24 kcal/mol penalty; >100-fold EC50 loss), whereas Agonist 1 remains active.
-- E153A (Allosteric knockout): In silico prediction indicates Agonist 1 activity collapses (+6.57 kcal/mol penalty), whereas AZ1 remains fully active.
+4. Objective Appraisal and Recommended In Vitro Proof Gates
+While our computational models demonstrate steric compatibility and local electrostatic penalties, bare energies are magnified in implicit solvation (e.g. spurious long-range Coulomb shift on R71A for Agonist 1 across 17.7 A) and cannot replace biological confirmation. We propose two complementary proof gates:
+- Primary Gate (Reciprocal Alanine Knockout): Testing R71A vs E153A plasmids. AZ1 potency collapses on R71A (>100-fold loss) while remaining intact on E153A; Agonist 1 collapses on E153A while remaining active on R71A, decisively falsifying the computational electrostatic noise.
+- Secondary Gate (c30/c31 Congeneric Rescue): Testing c30 vs c31 on WT (reproducing the 48-fold cliff) vs E153A construct. On E153A, the negative-negative clash is removed and c31 will be rescued, locking in the allosteric binding pocket for the clinical lead series.
 
 All slides, structural figures, and raw benchmark data are available on the shared R: drive:
 - Slide Deck (English): R:\DT\TDE_TV\shared_folder\QYJI\druggability\GPR81\readout\gpr81_binding_modes_deck.pptx

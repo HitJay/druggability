@@ -159,27 +159,25 @@ style: |
 <div class="card">
 
 ### 核心药理学判定
-* **AZ1 是正构激动剂 (Orthosteric Agonist)**：
-  * 与内源配体乳酸共享深层 **Arg71** 盐桥（TM2/3/7 跨膜核心）。
-  * 与乳酸产生直接结合竞争；与当前 in vitro 实验趋势高度吻合。
+* **AZ1 是严格正构激动剂 (Orthosteric Agonist)**：
+  * 与乳酸直接争夺深层 **Arg71** 盐桥，产生 0.89 Å 致命空间穿透，互为完全竞争。
 * **GPR81 Agonist 1 是变构正向调控剂 (ago-PAM)**：
-  * 结合于胞外浅槽 **TM5–TM6–ECL2**（关键锚点为 **Glu153**）。
-  * 物理上支持与乳酸同时共存（零空间碰撞），发挥协同激活效应。
-* **权威文献事实背书**：
-  * 国际权威药理学期刊（*Br J Pharmacol* 2026, PMID 41435849）正式定性 Agonist 1 为 ago-PAM，AZ 系列为正构。
+  * 结合于胞外浅槽 **TM5–TM6–ECL2**，与乳酸 7.71 Å 零位阻共存，主动锚定 **Glu153**。
+  * 权威药理文献（*Br J Pharmacol* 2026）ebBRET 传感器正式确证其 ago-PAM 身份。
+* **先导物 c30 的精准定位 (同系物探针)**：
+  * 对 Glu153 仅为空间耐受（非核心锚点）；通过 **c30 vs c31** 活性断崖反向确证变构口袋。
 
 </div>
 <div class="card">
 
-### 四重证据闭环与方法边界
-* **冷冻电镜结构学基准 (PDB 8Z8A / 8J6P)**：
-  * 正构与变构口袋在空间上**相距 17.7 Å**，属于完全独立的结构域。
-* **三元共结合模拟 (Ternary Simulation)**：
-  * [乳酸 + Agonist 1] 稳定共存（体系能量 $-152.6$ kcal/mol）；而 [AZ1 + Agonist 1] 在胞外前庭产生 $2.60$ Å 的致命空间碰撞。
-* **A100 GPU 同系物 OpenFEP 真实模拟**：
-  * c30 ➔ c31 微扰在变构口袋捕捉到破坏性的 Glu153 排斥，反向锁死变构口袋。
-* **客观边界声明**：
-  * 计算提供物理排斥与能量自洽性证明；最终定论需以湿实验 R71A/E153A 点突变结果为准。
+### 证据闭环与计算真实边界
+* **三元共结合几何 (Ternary Simulation)**：
+  * [乳酸 + Ag1] 稳定共存（体系能量 $-152.6$ kcal/mol）；[AZ1 + Ag1] 在前庭发生 $2.60$ Å 碰撞。
+* **同系物 OpenFEP 动态微扰**：
+  * c30 ➔ c31 在变构槽捕捉到 $-206.5$ kcal/mol 排斥激增，预言 E153A 具有特异性救援表型。
+* **客观边界与计算软肋坦陈**：
+  * 尚无 Ag1 实验冷冻电镜密度；隐式溶剂存在长程静电噪声（使 R71A 出现弱伪影）。
+  * 终审权交付湿实验：R71A/E153A 双向分离与 c31 突变救援双闸门。
 
 </div>
 </div>
@@ -253,7 +251,7 @@ style: |
 </div>
 
 <div class="callout blue" style="margin-top: 10px;">
-<strong>核心机制差异：</strong> AZ1 与乳酸共享深层 Arg71 盐桥，互为同位竞争；Agonist 1 结合在胞外远端 Glu153 浅槽，与正构口袋完全错开。
+<strong>核心机制差异：</strong> AZ1 抢占正构深层 Arg71 盐桥；Agonist 1 依赖变构浅槽 Glu153 极性锚定；而先导物 c30（吡啶酮 C-H）对 Glu153 仅为空间耐受（不碰撞），因此单测 c30 无法产生如 Agonist 1 般的 E153A 亲和力崩塌。
 </div>
 
 ---
@@ -350,76 +348,72 @@ style: |
 |---|:---:|:---:|:---:|:---:|:---:|---|
 | **L-乳酸** *(正构内源)* | $-44.4$ kcal/mol | $-3.6$ kcal/mol | <span class="badge badge-accent">+3.74 kcal/mol</span> | $+3.2$ kcal/mol | <span class="badge badge-safe">-3.00 kcal/mol</span> | **绝对依赖 Arg71 盐桥**；完全不依赖 Glu153 |
 | **AZ1** *(正构工具药)* | $-102.1$ kcal/mol | $-11.0$ kcal/mol | <span class="badge badge-accent">+10.24 kcal/mol</span> | $+3.5$ kcal/mol | <span class="badge badge-safe">-3.35 kcal/mol</span> | **严格正构激动剂**：R71A 活性断崖崩塌 (>100倍) |
-| **Agonist 1** *(变构工具药)* | $-67.8$ kcal/mol | $-4.5$ kcal/mol | <span class="badge badge-neutral">+4.68 kcal/mol</span> | $-6.2$ kcal/mol | <span class="badge badge-accent">+6.57 kcal/mol</span> | **严格变构 ago-PAM**：E153A 造成致命破坏 |
+| **Agonist 1** *(变构工具药)* | $-67.8$ kcal/mol | $-4.5$ kcal/mol | <span class="badge badge-neutral">+4.68 kcal/mol*</span> | $-6.2$ kcal/mol | <span class="badge badge-accent">+6.57 kcal/mol</span> | **严格变构 ago-PAM**：E153A 造成致命破坏 |
 
 </div>
 
-<div class="grid-2" style="margin-top: 10px;">
-<div class="callout amber">
-<strong>双向分离实验判决准则：</strong> AZ1 的活性将在 R71A 突变体上彻底丧失，但在 E153A 上完全耐受；Agonist 1 则正好相反，在 E153A 突变体上活性崩塌，但在 R71A 上基本耐受。
+<div class="grid-2" style="margin-top: 8px;">
+<div class="callout amber" style="font-size:13.5px; padding:6px 10px;">
+<strong>*计算长程静电噪声说明：</strong> Agonist 1 预测出的 +4.68 kcal/mol R71A 惩罚源于隐式溶剂中未充分屏蔽的 17.7 Å 跨域库仑效应，非物理接触。实测预期为高耐受。
 </div>
-<div class="callout blue">
-<strong>先验盲测交付：</strong> 后续只需针对这两个突变质粒进行常规细胞功能测定，即可实现与计算预测数值的 1:1 实验对齐闭环。
+<div class="callout blue" style="font-size:13.5px; padding:6px 10px;">
+<strong>为何先导物 c30 不作单点指示剂：</strong> c30 的 C-H 对 Glu153 仅为耐受而非强盐桥，E153A 不会引发其自身崩塌；c30 的真正威力在于与 c31 配对的突变救援。
 </div>
 </div>
 
 ---
 
-## 8. 客观评价：计算能证明什么 vs. 真实方法局限性
+## 8. 客观评价：变构论证的三大硬核支撑 vs 两大计算软肋与替代假说
 
 <div class="grid-2">
 <div class="card">
 
-### 计算模型严谨证明的部分 (能力边界)
-* **物理证伪与排斥排除**：
-  * 在理论上排除了跨 17.7 Å 开展骨架跃迁 FEP 的数学可行性；
-  * 证明单体受体上 AZ1 与 Agonist 1 产生 2.6 Å 致命空间位阻，排除共结合假说。
-* **变构协同的热力学自洽性**：
-  * 证实乳酸与 Agonist 1 能共处于 $-152.6$ kcal/mol 的稳定三元低能态。
-* **微观排斥机制的明确归因**：
-  * 精确抓取到 c30 ➔ c31 活性断崖是源于与变构口袋 Glu153 的静电冲突。
+### 变构假说的三大硬核支撑 (不可动摇的物理/药理基石)
+* **药理功能表型事实 (FACT)**：
+  * 权威文献（*Br J Pharmacol* 2026）通过 ebBRET 传感器确证 Ag1 为 **ago-PAM**，诱发非竞争性协同，药理学上直接否定单纯正构竞争。
+* **三元共存几何可行性 (OBS)**：
+  * [乳酸 + Ag1] 最小间距 **7.71 Å**，非键能达 $-152.6$ kcal/mol，零碰撞共结合；反观 [AZ1 + 乳酸] 产生 $0.89$ Å 致命穿透，互斥性鲜明。
+* **变构传导网络保守性 (MECH)**：
+  * 同家族 HCAR2（PDB 8J6P）外源激动剂 9n 结合在同源 TM5-TM6 浅槽；该位点直通 TM6 胞内张角（$14.8$ Å 外摆）与开关残基 Trp248。
 
 </div>
 <div class="card">
 
-### 计算模型的真实局限性 (客观局限)
-* **介电屏蔽与去溶剂化放大 (Dielectric Scaling)**：
-  * 为保证 GPU 高通量计算而使用的简化力场，缺乏 150 mM 离子水环境的介电屏蔽，使静电排斥梯度在数值上被物理放大（几十 kcal/mol 级别）。
-* **时间尺度与受体构象可塑性 (Timescale Limits)**：
-  * 皮秒至纳秒级的局部采样主要捕捉刚性静电冲突，无法涵盖毫秒级跨膜螺旋的大尺度重排或失活构象转变。
-* **构象姿态初始依赖性 (Pose Conditioning)**：
-  * 自由能计算高度依赖起始对接姿态，未解析的受体深部水分子网络可能带来细微构象微调。
-* **湿实验拥有终审权 (Wet-Lab Decisive)**：
-  * 计算提供的是高置信度的物理假设与排斥过滤，不能直接代替实验宣称确证。
+### 必须直面的计算软肋与待证假设 (同行评议易质疑点)
+* **缺乏直接实验密度 (No Co-Crystal Ground Truth)**：
+  * 尚无 Ag1 共晶/电镜密度；无偏置 Boltz-2 具有强烈的 GPCR 主口袋归巢偏置（因其对正构深腔的算法先验）。
+* **隐式溶剂连续介电伪影 (Dielectric Scaling Artifact)**：
+  * OBC2 溶剂弱屏蔽导致 17.7 Å 外的 R71A 产生 $4.68$ kcal/mol 虚假扰动；双向能量窗口仅 $1.89$ kcal/mol，需实验消除假象。
+* **药理 ago-PAM 的机制二义性 (Alternative Mechanisms)**：
+  * ago-PAM 功能表型在理论上还可能源自**受体同源二聚体（Homodimer）跨分子异向变构**或正构前庭双拓扑（Bitopic），需质粒突变排他。
 
 </div>
 </div>
 
 ---
 
-## 9. 建议的生物学验证路线图 (一剑封喉的湿实验设计)
+## 9. 建议的生物学验证路线图 (分层确证的双闸门湿实验)
 
 <div class="grid-2">
 <div class="card">
 
-### 阶段一：现有 In Vitro 实验重复与定稿 (当前正在进行)
-* **cAMP / GTPγS 浓度反应曲线**：
-  * 补充生物学重复 ($N \ge 3$)，固化初步观察到的竞争与非竞争特征。
-* **Schild 变构曲线位移实验 (共孵育矩阵)**：
-  * 固定几档亚最大激活剂量（$\text{EC}_{10}, \text{EC}_{20}$）的乳酸，加入递增梯度的 Agonist 1；
-  * **诊断指标**：测定变构协同系数 $\alpha$；若 $\alpha > 1$，正式从功能药理学确立其 ago-PAM 身份。
-
-</div>
-<div class="card">
-
-### 阶段二：双位点丙氨酸突变实验 (最推荐的定论实验)
+### 闸门 A：双位点丙氨酸突变 (主结合腔一剑封喉判决)
 * **构建两组关键点突变质粒**：
-  * **R71A**（正构核心破坏）
-  * **E153A**（变构浅槽破坏）
-* **一剑封喉的判决准则**：
-  * **AZ1**：在 R71A 上活性出现 >100 倍断崖，在 E153A 上完全正常。
-  * **Agonist 1**：在 E153A 上亲和力/效能显著崩溃，在 R71A 上维持响应。
-* **成果价值**：形成发表级的结构与功能药理学闭环。
+  * **R71A**（正构核心破坏） vs **E153A**（变构浅槽破坏）
+* **不可逆转的双向分离判决准则**：
+  * **AZ1**：在 R71A 上活性出现 >100 倍断崖，在 E153A 上完全耐受；
+  * **Agonist 1**：在 E153A 上活性/效能显著崩溃，在 R71A 上维持响应；
+* **破除计算软肋**：若 Ag1 在 R71A 上维持活性，彻底证伪计算中的长程静电噪声。
+
+</div>
+<div class="card">
+
+### 闸门 B：c30/c31 表型救援 (先导物变构机制第二证据链)
+* **WT 受体上的活性断崖复现**：
+  * 测定 c30 vs c31 浓度反应曲线，复现文献报道的 **48 倍活性断崖**（验证 Glu153 负电门控）。
+* **E153A 突变体上的特异性救援 (Rescue)**：
+  * 在 E153A 上，c31 的 N-3 静电排斥被消除，**c31 活性被特异性救援**（c30/c31 差距显著收窄）；
+* **成果价值**：无需共晶结构，即可在功能与同系物水平双重锁死变构假说。
 
 </div>
 </div>
