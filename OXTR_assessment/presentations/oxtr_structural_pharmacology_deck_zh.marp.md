@@ -252,7 +252,7 @@ style: |
   * 柔性 Gly7 骨架自由容纳，无任何几何位阻惩罚（<i>K</i><sub>d</sub> = 29.5 nM）。
 * **深部核心热点锚定**：Tyr2 与 Ile3 紧密扎根。
 
-![w:380](slide_figures/panel_a_oxtr_vestibule.png)
+![w:350](slide_figures/panel_a_oxtr_vestibule.png)
 
 </div>
 <div class="card">
@@ -263,7 +263,7 @@ style: |
   * 天然 Pro7 靠刚性构象通过；Gly7 热摆动剧烈撞击 TM1 骨架。
 * **空间排斥解离**：引发多肽在溶剂中快速脱落。
 
-![w:380](slide_figures/panel_b_v2r_constriction.png)
+![w:350](slide_figures/panel_b_v2r_constriction.png)
 
 </div>
 </div>

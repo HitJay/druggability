@@ -252,7 +252,7 @@ Novo Nordisk Research Centre China (NNRCC) · September 2026 · Ticket: RIC-403
   * Flexible Gly7 backbone accommodates without steric constraint (<i>K</i><sub>d</sub> = 29.5 nM).
 * **Core Contacts Intact**: Tyr2 and Ile3 remain firmly seated.
 
-![w:380](slide_figures/panel_a_oxtr_vestibule.png)
+![w:350](slide_figures/panel_a_oxtr_vestibule.png)
 
 </div>
 <div class="card">
@@ -263,7 +263,7 @@ Novo Nordisk Research Centre China (NNRCC) · September 2026 · Ticket: RIC-403
   * Native Pro7 freezes backbone to navigate throat; Gly7 flutters and violently clashes.
 * **Steric Ejection**: Triggers rapid unbinding into bulk solvent.
 
-![w:380](slide_figures/panel_b_v2r_constriction.png)
+![w:350](slide_figures/panel_b_v2r_constriction.png)
 
 </div>
 </div>
