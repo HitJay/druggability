@@ -54,10 +54,10 @@ uv.lock
 !.env.example
 *.log
 *.sdf
-image.png
-image copy.png
-image copy 2.png
-image*.png
+/image.png
+/image copy.png
+/image copy 2.png
+/image*.png
 
 # GPR81 docking intermediates (regenerable from RCSB/PubChem + scripts; keep repo lean)
 *.pdbqt
