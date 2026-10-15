@@ -1,0 +1,22 @@
+Subject: TSPO ligands (PK11195, emapunil, etifoxine) — potential target search complete
+
+Hi Zheng,
+
+The target search for the three TSPO ligands is complete. Full report, tiered target table and raw evidence files are here:
+
+R:\DT\TDE_TV\shared_folder\QYJI\druggability\TSPO_assessment\tspo_ligand_target_search_report.html
+
+(also in the same folder: the tiered target table as CSV, the tagged checkpoint report, and the per-ligand prediction JSONs; tracked on RIC-408).
+
+1. PK11195. TSPO is confirmed as the primary target (Ki 4.5-11.1 nM), but the strongest non-TSPO signal is CAR (NR1I3): antagonism IC50 25-56 nM and inverse agonism 245-390 nM in cell-free and cell assays, confirmed by PubChem qHTS (0.025-0.39 uM), Vina docking into the CAR LBD (-10.9 kcal/mol, stronger than TSPO's -9.4 in its own co-crystal pocket), and independent similarity prediction (CAR ranked #2 overall, probability 0.89 just behind TSPO 0.90). In primary hepatocytes PK11195 is converted by metabolism from a CAR antagonist into a CAR agonist, inducing CYP2B6/CYP3A4 (PMID:28442602). Since CAR is liver-specific (GTEx: 99 TPM in liver vs <1 everywhere else) and central to hepatic energy homeostasis, the glucose-lowering/anti-steatotic phenotype reported for PK11195 (PMID:23201900) is most consistent with CAR activation and a fasting-like hepatic state. Two facts argue against a TSPO-mediated benefit: TSPO-knockout rats show worse steatosis and insulin resistance (PMID:40195072), and PK11195 inhibits glucose-induced insulin secretion in isolated islets (PMID:10935532).
+
+2. Emapunil. Across ChEMBL, PubChem and literature mining, TSPO is the only meaningful target: Ki 6.4 nM (WT) / 31.3 nM (A147T variant), >1000-fold selectivity over the central benzodiazepine site, and nothing else measurable. At the human dose of 90 mg once daily the free plasma level (1.0 nM) matches the WT Ki, so TSPO occupancy is pharmacologically competent (PMID:35524344). TSPO-dependence is proven for the cognitive effects (absent in heterozygous TSPO-knockout mice, PMID:37891168), but we could not find any published study of emapunil in a T2D or obesity model - if you have the citation for the T2D benefit, could you share it? One plausible indirect route worth noting: the endogenous TSPO ligand DBI/endozepine is highly expressed in liver, adipose and hypothalamus, and insulin is known to trigger endozepine release that modulates hepatic glucose output via the GABA-A site (PMID:40976282); a TSPO ligand perturbing this axis is a testable hypothesis.
+
+3. Etifoxine. The TSPO route is effectively excluded at systemic exposure: human TSPO Ki is 7.8 uM while the free plasma level at the clinical dose (50 mg three times daily) peaks at 0.31 nM - about four orders of magnitude below occupancy (PMID:35524344). The weight-loss phenotype in mice was produced at 50 mg/kg i.p. daily (PMID:32679124), which is allometrically in the same exposure range, so the effect most likely runs through something other than TSPO. The 2020 paper's own mechanism points to the gut: etifoxine shifted the colonic microbiome (Oscillospira, Lachnospiraceae) and reversed hepatic lipid-gene expression, and a 5-day human crossover study likewise showed microbiome changes (PMID:38075272). The known on-targets at realistic concentrations are the GABA-A channel (6.7 uM at the picrotoxin site) and TSPO only in the low-affinity band; GABRA2 is CNS-restricted per GTEx, so a peripheral metabolic GABA route is unlikely.
+
+4. What we could not resolve. The desethyl-etifoxine metabolite could not be structurally resolved from public sources; mouse free-plasma PK for etifoxine is unpublished (the exposure argument above is allometric inference); and Ro5-4864 is included as a TSPO-selective control throughout. All claims in the report are tagged FACT/OBS/MECH/HYP with sources per row.
+
+Happy to walk through the report or re-cut the target table for the proposal text - and the four questions above (especially the emapunil T2D citation) would help close the loop.
+
+Best regards,
+Qiuye

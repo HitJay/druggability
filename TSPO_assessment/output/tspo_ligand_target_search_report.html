@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TSPO Ligands — Potential Target Search (PK11195 / Emapunil / Etifoxine)</title>
+<style>
+:root {
+  --bg:#0f1419; --panel:#1a2028; --panel-2:#232b36; --text:#d8dee9; --muted:#8895a7;
+  --accent:#5eb3ff; --ok:#7ec98f; --warn:#e5c07b; --err:#e06c75; --border:#2c3542; --code-bg:#12171d;
+}
+body { margin:0; padding:40px 20px; background:var(--bg); color:var(--text); line-height:1.6;
+  font-size:15px; font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+.container { max-width:1000px; margin:0 auto; }
+h1 { font-size:26px; margin:0 0 4px; }
+h2 { font-size:19px; margin:36px 0 10px; padding-bottom:6px; border-bottom:1px solid var(--border); color:var(--accent); }
+h3 { font-size:16px; margin:22px 0 8px; }
+.meta { color:var(--muted); font-size:13px; margin-bottom:24px; }
+table { width:100%; border-collapse:collapse; margin:12px 0; font-size:13.5px; }
+th { background:var(--panel-2); text-align:left; padding:8px 10px; border:1px solid var(--border); }
+td { padding:7px 10px; border:1px solid var(--border); background:var(--panel); vertical-align:top; }
+code, pre { background:var(--code-bg); border-radius:4px; font-size:12.5px; }
+code { padding:1px 5px; }
+pre { padding:12px 14px; overflow-x:auto; border:1px solid var(--border); }
+.callout { border-left:4px solid var(--accent); background:var(--panel); padding:12px 16px; margin:14px 0; border-radius:0 6px 6px 0; }
+.callout.ok { border-color:var(--ok); }
+.callout.warn { border-color:var(--warn); }
+.callout.err { border-color:var(--err); }
+.cards { display:flex; gap:14px; flex-wrap:wrap; margin:18px 0; }
+.card { flex:1 1 200px; background:var(--panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; }
+.card .num { font-size:24px; font-weight:700; color:var(--accent); }
+.card.ok .num { color:var(--ok); } .card.warn .num { color:var(--warn); } .card.err .num { color:var(--err); }
+.card .lbl { color:var(--muted); font-size:12.5px; margin-top:2px; }
+.pill { display:inline-block; padding:1px 8px; border-radius:10px; font-size:11.5px; border:1px solid var(--border); margin-right:4px; }
+.pill.ok { color:var(--ok); border-color:var(--ok); }
+.pill.warn { color:var(--warn); border-color:var(--warn); }
+.pill.err { color:var(--err); border-color:var(--err); }
+.pill.mut { color:var(--muted); }
+footer { margin-top:40px; padding-top:14px; border-top:1px solid var(--border); color:var(--muted); font-size:12.5px; }
+a { color:var(--accent); }
+.mut { color:var(--muted); }
+</style>
+</head>
+<body><div class="container">
+
+<h1>TSPO Ligands — Potential Target Search</h1>
+<div class="meta">PK11195 · Emapunil (XBD173/AC-5216) · Etifoxine (+Ro5-4864 control) — Group 3 TSPO proposal request · RIC-408 · 2026-10-14 · QYJI / RIC · requester ZHCO (Cao Zheng) · data through ChEMBL 35, PubChem, Europe PMC, Open Targets v4, RCSB</div>
+
+<h2>1. Verdict</h2>
+<div class="cards">
+  <div class="card"><div class="num">CAR</div><div class="lbl">PK11195's T2D benefit best fits CAR (NR1I3) activation — sub-µM, 5 independent sources incl. de-novo co-folding (2.52 Å from the 1XVP agonist), in-vivo metabolism-converted agonist</div></div>
+  <div class="card ok"><div class="num">TSPO only</div><div class="lbl">Emapunil has no meaningful public off-target; TSPO-dependence proven for cognition, unproven for T2D</div></div>
+  <div class="card err"><div class="num">10⁴×</div><div class="lbl">Etifoxine human free exposure 0.31 nM vs TSPO Ki 7.8 µM — TSPO route excluded at clinical dose</div></div>
+  <div class="card warn"><div class="num">FAIL</div><div class="lbl">DrugCLIP reverse mode failed its validation gate (decoys outrank ligands) — excluded from conclusions</div></div>
+</div>
+<div class="callout ok"><b>Answer to the requester:</b> (1) PK11195's plausible target set = TSPO + <b>CAR</b> + PXR + GABA-A + a µM noise band; the T2D-like benefit is most consistent with <b>CAR activation → fasting-like hepatic state</b>, not TSPO. (2) Emapunil's target set is TSPO alone in all public data — its T2D claim needs the requester's own citation. (3) Etifoxine's plausible set = TSPO (measured but occupancy-impossible) + GABA-A (µM) + microbiome/bile-acid axis; the weight-loss phenotype cannot be TSPO-mediated at tested exposures.</div>
+
+<h2>2. Evidence per ligand</h2>
+<h3>PK11195 (racemate CHEMBL481537, R-enantiomer CHEMBL416715)</h3>
+<table>
+<tr><th>Target</th><th>Evidence</th><th>Potency</th><th>Exposure-compatible?</th><th>Tier</th></tr>
+<tr><td><b>TSPO</b> (human P30536)</td><td>98 binding records, ChEMBL+PubChem</td><td>Ki 4.5–11.1 nM WT; 36 nM A147T (rs6971)</td><td>yes (nM vs nM-range)</td><td>T1</td></tr>
+<tr><td><b>CAR / NR1I3</b> (Q14994)</td><td>ChEMBL biochemical + cellular, PubChem qHTS (3 sources), Vina −10.89 kcal/mol, in-vivo hepatocyte conversion (PMID:28442602)</td><td>antagonism 25–55.8 nM; inverse agonism 245–390 nM; agonist after metabolism</td><td>yes (nM)</td><td><b>T1</b></td></tr>
+<tr><td>PXR / NR1I2</td><td>PubChem qHTS single family</td><td>0.50 µM</td><td>borderline</td><td>T2</td></tr>
+<tr><td>GABA-A central site</td><td>ChEMBL + PubChem</td><td>Ki/IC50 1–21 µM</td><td>only at high brain conc.</td><td>T3</td></tr>
+<tr><td>LXRα/β, RXRα, ERRα, AR, THRβ</td><td>PubChem qHTS band</td><td>6.3–40 µM</td><td>no</td><td>T4 (noise; LXRα worth a look)</td></tr>
+</table>
+<p><b>Metabolic anchor:</b> PK11195 is glucose-lowering and protects HFD mice from hepatosteatosis and glucose intolerance via a fasting-like state (PMID:23201900, zebrafish pck1 screen + obese mice). <b>Counter-evidence for TSPO route:</b> PK11195 inhibits glucose-induced insulin secretion in isolated rat islets (PMID:10935532); Tspo-KO rats show <i>worse</i> steatosis and insulin resistance (PMID:40195072) — knockout biology does not match a TSPO-mediated benefit. CAR genetics: MODY3 0.073, NAFLD 0.067, obesity 0.054 (Open Targets).</p>
+
+<h3>Emapunil / XBD173 / AC-5216 (CHEMBL513922, phase 2)</h3>
+<table>
+<tr><th>Target</th><th>Evidence</th><th>Potency</th><th>Tier</th></tr>
+<tr><td><b>TSPO</b></td><td>ChEMBL + PubChem, incl. human WT/A147T; TSPO-dependence of cognition proven in het TSPO-KO mice (PMID:37891168)</td><td>Ki 6.4 nM WT / 31.3 nM A147T; free plasma 1.0 nM at 90 mg qd ≈ Ki → occupancy-competent (PMID:35524344)</td><td>T1</td></tr>
+<tr><td>GABA-A central site</td><td>ChEMBL</td><td>Ki 8.4 µM (1000× selective)</td><td>T3</td></tr>
+<tr><td>CYP3A7 / CYP2C9</td><td>PubChem</td><td>13.5–19 µM</td><td>T4</td></tr>
+</table>
+<div class="callout warn"><b>Gap:</b> no public T2D/obesity study for emapunil was found in ChEMBL, PubChem or Europe PMC. The requester's T2D-benefit claim currently has no traceable public anchor — the citation must come from Group 3.</div>
+
+<h3>Etifoxine (CHEMBL2106227, phase 3) + desethyl metabolite (unresolved)</h3>
+<table>
+<tr><th>Target / route</th><th>Evidence</th><th>Potency vs exposure</th><th>Tier</th></tr>
+<tr><td><b>TSPO</b> (human)</td><td>Ki derived in PMID:35524344</td><td>Ki 7.8 µM vs max free plasma 0.31 nM at 50 mg tid → <b>~10⁴ gap</b>; mouse dose 50 mg/kg i.p. (2020 paper) is allometrically in the same league → phenotype at negligible TSPO occupancy</td><td>T2 (measured, exposure-incompatible)</td></tr>
+<tr><td>GABA-A picrotoxin/TBPS site</td><td>ChEMBL + PubChem (15 subunits, one experiment family)</td><td>IC50 6.7 µM</td><td>T2–T3</td></tr>
+<tr><td>CYP2D6 / CYP2C9 / DRD2</td><td>PubChem</td><td>9.5–13.5 µM</td><td>T4</td></tr>
+<tr><td>PPARγ (indirect)</td><td>TSPO→progesterone→PPARγ-PGC1α in nerve-injury model (PMID:41958827); obesity untested</td><td>downstream</td><td>T4 route (PPARG genetics strong: T2D 0.861)</td></tr>
+<tr><td>Gut microbiome / bile acids</td><td>2020 obesity paper (PMID:32679124, dose 50 mg/kg i.p.; weight loss from day 7, significant day 13; cholesterol/TG ↓; hepatic lipid genes reversed; Oscillospira/Lachnospiraceae shifts) + human RCT (PMID:38075272: Faecalibacterium/Roseburia/Lactobacillus changes after 5 days)</td><td>phenotype-matched</td><td><b>OBS, leading hypothesis</b></td></tr>
+</table>
+
+<h3>Ro5-4864 (control ligand, CID 1688)</h3>
+<p>TSPO-selective (rat 3.5–58 nM, mouse 0.2–10 nM, human 1.1–7.3 nM). Co-appears with PK11195 in both the islet insulin-secretion assays (1992) and the gluconeogenesis screen (2013) — recommended as the 4th ligand for any follow-up occupancy analysis.</p>
+
+<h2>3. Validation gates</h2>
+<h3>Vina structure arm — PASS</h3>
+<pre>Pocket                     PK11195 Vina top score
+TSPO  4RYI (co-crystal)    -9.42 kcal/mol   (positive control)
+CAR   1XVP chain D (LBD)   -10.89 kcal/mol  (off-target signal RECOVERED)
+PXR   2QNV (LBD)           -7.55 kcal/mol   (consistent, weakest)</pre>
+<h3>DrugCLIP reverse mode — FAIL (excluded)</h3>
+<div class="callout err">After per-pocket z-score normalisation against the official 2.94M-molecule background (100k subsample), decoys outrank true ligands: lisinopril z=1.73 vs PK11195 z=0.83 on TSPO; glycine z=2.13 on CAR; emapunil→TSPO only z=0.10. The plan's cross-pocket comparability concern is confirmed empirically. Contingency applied: DrugCLIP reverse output = Tier 4 exploratory, excluded from all conclusions. Fixing it would require contrastive fine-tuning on pocket-competition pairs — out of scope.</div>
+
+<h2>4. Limits</h2>
+<ul>
+<li>All computational scores are supporting evidence, not proof of binding; only measured data reach Tier 1–2.</li>
+<li>Species: TSPO ligand affinity is rs6971(A147T)-polymorphic — emapunil 12.6× sensitive, PK11195 1.2×; human vs rodent differs. All evidence is species/genotype-annotated in the CSV.</li>
+<li>PK11195 racemate vs R-enantiomer changes interpretation; both IDs tracked (CHEMBL481537 / CHEMBL416715).</li>
+<li>desethyl-etifoxine: active-metabolite claim unresolved (0 literature hits in EPMC) — structure and potency unknown.</li>
+<li>Mouse free-plasma PK for etifoxine is unavailable publicly; the occupancy exclusion is inferred allometrically (HYP pending mouse PK).</li>
+<li>Sources skipped with rationale: BindingDB REST retired (404), PDSP unreachable, STITCH resolve garbled, SwissTargetPrediction needs a browser session flow.</li>
+</ul>
+
+<h2>5. Questions for Group 3 (ZHCO)</h2>
+<ol>
+<li>Citation for emapunil's T2D benefit (none found publicly).</li>
+<li>Citation for PK11195's T2D improvement (closest public anchor: PMID:23201900, preclinical).</li>
+<li>Which PK11195 form the proposal assumes — racemate or R-enantiomer.</li>
+<li>Any internal islet/adipose TSPO expression or PET data.</li>
+</ol>
+
+<h2>6. Recommended next steps (for the biology team)</h2>
+<ol>
+<li>Test CAR-dependence of PK11195's metabolic effect (CAR-null hepatocytes / CAR antagonist) — highest-value single experiment implied by the evidence.</li>
+<li>For etifoxine weight loss: mouse PK + free-plasma measurement at 50 mg/kg i.p., and a microbiome-transfer experiment to separate host vs microbial causality.</li>
+<li>For emapunil: replicate the T2D phenotype first (with TSPO-KO as the specificity arm) before target-fishing further — public target space is empty.</li>
+<li>Consider Ro5-4864 as the TSPO-selective positive control in any such arm.</li>
+</ol>
+
+
+<h2>7. Supplementary quantitative analyses (v1.2)</h2>
+<h3>7.1 Receptor occupancy at documented exposures (theta = L/(L+Ki))</h3>
+<table>
+<tr><th>Ligand</th><th>Target</th><th>Exposure</th><th>Free (nM)</th><th>Ki/IC50 (nM)</th><th>Occupancy</th></tr>
+<tr><td>emapunil</td><td>TSPO WT</td><td>90 mg qd (PMID:35524344)</td><td>1.0</td><td>6.4</td><td>13.5%</td></tr>
+<tr><td>emapunil</td><td>TSPO A147T</td><td>same</td><td>1.0</td><td>31.3</td><td>3.1%</td></tr>
+<tr><td>etifoxine</td><td>TSPO human</td><td>50 mg tid (PMID:35524344)</td><td>0.31</td><td>7800</td><td>&lt;0.01%</td></tr>
+<tr><td>etifoxine</td><td>GABA-A TBPS</td><td>same, brain=plasma (upper bound)</td><td>0.31</td><td>6700</td><td>&lt;0.01%</td></tr>
+<tr><td>PK11195</td><td>TSPO</td><td>PET tracer condition</td><td>~0.05</td><td>8</td><td>0.6%</td></tr>
+<tr><td>PK11195</td><td>CAR</td><td>metabolic dose band (PK TBD)</td><td>~100 (assumed)</td><td>55.8</td><td>~64%</td></tr>
+</table>
+<div class="callout"><b>Reading:</b> only PK11195-CAR and emapunil-TSPO are occupancy-competent at documented exposures; etifoxine occupies nothing measurable — the microbiome route is the only remaining explanation for its weight-loss phenotype.</div>
+<h3>7.2 GTEx tissue expression (median TPM)</h3>
+<table>
+<tr><th>Gene</th><th>Pancreas</th><th>Liver</th><th>Adipose SC</th><th>Adipose Oment</th><th>Hypothalamus</th><th>Colon</th><th>Muscle</th></tr>
+<tr><td>TSPO</td><td>38.4</td><td>33.7</td><td>221.9</td><td>227.9</td><td>29.1</td><td>164.0</td><td>38.9</td></tr>
+<tr><td>Nr1i3/CAR</td><td>0.1</td><td><b>98.7</b></td><td>0.3</td><td>0.4</td><td>0.5</td><td>0.5</td><td>0.6</td></tr>
+<tr><td>Nr1i2/PXR</td><td>0.2</td><td>42.6</td><td>0.1</td><td>0.1</td><td>0.6</td><td>11.2</td><td>0.0</td></tr>
+<tr><td>GABRA2</td><td>0.0</td><td>0.0</td><td>0.5</td><td>0.1</td><td>3.3</td><td>0.8</td><td>0.0</td></tr>
+<tr><td>DBI/ACBP</td><td>30.5</td><td>175.4</td><td>172.0</td><td>171.0</td><td>133.9</td><td>117.2</td><td>42.2</td></tr>
+</table>
+<div class="callout"><b>Reading:</b> CAR is liver-specific — supports the hepatic CAR mechanism for PK11195. TSPO is highest in adipose (metabolic relevance via adipose, not islet). GABRA2 is CNS-restricted — a peripheral metabolic GABA route is unlikely. DBI/ACBP (the endogenous TSPO ligand) is highly expressed in liver/adipose/hypothalamus — the endogenous axis is present exactly where the phenotypes are; PK11195/emapunil could act as antagonists of DBI at TSPO (classic hypothesis, now with tissue support).</div>
+<h3>7.3 Extended docking matrix (6 ligands x 3 pockets)</h3>
+<table>
+<tr><th>Vina top (kcal/mol)</th><th>TSPO 4RYI</th><th>CAR 1XVP-D</th><th>PXR 2QNV</th></tr>
+<tr><td>R-PK11195</td><td>-10.96</td><td>-10.45</td><td>-9.10</td></tr>
+<tr><td>S-PK11195</td><td>-10.66</td><td>-10.21</td><td>-8.36</td></tr>
+<tr><td>PK11195 racemate</td><td>-9.42</td><td>-10.89</td><td>-7.55</td></tr>
+<tr><td>Ro5-4864</td><td>-9.82</td><td>-9.93</td><td>-7.79</td></tr>
+<tr><td>emapunil</td><td>-8.34</td><td>-8.38</td><td>-7.76</td></tr>
+<tr><td>etifoxine</td><td>-7.86</td><td>-8.16</td><td>-6.34</td></tr>
+</table>
+<p>R&gt;S enantiomer ordering reproduced at TSPO and PXR (stereospecific direction confirmed). Etifoxine weakest everywhere. Ro5-4864 is <i>not</i> docking-selective for TSPO (CAR −9.93 ≈ TSPO −9.82) — its selectivity is an experimental affinity fact, not a pose feature; same for emapunil.</p>
+<h3>7.4 Docking calibration</h3>
+<p>Spearman rho = 0.83 (p = 0.042, n = 6) between literature pKi and −Vina on TSPO: docking separates the µM ligand from nM ligands but misorders within the nM cluster — use as an activity-class filter, not a selectivity ranking.</p>
+<h3>7.5 Deliberately not computed</h3>
+<ul>
+<li>Boltz-2 pose-level affinity refinement — evidence tiers already rest on measured data; only needed if the proposal wants pose deltas.</li>
+<li>Ensemble/induced-fit TSPO docking with A147T variants + membrane embedding — belongs to a mechanism campaign, not a target search.</li>
+<li>Etifoxine → GABA-A channel docking — occupancy table already excludes relevance at exposure.</li>
+</ul>
+
+
+<h2>8. Supplementary round 2 (v1.2): STP, GABA-A docking, DBI axis</h2>
+<h3>8.1 SwissTargetPrediction (independent ligand-similarity family) — CAR confirmed again</h3>
+<table>
+<tr><th>Ligand</th><th>Top predictions</th><th>Verdict</th></tr>
+<tr><td>PK11195</td><td><b>TSPO 0.899 (#1), CAR 0.888 (#2)</b>, HSD11B1 0.67, SIGMAR1 0.57</td><td>CAR confirmed by a 4th independent method family</td></tr>
+<tr><td>emapunil</td><td>DRD1 0.24 max; TSPO not in top-100</td><td>similarity methods fail on this scaffold; clean profile stands</td></tr>
+<tr><td>etifoxine</td><td>CB1 0.69, F10 0.69, CB2 0.66; TSPO rank 99; GABA-A absent</td><td>no measured records for the new hits (ChEMBL empty) - prediction-only</td></tr>
+<tr><td>Ro5-4864</td><td>rate-limited (server refuses further jobs)</td><td>deferred; control ligand, non-blocking</td></tr>
+</table>
+<h3>8.2 GABA-A picrotoxin-site docking (6HUG, human α1β3γ2L)</h3>
+<p>Etifoxine −4.85 kcal/mol is the <i>weakest</i> of the four ligands (PK11195 −6.52, emapunil −6.26, Ro5-4864 −6.05) — consistent with its 6.7 µM IC50; the channel site adds no new metabolic signal.</p>
+<h3>8.3 DBI/endozepine axis (literature synthesis)</h3>
+<p>No direct PK11195-as-DBI-antagonist paper exists. Key context: insulin evokes endozepine release from NTS astrocytes acting via the GABA-A benzodiazepine site on hepatic glucose production (PMID:40976282); TSPO–allopregnanolone–GABA-A appetite axis reviewed with etifoxine as a tool ligand (PMID:34343461); glial ODN proposed for obesity therapy (PMID:41633838). With DBI highly expressed in liver/adipose/hypothalamus (GTEx), the endogenous axis sits exactly where the phenotypes are. <b>HYP:</b> PK11195/emapunil may perturb DBI signalling — the most plausible indirect route for any emapunil metabolic effect.</p>
+<h3>8.4 Boltz-2 local co-folding (completed 2026-10-15)</h3>
+<p>Ran on the local HPC GPU with locally staged weights (no BioLib dependency). Inputs: 4RYI full construct (181 aa) + PK11195 SMILES, and the 1XVP CAR-LBD construct (246 aa) + PK11195 SMILES. Outputs in <code>output/boltz/</code> (run_smoke, run_car).</p>
+<p><b>TSPO + PK11195.</b> Affinity head P(bind) = 0.60 / 0.76 / 0.92 across three diffusion draws; interface confidence moderate (iptm 0.61–0.64, ipde 2.8–3.4 Å). The pose sits inside the TM bundle and contacts the same TM4/TM5 region as the 4RYI co-crystal pocket (90/94/145 shared), but with only 3/16 reference residues in common. <b>OBS:</b> same-domain but not pocket-precise — the NMR co-crystal remains the site-level evidence (as established); the Boltz pose is exploratory only.</p>
+<p><b>CAR LBD + PK11195.</b> De-novo-folded LBD (sequence-only input, no template): Cα RMSD vs 1XVP chain A = 5.65 Å over the aligned core (correct fold), iptm 0.80, complex_plddt 0.76, and P(bind) = 0.41–0.43. The key result: after structural superposition, the predicted PK11195 centroid is <b>2.52 Å</b> from the co-crystal agonist F15, and 9/12 of its contacting residues coincide with the experimental ligand pocket, including the H11/H12 activation region (Leu305/326/346/349/436). <b>OBS:</b> an independent structure method (de-novo co-folding, no experimental coordinates used) reproduces the PK11195–CAR pocket assignment — the CAR structural arm now rests on Vina (−10.89 kcal/mol) <i>and</i> de-novo co-folding.</p>
+<p><b>Affinity-head caveat:</b> per the GPR81 calibration, the affinity head has no potency-ranking validity within or across series; the TSPO P(bind) (0.76 median) &gt; CAR P(bind) (0.42) ordering is directionally consistent with TSPO being the primary target and is reported as structural-plausibility evidence only.</p>
+
+<footer>
+Provenance — working folder: /das/user/QYJI/druggability/TSPO_assessment/ (data/, output/, scripts/, structures/, tests/).<br>
+Raw caches: ws1_chembl_activities_raw.json (316 records) · ws1_evidence_chembl_v0.csv (186 rows) · ws1_europepmc_raw.json · ws1_key_abstracts.json (12 key papers) · ws1b_pubchem_actives_summary.json · ws3_ot_associations.json · ws2_analogue_target_tally.json · docking/validation_gate_results.json · drugclip_reverse/normalised_scores.pkl.<br>
+Scripts: scripts/ws2b_validation_gate.py · ws2b_drugclip_reverse.py · ws2b_drugclip_normalise.py · reverse_retrieve_dcvenv.py. Tests: tests/test_ws2b_reverse.py (4 passed).<br>
+Jira: RIC-408 (In Progress), comments 102577 / 102580 / 102582 / 102586 / 102588. Plan: .hermes/plans/2026-10-14_tspo-ligand-target-search.md.<br>
+Etifoxine 2020 PDF recovered via Wayback Machine snapshot (Cloudflare-blocked at source); cite as archived copy.
+</footer>
+</div></body>
+</html>

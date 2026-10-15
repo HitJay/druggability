@@ -1,0 +1,962 @@
+{
+ "CHEMBL4552": {
+  "n_analogues": 11,
+  "n_acts": 26,
+  "pmax": 9.31,
+  "names": [
+   "Translocator protein"
+  ]
+ },
+ "CHEMBL5742": {
+  "n_analogues": 8,
+  "n_acts": 20,
+  "pmax": 8.7,
+  "names": [
+   "Translocator protein"
+  ]
+ },
+ "CHEMBL612545": {
+  "n_analogues": 8,
+  "n_acts": 25,
+  "pmax": 8.36,
+  "names": [
+   "Unchecked"
+  ]
+ },
+ "CHEMBL2362975": {
+  "n_analogues": 8,
+  "n_acts": 14,
+  "pmax": 0,
+  "names": [
+   "No relevant target"
+  ]
+ },
+ "CHEMBL376": {
+  "n_analogues": 6,
+  "n_acts": 113,
+  "pmax": 0,
+  "names": [
+   "Rattus norvegicus"
+  ]
+ },
+ "CHEMBL1907607": {
+  "n_analogues": 5,
+  "n_acts": 54,
+  "pmax": 8.54,
+  "names": [
+   "GABA-A receptor; anion channel"
+  ]
+ },
+ "CHEMBL375": {
+  "n_analogues": 4,
+  "n_acts": 126,
+  "pmax": 0,
+  "names": [
+   "Mus musculus"
+  ]
+ },
+ "CHEMBL612558": {
+  "n_analogues": 4,
+  "n_acts": 19,
+  "pmax": 0,
+  "names": [
+   "ADMET"
+  ]
+ },
+ "CHEMBL613643": {
+  "n_analogues": 4,
+  "n_acts": 21,
+  "pmax": 0,
+  "names": [
+   "Lung"
+  ]
+ },
+ "CHEMBL613615": {
+  "n_analogues": 4,
+  "n_acts": 10,
+  "pmax": 0,
+  "names": [
+   "Blood"
+  ]
+ },
+ "CHEMBL613642": {
+  "n_analogues": 4,
+  "n_acts": 15,
+  "pmax": 0,
+  "names": [
+   "Liver"
+  ]
+ },
+ "CHEMBL613638": {
+  "n_analogues": 4,
+  "n_acts": 17,
+  "pmax": 0,
+  "names": [
+   "Kidney"
+  ]
+ },
+ "CHEMBL613629": {
+  "n_analogues": 4,
+  "n_acts": 17,
+  "pmax": 0,
+  "names": [
+   "Heart"
+  ]
+ },
+ "CHEMBL612670": {
+  "n_analogues": 3,
+  "n_acts": 3,
+  "pmax": 0,
+  "names": [
+   "Felis catus"
+  ]
+ },
+ "CHEMBL613617": {
+  "n_analogues": 3,
+  "n_acts": 10,
+  "pmax": 0,
+  "names": [
+   "Brain"
+  ]
+ },
+ "CHEMBL2094130": {
+  "n_analogues": 2,
+  "n_acts": 6,
+  "pmax": 8.18,
+  "names": [
+   "GABA-A receptor; alpha-2/beta-3/gamma-2"
+  ]
+ },
+ "CHEMBL2093872": {
+  "n_analogues": 2,
+  "n_acts": 5,
+  "pmax": 8.15,
+  "names": [
+   "GABA-A receptor; anion channel"
+  ]
+ },
+ "CHEMBL2094122": {
+  "n_analogues": 2,
+  "n_acts": 5,
+  "pmax": 7.96,
+  "names": [
+   "GABA-A receptor; alpha-5/beta-3/gamma-2"
+  ]
+ },
+ "CHEMBL2094121": {
+  "n_analogues": 2,
+  "n_acts": 5,
+  "pmax": 7.85,
+  "names": [
+   "GABA-A receptor; alpha-1/beta-3/gamma-2"
+  ]
+ },
+ "CHEMBL2094120": {
+  "n_analogues": 2,
+  "n_acts": 6,
+  "pmax": 7.82,
+  "names": [
+   "GABA-A receptor; alpha-3/beta-3/gamma-2"
+  ]
+ },
+ "CHEMBL614629": {
+  "n_analogues": 2,
+  "n_acts": 3,
+  "pmax": 0,
+  "names": [
+   "Ramos"
+  ]
+ },
+ "CHEMBL2095190": {
+  "n_analogues": 2,
+  "n_acts": 2,
+  "pmax": 0,
+  "names": [
+   "GABA-A receptor; alpha-6/beta-3/gamma-2"
+  ]
+ },
+ "CHEMBL613663": {
+  "n_analogues": 2,
+  "n_acts": 9,
+  "pmax": 0,
+  "names": [
+   "Striatum"
+  ]
+ },
+ "CHEMBL613634": {
+  "n_analogues": 2,
+  "n_acts": 2,
+  "pmax": 0,
+  "names": [
+   "Intestine"
+  ]
+ },
+ "CHEMBL2111365": {
+  "n_analogues": 1,
+  "n_acts": 6,
+  "pmax": 8.68,
+  "names": [
+   "GABA A receptor alpha-6/beta-2/gamma-2"
+  ]
+ },
+ "CHEMBL296": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 8.3,
+  "names": [
+   "Gamma-aminobutyric acid receptor subunit gamma-1"
+  ]
+ },
+ "CHEMBL2094107": {
+  "n_analogues": 1,
+  "n_acts": 4,
+  "pmax": 8.0,
+  "names": [
+   "GABA-A receptor; anion channel"
+  ]
+ },
+ "CHEMBL2111339": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 8.0,
+  "names": [
+   "GABA A receptor alpha-3/beta-2/gamma-2"
+  ]
+ },
+ "CHEMBL2094133": {
+  "n_analogues": 1,
+  "n_acts": 3,
+  "pmax": 7.92,
+  "names": [
+   "GABA-A receptor; anion channel"
+  ]
+ },
+ "CHEMBL2095172": {
+  "n_analogues": 1,
+  "n_acts": 4,
+  "pmax": 7.92,
+  "names": [
+   "GABA-A receptor; alpha-1/beta-2/gamma-2"
+  ]
+ },
+ "CHEMBL2095167": {
+  "n_analogues": 1,
+  "n_acts": 3,
+  "pmax": 7.8,
+  "names": [
+   "GABA-A receptor; alpha-1/beta-2/gamma-2"
+  ]
+ },
+ "CHEMBL2111343": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 7.77,
+  "names": [
+   "GABA A receptor alpha-3/beta-2/gamma-2"
+  ]
+ },
+ "CHEMBL276": {
+  "n_analogues": 1,
+  "n_acts": 2,
+  "pmax": 7.55,
+  "names": [
+   "Muscarinic acetylcholine receptor M1"
+  ]
+ },
+ "CHEMBL2093861": {
+  "n_analogues": 1,
+  "n_acts": 2,
+  "pmax": 5.05,
+  "names": [
+   "Menin/Histone-lysine N-methyltransferase MLL"
+  ]
+ },
+ "CHEMBL3397": {
+  "n_analogues": 1,
+  "n_acts": 3,
+  "pmax": 4.8,
+  "names": [
+   "Cytochrome P450 2C9"
+  ]
+ },
+ "CHEMBL340": {
+  "n_analogues": 1,
+  "n_acts": 3,
+  "pmax": 4.7,
+  "names": [
+   "Cytochrome P450 3A4"
+  ]
+ },
+ "CHEMBL1963": {
+  "n_analogues": 1,
+  "n_acts": 3,
+  "pmax": 4.6,
+  "names": [
+   "Thyrotropin receptor"
+  ]
+ },
+ "CHEMBL3563": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 4.4,
+  "names": [
+   "Cruzipain"
+  ]
+ },
+ "CHEMBL372": {
+  "n_analogues": 1,
+  "n_acts": 4,
+  "pmax": 0,
+  "names": [
+   "Homo sapiens"
+  ]
+ },
+ "CHEMBL3253": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "Albumin"
+  ]
+ },
+ "CHEMBL2111370": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "GABA A receptor alpha-6/beta-2/gamma-2"
+  ]
+ },
+ "CHEMBL614874": {
+  "n_analogues": 1,
+  "n_acts": 2,
+  "pmax": 0,
+  "names": [
+   "Monkey"
+  ]
+ },
+ "CHEMBL2096682": {
+  "n_analogues": 1,
+  "n_acts": 2,
+  "pmax": 0,
+  "names": [
+   "Sodium channel alpha subunits; brain (Types I, II, III)"
+  ]
+ },
+ "CHEMBL613490": {
+  "n_analogues": 1,
+  "n_acts": 2,
+  "pmax": 0,
+  "names": [
+   "Mus sp."
+  ]
+ },
+ "CHEMBL2462": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "Tyrosine 3-monooxygenase"
+  ]
+ },
+ "CHEMBL3356": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "Cytochrome P450 1A2"
+  ]
+ },
+ "CHEMBL289": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "Cytochrome P450 2D6"
+  ]
+ },
+ "CHEMBL3622": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "Cytochrome P450 2C19"
+  ]
+ },
+ "CHEMBL1075138": {
+  "n_analogues": 1,
+  "n_acts": 2,
+  "pmax": 0,
+  "names": [
+   "Tyrosyl-DNA phosphodiesterase 1"
+  ]
+ },
+ "CHEMBL613561": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "Blood"
+  ]
+ },
+ "CHEMBL613583": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "Muscle tissue"
+  ]
+ },
+ "CHEMBL613592": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "Spleen"
+  ]
+ },
+ "CHEMBL613579": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "Kidney"
+  ]
+ },
+ "CHEMBL613581": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "Lung"
+  ]
+ },
+ "CHEMBL613573": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "Heart"
+  ]
+ },
+ "CHEMBL613580": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "Liver"
+  ]
+ },
+ "CHEMBL613593": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "Stomach"
+  ]
+ },
+ "CHEMBL613564": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "Brain"
+  ]
+ },
+ "CHEMBL352": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "Staphylococcus aureus"
+  ]
+ },
+ "CHEMBL345": {
+  "n_analogues": 1,
+  "n_acts": 3,
+  "pmax": 0,
+  "names": [
+   "Nucleic Acid"
+  ]
+ },
+ "CHEMBL614054": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "SN12C"
+  ]
+ },
+ "CHEMBL614997": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "NCI-H23"
+  ]
+ },
+ "CHEMBL614388": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "UO-31"
+  ]
+ },
+ "CHEMBL614519": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "ACHN"
+  ]
+ },
+ "CHEMBL383": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "HL-60"
+  ]
+ },
+ "CHEMBL614860": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "SF-539"
+  ]
+ },
+ "CHEMBL385": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "K562"
+  ]
+ },
+ "CHEMBL614213": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "OVCAR-3"
+  ]
+ },
+ "CHEMBL614516": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "A498"
+  ]
+ },
+ "CHEMBL614643": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "HOP-62"
+  ]
+ },
+ "CHEMBL614177": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "MOLT-4"
+  ]
+ },
+ "CHEMBL615022": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "U-251"
+  ]
+ },
+ "CHEMBL614214": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "OVCAR-5"
+  ]
+ },
+ "CHEMBL612555": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "OVCAR-8"
+  ]
+ },
+ "CHEMBL614164": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "SNB-19"
+  ]
+ },
+ "CHEMBL614034": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "DMS-273"
+  ]
+ },
+ "CHEMBL614300": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "SR"
+  ]
+ },
+ "CHEMBL612262": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "SW-620"
+  ]
+ },
+ "CHEMBL614056": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "TK-10"
+  ]
+ },
+ "CHEMBL614387": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "NCI-H522"
+  ]
+ },
+ "CHEMBL614317": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "M14"
+  ]
+ },
+ "CHEMBL614709": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "KM12"
+  ]
+ },
+ "CHEMBL614803": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "NCI-H322M"
+  ]
+ },
+ "CHEMBL614882": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "RPMI-8226"
+  ]
+ },
+ "CHEMBL614051": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "OVCAR-4"
+  ]
+ },
+ "CHEMBL614096": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "LOX IMVI"
+  ]
+ },
+ "CHEMBL614917": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "SK-MEL-2"
+  ]
+ },
+ "CHEMBL392": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "A549"
+  ]
+ },
+ "CHEMBL614791": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "KM-20L2"
+  ]
+ },
+ "CHEMBL613855": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "HCC 2998"
+  ]
+ },
+ "CHEMBL612263": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "HCT-15"
+  ]
+ },
+ "CHEMBL613977": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "SF-268"
+  ]
+ },
+ "CHEMBL394": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "HCT-116"
+  ]
+ },
+ "CHEMBL614487": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "EKVX"
+  ]
+ },
+ "CHEMBL614110": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "LXFL 529"
+  ]
+ },
+ "CHEMBL614642": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "DMS-114"
+  ]
+ },
+ "CHEMBL396": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "NCI-H460"
+  ]
+ },
+ "CHEMBL614610": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "UACC-62"
+  ]
+ },
+ "CHEMBL614067": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "CAKI-1"
+  ]
+ },
+ "CHEMBL614908": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "SF-295"
+  ]
+ },
+ "CHEMBL613984": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "IGROV-1"
+  ]
+ },
+ "CHEMBL612543": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "SNB-78"
+  ]
+ },
+ "CHEMBL613102": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "786-0"
+  ]
+ },
+ "CHEMBL612796": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "UACC-257"
+  ]
+ },
+ "CHEMBL614285": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "DLD-1"
+  ]
+ },
+ "CHEMBL382": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "CCRF-CEM"
+  ]
+ },
+ "CHEMBL614740": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "NCI-H226"
+  ]
+ },
+ "CHEMBL614919": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "SK-MEL-28"
+  ]
+ },
+ "CHEMBL384": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "HT-29"
+  ]
+ },
+ "CHEMBL614886": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "RXF 393"
+  ]
+ },
+ "CHEMBL614561": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "COLO 205"
+  ]
+ },
+ "CHEMBL613645": {
+  "n_analogues": 1,
+  "n_acts": 2,
+  "pmax": 0,
+  "names": [
+   "Muscle tissue"
+  ]
+ },
+ "CHEMBL613603": {
+  "n_analogues": 1,
+  "n_acts": 2,
+  "pmax": 0,
+  "names": [
+   "Adrenal"
+  ]
+ },
+ "CHEMBL613650": {
+  "n_analogues": 1,
+  "n_acts": 2,
+  "pmax": 0,
+  "names": [
+   "Pancreas"
+  ]
+ },
+ "CHEMBL613662": {
+  "n_analogues": 1,
+  "n_acts": 2,
+  "pmax": 0,
+  "names": [
+   "Spleen"
+  ]
+ },
+ "CHEMBL613652": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "Plasma"
+  ]
+ },
+ "CHEMBL613408": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "Blood"
+  ]
+ },
+ "CHEMBL613411": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "Plasma"
+  ]
+ },
+ "CHEMBL2096683": {
+  "n_analogues": 1,
+  "n_acts": 2,
+  "pmax": 0,
+  "names": [
+   "Benzodiazepine receptors; peripheral & central"
+  ]
+ },
+ "CHEMBL1795185": {
+  "n_analogues": 1,
+  "n_acts": 1,
+  "pmax": 0,
+  "names": [
+   "Bromodomain testis-specific protein"
+  ]
+ }
+}

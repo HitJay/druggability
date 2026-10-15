@@ -1,0 +1,1009 @@
+{
+ "pk11195_t2d": {
+  "query": "(\"PK11195\" OR \"PK 11195\") AND (diabetes OR \"glucose\" OR \"insulin\" OR adipose OR \"beta cell\" OR obese)",
+  "hitCount": 1678,
+  "results": [
+   {
+    "title": "Obesity is associated with increased brain glucose uptake and activity but not neuroinflammation (TSPO availability) in monozygotic twin pairs discordant for BMI-Exercise training reverses increased brain activity.",
+    "year": "2025",
+    "journal": null,
+    "doi": "10.1111/dom.70109",
+    "pmid": "40926735",
+    "abstract": "<h4>Aims</h4>Obesity is associated with increased insulin-stimulated brain glucose uptake (BGU) which is opposite to decreased GU observed in peripheral tissues. Increased BGU was shown to be reversed by weight loss and exercise training, but the mechanisms remain unknown. We investigated whether neuroinflammation (TSPO availability) and brain activity drive the obesity-associated increase in BGU and whether this increase is reversed by exercise training.<h4>Materials and methods</h4>Twelve monozygotic twin pairs mean age 40.4 (SD) years discordant for BMI (leaner mean 29.1 (SD) 6.3, heavier 36.7 (SD) 7.0\u2009kg\u00b7m<sup>-2</sup>) performed 6-month long exercise intervention. Insulin-stimulated BGU during euglycaemic-hyperinsulinaemic clamp, brain inflammation (translocator protein (TSPO) availability) and brain resting state activity were studied by [<sup>18</sup>F]FDG-PET, [<sup>11</sup>C]PK1"
+   },
+   {
+    "title": "TSPO participates in the pathogenesis of diabetic periodontitis related to mitophagy.",
+    "year": "2025",
+    "journal": null,
+    "doi": "10.1016/j.bbadis.2025.167866",
+    "pmid": "40280203",
+    "abstract": "<h4>Objectives</h4>Diabetic periodontitis (DP) appears to be the sixth most common complication of diabetes; however, its underlying pathological mechanisms require further explored. Our study investigated the potential function of the translocator protein (TSPO) in the progression of DP, aiming to provide a theoretical foundation for novel treatment strategies.<h4>Methods</h4>The ultrastructure and TSPO expression of gingival tissue, collected from healthy individuals, people with periodontitis, and those with DP, were examined. In vivo, a DP model in rats was established using streptozotocin (STZ) and silk ligation. TSPO ligand antagonist PK 11195 was administered as a treatment. Microcomputed tomography (Micro-CT), quantitative real-time polymerase chain reaction (qPCR), histology and immunohistochemistry were employed to assess the destruction, inflammatory and mitophagy in rat perio"
+   },
+   {
+    "title": "Microglial reactivity predicts hippocampal, but not global, atrophy in cerebral small vessel disease.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.1002/alz.71336",
+    "pmid": "41927515",
+    "abstract": "<h4>Introduction</h4>Cerebral small vessel disease (CSVD) is the most prevalent pathology underlying vascular dementia. Increased neuroinflammation and blood-brain barrier (BBB) permeability have been implicated in CSVD pathogenesis. We determined whether microglial reactivity and BBB permeability at baseline predicted whole-brain and hippocampal atrophy over one year, and cognitive impairment over four years.<h4>Methods</h4>Seventy-seven patients with CSVD were recruited to this prospective study. Baseline microglial reactivity and BBB permeability were determined using <sup>11</sup>C-PK11195 positron emission tomography and dynamic contrast enhanced (DCE) MRI respectively.<h4>Results</h4>Greater <sup>11</sup>C-PK11195 binding at baseline was associated with hippocampal atrophy over one year (p\u00a0=\u00a00.001), but not with global brain atrophy. Cox regression analyses showed no significant as"
+   },
+   {
+    "title": "Beyond the brain: Polyglutamine disease pathology outside the nervous system.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.1016/j.nbd.2026.107539",
+    "pmid": "42471049",
+    "abstract": "Polyglutamine diseases are primarily age-dependent neurodegenerative disorders, but patient-based data also point to a broader, multisystem biology. Clinical, imaging, biochemical, and post-mortem studies support peripheral involvement across multiple organ systems in the onset and progression of Huntington's Disease, Spinal and Bulbar Muscular Atrophy, Dentatorubral-Pallidoluysian Atrophy, and six Spinocerebellar Ataxias. Various peripheral abnormalities often emerge before or alongside overt neurological symptoms, contribute to disability and mortality, and are only partly explained by deconditioning or medications. Current data support viewing polyglutamine diseases as systemic protein-misfolding syndromes with organ-selective vulnerability, where peripheral tissues both mirror and modify CNS pathology in humans. Here, we propose that integrated, longitudinal, multisystem phenotyping "
+   },
+   {
+    "title": "A Systematic Review of Positron Emission Tomography (PET) in X-Linked Adrenoleukodystrophy: Beyond Structural MRI.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.1002/ajmg.a.70313",
+    "pmid": "42798143",
+    "abstract": "X-linked adrenoleukodystrophy (X-ALD) is a peroxisomal disorder caused by pathogenic variants in ABCD1, resulting in the accumulation of very long-chain fatty acids and risk of progressive neuroinflammatory demyelination in the cerebral form of ALD. Brain MRI is the current standard neuroimaging modality for diagnosis and monitoring of central nervous system involvement. However, MRI primarily detects structural abnormalities and may not fully reflect functional impairment, neuroinflammatory activity, or early cerebral involvement. Positron emission tomography (PET) may provide complementary information beyond conventional MRI. Therefore, we aimed to review the current literature on PET imaging in X-ALD. A systematic literature search was conducted in accordance with PRISMA guidelines using MEDLINE and Embase databases up to April 26, 2026. Studies evaluating brain PET imaging in individ"
+   },
+   {
+    "title": "Critical role of translocator protein (TSPO) in neuronal mitochondrial dysfunction and mental stress-exacerbated ischemic injury following stroke.",
+    "year": "2025",
+    "journal": null,
+    "doi": "10.1038/s41398-025-03745-1",
+    "pmid": "41326363",
+    "abstract": "Stroke remains the second leading cause of death and disability globally, yet the contribution of depressive disorders and psychological stress to stroke outcomes is often overlooked. Emerging evidence suggests that mitochondrial dysfunction may mediate this relationship. So this study aims to investigate the potential causal role of mental stress in exacerbating ischemic brain injury and identify mitochondrial proteins that contribute to this interaction. In the study, the chronic restraint stress (CRS) model was applied, and mice were subjected to 45\u2009min of middle cerebral artery occlusion (MCAO) followed by 24\u2009h or 48\u2009h of reperfusion. Translocator protein (TSPO) antagonist PK11195 was injected intraperitoneally every day during CRS. Brain injury was determined by infarct volumes, cell apoptosis, Fas expression, release of lactate dehydrogenase (LDH), and reactive oxygen species (ROS)"
+   },
+   {
+    "title": "Mechanisms Leading to Increased Insulin-Stimulated Cerebral Glucose Uptake in Obesity and Insulin Resistance: A High-Fat Diet and Exercise Training Intervention PET Study with Rats (CROSRAT).",
+    "year": "2024",
+    "journal": null,
+    "doi": "10.3390/jfmk9020058",
+    "pmid": "38651416",
+    "abstract": "Recent studies have shown that obesity and insulin resistance are associated with increased insulin-stimulated glucose uptake (GU) in the brain. Thus, insulin sensitivity seems to work differently in the brain compared to the peripheral tissues like skeletal muscles, but the underlying mechanisms remain unknown. Regular exercise training improves skeletal muscle and whole-body insulin sensitivity. However, the effect of exercise on glucose metabolism in the brain and internal organs is less well understood. The CROSRAT study aims to investigate the effects of exercise training on brain glucose metabolism and inflammation in a high-fat diet-induced rat model of obesity and insulin resistance. Male Sprague Dawley rats (<i>n</i> = 144) are divided into nine study groups that undergo different dietary and/or exercise training interventions lasting 12 to 24 weeks. Insulin-stimulated GU from v"
+   },
+   {
+    "title": "[<sup>18</sup>F]FDG and [<sup>11</sup>C]PK11195 PET imaging in the evaluation of brown adipose tissue - effects of cold and pharmacological stimuli and their association with crotamine intake in a male mouse model.",
+    "year": "2023",
+    "journal": null,
+    "doi": "10.1016/j.nucmedbio.2023.108362",
+    "pmid": "37356164",
+    "abstract": "This study aimed to evaluate the role of positron emission tomography (PET) with [<sup>11</sup>C]PK11195 and [<sup>18</sup>F]FDG in the characterization of brown adipose tissue (BAT).<h4>Methods</h4>Male C57BL/6 mice were studied with the glucose analogue [<sup>18</sup>F]FDG (n\u00a0=\u00a021) and the TSPO mitochondrial tracer [<sup>11</sup>C]PK11195 (n\u00a0=\u00a028), without stimulus and after cold (6-9\u00a0\u00b0C) or beta-agonist (CL316243) stimuli. PET studies were performed at baseline and after 21\u00a0days of daily treatment with crotamine, which is a peptide described to induce adipocyte tissue browning and to increase BAT metabolism. Tracer uptake (SUVmax) was measured in the interscapular BAT and translocator protein 18\u00a0kDa (TSPO) expression was evaluated by immunohistochemistry.<h4>Results</h4>The cold stimulus increased [<sup>18</sup>F]FDG uptake compared to no-stimulus (5.21\u00a0\u00b1\u00a01.05 vs. 2.03\u00a0\u00b1\u00a00.21, p\u00a0<\u00a00.0"
+   },
+   {
+    "title": "Sex-specific regulation of miR-22 and ER\u03b1 in white adipose tissue of obese dam's female offspring impairs the early postnatal development of functional beige adipocytes in mice.",
+    "year": "2024",
+    "journal": null,
+    "doi": "10.1016/j.bbadis.2024.167057",
+    "pmid": "38331111",
+    "abstract": "During inguinal adipose tissue (iWAT) ontogenesis, beige adipocytes spontaneously appear between postnatal 10 (P10) and P20 and their ablation impairs iWAT browning capacity in adulthood. Since maternal obesity has deleterious effects on offspring iWAT function, we aimed to investigate its effect in spontaneous iWAT browning in offspring. Female C57BL/6\u00a0J mice were fed a control or obesogenic diet six weeks before mating. Male and female offspring were euthanized at P10 and P20 or weaned at P21 and fed chow diet until P60. At P50, mice were treated with saline or CL316,243, a \u03b23-adrenoceptor agonist, for ten days. Maternal obesity induced insulin resistance at P60, and CL316,243 treatment effectively restored insulin sensitivity in male but not female offspring. This discrepancy occurred due to female offspring severe browning impairment. During development, the spontaneous iWAT browning"
+   },
+   {
+    "title": "Perivascular space dysfunction in cerebral small vessel disease is related to neuroinflammation.",
+    "year": "2025",
+    "journal": null,
+    "doi": "10.1093/brain/awae357",
+    "pmid": "39509331",
+    "abstract": "Enlarged perivascular spaces are a feature of cerebral small vessel disease, and it has been hypothesized that they might reflect impaired glymphatic drainage. The mechanisms underlying enlargement of perivascular spaces are not fully understood, but both increased inflammation and blood-brain barrier (BBB) permeability have been hypothesized to play a role. We investigated the relationship between perivascular spaces and both CNS and peripheral inflammation, in addition to BBB permeability, in cerebral small vessel disease. Fifty-four symptomatic sporadic cerebral small vessel disease patients were studied. Perivascular spaces were quantified both using a visual rating scale and by measurement of the volume of perivascular spaces in the white matter and the basal ganglia. PET-MRI was used to measure microglial activation using the radioligand 11C-PK11195, and simultaneously, BBB permeab"
+   },
+   {
+    "title": "Hemispheric asymmetry of [&lt;sup&gt;11&lt;/sup&gt;C](&lt;i&gt;R)&lt;/i&gt;PK11195 binding to translocator protein 18\u2009kDa (TSPO) in normal brain.",
+    "year": "2025",
+    "journal": null,
+    "doi": "10.1177/0271678x251348790",
+    "pmid": "40536168",
+    "abstract": "Many positron emission tomography (PET) imaging studies in health and disease of the translocator protein 18\u2009kDa (TSPO) using different radioligands have been published, however, only few separately reported left and right regions of interest in the brain. Thus, TSPO binding in healthy brains using [<sup>11</sup>C](<i>R</i>)PK11195 datasets of 76 participants from two PET sites was assessed for symmetry. Structural MRI scans were used for brain segmentation and to define six regions of interest (thalamus, putamen, temporal, frontal, parietal, and occipital cortex) with a probabilistic brain atlas. The simplified reference tissue model with bilateral grey matter cerebellar reference tissue input function was used to estimate distribution volume ratios (DVR). On a global level, the right hemisphere had higher DVR than the left side (p\u2009<\u20090.001, Cohen's <i>d\u2009=\u2009</i>1.14 for grey matter and 1."
+   },
+   {
+    "title": "Xanthatin-13-(Pyrrolidine-2-Carboxylic Acid), a Sesquiterpene Lactone Isolated From Burdock Leaf, Attenuated A\u03b2&lt;sub&gt;25-35&lt;/sub&gt; Toxicity and Memory Deficits in a Pharmacological Mouse Model of Alzheimer's Disease.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.1002/ptr.70294",
+    "pmid": "41793191",
+    "abstract": "Alzheimer's disease (AD) is a severe form of dementia, which occurrence increases with age and lifestyle conditions. It is characterized by amyloid protein accumulation forming senile plaques, hyperphosphorylated tau protein forming neurofibrillary tangles, neuroinflammation, and oxidative stress, leading to synapse loss and cell death. Pharmacological alternatives to conventional treatments include alkaloids with anti-inflammatory and antioxidant properties. Sesquiterpene lactones, such as Xanthatin-13-(pyrrolidine-2-carboxylic acid) (XPc) from burdock leaf, show promise due to their antioxidant activity targeting glucose-6-phosphate dehydrogenase. This study evaluated XPc's protective effects in\u00a0vivo using A\u03b2<sub>25-35</sub>-treated mice, a pharmacological AD model, and explores its synergistic potential with neuroprotective agents like TSPO activators or sigma-1 receptor agonists. Mic"
+   },
+   {
+    "title": "Visualizing the metabolic battleground: the role of PET imaging in understanding immunometabolism and the tumor microenvironment.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.1097/mnm.0000000000002150",
+    "pmid": "41913679",
+    "abstract": "PET has evolved beyond tumor glucose metabolism imaging to assess the immunometabolic landscape of the tumor microenvironment (TME) and systemic immune responses. Immunometabolism, encompassing glycolysis, oxidative phosphorylation, and fatty acid oxidation, governs immune cell activation, differentiation, and effector function, shaping antitumor immunity and immunotherapy outcomes. PET radiotracers, including fluorine 18-fluorodeoxyglucose, amino acid/nucleoside tracers ( 11 C-methionine, 18 F-F-AraG), cytokine/receptor-targeted tracers ( 64 Cu-IFN\u03b3, 68 Ga-NOTA-Nb109), and macrophage-directed tracers ( 11 C-PK11195, gallium-68-labeled NOTA-mannosylated serum albumin), enable noninvasive visualization of immune metabolism, proliferation, and polarization. Novel agents such as gallium-68-labeled fibroblast activation protein inhibitor and 68 Ga-Pentixafor further capture stromal remodelin"
+   },
+   {
+    "title": "A multielectrode array reveals therapeutic potential of translocator protein ligands in a zebrafish model of Dravet syndrome.",
+    "year": "2025",
+    "journal": null,
+    "doi": "10.1016/j.jpet.2025.103614",
+    "pmid": "40561753",
+    "abstract": "Dravet syndrome (DS) is a rare developmental and epileptic encephalopathy caused by de novo mutations in the sodium channel Nav1.1 gene, SCN1A. Here, we used a translational zebrafish (ZF) model of DS (Scn1Lab) which exhibits key characteristics known to occur in patients with DS to evaluate drugs with therapeutic potential. Previous work in our laboratory has shown metabolic deficits in Scn1Lab ZF and identified 1-(2-chlorophenyl)-N-[<sup>11</sup>C] methyl-N-(1-methylpropyl)-3-isoquinoline carboxamide (PK11195), a mitochondrial translocator protein (TSPO) ligand, as the lead compound which decreased neuronal hyperexcitability and metabolic deficits observed in Scn1Lab mutants. In this study, we examined the effects of additional TSPO ligands, etifoxine and XBD173, on modulating behavioral and electrophysiological seizure parameters and reversing the metabolic deficits previously reporte"
+   },
+   {
+    "title": "Chronic Combined Oral Methylphenidate and Fluoxetine Increases Inflammation in Somatosensory and Mesolimbic Brain Regions.",
+    "year": "2025",
+    "journal": null,
+    "doi": "10.1007/s11064-025-04608-3",
+    "pmid": "41212420",
+    "abstract": "Methylphenidate (MP) is commonly prescribed to treat attention deficit hyperactivity disorder (ADHD). ADHD and depression are often comorbid, leading to simultaneous use of serotonin reuptake inhibitors (SSRIs), such as Fluoxetine (FLX). Previous studies have shown MP increases microglial activation, which has been linked to neuroinflammation, but little is known about these two medications in combination. To address this gap in our knowledge, 3-week-old male Sprague Dawley rats were randomly assigned into four groups receiving either water, MP, FLX, or MP\u2009+\u2009FLX orally using a previously established dosing regimen. After four weeks of treatment the animal's brains were collected for in vitro [<sup>3</sup>H] PK11195 autoradiography. Chronic treatment with MP and MP\u2009+\u2009FLX resulted in significantly increased [<sup>3</sup>H] PK11195 binding in somatosensory regions including the cortex limbs"
+   }
+  ]
+ },
+ "etifoxine_metab": {
+  "query": "etifoxine AND (obesity OR \"body weight\" OR adipose OR \"weight loss\" OR \"weight gain\" OR glucose OR metabolic)",
+  "hitCount": 130,
+  "results": [
+   {
+    "title": "Etifoxine drives macrophage M2 polarization via Schwann cell-derived progesterone activation of PPAR\u03b3 to accelerate peripheral nerve repair.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.3389/fncel.2026.1789450",
+    "pmid": "41958827",
+    "abstract": "<h4>Background</h4>Peripheral nerve injury (PNI) presents a significant clinical challenge due to limited endogenous regenerative capacity. The translocator protein (TSPO) ligand etifoxine (ETX) has shown promise in promoting nerve repair, but the underlying cellular and molecular mechanisms remain incompletely understood.<h4>Methods</h4>Utilizing in vitro co-culture systems with human Schwann cells (HSCs) and THP-1-derived macrophages, TSPO-knockdown HSCs, conditioned medium experiments, and an in vivo rat sciatic nerve crush injury model, we investigated the effects of ETX on cellular crosstalk and macrophage polarization. Molecular analyses included RNA sequencing, western blotting, fatty acid oxidation (FAO) assays, and a Mito-QC reporter system to assess mitophagy. Functional recovery was evaluated through behavioral tests (hindlimb grip strength, mechanical pain threshold), immunof"
+   },
+   {
+    "title": "A rapid clinical response to etifoxine in treatment-resistant obsessive-compulsive disorder: a case report of a patient with comorbid bipolar disorder.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.1177/20451253261429968",
+    "pmid": "41883424",
+    "abstract": "This case report describes the rapid clinical response to etifoxine, an oral translocator protein 18\u2009kDa (TSPO) ligand, in a patient with severe, treatment-resistant obsessive-compulsive disorder (OCD) with comorbid bipolar I disorder. Despite extensive prior pharmacological treatments and neurosurgical interventions, the patient experienced significant symptom amelioration within days of etifoxine initiation (the Yale-Brown Obsessive-Compulsive Scale (YBOCS) score decreased from 50 to 29). We discussed the potential mechanisms underlying this rapid response, including direct \u03b3-aminobutyric acid (GABA) receptor modulation, increased endogenous neurosteroidogenesis, reduced neuroinflammation, and modulation of the gut-brain axis. This case highlights etifoxine as a novel therapeutic option for treatment-resistant OCD and underscores the need for further research into TSPO ligands in this "
+   },
+   {
+    "title": "A multielectrode array reveals therapeutic potential of translocator protein ligands in a zebrafish model of Dravet syndrome.",
+    "year": "2025",
+    "journal": null,
+    "doi": "10.1016/j.jpet.2025.103614",
+    "pmid": "40561753",
+    "abstract": "Dravet syndrome (DS) is a rare developmental and epileptic encephalopathy caused by de novo mutations in the sodium channel Nav1.1 gene, SCN1A. Here, we used a translational zebrafish (ZF) model of DS (Scn1Lab) which exhibits key characteristics known to occur in patients with DS to evaluate drugs with therapeutic potential. Previous work in our laboratory has shown metabolic deficits in Scn1Lab ZF and identified 1-(2-chlorophenyl)-N-[<sup>11</sup>C] methyl-N-(1-methylpropyl)-3-isoquinoline carboxamide (PK11195), a mitochondrial translocator protein (TSPO) ligand, as the lead compound which decreased neuronal hyperexcitability and metabolic deficits observed in Scn1Lab mutants. In this study, we examined the effects of additional TSPO ligands, etifoxine and XBD173, on modulating behavioral and electrophysiological seizure parameters and reversing the metabolic deficits previously reporte"
+   },
+   {
+    "title": "From imaging to intervention: emerging potential of PET biomarkers to shape therapeutic strategies for TBI-induced neurodegeneration.",
+    "year": "2025",
+    "journal": null,
+    "doi": "10.3389/fneur.2025.1637243",
+    "pmid": "40837059",
+    "abstract": "This review examines the role of positron emission tomography (PET) imaging tracers in advancing our understanding of traumatic brain injury (TBI) induced neurodegeneration and the therapeutic targets they help to identify. It focuses on tracers used to evaluate post-TBI alterations in metabolism, amyloid, tau, neuroinflammation, and neurotransmitter systems. These molecular imaging tools provide critical insights into pathophysiological processes such as disrupted glucose metabolism, amyloid deposition, tau accumulation, chronic neuroinflammatory responses, and neurotransmitter dysregulation. The review also explores how these tracers, as imaging biomarkers, may guide future therapeutic strategies. Finally, it discusses the challenges and opportunities associated with integrating PET imaging into TBI diagnosis, longitudinal monitoring, and treatment planning."
+   },
+   {
+    "title": "Decoding the metastatic nexus: how chronic stress reprograms neuroendocrine-metabolic-microbiome circuits to fuel tumor metastasis.",
+    "year": "2025",
+    "journal": null,
+    "doi": "10.62347/okkh6279",
+    "pmid": "41523241",
+    "abstract": "Metastasis, the leading cause of death in patients with solid tumors, involves the spread of cancer cells to distant organs. While genetic and environmental factors contribute, chronic stress is a crucial factor in metastatic progression by disrupting neuroendocrine, immune, metabolic, and microbial homeostasis. This review synthesizes evidence linking chronic stress to tumor metastasis through three pathways: (1) direct effects on tumor cell metabolism, (2) remodeling of the tumor microenvironment, and (3) dysregulation of the gut microbiota. Describe how activation of the hypothalamic-pituitary-adrenal axis and sympathetic nervous system influence epithelial-mesenchymal transition, immune evasion, and angiogenesis via \u03b2-adrenergic and glucocorticoid receptor signaling. Explore how microbial metabolites and barrier dysfunction influence immune and neuroendocrine circuits, creating a pro"
+   },
+   {
+    "title": "Protection from oxygen-glucose deprivation by neurosteroid treatment in primary neurons and oligodendrocytes.",
+    "year": "2024",
+    "journal": null,
+    "doi": "10.1007/s11626-024-00957-5",
+    "pmid": "39075243",
+    "abstract": "Preterm birth results in an increased risk of neonatal brain injury and neurobehavioural disorders. Despite the seriousness of these adverse outcomes, there are currently no effective therapies to protect the vulnerable developing brain. We propose that neurosteroid replacement therapy may be a novel approach in reducing detrimental neurological outcomes following preterm birth. The use of guinea pig primary neuronal and oligodendrocyte cultures with relevance to late gestation allows insight into the mechanisms behind the effectiveness of these treatments. Primary neuronal and oligodendrocyte cultures were derived from fetal guinea pig frontal cortex brain tissue at gestational age 62 (GA62). Cell cultures were pre-treated with either etifoxine (5\u00a0\u00b5M) or zuranolone (1\u00a0\u00b5m) for 24\u00a0h prior to insult. Cells were then exposed to either oxygen-glucose deprivation (OGD; 0% O<sub>2</sub> and no"
+   },
+   {
+    "title": "Afobazole: a potential drug candidate which can inhibit SARS CoV-2 and mimicry of the human respiratory pacemaker protein.",
+    "year": "2025",
+    "journal": null,
+    "doi": "10.1007/s40203-025-00316-6",
+    "pmid": "39974371",
+    "abstract": "In COVID-19 patients, respiratory failure was reported due to damage to the respiratory centers of the brainstem. Molecular mimicry of three brainstem pre-Botzinger complex proteins (DAB1, AIFM and SURF1) was regarded as the underlying reason for respiratory failure and the autoimmune neurological sequelae. Of the three brainstem proteins mimicked by SARS CoV-2, corresponding sequences to two of the mimicry peptides were located in the N-protein of SARS CoV-2. N-protein is important for viral RNA synthesis and genome packaging. Here, we have used molecular modeling, docking and MD simulations to discern potential drugs which can inhibit molecular mimicry of DAB1 by SARS CoV-2 and also eliminate it by interfering in genome packaging. The binding site (drug target) for molecular docking was defined as the amino acid sequence extending from position 168-185 of the N-protein which was a SLiM"
+   },
+   {
+    "title": "Translating Basic Science to Clinical Applications: A Narrative Review of Repurposed Pharmacological Agents in Preclinical Models of Diabetic Neuropathy.",
+    "year": "2025",
+    "journal": null,
+    "doi": "10.3390/biomedicines13071709",
+    "pmid": "40722780",
+    "abstract": "Diabetic neuropathy (DN) remains a major clinical burden, characterized by progressive sensory dysfunction, pain, and impaired quality of life. Despite the available symptomatic treatments, there is a pressing need for disease-modifying therapies. In recent years, preclinical research has highlighted the potential of repurposed pharmacological agents, originally developed for other indications, to target key mechanisms of DN. This narrative review examines the main pathophysiological pathways involved in DN, including metabolic imbalance, oxidative stress, neuroinflammation, ion channel dysfunction, and mitochondrial impairment. A wide array of repurposed drugs-including antidiabetics (metformin, empagliflozin, gliclazide, semaglutide, and pioglitazone), antihypertensives (amlodipine, telmisartan, aliskiren, and rilmenidine), lipid-lowering agents (atorvastatin and alirocumab), anticonvu"
+   },
+   {
+    "title": "Etifoxine reverses weight gain and alters the colonic bacterial community in a mouse model of obesity.",
+    "year": "2020",
+    "journal": null,
+    "doi": "10.1016/j.bcp.2020.114151",
+    "pmid": "32679124",
+    "abstract": "Obesity is intimately associated with diet and dysbiosis of gut microorganisms but anxiolytics, widely used in treatment of psychiatric conditions, frequently result in weight gain and associated metabolic disorders. We are interested in effects of the anxiolytic etifoxine, which has not been studied with respect to weight gain or effects on gut microorganisms. Here we induced obesity in mice by feeding a high-fat diet but found that intraperitoneal administration of etifoxine resulted in weight loss and decreased serum cholesterol and triglycerides. Obese mice had increased hepatic transcripts associated with lipid metabolism (cyp7a1, cyp27a1, abcg1 and LXR\u03b1) and inflammatory factors (TNF\u03b1 and IL18) but these effects were reversed after etifoxine treatment other than cyp7a1. Taxonomic profiles of the organisms from the caecum were generated by 16S rRNA gene sequencing and Obese and etif"
+   },
+   {
+    "title": "Exploring the Roles of Vitamins C and D and Etifoxine in Combination with Citalopram in Depression/Anxiety Model: A Focus on ICAM-1, SIRT1 and Nitric Oxide.",
+    "year": "2024",
+    "journal": null,
+    "doi": "10.3390/ijms25041960",
+    "pmid": "38396638",
+    "abstract": "The study of intercellular adhesion molecule-1 (ICAM-1) and SIRT1, a member of the sirtuin family with nitric oxide (NO), is emerging in depression and anxiety. As with all antidepressants, the efficacy is delayed and inconsistent. Ascorbic acid (AA) and vitamin D (D) showed antidepressant properties, while etifoxine (Etx), a GABAA agonist, alleviates anxiety symptoms. The present study aimed to investigate the potential augmentation of citalopram using AA, D and Etx and related the antidepressant effect to brain and serum ICAM-1, SIRT1 and NO in an animal model. BALB/c mice were divided into naive, control, citalopram, citalopram + etx, citalopram + AA, citalopram + D and citalopram + etx + AA + D for 7 days. On the 8th day, the mice were restrained for 8 h, followed by a forced swim test and marble burying test before scarification. Whole-brain and serum expression of ICAM-1, Sirt1 and"
+   },
+   {
+    "title": "The translocator protein 18kDa ligand etifoxine in the treatment of depressive disorders-a double-blind, randomized, placebo-controlled proof-of-concept study.",
+    "year": "2024",
+    "journal": null,
+    "doi": "10.1186/s13063-024-08120-x",
+    "pmid": "38650030",
+    "abstract": "<h4>Background</h4>Recent developments suggest that neurosteroids may achieve rapid antidepressant effects. As such, neurosteroidogenesis mediated by the translocator protein 18\u00a0kDa (TSPO) might constitute a promising option for the treatment of depression. Therefore, the current clinical trial aims to get the first evidence of whether TPSO ligands promote rapid antidepressant effects. Furthermore, we study which mechanisms of action, e.g., modulation of distinct neuronal networks, neurosteroidogenesis, endocrinological mechanisms, TSPO expression or microbiome composition, contribute to their putative antidepressant effects.<h4>Methods</h4>This is a randomized, placebo-controlled, double-blind single-center trial of 2-week treatment with the TSPO ligand etifoxine versus placebo in depressive patients. Main eligibility criteria: male or female individuals aged 18 to 65\u00a0years with unipola"
+   },
+   {
+    "title": "Functional role of translocator protein and its ligands in ocular diseases (Review).",
+    "year": "2024",
+    "journal": null,
+    "doi": "10.3892/mmr.2024.13157",
+    "pmid": "38186312",
+    "abstract": "The 18\u00a0kDa translocator protein (TSPO) is an essential outer mitochondrial membrane protein that is responsible for mitochondrial transport, maintenance of mitochondrial homeostasis and normal physiological cell function. The role of TSPO in the pathogenesis of ocular diseases is a growing area of interest. More notably, TSPO exerts positive effects in regulating various pathophysiological processes, such as the inflammatory response, oxidative stress, steroid synthesis and modulation of microglial function, in combination with a variety of specific ligands such as 1\u2011(2\u2011chlorophenyl\u2011N\u2011methylpropyl)\u20113\u2011isoquinolinecarboxamide, 4'\u2011chlorodiazepam and XBD173. In the present review, the expression of TSPO in ocular tissues and the functional role of TSPO and its ligands in diverse ocular diseases was discussed."
+   },
+   {
+    "title": "TSPO: an emerging role in appetite for a therapeutically promising biomarker.",
+    "year": "2021",
+    "journal": null,
+    "doi": "10.1098/rsob.210173",
+    "pmid": "34343461",
+    "abstract": "There is accumulating evidence that an obesogenic Western diet causes neuroinflammatory damage to the brain, which then promotes further appetitive behaviour. Neuroinflammation has been extensively studied by analysing the translocator protein of 18 kDa (TSPO), a protein that is upregulated in the inflamed brain following a damaging stimulus. As a result, there is a rich supply of TSPO-specific agonists, antagonists and positron emission tomography ligands. One TSPO ligand, etifoxine, is also currently used clinically for the treatment of anxiety with a minimal side-effect profile. Despite the neuroinflammatory pathogenesis of diet-induced obesity, and the translational potential of targeting TSPO, there is sparse literature characterizing the effect of TSPO on appetite. Therefore, in this review, the influence of TSPO on appetite is discussed. Three putative mechanisms for TSPO's appeti"
+   },
+   {
+    "title": "Synthesis of Azo-Substituted Benzoxazin-4-ones by Base-Mediated Addition of Diazenyl Anions to Isatoic Anhydrides.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.1021/acs.orglett.6c02115",
+    "pmid": "42363895",
+    "abstract": "A two-step synthesis of 4<i>H</i>-benzo[<i>d</i>][1,3]oxazin-4-ones bearing an azo unit at C2 from isatoic anhydrides and silylated diazenes is reported. The key step is the diazenylation of an isocyanate formed in situ by base-mediated ring opening of the isatoic anhydride. The addition of the elusive diazenyl anion proceeds <i>without</i> the loss of dinitrogen in the basic reaction medium. The benzoxazinone motif is subsequently established by cyclization with the Mukaiyama reagent."
+   },
+   {
+    "title": "Oscillospira - a candidate for the next-generation probiotics.",
+    "year": "2021",
+    "journal": null,
+    "doi": "10.1080/19490976.2021.1987783",
+    "pmid": "34693878",
+    "abstract": "<i>Oscillospira</i> is a class of organism that often appears in high-throughput sequencing data but has not been purely cultured and is widely present in the animal and human intestines. There is a strong association between variation in <i>Oscillospira</i> abundance and obesity, leanness, and human health. In addition, a growing body of studies has shown that <i>Oscillospira</i> is also implicated in other diseases, such as gallstones and chronic constipation, and has shown some correlation with the positive or negative changes in its course. Sequencing data combined with metabolic profiling indicate that <i>Oscillospira</i> is likely to be a genus capable of producing short-chain fatty acids (SCFAs) such as butyrate, which is an important reference indicator for screening \"next-generation probiotics \". Considering the positive effects of <i>Oscillospira</i> in some specific diseases, "
+   }
+  ]
+ },
+ "etifoxine_tspo_ki": {
+  "query": "etifoxine AND TSPO AND (affinity OR Ki OR \"binding affinity\")",
+  "hitCount": 77,
+  "results": [
+   {
+    "title": "A rapid clinical response to etifoxine in treatment-resistant obsessive-compulsive disorder: a case report of a patient with comorbid bipolar disorder.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.1177/20451253261429968",
+    "pmid": "41883424",
+    "abstract": "This case report describes the rapid clinical response to etifoxine, an oral translocator protein 18\u2009kDa (TSPO) ligand, in a patient with severe, treatment-resistant obsessive-compulsive disorder (OCD) with comorbid bipolar I disorder. Despite extensive prior pharmacological treatments and neurosurgical interventions, the patient experienced significant symptom amelioration within days of etifoxine initiation (the Yale-Brown Obsessive-Compulsive Scale (YBOCS) score decreased from 50 to 29). We discussed the potential mechanisms underlying this rapid response, including direct \u03b3-aminobutyric acid (GABA) receptor modulation, increased endogenous neurosteroidogenesis, reduced neuroinflammation, and modulation of the gut-brain axis. This case highlights etifoxine as a novel therapeutic option for treatment-resistant OCD and underscores the need for further research into TSPO ligands in this "
+   },
+   {
+    "title": "Etifoxine drives macrophage M2 polarization via Schwann cell-derived progesterone activation of PPAR\u03b3 to accelerate peripheral nerve repair.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.3389/fncel.2026.1789450",
+    "pmid": "41958827",
+    "abstract": "<h4>Background</h4>Peripheral nerve injury (PNI) presents a significant clinical challenge due to limited endogenous regenerative capacity. The translocator protein (TSPO) ligand etifoxine (ETX) has shown promise in promoting nerve repair, but the underlying cellular and molecular mechanisms remain incompletely understood.<h4>Methods</h4>Utilizing in vitro co-culture systems with human Schwann cells (HSCs) and THP-1-derived macrophages, TSPO-knockdown HSCs, conditioned medium experiments, and an in vivo rat sciatic nerve crush injury model, we investigated the effects of ETX on cellular crosstalk and macrophage polarization. Molecular analyses included RNA sequencing, western blotting, fatty acid oxidation (FAO) assays, and a Mito-QC reporter system to assess mitophagy. Functional recovery was evaluated through behavioral tests (hindlimb grip strength, mechanical pain threshold), immunof"
+   },
+   {
+    "title": "PET Imaging Unveils Neuroinflammatory Mechanisms in Psychiatric Disorders: From Microglial Activation to Therapeutic Innovation.",
+    "year": "2025",
+    "journal": null,
+    "doi": "10.1007/s12035-025-05177-w",
+    "pmid": "40610825",
+    "abstract": "Recent advancements in neuroinflammation research have significantly enhanced our understanding of its pivotal role in the pathogenesis and pathophysiology of psychiatric disorders. Positron emission tomography (PET) imaging, leveraging its unique ability to quantify biological processes in vivo non-invasively, has emerged as a transformative tool for investigating neuroimmune mechanisms. The 18\u00a0kDa translocator protein (TSPO), a biomarker of activated microglia and astrocytes during neuroinflammation, enables PET-based visualization of neuroinflammatory activity, offering novel insights into the neurobiological underpinnings of psychiatric conditions. This review synthesizes recent TSPO PET imaging findings across major psychiatric disorders, including major depressive disorder (MDD), obsessive-compulsive disorder (OCD), posttraumatic stress disorder (PTSD), schizophrenia, and psychosis"
+   },
+   {
+    "title": "A multielectrode array reveals therapeutic potential of translocator protein ligands in a zebrafish model of Dravet syndrome.",
+    "year": "2025",
+    "journal": null,
+    "doi": "10.1016/j.jpet.2025.103614",
+    "pmid": "40561753",
+    "abstract": "Dravet syndrome (DS) is a rare developmental and epileptic encephalopathy caused by de novo mutations in the sodium channel Nav1.1 gene, SCN1A. Here, we used a translational zebrafish (ZF) model of DS (Scn1Lab) which exhibits key characteristics known to occur in patients with DS to evaluate drugs with therapeutic potential. Previous work in our laboratory has shown metabolic deficits in Scn1Lab ZF and identified 1-(2-chlorophenyl)-N-[<sup>11</sup>C] methyl-N-(1-methylpropyl)-3-isoquinoline carboxamide (PK11195), a mitochondrial translocator protein (TSPO) ligand, as the lead compound which decreased neuronal hyperexcitability and metabolic deficits observed in Scn1Lab mutants. In this study, we examined the effects of additional TSPO ligands, etifoxine and XBD173, on modulating behavioral and electrophysiological seizure parameters and reversing the metabolic deficits previously reporte"
+   },
+   {
+    "title": "Molecular Basis of Anxiety: A Comprehensive Review of 2014-2024 Clinical and Preclinical Studies.",
+    "year": "2025",
+    "journal": null,
+    "doi": "10.3390/ijms26115417",
+    "pmid": "40508224",
+    "abstract": "Anxiety disorders are among the most common psychiatric conditions that significantly impair one's quality of life and place a significant burden on healthcare systems. Conventional treatments have certain restraints, such as potential side effects and limited efficacy. \u03a4he underlying pathophysiological mechanisms of anxiety are not fully understood. A comprehensive literature search was performed in MEDLINE and Scopus databases for original English-language articles published between January 2014 and December 2024. Study selection, data extraction, and screening were independently carried out by multiple investigators using predefined criteria. Our review aimed to help better comprehend the molecular basis of anxiety, focusing on the hypothalamic-pituitary-adrenal (HPA) axis, serotonergic signaling, and gamma-aminobutyric acid (GABA) neurotransmission. In addition, we addressed the role"
+   },
+   {
+    "title": "From imaging to intervention: emerging potential of PET biomarkers to shape therapeutic strategies for TBI-induced neurodegeneration.",
+    "year": "2025",
+    "journal": null,
+    "doi": "10.3389/fneur.2025.1637243",
+    "pmid": "40837059",
+    "abstract": "This review examines the role of positron emission tomography (PET) imaging tracers in advancing our understanding of traumatic brain injury (TBI) induced neurodegeneration and the therapeutic targets they help to identify. It focuses on tracers used to evaluate post-TBI alterations in metabolism, amyloid, tau, neuroinflammation, and neurotransmitter systems. These molecular imaging tools provide critical insights into pathophysiological processes such as disrupted glucose metabolism, amyloid deposition, tau accumulation, chronic neuroinflammatory responses, and neurotransmitter dysregulation. The review also explores how these tracers, as imaging biomarkers, may guide future therapeutic strategies. Finally, it discusses the challenges and opportunities associated with integrating PET imaging into TBI diagnosis, longitudinal monitoring, and treatment planning."
+   },
+   {
+    "title": "Human pharmacokinetics of XBD173 and etifoxine distinguish their potential for pharmacodynamic effects mediated by translocator protein.",
+    "year": "2022",
+    "journal": null,
+    "doi": "10.1111/bcp.15392",
+    "pmid": "35524344",
+    "abstract": "XBD173 and etifoxine are translocator protein (TSPO) ligands that modulate inflammatory responses in preclinical models. Limited human pharmacokinetic data is available for either molecule, and the binding affinity of etifoxine for human TSPO is unknown. To allow for design of human challenge experiments, we derived pharmacokinetic data for orally administered etifoxine (50\u2009mg 3 times daily) and XBD173 (90\u2009mg once daily) and determined the binding affinity of etifoxine for TSPO. For XBD173, maximum plasma concentration and free fraction measurements predicted a maximal free concentration of 1.0\u00a0nM, which is similar to XBD173 binding affinity. For etifoxine, maximum plasma concentration and free fraction measurements predicted a maximal free concentration of 0.31\u2009nM, substantially lower than the K<sub>i</sub> for etifoxine in human brain derived here (7.8\u2009\u03bcM, 95% CI 4.5-14.6\u2009\u03bcM). We concl"
+   },
+   {
+    "title": "Neurosteroids and translocator protein 18\u00a0kDa (TSPO) ligands as novel treatment options in depression.",
+    "year": "2025",
+    "journal": null,
+    "doi": "10.1007/s00406-024-01843-7",
+    "pmid": "38976049",
+    "abstract": "Recently, the gamma-aminobutyric acid (GABA) system has come into focus for the treatment of anxiety, postpartum depression, and major depressive disorder. Endogenous 3\u03b1-reduced steroids such as allopregnanolone are potent positive allosteric modulators of GABA<sub>A</sub> receptors and have been known for decades. Current industry developments and first approvals by the U.S. food and drug administration (FDA) for the treatment of postpartum depression with exogenous analogues of these steroids represent a major step forward in the field. 3\u03b1-reduced steroids target both synaptic and extrasynaptic GABA<sub>A</sub> receptors, unlike benzodiazepines, which bind to synaptic receptors. The first FDA-approved 3\u03b1-reduced steroid for postpartum depression is brexanolone, an intravenous formulation of allopregnanolone. It has been shown to provide rapid relief of depressive symptoms. An orally av"
+   },
+   {
+    "title": "mtDNA-Depleted Mitochondria Form Sites of Contact with the Nucleus and Alter the Cellular Epigenome.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.1177/25152564261428840",
+    "pmid": "41883751",
+    "abstract": "Mitochondrial sites of contact with the nucleus, hereafter referred to as Nucleus-Associated Mitochondria (NAM), are specialised domains that enable communication, influencing cellular function. Previous studies have shown that these contacts can be stabilised by protein scaffolds acting as tethers to promote retrograde signalling, particularly during apoptotic stress. This is facilitated via the mitochondrial protein TSPO. In this study, we have investigated a mitochondrial DNA (mtDNA)-depleted (\u03c1<sup>0</sup>) 4T1 cell model to further inform the role of NAM in retrograde communication between corrupted mitochondria and the nucleus. Our data report an increase in NAM frequency in mtDNA-depleted cells compared to the mtDNA-retaining parental 4T1 line. Using a combination of cellular assays, transmission electron microscopy, and epigenetic profiling, we have found that under conditions of"
+   },
+   {
+    "title": "Human pharmacokinetics of XBD173 and etifoxine distinguish their potential for pharmacodynamic effects mediated by TSPO",
+    "year": "2022",
+    "journal": null,
+    "doi": "10.22541/au.164659809.93631578/v1",
+    "pmid": null,
+    "abstract": "<h4>Background: </h4> The 18kDa Translocator Protein (TSPO) has been proposed as a novel anti-inflammatory drug target. XBD173 and etifoxine are TSPO ligands that modulate inflammatory responses in preclinical models. Limited pharmacokinetic data is available publicly for either molecule. Purpose To derive pharmacokinetic data for orally administered etifoxine and XBD173 in humans and determine the binding affinity of etifoxine for TSPO. Experimental Approach We measured plasma concentrations serially after dosing 4 healthy volunteers with XBD173 90mg once a day (OD) for 7 days or etifoxine 50mg three times a day (TDS) for 7 days. We separately performed competition assays between etifoxine and [3H]PK11195 in human brain tissue to determine its TSPO binding affinity. Key Results The average XBD173 Cmax was 129 ng/mL with free fraction was 0.34%, predicting a maximal free concentration of"
+   },
+   {
+    "title": "Translocator protein in the rise and fall of central nervous system neurons.",
+    "year": "2023",
+    "journal": null,
+    "doi": "10.3389/fncel.2023.1210205",
+    "pmid": "37416505",
+    "abstract": "Translocator protein (TSPO), a 18 kDa protein found in the outer mitochondrial membrane, has historically been associated with the transport of cholesterol in highly steroidogenic tissues though it is found in all cells throughout the mammalian body. TSPO has also been associated with molecular transport, oxidative stress, apoptosis, and energy metabolism. TSPO levels are typically low in the central nervous system (CNS), but a significant upregulation is observed in activated microglia during neuroinflammation. However, there are also a few specific regions that have been reported to have higher TSPO levels than the rest of the brain under normal conditions. These include the dentate gyrus of the hippocampus, the olfactory bulb, the subventricular zone, the choroid plexus, and the cerebellum. These areas are also all associated with adult neurogenesis, yet there is no explanation of TSP"
+   },
+   {
+    "title": "Functional role of translocator protein and its ligands in ocular diseases (Review).",
+    "year": "2024",
+    "journal": null,
+    "doi": "10.3892/mmr.2024.13157",
+    "pmid": "38186312",
+    "abstract": "The 18\u00a0kDa translocator protein (TSPO) is an essential outer mitochondrial membrane protein that is responsible for mitochondrial transport, maintenance of mitochondrial homeostasis and normal physiological cell function. The role of TSPO in the pathogenesis of ocular diseases is a growing area of interest. More notably, TSPO exerts positive effects in regulating various pathophysiological processes, such as the inflammatory response, oxidative stress, steroid synthesis and modulation of microglial function, in combination with a variety of specific ligands such as 1\u2011(2\u2011chlorophenyl\u2011N\u2011methylpropyl)\u20113\u2011isoquinolinecarboxamide, 4'\u2011chlorodiazepam and XBD173. In the present review, the expression of TSPO in ocular tissues and the functional role of TSPO and its ligands in diverse ocular diseases was discussed."
+   },
+   {
+    "title": "TSPO Ligand 2-Cl-MGV-1 Mitigates Traumatic Brain Injury (TBI) in a Mouse Model.",
+    "year": "2025",
+    "journal": null,
+    "doi": "10.3390/ijms26104854",
+    "pmid": "40429994",
+    "abstract": "In this study, we assessed the ability of 2-Cl-MGV-1 (2-chlorophenyl quinazolin-4-yl, dimethyl carbamate), a ligand of the 18 kDa mitochondrial translocator protein (TSPO), to mitigate brain damage in a mouse model of traumatic brain injury (TBI). TSPO is important for arresting the death of neurons and glia and counteracting microglial activation, and it provides anti-inflammatory activity, promotes regeneration (including neurons), and contributes to angiogenesis. We assessed the minimal dose of the TSPO ligand 2-Cl-MGV-1 that attenuates the magnitude of brain damage as well as the time window following TBI in which the treatment is effective. We found that 7.5 mg/kg of 2-Cl-MGV-1 can reduce the impact of the TBI as assessed by magnetic resonance imaging (MRI). We also found that 2-Cl-MGV-1 improved motor performance as observed in a treadmill test (80.9% fewer shocks needed and 40.7% "
+   },
+   {
+    "title": "The 18-kDa Translocator Protein PET Tracers as a Diagnostic Marker for Neuroinflammation: Development and Current Standing.",
+    "year": "2022",
+    "journal": null,
+    "doi": "10.1021/acsomega.2c00588",
+    "pmid": "35557664",
+    "abstract": "Translocator protein (TSPO, 18 kDa) is an evolutionary, well-preserved, and tryptophan-rich 169-amino-acid protein which localizes on the contact sites between the outer and inner mitochondrial membranes of steroid-synthesizing cells. This mitochondrial protein is implicated in an extensive range of cellular activities, including steroid synthesis, cholesterol transport, apoptosis, mitochondrial respiration, and cell proliferation. The upregulation of TSPO is well documented in diverse disease conditions including neuroinflammation, cancer, brain injury, and inflammation in peripheral organs. On the basis of these outcomes, TSPO has been assumed to be a fascinating subcellular target for early stage imaging of the diseased state and for therapeutic purposes. The main outline of this Review is to give an update on dealing with the advances made in TSPO PET tracers for neuroinflammation, s"
+   },
+   {
+    "title": "Novel TSPO Ligand 2-Cl-MGV-1 Can Counteract Lipopolysaccharide Induced Inflammatory Response in Murine RAW264.7 Macrophage Cell Line and Lung Models.",
+    "year": "2024",
+    "journal": null,
+    "doi": "10.3390/cells13201702",
+    "pmid": "39451220",
+    "abstract": "We assessed the anti-inflammatory activity of the TSPO ligand 2-Cl-MGV-1. Lipopolysaccharide (LPS) was used to induce inflammatory response in a murine RAW264.7 macrophage model (LPS: 100 ng/mL) and a mouse model (C57BL/6) of lung inflammation (LPS: 5 mg/kg). In the macrophage model, the presence of 2-Cl-MGV-1 (25 \u00b5M) caused the LPS-induced elevation in nitrite levels to decrease by 70% (<i>p</i> < 0.0001) and interleukin (IL)-6 by 50% (<i>p</i> < 0.05). In the mouse model, 2-Cl-MGV-1, administered 30 min before, or co-administered with, an LPS injection, significantly inhibited the elevation in serum IL-5 levels (both by 65%; <i>p</i> < 0.001 and <i>p</i> < 0.01, respectively). 2-Cl-MGV-1 administration to mice 30 min before LPS injection and 1 h thereafter significantly inhibited the elevation in IL-1\u03b2 serum levels (both by 63%, <i>p</i> < 0.005). IL-6 elevation was inhibited by 73% (<"
+   }
+  ]
+ },
+ "emapunil_metab": {
+  "query": "(emapunil OR XBD173 OR \"AC-5216\") AND (diabetes OR glucose OR insulin OR adipose OR obese OR metabolic OR \"body weight\")",
+  "hitCount": 165,
+  "results": [
+   {
+    "title": "Distinct Modulation of High- and Low-Frequency Activity by Midazolam and Neurosteroids in Neocortical Slices.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.3390/ijms27156941",
+    "pmid": "42589596",
+    "abstract": "Adverse effects of benzodiazepines are largely mediated by GABA<sub>A</sub> receptors containing \u03b11-subunits. Recent efforts to replace benzodiazepines with neurosteroids are promising, but it is unclear to what extent \u03b11-GABA<sub>A</sub> receptors are also upregulated by neurosteroids. Here, we investigate how a prototypical benzodiazepine and neurosteroids modify a form of neuronal activity that is controlled by \u03b11-GABA<sub>A</sub> receptors. We compared the actions of the benzodiazepine midazolam, the naturally occurring neurosteroid allopregnanolone, and XBD173, a drug that enhances neurosteroidogenesis, on high- (HFA, >50 Hz) and low- (LFA, <50 Hz) frequency action potential activity in cultured neocortical tissue slices derived from wild-type mice via extracellular multi-unit recordings. The effects of midazolam were also quantified in slices from \u03b12/3/5-knock-in-mice, in which the"
+   },
+   {
+    "title": "Emapunil attenuates ulcerative colitis by suppressing Z-DNA binding protein 1 driven pyroptosis and pro-inflammatory polarization in macrophages.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.3389/fimmu.2026.1813664",
+    "pmid": "42273694",
+    "abstract": "<h4>Background</h4>The pathogenesis of ulcerative colitis (UC) remains incompletely understood, and effective therapeutic targets are still lacking in clinical practice. Macrophage pyroptosis and polarization imbalance are core events in UC progression. As a key upstream regulator of pyroptosis, the role of Z-DNA binding protein 1 (ZBP1) in UC-associated macrophages has not been systematically elucidated. Our previous study demonstrated that Emapunil could suppress macrophage inflammation and downregulate ZBP1 expression, suggesting its potential as a candidate agent for UC treatment.<h4>Methods</h4>Immunofluorescence was used to detect the expression and localization of ZBP1 in colorectal tissues from UC patients and DSS-induced colitis mice. ZBP1 overexpression, knockdown, and Emapunil intervention were performed in macrophages to analyze their effects on pyroptosis, polarization, NF-\u03ba"
+   },
+   {
+    "title": "Functional role of translocator protein and its ligands in ocular diseases (Review).",
+    "year": "2024",
+    "journal": null,
+    "doi": "10.3892/mmr.2024.13157",
+    "pmid": "38186312",
+    "abstract": "The 18\u00a0kDa translocator protein (TSPO) is an essential outer mitochondrial membrane protein that is responsible for mitochondrial transport, maintenance of mitochondrial homeostasis and normal physiological cell function. The role of TSPO in the pathogenesis of ocular diseases is a growing area of interest. More notably, TSPO exerts positive effects in regulating various pathophysiological processes, such as the inflammatory response, oxidative stress, steroid synthesis and modulation of microglial function, in combination with a variety of specific ligands such as 1\u2011(2\u2011chlorophenyl\u2011N\u2011methylpropyl)\u20113\u2011isoquinolinecarboxamide, 4'\u2011chlorodiazepam and XBD173. In the present review, the expression of TSPO in ocular tissues and the functional role of TSPO and its ligands in diverse ocular diseases was discussed."
+   },
+   {
+    "title": "Outward depolarization of the microglia mitochondrial membrane potential following lipopolysaccharide exposure: a novel screening tool for microglia metabolomics.",
+    "year": "2024",
+    "journal": null,
+    "doi": "10.3389/fncel.2024.1430448",
+    "pmid": "39569069",
+    "abstract": "Microglia are non-electrogenic immune cells that respond rapidly to protect the central nervous system (CNS) from infections, injuries, or other forms of damage. Microglia mitochondria are essential for providing the requisite energy resources for immune regulation. While fluctuations in energy metabolism are regulated by mitochondria and are reflected in the mitochondrial membrane potential (\u0394\u03a8m), there remains a lack of innovation in microglia-centric tools that capitalize on this. In this study, live imaging of microglia in acute slices from EGFP reporter mice expressing EGFP under the control of the fractalkine receptor (CX3CR1) promoter is combined with loading a fluorescent reporter of \u0394\u03a8m. Depolarizations in the \u0394\u03a8m were recorded after administering the well-characterized immune stimulant lipopolysaccharide (LPS). Microglia \u0394\u03a8m increased in distinctive phases with a relatively ste"
+   },
+   {
+    "title": "A multielectrode array reveals therapeutic potential of translocator protein ligands in a zebrafish model of Dravet syndrome.",
+    "year": "2025",
+    "journal": null,
+    "doi": "10.1016/j.jpet.2025.103614",
+    "pmid": "40561753",
+    "abstract": "Dravet syndrome (DS) is a rare developmental and epileptic encephalopathy caused by de novo mutations in the sodium channel Nav1.1 gene, SCN1A. Here, we used a translational zebrafish (ZF) model of DS (Scn1Lab) which exhibits key characteristics known to occur in patients with DS to evaluate drugs with therapeutic potential. Previous work in our laboratory has shown metabolic deficits in Scn1Lab ZF and identified 1-(2-chlorophenyl)-N-[<sup>11</sup>C] methyl-N-(1-methylpropyl)-3-isoquinoline carboxamide (PK11195), a mitochondrial translocator protein (TSPO) ligand, as the lead compound which decreased neuronal hyperexcitability and metabolic deficits observed in Scn1Lab mutants. In this study, we examined the effects of additional TSPO ligands, etifoxine and XBD173, on modulating behavioral and electrophysiological seizure parameters and reversing the metabolic deficits previously reporte"
+   },
+   {
+    "title": "Mitochondrial dysfunction in PTSD: A mechanism to understand trauma susceptibility?",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.1007/s00213-025-06900-0",
+    "pmid": "41071211",
+    "abstract": "<h4>Rationale and objectives</h4>Post-Traumatic Stress Disorder (PTSD) is a complex mental health condition that arises following exposure to traumatic events. Converging evidence suggests mitochondrial dysfunction and brain energy metabolism impairment in its pathophysiology. Thus, examining mitochondrial data from both preclinical and experimental medicine studies may help us to have a deeper understanding of the pathophysiological mechanisms underlying PTSD.<h4>Methods</h4>Using PubMed, Scopus and Web of Science online databases, we conducted a search for peer-reviewed manuscripts targeting both mitochondrial-related activity and PTSD. Our search yielded 43 studies in total, including 29 in rodent models and 15 clinical studies.<h4>Results</h4>Preclinical studies reported a decrease in energy metabolism with a reduction in adenosine triphosphate (ATP) level, upregulation of genes asso"
+   },
+   {
+    "title": "Therapeutic potential of translocator protein ligands for age-related macular degeneration.",
+    "year": "2022",
+    "journal": null,
+    "doi": "10.4103/1673-5374.322460",
+    "pmid": "34472474",
+    "abstract": ""
+   },
+   {
+    "title": "Chronic administration of XBD173 ameliorates cognitive deficits and neuropathology via 18\u2009kDa translocator protein (TSPO) in a mouse model of Alzheimer's disease.",
+    "year": "2023",
+    "journal": null,
+    "doi": "10.1038/s41398-023-02630-z",
+    "pmid": "37891168",
+    "abstract": "Alzheimer's disease (AD) is characterized by the accumulation of \u03b2-amyloid peptide (A\u03b2). It affects cognition and leads to memory impairment. The mitochondrial translocator protein (TSPO) plays an essential role in maintaining mitochondrial homeostasis and has been implicated in several neuronal disorders or neuronal injuries. Ligands targeting the mitochondrial translocator protein (18\u2009kDa), promote neurosteroidogenesis and may be neuroprotective. To study whether the TSPO ligand XBD173 may exert early neuroprotective effects in AD pathology we investigated the impact of XBD173 on amyloid toxicity and neuroplasticity in mouse models of AD. We show that XBD173 (emapunil), via neurosteroid-mediated signaling and delta subunit-containing GABA<sub>A</sub> receptors, prevents the neurotoxic effect of A\u03b2 on long-term potentiation (CA1-LTP) in the hippocampus and prevents the loss of spines. C"
+   },
+   {
+    "title": "Photoreceptor Vulnerability to Ferroptosis: Membrane Phospholipid Peroxidation, Mitochondrial Homeostasis, and RPE\u2013Photoreceptor Coupling",
+    "year": "2026",
+    "journal": null,
+    "doi": null,
+    "pmid": null,
+    "abstract": ""
+   },
+   {
+    "title": "Role of the TSPO-NOX4 axis in angiogenesis in glioblastoma.",
+    "year": "2022",
+    "journal": null,
+    "doi": "10.3389/fphar.2022.1001588",
+    "pmid": "36278207",
+    "abstract": "<b>Objective:</b> Angiogenesis is a pathological feature of glioblastoma. Nicotinamide adenine dinucleotide phosphate oxidase 4 (<i>NOX4</i>) is a vital source of reactive oxygen species (ROS) related to angiogenesis. However, signaling pathways correlated with the isoform oxidase are unknown. The aim of this study was to elucidate the detailed mechanism of the role of <i>NOX4</i> in angiogenesis in glioblastoma. <b>Methods:</b> Public datasets were searched for studies on immunohistochemistry and western blotting to evaluate <i>NOX4</i> expression in glioma. The location of <i>NOX4</i> expression was detected by immunofluorescence. We conducted conditional deletion of the translocator protein (TSPO) targeting the protein with the synthetic ligand XBD173 in the glioblastoma mouse model. <i>NOX4</i> downregulation was conducted with the NOX4 inhibitor GLX351322, and ROS production and ang"
+   },
+   {
+    "title": "Posters",
+    "year": "2026",
+    "journal": null,
+    "doi": null,
+    "pmid": null,
+    "abstract": ""
+   },
+   {
+    "title": "Multi\u2011omics integration in osteoarthritis: Unraveling cell\u2011type\u2011specific gene\u2011metabolite networks for precision medicine (Review).",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.3892/ijmm.2026.5979",
+    "pmid": "42695425",
+    "abstract": "Osteoarthritis (OA) is a heterogeneous joint disorder lacking disease\u2011modifying therapies. Recent advances in single\u2011cell transcriptomics, metabolomics, lipidomics, and spatial omics have enabled the reconstruction of cell\u2011type\u2011specific gene\u2011metabolite networks and revealed that metabolic reprogramming differs markedly across chondrocyte subsets, synovial fibroblasts and immune cells. Lipid metabolism disturbances, particularly those involving glycerophospholipids, sphingolipids and cholesterol, are consistently linked to OA severity and pain generation. Integrative multi\u2011omics approaches further facilitate molecular endotyping, informing patient stratification and endotype\u2011driven clinical trial design. However, a systematic synthesis of these emerging findings is still lacking. This review critically synthesizes current multi\u2011omics integration strategies, delineates cell\u2011type\u2011specific m"
+   },
+   {
+    "title": "PET Imaging Unveils Neuroinflammatory Mechanisms in Psychiatric Disorders: From Microglial Activation to Therapeutic Innovation.",
+    "year": "2025",
+    "journal": null,
+    "doi": "10.1007/s12035-025-05177-w",
+    "pmid": "40610825",
+    "abstract": "Recent advancements in neuroinflammation research have significantly enhanced our understanding of its pivotal role in the pathogenesis and pathophysiology of psychiatric disorders. Positron emission tomography (PET) imaging, leveraging its unique ability to quantify biological processes in vivo non-invasively, has emerged as a transformative tool for investigating neuroimmune mechanisms. The 18\u00a0kDa translocator protein (TSPO), a biomarker of activated microglia and astrocytes during neuroinflammation, enables PET-based visualization of neuroinflammatory activity, offering novel insights into the neurobiological underpinnings of psychiatric conditions. This review synthesizes recent TSPO PET imaging findings across major psychiatric disorders, including major depressive disorder (MDD), obsessive-compulsive disorder (OCD), posttraumatic stress disorder (PTSD), schizophrenia, and psychosis"
+   },
+   {
+    "title": "Brain Mitochondrial Dysfunction: A Possible Mechanism Links Early Life Anxiety to Alzheimer's Disease in Later Life.",
+    "year": "2022",
+    "journal": null,
+    "doi": "10.14336/ad.2022.0221",
+    "pmid": "35855329",
+    "abstract": "Alzheimer's disease (AD) is usually manifested in patients with dementia, accompanied by anxiety and other mental symptoms. Emerging evidence from humans indicates that people who suffer from anxiety in their early life are more likely to develop AD in later life. Mitochondria, the prominent organelles of energy production in the brain, have crucial physiological significance for the brain, requiring considerable energy to maintain its normal physiological activities. Net reactive oxygen species (ROS) was produced by mitochondrial impairment, in which oxidative stress is also included, and the production of ROS is mostly more than that of removal. In this paper, we propose that as a critical process in brain pathology, mitochondrial dysfunction caused by anxiety triggering oxidative stress might be a possible mechanism that links early life anxiety to AD in later life. Several pivotal ph"
+   },
+   {
+    "title": "The antidepressant-like activity of AC-5216, a ligand for 18KDa translocator protein (TSPO), in an animal model of diabetes mellitus.",
+    "year": "2016",
+    "journal": null,
+    "doi": "10.1038/srep37345",
+    "pmid": "27886206",
+    "abstract": "Diabetes mellitus is a chronic disease that is associated with depression. Also, depression is common in adults with type 2 diabetes mellitus (T2DM). Translocator protein (18kDa) (TSPO) and allopregnanolone play an important role in the depression treatment. However, few studies have evaluated TSPO and allopregnanolone in the treatment of depression in T2DM. AC-5216, a ligand for TSPO, produces anxiolytic- and antidepressant-like effects in animal models. The present study aimed to explore antidepressant-like effects of AC-5216 on diabetic rats. Following the development of diabetic model induced by high fat diet (HFD) feeding and streptozotocin (STZ), AC-5216 (0.3 and 1\u2009mg/kg, i.g.) elicited the antidepressant-like effects in behavioral tests while these activities were blocked by TSPO antagonist PK11195 (3\u2009mg/kg, i.p.). The levels of allopregnanolone in the prefrontal cortex and hippoc"
+   }
+  ]
+ },
+ "tspo_ko_metab": {
+  "query": "(\"TSPO knockout\" OR \"TSPO-deficient\" OR \"TSPO knock-out\" OR PBR knockout) AND (diabetes OR glucose OR insulin OR obesity OR adipose)",
+  "hitCount": 295631,
+  "results": [
+   {
+    "title": "Extracellular Vesicle-Mediated Local and Systemic Communication in Metabolic Diseases.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.3390/ijms27188287",
+    "pmid": "42794714",
+    "abstract": "Extracellular vesicles (EVs) have emerged as key mediators of intercellular communication, shuttling bioactive proteins, lipids, and nucleic acids between organs to maintain metabolic homeostasis. In this review, we provide an overview of recent advances in EV-mediated local and systemic communication across four interconnected metabolic diseases: diabetes, obesity, metabolic dysfunction-associated steatotic liver disease (MASLD), and sarcopenia, with a focus on the mechanistic roles of EVs in disease onset, adaptation, and progression. We highlight how EVs from the pancreas, adipose tissue, liver, and skeletal muscle propagate metabolic dysfunction across organs, and identify some shared cargo signatures, including miR-27a, miR-155, miR-146a-5p, miR-690, CXCL10, RBP4, ceramides, adipokine composition, and mitochondrial components, which may represent common pathogenic mechanisms. Curren"
+   },
+   {
+    "title": "Adipose Tissue Palmitoylation Cycling Mediates Insulin Resistance and Preservation of \u03b2-Cell Function in Mice.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.2337/db26-0023",
+    "pmid": "42546226",
+    "abstract": "Excess adiposity is associated with insulin resistance and pancreatic \u03b2-cell dysfunction. We show that palmitoylation cycling in white adipose tissue (WAT) balances insulin sensitivity and insulin secretion. WAT and brown adipose tissue (BAT) ablation of acyl-protein thioesterase 1 (APT1) in APT1-deficient (knockout) mice (APT1-AdipoKO) resulted in increased body weight and exacerbated insulin resistance when the mice were fed a high-fat diet (HFD). APT1 ablation limited to BAT decreased body weight without affecting insulin resistance or glucose metabolism in HFD-fed mice. Insulin-stimulated Akt phosphorylation was decreased in gonadal WAT, muscle, and liver of APT1-AdipoKO mice and in APT1 knockdown 3T3-L1 adipocytes. APT1-deficient gonadal WAT adipocytes were enlarged and had increased isoproterenol-stimulated lipolysis compared with control adipocytes. Despite greater insulin resista"
+   },
+   {
+    "title": "HDAC9 in Insulin Resistance: An Update on Epigenetic Mechanisms, Inflammatory Crosstalk, and Therapeutic Potential.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.2147/dmso.s622182",
+    "pmid": "42670392",
+    "abstract": "Insulin resistance is one of the main causes of type 2 diabetes mellitus and metabolic disorders. Histone deacetylase 9 (HDAC9) belongs to the class IIa histone deacetylase family. It remodels chromatin structure and modulates gene expression to regulate adipocyte differentiation, inflammatory responses, and hepatic glucose homeostasis, thereby inhibiting insulin signaling. However, the complete and precise molecular mechanisms underlying these processes remain unclear. This review systematically summarizes the molecular characteristics and regulatory mechanisms of HDAC9, and analyzes its biological functions under insulin resistance from the perspectives of chromatin remodeling and transcriptional regulation. This review further explores whether HDAC9 exacerbates insulin resistance through regulating adipocyte differentiation, mediating inflammatory responses and disrupting hepatic gluc"
+   },
+   {
+    "title": "Adenylyl Cyclase (ADCY) Protein Family: Molecular Mechanisms and Therapeutic Potential in Glucose and Lipid Metabolism and Feeding Regulation.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.1002/jcp.70216",
+    "pmid": "42596553",
+    "abstract": "The adenylyl cyclase (ADCY) family comprises key signal transduction enzymes that catalyze the conversion of ATP to the second messenger cyclic adenosine monophosphate (cAMP). Through the downstream cAMP-protein kinase A (PKA) signaling pathway, this family exerts central regulatory effects on glucose and lipid homeostasis. In mammals, the ADCY family consists of nine transmembrane isoforms (ADCY1-9) and one soluble isoform (ADCY10), all of which exhibit tissue\u2011specific distribution, distinct regulatory mechanisms, and non\u2011redundant functions in core metabolic organs. Compelling evidence from gene\u2011edited animal models, functional validation studies, and multi\u2011ethnic genetic association analyses has demonstrated that dysfunction of specific ADCY isoforms is closely linked to the pathogenesis of obesity, type 2 diabetes mellitus (T2DM), metabolic dysfunction\u2011associated steatotic liver dise"
+   },
+   {
+    "title": "Hematopoietic-Specific DARC Deficiency Is Associated with Adipose Tissue Inflammation and Impaired Glucose Tolerance During Diet-Induced Obesity in Mice.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.3390/cells15181664",
+    "pmid": "42782763",
+    "abstract": "<h4>Objective</h4>Adipose tissue inflammation in obesity promotes insulin resistance and metabolic disease. The Duffy Antigen Receptor for Chemokines (DARC), a non-signaling receptor expressed on erythrocytes and on other cell types, modulates inflammation by regulating chemokine levels. Gene variants that affect DARC expression on erythrocytes are common in people of African descent. Here, we disrupted DARC expression in hematopoietic cells and adipocytes to determine the impact on obesity.<h4>Methods</h4>DARC floxed mice were bred with vav1-Cre mice to disrupt DARC expression in hematopoietic cells (DARC<sup>\u0394hemato</sup>), and with adipoq-Cre mice to disrupt DARC expression in adipocytes (DARC<sup>\u0394adipo</sup>). Mice were fed a chow diet (CD) versus a high-fat diet (HFD) and studied in vivo. In vitro studies were conducted on preadipocytes isolated from wild-type (WT) and global DARC "
+   },
+   {
+    "title": "Histone chaperone HIRA regulates adiponectin expression and obesity-associated adipose expansion by facilitating Pol II pause release.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.1073/pnas.2603875123",
+    "pmid": "42406969",
+    "abstract": "Adipose tissue is essential for maintaining glucose and lipid homeostasis in mammals. However, epigenomic mechanisms underlying adipose tissue function remain largely unclear. Here, we identify the histone chaperone HIRA as an epigenomic regulator of adipose tissue function. Adipose tissue-specific knockout of <i>Hira</i> in mice impairs insulin sensitivity and restrains adipose tissue expansion during high-fat diet-induced obesity. Mechanistically, HIRA is required for the expression of <i>Adipoq</i>, encoding the adipokine adiponectin, and lipid metabolism genes in adipose tissue. Genomic mapping reveals that HIRA binds to promoters and enhancers of <i>Adipoq</i> and lipid metabolism genes in adipocytes. Acute HIRA depletion using the dTAG system, followed by nascent RNA-Seq and ChIP-Seq, demonstrates that while HIRA is largely dispensable for enhancer activation and coactivator bindin"
+   },
+   {
+    "title": "The Potential Target Value of ADP-Ribosylation Factor 6 in Insulin Secretion Regulation and the Treatment of Metabolic Disorders.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.3390/metabo16070508",
+    "pmid": "42506459",
+    "abstract": "Obesity and type 2 diabetes mellitus (T2DM) represent pandemic metabolic illnesses hallmarked by defective pancreatic \u03b2-cell function and blunted insulin release. As a conserved small GTPase (guanosine triphosphatase), ADP-ribosylation factor 6 (ARF6) governs fundamental cellular events encompassing vesicle trafficking, cytoskeleton remodeling and lipid metabolic turnover. Emerging data confirm that ARF6 acts as a master rheostat of glucose-stimulated insulin secretion (GSIS) in \u03b2-cells through downstream cell division control protein 42/Ras-related C3 botulinum toxin substrate 1 (Cdc42/Rac1) cascades. Pathogenic ARF6 hyperactivation triggers a cascade of \u03b2-cell lesions: mitochondrial impairment, autophagic suppression and exacerbated inflammatory signaling, accelerating the progression of obesity and T2DM. First-line therapeutics ranging from GLP-1 (Glucagon-like peptide-1) receptor ago"
+   },
+   {
+    "title": "A novel LepR knockout hamster model for type 2 diabetes and its complications: a complementary platform to conventional rodent models.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.3389/fendo.2026.1866850",
+    "pmid": "42666243",
+    "abstract": "<h4>Background</h4>Type 2 diabetes (T2D) is a progressive metabolic disorder characterized by systemic metabolic dysfunction and multi-organ complications that considerably increase morbidity and mortality. Leptin signaling via leptin receptor (LepR) is vital for maintaining energy homeostasis and insulin sensitivity; its disruption is strongly associated with obesity-induced T2D. However, currently available rodent models cannot effectively mimic the critical features of T2D in humans, particularly dyslipidemia, hypertension, and progressive diabetic nephropathy (DN). Lipoprotein metabolism in golden hamsters (<i>Mesocricetus auratus</i>) is similar to that in humans; therefore, they can serve as a potentially improved model for metabolic disease.<h4>Methods</h4>We generated a <i>LepR</i> knockout golden hamster model using CRISPR/Cas9 genome editing to further investigate the role of L"
+   },
+   {
+    "title": "Interleukin-19 Regulates Adipose Tissue Dysfunction in Obesity: Interplay Between Inflammation and Vascularization.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.1096/fj.202502231r",
+    "pmid": "42634927",
+    "abstract": "Expanding visceral white adipose tissue (WAT) becomes hypoxic due to lack of compensatory vascularization. Hypoxia initiates inflammation, presumably to promote angiogenesis. Unfortunately, in obesity this results in adipocyte dysfunction and related cardiometabolic complications due to chronic low-grade inflammation. We hypothesize that IL-19 acts as a vascular and immunometabolic protective adipokine in obesity. We report that IL-19 is expressed in WAT. Utilizing lean Il19<sup>-/-</sup> knockout mice, we found that IL-19 deficiency causes significantly reduced tissue vascularization, significantly increased adipose tissue hypoxia, fibrosis, and inflammation, as well as adipocyte hypertrophy. Moreover, lean Il19<sup>-/-</sup> knockout mice fed a standard diet developed glucose intolerance and insulin resistance. Wild-type mice with diet-induced obesity also developed reduced vasculariza"
+   },
+   {
+    "title": "Divergent AKT Signalling Mechanisms Regulate GLUT4 Translocation and Glucose Uptake in Skeletal Muscle and Adipose Tissue.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.1002/jcsm.70335",
+    "pmid": "42417559",
+    "abstract": "<h4>Background</h4>The serine/threonine kinase AKT is a key regulator of glucose and energy metabolism. Prevailing dogma suggests that AKT is an obligate intermediate for glucose uptake in all metabolic tissues and that impaired AKT signalling is a major molecular driver of insulin resistance in obesity. However, whether AKT is universally required for insulin-stimulated glucose uptake across tissues in\u00a0vivo has remained unresolved.<h4>Method</h4>Several mouse models of adipose-specific AKT2 deletion (F-AKT2KO) and skeletal muscle-specific AKT1, AKT2 and combined AKT1/AKT2 knockout mice (M-AKT1KO, M-AKT2KO and M-AKTDKO) were generated. Skeletal muscle and adipose tissues were analysed following in\u00a0vivo administration of insulin (2\u2009U/kg), using Western blotting, phosphoproteomics, PI(3,4,5)P3 ELISA and mitochondrial respiration assays. Glucose metabolism was assessed using [<sup>3</sup>H]"
+   },
+   {
+    "title": "IRF1 in Adipocytes Is Associated with Insulin Signaling and Mitochondrial Homeostasis in Diet-Induced Obesity.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.3390/ijms27167332",
+    "pmid": "42653336",
+    "abstract": "Obesity-associated metabolic disorders are characterized by impaired glucose and lipid metabolism, insulin resistance, and adipose tissue dysfunction. Interferon regulatory factor 1 (IRF1) is a transcription factor primarily involved in immune regulation; however, its role in adipocyte metabolic regulation remains incompletely understood. In this study, adipocyte-specific <i>Irf1</i> knockout (<i>Irf1</i> AKO) mice were generated using the Cre/loxP system and subjected to either a regular chow diet or a high-fat diet (HFD). Metabolic phenotyping, insulin signaling analysis, mitochondrial homeostasis-related assessment, and in vitro adipocyte experiments were performed. Adipocyte-specific IRF1 deficiency improved insulin-stimulated AKT phosphorylation in white adipose tissues and enhanced glucose tolerance and insulin sensitivity under HFD conditions. These metabolic improvements were acc"
+   },
+   {
+    "title": "Hypoxia-Inducible Factor 1\u03b1 in Type 2 Diabetes Mellitus: Mechanisms and Therapeutic Perspectives.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.3390/biology15151241",
+    "pmid": "42589109",
+    "abstract": "Type 2 diabetes mellitus (T2DM) is a global epidemic driven by chronic hyperglycemia, leading to severe microvascular and macrovascular complications. Hypoxia is a critical pathogenic factor, and hypoxia-inducible factor 1\u03b1 (HIF-1\u03b1) serves as a central transcriptional regulator of cellular adaptation to low oxygen. This review examines the dual roles of HIF-1\u03b1 in T2DM and its complications, including diabetic kidney disease, retinopathy, obesity-related insulin resistance, and impaired wound healing. HIF-1\u03b1 exerts protective effects by enhancing glycolysis, reducing oxidative stress, and promoting angiogenesis, but it can also be detrimental by driving pathological neovascularization, fibrosis, and chronic inflammation. Its functional outcomes depend on tissue type, disease stage, and metabolic context, posing therapeutic challenges. Emerging pharmacologic strategies aim to fine-tune HIF"
+   },
+   {
+    "title": "Adipose Tissue Immunosuppressive T Cells Regulate Atherosclerosis Development and Liver Fat Accumulation in Obesity.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.1161/atvbaha.125.324204",
+    "pmid": "42619606",
+    "abstract": "<h4>Background</h4>Obesity is associated with a loss of anti-inflammatory regulatory T cells (Tregs) in adipose tissue (AT), resulting in systemic inflammation. The adipocyte is a central modulator of CD4+T-cell subpopulations via antigen presentation through the MHCII (major histocompatibility complex class II). However, the role of adipocyte-induced AT inflammation due to changes in AT Tregs in obesity-related complications, such as atherosclerosis and metabolic-dysfunction-associated fatty liver disease (MAFLD), remains unknown.<h4>Methods</h4>Ldlr (low-density lipoprotein receptor)<sup>-/-</sup> knockout mice were crossed with adipocyte-specific MHCII knockout (aMHCll [adipocyte MHCII]<sup>-/-</sup>) mice to study the effects of AT T-cell changes on atherosclerosis and MAFLD. Metabolic differences, atherosclerotic lesions, liver fat accumulation, and inflammation in adipose, splenic,"
+   },
+   {
+    "title": "Conditional eIF2A Deletion Suggests Extra-Adipose Mechanisms Underlying Metabolic Syndrome in Total-Body eIF2A Knockout Mice.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.1096/fba.2026-00271",
+    "pmid": "42712787",
+    "abstract": "Dynamic regulation of protein synthesis is essential for metabolic homeostasis, with translation initiation playing a key role in this process. Emerging evidence strongly indicates that in addition to canonical eukaryotic initiation factors (e.g., eIF2, eIF4E) non-canonical factors, such as eukaryotic initiation factor 2A can modulate metabolic homeostasis. eIF2A is a highly conserved eukaryotic protein originally proposed to function analogously to bacterial IF2, promoting initiator Met-tRNAi recruitment to the 40S ribosomal subunit, though its precise mechanism remains debated. To investigate its organismal role, we have previously generated the total-body eIF2A knockout mouse, which revealed eIF2A functions in lipid homeostasis, glucose tolerance, insulin sensitivity, and susceptibility to metabolic syndrome. To further determine whether adipose tissue drives these phenotypes, we pres"
+   },
+   {
+    "title": "Metabolic Syndrome: From Mechanisms to Therapeutic Interventions.",
+    "year": "2026",
+    "journal": null,
+    "doi": "10.1002/mco2.70934",
+    "pmid": "42639235",
+    "abstract": "Metabolic syndrome describes a set of risk factors that can eventually lead to the occurrence of cardiovascular and cerebrovascular disease. Metabolic syndrome has emerged as a significant global health issue, associated with various metabolic diseases, including obesity, diabetes, hypertension, dyslipidemia, chronic kidney disease, metabolic dysfunction-associated steatotic liver disease, and other metabolic disorders. Here, we summarize the intricate mechanisms including insulin resistance, chronic low-grade inflammation, oxidative stress, and epigenetic modifications, and how they contribute to the disease progression of metabolic syndrome. The gut-adipose tissue axis in the progression of metabolic syndrome is emphasized here, mainly involving adipocyte-derived extracellular vesicles and adipokines, as well as specific gut microbiota and their secreted factors, such as lipopolysaccha"
+   }
+  ]
+ },
+ "desethyl": {
+  "query": "(\"desethyl-etifoxine\" OR \"desethyletifoxine\" OR \"desethyl etifoxine\")",
+  "hitCount": 0,
+  "results": []
+ },
+ "pk_t2d_direct": {
+  "query": "\"PK 11195\" AND \"type 2 diabetes\"",
+  "hitCount": 19,
+  "results": [
+   {
+    "title": "Gallic acid attenuates diabetic cardiomyopathy by inhibiting ferroptosis and protecting mitochondria via the TSPO/FTMT pathway.",
+    "year": "2025",
+    "pmid": "41415578",
+    "doi": "10.3389/fphar.2025.1661144",
+    "abstract": "<h4>Purpose</h4>Diabetic cardiomyopathy (DCM), which is diabetes mellitus-induced cardiomyopathy, significantly elevates the risk of heart failure and sudden cardiac death. No specific treatments for DCM are currently available. Gallic acid (GA) is a polyhydroxyphenolic compound that has been shown to inhibit ferroptosis and maintain mitochondrial homeostasis, with potential therapeutic effects in various cardiac diseases. However, its specific role and underlying mechanisms in DCM remain unexplored.<h4>Methods</h4>An <i>in vitro</i> model was established using H9C2 cells pretreated with high glucose plus palmitate, and an <i>in vivo</i> type 2 diabetes mellitus model generated by treating rats with streptozotocin-induced and feeding a high-fat diet. The protective effects of GA and its me"
+   },
+   {
+    "title": "Inflammatory Processes in Alzheimer's Disease-Pathomechanism, Diagnosis and Treatment: A Review.",
+    "year": "2023",
+    "pmid": "37047492",
+    "doi": "10.3390/ijms24076518",
+    "abstract": "Alzheimer's disease is one of the most commonly diagnosed cases of senile dementia in the world. It is an incurable process, most often leading to death. This disease is multifactorial, and one factor of this is inflammation. Numerous mediators secreted by inflammatory cells can cause neuronal degeneration. Neuritis may coexist with other mechanisms of Alzheimer's disease, contributing to disease progression, and may also directly underlie AD. Although much has been established about the inflammatory processes in the pathogenesis of AD, many aspects remain unexplained. The work is devoted in particular to the pathomechanism of inflammation and its role in diagnosis and treatment. An in-depth and detailed understanding of the pathomechanism of neuroinflammation in Alzheimer's disease may he"
+   },
+   {
+    "title": "Highlights From the Latest in Diabetes Research",
+    "year": "2013",
+    "pmid": null,
+    "doi": null,
+    "abstract": ""
+   },
+   {
+    "title": "Whole-organism screening for gluconeogenesis identifies activators of fasting metabolism.",
+    "year": "2013",
+    "pmid": "23201900",
+    "doi": "10.1038/nchembio.1136",
+    "abstract": "Improving the control of energy homeostasis can lower cardiovascular risk in metabolically compromised individuals. To identify new regulators of whole-body energy control, we conducted a high-throughput screen in transgenic reporter zebrafish for small molecules that modulate the expression of the fasting-inducible gluconeogenic gene pck1. We show that this in vivo strategy identified several drugs that affect gluconeogenesis in humans as well as metabolically uncharacterized compounds. Most notably, we find that the translocator protein ligands PK 11195 and Ro5-4864 are glucose-lowering agents despite a strong inductive effect on pck1 expression. We show that these drugs are activators of a fasting-like energy state and, notably, that they protect high-fat diet-induced obese mice from he"
+   },
+   {
+    "title": "Acebutolol, a Cardioselective Beta Blocker, Promotes Glucose Uptake in Diabetic Model Cells by Inhibiting JNK-JIP1 Interaction.",
+    "year": "2018",
+    "pmid": "29129046",
+    "doi": "10.4062/biomolther.2017.123",
+    "abstract": "The phosphorylation of JNK is known to induce insulin resistance in insulin target tissues. The inhibition of JNK-JIP1 interaction, which interferes JNK phosphorylation, becomes a potential target for drug development of type 2 diabetes. To discover the inhibitors of JNK-JIP1 interaction, we screened out 30 candidates from 4320 compound library with <i>In Cell Interaction Trap</i> method. The candidates were further confirmed and narrowed down to five compounds using the FRET method in a model cell. Among those five compounds, Acebutolol showed notable inhibition of JNK phosphorylation and elevation of glucose uptake in diabetic models of adipocyte and liver cell. Structural computation showed that the binding affinity of Acebutolol on the JNK-JIP1 interaction site was comparable to the kn"
+   },
+   {
+    "title": "The expanding role of fish models in understanding non-alcoholic fatty liver disease.",
+    "year": "2013",
+    "pmid": "23720231",
+    "doi": "10.1242/dmm.011981",
+    "abstract": "Non-alcoholic fatty liver disease (NAFLD) is a condition in which excessive fat accumulates in the liver of an individual who has not consumed excessive alcohol. Non-alcoholic steatohepatitis (NASH), a severe form of NAFLD, can progress to hepatic cirrhosis and/or hepatocellular carcinoma (HCC). NAFLD is considered to be a hepatic manifestation of metabolic syndrome, and its incidence has risen worldwide in lockstep with the increased global prevalence of obesity. Over the last decade, rodent studies have yielded an impressive list of molecules associated with NAFLD and NASH pathogenesis. However, the identification of currently unknown metabolic factors using mammalian model organisms is inefficient and expensive compared with studies using fish models such as zebrafish (Danio rerio) and "
+   },
+   {
+    "title": "The antidepressant-like activity of AC-5216, a ligand for 18KDa translocator protein (TSPO), in an animal model of diabetes mellitus.",
+    "year": "2016",
+    "pmid": "27886206",
+    "doi": "10.1038/srep37345",
+    "abstract": "Diabetes mellitus is a chronic disease that is associated with depression. Also, depression is common in adults with type 2 diabetes mellitus (T2DM). Translocator protein (18kDa) (TSPO) and allopregnanolone play an important role in the depression treatment. However, few studies have evaluated TSPO and allopregnanolone in the treatment of depression in T2DM. AC-5216, a ligand for TSPO, produces anxiolytic- and antidepressant-like effects in animal models. The present study aimed to explore antidepressant-like effects of AC-5216 on diabetic rats. Following the development of diabetic model induced by high fat diet (HFD) feeding and streptozotocin (STZ), AC-5216 (0.3 and 1\u2009mg/kg, i.g.) elicited the antidepressant-like effects in behavioral tests while these activities were blocked by TSPO an"
+   },
+   {
+    "title": "Inflammation and vascular permeability correlate with growth in sporadic vestibular schwannoma.",
+    "year": "2019",
+    "pmid": "30388263",
+    "doi": "10.1093/neuonc/noy177",
+    "abstract": "<h4>Background</h4>Inflammation is hypothesized to be a key event in the growth of sporadic vestibular schwannoma (VS). In this study we sought to investigate the relationship between inflammation and tumor growth in vivo using the PET tracer 11C-(R)-PK11195 and dynamic contrast enhanced (DCE) MRI derived vascular biomarkers.<h4>Methods</h4>Nineteen patients with sporadic VS (8 static, 7 growing, and 4 shrinking tumors) underwent prospective imaging with dynamic 11C-(R)-PK11195 PET and a comprehensive MR protocol, including high temporal resolution DCE-MRI in 15 patients. An intertumor comparison of 11C-(R)-PK11195 binding potential (BPND) and DCE-MRI derived vascular biomarkers (Ktrans, vp, ve) across the 3 different tumor growth cohorts was undertaken. Tissue of 8 tumors was examined wit"
+   }
+  ]
+ },
+ "pk_t2d_direct2": {
+  "query": "PK11195 AND \"type 2 diabetes\"",
+  "hitCount": 177,
+  "results": [
+   {
+    "title": "Chronic Combined Oral Methylphenidate and Fluoxetine Increases Inflammation in Somatosensory and Mesolimbic Brain Regions.",
+    "year": "2025",
+    "pmid": "41212420",
+    "doi": "10.1007/s11064-025-04608-3",
+    "abstract": "Methylphenidate (MP) is commonly prescribed to treat attention deficit hyperactivity disorder (ADHD). ADHD and depression are often comorbid, leading to simultaneous use of serotonin reuptake inhibitors (SSRIs), such as Fluoxetine (FLX). Previous studies have shown MP increases microglial activation, which has been linked to neuroinflammation, but little is known about these two medications in combination. To address this gap in our knowledge, 3-week-old male Sprague Dawley rats were randomly assigned into four groups receiving either water, MP, FLX, or MP\u2009+\u2009FLX orally using a previously established dosing regimen. After four weeks of treatment the animal's brains were collected for in vitro [<sup>3</sup>H] PK11195 autoradiography. Chronic treatment with MP and MP\u2009+\u2009FLX resulted in signifi"
+   },
+   {
+    "title": "Obesity is associated with increased brain glucose uptake and activity but not neuroinflammation (TSPO availability) in monozygotic twin pairs discordant for BMI-Exercise training reverses increased brain activity.",
+    "year": "2025",
+    "pmid": "40926735",
+    "doi": "10.1111/dom.70109",
+    "abstract": "<h4>Aims</h4>Obesity is associated with increased insulin-stimulated brain glucose uptake (BGU) which is opposite to decreased GU observed in peripheral tissues. Increased BGU was shown to be reversed by weight loss and exercise training, but the mechanisms remain unknown. We investigated whether neuroinflammation (TSPO availability) and brain activity drive the obesity-associated increase in BGU and whether this increase is reversed by exercise training.<h4>Materials and methods</h4>Twelve monozygotic twin pairs mean age 40.4 (SD) years discordant for BMI (leaner mean 29.1 (SD) 6.3, heavier 36.7 (SD) 7.0\u2009kg\u00b7m<sup>-2</sup>) performed 6-month long exercise intervention. Insulin-stimulated BGU during euglycaemic-hyperinsulinaemic clamp, brain inflammation (translocator protein (TSPO) availab"
+   },
+   {
+    "title": "Neurovascular Unit Dysfunction and Neural Barrier Pathology in Dysautonomia: Molecular Links to Cardiovascular Autonomic Failure.",
+    "year": "2026",
+    "pmid": "42794800",
+    "doi": "10.3390/ijms27188375",
+    "abstract": "Cardiovascular autonomic failure arises from lesions across central nuclei, peripheral nerves, and autonomic ganglia. This review examines whether dysfunction of the neurovascular unit and neural barriers contributes to that failure. The clearest evidence comes from rodent models of hypertension and heart failure. Increased permeability in the PVN, NTS, and RVLM develops alongside sympathetic activation and impaired baroreflex control. Angiotensin II and inflammation appear to affect endothelial transport and junctional integrity. Exercise and interventions directed at these pathways improve barrier function together with autonomic control. Peripheral evidence is less direct. Diabetes and inflammatory neuritis alter the blood-nerve barrier, but most experiments examine somatic or sensory n"
+   },
+   {
+    "title": "Evidence for inflammation in normal-appearing brain regions in patients with growing sporadic vestibular schwannoma: A PET study.",
+    "year": "2024",
+    "pmid": "38962752",
+    "doi": "10.1093/noajnl/vdae094",
+    "abstract": "<h4>Background</h4>Nonauditory symptoms can be a prominent feature in patients with sporadic vestibular schwannoma (VS), but the cause of these symptoms is unknown. Inflammation is hypothesized to play a key role in the growth and symptomatic presentation of sporadic VS, and in this study, we investigated through translocator protein (TSPO) positron emission tomography (PET) whether inflammation occurred within the \"normal appearing\" brain of such patients and its association with tumor growth.<h4>Methods</h4>Dynamic PET datasets from 15 patients with sporadic VS (8 static and 7 growing) who had been previously imaged using the TSPO tracer [<sup>11</sup>C](<i>R</i>)-PK11195 were included. Parametric images of [<sup>11</sup>C](<i>R</i>)-PK11195 binding potential (BP<sub>ND</sub>) and the di"
+   },
+   {
+    "title": "Insulin resistance and body mass index are associated with TSPO PET in cognitively unimpaired elderly.",
+    "year": "2023",
+    "pmid": "37113066",
+    "doi": "10.1177/0271678x231172519",
+    "abstract": "Metabolic risk factors are associated with peripheral low-grade inflammation and an increased risk for dementia. We evaluated if metabolic risk factors i.e. insulin resistance, body mass index (BMI), serum cholesterol values, or high sensitivity C-reactive protein associate with central inflammation or beta-amyloid (A\u03b2) accumulation in the brain, and if these associations are modulated by <i>APOE4</i> gene dose. Altogether 60 cognitively unimpaired individuals (mean age 67.7 years (SD 4.7); 63% women; 21 <i>APOE3/3</i>, 20 <i>APOE3/4</i> and 19 <i>APOE4</i>/<i>4</i>) underwent positron emission tomography with [<sup>11</sup>C]PK11195 targeting TSPO (18\u2009kDa translocator protein) and [<sup>11</sup>C]PIB targeting fibrillar A\u03b2. [<sup>11</sup>C]PK11195 distribution value ratios and [<sup>11</s"
+   },
+   {
+    "title": "Mechanisms Leading to Increased Insulin-Stimulated Cerebral Glucose Uptake in Obesity and Insulin Resistance: A High-Fat Diet and Exercise Training Intervention PET Study with Rats (CROSRAT).",
+    "year": "2024",
+    "pmid": "38651416",
+    "doi": "10.3390/jfmk9020058",
+    "abstract": "Recent studies have shown that obesity and insulin resistance are associated with increased insulin-stimulated glucose uptake (GU) in the brain. Thus, insulin sensitivity seems to work differently in the brain compared to the peripheral tissues like skeletal muscles, but the underlying mechanisms remain unknown. Regular exercise training improves skeletal muscle and whole-body insulin sensitivity. However, the effect of exercise on glucose metabolism in the brain and internal organs is less well understood. The CROSRAT study aims to investigate the effects of exercise training on brain glucose metabolism and inflammation in a high-fat diet-induced rat model of obesity and insulin resistance. Male Sprague Dawley rats (<i>n</i> = 144) are divided into nine study groups that undergo different"
+   },
+   {
+    "title": "Drug repurposing for disease-modifying effects in multiple system atrophy.",
+    "year": "2026",
+    "pmid": "42010648",
+    "doi": "10.1186/s40035-026-00551-7",
+    "abstract": "Multiple system atrophy (MSA) is a rapidly progressive neurodegenerative disorder lacking any proven disease-modifying therapy. Drug repurposing offers a strategy to accelerate the development of treatments by utilizing agents originally approved for other indications. This review summarizes repurposed drugs investigated as disease-modifying therapies for MSA, spanning preclinical in vitro and animal studies and clinical trials. We focus on agents targeting key pathogenic mechanisms in MSA-including \u03b1-synuclein aggregation (e.g., sirolimus/rapamycin, rifampicin, lithium, nilotinib, epigallocatechin gallate), neuroinflammation (e.g., minocycline, intravenous immunoglobulin), mitochondrial dysfunction and excitotoxicity (e.g., ubiquinol, rasagiline, safinamide, riluzole), and impaired neurot"
+   },
+   {
+    "title": "Functional role of translocator protein and its ligands in ocular diseases (Review).",
+    "year": "2024",
+    "pmid": "38186312",
+    "doi": "10.3892/mmr.2024.13157",
+    "abstract": "The 18\u00a0kDa translocator protein (TSPO) is an essential outer mitochondrial membrane protein that is responsible for mitochondrial transport, maintenance of mitochondrial homeostasis and normal physiological cell function. The role of TSPO in the pathogenesis of ocular diseases is a growing area of interest. More notably, TSPO exerts positive effects in regulating various pathophysiological processes, such as the inflammatory response, oxidative stress, steroid synthesis and modulation of microglial function, in combination with a variety of specific ligands such as 1\u2011(2\u2011chlorophenyl\u2011N\u2011methylpropyl)\u20113\u2011isoquinolinecarboxamide, 4'\u2011chlorodiazepam and XBD173. In the present review, the expression of TSPO in ocular tissues and the functional role of TSPO and its ligands in diverse ocular disease"
+   }
+  ]
+ },
+ "tspo_lig_insulin": {
+  "query": "(\"TSPO ligand\" OR \"peripheral benzodiazepine receptor ligand\") AND \"insulin secretion\"",
+  "hitCount": 14,
+  "results": [
+   {
+    "title": "Protocol for a double-blind placebo-controlled randomised controlled trial assessing the impact of oral semaglutide in amyloid positivity (ISAP) in community dwelling UK adults.",
+    "year": "2024",
+    "pmid": "38908839",
+    "doi": "10.1136/bmjopen-2023-081401",
+    "abstract": "<h4>Introduction</h4>Glucagon-like peptide-1 receptor agonists (GLP-1 RAs), currently marketed for type 2 diabetes and obesity, may offer novel mechanisms to delay or prevent neurotoxicity associated with Alzheimer's disease (AD). The impact of semaglutide in amyloid positivity (ISAP) trial is investigating whether the GLP-1 RA semaglutide reduces accumulation in the brain of cortical tau protein and neuroinflammation in individuals with preclinical/prodromal AD.<h4>Methods and analysis</h4>ISAP is an investigator-led, randomised, double-blind, superiority trial of oral semaglutide compared with placebo. Up to 88 individuals aged \u226555 years with brain amyloid positivity as assessed by positron emission tomography (PET) or cerebrospinal fluid, and no or mild cognitive impairment, will be ran"
+   },
+   {
+    "title": "MASLD development: From molecular pathogenesis toward therapeutic strategies.",
+    "year": "2025",
+    "pmid": "40640088",
+    "doi": "10.1097/cm9.0000000000003629",
+    "abstract": "<h4>Abstract</h4>Metabolic dysfunction-associated steatotic liver disease (MASLD) comprises a spectrum of liver injuries, including steatosis to steatohepatitis (MASH), liver fibrosis, cirrhosis, and relevant complications. The liver mainly comprises hepatocytes, liver sinusoidal endothelial cells (LSECs), Kupffer cells (KCs), immune cells (T cells, B cells), and hepatic stellate cells (HSCs). Crosstalk among these different liver cells, endogenous aberrant glycolipid metabolism, and altered gut dysbiosis are involved in the pathophysiology of MASLD. This review systematically examines advances in understanding the molecular pathogenesis of MASLD, with a focus on emerging therapeutic targets and translational clinical trials. We first delineate the crucial regulatory mechanisms involving d"
+   },
+   {
+    "title": "From benzodiazepines to fatty acids and beyond: revisiting the role of ACBP/DBI.",
+    "year": "2021",
+    "pmid": "34565656",
+    "doi": "10.1016/j.tem.2021.08.009",
+    "abstract": "Four decades ago Costa and colleagues identified a small, secreted polypeptide in the brain that can displace the benzodiazepine diazepam from the GABA<sub>A</sub> receptor, and was thus termed diazepam binding inhibitor (DBI). Shortly after, an identical polypeptide was identified in liver by its ability to induce termination of fatty acid synthesis, and was named acyl-CoA binding protein (ACBP). Since then, ACBP/DBI has been studied in parallel without a clear and integrated understanding of its dual roles. The first genetic loss-of-function models have revived the field, allowing targeted approaches to better understand the physiological roles of ACBP/DBI in vivo. We discuss the roles of ACBP/DBI in central and tissue-specific functions in mammals, with an emphasis on metabolism and mec"
+   },
+   {
+    "title": "Neuropeptide Y Is an Immunomodulatory Factor: Direct and Indirect.",
+    "year": "2020",
+    "pmid": "33123166",
+    "doi": "10.3389/fimmu.2020.580378",
+    "abstract": "Neuropeptide Y (NPY), which is widely distributed in the nervous system, is involved in regulating a variety of biological processes, including food intake, energy metabolism, and emotional expression. However, emerging evidence points to NPY also as a critical transmitter between the nervous system and immune system, as well as a mediator produced and released by immune cells. <i>In vivo</i> and <i>in vitro</i> studies based on gene-editing techniques and specific NPY receptor agonists and antagonists have demonstrated that NPY is responsible for multifarious direct modulations on immune cells by acting on NPY receptors. Moreover, via the central or peripheral nervous system, NPY is closely connected to body temperature regulation, obesity development, glucose metabolism, and emotional ex"
+   },
+   {
+    "title": "Crocins from <i>Crocus sativus</i> L. in the Management of Hyperglycemia. In Vivo Evidence from Zebrafish.",
+    "year": "2020",
+    "pmid": "33182581",
+    "doi": "10.3390/molecules25225223",
+    "abstract": "Diabetes mellitus is a disease characterized by persistent high blood glucose levels and accompanied by impaired metabolic pathways. In this study, we used zebrafish to investigate the effect of crocins isolated from <i>Crocus sativus</i> L., on the control of glucose levels and pancreatic \u03b2-cells. Embryos were exposed to an aqueous solution of crocins and whole embryo glucose levels were measured at 48 h post-treatment. We showed that the application of crocins reduces zebrafish embryo glucose levels and enhances insulin expression. We also examined whether crocins are implicated in the metabolic pathway of gluconeogenesis. We showed that following a single application of crocins and glucose level reduction, the expression of <i>phosphoenolpyruvate carboxykinase</i><i>1</i> (<i>pck1</i>),"
+   },
+   {
+    "title": "Genetic obesity increases pancreatic expression of mitochondrial proteins which regulate cholesterol efflux in BRIN-BD11 insulinoma cells.",
+    "year": "2019",
+    "pmid": "30819824",
+    "doi": "10.1042/bsr20181155",
+    "abstract": "Pancreatic \u03b2-cells are sensitive to fluctuations in cholesterol content, which can damage the insulin secretion pathway, contributing to the aetiology of type 2 diabetes mellitus. Cholesterol efflux to (apo)lipoproteins, via ATP-binding cassette (ABC) transporter A1 (ABCA1), can prevent intracellular cholesterol accumulation; in some peripheral cells, ABCA1-dependent efflux is enhanced by promotion of cholesterol trafficking to, and generation of Liver X receptor (LXR) ligands by, mitochondrial sterol 27-hydroxylase (Cyp27A1 (cytochrome P450 27 A1/sterol 27-hydroxylase)) and its redox partners, adrenodoxin (ADX) and ADX reductase (ADXR). Despite this, the roles of mitochondrial cholesterol trafficking (steroidogenic acute regulatory protein [StAR] and 18-kDa translocator protein [TSPO]) an"
+   },
+   {
+    "title": "Brain Mitochondrial Dysfunction: A Possible Mechanism Links Early Life Anxiety to Alzheimer's Disease in Later Life.",
+    "year": "2022",
+    "pmid": "35855329",
+    "doi": "10.14336/ad.2022.0221",
+    "abstract": "Alzheimer's disease (AD) is usually manifested in patients with dementia, accompanied by anxiety and other mental symptoms. Emerging evidence from humans indicates that people who suffer from anxiety in their early life are more likely to develop AD in later life. Mitochondria, the prominent organelles of energy production in the brain, have crucial physiological significance for the brain, requiring considerable energy to maintain its normal physiological activities. Net reactive oxygen species (ROS) was produced by mitochondrial impairment, in which oxidative stress is also included, and the production of ROS is mostly more than that of removal. In this paper, we propose that as a critical process in brain pathology, mitochondrial dysfunction caused by anxiety triggering oxidative stress"
+   },
+   {
+    "title": "The evolving view of thermogenic fat and its implications in cancer and metabolic diseases.",
+    "year": "2022",
+    "pmid": "36114195",
+    "doi": "10.1038/s41392-022-01178-6",
+    "abstract": "The incidence of metabolism-related diseases like obesity and type 2 diabetes mellitus has reached pandemic levels worldwide and increased gradually. Most of them are listed on the table of high-risk factors for malignancy, and metabolic disorders systematically or locally contribute to cancer progression and poor prognosis of patients. Importantly, adipose tissue is fundamental to the occurrence and development of these metabolic disorders. White adipose tissue stores excessive energy, while thermogenic fat including brown and beige adipose tissue dissipates energy to generate heat. In addition to thermogenesis, beige and brown adipocytes also function as dynamic secretory cells and a metabolic sink of nutrients, like glucose, fatty acids, and amino acids. Accordingly, strategies that act"
+   }
+  ]
+ },
+ "pk_insulin": {
+  "query": "\"PK 11195\" AND (\"insulin secretion\" OR \"insulin resistance\" OR \"glucose tolerance\")",
+  "hitCount": 47,
+  "results": [
+   {
+    "title": "Effect of PK11195, a peripheral benzodiazepine receptor agonist, on insulinoma cell death and insulin secretion.",
+    "year": "2005",
+    "pmid": "15909116",
+    "doi": "10.1007/s10495-005-1884-1",
+    "abstract": "Functional role of peripheral benzodiazepine receptor on mitochondrial membrane in apoptosis and insulin secretion from insulinoma cells was studied. A prototypic peripheral benzodiazepine receptor agonist PK11195 induced insulinoma cell apoptosis, while a central benzodiazepine receptor agonist did not. Death of insulinoma cells by PK11195 was inhibited by cyclosporin A, a blocker of mitochondrial permeability transition pore. Caspase inhibitors further inhibited MIN6N8 cell death. PK11195 induced dissipation of mitochondrial potential and cytochrome c translocation to cytoplasm. PK11195 induced an increase in cytoplasmic [Ca(2+)], which was reversed by cyclosporin A. Rhod-2 staining showed decreased mitochondrial [Ca(2+)] after PK11195 treatment. PK11195 potentiated glucose-induced insul"
+   },
+   {
+    "title": "Inhibition of glucose-induced insulin secretion by a peripheral-type benzodiazepine receptor ligand (PK11195).",
+    "year": "2000",
+    "pmid": "10935532",
+    "doi": "10.1007/s002100000232",
+    "abstract": "We have recently shown that benzodiazepines with high affinity for peripheral-type receptors such as 4'-chlordiazepam inhibit insulin secretion in vitro. PK 11195 [1-(2-chlorophenyl)-N-methyl-N-(1-methylpropyl)-3-isoquinoline-carboxami de], a potent and selective ligand for peripheral benzodiazepine binding sites, was also shown to inhibit insulin release from rat pancreatic islets. Both substances have been reported to interact with mitochondrial binding sites. Hence, the present study was performed to investigate the effects of PK 11195 on insulin secretion induced by either a metabolic or a non-metabolic stimulus. In the rat isolated pancreas perfused at a constant pressure with a Krebs-bicarbonate buffer containing a slightly stimulating glucose concentration (8.3 mM), PK 11195 (10(-7)"
+   },
+   {
+    "title": "Etifoxine, a TSPO Ligand, Worsens Hepatitis C-Related Insulin Resistance but Relieves Lipid Accumulation.",
+    "year": "2019",
+    "pmid": "30984779",
+    "doi": "10.1155/2019/3102414",
+    "abstract": "Etifoxine, an 18 kDa translocator protein (TSPO) agonist for the treatment of anxiety disorders in clinic, may be able to cause acute liver injury or cytolytic hepatitis. TSPO has been demonstrated to participate in inflammatory responses in infective diseases as well as to modulate glucose and lipid homeostasis. Hepatitis C virus (HCV) infection disrupts glucose and lipid homoeostasis, leading to insulin resistance (IR). Whether TSPO affects the HCV-induced IR remains unclear. Here, we found that the administration of etifoxine increased the TSPO protein expression and recovered the HCV-mediated lower mitochondrial membrane potential (MMP) without affecting HCV infection. Moreover, etifoxine reversed the HCV-induced lipid accumulation by modulating the expressions of sterol regulatory ele"
+   },
+   {
+    "title": "Highlights From the Latest in Diabetes Research",
+    "year": "2013",
+    "pmid": null,
+    "doi": null,
+    "abstract": ""
+   },
+   {
+    "title": "Effects of a peripheral-type benzodiazepine on glucose-induced insulin secretion.",
+    "year": "1992",
+    "pmid": "1426011",
+    "doi": "10.1016/0014-2999(92)90723-h",
+    "abstract": "Benzodiazepines, besides interacting with central-type receptors which mediate their well-known pharmacological actions, bind to peripheral-type receptors that are distributed in a variety of peripheral tissues including numerous endocrine organs. The present work was designed to investigate the effects of a selective peripheral-type benzodiazepine, 4'-chlordiazepam (Ro 5-4864), on glucose-induced insulin secretion in vitro. In the rat isolated pancreas perfused with a Krebs-bicarbonate buffer containing 8.3 mM glucose, the drug (10(-6) and 10(-5) M) induced a progressive and significant decrease in insulin release. Concomitantly, it induced a vasodilator response of the pancreatic vascular bed. In rat isolated islets incubated for 1 h in the presence of 15 mM glucose, 4'-chlordiazepam (10"
+   },
+   {
+    "title": "Whole-organism screening for gluconeogenesis identifies activators of fasting metabolism.",
+    "year": "2013",
+    "pmid": "23201900",
+    "doi": "10.1038/nchembio.1136",
+    "abstract": "Improving the control of energy homeostasis can lower cardiovascular risk in metabolically compromised individuals. To identify new regulators of whole-body energy control, we conducted a high-throughput screen in transgenic reporter zebrafish for small molecules that modulate the expression of the fasting-inducible gluconeogenic gene pck1. We show that this in vivo strategy identified several drugs that affect gluconeogenesis in humans as well as metabolically uncharacterized compounds. Most notably, we find that the translocator protein ligands PK 11195 and Ro5-4864 are glucose-lowering agents despite a strong inductive effect on pck1 expression. We show that these drugs are activators of a fasting-like energy state and, notably, that they protect high-fat diet-induced obese mice from he"
+   },
+   {
+    "title": "From benzodiazepines to fatty acids and beyond: revisiting the role of ACBP/DBI.",
+    "year": "2021",
+    "pmid": "34565656",
+    "doi": "10.1016/j.tem.2021.08.009",
+    "abstract": "Four decades ago Costa and colleagues identified a small, secreted polypeptide in the brain that can displace the benzodiazepine diazepam from the GABA<sub>A</sub> receptor, and was thus termed diazepam binding inhibitor (DBI). Shortly after, an identical polypeptide was identified in liver by its ability to induce termination of fatty acid synthesis, and was named acyl-CoA binding protein (ACBP). Since then, ACBP/DBI has been studied in parallel without a clear and integrated understanding of its dual roles. The first genetic loss-of-function models have revived the field, allowing targeted approaches to better understand the physiological roles of ACBP/DBI in vivo. We discuss the roles of ACBP/DBI in central and tissue-specific functions in mammals, with an emphasis on metabolism and mec"
+   },
+   {
+    "title": "Porcine diazepam-binding inhibitor and bovine diazepam-binding inhibitor affect morphine antinociception via different receptors.",
+    "year": "2017",
+    "pmid": "28032250",
+    "doi": "10.1007/s13238-016-0355-5",
+    "abstract": ""
+   }
+  ]
+ },
+ "tspoko_glucose": {
+  "query": "(\"TSPO knockout\" OR \"TSPO-deficient\") AND (\"glucose tolerance\" OR \"insulin\" OR obesity)",
+  "hitCount": 42,
+  "results": [
+   {
+    "title": "A Comprehensive Functional Investigation of the Human Translocator Protein 18 kDa (TSPO) in a Novel Human Neuronal Cell Knockout Model.",
+    "year": "2024",
+    "pmid": "39684592",
+    "doi": "10.3390/ijms252312882",
+    "abstract": "The translocator protein 18 kDa (TSPO) is a multifunctional outer mitochondrial membrane protein associated with various aspects of mitochondrial physiology and multiple roles in health and disease. Here, we aimed to analyse the role of TSPO in the regulation of mitochondrial and cellular functions in a human neuronal cell model. We used the CRISPR/Cas9 technology and generated TSPO knockout (KO) and control (CTRL) variants of human-induced pluripotent stem cells (hiPSCs). In a multimodal phenotyping approach, we investigated cellular and mitochondrial functions in neural progenitor cells (NPCs), astrocytes, and neurons differentiated from hiPSC CTRL and TSPO KO cell lines. Our analysis revealed reduced mitochondrial respiration and glycolysis, altered Ca<sup>2+</sup> levels in the cytosol"
+   },
+   {
+    "title": "Adenosine transmission from hypothalamic tanycytes to AGRP/NPY neurons regulates energy homeostasis.",
+    "year": "2025",
+    "pmid": "40316705",
+    "doi": "10.1038/s12276-025-01449-6",
+    "abstract": "Tanycytes are a pivotal component of the hypothalamic network that controls energy homeostasis. Despite their importance, the regulatory mechanisms governing tanycyte-neuron interactions in response to metabolic signals remain unexplored. Here we report that adenosine signaling between tanycytes and AGRP/NPY neurons is crucial for tanycytic metabolic regulation mediated by translocator protein 18\u2009kDa (TSPO). Tanycyte-specific Tspo-knockout mice displayed reduced food consumption and weight loss associated with the downregulation of Agrp and Npy expression under high-fat diet feeding. Tspo-deficient tanycytes had elevated levels of intracellular ATP, which was released via connexin 43 hemichannels and extracellularly converted into adenosine by tanycytic ectonucleotidases. The adenosine sig"
+   },
+   {
+    "title": "The Biological Clock-Mitochondria Axis in the Liver: From Molecular Mechanisms to Metabolic Disease.",
+    "year": "2026",
+    "pmid": "42510742",
+    "doi": "10.3390/biology15141197",
+    "abstract": "The liver ranks among the peripheral organs exhibiting the most robust circadian rhythmicity, with glucose homeostasis, lipid metabolism, and bile acid turnover governed by tightly phased diurnal oscillations. Mitochondria execute these programs, their output coordinated with the hepatocyte circadian state. The mitochondrial network undergoes dynamic remodeling across the 24 h cycle, encompassing oscillatory changes in bioenergetics, fusion-fission balance, and quality control. This interplay is bidirectional: core clock components drive rhythmic remodeling via cyclin-dependent kinase 1/mitogen-activated protein kinase (CDK1/MAPK)-dependent phosphorylation of dynamin-related protein 1 (DRP1) and the NAD<sup>+</sup>-SIRT1/SIRT3 axis, while retrograde signals modulate clock amplitude and ent"
+   },
+   {
+    "title": "TSPO deficiency reveals a novel role for porphyrins in regulating white adipose tissue lipid metabolism",
+    "year": "2025",
+    "pmid": null,
+    "doi": "10.1101/2025.09.14.676078",
+    "abstract": "The translocator protein (TSPO) is a mitochondrial outer membrane protein with high expression in cells specialized for lipid metabolism, including white adipose tissue (WAT), where its physiological function remains poorly defined. Our previous work demonstrated a role for TSPO in mitochondrial fatty acid oxidation, prompting us to investigate its contribution to adipocyte lipid homeostasis under metabolic stress. We employed a combination of  in vivo and  in vitro approaches using global  Tspo knockout (  Tspo  -/- ) mice, primary adipocyte cultures, and pharmacological TSPO-binding drugs to examine TSPO function. We show that  Tspo  -/- mice exhibited increased WAT mass and adipocyte hypertrophy following high-fat diet feeding, with no changes in caloric intake. These changes were accom"
+   },
+   {
+    "title": "TSPO contributes to neuropathology and cognitive deficits in Alzheimer\u2019s disease",
+    "year": "2025",
+    "pmid": null,
+    "doi": "10.21203/rs.3.rs-7008246/v1",
+    "abstract": "<title>Abstract</title>  <p>The 18kDa translocator protein (TSPO) is increased in neurodegenerative diseases. In Alzheimer's disease (AD) animal models, TSPO\u2019s upregulation is detected first in astrocytes, then in microglia. However, the role of TSPO in the pathophysiology and symptoms characteristic of the disease remains unknown. In the human <italic>postmortem</italic> hippocampus, we show here that TSPO correlated positively with reactive astrocyte-associated genes and negatively with genes involved in glycolytic pathways. In addition, we observed that TSPO deletion in 3xTgAD mice inhibited the reduction in glucose uptake and reduced astrocyte reactivity. We observed a decrease of poorly and highly aggregated forms of Tau (-44% and \u2212\u200982%, respectively) and Ab42 (-25% and \u2212\u200995%, respect"
+   },
+   {
+    "title": "TSPO contributes to neuropathology and cognitive deficits in Alzheimer's disease.",
+    "year": "2025",
+    "pmid": "41152868",
+    "doi": "10.1186/s12974-025-03583-4",
+    "abstract": "The 18kDa translocator protein (TSPO) is increased in neurodegenerative diseases. In Alzheimer's disease (AD) animal models, TSPO's upregulation is detected first in astrocytes, then in microglia. However, the role of TSPO in the pathophysiology and symptoms characteristic of the disease remains unknown. In the human postmortem hippocampus, we show here that TSPO correlated positively with reactive astrocyte-associated genes and negatively with genes involved in glycolytic pathways. In addition, we observed that TSPO deletion in 3\u2009\u00d7\u2009TgAD mice reversed the reduction in glucose uptake and reduced astrocyte reactivity. We observed a decrease of poorly and highly aggregated forms of Tau (-44% and -82%, respectively) and A\u03b242 (-25% and -95%, respectively) at 9 months of age. In 5\u2009\u00d7\u2009FAD mice, we"
+   },
+   {
+    "title": "Tspo Depletion Exacerbates Steatosis Through Fatty Acid Uptake.",
+    "year": "2025",
+    "pmid": "40195072",
+    "doi": "10.1111/jcmm.70500",
+    "abstract": "Previous studies demonstrated that Tspo loss causes simple steatosis (SS) in hepatocytes in\u00a0vitro. However, its effect on SS in\u00a0vivo remains unclear. In this study, we hypothesise that Tspo loss promotes early-stage MASLD. WT and Tspo KO rats were fed a Gubra Amylin NASH (GAN) diet for 8\u2009weeks to induce SS. Tspo KO rats fed the GAN diet (KO GAN) exhibited increased insulin resistance, higher plasma cholesterol, and elevated hepatic triacylglycerol (TAG) levels, along with higher de novo lipogenesis (DNL) and free fatty acid (FFA) uptake, evidenced by increased fatty acid synthase (FASN) and CD36 expression. The Acyl-coenzyme A binding protein/diazepam-binding inhibitor-TSPO complex facilitated FA transport to the mitochondria, where carnitine palmitoyltransferase 1A (CPT1A) directed them f"
+   },
+   {
+    "title": "6478 Loss of TSPO Inhibits Autophagy and Exacerbates Steatosis via Fatty Acid Uptake",
+    "year": "2024",
+    "pmid": null,
+    "doi": null,
+    "abstract": ""
+   }
+  ]
+ },
+ "etifoxine_ki_mouse": {
+  "query": "etifoxine AND \"translocator protein\" AND (Ki OR affinity OR \"binding\") AND (rat OR mouse)",
+  "hitCount": 98,
+  "results": [
+   {
+    "title": "Etifoxine drives macrophage M2 polarization via Schwann cell-derived progesterone activation of PPAR\u03b3 to accelerate peripheral nerve repair.",
+    "year": "2026",
+    "pmid": "41958827",
+    "doi": "10.3389/fncel.2026.1789450",
+    "abstract": "<h4>Background</h4>Peripheral nerve injury (PNI) presents a significant clinical challenge due to limited endogenous regenerative capacity. The translocator protein (TSPO) ligand etifoxine (ETX) has shown promise in promoting nerve repair, but the underlying cellular and molecular mechanisms remain incompletely understood.<h4>Methods</h4>Utilizing in vitro co-culture systems with human Schwann cells (HSCs) and THP-1-derived macrophages, TSPO-knockdown HSCs, conditioned medium experiments, and an in vivo rat sciatic nerve crush injury model, we investigated the effects of ETX on cellular crosstalk and macrophage polarization. Molecular analyses included RNA sequencing, western blotting, fatty acid oxidation (FAO) assays, and a Mito-QC reporter system to assess mitophagy. Functional recovery"
+   },
+   {
+    "title": "A multielectrode array reveals therapeutic potential of translocator protein ligands in a zebrafish model of Dravet syndrome.",
+    "year": "2025",
+    "pmid": "40561753",
+    "doi": "10.1016/j.jpet.2025.103614",
+    "abstract": "Dravet syndrome (DS) is a rare developmental and epileptic encephalopathy caused by de novo mutations in the sodium channel Nav1.1 gene, SCN1A. Here, we used a translational zebrafish (ZF) model of DS (Scn1Lab) which exhibits key characteristics known to occur in patients with DS to evaluate drugs with therapeutic potential. Previous work in our laboratory has shown metabolic deficits in Scn1Lab ZF and identified 1-(2-chlorophenyl)-N-[<sup>11</sup>C] methyl-N-(1-methylpropyl)-3-isoquinoline carboxamide (PK11195), a mitochondrial translocator protein (TSPO) ligand, as the lead compound which decreased neuronal hyperexcitability and metabolic deficits observed in Scn1Lab mutants. In this study, we examined the effects of additional TSPO ligands, etifoxine and XBD173, on modulating behavioral"
+   },
+   {
+    "title": "The translocator protein 18\u00a0kDa (TSPO) ligand etifoxine in an animal model of anxiety: Line- and sex-dependent effects on emotionality, stress reactivity, spine density, oxytocin receptors, steroids, and microbiome composition.",
+    "year": "2025",
+    "pmid": "39725124",
+    "doi": "10.1016/j.neuropharm.2024.110282",
+    "abstract": "The treatment of stress-related disorders such as anxiety and depression is still challenging. One potential therapeutical option are neurosteroids. Their synthesis is promoted by ligands of the mitochondrial translocator protein 18\u00a0kDa (TSPO). We tested the TSPO ligand etifoxine (ETX) in a rat model of hyper-anxiety and depression-like behavior, i.e., in female and male HAB (high anxiety-related behavior) rats, as well as in respective low anxiety (LAB) and non-selected control (NAB) rats for behavioral, molecular, cellular, and physiological parameters. Daily acute i.p. treatment with ETX or vehicle over 5 or 9 days revealed that ETX was most effective in female HAB rats; it reduced anxiety levels (5 days) and OXT-R binding brain site-specifically (5 and 9 days), and increased spine dens"
+   },
+   {
+    "title": "PET Imaging Unveils Neuroinflammatory Mechanisms in Psychiatric Disorders: From Microglial Activation to Therapeutic Innovation.",
+    "year": "2025",
+    "pmid": "40610825",
+    "doi": "10.1007/s12035-025-05177-w",
+    "abstract": "Recent advancements in neuroinflammation research have significantly enhanced our understanding of its pivotal role in the pathogenesis and pathophysiology of psychiatric disorders. Positron emission tomography (PET) imaging, leveraging its unique ability to quantify biological processes in vivo non-invasively, has emerged as a transformative tool for investigating neuroimmune mechanisms. The 18\u00a0kDa translocator protein (TSPO), a biomarker of activated microglia and astrocytes during neuroinflammation, enables PET-based visualization of neuroinflammatory activity, offering novel insights into the neurobiological underpinnings of psychiatric conditions. This review synthesizes recent TSPO PET imaging findings across major psychiatric disorders, including major depressive disorder (MDD), obs"
+   },
+   {
+    "title": "Neurosteroids and translocator protein 18\u00a0kDa (TSPO) ligands as novel treatment options in depression.",
+    "year": "2025",
+    "pmid": "38976049",
+    "doi": "10.1007/s00406-024-01843-7",
+    "abstract": "Recently, the gamma-aminobutyric acid (GABA) system has come into focus for the treatment of anxiety, postpartum depression, and major depressive disorder. Endogenous 3\u03b1-reduced steroids such as allopregnanolone are potent positive allosteric modulators of GABA<sub>A</sub> receptors and have been known for decades. Current industry developments and first approvals by the U.S. food and drug administration (FDA) for the treatment of postpartum depression with exogenous analogues of these steroids represent a major step forward in the field. 3\u03b1-reduced steroids target both synaptic and extrasynaptic GABA<sub>A</sub> receptors, unlike benzodiazepines, which bind to synaptic receptors. The first FDA-approved 3\u03b1-reduced steroid for postpartum depression is brexanolone, an intravenous formulation"
+   },
+   {
+    "title": "Translocator protein in the rise and fall of central nervous system neurons.",
+    "year": "2023",
+    "pmid": "37416505",
+    "doi": "10.3389/fncel.2023.1210205",
+    "abstract": "Translocator protein (TSPO), a 18 kDa protein found in the outer mitochondrial membrane, has historically been associated with the transport of cholesterol in highly steroidogenic tissues though it is found in all cells throughout the mammalian body. TSPO has also been associated with molecular transport, oxidative stress, apoptosis, and energy metabolism. TSPO levels are typically low in the central nervous system (CNS), but a significant upregulation is observed in activated microglia during neuroinflammation. However, there are also a few specific regions that have been reported to have higher TSPO levels than the rest of the brain under normal conditions. These include the dentate gyrus of the hippocampus, the olfactory bulb, the subventricular zone, the choroid plexus, and the cerebel"
+   },
+   {
+    "title": "Functional role of translocator protein and its ligands in ocular diseases (Review).",
+    "year": "2024",
+    "pmid": "38186312",
+    "doi": "10.3892/mmr.2024.13157",
+    "abstract": "The 18\u00a0kDa translocator protein (TSPO) is an essential outer mitochondrial membrane protein that is responsible for mitochondrial transport, maintenance of mitochondrial homeostasis and normal physiological cell function. The role of TSPO in the pathogenesis of ocular diseases is a growing area of interest. More notably, TSPO exerts positive effects in regulating various pathophysiological processes, such as the inflammatory response, oxidative stress, steroid synthesis and modulation of microglial function, in combination with a variety of specific ligands such as 1\u2011(2\u2011chlorophenyl\u2011N\u2011methylpropyl)\u20113\u2011isoquinolinecarboxamide, 4'\u2011chlorodiazepam and XBD173. In the present review, the expression of TSPO in ocular tissues and the functional role of TSPO and its ligands in diverse ocular disease"
+   },
+   {
+    "title": "From imaging to intervention: emerging potential of PET biomarkers to shape therapeutic strategies for TBI-induced neurodegeneration.",
+    "year": "2025",
+    "pmid": "40837059",
+    "doi": "10.3389/fneur.2025.1637243",
+    "abstract": "This review examines the role of positron emission tomography (PET) imaging tracers in advancing our understanding of traumatic brain injury (TBI) induced neurodegeneration and the therapeutic targets they help to identify. It focuses on tracers used to evaluate post-TBI alterations in metabolism, amyloid, tau, neuroinflammation, and neurotransmitter systems. These molecular imaging tools provide critical insights into pathophysiological processes such as disrupted glucose metabolism, amyloid deposition, tau accumulation, chronic neuroinflammatory responses, and neurotransmitter dysregulation. The review also explores how these tracers, as imaging biomarkers, may guide future therapeutic strategies. Finally, it discusses the challenges and opportunities associated with integrating PET imag"
+   }
+  ]
+ }
+}

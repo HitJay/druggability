@@ -1,0 +1,132 @@
+{
+ "5732": {
+  "symbol": "PTGER2",
+  "name": "PTGER2",
+  "org": "Homo sapiens"
+ },
+ "5071": {
+  "symbol": "PRKN",
+  "name": "PRKN",
+  "org": "Homo sapiens"
+ },
+ "2908": {
+  "symbol": "NR3C1",
+  "name": "NR3C1",
+  "org": "Homo sapiens"
+ },
+ "367": {
+  "symbol": "AR",
+  "name": "AR",
+  "org": "Homo sapiens"
+ },
+ "24831": {
+  "symbol": "Thrb",
+  "name": "Thrb",
+  "org": "Rattus norvegicus"
+ },
+ "6256": {
+  "symbol": "RXRA",
+  "name": "RXRA",
+  "org": "Homo sapiens"
+ },
+ "2101": {
+  "symbol": "ESRRA",
+  "name": "ESRRA",
+  "org": "Homo sapiens"
+ },
+ "7253": {
+  "symbol": "TSHR",
+  "name": "TSHR",
+  "org": "Homo sapiens"
+ },
+ "8856": {
+  "symbol": "NR1I2",
+  "name": "NR1I2",
+  "org": "Homo sapiens"
+ },
+ "1559": {
+  "symbol": "CYP2C9",
+  "name": "CYP2C9",
+  "org": "Homo sapiens"
+ },
+ "6850": {
+  "symbol": "SYK",
+  "name": "SYK",
+  "org": "Homo sapiens"
+ },
+ "3020": {
+  "symbol": "H3-3A",
+  "name": "H3-3A",
+  "org": "Homo sapiens"
+ },
+ "7157": {
+  "symbol": "TP53",
+  "name": "TP53",
+  "org": "Homo sapiens"
+ },
+ "3014": {
+  "symbol": "H2AX",
+  "name": "H2AX",
+  "org": "Homo sapiens"
+ },
+ "3725": {
+  "symbol": "JUN",
+  "name": "JUN",
+  "org": "Homo sapiens"
+ },
+ "7376": {
+  "symbol": "NR1H2",
+  "name": "NR1H2",
+  "org": "Homo sapiens"
+ },
+ "10062": {
+  "symbol": "NR1H3",
+  "name": "NR1H3",
+  "org": "Homo sapiens"
+ },
+ "2353": {
+  "symbol": "FOS",
+  "name": "FOS",
+  "org": "Homo sapiens"
+ },
+ "4086": {
+  "symbol": "SMAD1",
+  "name": "SMAD1",
+  "org": "Homo sapiens"
+ },
+ "4170": {
+  "symbol": "MCL1",
+  "name": "MCL1",
+  "org": "Homo sapiens"
+ },
+ "1813": {
+  "symbol": "DRD2",
+  "name": "DRD2",
+  "org": "Homo sapiens"
+ },
+ "1551": {
+  "symbol": "CYP3A7",
+  "name": "CYP3A7",
+  "org": "Homo sapiens"
+ },
+ "1565": {
+  "symbol": "CYP2D6",
+  "name": "CYP2D6",
+  "org": "Homo sapiens"
+ },
+ "9970": {
+  "symbol": "NR1I3",
+  "name": "NR1I3",
+  "org": "Homo sapiens"
+ },
+ "65191": {
+  "symbol": "Gabre",
+  "name": "Gabre",
+  "org": "Rattus norvegicus"
+ },
+ "29689": {
+  "symbol": "Gabrd",
+  "name": "Gabrd",
+  "org": "Rattus norvegicus"
+ }
+}

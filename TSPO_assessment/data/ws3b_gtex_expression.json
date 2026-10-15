@@ -1,0 +1,52 @@
+{
+ "TSPO": {
+  "Pancreas": 38.4,
+  "Liver": 33.7,
+  "Adipose_Subcutaneous": 221.9,
+  "Adipose_Visceral_Omentum": 227.9,
+  "Brain_Hypothalamus": 29.1,
+  "Colon_Transverse": 164.0,
+  "Muscle_Skeletal": 38.9,
+  "Whole_Blood": 585.5
+ },
+ "NR1I3": {
+  "Pancreas": 0.1,
+  "Liver": 98.7,
+  "Adipose_Subcutaneous": 0.3,
+  "Adipose_Visceral_Omentum": 0.4,
+  "Brain_Hypothalamus": 0.5,
+  "Colon_Transverse": 0.5,
+  "Muscle_Skeletal": 0.6,
+  "Whole_Blood": 0.3
+ },
+ "NR1I2": {
+  "Pancreas": 0.2,
+  "Liver": 42.6,
+  "Adipose_Subcutaneous": 0.1,
+  "Adipose_Visceral_Omentum": 0.1,
+  "Brain_Hypothalamus": 0.6,
+  "Colon_Transverse": 11.2,
+  "Muscle_Skeletal": 0.0,
+  "Whole_Blood": 0.0
+ },
+ "GABRA2": {
+  "Pancreas": 0.0,
+  "Liver": 0.0,
+  "Adipose_Subcutaneous": 0.5,
+  "Adipose_Visceral_Omentum": 0.1,
+  "Brain_Hypothalamus": 3.3,
+  "Colon_Transverse": 0.8,
+  "Muscle_Skeletal": 0.0,
+  "Whole_Blood": 0.0
+ },
+ "DBI": {
+  "Pancreas": 30.5,
+  "Liver": 175.4,
+  "Adipose_Subcutaneous": 172.0,
+  "Adipose_Visceral_Omentum": 171.0,
+  "Brain_Hypothalamus": 133.9,
+  "Colon_Transverse": 117.2,
+  "Muscle_Skeletal": 42.2,
+  "Whole_Blood": 17.2
+ }
+}

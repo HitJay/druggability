@@ -1,0 +1,15 @@
+ligand,target,gene(s),evidence_family,potency,exposure_compatible,t2d_relevance,tier,tag,notes
+PK11195,TSPO (human),TSPO,ChEMBL+PubChem binding,Ki 4.5-11.1 nM WT; 36 nM A147T,yes (nM vs nM-range exposure; PET-doses lower),TSPO expressed in islet/adipose; KO data argue AGAINST TSPO-mediated benefit,T1 (as target),FACT,Occupancy OK at pharmacological doses; benefit-attribution disputed
+PK11195,CAR,NR1I3,"ChEMBL biochem+cell, PubChem qHTS, PMID:28442602 in vivo",CAR LBD antagonism 25-55.8 nM; inverse agonism 245-390 nM; metabolism flips to AGONIST in hepatocytes,yes (nM),"OT: MODY3 0.073, NAFLD 0.067, obesity 0.054",T1,FACT,Strongest non-TSPO candidate explaining T2D benefit
+PK11195,PXR,NR1I2,PubChem qHTS,0.50 uM,borderline,OT obesity 0.093; CAR/PXR dual-ligand literature,T2,FACT,Single computational-family source
+PK11195,GABA-A central site,GABRA/GABRB/GABRG,ChEMBL+PubChem,Ki/IC50 1-21 uM,only at high brain conc.,no direct T2D link,T3,FACT,Weak; CNS side-effect relevance
+PK11195,"LXRa/b, RXRA, ESRRA, AR, THRb",NR family,PubChem qHTS,6.3-40 uM,no,LXRa: metSyn 0.288/NAFLD 0.261,T4,FACT,"uM band, likely noise; LXRa worth a secondary look"
+emapunil,TSPO (human),TSPO,ChEMBL+PubChem,Ki 6.4 nM WT / 31.3 nM A147T,yes (90 mg qd free 1.0 nM ~ Ki; PMID:35524344),T2D benefit claim UNVERIFIED (needs requester citation); cognition effect TSPO-dependent (PMID:37891168),T1 (as target),FACT,Cleanest TSPO ligand; metabolic mechanism unknown
+emapunil,GABA-A central site,GABRA/GABRB/GABRG,ChEMBL,Ki 8.4 uM,no,none,T3,FACT,1000x selectivity window
+emapunil,CYP3A7/CYP2C9,CYP3A7/CYP2C9,PubChem,13.5-19 uM,no,CYP2C9 T2D 0.058,T4,FACT,Noise band
+etifoxine,TSPO (human),TSPO,PMID:35524344 + ChEMBL(rat-binding class),Ki 7.8 uM human,NO (free 0.31 nM vs Ki 7.8 uM; ~4 orders),TSPO-KO worsens steatosis; 2020 phenotype unlikely TSPO-mediated,"T2 (measured, exposure-incompatible)",FACT,Strongest exclusion case of the 3 ligands
+etifoxine,GABA-A TBPS/picrotoxin site,"GABRA/GABRB/GABRG (15 subunits, 1 assay)",ChEMBL+PubChem,6.7 uM,human NO; mouse Cmax TBD,no OT T2D link for GABRA2/GABRG2,T2-T3,FACT,Central appetite route speculative
+etifoxine,CYP2D6/CYP2C9/DRD2,CYP2D6/CYP2C9/DRD2,PubChem,9.5-13.5 uM,no,weak,T4,FACT,Noise band
+etifoxine,PPARgamma (indirect),PPARG,PMID:41958827 (TSPO->progesterone->PPARg in nerve injury),n/a (downstream),n/a,OT T2D 0.861 for PPARG itself,T4 route,MECH,Nerve-injury model; obesity untested; PPARG genetics strong
+etifoxine,Gut microbiome / bile acid axis,(non-protein route),PMID:32679124 direct OBS,n/a,relevant,direct weight-loss OBS,OBS,OBS,Authors own hypothesis; cholesterol->bile acid->microbiome
+Ro5-4864,TSPO (all species),TSPO,PubChem,"rat 3.5-58 nM, mouse 0.2-10 nM, human 1.1-7.3 nM",yes,"co-phenotype with PK11195 (insulin secretion, gluconeogenesis)",T1 control,FACT,Class control ligand for WS2/WS3

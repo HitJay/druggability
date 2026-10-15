@@ -1,0 +1,164 @@
+{
+ "NR1I3": [
+  [
+   "maturity-onset diabetes of the young",
+   "MONDO_0018911",
+   0.091
+  ],
+  [
+   "maturity-onset diabetes of the young type 3",
+   "MONDO_0010894",
+   0.073
+  ],
+  [
+   "non-alcoholic fatty liver",
+   "EFO_1001248",
+   0.067
+  ],
+  [
+   "transient neonatal diabetes mellitus",
+   "MONDO_0020525",
+   0.059
+  ],
+  [
+   "obesity disorder",
+   "MONDO_0011122",
+   0.054
+  ],
+  [
+   "obesity due to melanocortin 4 receptor deficiency",
+   "MONDO_0019115",
+   0.054
+  ],
+  [
+   "diabetes mellitus, transient neonatal, 3",
+   "MONDO_0012522",
+   0.05
+  ],
+  [
+   "fatty liver disease",
+   "MONDO_0004790",
+   0.049
+  ],
+  [
+   "maturity-onset diabetes of the young type 10",
+   "MONDO_0013240",
+   0.044
+  ]
+ ],
+ "NR1I2": [
+  [
+   "obesity disorder",
+   "MONDO_0011122",
+   0.093
+  ]
+ ],
+ "TSPO": [],
+ "GABRA2": [],
+ "GABRG2": [],
+ "PPARG": [
+  [
+   "type 2 diabetes mellitus",
+   "MONDO_0005148",
+   0.861
+  ],
+  [
+   "diabetes mellitus",
+   "MONDO_0005015",
+   0.747
+  ],
+  [
+   "morbid obesity",
+   "MONDO_0005139",
+   0.615
+  ],
+  [
+   "obesity disorder",
+   "MONDO_0011122",
+   0.571
+  ],
+  [
+   "inherited obesity",
+   "MONDO_0019182",
+   0.507
+  ],
+  [
+   "metabolic syndrome",
+   "EFO_0000195",
+   0.495
+  ],
+  [
+   "diabetic retinopathy",
+   "MONDO_0005266",
+   0.463
+  ],
+  [
+   "diabetic neuropathy",
+   "MONDO_0006626",
+   0.458
+  ],
+  [
+   "diabetic eye disease",
+   "EFO_0009486",
+   0.456
+  ],
+  [
+   "non-alcoholic fatty liver",
+   "EFO_1001248",
+   0.453
+  ],
+  [
+   "Insulin resistance",
+   "HP_0000855",
+   0.435
+  ],
+  [
+   "diabetic polyneuropathy",
+   "MONDO_0001583",
+   0.416
+  ]
+ ],
+ "CPN1": [
+  [
+   "non-alcoholic fatty liver",
+   "EFO_1001248",
+   0.213
+  ],
+  [
+   "obesity disorder",
+   "MONDO_0011122",
+   0.077
+  ],
+  [
+   "obesity due to melanocortin 4 receptor deficiency",
+   "MONDO_0019115",
+   0.077
+  ]
+ ],
+ "DBI": [
+  [
+   "transient infantile hypertriglyceridemia and hepatosteatosis",
+   "MONDO_0013771",
+   0.05
+  ]
+ ],
+ "CYP2C9": [
+  [
+   "type 2 diabetes mellitus",
+   "MONDO_0005148",
+   0.058
+  ]
+ ],
+ "NR1H3": [
+  [
+   "metabolic syndrome",
+   "EFO_0000195",
+   0.288
+  ],
+  [
+   "non-alcoholic fatty liver",
+   "EFO_1001248",
+   0.261
+  ]
+ ]
+}

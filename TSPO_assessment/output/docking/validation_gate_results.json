@@ -1,0 +1,48 @@
+{
+ "4RYI": {
+  "pocket_center": [
+   32.15,
+   30.78,
+   25.05
+  ],
+  "chain": "A",
+  "vina_scores": [
+   -9.42,
+   -8.83,
+   -7.17,
+   -6.84
+  ],
+  "redock_rmsd": 4.34
+ },
+ "1XVP": {
+  "pocket_center": [
+   25.6,
+   54.19,
+   29.56
+  ],
+  "chain": "D",
+  "vina_scores": [
+   -10.89,
+   -10.51,
+   -9.35,
+   -8.98
+  ],
+  "redock_rmsd": null
+ },
+ "2QNV": {
+  "pocket_center": [
+   12.04,
+   15.2,
+   22.12
+  ],
+  "chain": "A",
+  "vina_scores": [
+   -7.55,
+   -7.54,
+   -7.4,
+   -6.95,
+   -6.93
+  ],
+  "redock_rmsd": null
+ }
+}

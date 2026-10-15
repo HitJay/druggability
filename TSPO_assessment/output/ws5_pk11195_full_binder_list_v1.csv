@@ -1,0 +1,30 @@
+ligand,source_layer,target_chembl,target_name,gene,uniprot,evidence_type,best_value,units,activity_type,assay_types,n_records,tier,notes
+PK11195,measured (ChEMBL 35),CHEMBL4552,Translocator protein (rat),TSPO,P16257,binding Ki/Kd/IC50,0.31,nM,Ki,B,62,1 (primary target),18 docs; Ki 0.31-28.8 nM; median ~9.3 nM
+PK11195,measured (ChEMBL 35),CHEMBL5742,Translocator protein (human),TSPO,P30536,binding Ki/Kd/IC50,1.1,nM,IC50,B,15,1 (primary target),Ki 2.3-36 nM incl. A147T variant band (29-36 nM)
+PK11195,measured (ChEMBL 35),CHEMBL2149,Translocator protein (mouse),TSPO,P50637,percent activity,40,%,Activity,B,3,1 (primary target),single-point 40-48% activity only
+PK11195,measured (ChEMBL 35),CHEMBL5503,Constitutive androstane receptor,NR1I3,Q14994,functional IC50 (antagonism),25,nM,IC50,B/A,6,"1 (off-target, T2D-relevant)",antagonism 25-56 nM; inverse agonism 245-390 nM; converted to agonist in hepatocytes (PMID:28442602)
+PK11195,measured (ChEMBL 35),CHEMBL2095172,GABA-A receptor alpha1/beta2/gamma2,"GABRA1/2,GABRB2,GABRG2",P47869,"functional, unscoreable",,,Activity,B/F,5,3 (CNS channel),negative activity value; weak/near-threshold only
+PK11195,measured (ChEMBL 35),CHEMBL1907607,GABA-A receptor anion channel,GABRA-family,,percent activity,48,%,Activity,B,5,3 (CNS channel),single-point percent; no affinity
+PK11195,measured (ChEMBL 35),CHEMBL2467,Thyrotropin-releasing hormone receptor,TRHR,P34981,competition,44,%,Competition,B,4,4 (noise),single-point percent; no literature follow-up
+PK11195,measured (ChEMBL 35),CHEMBL1865,Protein deacetylase HDAC6,HDAC6,Q9UBN7,percent inhibition,2.1,%,Inhibition,B,2,4 (noise),single-point percent
+PK11195,measured (ChEMBL 35),CHEMBL612545,Unchecked panel target,,,percent inhibition,0,%,Inhibition,B/F,38,4 (noise),target unchecked in source panel; ignore
+PK11195,measured (ChEMBL 35),CHEMBL5162,Neuropeptide S receptor,NPSR,Q6W5P4,potency (flat-screen),199.5,nM,Potency,F,1,4 (noise),PubChem flat-campaign; no confirmation
+PK11195,measured (ChEMBL 35),CHEMBL2093861,Menin/MLL methyltransferase complex,MEN1/KMT2A,O00255,potency (flat-screen),7943,nM,Potency,F,2,4 (noise),PubChem flat-campaign
+PK11195,measured (ChEMBL 35),CHEMBL1075138,Tyrosyl-DNA phosphodiesterase 1,TDP1,Q9NUW8,potency (flat-screen),18356,nM,Potency,F,2,4 (noise),PubChem flat-campaign
+PK11195,measured (ChEMBL 35),CHEMBL3577,Aldehyde dehydrogenase 1A1,ALDH1A1,P00352,potency (flat-screen),19953,nM,Potency,F,1,4 (noise),PubChem flat-campaign
+PK11195,measured (ChEMBL 35),CHEMBL1293298,Peripheral myelin protein 22,PMP22,Q01453,potency (flat-screen),75686,nM,Potency,F,1,4 (noise),PubChem flat-campaign
+PK11195,predicted (SwissTargetPrediction),CHEMBL5742,Translocator protein,TSPO,P30536,similarity probability (rank 1),0.899,,,,,predicted (agrees with measured),
+PK11195,predicted (SwissTargetPrediction),CHEMBL5503,Constitutive androstane receptor,NR1I3,Q14994,similarity probability (rank 2),0.888,,,,,predicted (agrees with measured),
+PK11195,predicted (SwissTargetPrediction),CHEMBL4235,11-beta-hydroxysteroid dehydrogenase 1,HSD11B1,P28845,similarity probability (rank 3),0.669,,,,,prediction-only; T2D-relevant enzyme; no measured record,
+PK11195,predicted (SwissTargetPrediction),CHEMBL287,Sigma non-opioid intracellular receptor 1,SIGMAR1,Q99720,similarity probability (rank 4),0.567,,,,,prediction-only,
+PK11195,predicted (SwissTargetPrediction),CHEMBL2903,Polyunsaturated fatty acid lipoxygenase ALOX15,ALOX15,P16050,similarity probability (rank 5),0.544,,,,,prediction-only,
+PK11195,predicted (SwissTargetPrediction),CHEMBL5137,Metabotropic glutamate receptor 2,GRM2,Q14416,similarity probability (rank 6),0.521,,,,,prediction-only,
+PK11195,predicted (SwissTargetPrediction),CHEMBL218,Cannabinoid receptor 1,CNR1,P21554,similarity probability (rank 7),0.470,,,,,prediction-only; no ChEMBL record,
+PK11195,predicted (SwissTargetPrediction),CHEMBL237,Kappa-type opioid receptor,OPRK1,P41145,similarity probability (rank 8),0.467,,,,,prediction-only,
+PK11195,predicted (SwissTargetPrediction),CHEMBL4105907,Sigma intracellular receptor 2,TMEM97,Q5BJF2,similarity probability (rank 9),0.388,,,,,prediction-only,
+PK11195,predicted (SwissTargetPrediction),CHEMBL233,Mu-type opioid receptor,OPRM1,P35372,similarity probability (rank 10),0.374,,,,,prediction-only,
+PK11195,predicted (SwissTargetPrediction),CHEMBL3227,Metabotropic glutamate receptor 5,GRM5,P41574,similarity probability (rank 11),0.324,,,,,prediction-only,
+PK11195,predicted (SwissTargetPrediction),CHEMBL264,Histamine H3 receptor,HRH3,Q9Y5N1,similarity probability (rank 12),0.308,,,,,prediction-only,
+PK11195,structural (docking/co-fold),CHEMBL5503,CAR LBD pocket,NR1I3,Q14994,"Vina -10.89 kcal/mol; Boltz-2 co-fold centroid 2.52 A from F15, 9/12 pocket residues shared",,,,,,structure arm (confirms CAR),no experimental coordinates used in co-fold
+PK11195,structural (docking/co-fold),CHEMBL5742,TSPO NMR pocket (4RYI),TSPO,P30536,Vina -9.42 kcal/mol (positive control),,,,,,structure arm (confirms TSPO),
+PK11195,structural (docking/co-fold),,PXR LBD (2QNV),NR1I2,O75469,Vina -7.55 kcal/mol,,,,,,structure arm (weaker band),consistent with PXR rows in ChEMBL bioactivity set

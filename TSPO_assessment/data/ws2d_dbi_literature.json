@@ -1,0 +1,200 @@
+{
+ "pk_dbi": {
+  "query": "PK11195 AND (\"diazepam binding inhibitor\" OR ACBP) AND (antagonis* OR inhibitor* OR block*)",
+  "hitCount": 74,
+  "results": [
+   {
+    "title": "Benzodiazepines compromise the outcome of cancer immunotherapy.",
+    "year": "2024",
+    "pmid": "39381589",
+    "abstract": "Acyl CoA binding protein (ACBP, which is encoded by <i>diazepam binding inhibitor</i>, <i>DBI</i>) acts on the gamma-amino butyric acid (GABA) receptor type A via a specific binding site that is shared by diazepam and other benzodiazepines. Both ACBP/DBI and benzodiazepines act as positive allosteric modulators, hence increasing GABA effects on this receptor. Recently, we found that ACBP/DBI acts as an endogenous immunosuppressor, meaning that its antibody-mediated neutralization has immunostimulatory effects and enhances the efficacy of immunotherapy and chemoimmunotherapy in mouse models. Driven by these considerations, we investigated whether diazepam administration in mice would reverse "
+   },
+   {
+    "title": "Functional role of translocator protein and its ligands in ocular diseases (Review).",
+    "year": "2024",
+    "pmid": "38186312",
+    "abstract": "The 18\u00a0kDa translocator protein (TSPO) is an essential outer mitochondrial membrane protein that is responsible for mitochondrial transport, maintenance of mitochondrial homeostasis and normal physiological cell function. The role of TSPO in the pathogenesis of ocular diseases is a growing area of interest. More notably, TSPO exerts positive effects in regulating various pathophysiological processes, such as the inflammatory response, oxidative stress, steroid synthesis and modulation of microglial function, in combination with a variety of specific ligands such as 1\u2011(2\u2011chlorophenyl\u2011N\u2011methylpropyl)\u20113\u2011isoquinolinecarboxamide, 4'\u2011chlorodiazepam and XBD173. In the present review, the expression"
+   },
+   {
+    "title": "From benzodiazepines to fatty acids and beyond: revisiting the role of ACBP/DBI.",
+    "year": "2021",
+    "pmid": "34565656",
+    "abstract": "Four decades ago Costa and colleagues identified a small, secreted polypeptide in the brain that can displace the benzodiazepine diazepam from the GABA<sub>A</sub> receptor, and was thus termed diazepam binding inhibitor (DBI). Shortly after, an identical polypeptide was identified in liver by its ability to induce termination of fatty acid synthesis, and was named acyl-CoA binding protein (ACBP). Since then, ACBP/DBI has been studied in parallel without a clear and integrated understanding of its dual roles. The first genetic loss-of-function models have revived the field, allowing targeted approaches to better understand the physiological roles of ACBP/DBI in vivo. We discuss the roles of "
+   },
+   {
+    "title": "Peripheral gating of mechanosensation by glial diazepam binding inhibitor.",
+    "year": "2024",
+    "pmid": "38888973",
+    "abstract": "We report that diazepam binding inhibitor (DBI) is a glial messenger mediating crosstalk between satellite glial cells (SGCs) and sensory neurons in the dorsal root ganglion (DRG). DBI is highly expressed in SGCs of mice, rats, and humans, but not in sensory neurons or most other DRG-resident cells. Knockdown of DBI results in a robust mechanical hypersensitivity without major effects on other sensory modalities. In vivo overexpression of DBI in SGCs reduces sensitivity to mechanical stimulation and alleviates mechanical allodynia in neuropathic and inflammatory pain models. We further show that DBI acts as an unconventional agonist and positive allosteric modulator at the neuronal GABAA rec"
+   },
+   {
+    "title": "Translocator protein and neurodegeneration: insights from Alzheimer's disease.",
+    "year": "2025",
+    "pmid": "38989945",
+    "abstract": ""
+   },
+   {
+    "title": "TSPO protein binding partners in bacteria, animals, and plants.",
+    "year": "2021",
+    "pmid": "34191248",
+    "abstract": "The ancient membrane protein TSPO is phylogenetically widespread from archaea and bacteria to insects, vertebrates, plants, and fungi. TSPO's primary amino acid sequence is only modestly conserved between diverse species, although its five transmembrane helical structure appears mainly conserved. Its cellular location and orientation in membranes have been reported to vary between species and tissues, with implications for potential diverse binding partners and function. Most TSPO functions relate to stress-induced changes in metabolism, but in many cases it is unclear how TSPO itself functions-whether as a receptor, a sensor, a transporter, or a translocator. Much evidence suggests that TSP"
+   },
+   {
+    "title": "TSPO: an emerging role in appetite for a therapeutically promising biomarker.",
+    "year": "2021",
+    "pmid": "34343461",
+    "abstract": "There is accumulating evidence that an obesogenic Western diet causes neuroinflammatory damage to the brain, which then promotes further appetitive behaviour. Neuroinflammation has been extensively studied by analysing the translocator protein of 18 kDa (TSPO), a protein that is upregulated in the inflamed brain following a damaging stimulus. As a result, there is a rich supply of TSPO-specific agonists, antagonists and positron emission tomography ligands. One TSPO ligand, etifoxine, is also currently used clinically for the treatment of anxiety with a minimal side-effect profile. Despite the neuroinflammatory pathogenesis of diet-induced obesity, and the translational potential of targetin"
+   },
+   {
+    "title": "Cytoprotective and Neurotrophic Effects of Octadecaneuropeptide (ODN) in <i>in vitro</i> and <i>in vivo</i> Models of Neurodegenerative Diseases.",
+    "year": "2020",
+    "pmid": "33250858",
+    "abstract": "Octadecaneuropeptide (ODN) and its precursor diazepam-binding inhibitor (DBI) are peptides belonging to the family of endozepines. Endozepines are exclusively produced by astroglial cells in the central nervous system of mammals, and their release is regulated by stress signals and neuroactive compounds. There is now compelling evidence that the gliopeptide ODN protects cultured neurons and astrocytes from apoptotic cell death induced by various neurotoxic agents. <i>In vivo</i>, ODN causes a very strong neuroprotective action against neuronal degeneration in a mouse model of Parkinson's disease. The neuroprotective activity of ODN is based on its capacity to reduce inflammation, apoptosis, "
+   },
+   {
+    "title": "The 18-kDa Translocator Protein PET Tracers as a Diagnostic Marker for Neuroinflammation: Development and Current Standing.",
+    "year": "2022",
+    "pmid": "35557664",
+    "abstract": "Translocator protein (TSPO, 18 kDa) is an evolutionary, well-preserved, and tryptophan-rich 169-amino-acid protein which localizes on the contact sites between the outer and inner mitochondrial membranes of steroid-synthesizing cells. This mitochondrial protein is implicated in an extensive range of cellular activities, including steroid synthesis, cholesterol transport, apoptosis, mitochondrial respiration, and cell proliferation. The upregulation of TSPO is well documented in diverse disease conditions including neuroinflammation, cancer, brain injury, and inflammation in peripheral organs. On the basis of these outcomes, TSPO has been assumed to be a fascinating subcellular target for ear"
+   },
+   {
+    "title": "A cell state-specific metabolic vulnerability to GPX4-dependent ferroptosis in glioblastoma.",
+    "year": "2024",
+    "pmid": "39192032",
+    "abstract": "Glioma cells hijack developmental programs to control cell state. Here, we uncover a glioma cell state-specific metabolic liability that can be therapeutically targeted. To model cell conditions at brain tumor inception, we generated genetically engineered murine gliomas, with deletion of p53 alone (p53) or with constitutively active Notch signaling (N1IC), a pathway critical in controlling astrocyte differentiation during brain development. N1IC tumors harbored quiescent astrocyte-like transformed cell populations while p53 tumors were predominantly comprised of proliferating progenitor-like cell states. Further, N1IC transformed cells exhibited increased mitochondrial lipid peroxidation, h"
+   }
+  ]
+ },
+ "emap_dbi": {
+  "query": "(emapunil OR XBD173 OR AC-5216) AND (DBI OR \"diazepam binding inhibitor\" OR ACBP)",
+  "hitCount": 33,
+  "results": [
+   {
+    "title": "Functional role of translocator protein and its ligands in ocular diseases (Review).",
+    "year": "2024",
+    "pmid": "38186312",
+    "abstract": "The 18\u00a0kDa translocator protein (TSPO) is an essential outer mitochondrial membrane protein that is responsible for mitochondrial transport, maintenance of mitochondrial homeostasis and normal physiological cell function. The role of TSPO in the pathogenesis of ocular diseases is a growing area of interest. More notably, TSPO exerts positive effects in regulating various pathophysiological processes, such as the inflammatory response, oxidative stress, steroid synthesis and modulation of microglial function, in combination with a variety of specific ligands such as 1\u2011(2\u2011chlorophenyl\u2011N\u2011methylpropyl)\u20113\u2011isoquinolinecarboxamide, 4'\u2011chlorodiazepam and XBD173. In the present review, the expression"
+   },
+   {
+    "title": "Translocator protein and neurodegeneration: insights from Alzheimer's disease.",
+    "year": "2025",
+    "pmid": "38989945",
+    "abstract": ""
+   },
+   {
+    "title": "Translocator protein in the rise and fall of central nervous system neurons.",
+    "year": "2023",
+    "pmid": "37416505",
+    "abstract": "Translocator protein (TSPO), a 18 kDa protein found in the outer mitochondrial membrane, has historically been associated with the transport of cholesterol in highly steroidogenic tissues though it is found in all cells throughout the mammalian body. TSPO has also been associated with molecular transport, oxidative stress, apoptosis, and energy metabolism. TSPO levels are typically low in the central nervous system (CNS), but a significant upregulation is observed in activated microglia during neuroinflammation. However, there are also a few specific regions that have been reported to have higher TSPO levels than the rest of the brain under normal conditions. These include the dentate gyrus "
+   },
+   {
+    "title": "Microglia Activation and Immunomodulatory Therapies for Retinal Degenerations.",
+    "year": "2018",
+    "pmid": "29977192",
+    "abstract": "A chronic pro-inflammatory environment is a hallmark of retinal degenerative diseases and neurological disorders that affect vision. Inflammatory responses during retinal pathophysiology are orchestrated by microglial cells which constitute the resident immune cell population. Following activation, microglia cells lose their ramified protrusions, proliferate and rapidly migrate to the damaged areas and resolve tissue damage. However, sustained presence of tissue stress primes microglia to become overreactive and results in the excessive production of pro-inflammatory mediators that favor retinal degenerative changes. Consequently, interventions aimed at overriding microglial pro-inflammatory"
+   },
+   {
+    "title": "The agonistic TSPO ligand XBD173 attenuates the glial response thereby protecting inner retinal neurons in a murine model of retinal ischemia.",
+    "year": "2019",
+    "pmid": "30777091",
+    "abstract": "<h4>Background</h4>Ligand-driven modulation of the mitochondrial translocator protein 18\u2009kDa (TSPO) was recently described to dampen the neuroinflammatory response of microglia in a retinal light damage model resulting in protective effects on photoreceptors. We characterized the effects of the TSPO ligand XBD173 in the postischemic retina focusing on changes in the response pattern of the major glial cell types of the retina-microglia and M\u00fcller cells.<h4>Methods</h4>Retinal ischemia was induced by increasing the intraocular pressure for 60\u2009min followed by reperfusion of the tissue in mice. On retinal cell types enriched via immunomagnetic separation expression analysis of TSPO, its ligand "
+   },
+   {
+    "title": "TSPO protein binding partners in bacteria, animals, and plants.",
+    "year": "2021",
+    "pmid": "34191248",
+    "abstract": "The ancient membrane protein TSPO is phylogenetically widespread from archaea and bacteria to insects, vertebrates, plants, and fungi. TSPO's primary amino acid sequence is only modestly conserved between diverse species, although its five transmembrane helical structure appears mainly conserved. Its cellular location and orientation in membranes have been reported to vary between species and tissues, with implications for potential diverse binding partners and function. Most TSPO functions relate to stress-induced changes in metabolism, but in many cases it is unclear how TSPO itself functions-whether as a receptor, a sensor, a transporter, or a translocator. Much evidence suggests that TSP"
+   },
+   {
+    "title": "Allopregnanolone: From molecular pathophysiology to therapeutics. A historical perspective.",
+    "year": "2020",
+    "pmid": "32435665",
+    "abstract": "Allopregnanolone is synthesized in the central nervous system either <i>de novo</i> from cholesterol or from steroid hormone precursors like progesterone and pregnenolone. Over the past 30 years, direct and rapid, non-genomic actions of allopregnanolone and its derivatives via GABA<sub>A</sub> receptors have been demonstrated. Changes in brain levels of allopregnanolone during pregnancy and in the postpartum period, or during exposure to protracted stress appear to play a crucial role in the pathophysiology of mood disorders. The discovery that allopregnanolone at low (nanomolar) concentrations elicits marked anxiolytic, anti-stress and antidepressant effects by facilitating allosterically t"
+   },
+   {
+    "title": "Targeting Microglia to Treat Degenerative Eye Diseases.",
+    "year": "2022",
+    "pmid": "35251042",
+    "abstract": "Microglia have been implicated in many degenerative eye disorders, including retinitis pigmentosa, age-related macular degeneration, glaucoma, diabetic retinopathy, uveitis, and retinal detachment. While the exact roles of microglia in these conditions are still being discovered, evidence from animal models suggests that they can modulate the course of disease. In this review, we highlight current strategies to target microglia in the eye and their potential as treatments for both rare and common ocular disorders. These approaches include depleting microglia with chemicals or radiation, reprogramming microglia using homeostatic signals or other small molecules, and inhibiting the downstream "
+   },
+   {
+    "title": "Integrative multi-omic analysis identifies genes associated with cuticular wax biogenesis in adult maize leaves.",
+    "year": "2024",
+    "pmid": "39387497",
+    "abstract": "Studying the genetic basis of leaf wax composition and its correlation with leaf cuticular conductance (gc) is crucial for improving crop productivity. The leaf cuticle, which comprises a cutin matrix and various waxes, functions as an extracellular hydrophobic layer, protecting against water loss upon stomatal closure. To address the limited understanding of genes associated with the natural variation of adult leaf cuticular waxes and their connection to gc, we conducted statistical genetic analyses using leaf transcriptomic, metabolomic, and physiological data sets collected from a maize (Zea mays L.) panel of \u223c300 inbred lines. Through a random forest analysis with 60 cuticular wax traits"
+   },
+   {
+    "title": "The TSPO-NOX1 axis controls phagocyte-triggered pathological angiogenesis in the eye.",
+    "year": "2020",
+    "pmid": "32483169",
+    "abstract": "Aberrant immune responses including reactive phagocytes are implicated in the etiology of age-related macular degeneration (AMD), a major cause of blindness in the elderly. The translocator protein (18\u2009kDa) (TSPO) is described as a biomarker for reactive gliosis, but its biological functions in retinal diseases remain elusive. Here, we report that tamoxifen-induced conditional deletion of TSPO in resident microglia using Cx3cr1<sup>CreERT2</sup>:TSPO<sup>fl/fl</sup> mice or targeting the protein with the synthetic ligand XBD173 prevents reactivity of phagocytes in the laser-induced mouse model of neovascular AMD. Concomitantly, the subsequent neoangiogenesis and vascular leakage are prevente"
+   }
+  ]
+ },
+ "dbi_tspo_func": {
+  "query": "(DBI OR \"diazepam binding inhibitor\") AND TSPO AND (function OR ligand OR antagonist) AND (insulin OR glucose OR adipose OR steroid)",
+  "hitCount": 142,
+  "results": [
+   {
+    "title": "Therapeutic potential for glial-derived octadecaneuropeptide in the treatment of obesity.",
+    "year": "2026",
+    "pmid": "41633838",
+    "abstract": ""
+   },
+   {
+    "title": "Tspo Depletion Exacerbates Steatosis Through Fatty Acid Uptake.",
+    "year": "2025",
+    "pmid": "40195072",
+    "abstract": "Previous studies demonstrated that Tspo loss causes simple steatosis (SS) in hepatocytes in\u00a0vitro. However, its effect on SS in\u00a0vivo remains unclear. In this study, we hypothesise that Tspo loss promotes early-stage MASLD. WT and Tspo KO rats were fed a Gubra Amylin NASH (GAN) diet for 8\u2009weeks to induce SS. Tspo KO rats fed the GAN diet (KO GAN) exhibited increased insulin resistance, higher plasma cholesterol, and elevated hepatic triacylglycerol (TAG) levels, along with higher de novo lipogenesis (DNL) and free fatty acid (FFA) uptake, evidenced by increased fatty acid synthase (FASN) and CD36 expression. The Acyl-coenzyme A binding protein/diazepam-binding inhibitor-TSPO complex facilitat"
+   },
+   {
+    "title": "Functional role of translocator protein and its ligands in ocular diseases (Review).",
+    "year": "2024",
+    "pmid": "38186312",
+    "abstract": "The 18\u00a0kDa translocator protein (TSPO) is an essential outer mitochondrial membrane protein that is responsible for mitochondrial transport, maintenance of mitochondrial homeostasis and normal physiological cell function. The role of TSPO in the pathogenesis of ocular diseases is a growing area of interest. More notably, TSPO exerts positive effects in regulating various pathophysiological processes, such as the inflammatory response, oxidative stress, steroid synthesis and modulation of microglial function, in combination with a variety of specific ligands such as 1\u2011(2\u2011chlorophenyl\u2011N\u2011methylpropyl)\u20113\u2011isoquinolinecarboxamide, 4'\u2011chlorodiazepam and XBD173. In the present review, the expression"
+   },
+   {
+    "title": "Review: The role of microglia in diabetic retinopathy and its potential as a therapeutic target.",
+    "year": "2026",
+    "pmid": "41953651",
+    "abstract": "Diabetic retinopathy (DR) is a common and severe complication of diabetes, which poses a serious threat to vision, and its pathogenesis is complex. Inflammatory response plays a crucial role in the progression of DR, but currently, anti-vascular endothelial growth factor therapy, the preferred treatment for DR, only targets the vascular part. Therefore, determining a treatment method targeting the inflammatory response in DR is an important step in addressing DR. As immune cells within the retina, microglia play a key role in the inflammatory response in DR, which is a crucial link in its pathogenic mechanism. By regulating the inflammatory response of microglia, the progression of DR can be"
+   },
+   {
+    "title": "Tanycytes: bloodhounds of the metabolic brain.",
+    "year": "2026",
+    "pmid": "41176453",
+    "abstract": "Constant monitoring and fine-tuning of internal body status to maintain energy homeostasis despite changing physiological needs and environmental conditions are essential brain functions. Hypothalamic tanycytes - specialized ependymoglial cells at the interface between the blood and the brain - play crucial roles in this regulation through mechanisms as diverse as sensing and responding to circulating nutrients and metabolic hormones, gating their access or shuttling them into the brain, modulating hypothalamic neuronal function and neuroendocrine communication with peripheral organs, and generating new regulatory neurons. We summarize these mechanisms and emphasize striking recent discoveri"
+   },
+   {
+    "title": "Insulin evokes release of endozepines from astrocytes of the NTS to modulate glucose metabolism in male rats.",
+    "year": "2025",
+    "pmid": "40976282",
+    "abstract": "The central nervous system (CNS) plays a key role in regulating metabolic functions, but conditions like obesity and diabetes can disrupt this balance. Within the CNS, the nucleus of the solitary tract (NTS) in the dorsal vagal complex (DVC) senses insulin and regulates feeding behaviour and hepatic glucose production. However, we still know little about which cells in the NTS are sensitive to insulin. We show that in male rats insulin receptors in astrocytes are crucial for the NTS's ability to regulate glucose production in the liver. We demonstrate that insulin evokes the release of endozepines from primary astrocytes and direct infusion of endozepines into the NTS mimics the effects of i"
+   },
+   {
+    "title": "From benzodiazepines to fatty acids and beyond: revisiting the role of ACBP/DBI.",
+    "year": "2021",
+    "pmid": "34565656",
+    "abstract": "Four decades ago Costa and colleagues identified a small, secreted polypeptide in the brain that can displace the benzodiazepine diazepam from the GABA<sub>A</sub> receptor, and was thus termed diazepam binding inhibitor (DBI). Shortly after, an identical polypeptide was identified in liver by its ability to induce termination of fatty acid synthesis, and was named acyl-CoA binding protein (ACBP). Since then, ACBP/DBI has been studied in parallel without a clear and integrated understanding of its dual roles. The first genetic loss-of-function models have revived the field, allowing targeted approaches to better understand the physiological roles of ACBP/DBI in vivo. We discuss the roles of "
+   },
+   {
+    "title": "Acyl coenzyme A binding protein (ACBP): An aging- and disease-relevant \"autophagy checkpoint\".",
+    "year": "2023",
+    "pmid": "37357988",
+    "abstract": "Acyl coenzyme A binding protein (ACBP), also known as diazepam-binding inhibitor (DBI), is a phylogenetically ancient protein present in some eubacteria and the entire eukaryotic radiation. In several eukaryotic phyla, ACBP/DBI transcends its intracellular function in fatty acid metabolism because it can be released into the extracellular space. This ACBP/DBI secretion usually occurs in response to nutrient scarcity through an autophagy-dependent pathway. ACBP/DBI and its peptide fragments then act on a range of distinct receptors that diverge among phyla, namely metabotropic G protein-coupled receptor in yeast (and likely in the mammalian central nervous system), a histidine receptor kinase"
+   },
+   {
+    "title": "Peripheral gating of mechanosensation by glial diazepam binding inhibitor.",
+    "year": "2024",
+    "pmid": "38888973",
+    "abstract": "We report that diazepam binding inhibitor (DBI) is a glial messenger mediating crosstalk between satellite glial cells (SGCs) and sensory neurons in the dorsal root ganglion (DRG). DBI is highly expressed in SGCs of mice, rats, and humans, but not in sensory neurons or most other DRG-resident cells. Knockdown of DBI results in a robust mechanical hypersensitivity without major effects on other sensory modalities. In vivo overexpression of DBI in SGCs reduces sensitivity to mechanical stimulation and alleviates mechanical allodynia in neuropathic and inflammatory pain models. We further show that DBI acts as an unconventional agonist and positive allosteric modulator at the neuronal GABAA rec"
+   },
+   {
+    "title": "Macrophage/microglia polarization for the treatment of diabetic retinopathy.",
+    "year": "2023",
+    "pmid": "37842315",
+    "abstract": "Macrophages/microglia are immune system defense and homeostatic cells that develop from bone marrow progenitor cells. According to the different phenotypes and immune responses of macrophages (Th1 and Th2), the two primary categories of polarized macrophages/microglia are those conventionally activated (M1) and alternatively activated (M2). Macrophage/microglial polarization is a key regulating factor in the development of inflammatory disorders, cancers, metabolic disturbances, and neural degeneration. Macrophage/microglial polarization is involved in inflammation, oxidative stress, pathological angiogenesis, and tissue healing processes in ocular diseases, particularly in diabetic retinopa"
+   }
+  ]
+ }
+}

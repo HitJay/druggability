@@ -1,0 +1,44 @@
+{
+ "CHEMBL360798": {
+  "ik": null,
+  "smi": "CCC(C)N(C)C(=O)c1cc2cccc(-c3ccccc3Cl)c2cn1",
+  "chirality": -1,
+  "syn": []
+ },
+ "CHEMBL416715": {
+  "ik": null,
+  "smi": "CC[C@@H](C)N(C)C(=O)c1cc2ccccc2c(-c2ccccc2Cl)n1",
+  "chirality": -1,
+  "syn": []
+ },
+ "CHEMBL481537": {
+  "ik": null,
+  "smi": "CCC(C)N(C)C(=O)c1cc2ccccc2c(-c2ccccc2Cl)n1",
+  "chirality": -1,
+  "syn": []
+ },
+ "CHEMBL6329": {
+  "ik": null,
+  "smi": "Cc1cc(-n2ncc(=O)[nH]c2=O)ccc1C(=O)c1ccccc1Cl",
+  "chirality": -1,
+  "syn": []
+ },
+ "CHEMBL6328": {
+  "ik": null,
+  "smi": "Cc1cc(-n2ncc(=O)[nH]c2=O)ccc1C(=O)c1ccc(C#N)cc1",
+  "chirality": -1,
+  "syn": []
+ },
+ "CHEMBL1672409": {
+  "ik": null,
+  "smi": "CCC(C)N(C)C(=O)c1cc2ccccc2c(-c2ccccc2[124I])n1",
+  "chirality": -1,
+  "syn": []
+ },
+ "CHEMBL179861": {
+  "ik": null,
+  "smi": "CCC(C)NC(=O)c1cc2ccccc2c(-c2ccccc2Cl)n1",
+  "chirality": -1,
+  "syn": []
+ }
+}

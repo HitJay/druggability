@@ -1,0 +1,100 @@
+{
+ "PK11195": [
+  [
+   "PXR_2QNV_A",
+   0.1314
+  ],
+  [
+   "TSPO_4RYI",
+   0.0296
+  ],
+  [
+   "CAR_1XVP_D",
+   -0.0027
+  ]
+ ],
+ "emapunil": [
+  [
+   "TSPO_4RYI",
+   0.1331
+  ],
+  [
+   "PXR_2QNV_A",
+   0.0281
+  ],
+  [
+   "CAR_1XVP_D",
+   -0.0934
+  ]
+ ],
+ "etifoxine": [
+  [
+   "TSPO_4RYI",
+   -0.0526
+  ],
+  [
+   "CAR_1XVP_D",
+   -0.1328
+  ],
+  [
+   "PXR_2QNV_A",
+   -0.1431
+  ]
+ ],
+ "Ro5-4864": [
+  [
+   "PXR_2QNV_A",
+   0.0596
+  ],
+  [
+   "TSPO_4RYI",
+   0.0484
+  ],
+  [
+   "CAR_1XVP_D",
+   -0.0652
+  ]
+ ],
+ "decoy_lisinopril": [
+  [
+   "PXR_2QNV_A",
+   0.1703
+  ],
+  [
+   "TSPO_4RYI",
+   0.161
+  ],
+  [
+   "CAR_1XVP_D",
+   0.1451
+  ]
+ ],
+ "decoy_glycine": [
+  [
+   "TSPO_4RYI",
+   0.2078
+  ],
+  [
+   "CAR_1XVP_D",
+   0.1616
+  ],
+  [
+   "PXR_2QNV_A",
+   0.0481
+  ]
+ ],
+ "decoy_aspirin": [
+  [
+   "TSPO_4RYI",
+   -0.0335
+  ],
+  [
+   "CAR_1XVP_D",
+   -0.084
+  ],
+  [
+   "PXR_2QNV_A",
+   -0.1304
+  ]
+ ]
+}
