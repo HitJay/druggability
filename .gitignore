@@ -88,6 +88,18 @@ data/gpr81_phase1/followup_2026-08/data/boltz_logs/
 data/gpr81_phase1/followup_2026-08/data/alphafold/hcar2/
 data/gpr81_phase1/followup_2026-08/data/alphafold/hcar3/
 
+# TSPO assessment: audit artifacts only (deliverables + result JSONs/YAMLs); regenerable
+# intermediates (docking poses, boltz run dirs, LMDB embeddings, PDFs) stay out; CIFS holds the delivery copy
+!TSPO_assessment/output/
+TSPO_assessment/output/boltz/run_*/
+TSPO_assessment/output/docking/*.pdbqt
+TSPO_assessment/output/docking/*_rec.pdb
+TSPO_assessment/output/drugclip_reverse/*.lmdb
+TSPO_assessment/output/drugclip_reverse/*.lmdb-lock
+TSPO_assessment/output/drugclip_reverse/*.pkl
+TSPO_assessment/output/drugclip_reverse/emb/
+TSPO_assessment/output/drugclip_reverse/*.pdb
+
 # GPR81 supplementary 2D renders (regenerable from paper_structures_recovered.json via build_gpr81_supplementary*.py)
 data/gpr81_phase1/supplementary/structures_2d/
 data/gpr81_phase1/supplementary/*_grid.png
