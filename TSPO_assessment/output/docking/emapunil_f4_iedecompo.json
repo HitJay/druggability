@@ -1,0 +1,6 @@
+{
+ "6X3X": {
+  "label": "GABA-A_BZD_site",
+  "error": "ValueError: coordinate \"1406373226.5034673\" could not be represented in a width-8 field"
+ }
+}

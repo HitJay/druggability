@@ -1,0 +1,20 @@
+Subject: Emapunil (XBD173) potential targets — docking + MD stability off the PK11195 binder list
+
+Hi Zheng,
+
+The emapunil off-target search over the PK11195 binder list is complete. Short version: emapunil's computed profile is narrow, and the PK11195 competition you observed is most plausibly TSPO itself, with one candidate second site worth a follow-up assay.
+
+1. What was done. All 21 targets from the binder list were mapped to ligand-bound structures; 17 yielded a usable pocket. Each pocket first had to reproduce its own co-crystal ligand (a validation gate), and only gated pockets were interpreted. Emapunil was docked into all 17; the anchor (TSPO 4RYI) plus the top three candidates (GABA-A BZD site 6X3X, OPRM1 4DKL, CAR 1XVP) plus a negative control (GRM2 4XAQ) were then carried through 250 ps MD to test pose stability and pocket geometry.
+
+2. Anchor. Emapunil docks into the TSPO pocket 1.09 Angstrom from the crystal PK11195 pose and stays there through MD, with contacts to PHE23, ASN151 and MET47 — the canonical TSPO pocket residues. Your mitochondrial displacement observation is reproduced geometrically; no alternative explanation is needed for that arm.
+
+3. Candidates. Three pockets give MD-stable in-pocket poses: the GABA-A benzodiazepine site (alpha1/gamma2 interface, LEU223/PRO224 contacts), OPRM1 orthosteric (stable pose, but its strongest contact is an acidic anchor position and emapunil is neutral, so I would not credit it without an in vitro check), and CAR LBD (geometrically plausible; CAR was demoted in the previous round because cross-pocket docking scores are not comparable, so treat it as watch-list only). All three sit within about 0.1-0.3 kcal/mol of the TSPO anchor score, which is inside the resolution of docking — only a measured assay can separate them.
+
+4. Everything else. PXR, ALDH1A1, CNR1 and HRH3 docked but weaker than the anchor without MD validation; GRM2 was repelled from its pocket (best pose +3.54 kcal/mol, 10 Angstrom outside — the negative control behaved as designed); HDAC6, SIGMAR1, OPRK1, HSD11B1, MEN1 and the GABA-A picrotoxin site gave poses 3-5 Angstrom outside their pockets; TDP1 and TRHR have no gateable co-crystal ligand; TSPO human P30536, PMP22, NPSR, ALOX15, TMEM97 and GRM5 have no drug-like structure and remain untested.
+
+5. Caveat. All of the above is supporting computational evidence, not proof of binding — docking scores do not resolve potency or rank across pockets, and only TSPO has a measured emapunil interaction (published displacement of radiolabelled PK11195). The files are on the shared drive at R:\DT\TDE_TV\shared_folder\QYJI\druggability\TSPO_assessment\03_emapunil\ (emapunil_ligand_target_search_report.html, emapunil_tiered_targets_v1.csv, email draft .txt).
+
+A practical next step, if you want to collapse the candidate list experimentally: one radioligand displacement assay on membranes from cells expressing each candidate individually would settle whether any second site is real. Happy to adjust the tier table or rerun any pocket with different parameters.
+
+Best regards,
+QYJI

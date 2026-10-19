@@ -1,0 +1,10 @@
+{
+ "anchor": "4RYI",
+ "top3": [
+  "1XVP",
+  "5TGZ",
+  "4DJH"
+ ],
+ "negative_control": "4XAQ",
+ "note": "pre-registered rule (same as emapunil round): anchor TSPO 4RYI + top-3 eligible candidates by Vina score + GRM2 4XAQ as negative control (repelled dock, ~10 A outside pocket)"
+}

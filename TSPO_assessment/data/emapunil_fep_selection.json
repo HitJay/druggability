@@ -1,0 +1,39 @@
+{
+ "anchor": {
+  "pdb": "4RYI",
+  "target": "TSPO",
+  "emapunil_score": -8.36
+ },
+ "candidates": [
+  {
+   "pdb": "6X3X",
+   "target": "GABA-A",
+   "label": "GABA-A BZD site",
+   "emapunil_score": -8.71
+  },
+  {
+   "pdb": "4DKL",
+   "target": "OPRM1",
+   "label": "OPRM1 orthosteric",
+   "emapunil_score": -8.54
+  },
+  {
+   "pdb": "1XVP",
+   "target": "CAR",
+   "label": "CAR LBD",
+   "emapunil_score": -8.4
+  }
+ ],
+ "negative_controls": [
+  {
+   "pdb": "4XAQ",
+   "label": "GRM2 allosteric",
+   "reason": "repelled (+3.54)"
+  },
+  {
+   "pdb": "6HUG",
+   "label": "GABA-A picrotoxin",
+   "reason": "weak (-5.86), 3.5 A off-center"
+  }
+ ]
+}

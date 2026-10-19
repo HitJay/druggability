@@ -1,0 +1,94 @@
+{
+ "4RYI": {
+  "label": "TSPO_anchor",
+  "sum_IE_kJmol": -44.9,
+  "top_contacts": {
+   "MET43": -12.18,
+   "ILE25": -8.92,
+   "ARG27": -8.43,
+   "ASN151": -4.79,
+   "THR44": -3.72,
+   "MET47": -3.44,
+   "ASP31": -3.26,
+   "PHE91": -3.11,
+   "GLN95": -2.71,
+   "TYR30": -1.82
+  },
+  "status": "ok",
+  "md_stable": true
+ },
+ "1XVP": {
+  "label": "CAR_LBD",
+  "sum_IE_kJmol": -178.3,
+  "top_contacts": {
+   "PHE132": -28.81,
+   "PHE136": -26.27,
+   "LEU140": -25.67,
+   "LEU137": -19.39,
+   "TYR224": -14.78,
+   "VAL97": -11.52,
+   "GLN227": -10.65,
+   "HIS101": -10.59,
+   "GLY127": -9.95,
+   "ASN221": -9.81
+  },
+  "status": "ok",
+  "md_stable": true
+ },
+ "5TGZ": {
+  "label": "CNR1_orthosteric",
+  "sum_IE_kJmol": -386.9,
+  "top_contacts": {
+   "SER410": -47.05,
+   "TRP383": -32.32,
+   "CYS413": -31.35,
+   "MET411": -26.05,
+   "LEU414": -23.09,
+   "VAL101": -21.0,
+   "LEU386": -18.41,
+   "LEU412": -16.04,
+   "PHE173": -13.35,
+   "PHE406": -13.18
+  },
+  "status": "ok",
+  "md_stable": true
+ },
+ "4DJH": {
+  "label": "OPRK1_orthosteric",
+  "sum_IE_kJmol": 216.8,
+  "top_contacts": {
+   "TYR420": -4.49,
+   "GLY419": -2.37,
+   "PRO448": -2.26,
+   "SER423": -0.74,
+   "ASN422": -0.57,
+   "TYR430": -0.37,
+   "ASN426": -0.35,
+   "PRO184": -0.31,
+   "PHE437": -0.14,
+   "ASN208": -0.1
+  },
+  "status": "ok",
+  "md_note": "ligand drifted 3.1 A during MD and lost pocket contacts (sum IE +217 kJ/mol = no stable engagement)",
+  "md_stable": false
+ },
+ "4XAQ": {
+  "label": "GRM2_negative_control",
+  "sum_IE_kJmol": -420.5,
+  "top_contacts": {
+   "ARG227": -63.68,
+   "ASP102": -62.58,
+   "TYR172": -47.72,
+   "ASP251": -38.73,
+   "THR226": -21.93,
+   "ASP74": -15.68,
+   "PHE225": -14.48,
+   "ARG199": -13.28,
+   "GLY252": -12.79,
+   "ASP144": -12.41
+  },
+  "status": "ok",
+  "md_note": "negative control: repelled at docking (+2.53); during MD the ligand sat near the pocket mouth but no specific pocket engagement; surface salt-bridge contacts dominate",
+  "md_stable": false
+ }
+}

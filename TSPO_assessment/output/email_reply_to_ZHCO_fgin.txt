@@ -1,0 +1,22 @@
+Subject: FGIN-1-27 potential targets — docking + MD stability off the PK11195 binder list
+
+Hi Zheng,
+
+The FGIN-1-27 run over the same PK11195 binder list is complete (lower priority as you indicated, so I kept the protocol identical to emapunil and reused every gate — no new methodology).
+
+Short version: FGIN-1-27 reproduces the TSPO anchor even more tightly than emapunil (0.7 Angstrom from the crystal PK11195 pose vs 1.1 for emapunil), and its computed off-target shortlist mirrors emapunil's but stays inside it — no candidate reaches the anchor score.
+
+1. What was done. The 17 pockets and their validation gates were carried over from the emapunil round; FGIN-1-27 was docked into all gateable pockets with identical boxes, then the pre-registered selection (TSPO anchor + top-3 + GRM2 negative control) went through the same 250 ps MD stability and interaction-energy analysis.
+
+2. Anchor. FGIN docks into the TSPO pocket at 0.7 Angstrom from crystal PK11195 and stays there through MD, with contacts to MET43, ILE25, ARG27 and the indole NH to ASN151. Geometrically this is the cleanest TSPO pose of the three ligands tested (PK11195 itself, FGIN-1-27, emapunil), consistent with its lower measured Ki.
+
+3. Candidates. CAR LBD is FGIN's best-scoring off-target pocket (dock -9.98, MD-stable) and CNR1 gains an MD-stable pose (dock -8.97; the hydrophobic orthosteric pocket suits the dihexyl tail). OPRK1 looked dockable by score (-8.25) but drifted out of the pocket within the MD window and lost all contacts — the pre-registered dynamics stage killed it, which is exactly what that stage is for. OPRM1, the GABA-A benzodiazepine site and PXR docked comparably but below the top-3 cut (emapunil was MD-stable in the first two, so those remain plausible secondary sites for both ligands).
+
+4. Everything else. HSD11B1, GRM2, HRH3 and OPRK1 show no pocket engagement; TDP1 and TRHR have no gateable co-crystal ligand; TSPO human, PMP22, NPSR, ALOX15, TMEM97 and GRM5 have no drug-like structure and remain untested.
+
+5. Caveat. As with emapunil, all of this is supporting computational evidence, not proof of binding — docking cannot rank across pockets or resolve potency, and only TSPO has a measured FGIN-1-27 interaction. FGIN-1-27 is also more lipophilic and flexible than emapunil, so its flatter score band carries extra uncertainty. Files are on the shared drive at R:\DT\TDE_TV\shared_folder\QYJI\druggability\TSPO_assessment\04_FGIN\ (fgin_ligand_target_search_report.html, fgin_tiered_targets_v1.csv, email draft .txt).
+
+One displacement panel (each candidate expressed individually, radioligand displacement readout) would settle both ligands' off-target lists at once. Happy to rerun any pocket or adjust the tier table.
+
+Best regards,
+QYJI

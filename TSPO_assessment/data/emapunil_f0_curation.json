@@ -1,0 +1,90 @@
+{
+ "emapunil": {
+  "CID": 6433109,
+  "MolecularFormula": "C23H23N5O2",
+  "MolecularWeight": "401.5",
+  "ConnectivitySMILES": "CCN(CC1=CC=CC=C1)C(=O)CN2C3=NC(=NC=C3N(C2=O)C)C4=CC=CC=C4",
+  "InChIKey": "NBMBIEOUVBHEBM-UHFFFAOYSA-N"
+ },
+ "XBD-173": {
+  "CID": 6433109,
+  "MolecularFormula": "C23H23N5O2",
+  "MolecularWeight": "401.5",
+  "ConnectivitySMILES": "CCN(CC1=CC=CC=C1)C(=O)CN2C3=NC(=NC=C3N(C2=O)C)C4=CC=CC=C4",
+  "InChIKey": "NBMBIEOUVBHEBM-UHFFFAOYSA-N"
+ },
+ "AC-5216": {
+  "CID": 6433109,
+  "MolecularFormula": "C23H23N5O2",
+  "MolecularWeight": "401.5",
+  "ConnectivitySMILES": "CCN(CC1=CC=CC=C1)C(=O)CN2C3=NC(=NC=C3N(C2=O)C)C4=CC=CC=C4",
+  "InChIKey": "NBMBIEOUVBHEBM-UHFFFAOYSA-N"
+ },
+ "chembl_emapunil": [
+  {
+   "id": "CHEMBL513922",
+   "pref": "EMAPUNIL",
+   "smiles": "CCN(Cc1ccccc1)C(=O)Cn1c(=O)n(C)c2cnc(-c3ccccc3)nc21",
+   "syn": [
+    "AC-5216",
+    "Emapunil",
+    "Emapunil",
+    "Emapunilo",
+    "XBD-173",
+    "XBD173"
+   ]
+  }
+ ],
+ "chembl_XBD173": [
+  {
+   "id": "CHEMBL513922",
+   "pref": "EMAPUNIL",
+   "smiles": "CCN(Cc1ccccc1)C(=O)Cn1c(=O)n(C)c2cnc(-c3ccccc3)nc21",
+   "syn": [
+    "AC-5216",
+    "Emapunil",
+    "Emapunil",
+    "Emapunilo",
+    "XBD-173",
+    "XBD173"
+   ]
+  }
+ ],
+ "chembl_AC-5216": [
+  {
+   "id": "CHEMBL513922",
+   "pref": "EMAPUNIL",
+   "smiles": "CCN(Cc1ccccc1)C(=O)Cn1c(=O)n(C)c2cnc(-c3ccccc3)nc21",
+   "syn": [
+    "AC-5216",
+    "Emapunil",
+    "Emapunil",
+    "Emapunilo",
+    "XBD-173",
+    "XBD173"
+   ]
+  }
+ ],
+ "prior_pk11195_gate": {
+  "4RYI": -9.42,
+  "1XVP": -10.89,
+  "2QNV": -7.55
+ },
+ "prior_ws2c": {
+  "4RYI_emapunil": -8.34,
+  "4RYI_etifoxine": -7.86,
+  "4RYI_Ro5-4864": -9.82,
+  "4RYI_R-PK11195": -10.96,
+  "4RYI_S-PK11195": -10.66,
+  "1XVP_emapunil": -8.38,
+  "1XVP_etifoxine": -8.16,
+  "1XVP_Ro5-4864": -9.93,
+  "1XVP_R-PK11195": -10.45,
+  "1XVP_S-PK11195": -10.21,
+  "2QNV_emapunil": -7.76,
+  "2QNV_etifoxine": -6.34,
+  "2QNV_Ro5-4864": -7.79,
+  "2QNV_R-PK11195": -9.1,
+  "2QNV_S-PK11195": -8.36
+ }
+}

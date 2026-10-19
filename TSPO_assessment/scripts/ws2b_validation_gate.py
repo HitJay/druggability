@@ -24,13 +24,14 @@ def sh(cmd, **kw):
     return r.stdout
 
 
-def ligand_centroid(pdb_path, ligcode, chain):
+def ligand_centroid(pdb_path, ligcode, chain=None):
     xs, ys, zs = [], [], []
     for line in open(pdb_path):
-        if line.startswith("HETATM") and line[17:20].strip() == ligcode and line[21] == chain:
+        if line.startswith("HETATM") and line[17:20].strip() == ligcode \
+                and (chain is None or line[21] == chain):
             xs.append(float(line[30:38])); ys.append(float(line[38:46])); zs.append(float(line[46:54]))
     if not xs:
-        raise RuntimeError(f"no {ligcode} chain {chain} in {pdb_path}")
+        raise RuntimeError(f"no {ligcode} in {pdb_path}")
     n = len(xs)
     return (sum(xs)/n, sum(ys)/n, sum(zs)/n)
 

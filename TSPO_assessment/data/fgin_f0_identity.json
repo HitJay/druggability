@@ -1,0 +1,9 @@
+{
+ "name": "FGIN-1-27",
+ "cid": 132496,
+ "inchikey": "VUWXAQFLTSBUDB-UHFFFAOYSA-N",
+ "smiles": "CCCCCCN(CCCCCC)C(=O)CC1=C(NC2=CC=CC=C21)C3=CC=C(C=C3)F",
+ "formula": "C28H37FN2O",
+ "iupac": "N,N-dihexyl-2-[2-(2-(4-fluorophenyl)-1H-indol-3-yl)acetyl]-N,N-dihexylamine",
+ "note": "indole-3-acetamide TSPO agonist; dihexyl amide = high lipophilicity; literature secondary pharmacology: BZD-site cross-reactivity at high concentrations (to verify against measured layer)"
+}
