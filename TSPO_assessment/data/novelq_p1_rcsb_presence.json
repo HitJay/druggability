@@ -1,0 +1,78 @@
+{
+ "TSPO": {
+  "acc": "P30536",
+  "error": "400 b'{\\n  \"status\" : 400,\\n  \"message\" : \"Invalid request to the [ text ] service: search is not enabled on [ rcsb_polymer_enti'"
+ },
+ "NR1I3": {
+  "acc": "Q14994",
+  "error": "400 b'{\\n  \"status\" : 400,\\n  \"message\" : \"Invalid request to the [ text ] service: search is not enabled on [ rcsb_polymer_enti'"
+ },
+ "GABRA1": {
+  "acc": "P47869",
+  "error": "400 b'{\\n  \"status\" : 400,\\n  \"message\" : \"Invalid request to the [ text ] service: search is not enabled on [ rcsb_polymer_enti'"
+ },
+ "OPRM1": {
+  "acc": "P35372",
+  "error": "400 b'{\\n  \"status\" : 400,\\n  \"message\" : \"Invalid request to the [ text ] service: search is not enabled on [ rcsb_polymer_enti'"
+ },
+ "ALDH1A1": {
+  "acc": "P00352",
+  "error": "400 b'{\\n  \"status\" : 400,\\n  \"message\" : \"Invalid request to the [ text ] service: search is not enabled on [ rcsb_polymer_enti'"
+ },
+ "CNR1": {
+  "acc": "P21554",
+  "error": "400 b'{\\n  \"status\" : 400,\\n  \"message\" : \"Invalid request to the [ text ] service: search is not enabled on [ rcsb_polymer_enti'"
+ },
+ "HRH3": {
+  "acc": "Q9Y5N1",
+  "error": "400 b'{\\n  \"status\" : 400,\\n  \"message\" : \"Invalid request to the [ text ] service: search is not enabled on [ rcsb_polymer_enti'"
+ },
+ "NR1I2": {
+  "acc": "O75469",
+  "error": "400 b'{\\n  \"status\" : 400,\\n  \"message\" : \"Invalid request to the [ text ] service: search is not enabled on [ rcsb_polymer_enti'"
+ },
+ "HSD11B1": {
+  "acc": "P28845",
+  "error": "400 b'{\\n  \"status\" : 400,\\n  \"message\" : \"Invalid request to the [ text ] service: search is not enabled on [ rcsb_polymer_enti'"
+ },
+ "SIGMAR1": {
+  "acc": "Q99720",
+  "error": "400 b'{\\n  \"status\" : 400,\\n  \"message\" : \"Invalid request to the [ text ] service: search is not enabled on [ rcsb_polymer_enti'"
+ },
+ "GRM2": {
+  "acc": "Q14416",
+  "error": "400 b'{\\n  \"status\" : 400,\\n  \"message\" : \"Invalid request to the [ text ] service: search is not enabled on [ rcsb_polymer_enti'"
+ },
+ "OPRK1": {
+  "acc": "P41145",
+  "error": "400 b'{\\n  \"status\" : 400,\\n  \"message\" : \"Invalid request to the [ text ] service: search is not enabled on [ rcsb_polymer_enti'"
+ },
+ "TRHR": {
+  "acc": "P34981",
+  "error": "400 b'{\\n  \"status\" : 400,\\n  \"message\" : \"Invalid request to the [ text ] service: search is not enabled on [ rcsb_polymer_enti'"
+ },
+ "TDP1": {
+  "acc": "Q9NUW8",
+  "error": "400 b'{\\n  \"status\" : 400,\\n  \"message\" : \"Invalid request to the [ text ] service: search is not enabled on [ rcsb_polymer_enti'"
+ },
+ "NPSR": {
+  "acc": "Q6W5P4",
+  "error": "400 b'{\\n  \"status\" : 400,\\n  \"message\" : \"Invalid request to the [ text ] service: search is not enabled on [ rcsb_polymer_enti'"
+ },
+ "PMP22": {
+  "acc": "Q01453",
+  "error": "400 b'{\\n  \"status\" : 400,\\n  \"message\" : \"Invalid request to the [ text ] service: search is not enabled on [ rcsb_polymer_enti'"
+ },
+ "ALOX15": {
+  "acc": "P16050",
+  "error": "400 b'{\\n  \"status\" : 400,\\n  \"message\" : \"Invalid request to the [ text ] service: search is not enabled on [ rcsb_polymer_enti'"
+ },
+ "TMEM97": {
+  "acc": "Q5BJF2",
+  "error": "400 b'{\\n  \"status\" : 400,\\n  \"message\" : \"Invalid request to the [ text ] service: search is not enabled on [ rcsb_polymer_enti'"
+ },
+ "GRM5": {
+  "acc": "P41574",
+  "error": "400 b'{\\n  \"status\" : 400,\\n  \"message\" : \"Invalid request to the [ text ] service: search is not enabled on [ rcsb_polymer_enti'"
+ }
+}

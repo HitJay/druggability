@@ -1,0 +1,836 @@
+[
+ {
+  "pdb": "4RYI",
+  "label": "TSPO (BcTSPO/PK11195 crystal)",
+  "gene": "TSPO",
+  "rank_in_struct": 1,
+  "pocket_id": 26,
+  "score": -0.359,
+  "ds": 0.985,
+  "volume": 1301.244,
+  "sasa": 391.305,
+  "n_alpha": 138.0,
+  "apolar_as_prop": 0.913,
+  "flexibility": 0.144,
+  "n_res": 22,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "A",
+   "B"
+  ],
+  "n_chains": 2,
+  "is_interface": true,
+  "het_within_6A": []
+ },
+ {
+  "pdb": "6X3X",
+  "label": "GABA-A a1/b3/g2 BZD site",
+  "gene": "GABRA1/GABRB3/GABRG2",
+  "rank_in_struct": 1,
+  "pocket_id": 128,
+  "score": -0.189,
+  "ds": 0.992,
+  "volume": 1420.059,
+  "sasa": 423.683,
+  "n_alpha": 185.0,
+  "apolar_as_prop": 0.595,
+  "flexibility": 0.372,
+  "n_res": 33,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "C",
+   "D",
+   "E"
+  ],
+  "n_chains": 3,
+  "is_interface": true,
+  "het_within_6A": [
+   "DZP/C(4.2A)"
+  ]
+ },
+ {
+  "pdb": "6X3X",
+  "label": "GABA-A a1/b3/g2 BZD site",
+  "gene": "GABRA1/GABRB3/GABRG2",
+  "rank_in_struct": 2,
+  "pocket_id": 83,
+  "score": -0.119,
+  "ds": 0.962,
+  "volume": 881.274,
+  "sasa": 282.539,
+  "n_alpha": 155.0,
+  "apolar_as_prop": 0.619,
+  "flexibility": 0.422,
+  "n_res": 24,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "A",
+   "B"
+  ],
+  "n_chains": 2,
+  "is_interface": true,
+  "het_within_6A": [
+   "DZP/A(4.4A)"
+  ]
+ },
+ {
+  "pdb": "6X3X",
+  "label": "GABA-A a1/b3/g2 BZD site",
+  "gene": "GABRA1/GABRB3/GABRG2",
+  "rank_in_struct": 3,
+  "pocket_id": 78,
+  "score": -0.114,
+  "ds": 0.541,
+  "volume": 943.858,
+  "sasa": 275.119,
+  "n_alpha": 156.0,
+  "apolar_as_prop": 0.628,
+  "flexibility": 0.095,
+  "n_res": 24,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "D",
+   "E"
+  ],
+  "n_chains": 2,
+  "is_interface": true,
+  "het_within_6A": [
+   "NAG/N(5.9A)",
+   "DZP/D(4.3A)"
+  ]
+ },
+ {
+  "pdb": "6X3X",
+  "label": "GABA-A a1/b3/g2 BZD site",
+  "gene": "GABRA1/GABRB3/GABRG2",
+  "rank_in_struct": 4,
+  "pocket_id": 139,
+  "score": -0.218,
+  "ds": 0.51,
+  "volume": 746.584,
+  "sasa": 228.199,
+  "n_alpha": 66.0,
+  "apolar_as_prop": 0.788,
+  "flexibility": 0.527,
+  "n_res": 15,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "A",
+   "B"
+  ],
+  "n_chains": 2,
+  "is_interface": true,
+  "het_within_6A": []
+ },
+ {
+  "pdb": "6X3X",
+  "label": "GABA-A a1/b3/g2 BZD site",
+  "gene": "GABRA1/GABRB3/GABRG2",
+  "rank_in_struct": 5,
+  "pocket_id": 9,
+  "score": 0.03,
+  "ds": 0.448,
+  "volume": 592.075,
+  "sasa": 162.203,
+  "n_alpha": 74.0,
+  "apolar_as_prop": 0.689,
+  "flexibility": 0.374,
+  "n_res": 16,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "D",
+   "E"
+  ],
+  "n_chains": 2,
+  "is_interface": true,
+  "het_within_6A": []
+ },
+ {
+  "pdb": "6HUG",
+  "label": "GABA-A picrotoxin site",
+  "gene": "GABRA-family",
+  "rank_in_struct": 1,
+  "pocket_id": 15,
+  "score": 0.022,
+  "ds": 0.877,
+  "volume": 1239.978,
+  "sasa": 400.572,
+  "n_alpha": 184.0,
+  "apolar_as_prop": 0.543,
+  "flexibility": 0.104,
+  "n_res": 36,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "A",
+   "B",
+   "C",
+   "D",
+   "E"
+  ],
+  "n_chains": 5,
+  "is_interface": true,
+  "het_within_6A": []
+ },
+ {
+  "pdb": "6HUG",
+  "label": "GABA-A picrotoxin site",
+  "gene": "GABRA-family",
+  "rank_in_struct": 2,
+  "pocket_id": 114,
+  "score": -0.13,
+  "ds": 0.76,
+  "volume": 709.608,
+  "sasa": 235.29,
+  "n_alpha": 117.0,
+  "apolar_as_prop": 0.658,
+  "flexibility": 0.129,
+  "n_res": 21,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "C",
+   "D"
+  ],
+  "n_chains": 2,
+  "is_interface": true,
+  "het_within_6A": []
+ },
+ {
+  "pdb": "6HUG",
+  "label": "GABA-A picrotoxin site",
+  "gene": "GABRA-family",
+  "rank_in_struct": 3,
+  "pocket_id": 8,
+  "score": 0.046,
+  "ds": 0.447,
+  "volume": 530.631,
+  "sasa": 156.184,
+  "n_alpha": 73.0,
+  "apolar_as_prop": 0.658,
+  "flexibility": 0.209,
+  "n_res": 17,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "A",
+   "E"
+  ],
+  "n_chains": 2,
+  "is_interface": true,
+  "het_within_6A": []
+ },
+ {
+  "pdb": "6HUG",
+  "label": "GABA-A picrotoxin site",
+  "gene": "GABRA-family",
+  "rank_in_struct": 4,
+  "pocket_id": 71,
+  "score": -0.067,
+  "ds": 0.413,
+  "volume": 1158.97,
+  "sasa": 349.823,
+  "n_alpha": 118.0,
+  "apolar_as_prop": 0.263,
+  "flexibility": 0.4,
+  "n_res": 29,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "D",
+   "E"
+  ],
+  "n_chains": 2,
+  "is_interface": true,
+  "het_within_6A": [
+   "NAG/K(5.3A)"
+  ]
+ },
+ {
+  "pdb": "6HUG",
+  "label": "GABA-A picrotoxin site",
+  "gene": "GABRA-family",
+  "rank_in_struct": 5,
+  "pocket_id": 143,
+  "score": -0.31,
+  "ds": 0.264,
+  "volume": 1571.853,
+  "sasa": 487.963,
+  "n_alpha": 144.0,
+  "apolar_as_prop": 0.451,
+  "flexibility": 0.266,
+  "n_res": 35,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "D",
+   "E"
+  ],
+  "n_chains": 2,
+  "is_interface": true,
+  "het_within_6A": []
+ },
+ {
+  "pdb": "4DKL",
+  "label": "OPRM1",
+  "gene": "OPRM1",
+  "rank_in_struct": 1,
+  "pocket_id": 1,
+  "score": 0.281,
+  "ds": 0.988,
+  "volume": 887.05,
+  "sasa": 237.594,
+  "n_alpha": 94.0,
+  "apolar_as_prop": 0.968,
+  "flexibility": 0.213,
+  "n_res": 21,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "A"
+  ],
+  "n_chains": 1,
+  "is_interface": false,
+  "het_within_6A": []
+ },
+ {
+  "pdb": "4DKL",
+  "label": "OPRM1",
+  "gene": "OPRM1",
+  "rank_in_struct": 2,
+  "pocket_id": 2,
+  "score": 0.196,
+  "ds": 0.46,
+  "volume": 721.393,
+  "sasa": 188.945,
+  "n_alpha": 56.0,
+  "apolar_as_prop": 0.804,
+  "flexibility": 0.246,
+  "n_res": 16,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "A"
+  ],
+  "n_chains": 1,
+  "is_interface": false,
+  "het_within_6A": [
+   "MPG/A(2.5A)"
+  ]
+ },
+ {
+  "pdb": "4DKL",
+  "label": "OPRM1",
+  "gene": "OPRM1",
+  "rank_in_struct": 3,
+  "pocket_id": 6,
+  "score": 0.078,
+  "ds": 0.263,
+  "volume": 442.602,
+  "sasa": 143.145,
+  "n_alpha": 58.0,
+  "apolar_as_prop": 0.724,
+  "flexibility": 0.304,
+  "n_res": 15,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "A"
+  ],
+  "n_chains": 1,
+  "is_interface": false,
+  "het_within_6A": []
+ },
+ {
+  "pdb": "4DJH",
+  "label": "OPRK1",
+  "gene": "OPRK1",
+  "rank_in_struct": 1,
+  "pocket_id": 54,
+  "score": -0.306,
+  "ds": 0.924,
+  "volume": 1907.098,
+  "sasa": 498.055,
+  "n_alpha": 223.0,
+  "apolar_as_prop": 0.906,
+  "flexibility": 0.219,
+  "n_res": 32,
+  "adjacent_to_known_frac": 0.031,
+  "chains": [
+   "A",
+   "B"
+  ],
+  "n_chains": 2,
+  "is_interface": true,
+  "het_within_6A": [
+   "JDC/B(5.6A)"
+  ]
+ },
+ {
+  "pdb": "4DJH",
+  "label": "OPRK1",
+  "gene": "OPRK1",
+  "rank_in_struct": 2,
+  "pocket_id": 53,
+  "score": -0.279,
+  "ds": 0.235,
+  "volume": 829.424,
+  "sasa": 244.463,
+  "n_alpha": 87.0,
+  "apolar_as_prop": 0.897,
+  "flexibility": 0.156,
+  "n_res": 16,
+  "adjacent_to_known_frac": 0.312,
+  "chains": [
+   "A"
+  ],
+  "n_chains": 1,
+  "is_interface": false,
+  "het_within_6A": [
+   "JDC/A(4.7A)"
+  ]
+ },
+ {
+  "pdb": "4WB9",
+  "label": "ALDH1A1",
+  "gene": "ALDH1A1",
+  "rank_in_struct": 1,
+  "pocket_id": 1,
+  "score": 0.283,
+  "ds": 0.859,
+  "volume": 878.684,
+  "sasa": 242.465,
+  "n_alpha": 89.0,
+  "apolar_as_prop": 0.674,
+  "flexibility": 0.22,
+  "n_res": 22,
+  "adjacent_to_known_frac": 0.045,
+  "chains": [
+   "A"
+  ],
+  "n_chains": 1,
+  "is_interface": false,
+  "het_within_6A": []
+ },
+ {
+  "pdb": "5TGZ",
+  "label": "CNR1",
+  "gene": "CNR1",
+  "rank_in_struct": 1,
+  "pocket_id": 6,
+  "score": 0.002,
+  "ds": 0.696,
+  "volume": 621.965,
+  "sasa": 196.492,
+  "n_alpha": 88.0,
+  "apolar_as_prop": 0.773,
+  "flexibility": 0.19,
+  "n_res": 20,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "A"
+  ],
+  "n_chains": 1,
+  "is_interface": false,
+  "het_within_6A": [
+   "OLC/A(5.1A)",
+   "OLA/A(1.6A)"
+  ]
+ },
+ {
+  "pdb": "7F61",
+  "label": "HRH3",
+  "gene": "HRH3",
+  "rank_in_struct": 1,
+  "pocket_id": 15,
+  "score": -0.121,
+  "ds": 0.441,
+  "volume": 606.951,
+  "sasa": 169.766,
+  "n_alpha": 54.0,
+  "apolar_as_prop": 0.852,
+  "flexibility": 0.094,
+  "n_res": 14,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "A"
+  ],
+  "n_chains": 1,
+  "is_interface": false,
+  "het_within_6A": []
+ },
+ {
+  "pdb": "5HK1",
+  "label": "SIGMAR1",
+  "gene": "SIGMAR1",
+  "rank_in_struct": 1,
+  "pocket_id": 3,
+  "score": 0.437,
+  "ds": 0.978,
+  "volume": 787.641,
+  "sasa": 193.197,
+  "n_alpha": 138.0,
+  "apolar_as_prop": 0.79,
+  "flexibility": 0.203,
+  "n_res": 28,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "B"
+  ],
+  "n_chains": 1,
+  "is_interface": false,
+  "het_within_6A": [
+   "61W/B(3.2A)"
+  ]
+ },
+ {
+  "pdb": "5HK1",
+  "label": "SIGMAR1",
+  "gene": "SIGMAR1",
+  "rank_in_struct": 2,
+  "pocket_id": 1,
+  "score": 0.453,
+  "ds": 0.965,
+  "volume": 764.525,
+  "sasa": 189.069,
+  "n_alpha": 137.0,
+  "apolar_as_prop": 0.686,
+  "flexibility": 0.094,
+  "n_res": 28,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "C"
+  ],
+  "n_chains": 1,
+  "is_interface": false,
+  "het_within_6A": [
+   "61W/C(3.3A)"
+  ]
+ },
+ {
+  "pdb": "4XAQ",
+  "label": "GRM2 7TM",
+  "gene": "GRM2",
+  "rank_in_struct": 1,
+  "pocket_id": 2,
+  "score": 0.232,
+  "ds": 0.626,
+  "volume": 384.073,
+  "sasa": 110.13,
+  "n_alpha": 81.0,
+  "apolar_as_prop": 0.457,
+  "flexibility": 0.017,
+  "n_res": 20,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "B"
+  ],
+  "n_chains": 1,
+  "is_interface": false,
+  "het_within_6A": [
+   "40F/B(3.7A)"
+  ]
+ },
+ {
+  "pdb": "4GQ4",
+  "label": "MEN1",
+  "gene": "MEN1/KMT2A",
+  "rank_in_struct": 1,
+  "pocket_id": 20,
+  "score": 0.035,
+  "ds": 0.626,
+  "volume": 551.505,
+  "sasa": 162.669,
+  "n_alpha": 46.0,
+  "apolar_as_prop": 0.587,
+  "flexibility": 0.228,
+  "n_res": 13,
+  "adjacent_to_known_frac": 0.231,
+  "chains": [
+   "A"
+  ],
+  "n_chains": 1,
+  "is_interface": false,
+  "het_within_6A": []
+ },
+ {
+  "pdb": "4GQ4",
+  "label": "MEN1",
+  "gene": "MEN1/KMT2A",
+  "rank_in_struct": 2,
+  "pocket_id": 4,
+  "score": 0.207,
+  "ds": 0.441,
+  "volume": 880.086,
+  "sasa": 234.984,
+  "n_alpha": 64.0,
+  "apolar_as_prop": 0.516,
+  "flexibility": 0.124,
+  "n_res": 16,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "A"
+  ],
+  "n_chains": 1,
+  "is_interface": false,
+  "het_within_6A": []
+ },
+ {
+  "pdb": "4OO9",
+  "label": "GRM5 7TM",
+  "gene": "GRM5",
+  "rank_in_struct": 1,
+  "pocket_id": 17,
+  "score": -0.081,
+  "ds": 0.643,
+  "volume": 847.372,
+  "sasa": 216.946,
+  "n_alpha": 64.0,
+  "apolar_as_prop": 0.938,
+  "flexibility": 0.335,
+  "n_res": 17,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "A"
+  ],
+  "n_chains": 1,
+  "is_interface": false,
+  "het_within_6A": []
+ },
+ {
+  "pdb": "7M93",
+  "label": "TMEM97/S2R (bovine)",
+  "gene": "TMEM97",
+  "rank_in_struct": 1,
+  "pocket_id": 4,
+  "score": 0.244,
+  "ds": 0.929,
+  "volume": 733.08,
+  "sasa": 221.351,
+  "n_alpha": 108.0,
+  "apolar_as_prop": 0.537,
+  "flexibility": 0.124,
+  "n_res": 22,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "B"
+  ],
+  "n_chains": 1,
+  "is_interface": false,
+  "het_within_6A": [
+   "YT1/B(3.4A)"
+  ]
+ },
+ {
+  "pdb": "7M93",
+  "label": "TMEM97/S2R (bovine)",
+  "gene": "TMEM97",
+  "rank_in_struct": 2,
+  "pocket_id": 18,
+  "score": -0.002,
+  "ds": 0.913,
+  "volume": 805.107,
+  "sasa": 228.878,
+  "n_alpha": 79.0,
+  "apolar_as_prop": 0.886,
+  "flexibility": 0.062,
+  "n_res": 18,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "C",
+   "D"
+  ],
+  "n_chains": 2,
+  "is_interface": true,
+  "het_within_6A": [
+   "OLC/D(4.6A)"
+  ]
+ },
+ {
+  "pdb": "7M93",
+  "label": "TMEM97/S2R (bovine)",
+  "gene": "TMEM97",
+  "rank_in_struct": 3,
+  "pocket_id": 2,
+  "score": 0.332,
+  "ds": 0.884,
+  "volume": 820.486,
+  "sasa": 190.462,
+  "n_alpha": 103.0,
+  "apolar_as_prop": 0.563,
+  "flexibility": 0.13,
+  "n_res": 22,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "D"
+  ],
+  "n_chains": 1,
+  "is_interface": false,
+  "het_within_6A": [
+   "YT1/D(3.5A)"
+  ]
+ },
+ {
+  "pdb": "7M93",
+  "label": "TMEM97/S2R (bovine)",
+  "gene": "TMEM97",
+  "rank_in_struct": 4,
+  "pocket_id": 8,
+  "score": 0.075,
+  "ds": 0.837,
+  "volume": 542.169,
+  "sasa": 155.424,
+  "n_alpha": 68.0,
+  "apolar_as_prop": 0.897,
+  "flexibility": 0.052,
+  "n_res": 13,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "A",
+   "B"
+  ],
+  "n_chains": 2,
+  "is_interface": true,
+  "het_within_6A": [
+   "OLC/B(5.2A)"
+  ]
+ },
+ {
+  "pdb": "7M93",
+  "label": "TMEM97/S2R (bovine)",
+  "gene": "TMEM97",
+  "rank_in_struct": 5,
+  "pocket_id": 26,
+  "score": -0.042,
+  "ds": 0.815,
+  "volume": 577.128,
+  "sasa": 193.326,
+  "n_alpha": 73.0,
+  "apolar_as_prop": 0.822,
+  "flexibility": 0.037,
+  "n_res": 14,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "C",
+   "D"
+  ],
+  "n_chains": 2,
+  "is_interface": true,
+  "het_within_6A": [
+   "OLC/C(2.8A)"
+  ]
+ },
+ {
+  "pdb": "9ZIR",
+  "label": "TMEM97/S2R (bovine, zervimesine)",
+  "gene": "TMEM97",
+  "rank_in_struct": 1,
+  "pocket_id": 1,
+  "score": 0.268,
+  "ds": 0.898,
+  "volume": 805.403,
+  "sasa": 211.893,
+  "n_alpha": 109.0,
+  "apolar_as_prop": 0.706,
+  "flexibility": 0.216,
+  "n_res": 21,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "C"
+  ],
+  "n_chains": 1,
+  "is_interface": false,
+  "het_within_6A": [
+   "OLC/C(5.2A)"
+  ]
+ },
+ {
+  "pdb": "9ZIR",
+  "label": "TMEM97/S2R (bovine, zervimesine)",
+  "gene": "TMEM97",
+  "rank_in_struct": 2,
+  "pocket_id": 44,
+  "score": -0.481,
+  "ds": 0.818,
+  "volume": 1098.441,
+  "sasa": 383.736,
+  "n_alpha": 74.0,
+  "apolar_as_prop": 0.959,
+  "flexibility": 0.12,
+  "n_res": 19,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "A",
+   "D"
+  ],
+  "n_chains": 2,
+  "is_interface": true,
+  "het_within_6A": []
+ },
+ {
+  "pdb": "9ZIR",
+  "label": "TMEM97/S2R (bovine, zervimesine)",
+  "gene": "TMEM97",
+  "rank_in_struct": 3,
+  "pocket_id": 6,
+  "score": 0.16,
+  "ds": 0.797,
+  "volume": 587.223,
+  "sasa": 144.204,
+  "n_alpha": 77.0,
+  "apolar_as_prop": 0.896,
+  "flexibility": 0.095,
+  "n_res": 13,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "A",
+   "C"
+  ],
+  "n_chains": 2,
+  "is_interface": true,
+  "het_within_6A": [
+   "OLC/C(3.2A)"
+  ]
+ },
+ {
+  "pdb": "9ZIR",
+  "label": "TMEM97/S2R (bovine, zervimesine)",
+  "gene": "TMEM97",
+  "rank_in_struct": 4,
+  "pocket_id": 3,
+  "score": 0.228,
+  "ds": 0.682,
+  "volume": 767.828,
+  "sasa": 192.5,
+  "n_alpha": 89.0,
+  "apolar_as_prop": 0.685,
+  "flexibility": 0.202,
+  "n_res": 21,
+  "adjacent_to_known_frac": 0.0,
+  "chains": [
+   "D"
+  ],
+  "n_chains": 1,
+  "is_interface": false,
+  "het_within_6A": [
+   "OLC/D(5.9A)"
+  ]
+ },
+ {
+  "pdb": "9ZIR",
+  "label": "TMEM97/S2R (bovine, zervimesine)",
+  "gene": "TMEM97",
+  "rank_in_struct": 5,
+  "pocket_id": 11,
+  "score": 0.076,
+  "ds": 0.57,
+  "volume": 535.554,
+  "sasa": 143.462,
+  "n_alpha": 63.0,
+  "apolar_as_prop": 0.857,
+  "flexibility": 0.079,
+  "n_res": 13,
+  "adjacent_to_known_frac": 0.077,
+  "chains": [
+   "A",
+   "C"
+  ],
+  "n_chains": 2,
+  "is_interface": true,
+  "het_within_6A": [
+   "OLC/A(2.0A)"
+  ]
+ }
+]

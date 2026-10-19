@@ -1,0 +1,70 @@
+[
+ {
+  "tag": "redock_4OO9_2U8",
+  "scores": [
+   -11.34
+  ],
+  "offset_A": 0.34,
+  "qc": "PASS"
+ },
+ {
+  "tag": "emapunil_4OO9_knownpocket",
+  "scores": [
+   -6.21,
+   -5.7,
+   -5.65,
+   -5.36,
+   -5.28
+  ],
+  "offset_A": 10.97,
+  "in_pocket": false
+ },
+ {
+  "tag": "redock_7M93_YT1",
+  "scores": [
+   -8.21,
+   -8.13,
+   -7.98,
+   -7.96,
+   -7.95
+  ],
+  "offset_A": 1.29,
+  "qc": "PASS"
+ },
+ {
+  "tag": "emapunil_7M93_knownpocket",
+  "scores": [
+   -7.39,
+   -7.26,
+   -7.08,
+   -6.79,
+   -6.37
+  ],
+  "offset_A": 2.28,
+  "in_pocket": true
+ },
+ {
+  "tag": "redock_9ZIR_A1C",
+  "scores": [
+   -8.26,
+   -8.19,
+   -8.0,
+   -7.96,
+   -7.94
+  ],
+  "offset_A": 1.42,
+  "qc": "PASS"
+ },
+ {
+  "tag": "emapunil_9ZIR_knownpocket",
+  "scores": [
+   -6.45,
+   -6.37,
+   -6.16,
+   -6.04,
+   -5.96
+  ],
+  "offset_A": 4.27,
+  "in_pocket": true
+ }
+]

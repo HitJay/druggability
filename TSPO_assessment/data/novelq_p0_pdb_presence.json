@@ -1,0 +1,78 @@
+{
+ "TSPO": {
+  "acc": "P30536",
+  "error": "HTTP Error 404: Not Found"
+ },
+ "NR1I3": {
+  "acc": "Q14994",
+  "error": "HTTP Error 404: Not Found"
+ },
+ "GABRA1": {
+  "acc": "P47869",
+  "error": "HTTP Error 404: Not Found"
+ },
+ "OPRM1": {
+  "acc": "P35372",
+  "error": "HTTP Error 404: Not Found"
+ },
+ "ALDH1A1": {
+  "acc": "P00352",
+  "error": "HTTP Error 404: Not Found"
+ },
+ "CNR1": {
+  "acc": "P21554",
+  "error": "HTTP Error 404: Not Found"
+ },
+ "HRH3": {
+  "acc": "Q9Y5N1",
+  "error": "HTTP Error 404: Not Found"
+ },
+ "NR1I2": {
+  "acc": "O75469",
+  "error": "HTTP Error 404: Not Found"
+ },
+ "HSD11B1": {
+  "acc": "P28845",
+  "error": "HTTP Error 404: Not Found"
+ },
+ "SIGMAR1": {
+  "acc": "Q99720",
+  "error": "HTTP Error 404: Not Found"
+ },
+ "GRM2": {
+  "acc": "Q14416",
+  "error": "HTTP Error 404: Not Found"
+ },
+ "OPRK1": {
+  "acc": "P41145",
+  "error": "HTTP Error 404: Not Found"
+ },
+ "TRHR": {
+  "acc": "P34981",
+  "error": "HTTP Error 404: Not Found"
+ },
+ "TDP1": {
+  "acc": "Q9NUW8",
+  "error": "HTTP Error 404: Not Found"
+ },
+ "NPSR": {
+  "acc": "Q6W5P4",
+  "error": "HTTP Error 404: Not Found"
+ },
+ "PMP22": {
+  "acc": "Q01453",
+  "error": "HTTP Error 404: Not Found"
+ },
+ "ALOX15": {
+  "acc": "P16050",
+  "error": "HTTP Error 404: Not Found"
+ },
+ "TMEM97": {
+  "acc": "Q5BJF2",
+  "error": "HTTP Error 404: Not Found"
+ },
+ "GRM5": {
+  "acc": "P41574",
+  "error": "HTTP Error 404: Not Found"
+ }
+}

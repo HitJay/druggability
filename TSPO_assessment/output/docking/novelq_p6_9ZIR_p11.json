@@ -1,0 +1,22 @@
+{
+ "tag": "9ZIR_p11",
+ "pdb": "9ZIR",
+ "chains_kept": [
+  "A",
+  "C"
+ ],
+ "md_drift_A": 5.74,
+ "runtime_s": 42,
+ "sum_IE_kJmol": -487.1,
+ "top_contacts": {
+  "ARG156": -326.3,
+  "ARG94": -28.03,
+  "LYS161": -20.1,
+  "ARG93": -17.63,
+  "VAL71": -16.01,
+  "GLU69": -14.1,
+  "PRO95": -13.33,
+  "LYS90": -11.42
+ },
+ "verdict": "md-unstable"
+}

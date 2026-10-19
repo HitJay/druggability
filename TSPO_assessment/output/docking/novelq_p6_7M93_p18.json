@@ -1,0 +1,22 @@
+{
+ "tag": "7M93_p18",
+ "pdb": "7M93",
+ "chains_kept": [
+  "C",
+  "D"
+ ],
+ "md_drift_A": 2.09,
+ "runtime_s": 40,
+ "sum_IE_kJmol": -126.2,
+ "top_contacts": {
+  "ARG155": -37.47,
+  "PHE72": -21.25,
+  "GLU69": -19.48,
+  "ARG93": -19.07,
+  "PRO95": -14.63,
+  "ASP25": -10.9,
+  "ILE98": -8.53,
+  "VAL154": -7.25
+ },
+ "verdict": "md-stable"
+}

@@ -1,0 +1,21 @@
+{
+ "tag": "4WB9_p1",
+ "pdb": "4WB9",
+ "chains_kept": [
+  "A"
+ ],
+ "md_drift_A": 0.62,
+ "runtime_s": 52,
+ "sum_IE_kJmol": 455.8,
+ "top_contacts": {
+  "LYS105": -59.68,
+  "GLY450": -23.75,
+  "ASN113": -21.0,
+  "GLY117": -12.4,
+  "TYR289": -10.67,
+  "VAL452": -8.56,
+  "LEU165": -8.53,
+  "SER493": -8.38
+ },
+ "verdict": "md-stable"
+}

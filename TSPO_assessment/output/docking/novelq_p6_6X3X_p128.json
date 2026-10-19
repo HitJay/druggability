@@ -1,0 +1,23 @@
+{
+ "tag": "6X3X_p128",
+ "pdb": "6X3X",
+ "chains_kept": [
+  "C",
+  "D",
+  "E"
+ ],
+ "md_drift_A": 1.77,
+ "runtime_s": 174,
+ "sum_IE_kJmol": -156.5,
+ "top_contacts": {
+  "LEU223": -36.45,
+  "MET280": -22.95,
+  "ASN259": -18.61,
+  "PRO224": -16.77,
+  "THR228": -14.34,
+  "ASP276": -12.33,
+  "VAL284": -11.57,
+  "PHE283": -11.56
+ },
+ "verdict": "md-stable"
+}

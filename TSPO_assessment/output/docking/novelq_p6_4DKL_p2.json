@@ -1,0 +1,21 @@
+{
+ "tag": "4DKL_p2",
+ "pdb": "4DKL",
+ "chains_kept": [
+  "A"
+ ],
+ "md_drift_A": 5.88,
+ "runtime_s": 49,
+ "sum_IE_kJmol": -654.7,
+ "top_contacts": {
+  "LYS121": -408.02,
+  "LYS36": -130.12,
+  "ARG118": -42.03,
+  "ARG115": -13.76,
+  "ILE442": -13.4,
+  "PHE44": -13.2,
+  "ARG101": -7.51,
+  "ILE41": -7.5
+ },
+ "verdict": "md-unstable"
+}

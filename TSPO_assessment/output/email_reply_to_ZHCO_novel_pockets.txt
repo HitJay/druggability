@@ -1,0 +1,32 @@
+Subject: Re: TSPO binder list — novel pockets + emapunil docking/MD
+
+Hi Zheng,
+
+We ran the pocket screen you asked for. Short version: the screening found 29 pocket candidates on the binder-list proteins that are absent from the literature-reported pocket set, and emapunil was docked into all of them; 9 of the 29 survived 3-seed confirmation and 6 of those held their pose through 250 ps MD (a 10th confirmed pocket, OPRK1 p53, was demoted after a stricter novelty check — see item 4).
+
+The result table (all 30 screened pockets, one demoted):
+
+R:\DT\TDE_TV\shared_folder\QYJI\druggability\TSPO_assessment\05_novel_pockets\novel_pockets_tiered_targets_v1.csv
+
+The report (self-contained HTML, verdict-first, controls and limitations inside):
+
+R:\DT\TDE_TV\shared_folder\QYJI\druggability\TSPO_assessment\05_novel_pockets\novel_pockets_round_report.html
+
+How novelty was decided: fpocket on all 17 usable experimental structures behind the list (fpocket recovered the known co-crystal pocket in 17/17 — the method control). A pocket counts as novel only when it does not recover any literature/co-crystal pocket (residue overlap <30%, >3 A from every copy of the pocket-defining ligand, which also removes "same site on the other protomer" cases), with druggability >=0.20 and volume >=250 A^3. Independent Europe PMC pocket-literature inventory per target is saved alongside; no candidate matches a reported pocket.
+
+Headline findings:
+
+1. TSPO itself has a second pocket. 4RYI pocket 26: druggability 0.99, ~1300 A^3, zero residue overlap with the PK11195 pocket, formed at the dimer interface of the crystal. Emapunil -7.6 kcal/mol (3 seeds), MD drift 1.4 A, dominant contacts MET1-region hydrophobics. Caveat stated in the report: the site is detected in the dimeric crystal; whether the equivalent cleft exists in monomeric membrane TSPO is what a longer membrane MD should test before any wet-lab probe design.
+
+2. TMEM97 (sigma-2, bovine surrogate — human has no structure): a secondary pocket in the TM2/TM5-TM6 region recurs across two independent crystal forms (7M93/9ZIR). The 7M93 copy is MD-stable (drift 2.1 A, top contact ARG155); the 9ZIR copy was MD-unstable and is reported as such.
+
+3. GABA-A alpha/gamma TMD cavities (6X3X pockets 78/128) — both MD-stable; p128 sits adjacent to the neurosteroid-site literature. HRH3 pocket 15 has the best raw score (-9.23) with borderline MD (3.98 A).
+
+4. Cases where MD rejected the docking score are reported as computed-negative (OPRM1 p2, GABA-A pore p114, 9ZIR p11, plus the demoted OPRK1 p53 whose residues overlap the orthosteric pocket by 31%).
+
+Scope: docking + 250 ps restrained-MD pose stability + interaction-energy decomposition; no FEP / no binding free energies (same substitution as the emapunil/FGIN rounds). NPSR, PMP22 and human ALOX15 have no experimental structure at all, so no pocket screen was possible there — recorded as gaps, not skipped. Human TSPO still has no PDB entry; BcTSPO 4RYI remains the anchor.
+
+Happy to run the membrane-context MD on the TSPO dimer-interface pocket next if you want to chase it further.
+
+Best regards,
+Qiuye

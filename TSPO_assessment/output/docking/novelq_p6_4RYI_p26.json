@@ -1,0 +1,22 @@
+{
+ "tag": "4RYI_p26",
+ "pdb": "4RYI",
+ "chains_kept": [
+  "A",
+  "B"
+ ],
+ "md_drift_A": 1.44,
+ "runtime_s": 39,
+ "sum_IE_kJmol": -44.4,
+ "top_contacts": {
+  "MET1": -13.81,
+  "LEU58": -11.71,
+  "TYR13": -7.53,
+  "ASN151": -7.28,
+  "LYS124": -4.94,
+  "PHE10": -3.98,
+  "ALA61": -3.86,
+  "ALA57": -3.04
+ },
+ "verdict": "md-stable"
+}

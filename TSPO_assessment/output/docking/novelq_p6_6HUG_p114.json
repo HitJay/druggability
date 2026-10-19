@@ -1,0 +1,22 @@
+{
+ "tag": "6HUG_p114",
+ "pdb": "6HUG",
+ "chains_kept": [
+  "C",
+  "D"
+ ],
+ "md_drift_A": 5.23,
+ "runtime_s": 96,
+ "sum_IE_kJmol": -481.1,
+ "top_contacts": {
+  "LYS148": -332.99,
+  "GLU164": -59.41,
+  "SER197": -44.57,
+  "GLU130": -34.94,
+  "ASP167": -20.84,
+  "ASP31": -17.7,
+  "HIS94": -15.63,
+  "ASN35": -15.29
+ },
+ "verdict": "md-unstable"
+}

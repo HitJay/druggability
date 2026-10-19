@@ -1,0 +1,21 @@
+{
+ "tag": "4DJH_p53",
+ "pdb": "4DJH",
+ "chains_kept": [
+  "A"
+ ],
+ "md_drift_A": 2.3,
+ "runtime_s": 50,
+ "sum_IE_kJmol": -131.5,
+ "top_contacts": {
+  "ALA417": -28.62,
+  "TYR420": -26.82,
+  "THR421": -13.66,
+  "GLU155": -9.31,
+  "TYR65": -7.8,
+  "MET58": -7.33,
+  "ILE416": -7.29,
+  "ASP152": -7.03
+ },
+ "verdict": "md-stable"
+}

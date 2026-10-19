@@ -108,3 +108,12 @@ GLP1R_assessment/raw_pdb/
 
 # Third-party local compiled tools / binaries
 tools/
+
+# ws6 novel-pocket round: regenerable fpocket/docking intermediates stay out; audit JSONs/CSV/HTML in
+TSPO_assessment/output/novel_pockets/*.pdb
+TSPO_assessment/output/novel_pockets/*.pdbqt
+TSPO_assessment/output/novel_pockets/*_out/
+TSPO_assessment/output/novel_pockets/mdrec_*
+TSPO_assessment/output/novel_pockets/md_*
+TSPO_assessment/output/novel_pockets/mdrelaxed_*
+TSPO_assessment/output/novel_pockets/*.cif

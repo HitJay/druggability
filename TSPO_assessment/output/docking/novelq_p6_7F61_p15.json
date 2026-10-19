@@ -1,0 +1,21 @@
+{
+ "tag": "7F61_p15",
+ "pdb": "7F61",
+ "chains_kept": [
+  "A"
+ ],
+ "md_drift_A": 3.98,
+ "runtime_s": 34,
+ "sum_IE_kJmol": -89.0,
+ "top_contacts": {
+  "PHE185": -16.45,
+  "GLY237": -15.99,
+  "LEU301": -8.59,
+  "LEU238": -7.65,
+  "GLU180": -6.72,
+  "ARG204": -5.27,
+  "GLU264": -4.91,
+  "ASP88": -4.89
+ },
+ "verdict": "md-stable"
+}

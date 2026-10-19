@@ -1,0 +1,22 @@
+{
+ "tag": "6X3X_p78",
+ "pdb": "6X3X",
+ "chains_kept": [
+  "D",
+  "E"
+ ],
+ "md_drift_A": 1.75,
+ "runtime_s": 86,
+ "sum_IE_kJmol": -289.0,
+ "top_contacts": {
+  "SER196": -116.44,
+  "GLU165": -75.9,
+  "ARG108": -33.2,
+  "PHE53": -27.84,
+  "ASP51": -17.91,
+  "ARG73": -17.25,
+  "TYR34": -16.13,
+  "ARG155": -12.39
+ },
+ "verdict": "md-stable"
+}

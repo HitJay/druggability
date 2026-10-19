@@ -1,0 +1,3028 @@
+{
+ "TSPO": {
+  "queries": [
+   "\"translocator protein\" AND (\"cholesterol binding\" OR \"drug binding pocket\" OR \"PK 11195\" OR \"PK11195\")",
+   "TSPO AND (\"steroidogenic\" OR \"porphyrin\" OR \"heme\") AND (pocket OR site)"
+  ],
+  "hits": [
+   {
+    "pmid": "42025273",
+    "title": "TSPO-PET-measurable neuroinflammation associates with brain atrophy in multiple sclerosis.",
+    "year": "2026",
+    "journal": "Mult Scler Relat Disord"
+   },
+   {
+    "pmid": "41692236",
+    "title": "Targeting translocator protein (TSPO) ameliorates inflammation and maintains mitochondrial homeostasis to protect against dry eye.",
+    "year": "2026",
+    "journal": "Ocul Surf"
+   },
+   {
+    "pmid": "41271519",
+    "title": "Simvastatin-induced neuroprotective effect after brain injury is mediated by mitochondrial protection through modulation of the 18 \u200bkDa translocator protein.",
+    "year": "2026",
+    "journal": "Neurotherapeutics"
+   },
+   {
+    "pmid": "41751923",
+    "title": "Translocator Protein Modulation by PK11195 and NO Synthase Inhibition Affect Cardiac Oxidative Stress and Cardiometabolic and Inflammatory Markers in Isoprenaline-Induced Rat Myocardial Injury.",
+    "year": "2026",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "42766371",
+    "title": "Translocator Protein and Mitochondrial Dysfunction in Chronic Kidney Disease\u200b.",
+    "year": "2026",
+    "journal": "J Am Soc Nephrol"
+   },
+   {
+    "pmid": "42529064",
+    "title": "Peripheral and central inflammation associated with progressive cognitive decline in dementia with Lewy bodies.",
+    "year": "2026",
+    "journal": "Brain Commun"
+   },
+   {
+    "pmid": "42836634",
+    "title": "Serum Chitotriosidase Links to Activated Glia at Chronic Active Lesion Rims in Multiple Sclerosis Brain.",
+    "year": "2026",
+    "journal": "Ann Neurol"
+   },
+   {
+    "pmid": "42230367",
+    "title": "The test-retest reproducibility of [&lt;sup&gt;11&lt;/sup&gt;C]PK11195 positron emission tomography using Biograph Vision Quadra scanner.",
+    "year": "2026",
+    "journal": "EJNMMI Res"
+   },
+   {
+    "pmid": "42227636",
+    "title": "A &lt;sup&gt;64&lt;/sup&gt;Cu-Labeled Oxopurine Derivative for Translocator Protein-Targeted Inflammation Imaging.",
+    "year": "2026",
+    "journal": "J Labelled Comp Radiopharm"
+   },
+   {
+    "pmid": "41581881",
+    "title": "Target validation uncouples mitochondrial translocator protein from 19-Atriol-mediated inhibition of steroidogenesis and identifies enzymatic targets.",
+    "year": "2026",
+    "journal": "J Biol Chem"
+   },
+   {
+    "pmid": "42814343",
+    "title": "Impact of Oral Cladribine on TSPO-PET-Measurable Immune Cell Activation in Multiple Sclerosis.",
+    "year": "2026",
+    "journal": "Neurol Ther"
+   },
+   {
+    "pmid": "42387307",
+    "title": "Baseline Neuroinflammation Stratifies TSPO-PET Response to Disease-Modifying Therapy in Multiple Sclerosis.",
+    "year": "2026",
+    "journal": "Ann Clin Transl Neurol"
+   },
+   {
+    "pmid": "41588268",
+    "title": "Mechanistic Investigation of TSPO-Mediated Dysregulation of Mitochondrial Copper Homeostasis in Microglia and its Role in Perioperative Neurocognitive Disorders.",
+    "year": "2026",
+    "journal": "Mol Neurobiol"
+   },
+   {
+    "pmid": "41927515",
+    "title": "Microglial reactivity predicts hippocampal, but not global, atrophy in cerebral small vessel disease.",
+    "year": "2026",
+    "journal": "Alzheimers Dement"
+   },
+   {
+    "pmid": "41961242",
+    "title": "Treatment Effects on Chronic Active Lesions in Multiple Sclerosis: Current Evidence and Future Perspectives.",
+    "year": "2026",
+    "journal": "Neurol Ther"
+   },
+   {
+    "pmid": "42809445",
+    "title": "Evaluating the Clinical Utility of TSPO-PET in MS and the Influence of Methodological Heterogeneity: A Systematic Review and Meta-Analysis.",
+    "year": "2026",
+    "journal": "Neurol Neuroimmunol Neuroinflamm"
+   },
+   {
+    "pmid": "40931435",
+    "title": "Bacterial porphyrins in healthy skin: Microbiota components impact melanogenesis and age-related processes leading to Porphyr'ageing.",
+    "year": "2026",
+    "journal": "Int J Cosmet Sci"
+   },
+   {
+    "pmid": "42506736",
+    "title": "Fumonisin-Induced Disruptions in Sphingolipid Metabolism: Implications for Steroid Hormone Biosynthesis and Hormone Modulation.",
+    "year": "2026",
+    "journal": "Toxins (Basel)"
+   },
+   {
+    "pmid": "41717060",
+    "title": "Prenatal cadmium exposure and male infertility in mice: A multi-generational mechanistic study.",
+    "year": "2026",
+    "journal": "Eco Environ Health"
+   },
+   {
+    "pmid": "41608643",
+    "title": "Light as a Weapon: Redefining Cancer Care with Photodynamic Therapy.",
+    "year": "2026",
+    "journal": "Int J Biol Sci"
+   },
+   {
+    "pmid": "41923441",
+    "title": "Male testosterone synthesis disorders: oxidative stress pathways, regulatory mechanisms, potential of antioxidant therapy, and botanical medicine prospects.",
+    "year": "2026",
+    "journal": "Asian J Androl"
+   },
+   {
+    "pmid": "42650264",
+    "title": "TSPO Modulation by PIGA-1138 Attenuates Oxidative Stress and Preserves Retinal Function in Experimental Diabetic Retinopathy.",
+    "year": "2026",
+    "journal": "Antioxidants (Basel)"
+   },
+   {
+    "pmid": "42092129",
+    "title": "Identification of a mitochondrial biomarker signature linking neuroinflammation to neuronal dysfunction in spinal cord injury.",
+    "year": "2026",
+    "journal": "Sci Rep"
+   },
+   {
+    "pmid": "42083130",
+    "title": "From \"Passive Supplementation\" to \"Active Repair\": Melatonin Reshapes the Treatment Paradigm for Late-Onset Hypogonadism by Targeting Leydig Cell Senescence.",
+    "year": "2026",
+    "journal": "Aging Cell"
+   },
+   {
+    "pmid": "40913828",
+    "title": "Sex differences in the neuroimmune response following heavy, binge-like alcohol exposure in adolescent rats.",
+    "year": "2025",
+    "journal": "J Neuroimmunol"
+   },
+   {
+    "pmid": "41326363",
+    "title": "Critical role of translocator protein (TSPO) in neuronal mitochondrial dysfunction and mental stress-exacerbated ischemic injury following stroke.",
+    "year": "2025",
+    "journal": "Transl Psychiatry"
+   },
+   {
+    "pmid": "41272848",
+    "title": "Neuroinflammation PET and long-term cognition and survival in symptomatic Alzheimer's disease.",
+    "year": "2025",
+    "journal": "Alzheimers Res Ther"
+   },
+   {
+    "pmid": "40036275",
+    "title": "Post-mortem validation of in vivo TSPO PET as a microglial biomarker.",
+    "year": "2025",
+    "journal": "Brain"
+   },
+   {
+    "pmid": "40060999",
+    "title": "PK 11195 derivatives: exploring the influence of amide and heterocyclic substitution on A147T TSPO discrimination.",
+    "year": "2025",
+    "journal": "RSC Med Chem"
+   },
+   {
+    "pmid": "40280203",
+    "title": "TSPO participates in the pathogenesis of diabetic periodontitis related to mitophagy.",
+    "year": "2025",
+    "journal": "Biochim Biophys Acta Mol Basis Dis"
+   },
+   {
+    "pmid": "40536168",
+    "title": "Hemispheric asymmetry of [&lt;sup&gt;11&lt;/sup&gt;C](&lt;i&gt;R)&lt;/i&gt;PK11195 binding to translocator protein 18\u2009kDa (TSPO) in normal brain.",
+    "year": "2025",
+    "journal": "J Cereb Blood Flow Metab"
+   },
+   {
+    "pmid": "40561753",
+    "title": "A multielectrode array reveals therapeutic potential of translocator protein ligands in a zebrafish model of Dravet syndrome.",
+    "year": "2025",
+    "journal": "J Pharmacol Exp Ther"
+   },
+   {
+    "pmid": "40146857",
+    "title": "Cholesterol-dependent enzyme activity of human TSPO1.",
+    "year": "2025",
+    "journal": "Proc Natl Acad Sci U S A"
+   },
+   {
+    "pmid": "41055982",
+    "title": "STAR/STARD1: A mitochondrial intermembrane space cholesterol shuttle degraded through mitophagy.",
+    "year": "2025",
+    "journal": "Proc Natl Acad Sci U S A"
+   },
+   {
+    "pmid": "40836311",
+    "title": "Refining seizure foci localization: the potential of TSPO-PET.",
+    "year": "2025",
+    "journal": "Acta Epileptol"
+   },
+   {
+    "pmid": "39773408",
+    "title": "Thirty years of StAR gazing. Expanding the universe of the steroidogenic acute regulatory protein.",
+    "year": "2025",
+    "journal": "J Endocrinol"
+   },
+   {
+    "pmid": "41103362",
+    "title": "The Steroidogenic Acute Regulatory (STAR) Gene Anatomy, Expression, and Roles.",
+    "year": "2025",
+    "journal": "Dev Reprod"
+   },
+   {
+    "pmid": "40610825",
+    "title": "PET Imaging Unveils Neuroinflammatory Mechanisms in Psychiatric Disorders: From Microglial Activation to Therapeutic Innovation.",
+    "year": "2025",
+    "journal": "Mol Neurobiol"
+   },
+   {
+    "pmid": "38976049",
+    "title": "Neurosteroids and translocator protein 18\u00a0kDa (TSPO) ligands as novel treatment options in depression.",
+    "year": "2025",
+    "journal": "Eur Arch Psychiatry Clin Neurosci"
+   },
+   {
+    "pmid": "40261711",
+    "title": "Single cell resolution of neurosteroidogenesis in the murine brain: de novo biosynthesis.",
+    "year": "2025",
+    "journal": "J Endocrinol"
+   }
+  ],
+  "hitCount": 2917
+ },
+ "NR1I3": {
+  "queries": [
+   "\"constitutive androstane receptor\" AND (\"ligand-binding pocket\" OR \"crystal structure\")"
+  ],
+  "hits": [
+   {
+    "pmid": "41611794",
+    "title": "The metabolic dysfunction-associated steatohepatitis (MASH) drug resmetirom exhibits broad nuclear receptor activity with minimal functional impact.",
+    "year": "2026",
+    "journal": "Sci Rep"
+   },
+   {
+    "pmid": "42794617",
+    "title": "A Universal Plasticizer Alkylsulfonic Phenyl Ester Activates Pregnane X Receptor to Increase Intestinal Cholesterol Uptake.",
+    "year": "2026",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "42378554",
+    "title": "Structural and Thermodynamic Discrimination between Agonists and Antagonists of Retinoic Acid Receptor \u03b3 and the Vitamin D Receptor.",
+    "year": "2026",
+    "journal": "J Chem Inf Model"
+   },
+   {
+    "pmid": "41811662",
+    "title": "The effect of salidroside, an active component of Rhodiola rosea, on the metabolic activity of rat and human cytochromes P450 in preclinical studies.",
+    "year": "2026",
+    "journal": "Pharmacol Rep"
+   },
+   {
+    "pmid": "41555405",
+    "title": "Integrated network toxicology, molecular docking, and molecular dynamics simulation reveals mechanisms of benzo[a]pyrene-induced pan-cancer.",
+    "year": "2026",
+    "journal": "BMC Pharmacol Toxicol"
+   },
+   {
+    "pmid": "41884809",
+    "title": "Microbial transformation of secondary bile acids: roles in gut ecology and autoimmune diseases.",
+    "year": "2026",
+    "journal": "Front Immunol"
+   },
+   {
+    "pmid": "42325211",
+    "title": "Exploration of precision coregulator TR-FRET identifies diverse signatures for LXR ligands relevant to discovery of nonlipogenic ABCA1 inducers.",
+    "year": "2026",
+    "journal": "Elife"
+   },
+   {
+    "pmid": "41381727",
+    "title": "Binding modes and interaction mechanism of bisphenol A and its analogs in constitutive androstane receptor.",
+    "year": "2025",
+    "journal": "Sci Rep"
+   },
+   {
+    "pmid": "40634953",
+    "title": "Commiphora myrrha resin extract-modulated cytochrome P-450 2C9 enzyme expression in cultured Hep G2 cells is associated with resin extract-derived metabolites binding to Pregnane X receptor.",
+    "year": "2025",
+    "journal": "BMC Complement Med Ther"
+   },
+   {
+    "pmid": "41368631",
+    "title": "Recent advances in gut microbiota metabolite regulation of hepatic pregnane X receptor.",
+    "year": "2025",
+    "journal": "Front Immunol"
+   },
+   {
+    "pmid": "40869350",
+    "title": "Mechanisms and Therapeutic Advances of PXR in Metabolic Diseases and Cancer.",
+    "year": "2025",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "40127224",
+    "title": "Uncovering \u03b1-Selectivity for Liver X Receptor Agonists for Lipotoxic Cancer Therapies.",
+    "year": "2025",
+    "journal": "J Med Chem"
+   },
+   {
+    "pmid": "40812694",
+    "title": "CAR: Discovery and development by the pharmacogenetics laboratory at NIEHS, NIH.",
+    "year": "2025",
+    "journal": "Pharmacol Res"
+   },
+   {
+    "pmid": "40352903",
+    "title": "&lt;i&gt;Boswellia carteri&lt;/i&gt; Birdw. Resin Extract Induces Phase-I Cytochrome P-450 Enzyme Gene Expressions in Human Hepatocarcinoma (Hep G2) Cells: In vitro and in silico Studies.",
+    "year": "2025",
+    "journal": "Biologics"
+   },
+   {
+    "pmid": "39563813",
+    "title": "Development of BODIPY FL SNS 032 as a Versatile Probe for Constitutive Androstane Receptor and Multiple Kinases.",
+    "year": "2024",
+    "journal": "ACS Med Chem Lett"
+   },
+   {
+    "pmid": "38674052",
+    "title": "PPARs as Key Transcription Regulators at the Crossroads of Metabolism and Inflammation.",
+    "year": "2024",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "38744881",
+    "title": "Chemical manipulation of an activation/inhibition switch in the nuclear receptor PXR.",
+    "year": "2024",
+    "journal": "Nat Commun"
+   },
+   {
+    "pmid": "38957441",
+    "title": "Cannabidiol promotes intestinal cholesterol uptake mediated by Pregnane X receptor.",
+    "year": "2024",
+    "journal": "Front Endocrinol (Lausanne)"
+   },
+   {
+    "pmid": "39478961",
+    "title": "Retinoid X receptor heterodimers in hepatic function: structural insights and therapeutic potential.",
+    "year": "2024",
+    "journal": "Front Pharmacol"
+   },
+   {
+    "pmid": "36848571",
+    "title": "Structure-guided approach to modulate small molecule binding to a promiscuous ligand-activated protein.",
+    "year": "2023",
+    "journal": "Proc Natl Acad Sci U S A"
+   },
+   {
+    "pmid": "38132446",
+    "title": "The Role of Adopted Orphan Nuclear Receptors in the Regulation of an Organic Anion Transporting Polypeptide 1B1 (OATP1B1) under the Action of Sex Hormones.",
+    "year": "2023",
+    "journal": "Curr Issues Mol Biol"
+   },
+   {
+    "pmid": "37190111",
+    "title": "Steatosis and Metabolic Disorders Associated with Synergistic Activation of the CAR/RXR Heterodimer by Pesticides.",
+    "year": "2023",
+    "journal": "Cells"
+   },
+   {
+    "pmid": "36351837",
+    "title": "Phenobarbital in Nuclear Receptor Activation: An Update.",
+    "year": "2023",
+    "journal": "Drug Metab Dispos"
+   },
+   {
+    "pmid": "36230936",
+    "title": "Allosteric Antagonism of the Pregnane X Receptor (PXR): Current-State-of-the-Art and Prediction of Novel Allosteric Sites.",
+    "year": "2022",
+    "journal": "Cells"
+   },
+   {
+    "pmid": "30731240",
+    "title": "Drug discovery technologies to identify and characterize modulators of the pregnane X receptor and the constitutive androstane receptor.",
+    "year": "2019",
+    "journal": "Drug Discov Today"
+   }
+  ],
+  "hitCount": 431
+ },
+ "NR1I2": {
+  "queries": [
+   "\"pregnane X receptor\" AND (\"ligand-binding pocket\" OR \"crystal structure\")"
+  ],
+  "hits": [
+   {
+    "pmid": "42854386",
+    "title": "From functional complexity to structural modification: A systematic review of the ongoing development of targeted PXR drugs.",
+    "year": "2026",
+    "journal": "Eur J Med Chem"
+   },
+   {
+    "pmid": "41761596",
+    "title": "Hide and seek: targeting nuclear receptor PXR with inhibitors and PROTACs to improve drug efficacy and safety.",
+    "year": "2026",
+    "journal": "Expert Opin Ther Targets"
+   },
+   {
+    "pmid": "42794617",
+    "title": "A Universal Plasticizer Alkylsulfonic Phenyl Ester Activates Pregnane X Receptor to Increase Intestinal Cholesterol Uptake.",
+    "year": "2026",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "41138720",
+    "title": "Subtle changes in ligand-receptor interactions dramatically alter transcriptional outcomes of pregnane X receptor modulators.",
+    "year": "2026",
+    "journal": "Structure"
+   },
+   {
+    "pmid": "42334304",
+    "title": "Rifamycin Structural Modifications Attenuate PXR Binding and CYP3A4 Induction.",
+    "year": "2026",
+    "journal": "J Med Chem"
+   },
+   {
+    "pmid": "41957824",
+    "title": "Coenzyme Q10 protects against atorvastatin-induced hepatotoxicity via attenuation of oxidative stress and functional modulation of CYP3A1.",
+    "year": "2026",
+    "journal": "BMC Pharmacol Toxicol"
+   },
+   {
+    "pmid": "42639023",
+    "title": "Multiple binding modes underlie &lt;i&gt;Cannabis sativa&lt;/i&gt; cannabinoids recognition by peroxisome proliferator-activated receptor gamma.",
+    "year": "2026",
+    "journal": "Front Bioinform"
+   },
+   {
+    "pmid": "41750342",
+    "title": "Nuclear Receptor-Targeted Therapies: Reprogramming Metabolism with TR\u03b2, ERR\u03b1, and LXR Modulators.",
+    "year": "2026",
+    "journal": "Biomolecules"
+   },
+   {
+    "pmid": "42145585",
+    "title": "Bioactivity Classification of 2,649 Per- and Polyfluoroalkyl Substances (PFASs) via Quantitative Structure-Activity Relationships and Molecular Docking to Health-Relevant Proteins.",
+    "year": "2026",
+    "journal": "Environ Sci Technol Lett"
+   },
+   {
+    "pmid": "41458958",
+    "title": "Targeting a distinct binding pocket in the pregnane X receptor with natural agonist TRLW-2 ameliorates murine ulcerative colitis.",
+    "year": "2025",
+    "journal": "Front Pharmacol"
+   },
+   {
+    "pmid": "41368631",
+    "title": "Recent advances in gut microbiota metabolite regulation of hepatic pregnane X receptor.",
+    "year": "2025",
+    "journal": "Front Immunol"
+   },
+   {
+    "pmid": "40885723",
+    "title": "Targeting pregnane X receptor with a potent agonist-based PROTAC to delay colon cancer relapse.",
+    "year": "2025",
+    "journal": "Oncogenesis"
+   },
+   {
+    "pmid": "41198675",
+    "title": "PROTAC repurposing uncovers a noncanonical binding surface that mediates chemical degradation of nuclear receptors.",
+    "year": "2025",
+    "journal": "Nat Commun"
+   },
+   {
+    "pmid": "40726484",
+    "title": "Physiological Functions and Pathological Roles of PXR.",
+    "year": "2025",
+    "journal": "J Endocr Soc"
+   },
+   {
+    "pmid": "40869350",
+    "title": "Mechanisms and Therapeutic Advances of PXR in Metabolic Diseases and Cancer.",
+    "year": "2025",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "39923198",
+    "title": "A two-in-one expression construct for biophysical and structural studies of the human pregnane X receptor ligand-binding domain, a pharmaceutical and environmental target.",
+    "year": "2025",
+    "journal": "Acta Crystallogr F Struct Biol Commun"
+   },
+   {
+    "pmid": "40634953",
+    "title": "Commiphora myrrha resin extract-modulated cytochrome P-450 2C9 enzyme expression in cultured Hep G2 cells is associated with resin extract-derived metabolites binding to Pregnane X receptor.",
+    "year": "2025",
+    "journal": "BMC Complement Med Ther"
+   },
+   {
+    "pmid": "38744881",
+    "title": "Chemical manipulation of an activation/inhibition switch in the nuclear receptor PXR.",
+    "year": "2024",
+    "journal": "Nat Commun"
+   },
+   {
+    "pmid": "39389062",
+    "title": "PROTAC-mediated activation, rather than degradation, of a nuclear receptor reveals complex ligand-receptor interaction network.",
+    "year": "2024",
+    "journal": "Structure"
+   },
+   {
+    "pmid": "38957441",
+    "title": "Cannabidiol promotes intestinal cholesterol uptake mediated by Pregnane X receptor.",
+    "year": "2024",
+    "journal": "Front Endocrinol (Lausanne)"
+   },
+   {
+    "pmid": "39508053",
+    "title": "Identification of human pregnane X receptor antagonists utilizing a high-throughput screening platform.",
+    "year": "2024",
+    "journal": "Front Pharmacol"
+   },
+   {
+    "pmid": "38084912",
+    "title": "A bromodomain-independent mechanism of gene regulation by the BET inhibitor JQ1: direct activation of nuclear receptor PXR.",
+    "year": "2024",
+    "journal": "Nucleic Acids Res"
+   },
+   {
+    "pmid": "38065074",
+    "title": "Go big and go home: A bulky extension makes promiscuous ligands settle down.",
+    "year": "2023",
+    "journal": "Structure"
+   },
+   {
+    "pmid": "36230936",
+    "title": "Allosteric Antagonism of the Pregnane X Receptor (PXR): Current-State-of-the-Art and Prediction of Novel Allosteric Sites.",
+    "year": "2022",
+    "journal": "Cells"
+   },
+   {
+    "pmid": "18160712",
+    "title": "Doubling the size of the glucocorticoid receptor ligand binding pocket by deacylcortivazol.",
+    "year": "2008",
+    "journal": "Mol Cell Biol"
+   }
+  ],
+  "hitCount": 728
+ },
+ "GABRA1": {
+  "queries": [
+   "\"benzodiazepine site\" AND GABA AND (\"alpha1\" OR \"alpha 1\")",
+   "\"picrotoxin site\" AND GABA"
+  ],
+  "hits": [
+   {
+    "pmid": "41871059",
+    "title": "Effects of GABAAR modulators CL218872 and MRK-016 on neural repair and synaptic plasticity in mice with Intracerebral hemorrhage.",
+    "year": "2026",
+    "journal": "PLoS One"
+   },
+   {
+    "pmid": "40698692",
+    "title": "Exogenous Melatonin as a Sleep-promoting Agent beyond its Chronobiotic Properties: A Scoping Review of its Effects on Key Sleep-wake Neurotransmitters.",
+    "year": "2026",
+    "journal": "Curr Neuropharmacol"
+   },
+   {
+    "pmid": "41898197",
+    "title": "The Role of Antioxidants in the Connection Between Microbiota, Neuroinflammation and Epilepsy.",
+    "year": "2026",
+    "journal": "Biomedicines"
+   },
+   {
+    "pmid": "42810027",
+    "title": "A novel near-infrared fluorescent probe for picrotoxin-site imaging of GABA&lt;sub&gt;A&lt;/sub&gt; receptors on cell membranes.",
+    "year": "2026",
+    "journal": "Spectrochim Acta A Mol Biomol Spectrosc"
+   },
+   {
+    "pmid": "41496361",
+    "title": "Novel drug candidate binds to delta subunit containing GABA&lt;sub&gt;A&lt;/sub&gt; receptors and improves spatial memory.",
+    "year": "2026",
+    "journal": "Biomed Pharmacother"
+   },
+   {
+    "pmid": "41951906",
+    "title": "The Discovery of Cenobamate: A Drug with High Efficacy in Drug-Resistant Epilepsy.",
+    "year": "2026",
+    "journal": "CNS Drugs"
+   },
+   {
+    "pmid": "41915362",
+    "title": "The Complexity and Challenges of Developing Effective Epilepsy Therapies: Lessons to be Learned from Comparing Cenobamate, Carisbamate, and Padsevonil.",
+    "year": "2026",
+    "journal": "CNS Drugs"
+   },
+   {
+    "pmid": "40725027",
+    "title": "Multistage Molecular Simulations, Design, Synthesis, and Anticonvulsant Evaluation of 2-(Isoindolin-2-yl) Esters of Aromatic Amino Acids Targeting GABA&lt;sub&gt;A&lt;/sub&gt; Receptors via \u03c0-\u03c0 Stacking.",
+    "year": "2025",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "40711969",
+    "title": "De-risking seizure liability: integrating adverse outcome pathways (AOPs), new approach methodologies (NAMs), and in silico approaches while highlighting knowledge gaps.",
+    "year": "2025",
+    "journal": "Toxicol Sci"
+   },
+   {
+    "pmid": "41086149",
+    "title": "Exposure to the organochlorine pesticide cis-chlordane induces ALS-like mitochondrial perturbations in stem cell-derived motor neurons.",
+    "year": "2025",
+    "journal": "PLoS One"
+   },
+   {
+    "pmid": "37709943",
+    "title": "Modulators of GABA<sub>A</sub> receptor-mediated inhibition in the treatment of neuropsychiatric disorders: past, present, and future.",
+    "year": "2024",
+    "journal": "Neuropsychopharmacology"
+   },
+   {
+    "pmid": "39228432",
+    "title": "Pharmacological Treatments for Methamphetamine Use Disorder: Current Status and Future Targets.",
+    "year": "2024",
+    "journal": "Subst Abuse Rehabil"
+   },
+   {
+    "pmid": "38711837",
+    "title": "Lindane and Cetrimide lotion poisoning in an adult patient: A case report on an uncommon ingestion.",
+    "year": "2024",
+    "journal": "Clin Case Rep"
+   },
+   {
+    "pmid": "38978533",
+    "title": "Additive Anticonvulsive Effects of Sumatriptan and Morphine on Pentylenetetrazole-Induced Clonic Seizures in Mice.",
+    "year": "2024",
+    "journal": "J Epilepsy Res"
+   },
+   {
+    "pmid": "39644797",
+    "title": "Organoleptic, physicochemical, phytochemical and pharmacological evaluation of six medicated ghee used for Ayurvedic management of Epilepsy.",
+    "year": "2024",
+    "journal": "J Ayurveda Integr Med"
+   },
+   {
+    "pmid": "37981146",
+    "title": "Combination of computational new approach methodologies for enhancing evidence of biological pathway conservation across species.",
+    "year": "2024",
+    "journal": "Sci Total Environ"
+   },
+   {
+    "pmid": "37513925",
+    "title": "Exploring the Molecular Targets for the Antidepressant and Antisuicidal Effects of Ketamine Enantiomers by Using Network Pharmacology and Molecular Docking.",
+    "year": "2023",
+    "journal": "Pharmaceuticals (Basel)"
+   },
+   {
+    "pmid": "37960239",
+    "title": "Neuroimaging Insights: Kava's (<i>Piper methysticum</i>) Effect on Dorsal Anterior Cingulate Cortex GABA in Generalized Anxiety Disorder.",
+    "year": "2023",
+    "journal": "Nutrients"
+   },
+   {
+    "pmid": "37630977",
+    "title": "Treating Epilepsy with Natural Products: Nonsense or Possibility?",
+    "year": "2023",
+    "journal": "Pharmaceuticals (Basel)"
+   },
+   {
+    "pmid": "37569133",
+    "title": "Sleep-Enhancing Effect of Water Extract from Jujube (<i>Zizyphus jujuba</i> Mill.) Seeds Fermented by <i>Lactobacillus brevis</i> L32.",
+    "year": "2023",
+    "journal": "Foods"
+   },
+   {
+    "pmid": "37093397",
+    "title": "GABA&lt;sub&gt;A&lt;/sub&gt; receptor-mediated seizure liabilities: a mixed-methods screening approach.",
+    "year": "2023",
+    "journal": "Cell Biol Toxicol"
+   },
+   {
+    "pmid": "37298532",
+    "title": "Pharmacological Analysis of GABA<sub>A</sub> Receptor and Sigma1R Chaperone Interaction: Research Report I-Investigation of the Anxiolytic, Anticonvulsant and Hypnotic Effects of Allosteric GABA<sub>A</sub> Receptors' Ligands.",
+    "year": "2023",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "35891639",
+    "title": "Building a Network of Adverse Outcome Pathways (AOPs) Incorporating the Tau-Driven AOP Toward Memory Loss (AOP429).",
+    "year": "2022",
+    "journal": "J Alzheimers Dis Rep"
+   },
+   {
+    "pmid": "35088415",
+    "title": "Tricyclic antipsychotics and antidepressants can inhibit \u03b15-containing GABA&lt;sub&gt;A&lt;/sub&gt; receptors by two distinct mechanisms.",
+    "year": "2022",
+    "journal": "Br J Pharmacol"
+   },
+   {
+    "pmid": "36590094",
+    "title": "Pentylenetetrazole kindling-induced epilepsy rat models: Insight on the severity state, a comparative study.",
+    "year": "2022",
+    "journal": "IBRO Neurosci Rep"
+   },
+   {
+    "pmid": "35313886",
+    "title": "Transcranial photobiomodulation add-on therapy to valproic acid for pentylenetetrazole-induced seizures in peripubertal rats.",
+    "year": "2022",
+    "journal": "BMC Complement Med Ther"
+   },
+   {
+    "pmid": "35434701",
+    "title": "From Qualitative to Quantitative AOP: A Case Study of Neurodegeneration.",
+    "year": "2022",
+    "journal": "Front Toxicol"
+   },
+   {
+    "pmid": "34417930",
+    "title": "GABA<sub>A</sub> receptors: structure, function, pharmacology, and related disorders.",
+    "year": "2021",
+    "journal": "J Genet Eng Biotechnol"
+   },
+   {
+    "pmid": "33527255",
+    "title": "Pharmacological Management of Insomnia.",
+    "year": "2021",
+    "journal": "Neurotherapeutics"
+   },
+   {
+    "pmid": "34500453",
+    "title": "Unconditioned and learned morphine tolerance influence hippocampal-dependent short-term memory and the subjacent expression of GABA-A receptor alpha subunits.",
+    "year": "2021",
+    "journal": "PLoS One"
+   },
+   {
+    "pmid": "34195432",
+    "title": "Identification of novel target molecules of <i>l</i>-menthol.",
+    "year": "2021",
+    "journal": "Heliyon"
+   },
+   {
+    "pmid": "34885687",
+    "title": "GABA<sub>A</sub> Receptor-Mediated Sleep-Promoting Effect of Saaz-Saphir Hops Mixture Containing Xanthohumol and Humulone.",
+    "year": "2021",
+    "journal": "Molecules"
+   },
+   {
+    "pmid": "32357528",
+    "title": "Pharmacogenomics of Cognitive Dysfunction and Neuropsychiatric Disorders in Dementia.",
+    "year": "2020",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "38274392",
+    "title": "Putative Mode of Action of the Monoterpenoids Linalool, Methyl Eugenol, Estragole, and Citronellal on Ligand-Gated Ion Channels.",
+    "year": "2020",
+    "journal": "Engineering (Beijing)"
+   },
+   {
+    "pmid": "32879488",
+    "title": "Shared structural mechanisms of general anaesthetics and benzodiazepines.",
+    "year": "2020",
+    "journal": "Nature"
+   },
+   {
+    "pmid": "31485242",
+    "title": "Anxiolytic-Like Effects of Bergamot Essential Oil Are Insensitive to Flumazenil in Rats.",
+    "year": "2019",
+    "journal": "Evid Based Complement Alternat Med"
+   },
+   {
+    "pmid": "30981211",
+    "title": "A photoswitchable GABA receptor channel blocker.",
+    "year": "2019",
+    "journal": "Br J Pharmacol"
+   },
+   {
+    "pmid": "29407219",
+    "title": "GABA<sub>A</sub> receptor: Positive and negative allosteric modulators.",
+    "year": "2018",
+    "journal": "Neuropharmacology"
+   },
+   {
+    "pmid": "29295521",
+    "title": "Molecular Targets for Components of Essential Oils in the Insect Nervous System-A Review.",
+    "year": "2017",
+    "journal": "Molecules"
+   },
+   {
+    "pmid": "25525715",
+    "title": "Allosteric Modulation of GABAA Receptors by an Anilino Enaminone in an Olfactory Center of the Mouse Brain.",
+    "year": "2014",
+    "journal": "Pharmaceuticals (Basel)"
+   }
+  ],
+  "hitCount": 279
+ },
+ "OPRM1": {
+  "queries": [
+   "\"mu opioid receptor\" AND (\"orthosteric\" OR \"allosteric\") AND (pocket OR site) AND (structure OR crystal)"
+  ],
+  "hits": [
+   {
+    "pmid": "41814061",
+    "title": "AF2BIND: predicting small-molecule binding sites using the pair representation of AlphaFold2.",
+    "year": "2026",
+    "journal": "Nat Methods"
+   },
+   {
+    "pmid": "42340891",
+    "title": "Mu-opioid receptor activation by methamphetamine metabolite 4-hydroxyamphetamine: a computational insight into a potential alternative addiction pathway.",
+    "year": "2026",
+    "journal": "J Biomol Struct Dyn"
+   },
+   {
+    "pmid": "42640111",
+    "title": "Developing the Dopamine D3 Receptor (D3R) Antagonist, (R)-VK4-116, as a Non-Opioid Medication for the Treatment of Opioid Use Disorder.",
+    "year": "2026",
+    "journal": "Med Res Rev"
+   },
+   {
+    "pmid": "42406716",
+    "title": "Landscaping the Nitazene Scaffold to Identify Novel Mu-Opioid Receptor Modulators: From Molecular Design and Chemical Synthesis to Pharmacological Profiling.",
+    "year": "2026",
+    "journal": "J Med Chem"
+   },
+   {
+    "pmid": "41866033",
+    "title": "Activation dynamics of a water-soluble human mu-opioid receptor.",
+    "year": "2026",
+    "journal": "J Biol Chem"
+   },
+   {
+    "pmid": "42250290",
+    "title": "Positive allosteric modulation of the delta opioid receptor attenuates depression-like and pain-like behaviors but does not promote convulsions.",
+    "year": "2026",
+    "journal": "J Pharmacol Exp Ther"
+   },
+   {
+    "pmid": "42039273",
+    "title": "A neurotensin receptor type 1-derived pepducin acts as a biased allosteric modulator to regulate target receptor function.",
+    "year": "2026",
+    "journal": "Acta Pharm Sin B"
+   },
+   {
+    "pmid": "42188316",
+    "title": "Receptor Binding, Functional Activity, and Cell Viability Assessment of Novel Marine-Based Hybrid Peptides from &lt;i&gt;Raja porosa&lt;/i&gt;.",
+    "year": "2026",
+    "journal": "Mar Drugs"
+   },
+   {
+    "pmid": "42468634",
+    "title": "Structural factors for receptor binding and activation of the Nociceptin opioid receptor by full and partial agonists.",
+    "year": "2026",
+    "journal": "Biochem Pharmacol"
+   },
+   {
+    "pmid": "42694894",
+    "title": "Low Dose Ketamine Preconditions Astrocyte Mitochondria to Achieve Antidepressant Efficacy via Adenosine, Humanin, and Melatonin Upregulation and Efflux.",
+    "year": "2026",
+    "journal": "Alpha Psychiatry"
+   },
+   {
+    "pmid": "41444992",
+    "title": "The Human Omnibus of Targetable Pockets.",
+    "year": "2025",
+    "journal": "J Cheminform"
+   },
+   {
+    "pmid": "39827063",
+    "title": "Advances in the structural understanding of opioid allostery.",
+    "year": "2025",
+    "journal": "Trends Pharmacol Sci"
+   },
+   {
+    "pmid": "39900337",
+    "title": "Molecular Glues: A New Approach to Modulating GPCR Signaling Bias.",
+    "year": "2025",
+    "journal": "Biochemistry"
+   },
+   {
+    "pmid": "40378294",
+    "title": "Mu Opioid Receptor Positive Allosteric Modulator BMS-986122 Confers Agonist-Dependent G Protein Subtype Signaling Bias.",
+    "year": "2025",
+    "journal": "Biochemistry"
+   },
+   {
+    "pmid": "39667424",
+    "title": "Insurmountable antagonism of human mu opioid receptors by buprenorphine is due to hemi-equilibrium.",
+    "year": "2025",
+    "journal": "Eur J Pharmacol"
+   },
+   {
+    "pmid": "39943784",
+    "title": "How Ligands Achieve Biased Signaling toward Arrestins.",
+    "year": "2025",
+    "journal": "Biochemistry"
+   },
+   {
+    "pmid": "40416448",
+    "title": "Exploring substitution effects on the potential dominant conformations of NBF derivatives leading to functional conversion at the mu opioid receptor.",
+    "year": "2025",
+    "journal": "RSC Chem Biol"
+   },
+   {
+    "pmid": "40790531",
+    "title": "Biased agonism in psychopharmacology: an opportunity to improve efficacy and safety of treatments.",
+    "year": "2025",
+    "journal": "CNS Spectr"
+   },
+   {
+    "pmid": "41125894",
+    "title": "Designing allosteric modulators to change GPCR G protein subtype selectivity.",
+    "year": "2025",
+    "journal": "Nature"
+   },
+   {
+    "pmid": "41072817",
+    "title": "Antidepressants and the endogenous opioid system.",
+    "year": "2025",
+    "journal": "Biochem Pharmacol"
+   },
+   {
+    "pmid": "39550377",
+    "title": "A non-canonical mechanism of GPCR activation.",
+    "year": "2024",
+    "journal": "Nat Commun"
+   },
+   {
+    "pmid": "39220695",
+    "title": "Signaling Modulation Mediated by Ligand Water Interactions with the Sodium Site at \u03bcOR.",
+    "year": "2024",
+    "journal": "ACS Cent Sci"
+   },
+   {
+    "pmid": "39062976",
+    "title": "CBD Versus CBDP: Comparing In Vitro Receptor-Binding Activities.",
+    "year": "2024",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "37844653",
+    "title": "IUPHAR themed review: Opioid efficacy, bias, and selectivity.",
+    "year": "2023",
+    "journal": "Pharmacol Res"
+   },
+   {
+    "pmid": "36868791",
+    "title": "Application of Mixed-Solvent Molecular Dynamics Simulations for Prediction of Allosteric Sites on G Protein-Coupled Receptors.",
+    "year": "2023",
+    "journal": "Mol Pharmacol"
+   }
+  ],
+  "hitCount": 386
+ },
+ "OPRK1": {
+  "queries": [
+   "\"kappa opioid receptor\" AND (\"orthosteric\" OR \"allosteric\") AND (pocket OR site)"
+  ],
+  "hits": [
+   {
+    "pmid": "42243110",
+    "title": "Structural dynamics of kappa opioid receptor interactions with \u03b2-arrestin 1.",
+    "year": "2026",
+    "journal": "Nat Commun"
+   },
+   {
+    "pmid": "42250290",
+    "title": "Positive allosteric modulation of the delta opioid receptor attenuates depression-like and pain-like behaviors but does not promote convulsions.",
+    "year": "2026",
+    "journal": "J Pharmacol Exp Ther"
+   },
+   {
+    "pmid": "42640111",
+    "title": "Developing the Dopamine D3 Receptor (D3R) Antagonist, (R)-VK4-116, as a Non-Opioid Medication for the Treatment of Opioid Use Disorder.",
+    "year": "2026",
+    "journal": "Med Res Rev"
+   },
+   {
+    "pmid": "42599668",
+    "title": "Advances in Cyclic Peptides Targeting G Protein-Coupled Receptors.",
+    "year": "2026",
+    "journal": "Chembiochem"
+   },
+   {
+    "pmid": "42215488",
+    "title": "Structural characterization of kappa-opioid receptor dimer in complex with two G proteins.",
+    "year": "2026",
+    "journal": "Nat Commun"
+   },
+   {
+    "pmid": "42694894",
+    "title": "Low Dose Ketamine Preconditions Astrocyte Mitochondria to Achieve Antidepressant Efficacy via Adenosine, Humanin, and Melatonin Upregulation and Efflux.",
+    "year": "2026",
+    "journal": "Alpha Psychiatry"
+   },
+   {
+    "pmid": "42039273",
+    "title": "A neurotensin receptor type 1-derived pepducin acts as a biased allosteric modulator to regulate target receptor function.",
+    "year": "2026",
+    "journal": "Acta Pharm Sin B"
+   },
+   {
+    "pmid": "41825109",
+    "title": "Computer-aided structural modeling and drug discovery for G-protein-coupled receptors in the age of artificial intelligence.",
+    "year": "2026",
+    "journal": "Curr Opin Struct Biol"
+   },
+   {
+    "pmid": "41980950",
+    "title": "Rational design of a Kappa opioid receptor peptide agonist with attenuated \u03b2-arrestin signaling.",
+    "year": "2026",
+    "journal": "Nat Commun"
+   },
+   {
+    "pmid": "42185275",
+    "title": "Molecular mechanisms for subtype selectivity of kinin receptors' antagonists.",
+    "year": "2026",
+    "journal": "Nat Commun"
+   },
+   {
+    "pmid": "42548882",
+    "title": "Sustained abstinence in severe ketamine use disorder following ibogaine treatment case report.",
+    "year": "2026",
+    "journal": "Front Psychiatry"
+   },
+   {
+    "pmid": "42468634",
+    "title": "Structural factors for receptor binding and activation of the Nociceptin opioid receptor by full and partial agonists.",
+    "year": "2026",
+    "journal": "Biochem Pharmacol"
+   },
+   {
+    "pmid": "42091878",
+    "title": "Selective positive allosteric modulation of \u03b2&lt;sub&gt;2&lt;/sub&gt;AR using antibody fragments targeting the third intracellular loop.",
+    "year": "2026",
+    "journal": "Nat Commun"
+   },
+   {
+    "pmid": "39809849",
+    "title": "Chemogenetics for sensing antigens.",
+    "year": "2025",
+    "journal": "Cell Res"
+   },
+   {
+    "pmid": "40749070",
+    "title": "Structural determinants of G protein subtype selectivity at the serotonin receptor 5-HT1A.",
+    "year": "2025",
+    "journal": "Sci Adv"
+   },
+   {
+    "pmid": "40658860",
+    "title": "De novo design of a fusion protein tool for GPCR research.",
+    "year": "2025",
+    "journal": "Proc Natl Acad Sci U S A"
+   },
+   {
+    "pmid": "39943784",
+    "title": "How Ligands Achieve Biased Signaling toward Arrestins.",
+    "year": "2025",
+    "journal": "Biochemistry"
+   },
+   {
+    "pmid": "40063796",
+    "title": "Structural mechanisms underlying the modulation of CXCR4 by diverse small-molecule antagonists.",
+    "year": "2025",
+    "journal": "Proc Natl Acad Sci U S A"
+   },
+   {
+    "pmid": "40378294",
+    "title": "Mu Opioid Receptor Positive Allosteric Modulator BMS-986122 Confers Agonist-Dependent G Protein Subtype Signaling Bias.",
+    "year": "2025",
+    "journal": "Biochemistry"
+   },
+   {
+    "pmid": "41156133",
+    "title": "\u03ba-Opioid Receptor Agonists as Robust Pain-Modulating Agents: Mechanisms and Therapeutic Potential in Pain Modulation.",
+    "year": "2025",
+    "journal": "J Clin Med"
+   },
+   {
+    "pmid": "38744986",
+    "title": "Antibodies expand the scope of angiotensin receptor pharmacology.",
+    "year": "2024",
+    "journal": "Nat Chem Biol"
+   },
+   {
+    "pmid": "38893511",
+    "title": "Decoding the \u03ba Opioid Receptor (KOR): Advancements in Structural Understanding and Implications for Opioid Analgesic Development.",
+    "year": "2024",
+    "journal": "Molecules"
+   },
+   {
+    "pmid": "39248648",
+    "title": "Allosteric modulation of the CXCR4:CXCL12 axis by targeting receptor nanoclustering via the TMV-TMVI domain.",
+    "year": "2024",
+    "journal": "Elife"
+   },
+   {
+    "pmid": "37844653",
+    "title": "IUPHAR themed review: Opioid efficacy, bias, and selectivity.",
+    "year": "2023",
+    "journal": "Pharmacol Res"
+   },
+   {
+    "pmid": "38012179",
+    "title": "Structure basis for the modulation of CXC chemokine receptor 3 by antagonist AMG487.",
+    "year": "2023",
+    "journal": "Cell Discov"
+   }
+  ],
+  "hitCount": 372
+ },
+ "ALDH1A1": {
+  "queries": [
+   "\"aldehyde dehydrogenase 1A1\" AND (inhibitor OR pocket OR \"catalytic site\")"
+  ],
+  "hits": [
+   {
+    "pmid": "42179022",
+    "title": "Spermidine-Based Activity Probe for ALDH1A1 in Cells.",
+    "year": "2026",
+    "journal": "Chembiochem"
+   },
+   {
+    "pmid": "42573019",
+    "title": "Synthesis and Activity-Based Protein Profiling Identifies Aldo-Keto Reductase 1C3 as Target Protein of Myxoglucamides.",
+    "year": "2026",
+    "journal": "Angew Chem Int Ed Engl"
+   },
+   {
+    "pmid": "41548362",
+    "title": "Association of proton pump inhibitor use with outcome of patients with recurrent glioblastoma.",
+    "year": "2026",
+    "journal": "Eur J Cancer"
+   },
+   {
+    "pmid": "41992602",
+    "title": "Affinity Proteomics-Based Non-Invasive Detection of Clinically Significant Liver Disease.",
+    "year": "2026",
+    "journal": "Aliment Pharmacol Ther"
+   },
+   {
+    "pmid": "42522093",
+    "title": "DNA polymerase theta (Pol\u03b8): a novel candidate for targeted cancer therapy.",
+    "year": "2026",
+    "journal": "Cancer Biol Ther"
+   },
+   {
+    "pmid": "42451104",
+    "title": "Investigation of an ALDH1A1-Specific Inhibitor, FSI-TN42, as a Treatment for Obesity in Female Mice.",
+    "year": "2026",
+    "journal": "Nutrients"
+   },
+   {
+    "pmid": "41402250",
+    "title": "Donor-PeT Control of Intersystem Crossing Enables ALDH1A1-Activated Photodynamic Therapy.",
+    "year": "2026",
+    "journal": "ACS Chem Biol"
+   },
+   {
+    "pmid": "40886061",
+    "title": "Semaglutide promotes bone marrow-derived progenitor cell flux towards an anti-inflammatory and pro-regenerative profile in high-risk patients: the SEMA-VR CardioLink-15 trial.",
+    "year": "2026",
+    "journal": "Eur Heart J"
+   },
+   {
+    "pmid": "42738766",
+    "title": "Molecular Targets and Biological Activities of Carvone: An Evidence-Graded Review.",
+    "year": "2026",
+    "journal": "Molecules"
+   },
+   {
+    "pmid": "41957112",
+    "title": "Unsaponifiable fraction of black Vitis vinifera seed oil attenuates liver cancer progression by targeting apoptosis and key tumor-associated genes: In vitro, in vivo, and in silico studies.",
+    "year": "2026",
+    "journal": "Sci Rep"
+   },
+   {
+    "pmid": "41754742",
+    "title": "Disulfiram and Its Derivatives: An Immortal Phoenix of Drug Repurposing.",
+    "year": "2026",
+    "journal": "Pharmaceuticals (Basel)"
+   },
+   {
+    "pmid": "42562974",
+    "title": "Applications of Differential Scanning Fluorimetry and Related Technologies in Characterization of Protein-Ligand Interactions.",
+    "year": "2026",
+    "journal": "Methods Mol Biol"
+   },
+   {
+    "pmid": "42149027",
+    "title": "The Human Lens Fiber Cytoskeletome Reveals Neuronal Signatures and the Presence of Chaperonins, Proteasome, Signaling, and Redox Regulators.",
+    "year": "2026",
+    "journal": "Invest Ophthalmol Vis Sci"
+   },
+   {
+    "pmid": "41596584",
+    "title": "Normalizing the Tumor Microenvironment: A New Frontier in Ovarian Cancer Therapy.",
+    "year": "2026",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "42052841",
+    "title": "Ferroptosis in Breast Cancer: Molecular Insights and Therapeutic Strategies.",
+    "year": "2026",
+    "journal": "Front Biosci (Landmark Ed)"
+   },
+   {
+    "pmid": "40960320",
+    "title": "A fluorogenic probe for screening aldehyde dehydrogenase 1A1 (ALDH1A1) inhibitors.",
+    "year": "2025",
+    "journal": "Chem Commun (Camb)"
+   },
+   {
+    "pmid": "41541494",
+    "title": "Subtype-specific roles of nigrostriatal dopaminergic neurons in motor and associative learning.",
+    "year": "2025",
+    "journal": "Ageing Neurodegener Dis"
+   },
+   {
+    "pmid": "40076923",
+    "title": "CRISPR/Cas9 Targeting of Aldehyde Dehydrogenase 1A1 Reveals Heterogeneous Roles in Radiation Response and Redox Stress Across Clonal Lines in Triple-Negative Breast Cancer.",
+    "year": "2025",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "40643557",
+    "title": "Expression of Aldehyde Dehydrogenase 1A1 in Relapse-Associated Cells in Acute Myeloid Leukemia.",
+    "year": "2025",
+    "journal": "Cells"
+   },
+   {
+    "pmid": "40013196",
+    "title": "Impact of Sulforaphane on Breast Cancer Progression and Radiation Therapy Outcomes: A Systematic Review.",
+    "year": "2025",
+    "journal": "Cureus"
+   },
+   {
+    "pmid": "40736583",
+    "title": "NAD(P)&lt;sup&gt;+&lt;/sup&gt;-dependent alcohol oxidoreductases oxidize 7-hydroxycannabidiol to a reactive formyl metabolite.",
+    "year": "2025",
+    "journal": "Arch Toxicol"
+   },
+   {
+    "pmid": "39611960",
+    "title": "Aldehyde Dehydrogenase-1A1 (ALDH1A1): The Novel Regulator of Chemoresistance in Pancreatic Cancer Cells.",
+    "year": "2024",
+    "journal": "Cancer Control"
+   },
+   {
+    "pmid": "39118288",
+    "title": "Metastasis-enhancing protein KITENIN confers temozolomide resistance on glioblastoma with unmethylated MGMT via upregulation of cancer stem cell makers.",
+    "year": "2024",
+    "journal": "Clin Transl Med"
+   },
+   {
+    "pmid": "38992689",
+    "title": "Distinctive protein expression in elderly livers in a Sprague-Dawley rat model of normothermic ex vivo liver machine perfusion.",
+    "year": "2024",
+    "journal": "Eur J Med Res"
+   },
+   {
+    "pmid": "38701866",
+    "title": "ALDH1A1 confers resistance to RAF/MEK inhibitors in melanoma cells by maintaining stemness phenotype and activating PI3K/AKT signaling.",
+    "year": "2024",
+    "journal": "Biochem Pharmacol"
+   }
+  ],
+  "hitCount": 488
+ },
+ "CNR1": {
+  "queries": [
+   "\"cannabinoid receptor 1\" AND (\"orthosteric\" OR \"allosteric\") AND (pocket OR site)"
+  ],
+  "hits": [
+   {
+    "pmid": "42734521",
+    "title": "Residue Interaction Network Reveals Allosteric Pathways Linking Orthosteric and Intracellular Sites in Class A GPCRs.",
+    "year": "2026",
+    "journal": "J Chem Inf Model"
+   },
+   {
+    "pmid": "41904334",
+    "title": "Cannabidiphorol (CBDP) acts as a negative allosteric modulator at two distinct sites of cannabinoid receptor 1.",
+    "year": "2026",
+    "journal": "Commun Chem"
+   },
+   {
+    "pmid": "42637706",
+    "title": "Arrestins as programmable integrators of GPCR signaling: structural microstates, spatiotemporal logic, and therapeutic control.",
+    "year": "2026",
+    "journal": "Cell Discov"
+   },
+   {
+    "pmid": "42492483",
+    "title": "Cannabinoid CB&lt;sub&gt;1&lt;/sub&gt; allosteric ligands suppress inflammatory pain in male mice without tolerance, motor impairment, memory deficits or respiratory depression.",
+    "year": "2026",
+    "journal": "Br J Pharmacol"
+   },
+   {
+    "pmid": "42722702",
+    "title": "Pharmacological modulation of GPR84 revealed by dual states structures and immune functional assays.",
+    "year": "2026",
+    "journal": "Exp Mol Med"
+   },
+   {
+    "pmid": "42630986",
+    "title": "Dimethylindanoylindole Isomers Revealed Different Pharmacological Profiles at CB1 and CB2 Cannabinoid Receptors.",
+    "year": "2026",
+    "journal": "ACS Bio Med Chem Au"
+   },
+   {
+    "pmid": "41962866",
+    "title": "Dynamic mechanism for subtype selectivity of endocannabinoids.",
+    "year": "2026",
+    "journal": "J Biol Chem"
+   },
+   {
+    "pmid": "41828327",
+    "title": "Genetically Encoded CB&lt;sub&gt;2&lt;/sub&gt;R-Based Fluorescent Sensor Enables Rapid Screening and Functional Assessment of Cannabinoid Modulators.",
+    "year": "2026",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "42046856",
+    "title": "Unlocking Selenium Chemical Space via a Programmable Synthesis Platform Bearing Cannabinoid Receptor Recognition Motifs.",
+    "year": "2026",
+    "journal": "J Am Chem Soc"
+   },
+   {
+    "pmid": "42077871",
+    "title": "Receptor-Selective Modulation of Cannabinoid Signaling by Cardamonin: Integrating Molecular Dynamics, Free Energy Calculations, and Behavioral Validation.",
+    "year": "2026",
+    "journal": "ACS Omega"
+   },
+   {
+    "pmid": "41206221",
+    "title": "Elucidating biased signaling in class A GPCRs.",
+    "year": "2025",
+    "journal": "Trends Pharmacol Sci"
+   },
+   {
+    "pmid": "40838124",
+    "title": "Molecular docking of danuglipron uncovers potential crossovers between GLP-1R and the endocannabinoid system.",
+    "year": "2025",
+    "journal": "MicroPubl Biol"
+   },
+   {
+    "pmid": "40140663",
+    "title": "Structural insights into lipid chain-length selectivity and allosteric regulation of FFA2.",
+    "year": "2025",
+    "journal": "Nat Commun"
+   },
+   {
+    "pmid": "40758841",
+    "title": "Efficient Characterization of GPCRs Allosteric Modulation: Application to the Rational Design of De Novo S1PR1 Allosteric Modulators.",
+    "year": "2025",
+    "journal": "J Chem Inf Model"
+   },
+   {
+    "pmid": "40687805",
+    "title": "How THC works: Explaining ligand affinity for, and partial agonism of, cannabinoid receptor 1.",
+    "year": "2025",
+    "journal": "iScience"
+   },
+   {
+    "pmid": "39974643",
+    "title": "Identification of a Cannabinoid Receptor 2 Allosteric Site Using Computational Modeling and Pharmacological Analysis.",
+    "year": "2025",
+    "journal": "ACS Pharmacol Transl Sci"
+   },
+   {
+    "pmid": "39812521",
+    "title": "Determination of the Negative Allosteric Binding Site of Cannabidiol at the CB1 Receptor: A Combined Computational and Site-Directed Mutagenesis Study.",
+    "year": "2025",
+    "journal": "ACS Chem Neurosci"
+   },
+   {
+    "pmid": "41181929",
+    "title": "Characterization of binding kinetics and intracellular signaling of new psychoactive substances targeting cannabinoid receptor using transition-based reweighting method.",
+    "year": "2025",
+    "journal": "Elife"
+   },
+   {
+    "pmid": "39747671",
+    "title": "Functional dynamics of G protein-coupled receptors reveal new routes for drug discovery.",
+    "year": "2025",
+    "journal": "Nat Rev Drug Discov"
+   },
+   {
+    "pmid": "41601476",
+    "title": "Recent trends in machine learning and deep learning-based prediction of G-protein coupled receptor-ligand binding affinities.",
+    "year": "2025",
+    "journal": "Front Bioinform"
+   },
+   {
+    "pmid": "41109342",
+    "title": "Structural and molecular dynamics insights into the competitive inhibition of the platelet-activating factor receptor by acyl-PAF.",
+    "year": "2025",
+    "journal": "J Biol Chem"
+   },
+   {
+    "pmid": "41178006",
+    "title": "The Therapeutic Potential of Cannabidiol in Skin Conditions.",
+    "year": "2025",
+    "journal": "J Cosmet Dermatol"
+   },
+   {
+    "pmid": "40417140",
+    "title": "Role of Endocannabinoids in Glaucoma: A Review.",
+    "year": "2025",
+    "journal": "J Curr Glaucoma Pract"
+   },
+   {
+    "pmid": "39441864",
+    "title": "Comparative Study of Allosteric GPCR Binding Sites and Their Ligandability Potential.",
+    "year": "2024",
+    "journal": "J Chem Inf Model"
+   },
+   {
+    "pmid": "38101408",
+    "title": "Snapshot of the cannabinoid receptor 1-arrestin complex unravels the biased signaling mechanism.",
+    "year": "2023",
+    "journal": "Cell"
+   }
+  ],
+  "hitCount": 473
+ },
+ "HRH3": {
+  "queries": [
+   "\"histamine H3 receptor\" AND (\"orthosteric\" OR \"allosteric\") AND (pocket OR site)"
+  ],
+  "hits": [
+   {
+    "pmid": "41596234",
+    "title": "Rational Design, Synthesis and Pharmacological Evaluation of Chalcones as Dual-Acting Compounds-Histamine H&lt;sub&gt;3&lt;/sub&gt; Receptor Ligands and MAO-B Inhibitors.",
+    "year": "2026",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "42732910",
+    "title": "Tearing Down Scientific Boundaries: Frontiers in Medicinal Chemistry 2026.",
+    "year": "2026",
+    "journal": "ChemMedChem"
+   },
+   {
+    "pmid": "42380259",
+    "title": "Mechanistic and therapeutic insights into class A GPCR dimers in neuropsychiatric disorders.",
+    "year": "2026",
+    "journal": "NPJ Drug Discov"
+   },
+   {
+    "pmid": "41427659",
+    "title": "Activity-restoring mutations in the histamine H&lt;sub&gt;3&lt;/sub&gt; receptor increase constitutive activity and reduce structural stability.",
+    "year": "2026",
+    "journal": "Protein Sci"
+   },
+   {
+    "pmid": "42531138",
+    "title": "In Silico to In Cerebro-Development of the Orexin Receptor Antagonist \"Photorexant\" for Photomodulation In Vitro and in Mouse Brains.",
+    "year": "2026",
+    "journal": "Angew Chem Int Ed Engl"
+   },
+   {
+    "pmid": "42589546",
+    "title": "Virtual Screening, Synthesis and In Vitro Characterization of Histamine H&lt;sub&gt;4&lt;/sub&gt; Receptor Ligands Based on Pyrimidine Scaffolds.",
+    "year": "2026",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "40568883",
+    "title": "A Radiolabeled Photoswitchable G Protein-Coupled Receptor Antagonist Enlightens Ligand Binding Kinetics Associated with Photoswitching.",
+    "year": "2025",
+    "journal": "J Am Chem Soc"
+   },
+   {
+    "pmid": "39957994",
+    "title": "Covalent functionalization of G protein-coupled receptors by small molecular probes.",
+    "year": "2025",
+    "journal": "RSC Chem Biol"
+   },
+   {
+    "pmid": "41028777",
+    "title": "Application of chemical similarity and bioisosteres to find allosteric inhibitors of type 2 lipid kinase \u03b3.",
+    "year": "2025",
+    "journal": "Sci Rep"
+   },
+   {
+    "pmid": "41305458",
+    "title": "Dual Inhibitory Potential of Conessine Against HIV and SARS-CoV-2: Structure-Guided Molecular Docking Analysis of Critical Viral Targets.",
+    "year": "2025",
+    "journal": "Viruses"
+   },
+   {
+    "pmid": "41461581",
+    "title": "The Concise Guide to PHARMACOLOGY 2025/26: G protein-coupled receptors.",
+    "year": "2025",
+    "journal": "Br J Pharmacol"
+   },
+   {
+    "pmid": "41181006",
+    "title": "Synthetic strategies towards benzothiazole-based compounds of therapeutic potency: experimental, investigational and approved drugs.",
+    "year": "2025",
+    "journal": "RSC Adv"
+   },
+   {
+    "pmid": "39598660",
+    "title": "Virtual Screening Approaches to Identify Promising Multitarget-Directed Ligands for the Treatment of Autism Spectrum Disorder.",
+    "year": "2024",
+    "journal": "Molecules"
+   },
+   {
+    "pmid": "38851804",
+    "title": "Modulation of serotonin transporter expression by escitalopram under inflammation.",
+    "year": "2024",
+    "journal": "Commun Biol"
+   },
+   {
+    "pmid": "39463482",
+    "title": "Recent progress in therapeutic applications of fluorinated five-membered heterocycles and their benzo-fused systems.",
+    "year": "2024",
+    "journal": "RSC Adv"
+   },
+   {
+    "pmid": "39352115",
+    "title": "Potential differences in receptor-mediated G-protein activation in postmortem human hippocampal membranes prepared from healthy controls and suicide victims.",
+    "year": "2024",
+    "journal": "Neuropsychopharmacol Rep"
+   },
+   {
+    "pmid": "37974943",
+    "title": "Discovery of a Tritiated Radioligand with High Affinity and Selectivity for the Histamine H<sub>3</sub> Receptor.",
+    "year": "2023",
+    "journal": "ACS Med Chem Lett"
+   },
+   {
+    "pmid": "37863901",
+    "title": "Structural insights into the agonists binding and receptor selectivity of human histamine H<sub>4</sub> receptor.",
+    "year": "2023",
+    "journal": "Nat Commun"
+   },
+   {
+    "pmid": "36355476",
+    "title": "Mind the Gap-Deciphering GPCR Pharmacology Using 3D Pharmacophores and Artificial Intelligence.",
+    "year": "2022",
+    "journal": "Pharmaceuticals (Basel)"
+   },
+   {
+    "pmid": "33471142",
+    "title": "Current Trends in GPCR Allostery.",
+    "year": "2021",
+    "journal": "J Membr Biol"
+   },
+   {
+    "pmid": "33414387",
+    "title": "G protein-coupled receptors: structure- and function-based drug discovery.",
+    "year": "2021",
+    "journal": "Signal Transduct Target Ther"
+   },
+   {
+    "pmid": "33459557",
+    "title": "Occurrence of Morpholine in Central Nervous System Drug Discovery.",
+    "year": "2021",
+    "journal": "ACS Chem Neurosci"
+   },
+   {
+    "pmid": "33037273",
+    "title": "Molecular dynamics of the histamine H3 membrane receptor reveals different mechanisms of GPCR signal transduction.",
+    "year": "2020",
+    "journal": "Sci Rep"
+   },
+   {
+    "pmid": "31237914",
+    "title": "Ligand-guided homology modeling drives identification of novel histamine H3 receptor ligands.",
+    "year": "2019",
+    "journal": "PLoS One"
+   },
+   {
+    "pmid": "28982153",
+    "title": "Hybrid approach to structure modeling of the histamine H3 receptor: Multi-level assessment as a tool for model verification.",
+    "year": "2017",
+    "journal": "PLoS One"
+   }
+  ],
+  "hitCount": 150
+ },
+ "HSD11B1": {
+  "queries": [
+   "\"11 beta-hydroxysteroid dehydrogenase 1\" AND (inhibitor OR pocket) AND (crystal OR structure)"
+  ],
+  "hits": [
+   {
+    "pmid": "41884708",
+    "title": "Network pharmacology refined with non-ubiquity and decoy-controlled molecular docking reveals insights into &lt;i&gt;Moringa oleifera&lt;/i&gt; phytochemicals targeting insulin resistance.",
+    "year": "2026",
+    "journal": "Front Bioinform"
+   },
+   {
+    "pmid": "42683057",
+    "title": "Genomic exploration and &lt;i&gt;in silico&lt;/i&gt; prioritization of putative COX-2-targeting metabolites from &lt;i&gt;Streptomyces&lt;/i&gt; sp. VITGV156 (MCC 4965).",
+    "year": "2026",
+    "journal": "Front Bioinform"
+   },
+   {
+    "pmid": "41664920",
+    "title": "Integrative Proteomic and Lipidomic Analysis of Patients With Acute Myocardial Infarction Treated With PCSK9 Antibodies and Statins.",
+    "year": "2026",
+    "journal": "Circ Genom Precis Med"
+   },
+   {
+    "pmid": "41023141",
+    "title": "Chemical evaluation of arbequina extra virgin olive oil with in silico analysis of its key phenolic compounds targeting LDL metabolism.",
+    "year": "2025",
+    "journal": "Sci Rep"
+   },
+   {
+    "pmid": "41413649",
+    "title": "Integrative biochemical and computational analysis of leflunomide-induced redox alterations in Nauphoeta cinerea.",
+    "year": "2025",
+    "journal": "Sci Rep"
+   },
+   {
+    "pmid": "41290874",
+    "title": "11\u03b2-HSD1 inhibitor alleviates lipid metabolism disorder by activating the AMPK signaling pathway.",
+    "year": "2025",
+    "journal": "Sci Rep"
+   },
+   {
+    "pmid": "40603345",
+    "title": "Two unreported lecanoric acid derivatives isolated from Chaetomium globosum KM651986 and their anti-diabetic effect.",
+    "year": "2025",
+    "journal": "Sci Rep"
+   },
+   {
+    "pmid": "40280905",
+    "title": "Mechanisms and therapeutic opportunities in metabolic aberrations of diabetic wounds: a narrative review.",
+    "year": "2025",
+    "journal": "Cell Death Dis"
+   },
+   {
+    "pmid": "38617664",
+    "title": "Identification of Novel Quinolone and Quinazoline Alkaloids as Phosphodiesterase 10A Inhibitors for Parkinson's Disease through a Computational Approach.",
+    "year": "2024",
+    "journal": "ACS Omega"
+   },
+   {
+    "pmid": "39508246",
+    "title": "The association between metabolite profiles and impaired bone microstructure in adult growth hormone deficient rats.",
+    "year": "2024",
+    "journal": "BMC Musculoskelet Disord"
+   },
+   {
+    "pmid": "39063184",
+    "title": "Cellular Senescence and Extracellular Vesicles in the Pathogenesis and Treatment of Obesity-A Narrative Review.",
+    "year": "2024",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "38112983",
+    "title": "Acetaminophen-traces bioremediation with novel phenotypically and genotypically characterized\u00a02 Streptomyces strains\u00a0using chemo-informatics, in vivo, and in vitro experiments for cytotoxicity and biological activity.",
+    "year": "2023",
+    "journal": "J Genet Eng Biotechnol"
+   },
+   {
+    "pmid": "37028818",
+    "title": "Glucocorticoid activation by HSD11B1 limits T cell-driven interferon signaling and response to PD-1 blockade in melanoma.",
+    "year": "2023",
+    "journal": "J Immunother Cancer"
+   },
+   {
+    "pmid": "38201261",
+    "title": "Reduction in Nuclear Size by DHRS7 in Prostate Cancer Cells and by Estradiol Propionate in DHRS7-Depleted Cells.",
+    "year": "2023",
+    "journal": "Cells"
+   },
+   {
+    "pmid": "38138609",
+    "title": "Exploring Thiazolopyridine AV25R: Unraveling of Biological Activities, Selective Anti-Cancer Properties and In Silico Target and Binding Prediction in Hematological Neoplasms.",
+    "year": "2023",
+    "journal": "Molecules"
+   },
+   {
+    "pmid": "37374197",
+    "title": "Possible Mechanisms Linking Obesity, Steroidogenesis, and Skeletal Muscle Dysfunction.",
+    "year": "2023",
+    "journal": "Life (Basel)"
+   },
+   {
+    "pmid": "36817116",
+    "title": "<i>In silico</i> prediction and biological assessment of novel angiogenesis modulators from traditional Chinese medicine.",
+    "year": "2023",
+    "journal": "Front Pharmacol"
+   },
+   {
+    "pmid": "37735410",
+    "title": "Nrf2 regulates iron-dependent hippocampal synapses and functional connectivity damage in depression.",
+    "year": "2023",
+    "journal": "J Neuroinflammation"
+   },
+   {
+    "pmid": "35372666",
+    "title": "Seawater fungi-derived compound screening to identify novel small molecules against dengue virus NS5 methyltransferase and NS2B/NS3 protease.",
+    "year": "2022",
+    "journal": "Inform Med Unlocked"
+   },
+   {
+    "pmid": "36015085",
+    "title": "Benzothiazole Derivatives Endowed with Antiproliferative Activity in Paraganglioma and Pancreatic Cancer Cells: Structure-Activity Relationship Studies and Target Prediction Analysis.",
+    "year": "2022",
+    "journal": "Pharmaceuticals (Basel)"
+   },
+   {
+    "pmid": "36457705",
+    "title": "Exploring the mechanism of <i>Alisma orientale</i> for the treatment of pregnancy induced hypertension and potential hepato-nephrotoxicity by using network pharmacology, network toxicology, molecular docking and molecular dynamics simulation.",
+    "year": "2022",
+    "journal": "Front Pharmacol"
+   },
+   {
+    "pmid": "34131393",
+    "title": "Protopanaxadiol improves endometriosis associated infertility and miscarriage in sex hormones receptors-dependent and independent manners.",
+    "year": "2021",
+    "journal": "Int J Biol Sci"
+   },
+   {
+    "pmid": "34819791",
+    "title": "Systematic analysis of potential targets of the curcumin analog pentagamavunon-1 (PGV-1) in overcoming resistance of glioblastoma cells to bevacizumab.",
+    "year": "2021",
+    "journal": "Saudi Pharm J"
+   },
+   {
+    "pmid": "35497465",
+    "title": "CuAAC-ensembled 1,2,3-triazole-linked isosteres as pharmacophores in drug discovery: review.",
+    "year": "2020",
+    "journal": "RSC Adv"
+   },
+   {
+    "pmid": "24194903",
+    "title": "Discovery of p1736, a novel antidiabetic compound that improves peripheral insulin sensitivity in mice models.",
+    "year": "2013",
+    "journal": "PLoS One"
+   }
+  ],
+  "hitCount": 38
+ },
+ "SIGMAR1": {
+  "queries": [
+   "\"sigma-1 receptor\" AND (\"ligand binding site\" OR pocket) AND (crystal OR structure)"
+  ],
+  "hits": [
+   {
+    "pmid": "42727449",
+    "title": "Dissecting affinity determinants of benzotriazine-based ligands at sigma-1 receptor: a multilevel molecular dynamics analysis.",
+    "year": "2026",
+    "journal": "Bioorg Chem"
+   },
+   {
+    "pmid": "42785968",
+    "title": "The Sigma-1 Receptor as a Novel Target in the Neuroprotective Effects of Cannabidiol and Cannabigerol Against Mitochondrial Damage in Cultured Cerebellar Granule Neurons.",
+    "year": "2026",
+    "journal": "ChemMedChem"
+   },
+   {
+    "pmid": "42223448",
+    "title": "MD Simulations of Human Sigma-1 Receptor Trimer Uncover Cholesterol-Dependent Stabilization and Ligand-Specific Dynamics.",
+    "year": "2026",
+    "journal": "J Chem Inf Model"
+   },
+   {
+    "pmid": "42800225",
+    "title": "GPCR heteromers: Beyond the monomeric paradigm in neuropsychiatric drug discovery.",
+    "year": "2026",
+    "journal": "Neurotherapeutics"
+   },
+   {
+    "pmid": "41788372",
+    "title": "Morpholine as a privileged scaffold for neurodegenerative disease therapeutics.",
+    "year": "2026",
+    "journal": "RSC Adv"
+   },
+   {
+    "pmid": "42756372",
+    "title": "Structure-based molecular modeling of a novel S-Remiketamine scaffold and derived arylcyclohexanone analogues: NMDA receptor dynamics, MM-GBSA ranking, and CES1-Oriented structural compatibility.",
+    "year": "2026",
+    "journal": "Front Chem"
+   },
+   {
+    "pmid": "42196470",
+    "title": "The Role of Sigmar1 in Autophagy Regulation and Disease Therapy.",
+    "year": "2026",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "42412605",
+    "title": "Machine Learning-Driven Discovery of Indole/Oxoindole-Piperazine Scaffolds as Dual MAO-B/Sig-1R Ligands for Neurodegenerative Disorders.",
+    "year": "2026",
+    "journal": "J Chem Inf Model"
+   },
+   {
+    "pmid": "42530159",
+    "title": "Mapping Trofinetide Polypharmacology in Rett Syndrome: A Multi-Stage Computational Analysis.",
+    "year": "2026",
+    "journal": "J Comput Chem"
+   },
+   {
+    "pmid": "41799067",
+    "title": "Computational Studies toward the Identification of CB2R-M1R Dual Modulators.",
+    "year": "2026",
+    "journal": "ACS Omega"
+   },
+   {
+    "pmid": "41196005",
+    "title": "Asymmetric Dynamics Between the Protomers of the \u03c32 Receptor Homodimer.",
+    "year": "2025",
+    "journal": "J Chem Inf Model"
+   },
+   {
+    "pmid": "41244707",
+    "title": "The sigma-1 receptor as a neurohomeostatic decision hub for GABARAP-mediated receptor trafficking and macroautophagy.",
+    "year": "2025",
+    "journal": "Front Mol Biosci"
+   },
+   {
+    "pmid": "40339216",
+    "title": "Synthesis and in vivo biological characterization of six carbon-11 sigma-1 receptor radiotracers in rodent and nonhuman primate.",
+    "year": "2025",
+    "journal": "Bioorg Med Chem"
+   },
+   {
+    "pmid": "40642458",
+    "title": "Convenient one-pot synthesis of 1-(4-(4-(2-[&lt;sup&gt;18&lt;/sup&gt;F]fluoroethoxy)phenyl)piperazin-1-yl)ethanone ([&lt;sup&gt;18&lt;/sup&gt;F]FEt-PPZ) for imaging tumors expressing sigma-1 receptors.",
+    "year": "2025",
+    "journal": "RSC Adv"
+   },
+   {
+    "pmid": "40266532",
+    "title": "Involvement of TRPV1 and MOR-NMDAR complex on the antiallodynic effect of LMH-2, a sigma-1 receptor antagonist, in mouse model of diabetic neuropathy - a behavioral approach.",
+    "year": "2025",
+    "journal": "Pharmacol Rep"
+   },
+   {
+    "pmid": "41132847",
+    "title": "Discovery and proof-of-concept study of a novel highly selective sigma-1 receptor agonist for antipsychotic drug development.",
+    "year": "2025",
+    "journal": "Acta Pharm Sin B"
+   },
+   {
+    "pmid": "41008295",
+    "title": "Implications of Indolethylamine N-Methyltransferase (INMT) in Health and Disease: Biological Functions, Disease Associations, Inhibitors, and Analytical Approaches.",
+    "year": "2025",
+    "journal": "Brain Sci"
+   },
+   {
+    "pmid": "40956880",
+    "title": "Structurally diverse viral inhibitors converge on a shared mechanism to stall the antigen transporter TAP.",
+    "year": "2025",
+    "journal": "Proc Natl Acad Sci U S A"
+   },
+   {
+    "pmid": "38965213",
+    "title": "Insight into binding of endogenous neurosteroid ligands to the sigma-1 receptor.",
+    "year": "2024",
+    "journal": "Nat Commun"
+   },
+   {
+    "pmid": "39246093",
+    "title": "Sigma-1 receptor signaling: A potential therapeutic approach for ischemic stroke.",
+    "year": "2024",
+    "journal": "J Cereb Blood Flow Metab"
+   },
+   {
+    "pmid": "38940754",
+    "title": "Exploring Structural Requirements for Sigma-1 Receptor Linear Ligands: Experimental and Computational Approaches.",
+    "year": "2024",
+    "journal": "J Chem Inf Model"
+   },
+   {
+    "pmid": "37629160",
+    "title": "Structure-Based Modeling of Sigma 1 Receptor Interactions with Ligands and Cholesterol and Implications for Its Biological Function.",
+    "year": "2023",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "36834510",
+    "title": "Sphingoid Bases Regulate the Sigma-1 Receptor-Sphingosine and <i>N</i>,<i>N</i>'-Dimethylsphingosine Are Endogenous Agonists.",
+    "year": "2023",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "35273182",
+    "title": "An open-like conformation of the sigma-1 receptor reveals its ligand entry pathway.",
+    "year": "2022",
+    "journal": "Nat Commun"
+   },
+   {
+    "pmid": "34832669",
+    "title": "Highly Specific Sigma Receptor Ligands Exhibit Anti-Viral Properties in SARS-CoV-2 Infected Cells.",
+    "year": "2021",
+    "journal": "Pathogens"
+   }
+  ],
+  "hitCount": 251
+ },
+ "GRM2": {
+  "queries": [
+   "\"mGlu2\" OR \"metabotropic glutamate receptor 2\" AND allosteric AND (pocket OR site) AND transmembrane"
+  ],
+  "hits": [
+   {
+    "pmid": "41760611",
+    "title": "Allosteric activation of the glutamate receptor mGlu2 by the serotonin receptor 5-HT&lt;sub&gt;2A&lt;/sub&gt;.",
+    "year": "2026",
+    "journal": "Nat Commun"
+   },
+   {
+    "pmid": "42334485",
+    "title": "Discovery of VU6066098: A Selective and CNS-Penetrant mGlu&lt;sub&gt;2&lt;/sub&gt; NAM with Robust Antidepressant-, Antipsychotic-, and Procognitive-like Activity in Rodents.",
+    "year": "2026",
+    "journal": "ACS Chem Neurosci"
+   },
+   {
+    "pmid": "42800225",
+    "title": "GPCR heteromers: Beyond the monomeric paradigm in neuropsychiatric drug discovery.",
+    "year": "2026",
+    "journal": "Neurotherapeutics"
+   },
+   {
+    "pmid": "42317547",
+    "title": "Unraveling allosteric signaling of G protein-coupled receptors (GPCRs) by single-molecule fluorescence.",
+    "year": "2026",
+    "journal": "Biophys Rev"
+   },
+   {
+    "pmid": "41750392",
+    "title": "Glutamate Metabotropic Receptors-Linked Postsynaptic Density Proteins: An Emergent Hub for Antipsychotics' Regulation of Synaptic Plasticity and Metaplasticity.",
+    "year": "2026",
+    "journal": "Biomolecules"
+   },
+   {
+    "pmid": "42449955",
+    "title": "Aberrant Fear: Biological Underpinnings Relevant to Psychosis, Antipsychotic Drugs, and Psychotherapeutic Treatments, a Translational Approach.",
+    "year": "2026",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "40823913",
+    "title": "Unveiling the molecular mechanism of G&lt;sub&gt;i&lt;/sub&gt; protein biased activation at mGlu&lt;sub&gt;2&lt;/sub&gt;-mGlu&lt;sub&gt;4&lt;/sub&gt; heterodimers through Gaussian accelerated molecular dynamics simulations.",
+    "year": "2025",
+    "journal": "Protein Sci"
+   },
+   {
+    "pmid": "39929291",
+    "title": "Synergistic insights into positive allosteric modulator and agonist using Gaussian accelerated and tau random acceleration simulations in the metabotropic glutamate receptor 2.",
+    "year": "2025",
+    "journal": "Neuropharmacology"
+   },
+   {
+    "pmid": "40373293",
+    "title": "Triple Labeling Resolves a GPCR Intermediate State by Using Three-Color Single Molecule FRET.",
+    "year": "2025",
+    "journal": "J Am Chem Soc"
+   },
+   {
+    "pmid": "39909029",
+    "title": "Direct effect of membrane environment on the activation of mGluR2 revealed by single-molecule FRET.",
+    "year": "2025",
+    "journal": "Structure"
+   },
+   {
+    "pmid": "39747671",
+    "title": "Functional dynamics of G protein-coupled receptors reveal new routes for drug discovery.",
+    "year": "2025",
+    "journal": "Nat Rev Drug Discov"
+   },
+   {
+    "pmid": "39362861",
+    "title": "Elucidating the molecular logic of a metabotropic glutamate receptor heterodimer.",
+    "year": "2024",
+    "journal": "Nat Commun"
+   },
+   {
+    "pmid": "38739800",
+    "title": "Exploring the activation mechanism of metabotropic glutamate receptor 2.",
+    "year": "2024",
+    "journal": "Proc Natl Acad Sci U S A"
+   },
+   {
+    "pmid": "39609406",
+    "title": "Structural basis of orientated asymmetry in a mGlu heterodimer.",
+    "year": "2024",
+    "journal": "Nat Commun"
+   },
+   {
+    "pmid": "38173876",
+    "title": "Inhibitory effect of truncated isoforms on GPCR dimerization predicted by combinatorial computational strategy.",
+    "year": "2024",
+    "journal": "Comput Struct Biotechnol J"
+   },
+   {
+    "pmid": "39144551",
+    "title": "Radiosynthesis and Evaluation of 11C-Labeled Isoindolone-Based Positive Allosteric Modulators for Positron Emission Tomography Imaging of Metabotropic Glutamate Receptor 2.",
+    "year": "2024",
+    "journal": "ACS Pharmacol Transl Sci"
+   },
+   {
+    "pmid": "38604413",
+    "title": "Exploring GPCR conformational dynamics using single-molecule fluorescence.",
+    "year": "2024",
+    "journal": "Methods"
+   },
+   {
+    "pmid": "36980303",
+    "title": "Psychedelic Targeting of Metabotropic Glutamate Receptor 2 and Its Implications for the Treatment of Alcoholism.",
+    "year": "2023",
+    "journal": "Cells"
+   },
+   {
+    "pmid": "37039481",
+    "title": "Transmembrane protein CD69 acts as an S1PR1 agonist.",
+    "year": "2023",
+    "journal": "Elife"
+   },
+   {
+    "pmid": "36172629",
+    "title": "PET imaging studies to investigate functional expression of mGluR2 using [<sup>11</sup>C]mG2P001.",
+    "year": "2023",
+    "journal": "J Cereb Blood Flow Metab"
+   },
+   {
+    "pmid": "35775730",
+    "title": "Conformational fingerprinting of allosteric modulators in metabotropic glutamate receptor 2.",
+    "year": "2022",
+    "journal": "Elife"
+   },
+   {
+    "pmid": "35561187",
+    "title": "Coarse-graining protein structures into their dynamic communities with DCI, a dynamic community identifier.",
+    "year": "2022",
+    "journal": "Bioinformatics"
+   },
+   {
+    "pmid": "34194039",
+    "title": "G-protein activation by a metabotropic glutamate receptor.",
+    "year": "2021",
+    "journal": "Nature"
+   },
+   {
+    "pmid": "34521824",
+    "title": "Allosteric modulators enhance agonist efficacy by increasing the residence time of a GPCR in the active state.",
+    "year": "2021",
+    "journal": "Nat Commun"
+   },
+   {
+    "pmid": "32818870",
+    "title": "Covalent allosteric modulation: An emerging strategy for GPCRs drug discovery.",
+    "year": "2020",
+    "journal": "Eur J Med Chem"
+   }
+  ],
+  "hitCount": 132
+ },
+ "GRM5": {
+  "queries": [
+   "\"mGlu5\" AND (\"allosteric site\" OR MPEP OR \"transmembrane domain\")"
+  ],
+  "hits": [
+   {
+    "pmid": "41582453",
+    "title": "Discovery of 7-(Pyridin-3-yl)thieno[3,2-&lt;i&gt;b&lt;/i&gt;]pyridine-5-carboxamides as Negative Allosteric Modulators of Metabotropic Glutamate Receptor Subtype 5.",
+    "year": "2026",
+    "journal": "ACS Chem Neurosci"
+   },
+   {
+    "pmid": "42136057",
+    "title": "Metabotropic Glutamate Receptor-Dependent Synaptic Plasticity in Age-Related Neurodegenerative Disorders.",
+    "year": "2026",
+    "journal": "Neural Plast"
+   },
+   {
+    "pmid": "41803130",
+    "title": "CryoEM structure of mGlu6 captures receptor activation prior to G protein coupling.",
+    "year": "2026",
+    "journal": "Nat Commun"
+   },
+   {
+    "pmid": "42639338",
+    "title": "Modulating glutamate neurotransmission in &lt;i&gt;in vivo&lt;/i&gt; models of Multiple Sclerosis: a narrative review.",
+    "year": "2026",
+    "journal": "Front Immunol"
+   },
+   {
+    "pmid": "41549054",
+    "title": "Glutamate Receptors and Synaptic Plasticity in Health and Disease: A Personal Journey.",
+    "year": "2026",
+    "journal": "Hippocampus"
+   },
+   {
+    "pmid": "40739884",
+    "title": "MGlu5 Dependent Mitochondrial Translocation of PKC\u03b4: A Mechanism Raising Astrocytic Oxidative Metabolism in Response to Extracellular Glutamate.",
+    "year": "2025",
+    "journal": "J Neurochem"
+   },
+   {
+    "pmid": "39411936",
+    "title": "Metabotropic Glutamate Receptor 5: A Potential Target for Neuropathic Pain Treatment.",
+    "year": "2025",
+    "journal": "Curr Neuropharmacol"
+   },
+   {
+    "pmid": "41439987",
+    "title": "Modulation of Metabotropic Glutamate Receptors as a Strategy to Improve the Efficacy and Safety of Ketamine as an Antidepressant.",
+    "year": "2025",
+    "journal": "Cells"
+   },
+   {
+    "pmid": "40521617",
+    "title": "Apo-state structure of the metabotropic glutamate receptor 5 transmembrane domain obtained using a photoswitchable ligand.",
+    "year": "2025",
+    "journal": "Protein Sci"
+   },
+   {
+    "pmid": "40342162",
+    "title": "(R)-ketamine induces mGlu&lt;sub&gt;5&lt;/sub&gt; receptor-dependent antidepressant-like effects in the chronic unpredictable mild stress model of depression in mice.",
+    "year": "2025",
+    "journal": "Psychopharmacology (Berl)"
+   },
+   {
+    "pmid": "41073451",
+    "title": "Targeting metabotropic glutamate receptors for symptomatic and disease-modifying treatment in Parkinson's disease.",
+    "year": "2025",
+    "journal": "NPJ Parkinsons Dis"
+   },
+   {
+    "pmid": "40305303",
+    "title": "Activation of Endoplasmic Reticulum-Localized Metabotropic Glutamate Receptor 5 (mGlu&lt;sub&gt;5&lt;/sub&gt;) Triggers Calcium Release Distinct from Cell Surface Counterparts in Striatal Neurons.",
+    "year": "2025",
+    "journal": "Biomolecules"
+   },
+   {
+    "pmid": "39805839",
+    "title": "Conformational diversity in class C GPCR positive allosteric modulation.",
+    "year": "2025",
+    "journal": "Nat Commun"
+   },
+   {
+    "pmid": "40365396",
+    "title": "Discovery of Thieno[3,2-&lt;i&gt;b&lt;/i&gt;]pyridine-5-carboxamide and 2,3-Difluorobenzamide Negative Allosteric Modulators of Metabotropic Glutamate Receptor Subtype 5.",
+    "year": "2025",
+    "journal": "ACS Med Chem Lett"
+   },
+   {
+    "pmid": "39985105",
+    "title": "A type-5 metabotropic glutamate receptor-perineuronal net axis shapes the function of cortical GABAergic interneurons in chronic pain.",
+    "year": "2025",
+    "journal": "J Anesth Analg Crit Care"
+   },
+   {
+    "pmid": "40924453",
+    "title": "Spontaneous glutamate release activates mGluR signaling to drive rapid antidepressant responses.",
+    "year": "2025",
+    "journal": "Proc Natl Acad Sci U S A"
+   },
+   {
+    "pmid": "39462877",
+    "title": "Effects of positive mGlu5 modulation on D<sub>2</sub> signaling and nicotine-conditioned place preference: Mechanisms of epigenetic inheritance in a transgenerational model of drug abuse vulnerability in psychosis.",
+    "year": "2025",
+    "journal": "J Psychopharmacol"
+   },
+   {
+    "pmid": "39698283",
+    "title": "Pharmacology, Signaling and Therapeutic Potential of Metabotropic Glutamate Receptor 5 Negative Allosteric Modulators.",
+    "year": "2024",
+    "journal": "ACS Pharmacol Transl Sci"
+   },
+   {
+    "pmid": "38594257",
+    "title": "G protein-coupled receptors (GPCRs): advances in structures, mechanisms, and drug discovery.",
+    "year": "2024",
+    "journal": "Signal Transduct Target Ther"
+   },
+   {
+    "pmid": "38869515",
+    "title": "The mGlu5 receptor negative allosteric modulator mavoglurant reduces escalated cocaine self-administration in male and female rats.",
+    "year": "2024",
+    "journal": "Psychopharmacology (Berl)"
+   },
+   {
+    "pmid": "37631042",
+    "title": "Metabotropic Glutamate Receptor Subtype 5 Positron-Emission-Tomography Radioligands as a Tool for Central Nervous System Drug Development: Between Progress and Setbacks.",
+    "year": "2023",
+    "journal": "Pharmaceuticals (Basel)"
+   },
+   {
+    "pmid": "37759748",
+    "title": "Functional Interaction between Adenosine A<sub>2A</sub> and mGlu<sub>5</sub> Receptors Mediates STEP Phosphatase Activation and Promotes STEP/mGlu<sub>5</sub>R Binding in Mouse Hippocampus and Neuroblastoma Cell Line.",
+    "year": "2023",
+    "journal": "Biomolecules"
+   },
+   {
+    "pmid": "37354970",
+    "title": "Striatal mGlu<sub>5</sub>-mediated synaptic plasticity is independently regulated by location-specific receptor pools and divergent signaling pathways.",
+    "year": "2023",
+    "journal": "J Biol Chem"
+   },
+   {
+    "pmid": "35645791",
+    "title": "Targeting the Type 5 Metabotropic Glutamate Receptor: A Potential Therapeutic Strategy for Neurodegenerative Diseases?",
+    "year": "2022",
+    "journal": "Front Pharmacol"
+   },
+   {
+    "pmid": "36149353",
+    "title": "Structure-Based Discovery of Negative Allosteric Modulators of the Metabotropic Glutamate Receptor 5.",
+    "year": "2022",
+    "journal": "ACS Chem Biol"
+   }
+  ],
+  "hitCount": 914
+ },
+ "MEN1": {
+  "queries": [
+   "menin AND (MLL OR inhibitor) AND (pocket OR \"binding site\") AND structure"
+  ],
+  "hits": [
+   {
+    "pmid": "42587807",
+    "title": "Targeting DOT1L Epigenetic Moonlighting in MLL-Rearranged Leukemia.",
+    "year": "2026",
+    "journal": "Cells"
+   },
+   {
+    "pmid": "41849234",
+    "title": "Discovery and preclinical activity of the menin-KMT2A inhibitor ziftomenib in acute leukemia models.",
+    "year": "2026",
+    "journal": "Blood"
+   },
+   {
+    "pmid": "42122138",
+    "title": "Acute Myeloid Leukemias with Alterations of Lysine Methyltransferase 2A (KMT2A): Recent Therapeutic Developments.",
+    "year": "2026",
+    "journal": "Cancers (Basel)"
+   },
+   {
+    "pmid": "41749890",
+    "title": "Menin Inhibition in Acute Myeloid MLL Rearranged Leukemias: A New Target for Precision Care.",
+    "year": "2026",
+    "journal": "Cancers (Basel)"
+   },
+   {
+    "pmid": "42103719",
+    "title": "CRISPR base editor screening identifies spectrum of MEN1 mutations impacting menin inhibitors in clinical trials.",
+    "year": "2026",
+    "journal": "Nat Commun"
+   },
+   {
+    "pmid": "42180980",
+    "title": "Targeting \"undruggable\" cancer proteins: pharmacological challenges and emerging strategies.",
+    "year": "2026",
+    "journal": "Transl Cancer Res"
+   },
+   {
+    "pmid": "41934676",
+    "title": "Targeting the Menin-KMT2A Interface: Medicinal Chemistry Rules Governing Reversible, Covalent, and Degrader Inhibitors.",
+    "year": "2026",
+    "journal": "Chem Biol Drug Des"
+   },
+   {
+    "pmid": "42278415",
+    "title": "Menin Inhibition in Acute Myeloid Leukemia: Rewiring Leukemic Transcriptional Networks.",
+    "year": "2026",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "42466468",
+    "title": "FLT3 inhibitors in AML: from classic scaffolds to next-generation approaches.",
+    "year": "2026",
+    "journal": "RSC Adv"
+   },
+   {
+    "pmid": "42519171",
+    "title": "Menin inhibitors as a treatment for acute leukemia: from bench to the clinic.",
+    "year": "2026",
+    "journal": "Blood Neoplasia"
+   },
+   {
+    "pmid": "41864982",
+    "title": "Disrupting the ASH2L-DPY30 PPI in cancer: structure, function, and therapeutic opportunities in H3K4 methylation.",
+    "year": "2026",
+    "journal": "Epigenetics Chromatin"
+   },
+   {
+    "pmid": "42454046",
+    "title": "NAT10: a potential factor to reverse tumor chemotherapy resistance and radioresistance (Review).",
+    "year": "2026",
+    "journal": "Front Immunol"
+   },
+   {
+    "pmid": "41595753",
+    "title": "Menin Inhibition in Acute Myeloid Leukemia: Pathobiology, Progress and Promise.",
+    "year": "2026",
+    "journal": "Biomedicines"
+   },
+   {
+    "pmid": "41970232",
+    "title": "The Histone-Lysine N-Methyltransferase (KMT2) Family in Health and Disease.",
+    "year": "2026",
+    "journal": "MedComm (2020)"
+   },
+   {
+    "pmid": "42345827",
+    "title": "Nevermore: Target-Conditioned Protein-Ligand Representation Learning for Multi-Objective Lead Optimization with Database-Grounded Retrieval.",
+    "year": "2026",
+    "journal": "Biology (Basel)"
+   },
+   {
+    "pmid": "41386877",
+    "title": "Identification of novel Menin-MLL interaction inhibitors targeting leukemia using in-silico virtual screening and structure-based drug design approaches.",
+    "year": "2025",
+    "journal": "J Genet Eng Biotechnol"
+   },
+   {
+    "pmid": "41281909",
+    "title": "A new KAT on the block rewrites the epigenetic script in menin inhibitor-resistant leukemia.",
+    "year": "2025",
+    "journal": "Hemasphere"
+   },
+   {
+    "pmid": "41051795",
+    "title": "Chromatin Regulatory Targets for Anticancer Therapeutics.",
+    "year": "2025",
+    "journal": "Chem Rev"
+   },
+   {
+    "pmid": "41009603",
+    "title": "Therapeutic Targeting of Protein Lysine and Arginine Methyltransferases: Principles and Strategies for Inhibitor Design.",
+    "year": "2025",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "40921261",
+    "title": "KMT2A-rearranged leukemia: from mechanism to drug development.",
+    "year": "2025",
+    "journal": "Exp Hematol"
+   },
+   {
+    "pmid": "40152985",
+    "title": "Menin: from molecular insights to clinical impact.",
+    "year": "2025",
+    "journal": "Epigenomics"
+   },
+   {
+    "pmid": "41003912",
+    "title": "Targeted and epigenetic therapies for acute myeloid leukemia treatment.",
+    "year": "2025",
+    "journal": "Discov Oncol"
+   },
+   {
+    "pmid": "40227641",
+    "title": "Recent Developments in Differentiation Therapy of Acute Myeloid Leukemia.",
+    "year": "2025",
+    "journal": "Cancers (Basel)"
+   },
+   {
+    "pmid": "41169259",
+    "title": "DOT1L as a Therapeutic Target: Insights into Epigenetic Regulation and Cancer Treatment.",
+    "year": "2025",
+    "journal": "Biomol Ther (Seoul)"
+   },
+   {
+    "pmid": "39594699",
+    "title": "Targeting Menin in Acute Myeloid Leukemia: Therapeutic Advances and Future Directions.",
+    "year": "2024",
+    "journal": "Cancers (Basel)"
+   }
+  ],
+  "hitCount": 606
+ },
+ "TMEM97": {
+  "queries": [
+   "\"sigma-2 receptor\" AND (\"binding site\" OR pocket) AND (structure OR crystal)"
+  ],
+  "hits": [
+   {
+    "pmid": "42741631",
+    "title": "Crystal Structure of the Sigma\u20112 Receptor Complexed with Investigational Drug Zervimesine (CT1812).",
+    "year": "2026",
+    "journal": "ACS Med Chem Lett"
+   },
+   {
+    "pmid": "42519026",
+    "title": "TMEM97 regulates cholesterol biosynthesis and mitochondrial metabolism in gastric carcinoma.",
+    "year": "2026",
+    "journal": "iScience"
+   },
+   {
+    "pmid": "41679899",
+    "title": "Neurorestorative properties of ibogaine: linking multi-receptor affinities to remyelination and metabolic restoration.",
+    "year": "2026",
+    "journal": "Acta Neuropsychiatr"
+   },
+   {
+    "pmid": "42041782",
+    "title": "Targeting Sigma-1 and Sigma-2 Receptors in Neuropathic Pain: Pharmacology, Ligand Development, and Translational Progress.",
+    "year": "2026",
+    "journal": "Brain Sci"
+   },
+   {
+    "pmid": "41196005",
+    "title": "Asymmetric Dynamics Between the Protomers of the \u03c32 Receptor Homodimer.",
+    "year": "2025",
+    "journal": "J Chem Inf Model"
+   },
+   {
+    "pmid": "40556780",
+    "title": "Discovery of Iboga-Derived Ligands for the Sigma\u20112 Receptor.",
+    "year": "2025",
+    "journal": "ACS Bio Med Chem Au"
+   },
+   {
+    "pmid": "40672668",
+    "title": "Sigma\u20112 Receptor/Transmembrane Protein 97 in Pain Modulation: Tracing Historical Roots and Current Research Directions.",
+    "year": "2025",
+    "journal": "ACS Pharmacol Transl Sci"
+   },
+   {
+    "pmid": "39887934",
+    "title": "Design and Synthesis of Tetrahydropyrrolo[3,4-c]Pyrazole Sigma-1 Receptor Ligands.",
+    "year": "2025",
+    "journal": "ChemMedChem"
+   },
+   {
+    "pmid": "41378345",
+    "title": "Advancing depression treatment: the role of sigma receptor ligands.",
+    "year": "2025",
+    "journal": "Front Neurosci"
+   },
+   {
+    "pmid": "39941036",
+    "title": "2-{&lt;i&gt;N&lt;/i&gt;-[\u03c9-(1-Benzylpiperidin-4-yl)alkyl]amino}-6-[(prop-2-yn-1-yl)amino]pyridine-3,5-dicarbonitriles Showing High Affinity for \u03c3&lt;sub&gt;1/2&lt;/sub&gt; Receptors.",
+    "year": "2025",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "41195793",
+    "title": "Veraguamide E, a Marine Cyanobacterial Depsipeptide Targeting \u03c3&lt;sub&gt;2&lt;/sub&gt;R/TMEM97: Chemical and Neurobiological Characterization.",
+    "year": "2025",
+    "journal": "J Nat Prod"
+   },
+   {
+    "pmid": "40392301",
+    "title": "Roluperidone monotherapy, a treatment for negative symptoms in schizophrenia.",
+    "year": "2025",
+    "journal": "Int J Neuropsychopharmacol"
+   },
+   {
+    "pmid": "40339216",
+    "title": "Synthesis and in vivo biological characterization of six carbon-11 sigma-1 receptor radiotracers in rodent and nonhuman primate.",
+    "year": "2025",
+    "journal": "Bioorg Med Chem"
+   },
+   {
+    "pmid": "41488323",
+    "title": "Sigma receptors and mitochondria-associated ER membranes are converging therapeutic targets for Alzheimer's disease.",
+    "year": "2025",
+    "journal": "Front Neurosci"
+   },
+   {
+    "pmid": "38721480",
+    "title": "Recent Developments in Sigma-2 Receptor Compounds for Pain.",
+    "year": "2024",
+    "journal": "Cureus"
+   },
+   {
+    "pmid": "38432153",
+    "title": "Structure-Affinity relationships of novel \u03c3<sub>2</sub>R/TMEM97 ligands.",
+    "year": "2024",
+    "journal": "Bioorg Chem"
+   },
+   {
+    "pmid": "39656791",
+    "title": "TargetSA: adaptive simulated annealing for target-specific drug design.",
+    "year": "2024",
+    "journal": "Bioinformatics"
+   },
+   {
+    "pmid": "39726303",
+    "title": "Design, Synthesis, and Evaluation of Novel (-)-cis-N-Normetazocine Derivatives: In\u00a0Vitro and\u00a0Molecular Modeling Insights.",
+    "year": "2024",
+    "journal": "Chem Biol Drug Des"
+   },
+   {
+    "pmid": "37259459",
+    "title": "Computational Chemistry for the Identification of Lead Compounds for Radiotracer Development.",
+    "year": "2023",
+    "journal": "Pharmaceuticals (Basel)"
+   },
+   {
+    "pmid": "37298633",
+    "title": "BS148 Reduces the Aggressiveness of Metastatic Melanoma via Sigma-2 Receptor Targeting.",
+    "year": "2023",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "37958850",
+    "title": "The Intriguing Sigma-1 and Sigma-2 Receptors and Their Potential Therapeutic Roles 2.0.",
+    "year": "2023",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "36559015",
+    "title": "Characterization of Sigma-2 Receptor-Specific Binding Sites Using [<sup>3</sup>H]DTG and [<sup>125</sup>I]RHM-4.",
+    "year": "2022",
+    "journal": "Pharmaceuticals (Basel)"
+   },
+   {
+    "pmid": "35919619",
+    "title": "Selectivity profile comparison for certain \u03b3-butyrolactone and oxazolidinone-based ligands on a sigma 2 receptor over sigma 1: a molecular docking approach.",
+    "year": "2022",
+    "journal": "RSC Adv"
+   },
+   {
+    "pmid": "35897835",
+    "title": "Exploration of Diazaspiro Cores as Piperazine Bioisosteres in the Development of \u03c32 Receptor Ligands.",
+    "year": "2022",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "34832669",
+    "title": "Highly Specific Sigma Receptor Ligands Exhibit Anti-Viral Properties in SARS-CoV-2 Infected Cells.",
+    "year": "2021",
+    "journal": "Pathogens"
+   }
+  ],
+  "hitCount": 189
+ },
+ "NPSR": {
+  "queries": [
+   "\"neuropeptide S receptor\" AND (pocket OR site OR structure)"
+  ],
+  "hits": [
+   {
+    "pmid": "42642814",
+    "title": "Not Quite Folded: Challenges in Predicting the hNPS-hNPSR-Ile107 Complex With AlphaFold2 Multimer.",
+    "year": "2026",
+    "journal": "ChemMedChem"
+   },
+   {
+    "pmid": "42458892",
+    "title": "Recent Overview on the Molecular Hybrids Integrated With Benzosuberone/Benzo[7]annulene Derivatives as Multi-Target Therapeutics.",
+    "year": "2026",
+    "journal": "Arch Pharm (Weinheim)"
+   },
+   {
+    "pmid": "42069596",
+    "title": "Neuropeptide S modulation of learning and memory: a systematic review.",
+    "year": "2026",
+    "journal": "Behav Brain Funct"
+   },
+   {
+    "pmid": "42750652",
+    "title": "Emerging genetics of sleep and circadian disorders.",
+    "year": "2026",
+    "journal": "Curr Opin Pediatr"
+   },
+   {
+    "pmid": "41627613",
+    "title": "Neuropeptide S Protects Dopaminergic Neurons in a Paraquat-Induced Parkinson's Model Using SH-SY5Y Cells.",
+    "year": "2026",
+    "journal": "Mol Neurobiol"
+   },
+   {
+    "pmid": "42269381",
+    "title": "International Union of Basic and Clinical Pharmacology. CXXII. Applying an objective evaluation to the status of class A orphan G protein-coupled receptors.",
+    "year": "2026",
+    "journal": "Pharmacol Rev"
+   },
+   {
+    "pmid": "40931166",
+    "title": "Genetic and epigenetic analysis of plasma glial fibrillary acidic protein (GFAP) levels in PTSD.",
+    "year": "2026",
+    "journal": "Mol Psychiatry"
+   },
+   {
+    "pmid": "41654135",
+    "title": "A brain-gut excitatory peptide/CCHamide homolog regulates satiation and motivational state transitions in the Aplysia feeding circuit.",
+    "year": "2026",
+    "journal": "J Biol Chem"
+   },
+   {
+    "pmid": "41554049",
+    "title": "Turning heterogeneity of statistical epistasis networks to an advantage.",
+    "year": "2026",
+    "journal": "Brief Bioinform"
+   },
+   {
+    "pmid": "41201978",
+    "title": "Monogenic Contributions to Familial Endometriosis: A Scoping Review.",
+    "year": "2026",
+    "journal": "Gynecol Obstet Invest"
+   },
+   {
+    "pmid": "41527028",
+    "title": "The transcriptomics and differential gene expression of freezing and thawing in a freeze-tolerant vertebrate.",
+    "year": "2026",
+    "journal": "BMC Genomics"
+   },
+   {
+    "pmid": "40910272",
+    "title": "Patient-Derived Organoids from Multiple Sites of a Single Tumor Recapitulates Intratumoral Heterogeneity in Patients with Gastric Cancer.",
+    "year": "2026",
+    "journal": "Gut Liver"
+   },
+   {
+    "pmid": "42041586",
+    "title": "Microphthalmia/Transcription Factor E (MiT/TFE) Pathways in Pulmonary Diseases: Current Evidence and Emerging Mechanisms.",
+    "year": "2026",
+    "journal": "Cells"
+   },
+   {
+    "pmid": "41461581",
+    "title": "The Concise Guide to PHARMACOLOGY 2025/26: G protein-coupled receptors.",
+    "year": "2025",
+    "journal": "Br J Pharmacol"
+   },
+   {
+    "pmid": "42779609",
+    "title": "CRISPR-Cas9 system in autosomal dominant polycystic kidney disease: a comprehensive review.",
+    "year": "2025",
+    "journal": "Child Kidney Dis"
+   },
+   {
+    "pmid": "40448344",
+    "title": "Recent Findings in N6-Methyladenosine Modification and Significance in Pancreatic Cancer.",
+    "year": "2025",
+    "journal": "Cancer Med"
+   },
+   {
+    "pmid": "40758097",
+    "title": "Neuropeptide S pathway in PTSD and neuropsychiatric disorders: A review.",
+    "year": "2025",
+    "journal": "Biomol Biomed"
+   },
+   {
+    "pmid": "40022159",
+    "title": "Mesenchymal stem cells overexpressing neuropeptide S promote the recovery of rats with spinal cord injury by activating the PI3K/AKT/GSK3\u03b2 signaling pathway.",
+    "year": "2025",
+    "journal": "Stem Cell Res Ther"
+   },
+   {
+    "pmid": "40133993",
+    "title": "Parent-of-Origin Effects in Childhood Asthma at Seven Years of Age.",
+    "year": "2025",
+    "journal": "Genet Epidemiol"
+   },
+   {
+    "pmid": "40885755",
+    "title": "Elevated hexosylceramides in Parkinson's disease cause gene upregulations in neurons mimicking responses to pathogens.",
+    "year": "2025",
+    "journal": "NPJ Parkinsons Dis"
+   },
+   {
+    "pmid": "38517694",
+    "title": "GPCR-IPL score: multilevel featurization of GPCR-ligand interaction patterns and prediction of ligand functions from selectivity to biased activation.",
+    "year": "2024",
+    "journal": "Brief Bioinform"
+   },
+   {
+    "pmid": "39127786",
+    "title": "Uncovering chikungunya virus-encoded miRNAs and host-specific targeted genes associated with antiviral immune responses: an integrated bioinformatics approach.",
+    "year": "2024",
+    "journal": "Sci Rep"
+   },
+   {
+    "pmid": "39167471",
+    "title": "Impact of NPSR1 gene variation on the neural correlates of phasic and sustained fear in spider phobia-an imaging genetics and independent replication approach.",
+    "year": "2024",
+    "journal": "Soc Cogn Affect Neurosci"
+   },
+   {
+    "pmid": "33848721",
+    "title": "New quinolone derivatives as neuropeptide S receptor antagonists: Design, synthesis, homology modeling, dynamic simulations and modulation of Gq/Gs signaling pathways.",
+    "year": "2021",
+    "journal": "Bioorg Chem"
+   },
+   {
+    "pmid": "33332443",
+    "title": "Neuropeptide S receptor gene Asn107 polymorphism in obese male individuals in Pakistan.",
+    "year": "2020",
+    "journal": "PLoS One"
+   }
+  ],
+  "hitCount": 270
+ },
+ "PMP22": {
+  "queries": [
+   "\"peripheral myelin protein 22\" AND (structure OR pocket OR cavity)"
+  ],
+  "hits": [
+   {
+    "pmid": "42371158",
+    "title": "Genetic spectrum and clinical features of PMP22 point mutations in Japanese Charcot-Marie-Tooth disease.",
+    "year": "2026",
+    "journal": "J Neurol"
+   },
+   {
+    "pmid": "42320627",
+    "title": "Stable and tunable expression of human peripheral myelin protein 22 in Rat Schwann cells.",
+    "year": "2026",
+    "journal": "J Biol Chem"
+   },
+   {
+    "pmid": "41639668",
+    "title": "Lipid alterations in hereditary peripheral neuropathies: common mechanisms in disease heterogeneity?",
+    "year": "2026",
+    "journal": "Mol Neurodegener"
+   },
+   {
+    "pmid": "42573659",
+    "title": "Association of tumor Schwann cells with epithelial-mesenchymal transition and immune-suppressive microenvironment in triple-negative breast cancer.",
+    "year": "2026",
+    "journal": "Breast Cancer Res Treat"
+   },
+   {
+    "pmid": "41400104",
+    "title": "Aberrant Molecular Myelin Architecture in Charcot-Marie-Tooth Disease Type 1A and Hereditary Neuropathy With Liability to Pressure Palsies.",
+    "year": "2026",
+    "journal": "Glia"
+   },
+   {
+    "pmid": "41507260",
+    "title": "Metabolic signatures in sciatic nerve of PMP22 transgenic rats provide insights into the pathogenesis of charcot-marie-tooth disease type 1\u00a0A.",
+    "year": "2026",
+    "journal": "Sci Rep"
+   },
+   {
+    "pmid": "42159481",
+    "title": "Peripheral Myelin Protein-22 and Its Prominence in Charcot-Marie-Tooth Disease.",
+    "year": "2026",
+    "journal": "Chem Rev"
+   },
+   {
+    "pmid": "42335239",
+    "title": "Protein-enhanced small molecule disruptors of ordered membrane domains.",
+    "year": "2026",
+    "journal": "Proc Natl Acad Sci U S A"
+   },
+   {
+    "pmid": "41750400",
+    "title": "ABCA1: A Therapeutic Target for Improving Cholesterol Homeostasis in Peripheral Neuropathies.",
+    "year": "2026",
+    "journal": "Biomolecules"
+   },
+   {
+    "pmid": "41595476",
+    "title": "Hereditary Polyneuropathies in the Era of Precision Medicine: Genetic Complexity and Emerging Strategies.",
+    "year": "2026",
+    "journal": "Genes (Basel)"
+   },
+   {
+    "pmid": "41527951",
+    "title": "Exploring the application of shear stress in erectile dysfunction.",
+    "year": "2026",
+    "journal": "Asian J Androl"
+   },
+   {
+    "pmid": "42589716",
+    "title": "Beyond Neurodegeneration: White Matter Vacuolation as a Primary Myelin Defect.",
+    "year": "2026",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "42326309",
+    "title": "A Rare Instance of Concordant Charcot-Marie-Tooth Disease and Familial Partial Lipodystrophy Type 2.",
+    "year": "2026",
+    "journal": "Cureus"
+   },
+   {
+    "pmid": "42346105",
+    "title": "Axonal Transport Failure as a Cellular Mechanism of Diabetic Neuropathy.",
+    "year": "2026",
+    "journal": "Cells"
+   },
+   {
+    "pmid": "41507418",
+    "title": "Pharmacological tools to modulate ordered membrane domains and order-dependent protein function.",
+    "year": "2026",
+    "journal": "Commun Chem"
+   },
+   {
+    "pmid": "40985697",
+    "title": "INF2-Related Charcot-Marie-Tooth Disease in a Japanese Cohort: Genetic and Clinical Insights.",
+    "year": "2026",
+    "journal": "Ann Clin Transl Neurol"
+   },
+   {
+    "pmid": "40851281",
+    "title": "Two Cases of Charcot-Marie-Tooth Disease Diagnosed in a 53-Year-Old Mother and a 24-Year-Old Daughter.",
+    "year": "2025",
+    "journal": "Am J Case Rep"
+   },
+   {
+    "pmid": "41300538",
+    "title": "Evaluation of Dexamethasone and Swimming Exercise as Complementary Interventions in a Rat Sciatic Nerve Injury Model.",
+    "year": "2025",
+    "journal": "Antioxidants (Basel)"
+   },
+   {
+    "pmid": "40553789",
+    "title": "Unifying perspectives on the activity and genotypic targeting of pharmacological chaperones.",
+    "year": "2025",
+    "journal": "J Biol Chem"
+   },
+   {
+    "pmid": "40758889",
+    "title": "A recurrent de novo damaging variant in &lt;i&gt;EMP2&lt;/i&gt; causes progressive symmetric erythrokeratoderma.",
+    "year": "2025",
+    "journal": "Proc Natl Acad Sci U S A"
+   },
+   {
+    "pmid": "40026692",
+    "title": "A case report of a MODY6 patient coexistence with Charcot-Marie-Toothe 1A syndrome.",
+    "year": "2025",
+    "journal": "Front Endocrinol (Lausanne)"
+   },
+   {
+    "pmid": "40426085",
+    "title": "From prenatal detection to postnatal evaluation: a retrospective observational ultrasound study of patent urachus with allantoic cyst.",
+    "year": "2025",
+    "journal": "BMC Pregnancy Childbirth"
+   },
+   {
+    "pmid": "39533607",
+    "title": "Middle ear cholesteatoma and facial nerve hypertrophy mimicking schwannoma in Charcot-Marie-Tooth disease: A case report.",
+    "year": "2024",
+    "journal": "Medicine (Baltimore)"
+   },
+   {
+    "pmid": "38883400",
+    "title": "Optimizing NMR fragment-based drug screening for membrane protein targets.",
+    "year": "2024",
+    "journal": "J Struct Biol X"
+   },
+   {
+    "pmid": "36581210",
+    "title": "How T118M peripheral myelin protein 22 predisposes humans to Charcot-Marie-Tooth disease.",
+    "year": "2023",
+    "journal": "J Biol Chem"
+   }
+  ],
+  "hitCount": 829
+ },
+ "ALOX15": {
+  "queries": [
+   "\"15-lipoxygenase\" AND (\"catalytic pocket\" OR \"active site\" OR inhibitor) AND structure"
+  ],
+  "hits": [
+   {
+    "pmid": "42284635",
+    "title": "Synthetic heterocyclic scaffolds relevant to human 15-lipoxygenase-2 (h15-LOX-2) inhibition: Scaffold diversity, structure-activity relationships, selectivity challenges, and future directions.",
+    "year": "2026",
+    "journal": "Eur J Med Chem"
+   },
+   {
+    "pmid": "42814179",
+    "title": "A molecular modeling and machine learning-based approach for the identification of potential human ALOX15 inhibitors.",
+    "year": "2026",
+    "journal": "J Mol Model"
+   },
+   {
+    "pmid": "42360035",
+    "title": "Light-Controlled Modulation of 15-Lipoxygenase-1 Regulates Intestinal Inflammatory Signaling.",
+    "year": "2026",
+    "journal": "Angew Chem Int Ed Engl"
+   },
+   {
+    "pmid": "41654134",
+    "title": "Allosteric properties of mammalian ALOX15 orthologs.",
+    "year": "2026",
+    "journal": "J Biol Chem"
+   },
+   {
+    "pmid": "42074092",
+    "title": "Identification of a Potential Dual-Target Candidate Against RSV F Protein and 15-LOX from TCMSP: Integrating Virtual Screening, Molecular Dynamics, and Experimental Evaluation.",
+    "year": "2026",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "42645726",
+    "title": "Silencing arachidonate 15-lipoxygenase alleviates hypoxia-induced cognitive impairment through the mediation of phospholipase A2 group IVC-LPC18:0 to suppress ferroptosis.",
+    "year": "2026",
+    "journal": "Mol Biomed"
+   },
+   {
+    "pmid": "41976564",
+    "title": "Integrative Network Pharmacology and Molecular Docking Analysis Uncovers Multi-Target Mechanisms of Alpha-Mangostin Against Acute Kidney Injury.",
+    "year": "2026",
+    "journal": "Foods"
+   },
+   {
+    "pmid": "42513221",
+    "title": "Structural Improvement of the Allosteric ALOX15 Inhibitor Octyl (&lt;i&gt;N&lt;/i&gt;-(5-(1&lt;i&gt;H&lt;/i&gt;-Indol-2-yl)-2-methoxyphenyl)sulfamoyl)carbamate.",
+    "year": "2026",
+    "journal": "Molecules"
+   },
+   {
+    "pmid": "42763923",
+    "title": "In Vitro Anti-Inflammatory Activity of Sour Cherry (Prunus cerasus L.) Seed Oil and Computational Safety Profiling.",
+    "year": "2026",
+    "journal": "Chem Biodivers"
+   },
+   {
+    "pmid": "42796521",
+    "title": "Bioassay-Guided Evaluation and LC-MS/MS Characterization of Five &lt;i&gt;Limonia acidissima&lt;/i&gt; L. Plant Parts: A Multitarget Approach Against Acne Vulgaris.",
+    "year": "2026",
+    "journal": "Molecules"
+   },
+   {
+    "pmid": "42364378",
+    "title": "Insight into the reactivity and antitumoral potential of allyl rhodanine derivatives: Azomethine ylide cycloadditions, molecular docking, and SAR studies.",
+    "year": "2026",
+    "journal": "Bioorg Chem"
+   },
+   {
+    "pmid": "42794485",
+    "title": "Special Issue \"Antiviral Drugs Discovery\".",
+    "year": "2026",
+    "journal": "Int J Mol Sci"
+   },
+   {
+    "pmid": "42796437",
+    "title": "Capturing Fast Gas Migration in Proteins.",
+    "year": "2026",
+    "journal": "Molecules"
+   },
+   {
+    "pmid": "42422585",
+    "title": "AI-Powered Discovery of Rosmarinic Acid as a Novel Ferroptosis Inhibitor for Ulcerative Colitis via Targeting the ALOX15-VDAC1 Axis.",
+    "year": "2026",
+    "journal": "Research (Wash D C)"
+   },
+   {
+    "pmid": "42561118",
+    "title": "Phytochemical Profiling and Biological Evaluation of Anthyllis henoniana Organs: Integrated In Vitro and Molecular Docking Insights Into Antioxidant, Anti-Inflammatory, and Cytotoxic Potential.",
+    "year": "2026",
+    "journal": "Chem Biodivers"
+   },
+   {
+    "pmid": "40590183",
+    "title": "Activating human 15-lipoxygenase-1 beyond flatland: discovery of non-aromatic modulators.",
+    "year": "2025",
+    "journal": "Org Biomol Chem"
+   },
+   {
+    "pmid": "40842924",
+    "title": "&lt;i&gt;Khaya grandifololia&lt;/i&gt; exerts multitarget neuroprotective potential against neurodegenerative disorders: &lt;i&gt;In vitro&lt;/i&gt; and &lt;i&gt;in silico&lt;/i&gt; studies.",
+    "year": "2025",
+    "journal": "IBRO Neurosci Rep"
+   },
+   {
+    "pmid": "40245701",
+    "title": "The presence of substrate warrants oxygen access tunnels toward the catalytic site of lipoxygenases.",
+    "year": "2025",
+    "journal": "Redox Biol"
+   },
+   {
+    "pmid": "40132494",
+    "title": "Novel 15-lipoxygenase-1 inhibitor protects cells from RSL3-induced cell death.",
+    "year": "2025",
+    "journal": "Eur J Med Chem"
+   },
+   {
+    "pmid": "39700339",
+    "title": "Identification of Novel Human 15-Lipoxygenase-2 (h15-LOX-2) Inhibitors Using a Virtual Screening Approach.",
+    "year": "2025",
+    "journal": "J Med Chem"
+   },
+   {
+    "pmid": "39523872",
+    "title": "Crafting Molecular Tools for 15-Lipoxygenase-1 in a Single Step.",
+    "year": "2025",
+    "journal": "Angew Chem Int Ed Engl"
+   },
+   {
+    "pmid": "41011255",
+    "title": "Hybrid and Chimeric Heterocycles for the Inhibition of Carbonic Anhydrases.",
+    "year": "2025",
+    "journal": "Pharmaceuticals (Basel)"
+   },
+   {
+    "pmid": "38619209",
+    "title": "Single and multiple inhibitors of the biosynthesis of 5-, 12-, 15-lipoxygenase products derived from cinnamyl-3,4-dihydroxy-\u03b1-cyanocinnamate: Synthesis and structure-activity relationship.",
+    "year": "2024",
+    "journal": "Drug Dev Res"
+   },
+   {
+    "pmid": "39569345",
+    "title": "Synthesis and biological evaluation of diclofenac acid derivatives as potential lipoxygenase and \u03b1-glucosidase inhibitors.",
+    "year": "2024",
+    "journal": "R Soc Open Sci"
+   },
+   {
+    "pmid": "39124908",
+    "title": "Investigation of the Anti-Inflammatory Properties of Bioactive Compounds from <i>Olea europaea</i>: In Silico Evaluation of Cyclooxygenase Enzyme Inhibition and Pharmacokinetic Profiling.",
+    "year": "2024",
+    "journal": "Molecules"
+   }
+  ],
+  "hitCount": 2165
+ }
+}
