@@ -1,0 +1,52 @@
+{
+ "pubchem": {
+  "alpidem": {
+   "PropertyTable": {
+    "Properties": [
+     {
+      "CID": 54897,
+      "MolecularFormula": "C21H23Cl2N3O",
+      "MolecularWeight": "404.3",
+      "SMILES": "CCCN(CCC)C(=O)CC1=C(N=C2N1C=C(C=C2)Cl)C3=CC=C(C=C3)Cl",
+      "ConnectivitySMILES": "CCCN(CCC)C(=O)CC1=C(N=C2N1C=C(C=C2)Cl)C3=CC=C(C=C3)Cl",
+      "InChIKey": "JRTIDHTUMYMPRU-UHFFFAOYSA-N"
+     }
+    ]
+   }
+  },
+  "zolpidem": {
+   "PropertyTable": {
+    "Properties": [
+     {
+      "CID": 5732,
+      "MolecularFormula": "C19H21N3O",
+      "MolecularWeight": "307.4",
+      "ConnectivitySMILES": "CC1=CC=C(C=C1)C2=C(N3C=C(C=CC3=N2)C)CC(=O)N(C)C",
+      "InChIKey": "ZAFYATHCZYHLPB-UHFFFAOYSA-N"
+     }
+    ]
+   }
+  }
+ },
+ "chembl": {
+  "alpidem": [],
+  "zolpidem": [
+   {
+    "chembl_id": "CHEMBL911",
+    "pref_name": "ZOLPIDEM",
+    "synonyms": [
+     "Sanval",
+     "Zolpidem",
+     "Zolpidem",
+     "Zolpidem",
+     "Zolpidem",
+     "Zolpidem",
+     "Zolpidem civ"
+    ],
+    "max_phase": "4.0",
+    "inchikey": null,
+    "smiles": "Cc1ccc(-c2nc3ccc(C)cn3c2CC(=O)N(C)C)cc1"
+   }
+  ]
+ }
+}

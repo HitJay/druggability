@@ -1,0 +1,1307 @@
+{
+ "gene_map": {
+  "140674": {
+   "symbol": "Gabrg1",
+   "name": "gamma-aminobutyric acid type A receptor subunit gamma 1",
+   "org": "Rattus norvegicus"
+  },
+  "140675": {
+   "symbol": "Gabra4",
+   "name": "gamma-aminobutyric acid type A receptor subunit alpha 4",
+   "org": "Rattus norvegicus"
+  },
+  "1544": {
+   "symbol": "CYP1A2",
+   "name": "cytochrome P450 family 1 subfamily A member 2",
+   "org": "Homo sapiens"
+  },
+  "1551": {
+   "symbol": "CYP3A7",
+   "name": "cytochrome P450 family 3 subfamily A member 7",
+   "org": "Homo sapiens"
+  },
+  "1557": {
+   "symbol": "CYP2C19",
+   "name": "cytochrome P450 family 2 subfamily C member 19",
+   "org": "Homo sapiens"
+  },
+  "1559": {
+   "symbol": "CYP2C9",
+   "name": "cytochrome P450 family 2 subfamily C member 9",
+   "org": "Homo sapiens"
+  },
+  "1565": {
+   "symbol": "CYP2D6",
+   "name": "cytochrome P450 family 2 subfamily D member 6 (gene/pseudogene)",
+   "org": "Homo sapiens"
+  },
+  "1576": {
+   "symbol": "CYP3A4",
+   "name": "cytochrome P450 family 3 subfamily A member 4",
+   "org": "Homo sapiens"
+  },
+  "2099": {
+   "symbol": "ESR1",
+   "name": "estrogen receptor 1",
+   "org": "Homo sapiens"
+  },
+  "2101": {
+   "symbol": "ESRRA",
+   "name": "estrogen related receptor alpha",
+   "org": "Homo sapiens"
+  },
+  "213": {
+   "symbol": "ALB",
+   "name": "albumin",
+   "org": "Homo sapiens"
+  },
+  "24230": {
+   "symbol": "Tspo",
+   "name": "translocator protein",
+   "org": "Rattus norvegicus"
+  },
+  "24831": {
+   "symbol": "Thrb",
+   "name": "thyroid hormone receptor beta",
+   "org": "Rattus norvegicus"
+  },
+  "24922": {
+   "symbol": "Gabrb3",
+   "name": "gamma-aminobutyric acid type A receptor subunit beta 3",
+   "org": "Rattus norvegicus"
+  },
+  "24947": {
+   "symbol": "Gabra3",
+   "name": "gamma-aminobutyric acid type A receptor subunit alpha 3",
+   "org": "Rattus norvegicus"
+  },
+  "25450": {
+   "symbol": "Gabrb1",
+   "name": "gamma-aminobutyric acid type A receptor subunit beta1",
+   "org": "Rattus norvegicus"
+  },
+  "25451": {
+   "symbol": "Gabrb2",
+   "name": "gamma-aminobutyric acid type A receptor subunit beta 2",
+   "org": "Rattus norvegicus"
+  },
+  "289606": {
+   "symbol": "Gabra2",
+   "name": "gamma-aminobutyric acid type A receptor subunit alpha 2",
+   "org": "Rattus norvegicus"
+  },
+  "29689": {
+   "symbol": "Gabrd",
+   "name": "gamma-aminobutyric acid type A receptor subunit delta",
+   "org": "Rattus norvegicus"
+  },
+  "29705": {
+   "symbol": "Gabra1",
+   "name": "gamma-aminobutyric acid type A receptor subunit alpha 1",
+   "org": "Rattus norvegicus"
+  },
+  "29707": {
+   "symbol": "Gabra5",
+   "name": "gamma-aminobutyric acid type A receptor subunit alpha 5",
+   "org": "Rattus norvegicus"
+  },
+  "29708": {
+   "symbol": "Gabra6",
+   "name": "gamma-aminobutyric acid type A receptor subunit alpha6",
+   "org": "Rattus norvegicus"
+  },
+  "29709": {
+   "symbol": "Gabrg2",
+   "name": "gamma-aminobutyric acid type A receptor subunit gamma 2",
+   "org": "Rattus norvegicus"
+  },
+  "367": {
+   "symbol": "AR",
+   "name": "androgen receptor",
+   "org": "Homo sapiens"
+  },
+  "3757": {
+   "symbol": "KCNH2",
+   "name": "potassium voltage-gated channel subfamily H member 2",
+   "org": "Homo sapiens"
+  },
+  "4780": {
+   "symbol": "NFE2L2",
+   "name": "NFE2 like bZIP transcription factor 2",
+   "org": "Homo sapiens"
+  },
+  "5241": {
+   "symbol": "PGR",
+   "name": "progesterone receptor",
+   "org": "Homo sapiens"
+  },
+  "5468": {
+   "symbol": "PPARG",
+   "name": "peroxisome proliferator activated receptor gamma",
+   "org": "Homo sapiens"
+  },
+  "65191": {
+   "symbol": "Gabre",
+   "name": "gamma-aminobutyric acid type A receptor subunit epsilon",
+   "org": "Rattus norvegicus"
+  },
+  "706": {
+   "symbol": "TSPO",
+   "name": "translocator protein",
+   "org": "Homo sapiens"
+  },
+  "79211": {
+   "symbol": "Gabrg3",
+   "name": "gamma-aminobutyric acid type A receptor subunit gamma 3",
+   "org": "Rattus norvegicus"
+  },
+  "81658": {
+   "symbol": "Gabrp",
+   "name": "gamma-aminobutyric acid type A receptor subunit pi",
+   "org": "Rattus norvegicus"
+  },
+  "8647": {
+   "symbol": "ABCB11",
+   "name": "ATP binding cassette subfamily B member 11",
+   "org": "Homo sapiens"
+  },
+  "8856": {
+   "symbol": "NR1I2",
+   "name": "nuclear receptor subfamily 1 group I member 2",
+   "org": "Homo sapiens"
+  },
+  "9970": {
+   "symbol": "NR1I3",
+   "name": "nuclear receptor subfamily 1 group I member 3",
+   "org": "Homo sapiens"
+  }
+ },
+ "acc_map": {
+  "AAI32976": {
+   "title": null,
+   "capture": null
+  },
+  "AAY56401": {
+   "title": null,
+   "capture": null
+  },
+  "ABB72139": {
+   "title": null,
+   "capture": null
+  },
+  "BAH02283": {
+   "title": null,
+   "capture": null
+  },
+  "NP_000756": {
+   "title": null,
+   "capture": null
+  },
+  "NP_001257783": {
+   "title": null,
+   "capture": null
+  }
+ },
+ "by_aid": {
+  "40374": [
+   {
+    "aid": "40374",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P16257",
+    "geneid": "24230",
+    "uM": "0.007"
+   }
+  ],
+  "42316": [
+   {
+    "aid": "42316",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P16257",
+    "geneid": "24230",
+    "uM": "0.0079"
+   }
+  ],
+  "42319": [
+   {
+    "aid": "42319",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "O09028",
+    "geneid": "81658",
+    "uM": "0.026"
+   },
+   {
+    "aid": "42319",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P15431",
+    "geneid": "25450",
+    "uM": "0.026"
+   },
+   {
+    "aid": "42319",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P18506",
+    "geneid": "29689",
+    "uM": "0.026"
+   },
+   {
+    "aid": "42319",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P18508",
+    "geneid": "29709",
+    "uM": "0.026"
+   },
+   {
+    "aid": "42319",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P19969",
+    "geneid": "29707",
+    "uM": "0.026"
+   },
+   {
+    "aid": "42319",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P20236",
+    "geneid": "24947",
+    "uM": "0.026"
+   },
+   {
+    "aid": "42319",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P23574",
+    "geneid": "140674",
+    "uM": "0.026"
+   },
+   {
+    "aid": "42319",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P23576",
+    "geneid": "289606",
+    "uM": "0.026"
+   },
+   {
+    "aid": "42319",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P28471",
+    "geneid": "140675",
+    "uM": "0.026"
+   },
+   {
+    "aid": "42319",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P28473",
+    "geneid": "79211",
+    "uM": "0.026"
+   },
+   {
+    "aid": "42319",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P30191",
+    "geneid": "29708",
+    "uM": "0.026"
+   },
+   {
+    "aid": "42319",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P62813",
+    "geneid": "29705",
+    "uM": "0.026"
+   },
+   {
+    "aid": "42319",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P63079",
+    "geneid": "24922",
+    "uM": "0.026"
+   },
+   {
+    "aid": "42319",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P63138",
+    "geneid": "25451",
+    "uM": "0.026"
+   },
+   {
+    "aid": "42319",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "Q91ZM7",
+    "geneid": "",
+    "uM": "0.026"
+   },
+   {
+    "aid": "42319",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "Q9ES14",
+    "geneid": "65191",
+    "uM": "0.026"
+   }
+  ],
+  "42333": [
+   {
+    "aid": "42333",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "O09028",
+    "geneid": "81658",
+    "uM": "0.028"
+   },
+   {
+    "aid": "42333",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P15431",
+    "geneid": "25450",
+    "uM": "0.028"
+   },
+   {
+    "aid": "42333",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P18506",
+    "geneid": "29689",
+    "uM": "0.028"
+   },
+   {
+    "aid": "42333",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P18508",
+    "geneid": "29709",
+    "uM": "0.028"
+   },
+   {
+    "aid": "42333",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P19969",
+    "geneid": "29707",
+    "uM": "0.028"
+   },
+   {
+    "aid": "42333",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P20236",
+    "geneid": "24947",
+    "uM": "0.028"
+   },
+   {
+    "aid": "42333",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P23574",
+    "geneid": "140674",
+    "uM": "0.028"
+   },
+   {
+    "aid": "42333",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P23576",
+    "geneid": "289606",
+    "uM": "0.028"
+   },
+   {
+    "aid": "42333",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P28471",
+    "geneid": "140675",
+    "uM": "0.028"
+   },
+   {
+    "aid": "42333",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P28473",
+    "geneid": "79211",
+    "uM": "0.028"
+   },
+   {
+    "aid": "42333",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P30191",
+    "geneid": "29708",
+    "uM": "0.028"
+   },
+   {
+    "aid": "42333",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P62813",
+    "geneid": "29705",
+    "uM": "0.028"
+   },
+   {
+    "aid": "42333",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P63079",
+    "geneid": "24922",
+    "uM": "0.028"
+   },
+   {
+    "aid": "42333",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P63138",
+    "geneid": "25451",
+    "uM": "0.028"
+   },
+   {
+    "aid": "42333",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "Q91ZM7",
+    "geneid": "",
+    "uM": "0.028"
+   },
+   {
+    "aid": "42333",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "Q9ES14",
+    "geneid": "65191",
+    "uM": "0.028"
+   }
+  ],
+  "42334": [
+   {
+    "aid": "42334",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P16257",
+    "geneid": "24230",
+    "uM": "0.007"
+   }
+  ],
+  "275802": [
+   {
+    "aid": "275802",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P16257",
+    "geneid": "24230",
+    "uM": "0.0005"
+   }
+  ],
+  "363485": [
+   {
+    "aid": "363485",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P16257",
+    "geneid": "24230",
+    "uM": "0.0005"
+   }
+  ],
+  "539464": [
+   {
+    "aid": "539464",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "0.75"
+   }
+  ],
+  "539472": [
+   {
+    "aid": "539472",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "0.1"
+   }
+  ],
+  "672793": [
+   {
+    "aid": "672793",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P16257",
+    "geneid": "24230",
+    "uM": "0.0005"
+   }
+  ],
+  "743067": [
+   {
+    "aid": "743067",
+    "name": "144207142",
+    "outcome": "Active",
+    "protein_acc": "NP_001257783",
+    "geneid": "24831",
+    "uM": "13.3332"
+   }
+  ],
+  "743199": [
+   {
+    "aid": "743199",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "BAH02283",
+    "geneid": "5468",
+    "uM": ""
+   }
+  ],
+  "1209455": [
+   {
+    "aid": "1209455",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "O95342",
+    "geneid": "8647",
+    "uM": "9.2"
+   }
+  ],
+  "1209457": [
+   {
+    "aid": "1209457",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "0.006"
+   }
+  ],
+  "1224868": [
+   {
+    "aid": "1224868",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "5.3538"
+   }
+  ],
+  "1224872": [
+   {
+    "aid": "1224872",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "5.3538"
+   }
+  ],
+  "1224874": [
+   {
+    "aid": "1224874",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "5.3538"
+   }
+  ],
+  "1224886": [
+   {
+    "aid": "1224886",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "5.3538"
+   }
+  ],
+  "1224887": [
+   {
+    "aid": "1224887",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "5.3538"
+   }
+  ],
+  "1224892": [
+   {
+    "aid": "1224892",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "AAY56401",
+    "geneid": "",
+    "uM": ""
+   }
+  ],
+  "1259247": [
+   {
+    "aid": "1259247",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "AAI32976",
+    "geneid": "367",
+    "uM": "23.7101"
+   }
+  ],
+  "1345199": [
+   {
+    "aid": "1345199",
+    "name": "144207142",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "10"
+   }
+  ],
+  "1346795": [
+   {
+    "aid": "1346795",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "ABB72139",
+    "geneid": "5241",
+    "uM": "10.5909"
+   }
+  ],
+  "1346979": [
+   {
+    "aid": "1346979",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "33.4915"
+   }
+  ],
+  "1347031": [
+   {
+    "aid": "1347031",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "ABB72139",
+    "geneid": "5241",
+    "uM": ""
+   }
+  ],
+  "1347033": [
+   {
+    "aid": "1347033",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": ""
+   }
+  ],
+  "1347093": [
+   {
+    "aid": "1347093",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": ""
+   }
+  ],
+  "1347110": [
+   {
+    "aid": "1347110",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": ""
+   }
+  ],
+  "1347123": [
+   {
+    "aid": "1347123",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": ""
+   }
+  ],
+  "1347126": [
+   {
+    "aid": "1347126",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": ""
+   }
+  ],
+  "1443988": [
+   {
+    "aid": "1443988",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "O95342",
+    "geneid": "8647",
+    "uM": "9.2"
+   }
+  ],
+  "1443992": [
+   {
+    "aid": "1443992",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "0.285"
+   }
+  ],
+  "1449628": [
+   {
+    "aid": "1449628",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "O95342",
+    "geneid": "",
+    "uM": "9.155"
+   }
+  ],
+  "1615600": [
+   {
+    "aid": "1615600",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P30536",
+    "geneid": "706",
+    "uM": "0.0005"
+   },
+   {
+    "aid": "1615600",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P30536",
+    "geneid": "706",
+    "uM": "0.0079"
+   }
+  ],
+  "1615601": [
+   {
+    "aid": "1615601",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "0.026"
+   }
+  ],
+  "1645841": [
+   {
+    "aid": "1645841",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "ABI96208",
+    "geneid": "",
+    "uM": "3.8902"
+   }
+  ],
+  "1645842": [
+   {
+    "aid": "1645842",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "QLI62812",
+    "geneid": "1559",
+    "uM": "12.3018"
+   }
+  ],
+  "1657079": [
+   {
+    "aid": "1657079",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P02768",
+    "geneid": "213",
+    "uM": "2"
+   }
+  ],
+  "1671198": [
+   {
+    "aid": "1671198",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "1559",
+    "uM": "9.7717"
+   },
+   {
+    "aid": "1671198",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "AGS09764",
+    "geneid": "1559",
+    "uM": "9.7717"
+   }
+  ],
+  "1671199": [
+   {
+    "aid": "1671199",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "1544",
+    "uM": "16.1957"
+   },
+   {
+    "aid": "1671199",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "EAW99313",
+    "geneid": "1544",
+    "uM": "16.1957"
+   }
+  ],
+  "1671201": [
+   {
+    "aid": "1671201",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "1576",
+    "uM": "2.1876"
+   },
+   {
+    "aid": "1671201",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "ABI96208",
+    "geneid": "1576",
+    "uM": "2.1876"
+   }
+  ],
+  "1674183": [
+   {
+    "aid": "1674183",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "O95342",
+    "geneid": "8647",
+    "uM": "9.2"
+   }
+  ],
+  "1798152": [
+   {
+    "aid": "1798152",
+    "name": "49845858",
+    "outcome": "Active",
+    "protein_acc": "P16257",
+    "geneid": "24230",
+    "uM": "0.0005"
+   }
+  ],
+  "1849524": [
+   {
+    "aid": "1849524",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P30536",
+    "geneid": "706",
+    "uM": "0.0005"
+   }
+  ],
+  "1849525": [
+   {
+    "aid": "1849525",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "0.001"
+   }
+  ],
+  "1849526": [
+   {
+    "aid": "1849526",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P16257",
+    "geneid": "24230",
+    "uM": "0.0079"
+   }
+  ],
+  "1925174": [
+   {
+    "aid": "1925174",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P30536",
+    "geneid": "706",
+    "uM": "0.0005"
+   }
+  ],
+  "1925175": [
+   {
+    "aid": "1925175",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "0.001"
+   }
+  ],
+  "1925176": [
+   {
+    "aid": "1925176",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "0.001"
+   }
+  ],
+  "1925177": [
+   {
+    "aid": "1925177",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P16257",
+    "geneid": "24230",
+    "uM": "0.0005"
+   }
+  ],
+  "1961679": [
+   {
+    "aid": "1961679",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "O95342",
+    "geneid": "8647",
+    "uM": "4.8"
+   }
+  ],
+  "1961757": [
+   {
+    "aid": "1961757",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P62813",
+    "geneid": "29705",
+    "uM": "0.02"
+   }
+  ],
+  "1961758": [
+   {
+    "aid": "1961758",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "P62813",
+    "geneid": "29705",
+    "uM": "0.0431"
+   }
+  ],
+  "1961801": [
+   {
+    "aid": "1961801",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "O75469",
+    "geneid": "8856",
+    "uM": "0.4844"
+   }
+  ],
+  "1961803": [
+   {
+    "aid": "1961803",
+    "name": "103240343",
+    "outcome": "Active",
+    "protein_acc": "O75469",
+    "geneid": "8856",
+    "uM": "0.1918"
+   }
+  ],
+  "1963596": [
+   {
+    "aid": "1963596",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "1551",
+    "uM": "5.495"
+   },
+   {
+    "aid": "1963596",
+    "name": "170466634",
+    "outcome": "Active",
+    "protein_acc": "NP_000756",
+    "geneid": "1551",
+    "uM": "5.495"
+   }
+  ],
+  "2283419": [
+   {
+    "aid": "2283419",
+    "name": "528309991",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "2099",
+    "uM": "34.4576"
+   }
+  ],
+  "2283544": [
+   {
+    "aid": "2283544",
+    "name": "528309990",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "4780",
+    "uM": "27.6744"
+   }
+  ],
+  "2283545": [
+   {
+    "aid": "2283545",
+    "name": "528309990",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "19.3498"
+   }
+  ],
+  "2283559": [
+   {
+    "aid": "2283559",
+    "name": "528309990",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "5468",
+    "uM": "18.6721"
+   }
+  ],
+  "2283747": [
+   {
+    "aid": "2283747",
+    "name": "528309990",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "367",
+    "uM": "37.6142"
+   }
+  ],
+  "2283792": [
+   {
+    "aid": "2283792",
+    "name": "528309991",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "3.78761"
+   }
+  ],
+  "2283851": [
+   {
+    "aid": "2283851",
+    "name": "528309990",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "9970",
+    "uM": "24.764"
+   }
+  ],
+  "2283857": [
+   {
+    "aid": "2283857",
+    "name": "528309990",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "2101",
+    "uM": "21.6934"
+   }
+  ],
+  "2283859": [
+   {
+    "aid": "2283859",
+    "name": "528309990",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "23.2609"
+   }
+  ],
+  "2283875": [
+   {
+    "aid": "2283875",
+    "name": "528309990",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "5.27208"
+   }
+  ],
+  "2283877": [
+   {
+    "aid": "2283877",
+    "name": "528309990",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "5.4965"
+   }
+  ],
+  "2283878": [
+   {
+    "aid": "2283878",
+    "name": "528309990",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "5.21733"
+   }
+  ],
+  "2283881": [
+   {
+    "aid": "2283881",
+    "name": "528309990",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "5.21979"
+   }
+  ],
+  "2283882": [
+   {
+    "aid": "2283882",
+    "name": "528309990",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "5.03551"
+   }
+  ],
+  "2283895": [
+   {
+    "aid": "2283895",
+    "name": "528309990",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "16.3631"
+   }
+  ],
+  "2283898": [
+   {
+    "aid": "2283898",
+    "name": "528309990",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "23.0415"
+   }
+  ],
+  "2283910": [
+   {
+    "aid": "2283910",
+    "name": "528309990",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "5241",
+    "uM": "12.7855"
+   }
+  ],
+  "2283988": [
+   {
+    "aid": "2283988",
+    "name": "528309990",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "8856",
+    "uM": "10.6396"
+   }
+  ],
+  "2283994": [
+   {
+    "aid": "2283994",
+    "name": "528309990",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "38.5843"
+   }
+  ],
+  "2283996": [
+   {
+    "aid": "2283996",
+    "name": "528309990",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "",
+    "uM": "33.9208"
+   }
+  ],
+  "2284096": [
+   {
+    "aid": "2284096",
+    "name": "528309990",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "1576",
+    "uM": "2.79028"
+   }
+  ],
+  "2284391": [
+   {
+    "aid": "2284391",
+    "name": "528309990",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "1559",
+    "uM": "12.7229"
+   }
+  ],
+  "2284393": [
+   {
+    "aid": "2284393",
+    "name": "528309990",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "1544",
+    "uM": "17.3627"
+   }
+  ],
+  "2284394": [
+   {
+    "aid": "2284394",
+    "name": "528309990",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "1565",
+    "uM": "15.787"
+   }
+  ],
+  "2284395": [
+   {
+    "aid": "2284395",
+    "name": "528309990",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "1557",
+    "uM": "9.78169"
+   }
+  ],
+  "2284432": [
+   {
+    "aid": "2284432",
+    "name": "528309990",
+    "outcome": "Active",
+    "protein_acc": "",
+    "geneid": "3757",
+    "uM": "17.9947"
+   }
+  ]
+ }
+}

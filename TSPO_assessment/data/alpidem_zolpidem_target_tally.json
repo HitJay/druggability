@@ -1,0 +1,702 @@
+{
+ "CHEMBL2095167": {
+  "pref": "GABA-A receptor; alpha-1/beta-2/gamma-2",
+  "n": 9,
+  "best": 19.0
+ },
+ "CHEMBL2111343": {
+  "pref": "GABA A receptor alpha-3/beta-2/gamma-2",
+  "n": 4,
+  "best": 383.0
+ },
+ "CHEMBL612545": {
+  "pref": "Unchecked",
+  "n": 91,
+  "best": 0.0
+ },
+ "CHEMBL2111365": {
+  "pref": "GABA A receptor alpha-6/beta-2/gamma-2",
+  "n": 5,
+  "best": 980.0
+ },
+ "CHEMBL1907607": {
+  "pref": "GABA-A receptor; anion channel",
+  "n": 3,
+  "best": 25.0
+ },
+ "CHEMBL1962": {
+  "pref": "Gamma-aminobutyric acid receptor subunit alpha-1",
+  "n": 9,
+  "best": 14.0
+ },
+ "CHEMBL4956": {
+  "pref": "Gamma-aminobutyric acid receptor subunit alpha-2",
+  "n": 3,
+  "best": 74.1
+ },
+ "CHEMBL3026": {
+  "pref": "Gamma-aminobutyric acid receptor subunit alpha-3",
+  "n": 3,
+  "best": 400.0
+ },
+ "CHEMBL5112": {
+  "pref": "Gamma-aminobutyric acid receptor subunit alpha-5",
+  "n": 3,
+  "best": 20.0
+ },
+ "CHEMBL376": {
+  "pref": "Rattus norvegicus",
+  "n": 28,
+  "best": 0.02333
+ },
+ "CHEMBL2095172": {
+  "pref": "GABA-A receptor; alpha-1/beta-2/gamma-2",
+  "n": 4,
+  "best": 2.5
+ },
+ "CHEMBL2094121": {
+  "pref": "GABA-A receptor; alpha-1/beta-3/gamma-2",
+  "n": 9,
+  "best": 26.7
+ },
+ "CHEMBL2094130": {
+  "pref": "GABA-A receptor; alpha-2/beta-3/gamma-2",
+  "n": 9,
+  "best": 103.0
+ },
+ "CHEMBL2094120": {
+  "pref": "GABA-A receptor; alpha-3/beta-3/gamma-2",
+  "n": 9,
+  "best": 142.0
+ },
+ "CHEMBL2094122": {
+  "pref": "GABA-A receptor; alpha-5/beta-3/gamma-2",
+  "n": 6,
+  "best": 3333.0
+ },
+ "CHEMBL2095190": {
+  "pref": "GABA-A receptor; alpha-6/beta-3/gamma-2",
+  "n": 3,
+  "best": 10000.0
+ },
+ "CHEMBL2111327": {
+  "pref": "GABA A receptor alpha-2/beta-2/gamma-2",
+  "n": 4,
+  "best": 156.0
+ },
+ "CHEMBL2111374": {
+  "pref": "GABA A receptor alpha-5/beta-3/gamma-2",
+  "n": 6,
+  "best": 35.0
+ },
+ "CHEMBL375": {
+  "pref": "Mus musculus",
+  "n": 20,
+  "best": 0.2
+ },
+ "CHEMBL4552": {
+  "pref": "Translocator protein",
+  "n": 1,
+  "best": 4700.0
+ },
+ "CHEMBL2111413": {
+  "pref": "GABA A receptor alpha-2/beta-2/gamma-2",
+  "n": 3,
+  "best": 150.0
+ },
+ "CHEMBL2111392": {
+  "pref": "GABA A receptor alpha-1/beta-1/gamma-2",
+  "n": 1,
+  "best": 53.0
+ },
+ "CHEMBL2111339": {
+  "pref": "GABA A receptor alpha-3/beta-2/gamma-2",
+  "n": 2,
+  "best": 975.0
+ },
+ "CHEMBL2362975": {
+  "pref": "No relevant target",
+  "n": 7,
+  "best": 2.2
+ },
+ "CHEMBL372": {
+  "pref": "Homo sapiens",
+  "n": 13,
+  "best": 0.04
+ },
+ "CHEMBL3582": {
+  "pref": "Protein kinase C epsilon type",
+  "n": 1,
+  "best": null
+ },
+ "CHEMBL2472": {
+  "pref": "Gamma-aminobutyric acid receptor subunit alpha-4",
+  "n": 1,
+  "best": 15000.0
+ },
+ "CHEMBL2111370": {
+  "pref": "GABA A receptor alpha-6/beta-2/gamma-2",
+  "n": 1,
+  "best": 15000.0
+ },
+ "CHEMBL341": {
+  "pref": "Gamma-aminobutyric acid receptor subunit alpha-2",
+  "n": 2,
+  "best": 156.0
+ },
+ "CHEMBL613694": {
+  "pref": "Liver microsomes",
+  "n": 1,
+  "best": null
+ },
+ "CHEMBL613652": {
+  "pref": "Plasma",
+  "n": 1,
+  "best": 0.08
+ },
+ "CHEMBL1293235": {
+  "pref": "Prelamin-A/C",
+  "n": 1,
+  "best": 5623.4
+ },
+ "CHEMBL4159": {
+  "pref": "3-hydroxyacyl-CoA dehydrogenase type-2",
+  "n": 1,
+  "best": 31622.8
+ },
+ "CHEMBL1293226": {
+  "pref": "Lysine-specific demethylase 4E",
+  "n": 1,
+  "best": 31622.8
+ },
+ "CHEMBL1293255": {
+  "pref": "15-hydroxyprostaglandin dehydrogenase [NAD(+)]",
+  "n": 1,
+  "best": 31622.8
+ },
+ "CHEMBL340": {
+  "pref": "Cytochrome P450 3A4",
+  "n": 4,
+  "best": 25118.9
+ },
+ "CHEMBL612558": {
+  "pref": "ADMET",
+  "n": 41,
+  "best": 0.08
+ },
+ "CHEMBL1697861": {
+  "pref": "Hepatotoxicity",
+  "n": 37,
+  "best": 0.0
+ },
+ "CHEMBL2007624": {
+  "pref": "Peripheral myelin protein 22",
+  "n": 1,
+  "best": 40533.4
+ },
+ "CHEMBL289": {
+  "pref": "Cytochrome P450 2D6",
+  "n": 1,
+  "best": null
+ },
+ "CHEMBL3622": {
+  "pref": "Cytochrome P450 2C19",
+  "n": 1,
+  "best": null
+ },
+ "CHEMBL3397": {
+  "pref": "Cytochrome P450 2C9",
+  "n": 2,
+  "best": null
+ },
+ "CHEMBL3356": {
+  "pref": "Cytochrome P450 1A2",
+  "n": 1,
+  "best": null
+ },
+ "CHEMBL613373": {
+  "pref": "Liver microsomes",
+  "n": 1,
+  "best": 23.0
+ },
+ "CHEMBL613416": {
+  "pref": "Blood",
+  "n": 1,
+  "best": 4.78
+ },
+ "CHEMBL1075138": {
+  "pref": "Tyrosyl-DNA phosphodiesterase 1",
+  "n": 1,
+  "best": 29092.9
+ },
+ "CHEMBL1743121": {
+  "pref": "Solute carrier organic anion transporter family member 1B3",
+  "n": 1,
+  "best": 78.05
+ },
+ "CHEMBL1697668": {
+  "pref": "Solute carrier organic anion transporter family member 1B1",
+  "n": 1,
+  "best": 177.44
+ },
+ "CHEMBL3879801": {
+  "pref": "NON-PROTEIN TARGET",
+  "n": 8,
+  "best": 0.0
+ },
+ "CHEMBL2093872": {
+  "pref": "GABA-A receptor; anion channel",
+  "n": 1,
+  "best": null
+ },
+ "CHEMBL395": {
+  "pref": "HepG2",
+  "n": 7,
+  "best": null
+ },
+ "CHEMBL343": {
+  "pref": "Gamma-aminobutyric acid receptor subunit alpha-1",
+  "n": 3,
+  "best": 26.7
+ },
+ "CHEMBL328": {
+  "pref": "Gamma-aminobutyric acid receptor subunit alpha-3",
+  "n": 1,
+  "best": 383.0
+ },
+ "CHEMBL300": {
+  "pref": "Gamma-aminobutyric acid receptor subunit alpha-5",
+  "n": 1,
+  "best": 10000.0
+ },
+ "CHEMBL2047": {
+  "pref": "Bile acid receptor",
+  "n": 2,
+  "best": null
+ },
+ "CHEMBL4303835": {
+  "pref": "SARS-CoV-2",
+  "n": 5,
+  "best": -0.09
+ },
+ "CHEMBL4523582": {
+  "pref": "Replicase polyprotein 1ab",
+  "n": 1,
+  "best": 4.533
+ },
+ "CHEMBL3253": {
+  "pref": "Albumin",
+  "n": 1,
+  "best": 63000.0
+ },
+ "CHEMBL1865": {
+  "pref": "Protein deacetylase HDAC6",
+  "n": 2,
+  "best": -17.28
+ },
+ "CHEMBL360": {
+  "pref": "Mycobacterium tuberculosis",
+  "n": 5,
+  "best": 3.12
+ },
+ "CHEMBL1941": {
+  "pref": "Histamine H2 receptor",
+  "n": 2,
+  "best": 10000.0
+ },
+ "CHEMBL2056": {
+  "pref": "D(1A) dopamine receptor",
+  "n": 2,
+  "best": 10000.0
+ },
+ "CHEMBL3878": {
+  "pref": "Rod cGMP-specific 3',5'-cyclic phosphodiesterase subunit alpha",
+  "n": 1,
+  "best": 10000.0
+ },
+ "CHEMBL218": {
+  "pref": "Cannabinoid receptor 1",
+  "n": 4,
+  "best": 10000.0
+ },
+ "CHEMBL240": {
+  "pref": "Voltage-gated inwardly rectifying potassium channel KCNH2",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL3371": {
+  "pref": "5-hydroxytryptamine receptor 6",
+  "n": 1,
+  "best": 10000.0
+ },
+ "CHEMBL3155": {
+  "pref": "5-hydroxytryptamine receptor 7",
+  "n": 1,
+  "best": 10000.0
+ },
+ "CHEMBL3762": {
+  "pref": "Voltage-dependent L-type calcium channel subunit alpha-1C",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL330": {
+  "pref": "Glutamate receptor ionotropic, NMDA 1",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL213": {
+  "pref": "Beta-1 adrenergic receptor",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL210": {
+  "pref": "Beta-2 adrenergic receptor",
+  "n": 2,
+  "best": 30000.0
+ },
+ "CHEMBL238": {
+  "pref": "Sodium-dependent dopamine transporter",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL1882": {
+  "pref": "Neuronal acetylcholine receptor subunit alpha-4",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL219": {
+  "pref": "D(4) dopamine receptor",
+  "n": 1,
+  "best": 10000.0
+ },
+ "CHEMBL1850": {
+  "pref": "D(1B) dopamine receptor",
+  "n": 1,
+  "best": 10000.0
+ },
+ "CHEMBL249": {
+  "pref": "Substance-P receptor",
+  "n": 1,
+  "best": 10000.0
+ },
+ "CHEMBL2327": {
+  "pref": "Substance-K receptor",
+  "n": 1,
+  "best": 10000.0
+ },
+ "CHEMBL237": {
+  "pref": "Kappa-type opioid receptor",
+  "n": 1,
+  "best": 17999.9
+ },
+ "CHEMBL225": {
+  "pref": "5-hydroxytryptamine receptor 2C",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL226": {
+  "pref": "Adenosine receptor A1",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL256": {
+  "pref": "Adenosine receptor A3",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL216": {
+  "pref": "Muscarinic acetylcholine receptor M1",
+  "n": 1,
+  "best": 210.0
+ },
+ "CHEMBL245": {
+  "pref": "Muscarinic acetylcholine receptor M3",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL2035": {
+  "pref": "Muscarinic acetylcholine receptor M5",
+  "n": 1,
+  "best": 10000.0
+ },
+ "CHEMBL2064": {
+  "pref": "Gamma-aminobutyric acid type B receptor subunit 1",
+  "n": 1,
+  "best": 10000.0
+ },
+ "CHEMBL229": {
+  "pref": "Alpha-1A adrenergic receptor",
+  "n": 4,
+  "best": 6756.3
+ },
+ "CHEMBL5107": {
+  "pref": "Voltage-dependent N-type calcium channel subunit alpha-1B",
+  "n": 1,
+  "best": 10000.0
+ },
+ "CHEMBL217": {
+  "pref": "D(2) dopamine receptor",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL1997": {
+  "pref": "Equilibrative nucleoside transporter 1",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL1942": {
+  "pref": "Alpha-2B adrenergic receptor",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL1821": {
+  "pref": "Muscarinic acetylcholine receptor M4",
+  "n": 1,
+  "best": 10000.0
+ },
+ "CHEMBL222": {
+  "pref": "Sodium-dependent noradrenaline transporter",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL233": {
+  "pref": "Mu-type opioid receptor",
+  "n": 2,
+  "best": 10000.0
+ },
+ "CHEMBL1916": {
+  "pref": "Alpha-2C adrenergic receptor",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL1899": {
+  "pref": "5-hydroxytryptamine receptor 3A",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL228": {
+  "pref": "Sodium-dependent serotonin transporter",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL251": {
+  "pref": "Adenosine receptor A2a",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL246": {
+  "pref": "Beta-3 adrenergic receptor",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL236": {
+  "pref": "Delta-type opioid receptor",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL2069": {
+  "pref": "Thromboxane A2 receptor",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL1867": {
+  "pref": "Alpha-2A adrenergic receptor",
+  "n": 3,
+  "best": 10000.0
+ },
+ "CHEMBL1951": {
+  "pref": "Amine oxidase [flavin-containing] A",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL4383": {
+  "pref": "Gastric inhibitory polypeptide receptor",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL1889": {
+  "pref": "Vasopressin V1a receptor",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL1790": {
+  "pref": "Vasopressin V2 receptor",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL3426": {
+  "pref": "5-hydroxytryptamine receptor 5A",
+  "n": 1,
+  "best": 10000.0
+ },
+ "CHEMBL1833": {
+  "pref": "5-hydroxytryptamine receptor 2B",
+  "n": 3,
+  "best": 10000.0
+ },
+ "CHEMBL214": {
+  "pref": "5-hydroxytryptamine receptor 1A",
+  "n": 3,
+  "best": 10000.0
+ },
+ "CHEMBL230": {
+  "pref": "Prostaglandin G/H synthase 2",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL206": {
+  "pref": "Estrogen receptor",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL3157": {
+  "pref": "B2 bradykinin receptor",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL298": {
+  "pref": "Gastrin/cholecystokinin type B receptor",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL1985": {
+  "pref": "Glucagon receptor",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL4616": {
+  "pref": "Growth hormone secretagogue receptor type 1",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL224": {
+  "pref": "5-hydroxytryptamine receptor 2A",
+  "n": 3,
+  "best": 10000.0
+ },
+ "CHEMBL4042": {
+  "pref": "Prostaglandin G/H synthase 1",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL242": {
+  "pref": "Estrogen receptor beta",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL2034": {
+  "pref": "Glucocorticoid receptor",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL227": {
+  "pref": "Type-1 angiotensin II receptor",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL1901": {
+  "pref": "Cholecystokinin receptor type A",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL252": {
+  "pref": "Endothelin-1 receptor",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL1785": {
+  "pref": "Endothelin receptor type B",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL4308": {
+  "pref": "B1 bradykinin receptor",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL1800": {
+  "pref": "Corticotropin-releasing factor receptor 1",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL4069": {
+  "pref": "Corticotropin-releasing factor receptor 2",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL4644": {
+  "pref": "Melanocortin receptor 3",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL259": {
+  "pref": "Melanocortin receptor 4",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL288": {
+  "pref": "3',5'-cyclic-AMP phosphodiesterase 4D",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL4777": {
+  "pref": "Neuropeptide Y receptor type 1",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL3072": {
+  "pref": "Androgen receptor",
+  "n": 3,
+  "best": 30000.0
+ },
+ "CHEMBL3401": {
+  "pref": "Nuclear receptor subfamily 1 group I member 2",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL2203": {
+  "pref": "Motilin receptor",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL4123": {
+  "pref": "Neurotensin receptor type 1",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL241": {
+  "pref": "cGMP-inhibited 3',5'-cyclic phosphodiesterase 3A",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL4018": {
+  "pref": "Neuropeptide Y receptor type 2",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL208": {
+  "pref": "Progesterone receptor",
+  "n": 3,
+  "best": 30000.0
+ },
+ "CHEMBL234": {
+  "pref": "D(3) dopamine receptor",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL211": {
+  "pref": "Muscarinic acetylcholine receptor M2",
+  "n": 3,
+  "best": 10000.0
+ },
+ "CHEMBL264": {
+  "pref": "Histamine H3 receptor",
+  "n": 1,
+  "best": 30000.0
+ },
+ "CHEMBL231": {
+  "pref": "Histamine H1 receptor",
+  "n": 1,
+  "best": 30000.0
+ }
+}

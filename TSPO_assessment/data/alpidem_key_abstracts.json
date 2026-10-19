@@ -1,0 +1,98 @@
+[
+ {
+  "pmid": "33158242",
+  "year": "2020",
+  "title": "The New Dipeptide TSPO Ligands: Design, Synthesis and Structure-Anxiolytic Activity Relationship.",
+  "journal": "Molecules (Basel, Switzerland)",
+  "doi": "10.3390/molecules25215132",
+  "abstract": "The translocator protein (TSPO, 18 kDa) plays an important role in the synthesis of neurosteroids by promoting the transport of cholesterol from the outer to the inner mitochondrial membrane, which is the rate-limiting step in neurosteroidogenesis. Stimulation of TSPO by appropriate ligands increases the level of neurosteroids. The present study describes the design, synthesis and investigation of anxiolytic-like effects of a series of <i>N</i>-acyl-tryptophanyl-containing dipeptides. These novel dipeptide TSPO ligands were designed with the original drug-based peptide design strategy using alpidem as non-peptide prototype. The anxiolytic activities were investigated in Balb/C mice using the illuminated open-field and elevated plus-maze tests in outbred laboratory mice ICR (CD-1). Dipeptide GD-102 (<i>N</i>-phenylpropionyl-l-tryptophanyl-l-leucine amide) in the dose range of 0.01-0.5 mg/kg intraperitoneally (i.p.) has a pronounced anxiolytic activity. The anxiolytic effect of GD-102 was abolished by PK11195, a specific TSPO antagonist. The structure-activity relationship study made it possible to identify a pharmacophore fragment for the dipeptide TSPO ligand. It was shown that l,d-diastereomer of GD-102 has no activity, and the d,l-isomer has less pronounced activity. The anxiolytic activity also disappears by replacing the C-amide group with the methyl ester, a free carboxyl group or methylamide. Consecutive replacement of each amino acid residue with glycine showed the importance of each of the amino acid residues in the structure of the ligand. The most active and technologically available compound GD-102, was selected for evaluation as a potential anxiolytic drug."
+ },
+ {
+  "pmid": "26002041",
+  "year": "2015",
+  "title": "2-Phenylimidazo[1,2-a]pyridine-containing ligands of the 18-kDa translocator protein (TSPO) behave as agonists and antagonists of steroidogenesis in a mouse leydig tumor cell line.",
+  "journal": "European journal of pharmaceutical sciences : official journal of the European Federation for Pharmaceutical Sciences",
+  "doi": "10.1016/j.ejps.2015.05.021",
+  "abstract": "Ligands of 18-kDa translocator protein (TSPO) are known for their ability to potently and dose-dependently stimulate steroid biosynthesis in steroidogenic cells. In this study, we investigated a number of 2-phenyl-imidazo[1,2-a]pyridine acetamide derivatives, analogs of alpidem, for their ability to bind TSPO and to affect steroidogenesis in a mouse Leydig tumor cell line. We observed that not only some compounds behaved as agonists, stimulating steroidogenesis (e.g., 3 and 4) with EC50 values (15.9 and 6.99\u03bcM) close to that determined for FGIN-1-27 used as positive control (7.24\u03bcM), but two compounds, namely 5 and 6, which on the other hand are the most lipophilic ones in the investigated series, behaved as antagonists, by significantly inhibiting steroid production at concentrations at least twenty times lower than the cytotoxic ones. To our surprise, the newly synthesized compound 3, which is a strict analog of alpidem bearing at the para position of the 2-phenyl group a methoxy group instead of chlorine, achieved a ten-fold stimulation of the steroid production (for comparison FGIN-1-27 achieved 1.6-fold stimulation). Within the limits of the examined property space, some unprecedented SARs were unveiled, which can help in understanding the key molecular factors underlying the transition from agonism to antagonism in the steroidogenesis process. Besides the substitution pattern and the physicochemical features (mainly hydrogen bonding potential) of the substituents at the positions C(6) and C(8) of the imidazo[1,2-a]pyridine nucleus, and at the para position of the 2-phenyl group, the structure-activity relationship analysis suggested lipophilicity, whose increase seems to be generally related to steroidogenesis inhibition, and steric hindrance, which appeared as a stimulation-limiting factor, as two main properties to control in the design or optimization of novel imidazo[1,2-a]pyridine-based TSPO ligands endowed with potential in modulating the steroidogenesis process."
+ },
+ {
+  "pmid": "19720731",
+  "year": "2009",
+  "title": "Evaluation of the potential for drug-induced liver injury based on in vitro covalent binding to human liver proteins.",
+  "journal": "Drug metabolism and disposition: the biological fate of chemicals",
+  "doi": "10.1124/dmd.109.028860",
+  "abstract": "Prediction of idiosyncratic drug-induced liver injury (DILI) is difficult, and the underlying mechanisms are not fully understood. However, many drugs causing DILI are considered to form reactive metabolites and covalently bind to cellular macromolecules in the liver. The objective of this study was to clarify whether the risk of idiosyncratic DILI can be estimated by comparing in vitro covalent binding (CB) levels among 12 positive compounds (acetaminophen, alpidem, bromfenac, carbamazepine, diclofenac, flutamide, imipramine, nefazodone, tacrine, ticlopidine, tienilic acid, and troglitazone) for DILI and 12 negative compounds (acetylsalicylic acid, caffeine, dexamethasone, losartan, ibuprofen, paroxetine, pioglitazone, rosiglitazone, sertraline, theophylline, venlafaxine, and zolpidem). After incubation with human liver microsomes in the presence of NADPH, there was a large overlap in the distribution of CB amounts between the positive and negative groups. On addition of UDP-glucuronic acid (UDPGA) as a cofactor for glucuronidation, the CB levels of bromfenac and diclofenac were increased. With addition of nucleophilic glutathione (GSH), values for most compounds were decreased. However, separation of the two groups on the basis of CB could not be improved by UDPGA or GSH. Furthermore, CB with human hepatocytes also failed to discriminate positive from negative compounds. Therefore, the CB amount alone is not sufficient for risk assessment of DILI. In contrast, when the CB amount was multiplied by the maximum daily dose, which may reflect maximum hepatic exposure, the two groups did become discriminated. Taken together, our findings suggest that the combination of CB amount and daily dose can estimate the risk of idiosyncratic DILI."
+ },
+ {
+  "pmid": "11602696",
+  "year": "2001",
+  "title": "Toxicity of alpidem, a peripheral benzodiazepine receptor ligand, but not zolpidem, in rat hepatocytes: role of mitochondrial permeability transition and metabolic activation.",
+  "journal": "The Journal of pharmacology and experimental therapeutics",
+  "doi": "10.1016/s0022-3565(24)29292-2",
+  "abstract": "Whereas alpidem is hepatotoxic, zolpidem is not. Despite closely related chemical structures, alpidem, but not zolpidem, is a peripheral benzodiazepine receptor (PBR) ligand, and is also more lipophilic than zolpidem. We compared their effects in isolated rat liver mitochondria and rat hepatocytes. Zolpidem did not affect calcium-induced mitochondrial permeability transition (MPT) in mitochondria, caused little glutathione depletion in hepatocytes, and was not toxic, even at 500 microM. At 250 to 500 microM, alpidem prevented calcium-induced MPT in isolated mitochondria, but caused severe glutathione depletion in hepatocytes that was increased by 3-methylcholanthrene, a cytochrome P4501A inducer, and decreased by cystine, a glutathione precursor. Although cell calcium increased, mitochondrial cytochrome c did not translocate to the cytosol and cells died of necrosis. Cell death was prevented by cystine, but not cyclosporin A, an MPT inhibitor. At low concentrations (25-50 microM), in contrast, alpidem accelerated calcium-induced MPT in mitochondria. It did not deplete glutathione in hepatocytes, but nevertheless caused some cell death that was prevented by cyclosporin A, but not by cystine. Alpidem (10 microM) also increased the toxicity of tumor necrosis factor-alpha (1 ng/ml) in hepatocytes. In conclusion, low concentrations of alpidem increase both calcium-induced MPT in mitochondria, and TNF-alpha toxicity in cells, like other PBR ligands. Like other lipophilic protonatable amines, however, alpidem inhibits calcium-induced MPT at high concentrations. At these high concentrations, toxicity involves cytochrome P4501A-mediated metabolic activation, glutathione depletion, and increased cell calcium, without MPT involvement. In contrast, zolpidem has no mitochondrial effects, causes little glutathione depletion, and is not toxic."
+ },
+ {
+  "pmid": "8863805",
+  "year": "1996",
+  "title": "Molecular basis of peripheral vs central benzodiazepine receptor selectivity in a new class of peripheral benzodiazepine receptor ligands related to alpidem.",
+  "journal": "Journal of medicinal chemistry",
+  "doi": "10.1021/jm960325j",
+  "abstract": "Alpidem (1), the anxiolytic imidazopyridine, has nanomolar binding affinity for both the central benzodiazepine receptor (CBR) and the peripheral benzodiazepine receptor (PBR). A novel class of PBR ligands related to alpidem has been designed by comparing the interaction models of alpidem with PBR and CBR. Several compounds in this class have shown high selectivity for PBR vs CBR, and the selectivity has been discussed in terms of interaction models. The binding behavior of the three selected compounds was extensively studied by competition and saturation assays, and the results suggest that they are capable of recognizing two sites labeled by [3H]PK11195. The molecular structure of one of the most active compounds (4e) has been determined by X-ray diffraction and compared with that of alpidem. Molecular modeling studies suggest that the bioactive conformation of 4e is likely to be very similar to the conformation found in the crystal."
+ },
+ {
+  "pmid": "7750714",
+  "year": "1995",
+  "title": "[Subfulminant hepatitis caused by alpidem and treated by liver transplantation].",
+  "journal": "Gastroenterologie clinique et biologique",
+  "doi": null,
+  "abstract": ""
+ },
+ {
+  "pmid": "7875405",
+  "year": "1994",
+  "title": "[A new case of hepatitis after alpidem monotherapy].",
+  "journal": "Gastroenterologie clinique et biologique",
+  "doi": null,
+  "abstract": ""
+ },
+ {
+  "pmid": "7750686",
+  "year": "1994",
+  "title": "[Hepatitis induced by alpidem (Ananxyl). Four cases, one of them fatal].",
+  "journal": "Gastroenterologie clinique et biologique",
+  "doi": null,
+  "abstract": "Acute hepatitis related to psychotropic drugs has been rarely reported with anxiolytic treatments. Alpidem (Ananxyl) is a new imidazopyridine derivative with anxiolytic properties which was launched in October 1991. Several cases of acute hepatitis, some severe, were described with this drug and its liver toxicity was questioned. Results of a study monitoring drug side-effects caused this drug to be withdrawn from the market for one year. We report four cases of acute hepatitis and discuss the role of alpidem. All but one case were presented as severe acute hepatitis with hepatic failure. One patient ran a fulminant course and died despite liver transplantation. The mechanism of liver toxicity remains unclear."
+ },
+ {
+  "pmid": "7901754",
+  "year": "1993",
+  "title": "Potentiation of gamma-aminobutyric acid-induced chloride currents by various benzodiazepine site agonists with the alpha 1 gamma 2, beta 2 gamma 2 and alpha 1 beta 2 gamma 2 subtypes of cloned gamma-aminobutyric acid type A receptors.",
+  "journal": "Molecular pharmacology",
+  "doi": "10.1016/s0026-895x(25)13278-1",
+  "abstract": "Previous studies with cloned gamma-aminobutyric acid type A receptors expressed in human embryonic kidney cells have indicated that the alpha 1 beta 2 gamma 2 and alpha 1 gamma 2 (but not alpha 1 beta 2) subtypes have benzodiazepine sites. We found in this study that even the beta 2 gamma 2 subtype displays gamma-aminobutyric acid-induced Cl- currents that are potentiated by triazolam (a triazolobenzodiazepine). The maximal efficacy of the drug among the subtypes was highest with the alpha 1 beta 2 gamma 2 subtype, followed by the alpha 1 gamma 2 and beta 2 gamma 2 subtypes. These observations led us to compare the ability of several benzodiazepine site agonists of diverse chemical structures to potentiate Cl- currents with these subtypes. With the alpha 1 gamma 2 subtype, diazepam, alpidem, zolpidem, Cl-218872, zopiclone, U-79098 (an imidazoquinoxaline derivative), and U-90167 (a diimidazoquinazoline derivative) at 5 microM potentiated Cl- currents to essentially similar levels (slightly lower for a few ligands), compared with those with the alpha 1 beta 2 gamma 2 subtype. With the beta 2 gamma 2 subtype, the type 1 ligands zolpidem, alpidem, and Cl-218872 showed no or very low levels of potentiation, whereas less selective ligands such as diazepam, zopiclone, U-78098, and U-90167 displayed levels of Cl- current potentiation comparable to those observed with the subtypes containing the alpha 1 and gamma 2 subunits. These data indicate that, in the presence of gamma 2, beta 2 may substitute for alpha 1 in forming the benzodiazepine site of limited sensitivity to the type 1 ligands. It appears that individual ligands for benzodiazepine sites have their own sets of interacting domains, which are distributed in alpha 1 and gamma 2, and the agonistic activity of type 1 ligands may be more dependent on the alpha 1-specific domains than is that of less selective ligands."
+ },
+ {
+  "pmid": "1680622",
+  "year": "1991",
+  "title": "The disposition and pharmacokinetics of alpidem, a new anxiolytic, in the rat.",
+  "journal": "Drug metabolism and disposition: the biological fate of chemicals",
+  "doi": "10.1016/s0090-9556(25)07192-2",
+  "abstract": "The autoradiographic distribution, disposition, biliary excretion, and pharmacokinetics of alpidem in Sprague-Dawley rats were evaluated after iv or oral administration. Following i.v. administration, autoradiography showed that radioactivity was preferentially localized in lipid-rich tissues including central nervous system structures. After a 3-mg.kg-1 i.v. or oral dose of [14C]alpidem, more than 80% of the radioactivity were excreted in the feces over a 6-day period. Biliary excretion of radioactivity in vigile rats, about 74% of the dose over a 7-hr period after either iv or oral administration, showed that alpidem was well absorbed. The absolute bioavailability (13%) data indicated a high first-pass effect. Plasma pharmacokinetic parameters of alpidem were as follows: Vd = 5 liter.kg-1, Cl = 2.2 liter.h-1.kg-1, and terminal t 1/2 beta = 1.2-1.7 hr. Three metabolites with a pharmacological activity similar to that of alpidem were detected in plasma. They were eliminated from the central compartment with half-lives comparable to that of the parent drug. Alpidem crossed the blood-brain barrier following either i.v. or oral administration, resulting in cerebral levels 2.5 to 4 times greater than the plasma levels. Alpidem was eliminated from the central nervous system according a biphasic process with a t 1/2 alpha comparable in plasma and brain. Alpidem represented 94 and 63% of cerebral radioactivity 5 min after i.v. and oral administration, respectively. Two out of the three active plasma metabolites were detected in the brain."
+ },
+ {
+  "pmid": "1687121",
+  "year": "1991",
+  "title": "Clinical pharmacokinetics and tolerability of alpidem in healthy subjects given increasing single doses.",
+  "journal": "European journal of clinical pharmacology",
+  "doi": "10.1007/bf00314970",
+  "abstract": "In a double-blind, placebo-controlled, cross-over experiment in 21 healthy male volunteers, aged 19 to 27 y, the pharmacokinetics and tolerance of the new anxiolytic drug alpidem (SL80.0342) and its three major metabolites were studied after single doses of 25, 50, 100 and 200 mg. Plasma concentrations of alpidem (in 20 subjects) and metabolites (in 6 subjects) were measured by HPLC over a period of 54 h after dosing. Cmax, tmax and AUC(0-54) and, when possible, t1/2 were determined for alpidem and metabolites and the dose linearity of the parameters was investigated. The time to peak of alpidem was dose independent in most subjects and was short (1-4 h); the mean values at the four dosing levels were 1.9, 1.7, 1.6 and 1.8 h. The peak concentration increased with the dose, the mean values being 17, 34, 88 and 115 ng.ml-1, respectively. In 50% of the subjects Cmax tended to stabilize between the 100 and 200 mg dose. Dose linearity was also present for the AUC, which plateaued between the 100 and 200 mg dose in only 3 out of 20 subjects; the mean AUC was 119, 281, 669 and 1117 ng.ml-1.h, respectively. The apparent half-life of elimination appeared to be dose independent, mean values at the increasing dosing levels being 18.7, 19.9, 18.1, and 17.9 h. A similar relationship between the kinetics parameters and dose of the alpidem was observed for the metabolites SL83.0912, SL80.0522 and SL83.0725. The formation of metabolites was not saturated as their AUCs relative to corresponding alpidem AUCs were not dose related.(ABSTRACT TRUNCATED AT 250 WORDS)"
+ },
+ {
+  "pmid": "2574111",
+  "year": "1989",
+  "title": "Plasma protein binding of alpidem in healthy volunteers, in neonates and in liver or renal insufficiency.",
+  "journal": "European journal of clinical pharmacology",
+  "doi": "10.1007/bf00609419",
+  "abstract": "The binding of alpidem, a new anxiolytic drug, has been studied in plasma from 6 healthy subjects, 12 patients with renal failure, 12 patients with liver cirrhosis and 12 chronic uraemics maintained on haemodialysis, as well as in 12 serum samples from the placental cord, to represent the situation in the newborn. The unbound fraction was 0.61% (healthy volunteers), 1.31% (newborns), 0.86% (cirrhotic patients), 0.72 (patients with renal failure), 0.70% (before haemodialysis) and 0.79% (after haemodialysis). Binding in the volunteers was significantly different from that in neonates and cirrhotics only. Alpidem became bound to isolated albumin (45 g.l-1) and alpha 1-acid glycoprotein (0.75 g.l-1) to 97.2% and 97.1%, respectively. The bound fraction of the drug in a mixture of two proteins was 99.1%. For alpidem, it appears that alpha 1-acid glycoprotein may balance the effect of any decrease in the albumin concentration."
+ }
+]

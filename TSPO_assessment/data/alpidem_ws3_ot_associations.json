@@ -1,0 +1,405 @@
+{
+ "TSPO": {
+  "ensembl": "ENSG00000100300",
+  "overall_count": 726,
+  "filtered": [
+   {
+    "d": "anxiety disorder",
+    "score": 0.391,
+    "gen": 0.0
+   },
+   {
+    "d": "hepatocellular carcinoma",
+    "score": 0.097,
+    "gen": 0.0
+   }
+  ]
+ },
+ "GABRA1": {
+  "ensembl": "ENSG00000022355",
+  "overall_count": 1218,
+  "filtered": [
+   {
+    "d": "anxiety disorder",
+    "score": 0.603,
+    "gen": 0.0
+   },
+   {
+    "d": "anxiety",
+    "score": 0.595,
+    "gen": 0.0
+   },
+   {
+    "d": "generalized anxiety disorder",
+    "score": 0.563,
+    "gen": 0.0
+   }
+  ]
+ },
+ "GABRA2": {
+  "ensembl": "ENSG00000151834",
+  "overall_count": 496,
+  "filtered": [
+   {
+    "d": "anxiety disorder",
+    "score": 0.603,
+    "gen": 0.0
+   },
+   {
+    "d": "anxiety",
+    "score": 0.599,
+    "gen": 0.0
+   },
+   {
+    "d": "generalized anxiety disorder",
+    "score": 0.558,
+    "gen": 0.0
+   }
+  ]
+ },
+ "GABRA3": {
+  "ensembl": "ENSG00000011677",
+  "overall_count": 380,
+  "filtered": [
+   {
+    "d": "anxiety disorder",
+    "score": 0.603,
+    "gen": 0.0
+   },
+   {
+    "d": "anxiety",
+    "score": 0.593,
+    "gen": 0.0
+   },
+   {
+    "d": "generalized anxiety disorder",
+    "score": 0.558,
+    "gen": 0.0
+   },
+   {
+    "d": "obesity disorder",
+    "score": 0.411,
+    "gen": 0.0
+   }
+  ]
+ },
+ "GABRA5": {
+  "ensembl": "ENSG00000186297",
+  "overall_count": 1280,
+  "filtered": [
+   {
+    "d": "anxiety",
+    "score": 0.605,
+    "gen": 0.0
+   },
+   {
+    "d": "anxiety disorder",
+    "score": 0.603,
+    "gen": 0.0
+   },
+   {
+    "d": "generalized anxiety disorder",
+    "score": 0.557,
+    "gen": 0.0
+   },
+   {
+    "d": "obesity disorder",
+    "score": 0.432,
+    "gen": 0.0
+   }
+  ]
+ },
+ "NR1I2": {
+  "ensembl": "ENSG00000144852",
+  "overall_count": 436,
+  "filtered": [
+   {
+    "d": "hepatocellular carcinoma",
+    "score": 0.108,
+    "gen": 0.0
+   },
+   {
+    "d": "obesity disorder",
+    "score": 0.093,
+    "gen": 0.0
+   },
+   {
+    "d": "liver cancer",
+    "score": 0.079,
+    "gen": 0.0
+   }
+  ]
+ },
+ "NR1I3": {
+  "ensembl": "ENSG00000143257",
+  "overall_count": 238,
+  "filtered": [
+   {
+    "d": "hepatocellular carcinoma",
+    "score": 0.101,
+    "gen": 0.0
+   },
+   {
+    "d": "maturity-onset diabetes of the young",
+    "score": 0.091,
+    "gen": 0.0
+   },
+   {
+    "d": "maturity-onset diabetes of the young type 3",
+    "score": 0.073,
+    "gen": 0.0
+   },
+   {
+    "d": "non-alcoholic fatty liver",
+    "score": 0.067,
+    "gen": 0.0
+   },
+   {
+    "d": "liver cancer",
+    "score": 0.064,
+    "gen": 0.0
+   },
+   {
+    "d": "transient neonatal diabetes mellitus",
+    "score": 0.059,
+    "gen": 0.0
+   },
+   {
+    "d": "obesity disorder",
+    "score": 0.054,
+    "gen": 0.0
+   },
+   {
+    "d": "obesity due to melanocortin 4 receptor deficiency",
+    "score": 0.054,
+    "gen": 0.0
+   }
+  ]
+ },
+ "NR0B2": {
+  "ensembl": "ENSG00000131910",
+  "overall_count": 517,
+  "filtered": [
+   {
+    "d": "obesity disorder",
+    "score": 0.533,
+    "gen": 0.0
+   },
+   {
+    "d": "inherited obesity",
+    "score": 0.368,
+    "gen": 0.0
+   },
+   {
+    "d": "type 2 diabetes mellitus",
+    "score": 0.2,
+    "gen": 0.0
+   },
+   {
+    "d": "Hypercholesterolemia",
+    "score": 0.114,
+    "gen": 0.0
+   },
+   {
+    "d": "hyperlipidemia",
+    "score": 0.114,
+    "gen": 0.0
+   },
+   {
+    "d": "hepatocellular carcinoma",
+    "score": 0.104,
+    "gen": 0.0
+   },
+   {
+    "d": "liver cancer",
+    "score": 0.1,
+    "gen": 0.0
+   },
+   {
+    "d": "metabolic dysfunction-associated steatohepatitis",
+    "score": 0.07,
+    "gen": 0.0
+   }
+  ]
+ },
+ "ABCB11": {
+  "ensembl": "ENSG00000073734",
+  "overall_count": 718,
+  "filtered": [
+   {
+    "d": "progressive familial intrahepatic cholestasis type 2",
+    "score": 0.837,
+    "gen": 0.0
+   },
+   {
+    "d": "benign recurrent intrahepatic cholestasis type 2",
+    "score": 0.813,
+    "gen": 0.0
+   },
+   {
+    "d": "familial intrahepatic cholestasis",
+    "score": 0.716,
+    "gen": 0.0
+   },
+   {
+    "d": "progressive familial intrahepatic cholestasis",
+    "score": 0.698,
+    "gen": 0.0
+   },
+   {
+    "d": "benign recurrent intrahepatic cholestasis",
+    "score": 0.627,
+    "gen": 0.0
+   },
+   {
+    "d": "intrahepatic cholestasis",
+    "score": 0.613,
+    "gen": 0.0
+   },
+   {
+    "d": "Intrahepatic cholestasis of pregnancy",
+    "score": 0.606,
+    "gen": 0.0
+   },
+   {
+    "d": "cholestasis, intrahepatic, of pregnancy 3",
+    "score": 0.583,
+    "gen": 0.0
+   }
+  ]
+ },
+ "ALB": {
+  "ensembl": "ENSG00000163631",
+  "overall_count": 2821,
+  "filtered": [
+   {
+    "d": "hepatocellular carcinoma",
+    "score": 0.128,
+    "gen": 0.0
+   },
+   {
+    "d": "cirrhosis of liver",
+    "score": 0.118,
+    "gen": 0.0
+   },
+   {
+    "d": "diabetes mellitus",
+    "score": 0.116,
+    "gen": 0.0
+   }
+  ]
+ },
+ "ORM1": {
+  "ensembl": "ENSG00000229314",
+  "overall_count": 791,
+  "filtered": [
+   {
+    "d": "hepatocellular carcinoma",
+    "score": 0.102,
+    "gen": 0.0
+   },
+   {
+    "d": "glycogen storage disease due to liver phosphorylase kinase deficiency",
+    "score": 0.068,
+    "gen": 0.0
+   },
+   {
+    "d": "transient infantile hypertriglyceridemia and hepatosteatosis",
+    "score": 0.067,
+    "gen": 0.0
+   },
+   {
+    "d": "neonatal intrahepatic cholestasis due to citrin deficiency",
+    "score": 0.067,
+    "gen": 0.0
+   },
+   {
+    "d": "liver cancer",
+    "score": 0.067,
+    "gen": 0.0
+   },
+   {
+    "d": "progressive familial intrahepatic cholestasis",
+    "score": 0.064,
+    "gen": 0.0
+   },
+   {
+    "d": "cholestasis, progressive familial intrahepatic, 8",
+    "score": 0.064,
+    "gen": 0.0
+   }
+  ]
+ },
+ "PPARG": {
+  "ensembl": "ENSG00000132170",
+  "overall_count": 1786,
+  "filtered": [
+   {
+    "d": "type 2 diabetes mellitus",
+    "score": 0.861,
+    "gen": 0.0
+   },
+   {
+    "d": "diabetes mellitus",
+    "score": 0.747,
+    "gen": 0.0
+   },
+   {
+    "d": "morbid obesity",
+    "score": 0.615,
+    "gen": 0.0
+   },
+   {
+    "d": "obesity disorder",
+    "score": 0.571,
+    "gen": 0.0
+   },
+   {
+    "d": "inherited obesity",
+    "score": 0.507,
+    "gen": 0.0
+   },
+   {
+    "d": "inherited lipid metabolism disorder",
+    "score": 0.506,
+    "gen": 0.0
+   },
+   {
+    "d": "metabolic syndrome",
+    "score": 0.495,
+    "gen": 0.0
+   },
+   {
+    "d": "diabetic retinopathy",
+    "score": 0.463,
+    "gen": 0.0
+   }
+  ]
+ },
+ "THRB": {
+  "ensembl": "ENSG00000151090",
+  "overall_count": 3187,
+  "filtered": [
+   {
+    "d": "non-alcoholic fatty liver",
+    "score": 0.528,
+    "gen": 0.0
+   },
+   {
+    "d": "obesity disorder",
+    "score": 0.476,
+    "gen": 0.0
+   },
+   {
+    "d": "cirrhosis of liver",
+    "score": 0.436,
+    "gen": 0.0
+   }
+  ]
+ },
+ "KCNH2": {
+  "ensembl": "ENSG00000055118",
+  "overall_count": 686,
+  "filtered": []
+ }
+}

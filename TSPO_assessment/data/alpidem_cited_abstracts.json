@@ -1,0 +1,23 @@
+[
+ {
+  "pmid": "33158242",
+  "doi": "10.3390/molecules25215132",
+  "title": "The New Dipeptide TSPO Ligands: Design, Synthesis and Structure-Anxiolytic Activity Relationship.",
+  "year": "2020",
+  "abstract": "The translocator protein (TSPO, 18 kDa) plays an important role in the synthesis of neurosteroids by promoting the transport of cholesterol from the outer to the inner mitochondrial membrane, which is the rate-limiting step in neurosteroidogenesis. Stimulation of TSPO by appropriate ligands increases the level of neurosteroids. The present study describes the design, synthesis and investigation of anxiolytic-like effects of a series of <i>N</i>-acyl-tryptophanyl-containing dipeptides. These novel dipeptide TSPO ligands were designed with the original drug-based peptide design strategy using alpidem as non-peptide prototype. The anxiolytic activities were investigated in Balb/C mice using the illuminated open-field and elevated plus-maze tests in outbred laboratory mice ICR (CD-1). Dipeptide GD-102 (<i>N</i>-phenylpropionyl-l-tryptophanyl-l-leucine amide) in the dose range of 0.01-0.5 mg/kg intraperitoneally (i.p.) has a pronounced anxiolytic activity. The anxiolytic effect of GD-102 was abolished by PK11195, a specific TSPO antagonist. The structure-activity relationship study made it possible to identify a pharmacophore fragment for the dipeptide TSPO ligand. It was shown that l,d-diastereomer of GD-102 has no activity, and the d,l-isomer has less pronounced activity. The anxiolytic activity also disappears by replacing the C-amide group with the methyl ester, a free carboxyl group or methylamide. Consecutive replacement of each amino acid residue with glycine showed the importance of each of the amino acid residues in the structure of the ligand. The most active and technologically available compound GD-102, was selected for evaluation as a potential anxiolytic drug."
+ },
+ {
+  "pmid": "8863805",
+  "doi": "10.1021/jm960325j",
+  "title": "Molecular basis of peripheral vs central benzodiazepine receptor selectivity in a new class of peripheral benzodiazepine receptor ligands related to alpidem.",
+  "year": "1996",
+  "abstract": "Alpidem (1), the anxiolytic imidazopyridine, has nanomolar binding affinity for both the central benzodiazepine receptor (CBR) and the peripheral benzodiazepine receptor (PBR). A novel class of PBR ligands related to alpidem has been designed by comparing the interaction models of alpidem with PBR and CBR. Several compounds in this class have shown high selectivity for PBR vs CBR, and the selectivity has been discussed in terms of interaction models. The binding behavior of the three selected compounds was extensively studied by competition and saturation assays, and the results suggest that they are capable of recognizing two sites labeled by [3H]PK11195. The molecular structure of one of the most active compounds (4e) has been determined by X-ray diffraction and compared with that of alpidem. Molecular modeling studies suggest that the bioactive conformation of 4e is likely to be very similar to the conformation found in the crystal."
+ },
+ {
+  "pmid": "2574111",
+  "doi": "10.1007/bf00609419",
+  "title": "Plasma protein binding of alpidem in healthy volunteers, in neonates and in liver or renal insufficiency.",
+  "year": "1989",
+  "abstract": "The binding of alpidem, a new anxiolytic drug, has been studied in plasma from 6 healthy subjects, 12 patients with renal failure, 12 patients with liver cirrhosis and 12 chronic uraemics maintained on haemodialysis, as well as in 12 serum samples from the placental cord, to represent the situation in the newborn. The unbound fraction was 0.61% (healthy volunteers), 1.31% (newborns), 0.86% (cirrhotic patients), 0.72 (patients with renal failure), 0.70% (before haemodialysis) and 0.79% (after haemodialysis). Binding in the volunteers was significantly different from that in neonates and cirrhotics only. Alpidem became bound to isolated albumin (45 g.l-1) and alpha 1-acid glycoprotein (0.75 g.l-1) to 97.2% and 97.1%, respectively. The bound fraction of the drug in a mixture of two proteins was 99.1%. For alpidem, it appears that alpha 1-acid glycoprotein may balance the effect of any decrease in the albumin concentration."
+ }
+]

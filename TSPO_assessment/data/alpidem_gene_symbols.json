@@ -1,0 +1,177 @@
+{
+ "140674": {
+  "symbol": "Gabrg1",
+  "name": "gamma-aminobutyric acid type A receptor subunit gamma 1",
+  "org": "Rattus norvegicus"
+ },
+ "140675": {
+  "symbol": "Gabra4",
+  "name": "gamma-aminobutyric acid type A receptor subunit alpha 4",
+  "org": "Rattus norvegicus"
+ },
+ "1544": {
+  "symbol": "CYP1A2",
+  "name": "cytochrome P450 family 1 subfamily A member 2",
+  "org": "Homo sapiens"
+ },
+ "1551": {
+  "symbol": "CYP3A7",
+  "name": "cytochrome P450 family 3 subfamily A member 7",
+  "org": "Homo sapiens"
+ },
+ "1557": {
+  "symbol": "CYP2C19",
+  "name": "cytochrome P450 family 2 subfamily C member 19",
+  "org": "Homo sapiens"
+ },
+ "1559": {
+  "symbol": "CYP2C9",
+  "name": "cytochrome P450 family 2 subfamily C member 9",
+  "org": "Homo sapiens"
+ },
+ "1565": {
+  "symbol": "CYP2D6",
+  "name": "cytochrome P450 family 2 subfamily D member 6 (gene/pseudogene)",
+  "org": "Homo sapiens"
+ },
+ "1576": {
+  "symbol": "CYP3A4",
+  "name": "cytochrome P450 family 3 subfamily A member 4",
+  "org": "Homo sapiens"
+ },
+ "2099": {
+  "symbol": "ESR1",
+  "name": "estrogen receptor 1",
+  "org": "Homo sapiens"
+ },
+ "2101": {
+  "symbol": "ESRRA",
+  "name": "estrogen related receptor alpha",
+  "org": "Homo sapiens"
+ },
+ "213": {
+  "symbol": "ALB",
+  "name": "albumin",
+  "org": "Homo sapiens"
+ },
+ "24230": {
+  "symbol": "Tspo",
+  "name": "translocator protein",
+  "org": "Rattus norvegicus"
+ },
+ "24831": {
+  "symbol": "Thrb",
+  "name": "thyroid hormone receptor beta",
+  "org": "Rattus norvegicus"
+ },
+ "24922": {
+  "symbol": "Gabrb3",
+  "name": "gamma-aminobutyric acid type A receptor subunit beta 3",
+  "org": "Rattus norvegicus"
+ },
+ "24947": {
+  "symbol": "Gabra3",
+  "name": "gamma-aminobutyric acid type A receptor subunit alpha 3",
+  "org": "Rattus norvegicus"
+ },
+ "25450": {
+  "symbol": "Gabrb1",
+  "name": "gamma-aminobutyric acid type A receptor subunit beta1",
+  "org": "Rattus norvegicus"
+ },
+ "25451": {
+  "symbol": "Gabrb2",
+  "name": "gamma-aminobutyric acid type A receptor subunit beta 2",
+  "org": "Rattus norvegicus"
+ },
+ "289606": {
+  "symbol": "Gabra2",
+  "name": "gamma-aminobutyric acid type A receptor subunit alpha 2",
+  "org": "Rattus norvegicus"
+ },
+ "29689": {
+  "symbol": "Gabrd",
+  "name": "gamma-aminobutyric acid type A receptor subunit delta",
+  "org": "Rattus norvegicus"
+ },
+ "29705": {
+  "symbol": "Gabra1",
+  "name": "gamma-aminobutyric acid type A receptor subunit alpha 1",
+  "org": "Rattus norvegicus"
+ },
+ "29707": {
+  "symbol": "Gabra5",
+  "name": "gamma-aminobutyric acid type A receptor subunit alpha 5",
+  "org": "Rattus norvegicus"
+ },
+ "29708": {
+  "symbol": "Gabra6",
+  "name": "gamma-aminobutyric acid type A receptor subunit alpha6",
+  "org": "Rattus norvegicus"
+ },
+ "29709": {
+  "symbol": "Gabrg2",
+  "name": "gamma-aminobutyric acid type A receptor subunit gamma 2",
+  "org": "Rattus norvegicus"
+ },
+ "367": {
+  "symbol": "AR",
+  "name": "androgen receptor",
+  "org": "Homo sapiens"
+ },
+ "3757": {
+  "symbol": "KCNH2",
+  "name": "potassium voltage-gated channel subfamily H member 2",
+  "org": "Homo sapiens"
+ },
+ "4780": {
+  "symbol": "NFE2L2",
+  "name": "NFE2 like bZIP transcription factor 2",
+  "org": "Homo sapiens"
+ },
+ "5241": {
+  "symbol": "PGR",
+  "name": "progesterone receptor",
+  "org": "Homo sapiens"
+ },
+ "5468": {
+  "symbol": "PPARG",
+  "name": "peroxisome proliferator activated receptor gamma",
+  "org": "Homo sapiens"
+ },
+ "65191": {
+  "symbol": "Gabre",
+  "name": "gamma-aminobutyric acid type A receptor subunit epsilon",
+  "org": "Rattus norvegicus"
+ },
+ "706": {
+  "symbol": "TSPO",
+  "name": "translocator protein",
+  "org": "Homo sapiens"
+ },
+ "79211": {
+  "symbol": "Gabrg3",
+  "name": "gamma-aminobutyric acid type A receptor subunit gamma 3",
+  "org": "Rattus norvegicus"
+ },
+ "81658": {
+  "symbol": "Gabrp",
+  "name": "gamma-aminobutyric acid type A receptor subunit pi",
+  "org": "Rattus norvegicus"
+ },
+ "8647": {
+  "symbol": "ABCB11",
+  "name": "ATP binding cassette subfamily B member 11",
+  "org": "Homo sapiens"
+ },
+ "8856": {
+  "symbol": "NR1I2",
+  "name": "nuclear receptor subfamily 1 group I member 2",
+  "org": "Homo sapiens"
+ },
+ "9970": {
+  "symbol": "NR1I3",
+  "name": "nuclear receptor subfamily 1 group I member 3",
+  "org": "Homo sapiens"
+ }
+}

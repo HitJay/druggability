@@ -1,0 +1,39 @@
+{
+ "alpidem_inchembl": [
+  {
+   "chembl_id": "CHEMBL54349",
+   "pref_name": "ALPIDEM",
+   "molecule_type": "Small molecule",
+   "max_phase": "4.0",
+   "synonyms": [
+    "Alpidem",
+    "Alpidem",
+    "Alpidem",
+    "SL 80.0342-00",
+    "SL-80.0342-00"
+   ],
+   "inchikey": null,
+   "smiles": "CCCN(CCC)C(=O)Cc1c(-c2ccc(Cl)cc2)nc2ccc(Cl)cn12"
+  },
+  {
+   "chembl_id": "CHEMBL2105561",
+   "pref_name": "SURICLONE",
+   "molecule_type": "Small molecule",
+   "max_phase": "3.0",
+   "synonyms": [
+    "Celexane",
+    "RP 31264",
+    "RP-31264",
+    "Suriclona",
+    "Suriclone",
+    "Suriclone",
+    "Suril"
+   ],
+   "inchikey": null,
+   "smiles": "CN1CCN(C(=O)OC2C3=C(SCCS3)C(=O)N2c2ccc3ccc(Cl)nc3n2)CC1"
+  }
+ ],
+ "inchikey": "JRTIDHTUMYMPRU-UHFFFAOYSA-N",
+ "smiles": "CCCN(CCC)C(=O)CC1=C(N=C2N1C=C(C=C2)Cl)C3=CC=C(C=C3)Cl",
+ "pubchem_cid": 54897
+}

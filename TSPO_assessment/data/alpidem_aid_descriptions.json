@@ -1,0 +1,494 @@
+{
+ "40374": {
+  "title": "Binding affinity to peripheral benzodiazepine receptors using [3H]-PK11195 radioligand in rat kidney mitochondrial membrane",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL648136\"}}}",
+  "target": "[{\"name\": \"Translocator protein\", \"mol_id\": {\"protein_accession\": \"P16257\"}, \"descr\": \"Peripheral-type benzodiazepine receptor\"}]",
+  "comments": []
+ },
+ "42316": {
+  "title": "Displacement of Ro 5-4864 from peripheral (renal cell) Benzodiazepine receptor",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL653024\"}}}",
+  "target": "[{\"name\": \"Translocator protein\", \"mol_id\": {\"protein_accession\": \"P16257\"}, \"descr\": \"Peripheral-type benzodiazepine receptor\"}]",
+  "comments": []
+ },
+ "42319": {
+  "title": "Displacement of [3H]flunitrazepam from rat brain GABA-A Benzodiazepine receptor",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL653027\"}}}",
+  "target": "[{\"name\": \"Gamma-aminobutyric acid receptor subunit alpha-3\", \"mol_id\": {\"protein_accession\": \"P20236\"}, \"descr\": \"GABA-A receptor; anion channel\"}, {",
+  "comments": []
+ },
+ "42333": {
+  "title": "Binding affinity against central benzodiazepine receptor(CBR).",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL653040\"}}}",
+  "target": "[{\"name\": \"Gamma-aminobutyric acid receptor subunit alpha-3\", \"mol_id\": {\"protein_accession\": \"P20236\"}, \"descr\": \"GABA-A receptor; anion channel\"}, {",
+  "comments": []
+ },
+ "42334": {
+  "title": "Binding affinity against peripheral benzodiazepine receptor( PBR).",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL653041\"}}}",
+  "target": "[{\"name\": \"Translocator protein\", \"mol_id\": {\"protein_accession\": \"P16257\"}, \"descr\": \"Peripheral-type benzodiazepine receptor\"}]",
+  "comments": []
+ },
+ "275802": {
+  "title": "Displacement of [3H]PK 11195 from peripheral-type benzodiazepine receptor in rat kidney mitochondrial membranes",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL911273\"}}}",
+  "target": "[{\"name\": \"Translocator protein\", \"mol_id\": {\"protein_accession\": \"P16257\"}, \"descr\": \"Peripheral-type benzodiazepine receptor\"}]",
+  "comments": []
+ },
+ "363485": {
+  "title": "Displacement of [3H]PK11195 from translocator protein in rat kidney mitochondrial membrane",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL980957\"}}}",
+  "target": "[{\"name\": \"Translocator protein\", \"mol_id\": {\"protein_accession\": \"P16257\"}, \"descr\": \"Peripheral-type benzodiazepine receptor\"}]",
+  "comments": []
+ },
+ "539464": {
+  "title": "Solubility of the compound in 0.1 M phosphate buffer at 600 uM at pH 7.4 after 24 hrs by LC/MS/MS analysis",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL1292026\"}}}",
+  "target": "{}",
+  "comments": []
+ },
+ "539472": {
+  "title": "Solubility of the compound at pH 7.4",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL1292034\"}}}",
+  "target": "{}",
+  "comments": []
+ },
+ "672793": {
+  "title": "Displacement of [3H]PK11195 from TSPO in rat kidney mitochondrial membranes by competitive binding assay",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL2061564\"}}}",
+  "target": "[{\"name\": \"Translocator protein\", \"mol_id\": {\"protein_accession\": \"P16257\"}, \"descr\": \"Peripheral-type benzodiazepine receptor\"}]",
+  "comments": []
+ },
+ "743067": {
+  "title": "qHTS assay to identify small molecule antagonists of the thyroid receptor (TR) signaling pathway: Summary",
+  "source": "{\"db\": {\"name\": \"824\", \"source_id\": {\"str\": \"TRN190\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"thyroid hormone receptor beta isoform 2 [Rattus norvegicus]\", \"mol_id\": {\"protein_accession\": \"NP_001257783.1\"}, \"organism\": {\"genome\": 0, ",
+  "comments": []
+ },
+ "743199": {
+  "title": "qHTS assay to identify small molecule antagonists of the peroxisome proliferator-activated receptor gamma (PPARg) signaling pathway: Summary",
+  "source": "{\"db\": {\"name\": \"824\", \"source_id\": {\"str\": \"PPARGN781\"}, \"date\": {\"std\": {\"year",
+  "target": "[{\"name\": \"peroxisome proliferator activated receptor gamma [Homo sapiens]\", \"mol_id\": {\"protein_accession\": \"BAH02283.1\"}}]",
+  "comments": []
+ },
+ "1209455": {
+  "title": "Inhibition of human BSEP expressed in plasma membrane vesicles of Sf21 cells assessed as inhibition of ATP-dependent [3H]taurocholate uptake",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL3540573\"}}}",
+  "target": "[{\"name\": \"Bile salt export pump\", \"mol_id\": {\"protein_accession\": \"O95342\"}, \"descr\": \"Bile salt export pump\"}]",
+  "comments": []
+ },
+ "1209457": {
+  "title": "Unbound Cmax in human plasma",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL3540575\"}}}",
+  "target": "[{\"name\": \"Plasma\", \"mol_id\": {\"other\": \"TISSUE::ChEMBL::CHEMBL613424\"}, \"descr\": \"Target is a healthy or diseased tissue\"}]",
+  "comments": []
+ },
+ "1224868": {
+  "title": "qHTS RealTime-Glo MT Cell Viability Assay in HEK293 cells - 32 hour",
+  "source": "{\"db\": {\"name\": \"824\", \"source_id\": {\"str\": \"RTV408\"}}}",
+  "target": "[]",
+  "comments": []
+ },
+ "1224872": {
+  "title": "qHTS RealTime-Glo MT Cell Viability Assay in HEK293 cells - 16 hour",
+  "source": "{\"db\": {\"name\": \"824\", \"source_id\": {\"str\": \"RTV234\"}}}",
+  "target": "[]",
+  "comments": []
+ },
+ "1224874": {
+  "title": "qHTS RealTime-Glo MT Cell Viability Assay in HEK293 cells - 40 hour",
+  "source": "{\"db\": {\"name\": \"824\", \"source_id\": {\"str\": \"RTV608\"}}}",
+  "target": "[]",
+  "comments": []
+ },
+ "1224886": {
+  "title": "qHTS RealTime-Glo MT Cell Viability Assay in HEK293 cells - 24 hour",
+  "source": "{\"db\": {\"name\": \"824\", \"source_id\": {\"str\": \"RTV822\"}}}",
+  "target": "[]",
+  "comments": []
+ },
+ "1224887": {
+  "title": "qHTS RealTime-Glo MT Cell Viability Assay in HEK293 cells - 8 hour",
+  "source": "{\"db\": {\"name\": \"824\", \"source_id\": {\"str\": \"RTV159\"}}}",
+  "target": "[]",
+  "comments": []
+ },
+ "1224892": {
+  "title": "qHTS assay to identify small molecule agonists of the constitutive androstane receptor (CAR) signaling pathway: Summary",
+  "source": "{\"db\": {\"name\": \"824\", \"source_id\": {\"str\": \"CAR220\"}}}",
+  "target": "[{\"name\": \"nuclear receptor subfamily 1, group I, member 3 [Homo sapiens]\", \"mol_id\": {\"protein_accession\": \"AAY56401.1\"}}]",
+  "comments": []
+ },
+ "1259247": {
+  "title": "qHTS assay to identify small molecule antagonists of the androgen receptor (AR) signaling pathway using the MDA cell line in the presence of 0.5 nM R1881: Summary",
+  "source": "{\"db\": {\"name\": \"824\", \"source_id\": {\"str\": \"MDA364\"}}}",
+  "target": "[{\"name\": \"AR protein [Homo sapiens]\", \"mol_id\": {\"protein_accession\": \"AAI32976.1\"}, \"descr\": \"AR protein [Homo sapiens]\"}]",
+  "comments": []
+ },
+ "1345199": {
+  "title": "Drug repurposing screens with cells derived from glioblastoma tumor samples",
+  "source": "{\"db\": {\"name\": \"NCGC\", \"source_id\": {\"str\": \"1011189\"}}}",
+  "target": "{}",
+  "comments": []
+ },
+ "1346795": {
+  "title": "qHTS assay to identify small molecule antagonists of the progesterone receptor (PR) signaling pathway",
+  "source": "{\"db\": {\"name\": \"824\", \"source_id\": {\"str\": \"PR880\"}}}",
+  "target": "[{\"name\": \"\", \"mol_id\": {\"protein_accession\": \"ABB72139.1\"}}]",
+  "comments": []
+ },
+ "1346979": {
+  "title": "Caspase-3/7 induction in CHO-K1 cells by small molecules, qHTS cell viability counter screen",
+  "source": "{\"db\": {\"name\": \"824\", \"source_id\": {\"str\": \"CAS339\"}}}",
+  "target": "[]",
+  "comments": []
+ },
+ "1347031": {
+  "title": "Progesterone receptor (PR) small molecule antagonists, qHTS assay: Summary",
+  "source": "{\"db\": {\"name\": \"824\", \"source_id\": {\"str\": \"PR305\"}}}",
+  "target": "[{\"name\": \"progesterone receptor [Homo sapiens]\", \"mol_id\": {\"protein_accession\": \"ABB72139.1\"}}]",
+  "comments": []
+ },
+ "1347033": {
+  "title": "Human pregnane X receptor (PXR) small molecule agonists: Summary",
+  "source": "{\"db\": {\"name\": \"824\", \"source_id\": {\"str\": \"PXR803\"}}}",
+  "target": "{}",
+  "comments": []
+ },
+ "1347093": {
+  "title": "qHTS of pediatric cancer cell lines to identify multiple opportunities for drug repurposing: Primary screen for SK-N-MC cells",
+  "source": "{\"db\": {\"name\": \"NCGC\", \"source_id\": {\"str\": \"pcdr-SK-N-MC-NPC-MIPE4.0-cellviabi",
+  "target": "{}",
+  "comments": []
+ },
+ "1347110": {
+  "title": "qHTS of pediatric cancer cell lines to identify multiple opportunities for drug repurposing: Confirmatory screen for A673 cells)",
+  "source": "{\"db\": {\"name\": \"NCGC\", \"source_id\": {\"str\": \"pcdr-A673-f1-activity\"}}}",
+  "target": "{}",
+  "comments": []
+ },
+ "1347123": {
+  "title": "qHTS of pediatric cancer cell lines to identify multiple opportunities for drug repurposing: Confirmatory screen for Rh41 cells",
+  "source": "{\"db\": {\"name\": \"NCGC\", \"source_id\": {\"str\": \"pcdr-Rh41-f1-activity\"}}}",
+  "target": "{}",
+  "comments": []
+ },
+ "1347126": {
+  "title": "qHTS of pediatric cancer cell lines to identify multiple opportunities for drug repurposing: Confirmatory screen for Rh30 cells",
+  "source": "{\"db\": {\"name\": \"NCGC\", \"source_id\": {\"str\": \"pcdr-Rh30-f1-activity\"}}}",
+  "target": "{}",
+  "comments": []
+ },
+ "1443988": {
+  "title": "Inhibition of recombinant human BSEP expressed in baculovirus infected sf21 cell plasma membrane vesicles assessed as reduction in ATP-dependent [3H]-taurocholate uptake in to vesicles after 5 mins by microbeta filtration method",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL4011671\"}}}",
+  "target": "[{\"name\": \"Bile salt export pump\", \"mol_id\": {\"protein_accession\": \"O95342\"}, \"descr\": \"Bile salt export pump\"}]",
+  "comments": []
+ },
+ "1443992": {
+  "title": "Total Cmax in human administered as single dose",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL4011675\"}}}",
+  "target": "[{\"name\": \"Homo sapiens\", \"mol_id\": {\"tax_id\": 9606}, \"descr\": \"Homo sapiens\"}]",
+  "comments": []
+ },
+ "1449628": {
+  "title": "Inhibition of human BSEP expressed in baculovirus transfected fall armyworm Sf21 cell membranes vesicles assessed as reduction in ATP-dependent [3H]-taurocholate transport into vesicles incubated for 5 mins by Topcount based rapid filtration method",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL4017550\"}}}",
+  "target": "[{\"name\": \"Bile salt export pump\", \"mol_id\": {\"protein_accession\": \"O95342\"}, \"descr\": \"Bile salt export pump\"}]",
+  "comments": []
+ },
+ "1615600": {
+  "title": "Inhibition of TSPO (unknown origin)",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL4415150\"}}}",
+  "target": "[{\"name\": \"Translocator protein\", \"mol_id\": {\"protein_accession\": \"P30536\"}, \"descr\": \"Translocator protein\"}]",
+  "comments": []
+ },
+ "1615601": {
+  "title": "Inhibition of CBR (unknown origin)",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL4415151\"}}}",
+  "target": "{}",
+  "comments": []
+ },
+ "1645841": {
+  "title": "Cytochrome P450 family 3 subfamily A member 4 (CYP3A4) small molecule antagonists: luciferase cell-based qHTS assay",
+  "source": "{\"db\": {\"name\": \"NCGC\", \"source_id\": {\"str\": \"CYP3A4437\"}}}",
+  "target": "[{\"name\": \"\", \"mol_id\": {\"protein_accession\": \"ABI96208.1\"}}]",
+  "comments": []
+ },
+ "1645842": {
+  "title": "Cytochrome P450 family 2 subfamily C member 9 (CYP2C9) small molecule antagonists: luciferase cell-based qHTS assay",
+  "source": "{\"db\": {\"name\": \"NCGC\", \"source_id\": {\"str\": \"CYP2C9536\"}}}",
+  "target": "[{\"name\": \"\", \"mol_id\": {\"protein_accession\": \"QLI62812.1\"}}]",
+  "comments": []
+ },
+ "1657079": {
+  "title": "Binding affinity to albumin (unknown origin)",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL4617605\"}}}",
+  "target": "[{\"name\": \"Albumin\", \"mol_id\": {\"protein_accession\": \"P02768\"}, \"descr\": \"Serum albumin\"}]",
+  "comments": []
+ },
+ "1671198": {
+  "title": "Cytochrome P450 Family 2 Subfamily C Member 9 (CYP2C9) small molecule antagonists: luciferase reporter qHTS assay",
+  "source": "{\"db\": {\"name\": \"824\", \"source_id\": {\"str\": \"CYP661\"}}}",
+  "target": "[{\"name\": \"\", \"mol_id\": {\"gene_id\": 1559}}, {\"name\": \"\", \"mol_id\": {\"protein_accession\": \"AGS09764.1\"}}]",
+  "comments": []
+ },
+ "1671199": {
+  "title": "Cytochrome P450 Family 1 Subfamily A Member 2 (CYP1A2) small molecule antagonists: luciferase reporter qHTS assay",
+  "source": "{\"db\": {\"name\": \"824\", \"source_id\": {\"str\": \"CYP273\"}}}",
+  "target": "[{\"name\": \"\", \"mol_id\": {\"gene_id\": 1544}}, {\"name\": \"\", \"mol_id\": {\"protein_accession\": \"EAW99313.1\"}}]",
+  "comments": []
+ },
+ "1671201": {
+  "title": "Cytochrome P450 Family 3 Subfamily A Member 4 (CYP3A4) small molecule antagonists: luciferase reporter qHTS assay",
+  "source": "{\"db\": {\"name\": \"824\", \"source_id\": {\"str\": \"CYP563\"}}}",
+  "target": "[{\"name\": \"\", \"mol_id\": {\"gene_id\": 1576}}, {\"name\": \"\", \"mol_id\": {\"protein_accession\": \"ABI96208.1\"}}]",
+  "comments": []
+ },
+ "1674183": {
+  "title": "Inhibition of human BSEP expressed in HEK293 cell membrane vesicles assessed as reduction in 3H-TCA uptake incubated for 5 mins by radiodetection method",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL4668599\"}}}",
+  "target": "[{\"name\": \"Bile salt export pump\", \"mol_id\": {\"protein_accession\": \"O95342\"}, \"descr\": \"Bile salt export pump\"}]",
+  "comments": []
+ },
+ "1798152": {
+  "title": "Radioligand Binding Assay  from Article 10.1021/jm061137o: \"New fluorescent 2-phenylindolglyoxylamide derivatives as probes targeting the peripheral-type benzodiazepine receptor: design, synthesis, and biological evaluation.\"",
+  "source": "{\"db\": {\"name\": \"BindingDB\", \"source_id\": {\"str\": \"BindingDB_2563_1\"}}}",
+  "target": "{}",
+  "comments": []
+ },
+ "1849524": {
+  "title": "Binding affinity to TSPO (unknown origin)",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL5104246\"}}}",
+  "target": "[{\"name\": \"Translocator protein\", \"mol_id\": {\"protein_accession\": \"P30536\"}, \"descr\": \"Translocator protein\"}]",
+  "comments": []
+ },
+ "1849525": {
+  "title": "Binding affinity to CBR (unknown origin)",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL5104247\"}}}",
+  "target": "{}",
+  "comments": []
+ },
+ "1849526": {
+  "title": "Displacement of [3H]-flunitrazepam from TSPO receptor in Wistar rat brain without cerebellum incubated for 90 mins by liquid scintillation counter analysis",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL5104248\"}}}",
+  "target": "[{\"name\": \"Translocator protein\", \"mol_id\": {\"protein_accession\": \"P16257\"}, \"descr\": \"Peripheral-type benzodiazepine receptor\"}]",
+  "comments": []
+ },
+ "1925174": {
+  "title": "Binding affinity to TSPO receptor (unknown origin)",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL5228258\"}}}",
+  "target": "[{\"name\": \"Translocator protein\", \"mol_id\": {\"protein_accession\": \"P30536\"}, \"descr\": \"Translocator protein\"}]",
+  "comments": []
+ },
+ "1925175": {
+  "title": "Binding affinity to CBR (unknown origin)",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL5228259\"}}}",
+  "target": "{}",
+  "comments": []
+ },
+ "1925176": {
+  "title": "Displacement of [3H]flunitrazepam from CBR receptor in rat brain cortex membrane incubated for 20 mins by liquid scintillation spectrometer method",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL5228260\"}}}",
+  "target": "{}",
+  "comments": []
+ },
+ "1925177": {
+  "title": "Displacement of [3H]PK11195 from TSPO receptor in rat brain cortex membrane incubated for 120 mins by liquid scintillation spectrometer method",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL5228261\"}}}",
+  "target": "[{\"name\": \"Translocator protein\", \"mol_id\": {\"protein_accession\": \"P16257\"}, \"descr\": \"Peripheral-type benzodiazepine receptor\"}]",
+  "comments": []
+ },
+ "1961679": {
+  "title": "Compound was evaluated for inhibition of human ABCB11 in an in vitro assay with cellular components measured by filtration, liquid scintillation counting",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL5291722\"}}}",
+  "target": "[{\"name\": \"Bile salt export pump\", \"mol_id\": {\"protein_accession\": \"O95342\"}, \"descr\": \"Bile salt export pump\"}]",
+  "comments": []
+ },
+ "1961757": {
+  "title": "Binding affinity towards rat Gabra1 in an in vitro assay with cellular components measured by scintillation counting",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL5291800\"}}}",
+  "target": "[{\"name\": \"Gamma-aminobutyric acid receptor subunit alpha-1\", \"mol_id\": {\"protein_accession\": \"P62813\"}, \"descr\": \"Gamma-aminobutyric acid receptor su",
+  "comments": []
+ },
+ "1961758": {
+  "title": "Compound was evaluated for inhibition of rat Gabra1 in an in vitro assay with cellular components measured by membrane filtration",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL5291801\"}}}",
+  "target": "[{\"name\": \"Gamma-aminobutyric acid receptor subunit alpha-1\", \"mol_id\": {\"protein_accession\": \"P62813\"}, \"descr\": \"Gamma-aminobutyric acid receptor su",
+  "comments": []
+ },
+ "1961801": {
+  "title": "Agonist activity at human NR1I2 in an in vitro cell free assay measured by time-resolved fluorescence resonance energy transfer method",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL5291844\"}}}",
+  "target": "[{\"name\": \"Nuclear receptor subfamily 1 group I member 2\", \"mol_id\": {\"protein_accession\": \"O75469\"}, \"descr\": \"Nuclear receptor subfamily 1 group I m",
+  "comments": []
+ },
+ "1961803": {
+  "title": "Binding affinity towards human NR1I2 in an in vitro cell free assay measured by time-resolved fluorescence resonance energy transfer method",
+  "source": "{\"db\": {\"name\": \"ChEMBL\", \"source_id\": {\"str\": \"CHEMBL5291846\"}}}",
+  "target": "[{\"name\": \"Nuclear receptor subfamily 1 group I member 2\", \"mol_id\": {\"protein_accession\": \"O75469\"}, \"descr\": \"Nuclear receptor subfamily 1 group I m",
+  "comments": []
+ },
+ "1963596": {
+  "title": "Cytochrome P450 family 3 subfamily A member 7 (CYP3A7) small molecule antagonists: luciferase cell-based qHTS assay",
+  "source": "{\"db\": {\"name\": \"NCGC\", \"source_id\": {\"str\": \"CYP3A7681\"}}}",
+  "target": "[{\"name\": \"\", \"mol_id\": {\"protein_accession\": \"NP_000756.3\"}}, {\"name\": \"\", \"mol_id\": {\"gene_id\": 1551}}]",
+  "comments": []
+ },
+ "2283419": {
+  "title": "TOX21_ERa_BLA_Antagonist_ratio: Tox21 HEK293T Estrogen Receptor-alpha (ESR1) Antagonism Beta-lactamase Assay, Ratio",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"786\"}, \"date\": {\"std\": {\"year\": 2",
+  "target": "[{\"name\": \"steroidal\", \"mol_id\": {\"other\": \"nuclear receptor\"}, \"descr\": \"TOX21_ERa_BLA_Antagonist_ratio was designed to target nuclear receptor activ",
+  "comments": []
+ },
+ "2283544": {
+  "title": "TOX21_ARE_BLA_Agonist_ratio: Tox21 HepG2 Nuclear Erythroid 2-Related factor 2/Antioxidant Response Element (Nrf2/ARE) Agonism Beta-lactamase Assay, Ratio",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"1110\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"basic leucine zipper\", \"mol_id\": {\"other\": \"dna binding\"}, \"descr\": \"TOX21_ARE_BLA_Agonist_ratio was designed to target transcription facto",
+  "comments": []
+ },
+ "2283545": {
+  "title": "TOX21_ARE_BLA_Agonist_ch2: Tox21 HepG2 Nuclear Erythroid 2-Related factor 2/Antioxidant Response Element (Nrf2/ARE) Agonism Beta-lactamase Assay, Channel 2 Readout of Cleaved Substrate",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"1109\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"baseline control\", \"mol_id\": {\"other\": \"channel 2\"}, \"descr\": \"TOX21_ARE_BLA_Agonist_ch2 was designed to measure cleaved reporter gene subs",
+  "comments": []
+ },
+ "2283559": {
+  "title": "TOX21_PPARg_BLA_Antagonist_ratio: Tox21 HEK293 Peroxisome Proliferator-activated Receptor-gamma (PPARg) Antagonism Beta-lactamase Assay, Ratio",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"1127\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"non-steroidal\", \"mol_id\": {\"other\": \"nuclear receptor\"}, \"descr\": \"TOX21_PPARg_BLA_Antagonist_ratio was designed to target nuclear receptor",
+  "comments": []
+ },
+ "2283747": {
+  "title": "TOX21_AR_LUC_MDAKB2_Antagonist_0.5nM_R1881: Tox21 MDa-kb2 Androgen Receptor (AR) Antagonism (0.5nM R1881) Luciferase Assay",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"1816\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"steroidal\", \"mol_id\": {\"other\": \"nuclear receptor\"}, \"descr\": \"Androgen receptor (AR) is an important member of the nuclear receptor family",
+  "comments": []
+ },
+ "2283792": {
+  "title": "TOX21_MMP_ratio: Tox21 Mitochondrial Membrane Potential (MMP) Assay, Ratio",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"1854\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"membrane permeability\", \"mol_id\": {\"other\": \"mitochondria\"}, \"descr\": \"Mito-MPS is used as a stain for the membrane potential of the mitoch",
+  "comments": []
+ },
+ "2283851": {
+  "title": "TOX21_CAR_LUC_Agonist: Tox21 HepG2 Constitutive Androstane Receptor (CAR) Agonism Luciferase Assay",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"2047\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"xenobiotic\", \"mol_id\": {\"other\": \"nuclear receptor\"}, \"descr\": \"TOX21_CAR_LUC_Agonist assay was designed to measure changes to bioluminesce",
+  "comments": []
+ },
+ "2283857": {
+  "title": "TOX21_ERR_LUC_Antagonist: Tox21 ERR-HEK293T Estrogen Related Receptor (ERR) Antagonism Luciferase Assay",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"2057\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"orphan\", \"mol_id\": {\"other\": \"nuclear receptor\"}, \"descr\": \"TOX21_ERR_LUC_Antagonist was designed to measure changes to bioluminescence sig",
+  "comments": []
+ },
+ "2283859": {
+  "title": "TOX21_ERR_LUC_viability: Viability Assessment in the Tox21 ERR-HEK293T Estrogen Related Receptor (ERR) Luciferase Assay",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"2059\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"cytotoxicity\", \"mol_id\": {\"other\": \"cell cycle\"}, \"descr\": \"Changes to bioluminescence signals produced from an enzymatic reaction catalyze",
+  "comments": []
+ },
+ "2283875": {
+  "title": "TOX21_RT_HEK293_GLO_08hr_viability: Tox21 RealTime-Glo MT Cell Viability Assay in HEK293 Cells, Assessment at 08 Hours",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"2086\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"cytotoxicity\", \"mol_id\": {\"other\": \"cell cycle\"}, \"descr\": \"TOX21_RT_HEK293_GLO_08hr_viability was designed to measure changes to biolumine",
+  "comments": []
+ },
+ "2283877": {
+  "title": "TOX21_RT_HEK293_GLO_24hr_viability: Tox21 RealTime-Glo MT Cell Viability Assay in HEK293 Cells, Assessment at 24 Hours",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"2089\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"cytotoxicity\", \"mol_id\": {\"other\": \"cell cycle\"}, \"descr\": \"TOX21_RT_HEK293_GLO_24hr_viability was designed to measure changes to biolumine",
+  "comments": []
+ },
+ "2283878": {
+  "title": "TOX21_RT_HEK293_GLO_16hr_viability: Tox21 RealTime-Glo MT Cell Viability Assay in HEK293 Cells, Assessment at 16 Hours",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"2088\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"cytotoxicity\", \"mol_id\": {\"other\": \"cell cycle\"}, \"descr\": \"TOX21_RT_HEK293_GLO_16hr_viability was designed to measure changes to biolumine",
+  "comments": []
+ },
+ "2283881": {
+  "title": "TOX21_RT_HEK293_GLO_32hr_viability: Tox21 RealTime-Glo MT Cell Viability Assay in HEK293 Cells, Assessment at 32 Hours",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"2091\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"cytotoxicity\", \"mol_id\": {\"other\": \"cell cycle\"}, \"descr\": \"TOX21_RT_HEK293_GLO_32hr_viability was designed to measure changes to biolumine",
+  "comments": []
+ },
+ "2283882": {
+  "title": "TOX21_RT_HEK293_GLO_40hr_viability: Tox21 RealTime-Glo MT Cell Viability Assay in HEK293 Cells, Assessment at 40 Hours",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"2093\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"cytotoxicity\", \"mol_id\": {\"other\": \"cell cycle\"}, \"descr\": \"TOX21_RT_HEK293_GLO_40hr_viability was designed to measure changes to biolumine",
+  "comments": []
+ },
+ "2283895": {
+  "title": "TOX21_SHH_3T3_GLI3_LUC_Agonist_viability: Viability Assessment in the Tox21 NIH/3T3 Gli1 Sonic Hedgehog (Shh) Agonism Luciferase Assay",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"2107\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"cytotoxicity\", \"mol_id\": {\"other\": \"cell cycle\"}, \"descr\": \"Changes to bioluminescence signals produced from an enzymatic reaction catalyze",
+  "comments": []
+ },
+ "2283898": {
+  "title": "TOX21_SHH_3T3_GLI3_LUC_Antagonist_viability: Viability Assessment in the Tox21 NIH/3T3 Gli1 Sonic Hedgehog (Shh) Antagonism Luciferase Assay",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"2109\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"cytotoxicity\", \"mol_id\": {\"other\": \"cell cycle\"}, \"descr\": \"Changes to bioluminescence signals produced from an enzymatic reaction catalyze",
+  "comments": []
+ },
+ "2283910": {
+  "title": "TOX21_PR_BLA_Antagonist_ratio: Tox21 HEK293 Progesterone Receptor (PR) Antagonism Beta-lactamase Assay, Ratio",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"2127\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"steroidal\", \"mol_id\": {\"other\": \"nuclear receptor\"}, \"descr\": \"Progesterone receptor (PR), a nuclear hormone receptor, plays an important r",
+  "comments": []
+ },
+ "2283988": {
+  "title": "TOX21_PXR_LUC_Agonist: Tox21 HepG2 Pregnane X Receptor (hPXR) Agonism Luciferase Assay",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"2363\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"non-steroidal\", \"mol_id\": {\"other\": \"nuclear receptor\"}, \"descr\": \"The human pregnane X receptor (hPXR) regulates the expression of several",
+  "comments": []
+ },
+ "2283994": {
+  "title": "TOX21_PXR_LUC_Agonist_viability: Viability Assessment in the Tox21 HepG2 Pregnane X Receptor (hPXR) Agonism Luciferase Assay",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"2362\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"cytotoxicity\", \"mol_id\": {\"other\": \"cell cycle\"}, \"descr\": \"Changes to bioluminescence signals produced from an enzymatic reaction catalyze",
+  "comments": []
+ },
+ "2283996": {
+  "title": "TOX21_CASP3_CHO_viability: Viability Assessment in the Tox21 CHO-K1 Caspase-Glo 3 (CASP3) Assay",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"2369\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"cytotoxicity\", \"mol_id\": {\"other\": \"cell cycle\"}, \"descr\": \"Changes to bioluminescence signals produced from an enzymatic reaction catalyze",
+  "comments": []
+ },
+ "2284096": {
+  "title": "TOX21_p450_CYP3A4_Antagonist: Tox21 Cytochrome P450-Glo Antagonism CYP3A4 Assay",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"2544\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"cyp3a4\", \"mol_id\": {\"other\": \"cyp\"}, \"descr\": \"These systems provide a luminescent method containing proluciferin substrates that are conve",
+  "comments": []
+ },
+ "2284391": {
+  "title": "TOX21_p450_CYP2C9_Antagonist: Tox21 Cytochrome P450-Glo Antagonism CYP2C9 Assay",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"3187\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"cyp2c9\", \"mol_id\": {\"other\": \"cyp\"}, \"descr\": \"These systems provide a luminescent method containing proluciferin substrates that are conve",
+  "comments": []
+ },
+ "2284393": {
+  "title": "TOX21_p450_CYP1A2_Antagonist: Tox21 Cytochrome P450-Glo Antagonism CYP1A2 Assay",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"3188\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"cyp1a2\", \"mol_id\": {\"other\": \"cyp\"}, \"descr\": \"These systems provide a luminescent method containing proluciferin substrates that are conve",
+  "comments": []
+ },
+ "2284394": {
+  "title": "TOX21_p450_CYP2D6_Antagonist: Tox21 Cytochrome P450-Glo Antagonism CYP2D6 Assay",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"3185\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"cyp2d6\", \"mol_id\": {\"other\": \"cyp\"}, \"descr\": \"These systems provide a luminescent method containing proluciferin substrates that are conve",
+  "comments": []
+ },
+ "2284395": {
+  "title": "TOX21_p450_CYP2C19_Antagonist: Tox21 Cytochrome P450-Glo Antagonism CYP2C19 Assay",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"3186\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"cyp2c19\", \"mol_id\": {\"other\": \"cyp\"}, \"descr\": \"These systems provide a luminescent method containing proluciferin substrates that are conv",
+  "comments": []
+ },
+ "2284432": {
+  "title": "TOX21_hERG_U2OS_Antagonist: Tox21 Human Ether-a-go-go-Related Gene (hERG) channel small molecule antagonists: fluorescence cell-based Assay",
+  "source": "{\"db\": {\"name\": \"30476\", \"source_id\": {\"str\": \"3210\"}, \"date\": {\"std\": {\"year\": ",
+  "target": "[{\"name\": \"voltage gated (potassium)\", \"mol_id\": {\"other\": \"ion channel\"}, \"descr\": \"A cell-based hERG channel inhibition assay can be used to screen ",
+  "comments": []
+ }
+}

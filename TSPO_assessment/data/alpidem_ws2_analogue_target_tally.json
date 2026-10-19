@@ -1,0 +1,192 @@
+{
+ "n_analogues": 11,
+ "n_activities": 72,
+ "tally": {
+  "CHEMBL1907607": {
+   "pref": "GABA-A receptor; anion channel",
+   "n": 10,
+   "best": 0.0,
+   "types": [
+    "B"
+   ]
+  },
+  "CHEMBL4552": {
+   "pref": "Translocator protein",
+   "n": 20,
+   "best": 0.5,
+   "types": [
+    "B"
+   ]
+  },
+  "CHEMBL2362975": {
+   "pref": "No relevant target",
+   "n": 2,
+   "best": 4.65,
+   "types": [
+    "P"
+   ]
+  },
+  "CHEMBL2111413": {
+   "pref": "GABA A receptor alpha-2/beta-2/gamma-2",
+   "n": 2,
+   "best": 130.0,
+   "types": [
+    "F"
+   ]
+  },
+  "CHEMBL2096683": {
+   "pref": "Benzodiazepine receptors; peripheral & central",
+   "n": 4,
+   "best": 1.121,
+   "types": [
+    "B"
+   ]
+  },
+  "CHEMBL612545": {
+   "pref": "Unchecked",
+   "n": 5,
+   "best": 1.05,
+   "types": [
+    "B",
+    "F"
+   ]
+  },
+  "CHEMBL3879801": {
+   "pref": "NON-PROTEIN TARGET",
+   "n": 6,
+   "best": 3981.1,
+   "types": [
+    "F"
+   ]
+  },
+  "CHEMBL1293235": {
+   "pref": "Prelamin-A/C",
+   "n": 1,
+   "best": 6309.6,
+   "types": [
+    "F"
+   ]
+  },
+  "CHEMBL1293254": {
+   "pref": "Ferritin light chain",
+   "n": 1,
+   "best": 39810.7,
+   "types": [
+    "F"
+   ]
+  },
+  "CHEMBL1293238": {
+   "pref": "Inositol monophosphatase 1",
+   "n": 1,
+   "best": 10000.0,
+   "types": [
+    "F"
+   ]
+  },
+  "CHEMBL1293237": {
+   "pref": "RecQ-like DNA helicase BLM",
+   "n": 2,
+   "best": 3.2,
+   "types": [
+    "F"
+   ]
+  },
+  "CHEMBL5162": {
+   "pref": "Neuropeptide S receptor",
+   "n": 1,
+   "best": 31622.8,
+   "types": [
+    "F"
+   ]
+  },
+  "CHEMBL340": {
+   "pref": "Cytochrome P450 3A4",
+   "n": 3,
+   "best": 794.3,
+   "types": [
+    "A",
+    "F"
+   ]
+  },
+  "CHEMBL1293278": {
+   "pref": "Geminin",
+   "n": 2,
+   "best": 11220.2,
+   "types": [
+    "F"
+   ]
+  },
+  "CHEMBL2392": {
+   "pref": "DNA polymerase beta",
+   "n": 1,
+   "best": 28183.8,
+   "types": [
+    "F"
+   ]
+  },
+  "CHEMBL3397": {
+   "pref": "Cytochrome P450 2C9",
+   "n": 1,
+   "best": null,
+   "types": [
+    "F"
+   ]
+  },
+  "CHEMBL3622": {
+   "pref": "Cytochrome P450 2C19",
+   "n": 1,
+   "best": null,
+   "types": [
+    "F"
+   ]
+  },
+  "CHEMBL3356": {
+   "pref": "Cytochrome P450 1A2",
+   "n": 1,
+   "best": null,
+   "types": [
+    "F"
+   ]
+  },
+  "CHEMBL289": {
+   "pref": "Cytochrome P450 2D6",
+   "n": 1,
+   "best": null,
+   "types": [
+    "F"
+   ]
+  },
+  "CHEMBL1741193": {
+   "pref": "Chromobox protein homolog 1",
+   "n": 1,
+   "best": 100000.0,
+   "types": [
+    "F"
+   ]
+  },
+  "CHEMBL395": {
+   "pref": "HepG2",
+   "n": 1,
+   "best": 112.2,
+   "types": [
+    "F"
+   ]
+  },
+  "CHEMBL1293191": {
+   "pref": "Transcriptional regulator ERG",
+   "n": 1,
+   "best": 28183.8,
+   "types": [
+    "F"
+   ]
+  },
+  "CHEMBL5742": {
+   "pref": "Translocator protein",
+   "n": 4,
+   "best": 0.41,
+   "types": [
+    "B"
+   ]
+  }
+ }
+}

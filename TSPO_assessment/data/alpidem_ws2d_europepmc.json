@@ -1,0 +1,842 @@
+{
+ "tspo": [
+  {
+   "pmid": "33158242",
+   "doi": "10.3390/molecules25215132",
+   "title": "The New Dipeptide TSPO Ligands: Design, Synthesis and Structure-Anxiolytic Activity Relationship.",
+   "year": "2020",
+   "journal": "Molecules (Basel, Switzerland)",
+   "abstract": "The translocator protein (TSPO, 18 kDa) plays an important role in the synthesis of neurosteroids by promoting the transport of cholesterol from the outer to the inner mitochondrial membrane, which is the rate-limiting step in neurosteroidogenesis. Stimulation of TSPO by appropriate ligands increases the level of neurosteroids. The present study describes the design, synthesis and investigation of anxiolytic-like effects of a series of <i>N</i>-acyl-tryptophanyl-containing dipeptides. These novel dipeptide TSPO ligands were designed with the original drug-based peptide design strategy using alpidem as non-peptide prototype. The anxiolytic activities were investigated in Balb/C mice using the illuminated open-field and elevated plus-maze tests in outbred laboratory mice ICR (CD-1). Dipeptide GD-102 (<i>N</i>-phenylpropionyl-l-tryptophanyl-l-leucine amide) in the dose range of 0.01-0.5 mg/kg intraperitoneally (i.p.) has a pronounced anxiolytic activity. The anxiolytic effect of GD-102 was abolished by PK11195, a specific TSPO antagonist. The structure-activity relationship study made it possible to identify a pharmacophore fragment for the dipeptide TSPO ligand. It was shown that l,d-diastereomer of GD-102 has no activity, and the d,l-isomer has less pronounced activity. The anxiolytic activity also disappears by replacing the C-amide group with the methyl ester, a free carboxyl group or methylamide. Consecutive replacement of each amino acid residue with glycine showed the imp"
+  },
+  {
+   "pmid": "26483966",
+   "doi": "10.32607/20758251-2015-7-3-108-112",
+   "title": "The Novel Dipeptide Translocator Protein Ligand, Referred to As GD-23, Exerts Anxiolytic and Nootropic Activities.",
+   "year": "2015",
+   "journal": "Acta naturae",
+   "abstract": "The translocator protein (TSPO) promotes the translocation of cholesterol to the inner mitochondrial membrane and mediates steroid formation. In this study, we first report on a biological evaluation of the dipeptide GD-23 (N-carbobenzoxy-L tryptophanyl-L isoleucine amide), a structural analogue of Alpidem, the principal TSPO ligand. We show that GD-23 in a dose range of 0.05 to 0.5 mg/kg (i.p.) exhibits anxiolytic activity in the elevated plus maze test and nootropic activity in the object recognition test in scopolamine-induced amnesia in rodents. It was shown that GD-23 did not affect spontaneous locomotor activity, holding promise as a nonsedative anxiolytic agent. The anxiolytic and nootropic activities of GD-23 were abrogated by the TSPO specific ligand PK11195, which thus suggests a role for TSPO in mediating the pharmacological activity of GD-23."
+  },
+  {
+   "pmid": "26518550",
+   "doi": "10.1134/s1607672915050063",
+   "title": "The first dipeptide ligand of translocator protein: Design and anxiolytic activity.",
+   "year": "2015",
+   "journal": "Doklady. Biochemistry and biophysics",
+   "abstract": "On the basis of the structure of Alpidem, a pyrazolopyrimidine ligand of the translocator protein (TSPO), a dipeptide TSPO ligand, N-carbobenzoxy-L-tryptophanyl-L-isoleucine amide (GD-23), was designed and synthesized using our own original peptide design strategy. This compound exhibited anxiolytic activity in BALB/cAnN mice in the \"open-field\" test and in outbred CD1 mice in the \"elevated plus maze\" test. The stereoselectivity of the anxiolytic effect of GD-23 is demonstrated. The results of this study suggest that GD-23 is a ligand of the translocator protein, and its structure can become the basis for creating anxiolytics with a fundamentally new mechanism of action."
+  },
+  {
+   "pmid": "26002041",
+   "doi": "10.1016/j.ejps.2015.05.021",
+   "title": "2-Phenylimidazo[1,2-a]pyridine-containing ligands of the 18-kDa translocator protein (TSPO) behave as agonists and antagonists of steroidogenesis in a mouse leydig tumor cell line.",
+   "year": "2015",
+   "journal": "European journal of pharmaceutical sciences : official journal of the European Federation for Pharmaceutical Sciences",
+   "abstract": "Ligands of 18-kDa translocator protein (TSPO) are known for their ability to potently and dose-dependently stimulate steroid biosynthesis in steroidogenic cells. In this study, we investigated a number of 2-phenyl-imidazo[1,2-a]pyridine acetamide derivatives, analogs of alpidem, for their ability to bind TSPO and to affect steroidogenesis in a mouse Leydig tumor cell line. We observed that not only some compounds behaved as agonists, stimulating steroidogenesis (e.g., 3 and 4) with EC50 values (15.9 and 6.99\u03bcM) close to that determined for FGIN-1-27 used as positive control (7.24\u03bcM), but two compounds, namely 5 and 6, which on the other hand are the most lipophilic ones in the investigated series, behaved as antagonists, by significantly inhibiting steroid production at concentrations at least twenty times lower than the cytotoxic ones. To our surprise, the newly synthesized compound 3, which is a strict analog of alpidem bearing at the para position of the 2-phenyl group a methoxy group instead of chlorine, achieved a ten-fold stimulation of the steroid production (for comparison FGIN-1-27 achieved 1.6-fold stimulation). Within the limits of the examined property space, some unprecedented SARs were unveiled, which can help in understanding the key molecular factors underlying the transition from agonism to antagonism in the steroidogenesis process. Besides the substitution pattern and the physicochemical features (mainly hydrogen bonding potential) of the substituents at the"
+  },
+  {
+   "pmid": "18294852",
+   "doi": "10.1016/j.bmc.2007.06.044",
+   "title": "Synthesis and structure-activity relationship studies in peripheral benzodiazepine receptor ligands related to alpidem.",
+   "year": "2008",
+   "journal": "Bioorganic & medicinal chemistry",
+   "abstract": "The exploration of the structure-affinity relationships concerning a new class of peripheral benzodiazepine receptor (PBR) ligands related to alpidem has been pursued in order to evaluate the consistency of the structure-affinity relationships among different classes (and subclasses) of PBR ligands. The target amide derivatives were prepared following a previously published procedure based on the condensation of pyrrolo[3,4-b]quinoline derivatives 11a,b with glyoxylic acid mono-hydrate and the subsequent amidation of the acids obtained via mixed anhydride. On the other hand, the preparation of compound 9g lacking the pharmacophoric (delta1) carbonyl group involved: (a) the double sequential attack of the dimethylmethyleneammonium salt obtained from bis(dimethylamino)methane and acetyl chloride to pyrrolo[3,4-b]quinoline derivative 11b, (b) the quaternization of the obtained allylamine derivative 13 with methyl iodide, and (c) the palladium-catalyzed allylation of N-methyl-p-anisidine by quaternary allylammonium cation 14. The structure-affinity relationship trends observed in this subclass of tricyclic alpidem-related PBR ligands find correlations in other classes (or subclasses) of PBR ligands. This result supports the initial pharmacophoric hypothesis and suggests a common mode of interaction at the PBR binding site."
+  },
+  {
+   "pmid": "21916402",
+   "doi": "10.1021/jm200770f",
+   "title": "Synthesis and structure-activity relationship studies in translocator protein ligands based on a pyrazolo[3,4-b]quinoline scaffold.",
+   "year": "2011",
+   "journal": "Journal of medicinal chemistry",
+   "abstract": "As a further development of our large program focused on the medicinal chemistry of translocator protein [TSPO (18 kDa)] ligands, a new class of compounds related to alpidem has been designed using SSR180575, emapunil, and previously published pyrrolo[3,4-b]quinoline derivatives 9 as templates. The designed compounds were synthesized by alkylation of the easily accessible 4-methyl-2-phenyl-1H-pyrazolo[3,4-b]quinolin-3(2H)-one derivatives 13-15 with the required bromoacetamides. Along with the expected 2-(4-methyl-3-oxo-2-phenyl-2,3-dihydro-1H-pyrazolo[3,4-b]quinolin-1-yl)acetamide derivatives 10, 2-(4-methyl-3-oxo-2-phenyl-2H-pyrazolo[3,4-b]quinolin-9(3H)-yl)acetamide isomers 11 were isolated and characterized. The high TSPO affinity shown by new pyrazolo[3,4-b]quinoline derivatives 10 and especially 11 leads the way to further expand the chemical diversity in TSPO ligands and provides new templates and structure-affinity relationship data potentially useful in the design of new anxiolytic and neuroprotective agents."
+  },
+  {
+   "pmid": "11602696",
+   "doi": "10.1016/s0022-3565(24)29292-2",
+   "title": "Toxicity of alpidem, a peripheral benzodiazepine receptor ligand, but not zolpidem, in rat hepatocytes: role of mitochondrial permeability transition and metabolic activation.",
+   "year": "2001",
+   "journal": "The Journal of pharmacology and experimental therapeutics",
+   "abstract": "Whereas alpidem is hepatotoxic, zolpidem is not. Despite closely related chemical structures, alpidem, but not zolpidem, is a peripheral benzodiazepine receptor (PBR) ligand, and is also more lipophilic than zolpidem. We compared their effects in isolated rat liver mitochondria and rat hepatocytes. Zolpidem did not affect calcium-induced mitochondrial permeability transition (MPT) in mitochondria, caused little glutathione depletion in hepatocytes, and was not toxic, even at 500 microM. At 250 to 500 microM, alpidem prevented calcium-induced MPT in isolated mitochondria, but caused severe glutathione depletion in hepatocytes that was increased by 3-methylcholanthrene, a cytochrome P4501A inducer, and decreased by cystine, a glutathione precursor. Although cell calcium increased, mitochondrial cytochrome c did not translocate to the cytosol and cells died of necrosis. Cell death was prevented by cystine, but not cyclosporin A, an MPT inhibitor. At low concentrations (25-50 microM), in contrast, alpidem accelerated calcium-induced MPT in mitochondria. It did not deplete glutathione in hepatocytes, but nevertheless caused some cell death that was prevented by cyclosporin A, but not by cystine. Alpidem (10 microM) also increased the toxicity of tumor necrosis factor-alpha (1 ng/ml) in hepatocytes. In conclusion, low concentrations of alpidem increase both calcium-induced MPT in mitochondria, and TNF-alpha toxicity in cells, like other PBR ligands. Like other lipophilic protonatab"
+  },
+  {
+   "pmid": "8863805",
+   "doi": "10.1021/jm960325j",
+   "title": "Molecular basis of peripheral vs central benzodiazepine receptor selectivity in a new class of peripheral benzodiazepine receptor ligands related to alpidem.",
+   "year": "1996",
+   "journal": "Journal of medicinal chemistry",
+   "abstract": "Alpidem (1), the anxiolytic imidazopyridine, has nanomolar binding affinity for both the central benzodiazepine receptor (CBR) and the peripheral benzodiazepine receptor (PBR). A novel class of PBR ligands related to alpidem has been designed by comparing the interaction models of alpidem with PBR and CBR. Several compounds in this class have shown high selectivity for PBR vs CBR, and the selectivity has been discussed in terms of interaction models. The binding behavior of the three selected compounds was extensively studied by competition and saturation assays, and the results suggest that they are capable of recognizing two sites labeled by [3H]PK11195. The molecular structure of one of the most active compounds (4e) has been determined by X-ray diffraction and compared with that of alpidem. Molecular modeling studies suggest that the bioactive conformation of 4e is likely to be very similar to the conformation found in the crystal."
+  },
+  {
+   "pmid": "14723961",
+   "doi": "10.1016/j.bmc.2003.10.050",
+   "title": "Design, synthesis and structure-affinity relationships of aryloxyanilide derivatives as novel peripheral benzodiazepine receptor ligands.",
+   "year": "2004",
+   "journal": "Bioorganic & medicinal chemistry",
+   "abstract": "Since the peripheral benzodiazepine receptor (PBR) has been primarily found as a high-affinity binding site for diazepam in rat kidney, numerous studies of it have been performed. However, the physiological role and functions of PBR have not been fully elucidated. Currently, we presented the pharmacological profile of two high and selective PBR ligands, N-(2,5-dimethoxybenzyl)-N-(4-fluoro-2-phenoxyphenyl)acetamide (7-096, DAA1106) (PBR: IC(50)=0.28 nM) and N-(4-chloro-2-phenoxyphenyl)-N-(2-isopropoxybenzyl)acetamide (7-099, DAA1097) (PBR: IC(50)=0.92 nM). The compounds are aryloxyanilide derivatives, and identified with known PBR ligands such as benzodiazepine (1, Ro5-4864), isoquinoline (2, PK11195), imidazopyridine (3, Alpidem), and indole (5, FGIN-1-27) derivatives. The aryloxyanilide derivatives, which have been derived by opening the diazepine ring of 1, are a novel class as PBR ligands and have exhibited high and selective affinity for peripheral benzodiazepine receptors (PBRs). These novel derivatives would be useful for exploring the functions of PBR. In this paper, the design, synthesis and structure-affinity relationships of aryloxyanilide derivatives are described."
+  },
+  {
+   "pmid": "11557354",
+   "doi": "10.1016/s0968-0896(01)00192-4",
+   "title": "2-Arylpyrazolo[1,5-a]pyrimidin-3-yl acetamides. New potent and selective peripheral benzodiazepine receptor ligands.",
+   "year": "2001",
+   "journal": "Bioorganic & medicinal chemistry",
+   "abstract": "A new class of N,N-diethyl-(2-arylpyrazolo[1,5-a]pyrimidin-3-yl)acetamides (3f-y), as azaisosters of Alpidem, was prepared following a novel synthetic method and their affinities for both the peripheral (PBR) and the central (CBR) benzodiazepine receptors were evaluated. Binding assays were carried out using both [3H]PK 11195 and [3H]Ro 5-4864 as radioligands for PBR, whereas [3H]Ro 15-1788 was used for CBR, in rat kidney and rat cortex, respectively. The tested compounds exhibited a broad range of binding affinities from as low as 0.76 nM to inactivity and most of them proved to be high selective ligands for PBR. The preliminary SAR studies suggested some of the structural features required for high affinity and selectivity; particularly the substituents on the pyrimidine moiety seemed to play an important role in PBR versus CBR selectivity. A subset of the highest affinity compounds was also tested for their ability to stimulate steroid biosynthesis in C6 glioma rat cells and some of these were found to increase pregnenolone formation with potency similar to Ro 5-4864 and PK 11195."
+  },
+  {
+   "pmid": "12023539",
+   "doi": "10.1124/jpet.301.3.1067",
+   "title": "SSR180575 (7-chloro-N,N,5-trimethyl-4-oxo-3-phenyl-3,5-dihydro-4H-pyridazino[4,5-b]indole-1-acetamide), a peripheral benzodiazepine receptor ligand, promotes neuronal survival and repair.",
+   "year": "2002",
+   "journal": "The Journal of pharmacology and experimental therapeutics",
+   "abstract": "In the present study, we have investigated the potential neuroprotective effects of a novel peripheral benzodiazepine binding site (PBR) ligand, 7-chloro-N,N,5-trimethyl-4-oxo-3-phenyl-3,5-dihydro-4H-pyridazino[4,5-b]indole-1-acetamide (SSR180575), in models of central and peripheral neurodegeneration in vivo and its effect on steroid concentrations in plasma and nervous tissue. SSR180575 shows high affinity (IC(50), 2.5-3.5 nM) and selectivity for the rat and human PBR and potently inhibits the in vivo binding of [(3)H]alpidem to PBR in the rat brain and spleen after oral or i.p. administration (ID(50), 0.1-0.3 mg/kg). In an experimental model of motoneuron degeneration induced by facial nerve axotomy in the immature rat, SSR180575 given i.p. or orally for 8 days rescued facial motoneurons, increasing their survival by 40 to 72% at 6 and 10 mg/kg p.o. b.i.d. Moreover, in this model, SSR180575 (10 mg/kg p.o. b.i.d.) increased by 87% the number of motoneurons immunoreactive to peripherin, a type III intermediate filament, whose expression is up-regulated during nerve regeneration. SSR180575 also improved functional recovery in acrylamide-induced neuropathy in the rat when given therapeutically at 2.5 to 10 mg/kg/day p.o. Furthermore, SSR180575 (3 mg/kg i.p. b.i.d.) accelerated functional recovery of the blink reflex after local injury of the facial nerve in the rat. SSR180575 increased pregnenolone accumulation in the brain and sciatic nerve (+100% at 3 mg/kg i.p.), suggesting"
+  },
+  {
+   "pmid": "1316281",
+   "doi": "10.1016/0014-2999(92)90097-n",
+   "title": "Influence of benzodiazepines on the response of the guinea-pig isolated trachea to the contractile action of adenosine.",
+   "year": "1992",
+   "journal": "European journal of pharmacology",
+   "abstract": "The effects of diazepam and other agonists of central or peripheral benzodiazepine receptors were studied on the contractile action of adenosine, 2-chloroadenosine and R-PIA (N6-(L-2-phenylisopropyl)-adenosine) on the guinea-pig isolated trachea. These effects were compared to those of dipyridamole. Diazepam 10(-7) to 10(-5) M potentiated the efficacy of adenosine; the maximal contractile effect of adenosine (% vs. acetylcholine 10(-3) M) was 20.4 +/- 4.2 (n = 21) in control conditions and 45.5 +/- 3.7 (n = 6; P less than 0.001) in the presence of diazepam 10(-5) M. Ro5-4864 (10(-7) to 10(-5) M) or alpidem (10(-7) to 10(-5) M), both agonists of peripheral benzodiazepine receptors, potentiated the contractile effects of adenosine to the same extent as diazepam. Clonazepam and zopiclone, both agonists of central benzodiazepine receptors, did not modify these effects. Antagonists of central (flumazenil) or peripheral (RP 52028) benzodiazepine receptors had no influence on the interaction between diazepam or Ro5-4864 and adenosine. Conversely, dipyridamole significantly reduced (10(-7) M) or suppressed (10(-6) M) the contractile effects of adenosine. The contractile effects of 2-chloroadenosine and R-PIA were weakly affected in presence of high concentrations of diazepam and dipyridamole. Epithelium removal potentiated the contractile effect of adenosine on the guinea-pig isolated trachea and increased the potentiating effect of diazepam. It is concluded that benzodiazepines and "
+  }
+ ],
+ "gabaa": [
+  {
+   "pmid": "39461622",
+   "doi": "10.1016/j.pbb.2024.173895",
+   "title": "Nonsedating anxiolytics.",
+   "year": "2024",
+   "journal": "Pharmacology, biochemistry, and behavior",
+   "abstract": "Anxiety disorders are the most prevalent psychiatric pathology with substantial cost to society, but the existing treatments are often inadequate. This has rekindled the interest in the GABA<sub>A</sub>-receptor (GABA<sub>A</sub>R) positive allosteric modulator (PAM) compounds, which have a long history in treatment of anxiety beginning with diazepam, chlordiazepoxide, and alprazolam. While the GABA<sub>A</sub>R PAMs possess remarkable anxiolytic efficacy, they have fallen out of favor due to a host of adverse effects including sedation, motor impairment, addictive potential and tolerance development. A substantial effort was thus devoted to the design of GABA<sub>A</sub>R PAMs as anxiolytics with reduced sedative liabilities. Several non-benzodiazepine (BZD) GABA<sub>A</sub>PAMs progressed to clinical trials (bretazenil, abecarnil, alpidem, and ocinaplon) with alpidem obtaining regulatory approval as anxiolytic, but later withdrawn from market due to hepatotoxicity. Advances in molecular biology gave birth to a host of subtype selective GABA<sub>A</sub>R-PAMs which suffered from signs of sedation and motor impairment and only three compounds progressed to proof-of-concept studies (TPA-023, AZD7325 and PF-06372865). TPA-023 was terminated due to toxicity in preclinical species while AZD7325 and PF-06372865 did not achieve efficacy endpoints in patients. We highlight a new compound, KRM-II-81, that is an imidazodiazepine selective for GABA<sub>A</sub>R containing \u03b12/3 and \u03b23 p"
+  },
+  {
+   "pmid": "41585699",
+   "doi": "10.1021/acsomega.5c08365",
+   "title": "Imidazo[1,2\u2011&lt;i&gt;a&lt;/i&gt;]pyridines in Medicinal Chemistry: Recent Advances in Synthesis and Biological Activities.",
+   "year": "2026",
+   "journal": "ACS omega",
+   "abstract": "Imidazo-[1,2-<i>a</i>]-pyridines are widely recognized scaffolds present in several marketed drugs, including the anxiolytics alpidem, saripidem, necopidem, and zolpidem, which are some of the most prescribed medications for insomnia. In this review, we analyze publication trends, which reveal exponential growth in research involving this scaffold. We highlight recent synthetic strategies (2017-2025) for the preparation of imidazo-[1,2-<i>a</i>]-pyridine derivatives, such as condensation, multicomponent and tandem reactions, intramolecular cyclizations, and oxidative couplings under green conditions. In addition, we discuss innovative Medicinal Chemistry studies exploring their applications in the treatment of cancer, Alzheimer's disease, tuberculosis, and neglected tropical diseases. Significant advances have been made in identifying derivatives with potent activity against specific biological targets, including kinases, tubulin, HDACs, the cytochrome bc1 complex of <i>Mycobacterium tuberculosis</i>, and key enzymes involved in the pathogenesis of Alzheimer's disease, such as cholinesterases and secretases. Altogether, this review consolidates the vast therapeutic potential of the imidazo-[1,2-<i>a</i>]-pyridine core, emphasizing its synthetic versatility and broad spectrum of biological activities, which firmly establish it as a privileged scaffold for drug discovery."
+  },
+  {
+   "pmid": "33328871",
+   "doi": "10.3389/fnins.2020.599812",
+   "title": "The Z-Drugs Zolpidem, Zaleplon, and Eszopiclone Have Varying Actions on Human GABA <sub><i>A</i></sub> Receptors Containing \u03b31, \u03b32, and \u03b33 Subunits.",
+   "year": "2020",
+   "journal": "Frontiers in neuroscience",
+   "abstract": "\u03b3-Aminobutyric-acid type A (GABA <sub><i>A</i></sub> ) receptors expressing the \u03b31 or \u03b33 subunit are only found within a few regions of the brain, some of which are involved in sleep. No known compounds have been reported to selectively target \u03b31- or \u03b33-containing GABA <sub><i>A</i></sub> receptors. Pharmacological assessments of this are conflicting, possibly due to differences in experimental models, conditions, and exact protocols when reporting efficacies and potencies. In this study, we evaluated the modulatory properties of five non-benzodiazepine Z-drugs (zaleplon, indiplon, eszopiclone, zolpidem, and alpidem) used in sleep management and the benzodiazepine, diazepam on human \u03b11\u03b22\u03b3 receptors using all three \u03b3 subtypes. This was accomplished using concatenated GABA <sub><i>A</i></sub> pentamers expressed in <i>Xenopus laevis</i> oocytes and measured via two-electrode voltage clamp. This approach removes the potential for single subunits to form erroneous receptors that could contribute to the pharmacological assessment of these compounds. No compound tested had significant effects on \u03b31-containing receptors below 10 \u03bcM. Interestingly, zaleplon and indiplon were found to modulate \u03b33-containing receptors equally as efficacious as \u03b32-containing receptors. Furthermore, zaleplon had a higher potency for \u03b33- than for \u03b32-containing receptors, indicating certain therapeutic effects could occur via these \u03b33-containing receptors. Eszopiclone modulated \u03b33-containing receptors with"
+  },
+  {
+   "pmid": "18294852",
+   "doi": "10.1016/j.bmc.2007.06.044",
+   "title": "Synthesis and structure-activity relationship studies in peripheral benzodiazepine receptor ligands related to alpidem.",
+   "year": "2008",
+   "journal": "Bioorganic & medicinal chemistry",
+   "abstract": "The exploration of the structure-affinity relationships concerning a new class of peripheral benzodiazepine receptor (PBR) ligands related to alpidem has been pursued in order to evaluate the consistency of the structure-affinity relationships among different classes (and subclasses) of PBR ligands. The target amide derivatives were prepared following a previously published procedure based on the condensation of pyrrolo[3,4-b]quinoline derivatives 11a,b with glyoxylic acid mono-hydrate and the subsequent amidation of the acids obtained via mixed anhydride. On the other hand, the preparation of compound 9g lacking the pharmacophoric (delta1) carbonyl group involved: (a) the double sequential attack of the dimethylmethyleneammonium salt obtained from bis(dimethylamino)methane and acetyl chloride to pyrrolo[3,4-b]quinoline derivative 11b, (b) the quaternization of the obtained allylamine derivative 13 with methyl iodide, and (c) the palladium-catalyzed allylation of N-methyl-p-anisidine by quaternary allylammonium cation 14. The structure-affinity relationship trends observed in this subclass of tricyclic alpidem-related PBR ligands find correlations in other classes (or subclasses) of PBR ligands. This result supports the initial pharmacophoric hypothesis and suggests a common mode of interaction at the PBR binding site."
+  },
+  {
+   "pmid": "31711764",
+   "doi": "10.1016/j.bioorg.2019.103334",
+   "title": "Development of 1,3-thiazole analogues of imidazopyridines as potent positive allosteric modulators of GABA<sub>A</sub> receptors.",
+   "year": "2020",
+   "journal": "Bioorganic chemistry",
+   "abstract": "Structure-activity relationship studies were conducted in the search for 1,3-thiazole isosteric analogs of imidazopyridine drugs (Zolpidem, Alpidem). Three series of novel \u03b3-aminobutyric acid receptor (GABA<sub>A</sub>R) ligands belonging to imidazo[2,1-b]thiazoles, imidazo[2,1-b][1,3,4]thiadiazoles, and benzo[d]imidazo[2,1-b]thiazoles were synthesized and characterized as active agents against GABA<sub>A</sub>R benzodiazepine-binding site. In each of these series, potent compounds were discovered using a radioligand competition binding assay. The functional properties of highest-affinity compounds 28 and 37 as GABA<sub>A</sub>R positive allosteric modulators (PAMs) were determined by electrophysiological measurements. In vivo studies on zebrafish demonstrated their potential for the further development of anxiolytics. Using the OECD \"Fish, Acute Toxicity Test\" active compounds were found safe and non-toxic. Structural bases for activity of benzo[d]imidazo[2,1-b]thiazoles were proposed using molecular docking studies. The isosteric replacement of the pyridine nuclei by 1,3-thiazole, 1,3,4-thiadiazole, or 1,3-benzothiazole in the ring-fused imidazole class of GABA<sub>A</sub>R PAMs was shown to be promising for the development of novel hypnotics, anxiolytics, anticonvulsants, and sedatives drug-candidates."
+  },
+  {
+   "pmid": "24357084",
+   "doi": "10.1007/s40263-013-0129-z",
+   "title": "The pharmacology of imepitoin: the first partial benzodiazepine receptor agonist developed for the treatment of epilepsy.",
+   "year": "2014",
+   "journal": "CNS drugs",
+   "abstract": "Although benzodiazepines (BZDs) offer a wide spectrum of antiepileptic activity against diverse types of epileptic seizures, their use in the treatment of epilepsy is limited because of adverse effects, loss of efficacy (tolerance), and development of physical and psychological dependence. BZDs act as positive allosteric modulators of the inhibitory neurotransmitter GABA by binding to the BZD recognition site (\"BZD receptor\") of the GABAA receptor. Traditional BZDs such as diazepam or clonazepam act as full agonists at this site, so that one strategy to resolve the disadvantages of these compounds would be the development of partial agonists with lower intrinsic efficacy at the BZD site of the GABAA receptor. Several BZD site partial or subtype selective compounds, including bretazenil, abecarnil, or alpidem, have been developed as anxioselective anxiolytic drugs, but epilepsy was not a target indication for such compounds. More recently, the imidazolone derivatives imepitoin (ELB138) and ELB139 were shown to act as low-affinity partial agonists at the BZD site of the GABAA receptor, and imepitoin was developed for the treatment of epilepsy. Imepitoin displayed a broad spectrum of anticonvulsant activity in diverse seizure and epilepsy models at tolerable doses, and, as expected from its mechanism of action, lacked tolerance and abuse liability in rodent and primate models. The more favorable pharmacokinetic profile of imepitoin in dogs versus humans led to the decision to de"
+  },
+  {
+   "pmid": "8863805",
+   "doi": "10.1021/jm960325j",
+   "title": "Molecular basis of peripheral vs central benzodiazepine receptor selectivity in a new class of peripheral benzodiazepine receptor ligands related to alpidem.",
+   "year": "1996",
+   "journal": "Journal of medicinal chemistry",
+   "abstract": "Alpidem (1), the anxiolytic imidazopyridine, has nanomolar binding affinity for both the central benzodiazepine receptor (CBR) and the peripheral benzodiazepine receptor (PBR). A novel class of PBR ligands related to alpidem has been designed by comparing the interaction models of alpidem with PBR and CBR. Several compounds in this class have shown high selectivity for PBR vs CBR, and the selectivity has been discussed in terms of interaction models. The binding behavior of the three selected compounds was extensively studied by competition and saturation assays, and the results suggest that they are capable of recognizing two sites labeled by [3H]PK11195. The molecular structure of one of the most active compounds (4e) has been determined by X-ray diffraction and compared with that of alpidem. Molecular modeling studies suggest that the bioactive conformation of 4e is likely to be very similar to the conformation found in the crystal."
+  },
+  {
+   "pmid": "11602696",
+   "doi": "10.1016/s0022-3565(24)29292-2",
+   "title": "Toxicity of alpidem, a peripheral benzodiazepine receptor ligand, but not zolpidem, in rat hepatocytes: role of mitochondrial permeability transition and metabolic activation.",
+   "year": "2001",
+   "journal": "The Journal of pharmacology and experimental therapeutics",
+   "abstract": "Whereas alpidem is hepatotoxic, zolpidem is not. Despite closely related chemical structures, alpidem, but not zolpidem, is a peripheral benzodiazepine receptor (PBR) ligand, and is also more lipophilic than zolpidem. We compared their effects in isolated rat liver mitochondria and rat hepatocytes. Zolpidem did not affect calcium-induced mitochondrial permeability transition (MPT) in mitochondria, caused little glutathione depletion in hepatocytes, and was not toxic, even at 500 microM. At 250 to 500 microM, alpidem prevented calcium-induced MPT in isolated mitochondria, but caused severe glutathione depletion in hepatocytes that was increased by 3-methylcholanthrene, a cytochrome P4501A inducer, and decreased by cystine, a glutathione precursor. Although cell calcium increased, mitochondrial cytochrome c did not translocate to the cytosol and cells died of necrosis. Cell death was prevented by cystine, but not cyclosporin A, an MPT inhibitor. At low concentrations (25-50 microM), in contrast, alpidem accelerated calcium-induced MPT in mitochondria. It did not deplete glutathione in hepatocytes, but nevertheless caused some cell death that was prevented by cyclosporin A, but not by cystine. Alpidem (10 microM) also increased the toxicity of tumor necrosis factor-alpha (1 ng/ml) in hepatocytes. In conclusion, low concentrations of alpidem increase both calcium-induced MPT in mitochondria, and TNF-alpha toxicity in cells, like other PBR ligands. Like other lipophilic protonatab"
+  },
+  {
+   "pmid": "26483966",
+   "doi": "10.32607/20758251-2015-7-3-108-112",
+   "title": "The Novel Dipeptide Translocator Protein Ligand, Referred to As GD-23, Exerts Anxiolytic and Nootropic Activities.",
+   "year": "2015",
+   "journal": "Acta naturae",
+   "abstract": "The translocator protein (TSPO) promotes the translocation of cholesterol to the inner mitochondrial membrane and mediates steroid formation. In this study, we first report on a biological evaluation of the dipeptide GD-23 (N-carbobenzoxy-L tryptophanyl-L isoleucine amide), a structural analogue of Alpidem, the principal TSPO ligand. We show that GD-23 in a dose range of 0.05 to 0.5 mg/kg (i.p.) exhibits anxiolytic activity in the elevated plus maze test and nootropic activity in the object recognition test in scopolamine-induced amnesia in rodents. It was shown that GD-23 did not affect spontaneous locomotor activity, holding promise as a nonsedative anxiolytic agent. The anxiolytic and nootropic activities of GD-23 were abrogated by the TSPO specific ligand PK11195, which thus suggests a role for TSPO in mediating the pharmacological activity of GD-23."
+  },
+  {
+   "pmid": "12659934",
+   "doi": "10.1016/s0928-0987(03)00002-2",
+   "title": "Alpidem analogues containing a GABA or glycine moiety as new anticonvulsant agents.",
+   "year": "2003",
+   "journal": "European journal of pharmaceutical sciences : official journal of the European Federation for Pharmaceutical Sciences",
+   "abstract": "Alpidem analogues containing a GABA (1-3) or glycine (4-6) moiety were synthesized and their interaction with the GABA/benzodiazepine receptor complex at central (CBR) and peripheral (PBR) level was evaluated. In particular, their ability to modulate the specific binding of [3H]-GABA to washed membrane preparations from the rat cerebral cortex, as well as their effects on human recombinant GABA(A) receptors in Xenopus laevis oocytes, were assessed. Results from these in vitro assays showed that the most active compounds were 1 and 4. Intraperitoneal administration of compound 1 at a dose of 150 mg/kg significantly antagonized pentylenetetrazole-induced seizures in rats and the protective effects were evident for 90 min. However, compound 4 failed to interact with strychnine-sensitive Gly-binding sites. Consistent with these binding results, intraperitoneal administration of compound 4 at 150 mg/kg showed no effect against convulsions induced by strychnine, except for a prolonged time of the latency of convulsions. The results obtained suggest that compound 1 possesses interesting anticonvulsant activity and deserves further investigation as a novel lipophilic GABA derivative."
+  },
+  {
+   "pmid": "26518550",
+   "doi": "10.1134/s1607672915050063",
+   "title": "The first dipeptide ligand of translocator protein: Design and anxiolytic activity.",
+   "year": "2015",
+   "journal": "Doklady. Biochemistry and biophysics",
+   "abstract": "On the basis of the structure of Alpidem, a pyrazolopyrimidine ligand of the translocator protein (TSPO), a dipeptide TSPO ligand, N-carbobenzoxy-L-tryptophanyl-L-isoleucine amide (GD-23), was designed and synthesized using our own original peptide design strategy. This compound exhibited anxiolytic activity in BALB/cAnN mice in the \"open-field\" test and in outbred CD1 mice in the \"elevated plus maze\" test. The stereoselectivity of the anxiolytic effect of GD-23 is demonstrated. The results of this study suggest that GD-23 is a ligand of the translocator protein, and its structure can become the basis for creating anxiolytics with a fundamentally new mechanism of action."
+  },
+  {
+   "pmid": "33158242",
+   "doi": "10.3390/molecules25215132",
+   "title": "The New Dipeptide TSPO Ligands: Design, Synthesis and Structure-Anxiolytic Activity Relationship.",
+   "year": "2020",
+   "journal": "Molecules (Basel, Switzerland)",
+   "abstract": "The translocator protein (TSPO, 18 kDa) plays an important role in the synthesis of neurosteroids by promoting the transport of cholesterol from the outer to the inner mitochondrial membrane, which is the rate-limiting step in neurosteroidogenesis. Stimulation of TSPO by appropriate ligands increases the level of neurosteroids. The present study describes the design, synthesis and investigation of anxiolytic-like effects of a series of <i>N</i>-acyl-tryptophanyl-containing dipeptides. These novel dipeptide TSPO ligands were designed with the original drug-based peptide design strategy using alpidem as non-peptide prototype. The anxiolytic activities were investigated in Balb/C mice using the illuminated open-field and elevated plus-maze tests in outbred laboratory mice ICR (CD-1). Dipeptide GD-102 (<i>N</i>-phenylpropionyl-l-tryptophanyl-l-leucine amide) in the dose range of 0.01-0.5 mg/kg intraperitoneally (i.p.) has a pronounced anxiolytic activity. The anxiolytic effect of GD-102 was abolished by PK11195, a specific TSPO antagonist. The structure-activity relationship study made it possible to identify a pharmacophore fragment for the dipeptide TSPO ligand. It was shown that l,d-diastereomer of GD-102 has no activity, and the d,l-isomer has less pronounced activity. The anxiolytic activity also disappears by replacing the C-amide group with the methyl ester, a free carboxyl group or methylamide. Consecutive replacement of each amino acid residue with glycine showed the imp"
+  },
+  {
+   "pmid": "26002041",
+   "doi": "10.1016/j.ejps.2015.05.021",
+   "title": "2-Phenylimidazo[1,2-a]pyridine-containing ligands of the 18-kDa translocator protein (TSPO) behave as agonists and antagonists of steroidogenesis in a mouse leydig tumor cell line.",
+   "year": "2015",
+   "journal": "European journal of pharmaceutical sciences : official journal of the European Federation for Pharmaceutical Sciences",
+   "abstract": "Ligands of 18-kDa translocator protein (TSPO) are known for their ability to potently and dose-dependently stimulate steroid biosynthesis in steroidogenic cells. In this study, we investigated a number of 2-phenyl-imidazo[1,2-a]pyridine acetamide derivatives, analogs of alpidem, for their ability to bind TSPO and to affect steroidogenesis in a mouse Leydig tumor cell line. We observed that not only some compounds behaved as agonists, stimulating steroidogenesis (e.g., 3 and 4) with EC50 values (15.9 and 6.99\u03bcM) close to that determined for FGIN-1-27 used as positive control (7.24\u03bcM), but two compounds, namely 5 and 6, which on the other hand are the most lipophilic ones in the investigated series, behaved as antagonists, by significantly inhibiting steroid production at concentrations at least twenty times lower than the cytotoxic ones. To our surprise, the newly synthesized compound 3, which is a strict analog of alpidem bearing at the para position of the 2-phenyl group a methoxy group instead of chlorine, achieved a ten-fold stimulation of the steroid production (for comparison FGIN-1-27 achieved 1.6-fold stimulation). Within the limits of the examined property space, some unprecedented SARs were unveiled, which can help in understanding the key molecular factors underlying the transition from agonism to antagonism in the steroidogenesis process. Besides the substitution pattern and the physicochemical features (mainly hydrogen bonding potential) of the substituents at the"
+  },
+  {
+   "pmid": "1361878",
+   "doi": "10.1016/0361-9230(92)90164-s",
+   "title": "Benzodiazepine receptor binding of nonbenzodiazepines in vivo: alpidem, zolpidem and zopiclone.",
+   "year": "1992",
+   "journal": "Brain research bulletin",
+   "abstract": "Several classes of nonbenzodiazepine compounds, including imidazopyridines such as alpidem and zolpidem and cyclopyrrolones, e.g., zopiclone, have effects similar to benzodiazepines and may act at the benzodiazepine receptor in brain. We characterized the binding of these compounds to the benzodiazepine site in three brain regions using specific uptake of the high-affinity ligand [3H]Ro15-1788 (flumazenil). For alpidem, benzodiazepine binding was decreased in cortex and hippocampus with increasing drug dose. For zolpidem, receptor binding was reduced in cortex without a dose-response effect and no effect was observed on cerebellar binding. Zopiclone did not alter binding except for a decrease in binding at the lowest dose evaluated and an increase in binding above control at the highest dose. These data corroborate prior studies indicating that the imidazopyridines appear to act at the benzodiazepine receptor, but do not support receptor subtype selectivity of zolpidem. The limited effect of zopiclone except for increased binding at high doses is also consistent with prior studies suggesting that zopiclone acts at a site distinct from the benzodiazepine receptor."
+  },
+  {
+   "pmid": "22981367",
+   "doi": "10.1016/j.tips.2012.08.003",
+   "title": "Anxioselective anxiolytics: on a quest for the Holy Grail.",
+   "year": "2012",
+   "journal": "Trends in pharmacological sciences",
+   "abstract": "The discovery of benzodiazepine receptors provided the impetus to discover and develop anxioselective anxiolytics ('Valium without the side effects'). The market potential for an anxioselective based on the \u03b3-aminobutyric acid A (GABA(A)) receptor resulted in clinical trials of multiple compounds. In contrast to the anxioselective profile displayed in preclinical models, compounds such as bretazenil, TPA023, and MRK 409 produced benzodiazepine-like side effects (sedation, dizziness) in Phase I studies, whereas alpidem and ocinaplon exhibited many of the characteristics of an anxioselective in the clinic. Alpidem was briefly marketed for the treatment of anxiety, but was withdrawn because of liver toxicity. Reversible elevations in liver enzymes halted development of ocinaplon in Phase III. The clinical profiles of these two molecules demonstrate that it is possible to develop GABA(A) receptor-based anxioselectives. However, despite the formidable molecular toolbox at our disposal, we are no better informed about the GABA(A) receptors responsible for an anxioselective profile in the clinic. Here, I discuss the evolution of a quest, spanning four decades, for molecules that retain the rapid and robust anti-anxiety actions of benzodiazepines without the side effects that limit their usefulness."
+  }
+ ],
+ "hepato": [
+  {
+   "pmid": "40468388",
+   "doi": "10.1186/s40360-025-00958-4",
+   "title": "In Silico drug evaluation by molecular docking, ADME studies and DFT calculations of 2-(6-chloro-2-(4-chlorophenyl)imidazo[1,2-a]pyridin-3-yl)-N, N-dipropylacetamide.",
+   "year": "2025",
+   "journal": "BMC pharmacology & toxicology",
+   "abstract": "In this study, the structural, electronic, pharmacokinetic, and biological properties of molecule 2-(6-kloro-2-(4-klorofenil)imidazo[1,2-a]piridin-3-il)-N, N-dipropilasetamid (Alpidem), an imidazopyridine derivative anxiolytic known for its high BZ\u2081 (benzodiazepine-1) receptor affinity and low adverse effect profile, were comprehensively investigated by density functional theory (DFT) and in-silico methods. The alpidem molecule was optimized using the 6-311G(d, p) basis set with the B3LYP and B3PW91 methods; information on the stability and chemical reactivity of the structure was obtained via the highest occupied molecular orbital (HOMO), lowest unoccupied molecular orbital (LUMO), molecular electrostatic potential (MEP) maps, natural bonding orbital (NBO) analysis, non-linear optical (NLO) properties, and Mulliken charge distributions. Comparative analysis of two different methods has shown that the results are consistent with each other and provide reliable data. In addition, the drug similarity, bioavailability score, bioactivity values, absorption, distribution, metabolism, and excretion (ADME) profiles of the Alpidem molecule were calculated, and it was determined that the Alpidem molecule has pharmacologically favorable properties. Within the scope of molecular docking analyses, its interactions with two different enzymes (PDB ID: 2Z5X and 4BDT) associated with Alzheimer's disease were evaluated. The binding energy values obtained were -\u20098.00\u00a0kcal/mol (2Z5X) and -\u20099.60"
+  },
+  {
+   "pmid": "39461622",
+   "doi": "10.1016/j.pbb.2024.173895",
+   "title": "Nonsedating anxiolytics.",
+   "year": "2024",
+   "journal": "Pharmacology, biochemistry, and behavior",
+   "abstract": "Anxiety disorders are the most prevalent psychiatric pathology with substantial cost to society, but the existing treatments are often inadequate. This has rekindled the interest in the GABA<sub>A</sub>-receptor (GABA<sub>A</sub>R) positive allosteric modulator (PAM) compounds, which have a long history in treatment of anxiety beginning with diazepam, chlordiazepoxide, and alprazolam. While the GABA<sub>A</sub>R PAMs possess remarkable anxiolytic efficacy, they have fallen out of favor due to a host of adverse effects including sedation, motor impairment, addictive potential and tolerance development. A substantial effort was thus devoted to the design of GABA<sub>A</sub>R PAMs as anxiolytics with reduced sedative liabilities. Several non-benzodiazepine (BZD) GABA<sub>A</sub>PAMs progressed to clinical trials (bretazenil, abecarnil, alpidem, and ocinaplon) with alpidem obtaining regulatory approval as anxiolytic, but later withdrawn from market due to hepatotoxicity. Advances in molecular biology gave birth to a host of subtype selective GABA<sub>A</sub>R-PAMs which suffered from signs of sedation and motor impairment and only three compounds progressed to proof-of-concept studies (TPA-023, AZD7325 and PF-06372865). TPA-023 was terminated due to toxicity in preclinical species while AZD7325 and PF-06372865 did not achieve efficacy endpoints in patients. We highlight a new compound, KRM-II-81, that is an imidazodiazepine selective for GABA<sub>A</sub>R containing \u03b12/3 and \u03b23 p"
+  },
+  {
+   "pmid": "19720731",
+   "doi": "10.1124/dmd.109.028860",
+   "title": "Evaluation of the potential for drug-induced liver injury based on in vitro covalent binding to human liver proteins.",
+   "year": "2009",
+   "journal": "Drug metabolism and disposition: the biological fate of chemicals",
+   "abstract": "Prediction of idiosyncratic drug-induced liver injury (DILI) is difficult, and the underlying mechanisms are not fully understood. However, many drugs causing DILI are considered to form reactive metabolites and covalently bind to cellular macromolecules in the liver. The objective of this study was to clarify whether the risk of idiosyncratic DILI can be estimated by comparing in vitro covalent binding (CB) levels among 12 positive compounds (acetaminophen, alpidem, bromfenac, carbamazepine, diclofenac, flutamide, imipramine, nefazodone, tacrine, ticlopidine, tienilic acid, and troglitazone) for DILI and 12 negative compounds (acetylsalicylic acid, caffeine, dexamethasone, losartan, ibuprofen, paroxetine, pioglitazone, rosiglitazone, sertraline, theophylline, venlafaxine, and zolpidem). After incubation with human liver microsomes in the presence of NADPH, there was a large overlap in the distribution of CB amounts between the positive and negative groups. On addition of UDP-glucuronic acid (UDPGA) as a cofactor for glucuronidation, the CB levels of bromfenac and diclofenac were increased. With addition of nucleophilic glutathione (GSH), values for most compounds were decreased. However, separation of the two groups on the basis of CB could not be improved by UDPGA or GSH. Furthermore, CB with human hepatocytes also failed to discriminate positive from negative compounds. Therefore, the CB amount alone is not sufficient for risk assessment of DILI. In contrast, when the CB a"
+  },
+  {
+   "pmid": "7750686",
+   "doi": null,
+   "title": "[Hepatitis induced by alpidem (Ananxyl). Four cases, one of them fatal].",
+   "year": "1994",
+   "journal": "Gastroenterologie clinique et biologique",
+   "abstract": "Acute hepatitis related to psychotropic drugs has been rarely reported with anxiolytic treatments. Alpidem (Ananxyl) is a new imidazopyridine derivative with anxiolytic properties which was launched in October 1991. Several cases of acute hepatitis, some severe, were described with this drug and its liver toxicity was questioned. Results of a study monitoring drug side-effects caused this drug to be withdrawn from the market for one year. We report four cases of acute hepatitis and discuss the role of alpidem. All but one case were presented as severe acute hepatitis with hepatic failure. One patient ran a fulminant course and died despite liver transplantation. The mechanism of liver toxicity remains unclear."
+  },
+  {
+   "pmid": "12506267",
+   "doi": null,
+   "title": "[Hepatic tolerance of atypical antipsychotic drugs].",
+   "year": "2002",
+   "journal": "L'Encephale",
+   "abstract": "The strategy in the choice of antipsychotic agent must take into account the hepatic tolerance according to non-negligible incidence of liver disorders among psychiatric population (presence of risk factors like alcoholism, drugs of abuse intake, polymedication including potentially hepatotoxic drugs.). More than 1 000 drugs have been listed as being responsible of hepatic side effects; 16% of these agents were neuropsychiatric drugs. Antidepressive drugs (tricyclic agents or SSRI), mood stabilizing agents and neuroleptic drugs have been implicated in biological or/and clinical hepatotoxicity. For these reasons, some psychotropic agents have been withdrawn of the pharmaceutical market like alpidem or medifoxamine. Atrium*, sometimes used to correct tremor induced by neuroleptic drugs, has been withdrawn recently, as well. Isolated elevations of hepatic enzymes occur frequently with phenothiazines drugs (frequency evaluated to 20%) but also with other classes of neuroleptic agents, as well. On the contrary, clinical hepatitis have been more rarely described with neuroleptic drugs like phenothiazine agents (0,1-1%) or with haloperidol (0,002%). The definition of hepatotoxicity is based on biological parameters (elevation of alkaline phosphatase enzyme, SGPT, SGOT and GGT) or on clinical abnormalities (hepatitis, jaundice.). Clinical hepatitis could be either cytolytic or cholestatic. Clinical diagnosis and the research of its origin may include many investigations like abdomina"
+  },
+  {
+   "pmid": "29543325",
+   "doi": "10.1002/14651858.cd011481.pub2",
+   "title": "Pharmacological interventions for benzodiazepine discontinuation in chronic benzodiazepine users.",
+   "year": "2018",
+   "journal": "The Cochrane database of systematic reviews",
+   "abstract": "<h4>Background</h4>Prolonged treatment with benzodiazepines is common practice despite clinical recommendations of short-term use. Benzodiazepines are used by approximately 4% of the general population, with increased prevalence in psychiatric populations and the elderly. After long-term use it is often difficult to discontinue benzodiazepines due to psychological and physiological dependence. This review investigated if pharmacological interventions can facilitate benzodiazepine tapering.<h4>Objectives</h4>To assess the benefits and harms of pharmacological interventions to facilitate discontinuation of chronic benzodiazepine use.<h4>Search methods</h4>We searched the following electronic databases up to October 2017: Cochrane Drugs and Alcohol Group's Specialised Register of Trials, CENTRAL, PubMed, Embase, CINAHL, and ISI Web of Science. We also searched ClinicalTrials.gov, the WHO ICTRP, and ISRCTN registry, and checked the reference lists of included studies for further references to relevant randomised controlled trials.<h4>Selection criteria</h4>We included randomised controlled trials comparing pharmacological treatment versus placebo or no intervention or versus another pharmacological intervention in adults who had been treated with benzodiazepines for at least two months and/or fulfilled criteria for benzodiazepine dependence (any criteria).<h4>Data collection and analysis</h4>We used standard methodological procedures expected by Cochrane.<h4>Main results</h4>We i"
+  },
+  {
+   "pmid": "7750714",
+   "doi": null,
+   "title": "[Subfulminant hepatitis caused by alpidem and treated by liver transplantation].",
+   "year": "1995",
+   "journal": "Gastroenterologie clinique et biologique",
+   "abstract": ""
+  },
+  {
+   "pmid": "7875405",
+   "doi": null,
+   "title": "[A new case of hepatitis after alpidem monotherapy].",
+   "year": "1994",
+   "journal": "Gastroenterologie clinique et biologique",
+   "abstract": ""
+  },
+  {
+   "pmid": "7984939",
+   "doi": null,
+   "title": "[A new generation of tranquilizing agents].",
+   "year": "1994",
+   "journal": "La Revue du praticien",
+   "abstract": "The newer anxiolytics include compounds whose the molecular structure, the mechanisms, and the pharmacological properties are heterogeneous. Nevertheless, the most of them have clinical and adverse effects like to the most known: buspirone, after the commercial shrinking for hepatic toxicity of alpidem. These anxiolytics are efficacious against generalized anxiety disorder, like the benzodiazepines. The principal interest consists in minimal adverse effects and the safety of the use. These compounds have not a sedative effect, do not induce rebound, dependence, abuse and withdrawal, do not impair the psychomotor, cognitive and memory performances. The big ratio efficacy/tolerance allows to use them in long treatments, old subjects, alcoholic and drug-addicted patients. Nevertheless to become ideal anxiolytics, these compounds must be efficacious in other anxious disorders and increase the efficacy of various psychotherapies."
+  },
+  {
+   "pmid": "7908272",
+   "doi": null,
+   "title": "[Fatal subfulminant hepatitis during treatment with alpidem (Ananxyl)].",
+   "year": "1993",
+   "journal": "Gastroenterologie clinique et biologique",
+   "abstract": ""
+  }
+ ],
+ "pk": [
+  {
+   "pmid": "40468388",
+   "doi": "10.1186/s40360-025-00958-4",
+   "title": "In Silico drug evaluation by molecular docking, ADME studies and DFT calculations of 2-(6-chloro-2-(4-chlorophenyl)imidazo[1,2-a]pyridin-3-yl)-N, N-dipropylacetamide.",
+   "year": "2025",
+   "journal": "BMC pharmacology & toxicology",
+   "abstract": "In this study, the structural, electronic, pharmacokinetic, and biological properties of molecule 2-(6-kloro-2-(4-klorofenil)imidazo[1,2-a]piridin-3-il)-N, N-dipropilasetamid (Alpidem), an imidazopyridine derivative anxiolytic known for its high BZ\u2081 (benzodiazepine-1) receptor affinity and low adverse effect profile, were comprehensively investigated by density functional theory (DFT) and in-silico methods. The alpidem molecule was optimized using the 6-311G(d, p) basis set with the B3LYP and B3PW91 methods; information on the stability and chemical reactivity of the structure was obtained via the highest occupied molecular orbital (HOMO), lowest unoccupied molecular orbital (LUMO), molecular electrostatic potential (MEP) maps, natural bonding orbital (NBO) analysis, non-linear optical (NLO) properties, and Mulliken charge distributions. Comparative analysis of two different methods has shown that the results are consistent with each other and provide reliable data. In addition, the drug similarity, bioavailability score, bioactivity values, absorption, distribution, metabolism, and excretion (ADME) profiles of the Alpidem molecule were calculated, and it was determined that the Alpidem molecule has pharmacologically favorable properties. Within the scope of molecular docking analyses, its interactions with two different enzymes (PDB ID: 2Z5X and 4BDT) associated with Alzheimer's disease were evaluated. The binding energy values obtained were -\u20098.00\u00a0kcal/mol (2Z5X) and -\u20099.60"
+  },
+  {
+   "pmid": "41585699",
+   "doi": "10.1021/acsomega.5c08365",
+   "title": "Imidazo[1,2\u2011&lt;i&gt;a&lt;/i&gt;]pyridines in Medicinal Chemistry: Recent Advances in Synthesis and Biological Activities.",
+   "year": "2026",
+   "journal": "ACS omega",
+   "abstract": "Imidazo-[1,2-<i>a</i>]-pyridines are widely recognized scaffolds present in several marketed drugs, including the anxiolytics alpidem, saripidem, necopidem, and zolpidem, which are some of the most prescribed medications for insomnia. In this review, we analyze publication trends, which reveal exponential growth in research involving this scaffold. We highlight recent synthetic strategies (2017-2025) for the preparation of imidazo-[1,2-<i>a</i>]-pyridine derivatives, such as condensation, multicomponent and tandem reactions, intramolecular cyclizations, and oxidative couplings under green conditions. In addition, we discuss innovative Medicinal Chemistry studies exploring their applications in the treatment of cancer, Alzheimer's disease, tuberculosis, and neglected tropical diseases. Significant advances have been made in identifying derivatives with potent activity against specific biological targets, including kinases, tubulin, HDACs, the cytochrome bc1 complex of <i>Mycobacterium tuberculosis</i>, and key enzymes involved in the pathogenesis of Alzheimer's disease, such as cholinesterases and secretases. Altogether, this review consolidates the vast therapeutic potential of the imidazo-[1,2-<i>a</i>]-pyridine core, emphasizing its synthetic versatility and broad spectrum of biological activities, which firmly establish it as a privileged scaffold for drug discovery."
+  },
+  {
+   "pmid": "18294852",
+   "doi": "10.1016/j.bmc.2007.06.044",
+   "title": "Synthesis and structure-activity relationship studies in peripheral benzodiazepine receptor ligands related to alpidem.",
+   "year": "2008",
+   "journal": "Bioorganic & medicinal chemistry",
+   "abstract": "The exploration of the structure-affinity relationships concerning a new class of peripheral benzodiazepine receptor (PBR) ligands related to alpidem has been pursued in order to evaluate the consistency of the structure-affinity relationships among different classes (and subclasses) of PBR ligands. The target amide derivatives were prepared following a previously published procedure based on the condensation of pyrrolo[3,4-b]quinoline derivatives 11a,b with glyoxylic acid mono-hydrate and the subsequent amidation of the acids obtained via mixed anhydride. On the other hand, the preparation of compound 9g lacking the pharmacophoric (delta1) carbonyl group involved: (a) the double sequential attack of the dimethylmethyleneammonium salt obtained from bis(dimethylamino)methane and acetyl chloride to pyrrolo[3,4-b]quinoline derivative 11b, (b) the quaternization of the obtained allylamine derivative 13 with methyl iodide, and (c) the palladium-catalyzed allylation of N-methyl-p-anisidine by quaternary allylammonium cation 14. The structure-affinity relationship trends observed in this subclass of tricyclic alpidem-related PBR ligands find correlations in other classes (or subclasses) of PBR ligands. This result supports the initial pharmacophoric hypothesis and suggests a common mode of interaction at the PBR binding site."
+  },
+  {
+   "pmid": "33328871",
+   "doi": "10.3389/fnins.2020.599812",
+   "title": "The Z-Drugs Zolpidem, Zaleplon, and Eszopiclone Have Varying Actions on Human GABA <sub><i>A</i></sub> Receptors Containing \u03b31, \u03b32, and \u03b33 Subunits.",
+   "year": "2020",
+   "journal": "Frontiers in neuroscience",
+   "abstract": "\u03b3-Aminobutyric-acid type A (GABA <sub><i>A</i></sub> ) receptors expressing the \u03b31 or \u03b33 subunit are only found within a few regions of the brain, some of which are involved in sleep. No known compounds have been reported to selectively target \u03b31- or \u03b33-containing GABA <sub><i>A</i></sub> receptors. Pharmacological assessments of this are conflicting, possibly due to differences in experimental models, conditions, and exact protocols when reporting efficacies and potencies. In this study, we evaluated the modulatory properties of five non-benzodiazepine Z-drugs (zaleplon, indiplon, eszopiclone, zolpidem, and alpidem) used in sleep management and the benzodiazepine, diazepam on human \u03b11\u03b22\u03b3 receptors using all three \u03b3 subtypes. This was accomplished using concatenated GABA <sub><i>A</i></sub> pentamers expressed in <i>Xenopus laevis</i> oocytes and measured via two-electrode voltage clamp. This approach removes the potential for single subunits to form erroneous receptors that could contribute to the pharmacological assessment of these compounds. No compound tested had significant effects on \u03b31-containing receptors below 10 \u03bcM. Interestingly, zaleplon and indiplon were found to modulate \u03b33-containing receptors equally as efficacious as \u03b32-containing receptors. Furthermore, zaleplon had a higher potency for \u03b33- than for \u03b32-containing receptors, indicating certain therapeutic effects could occur via these \u03b33-containing receptors. Eszopiclone modulated \u03b33-containing receptors with"
+  },
+  {
+   "pmid": "1687121",
+   "doi": "10.1007/bf00314970",
+   "title": "Clinical pharmacokinetics and tolerability of alpidem in healthy subjects given increasing single doses.",
+   "year": "1991",
+   "journal": "European journal of clinical pharmacology",
+   "abstract": "In a double-blind, placebo-controlled, cross-over experiment in 21 healthy male volunteers, aged 19 to 27 y, the pharmacokinetics and tolerance of the new anxiolytic drug alpidem (SL80.0342) and its three major metabolites were studied after single doses of 25, 50, 100 and 200 mg. Plasma concentrations of alpidem (in 20 subjects) and metabolites (in 6 subjects) were measured by HPLC over a period of 54 h after dosing. Cmax, tmax and AUC(0-54) and, when possible, t1/2 were determined for alpidem and metabolites and the dose linearity of the parameters was investigated. The time to peak of alpidem was dose independent in most subjects and was short (1-4 h); the mean values at the four dosing levels were 1.9, 1.7, 1.6 and 1.8 h. The peak concentration increased with the dose, the mean values being 17, 34, 88 and 115 ng.ml-1, respectively. In 50% of the subjects Cmax tended to stabilize between the 100 and 200 mg dose. Dose linearity was also present for the AUC, which plateaued between the 100 and 200 mg dose in only 3 out of 20 subjects; the mean AUC was 119, 281, 669 and 1117 ng.ml-1.h, respectively. The apparent half-life of elimination appeared to be dose independent, mean values at the increasing dosing levels being 18.7, 19.9, 18.1, and 17.9 h. A similar relationship between the kinetics parameters and dose of the alpidem was observed for the metabolites SL83.0912, SL80.0522 and SL83.0725. The formation of metabolites was not saturated as their AUCs relative to correspondi"
+  },
+  {
+   "pmid": "12659934",
+   "doi": "10.1016/s0928-0987(03)00002-2",
+   "title": "Alpidem analogues containing a GABA or glycine moiety as new anticonvulsant agents.",
+   "year": "2003",
+   "journal": "European journal of pharmaceutical sciences : official journal of the European Federation for Pharmaceutical Sciences",
+   "abstract": "Alpidem analogues containing a GABA (1-3) or glycine (4-6) moiety were synthesized and their interaction with the GABA/benzodiazepine receptor complex at central (CBR) and peripheral (PBR) level was evaluated. In particular, their ability to modulate the specific binding of [3H]-GABA to washed membrane preparations from the rat cerebral cortex, as well as their effects on human recombinant GABA(A) receptors in Xenopus laevis oocytes, were assessed. Results from these in vitro assays showed that the most active compounds were 1 and 4. Intraperitoneal administration of compound 1 at a dose of 150 mg/kg significantly antagonized pentylenetetrazole-induced seizures in rats and the protective effects were evident for 90 min. However, compound 4 failed to interact with strychnine-sensitive Gly-binding sites. Consistent with these binding results, intraperitoneal administration of compound 4 at 150 mg/kg showed no effect against convulsions induced by strychnine, except for a prolonged time of the latency of convulsions. The results obtained suggest that compound 1 possesses interesting anticonvulsant activity and deserves further investigation as a novel lipophilic GABA derivative."
+  },
+  {
+   "pmid": "1680622",
+   "doi": "10.1016/s0090-9556(25)07192-2",
+   "title": "The disposition and pharmacokinetics of alpidem, a new anxiolytic, in the rat.",
+   "year": "1991",
+   "journal": "Drug metabolism and disposition: the biological fate of chemicals",
+   "abstract": "The autoradiographic distribution, disposition, biliary excretion, and pharmacokinetics of alpidem in Sprague-Dawley rats were evaluated after iv or oral administration. Following i.v. administration, autoradiography showed that radioactivity was preferentially localized in lipid-rich tissues including central nervous system structures. After a 3-mg.kg-1 i.v. or oral dose of [14C]alpidem, more than 80% of the radioactivity were excreted in the feces over a 6-day period. Biliary excretion of radioactivity in vigile rats, about 74% of the dose over a 7-hr period after either iv or oral administration, showed that alpidem was well absorbed. The absolute bioavailability (13%) data indicated a high first-pass effect. Plasma pharmacokinetic parameters of alpidem were as follows: Vd = 5 liter.kg-1, Cl = 2.2 liter.h-1.kg-1, and terminal t 1/2 beta = 1.2-1.7 hr. Three metabolites with a pharmacological activity similar to that of alpidem were detected in plasma. They were eliminated from the central compartment with half-lives comparable to that of the parent drug. Alpidem crossed the blood-brain barrier following either i.v. or oral administration, resulting in cerebral levels 2.5 to 4 times greater than the plasma levels. Alpidem was eliminated from the central nervous system according a biphasic process with a t 1/2 alpha comparable in plasma and brain. Alpidem represented 94 and 63% of cerebral radioactivity 5 min after i.v. and oral administration, respectively. Two out of the th"
+  },
+  {
+   "pmid": "19720731",
+   "doi": "10.1124/dmd.109.028860",
+   "title": "Evaluation of the potential for drug-induced liver injury based on in vitro covalent binding to human liver proteins.",
+   "year": "2009",
+   "journal": "Drug metabolism and disposition: the biological fate of chemicals",
+   "abstract": "Prediction of idiosyncratic drug-induced liver injury (DILI) is difficult, and the underlying mechanisms are not fully understood. However, many drugs causing DILI are considered to form reactive metabolites and covalently bind to cellular macromolecules in the liver. The objective of this study was to clarify whether the risk of idiosyncratic DILI can be estimated by comparing in vitro covalent binding (CB) levels among 12 positive compounds (acetaminophen, alpidem, bromfenac, carbamazepine, diclofenac, flutamide, imipramine, nefazodone, tacrine, ticlopidine, tienilic acid, and troglitazone) for DILI and 12 negative compounds (acetylsalicylic acid, caffeine, dexamethasone, losartan, ibuprofen, paroxetine, pioglitazone, rosiglitazone, sertraline, theophylline, venlafaxine, and zolpidem). After incubation with human liver microsomes in the presence of NADPH, there was a large overlap in the distribution of CB amounts between the positive and negative groups. On addition of UDP-glucuronic acid (UDPGA) as a cofactor for glucuronidation, the CB levels of bromfenac and diclofenac were increased. With addition of nucleophilic glutathione (GSH), values for most compounds were decreased. However, separation of the two groups on the basis of CB could not be improved by UDPGA or GSH. Furthermore, CB with human hepatocytes also failed to discriminate positive from negative compounds. Therefore, the CB amount alone is not sufficient for risk assessment of DILI. In contrast, when the CB a"
+  },
+  {
+   "pmid": "1982281",
+   "doi": null,
+   "title": "Effect of cimetidine on the pharmacodynamics, pharmacokinetics and biotransformation of a single oral dose of alpidem.",
+   "year": "1990",
+   "journal": "International journal of clinical pharmacology, therapy, and toxicology",
+   "abstract": "Alpidem is a new imidazopyridine derivative acting as an anxiolytic which may be prescribed with H2 receptor antagonists in patients with peptic ulcer. An open trial design (cimetidine, 1 g daily for 22 days) was carried out in eight healthy subjects. Alpidem, 50 mg was administered orally at 09:00 prior to any treatment and on days 2 and 18 of the cimetidine treatment period. Antipyrine clearance was also determined before and on day 21. Under these experimental conditions, the inhibitory effect of cimetidine on the cyt. P-450 monooxygenase system has been demonstrated (reduced clearance of antipyrine and its three main urinary metabolites) but the plasma pharmacokinetics of alpidem and its three main plasma metabolites did not appear to be modified. Alpidem induced no sedative effect but there was an insignificant trend to impair slightly the psychometric tests 1 h post-drug by the combination with cimetidine. Pharmacokinetic and pharmacodynamic evaluations did not show significant interactions with cimetidine following alpidem 50 mg administration."
+  },
+  {
+   "pmid": "2574111",
+   "doi": "10.1007/bf00609419",
+   "title": "Plasma protein binding of alpidem in healthy volunteers, in neonates and in liver or renal insufficiency.",
+   "year": "1989",
+   "journal": "European journal of clinical pharmacology",
+   "abstract": "The binding of alpidem, a new anxiolytic drug, has been studied in plasma from 6 healthy subjects, 12 patients with renal failure, 12 patients with liver cirrhosis and 12 chronic uraemics maintained on haemodialysis, as well as in 12 serum samples from the placental cord, to represent the situation in the newborn. The unbound fraction was 0.61% (healthy volunteers), 1.31% (newborns), 0.86% (cirrhotic patients), 0.72 (patients with renal failure), 0.70% (before haemodialysis) and 0.79% (after haemodialysis). Binding in the volunteers was significantly different from that in neonates and cirrhotics only. Alpidem became bound to isolated albumin (45 g.l-1) and alpha 1-acid glycoprotein (0.75 g.l-1) to 97.2% and 97.1%, respectively. The bound fraction of the drug in a mixture of two proteins was 99.1%. For alpidem, it appears that alpha 1-acid glycoprotein may balance the effect of any decrease in the albumin concentration."
+  },
+  {
+   "pmid": "3449388",
+   "doi": "10.1007/bf03189916",
+   "title": "A preliminary metabolic study of alpidem in rat and man.",
+   "year": "1987",
+   "journal": "European journal of drug metabolism and pharmacokinetics",
+   "abstract": "The metabolism of alpidem, a new anxiolytic agent in the chemical series of imidazopyridines, was investigated in rat and man. In both species the compound is extensively metabolised by three main routes of biotransformation: aromatic oxidation of the imidazopyridine ring; n-dealkylation; and/or aliphatic oxidation of the substituted amide side chains."
+  },
+  {
+   "pmid": "2892848",
+   "doi": "10.1016/0378-4347(87)80381-x",
+   "title": "Correlation between reversed-phase high-performance liquid chromatography and plasma protein binding.",
+   "year": "1987",
+   "journal": "Journal of chromatography",
+   "abstract": "As hydrophobic interactions are involved in both reversed-phase liquid chromatography and plasma protein binding, the relationship between retention time and binding was investigated experimentally in two series of compounds. For betaxolol and its O-alkyl analogues, the nature of the O-alkyl group strongly influences the retention time on a Spherisorb CN 5-microns column. With 0.03 M acetate buffer (pH 5.6)-acetonitrile (60:40) as the mobile phase, k' values increase from 1.8 to 8.3 with a concomitant increase in plasma protein binding from 0.5% (R = H) to 88.2% (R = cyclopentylmethyl). The relationship between the free fraction and log k' is sigmoidal. In the second example, structural changes in the propyl side-chain of alpidem (a new anxiolytic) lead to minor variations in the protein binding: 98.9 to 84.9%. This slight decrease with the more polar metabolite is correlated with a sharp decrease in the k' values from 14.7 to 0.94 on a Supelcosil LC 18 DB column. Based on retention times, it should be feasible to predict qualitatively, if not quantitatively in some instances, plasma protein binding in a series of structurally similar compounds."
+  }
+ ],
+ "metab": [
+  {
+   "pmid": "41585699",
+   "doi": "10.1021/acsomega.5c08365",
+   "title": "Imidazo[1,2\u2011&lt;i&gt;a&lt;/i&gt;]pyridines in Medicinal Chemistry: Recent Advances in Synthesis and Biological Activities.",
+   "year": "2026",
+   "journal": "ACS omega",
+   "abstract": "Imidazo-[1,2-<i>a</i>]-pyridines are widely recognized scaffolds present in several marketed drugs, including the anxiolytics alpidem, saripidem, necopidem, and zolpidem, which are some of the most prescribed medications for insomnia. In this review, we analyze publication trends, which reveal exponential growth in research involving this scaffold. We highlight recent synthetic strategies (2017-2025) for the preparation of imidazo-[1,2-<i>a</i>]-pyridine derivatives, such as condensation, multicomponent and tandem reactions, intramolecular cyclizations, and oxidative couplings under green conditions. In addition, we discuss innovative Medicinal Chemistry studies exploring their applications in the treatment of cancer, Alzheimer's disease, tuberculosis, and neglected tropical diseases. Significant advances have been made in identifying derivatives with potent activity against specific biological targets, including kinases, tubulin, HDACs, the cytochrome bc1 complex of <i>Mycobacterium tuberculosis</i>, and key enzymes involved in the pathogenesis of Alzheimer's disease, such as cholinesterases and secretases. Altogether, this review consolidates the vast therapeutic potential of the imidazo-[1,2-<i>a</i>]-pyridine core, emphasizing its synthetic versatility and broad spectrum of biological activities, which firmly establish it as a privileged scaffold for drug discovery."
+  },
+  {
+   "pmid": "40468388",
+   "doi": "10.1186/s40360-025-00958-4",
+   "title": "In Silico drug evaluation by molecular docking, ADME studies and DFT calculations of 2-(6-chloro-2-(4-chlorophenyl)imidazo[1,2-a]pyridin-3-yl)-N, N-dipropylacetamide.",
+   "year": "2025",
+   "journal": "BMC pharmacology & toxicology",
+   "abstract": "In this study, the structural, electronic, pharmacokinetic, and biological properties of molecule 2-(6-kloro-2-(4-klorofenil)imidazo[1,2-a]piridin-3-il)-N, N-dipropilasetamid (Alpidem), an imidazopyridine derivative anxiolytic known for its high BZ\u2081 (benzodiazepine-1) receptor affinity and low adverse effect profile, were comprehensively investigated by density functional theory (DFT) and in-silico methods. The alpidem molecule was optimized using the 6-311G(d, p) basis set with the B3LYP and B3PW91 methods; information on the stability and chemical reactivity of the structure was obtained via the highest occupied molecular orbital (HOMO), lowest unoccupied molecular orbital (LUMO), molecular electrostatic potential (MEP) maps, natural bonding orbital (NBO) analysis, non-linear optical (NLO) properties, and Mulliken charge distributions. Comparative analysis of two different methods has shown that the results are consistent with each other and provide reliable data. In addition, the drug similarity, bioavailability score, bioactivity values, absorption, distribution, metabolism, and excretion (ADME) profiles of the Alpidem molecule were calculated, and it was determined that the Alpidem molecule has pharmacologically favorable properties. Within the scope of molecular docking analyses, its interactions with two different enzymes (PDB ID: 2Z5X and 4BDT) associated with Alzheimer's disease were evaluated. The binding energy values obtained were -\u20098.00\u00a0kcal/mol (2Z5X) and -\u20099.60"
+  },
+  {
+   "pmid": "37250767",
+   "doi": "10.1016/j.isci.2023.106834",
+   "title": "Imidazo[1,2-a]pyridine derivatives synthesis from lignin \u03b2-O-4 segments via a one-pot multicomponent reaction.",
+   "year": "2023",
+   "journal": "iScience",
+   "abstract": "The catalytic conversion of lignin into N-containing chemicals is of great significance for the realization of value-added biorefinery concept. In this article, a one-pot strategy was designed for the transformation of lignin \u03b2-O-4 model compounds to imidazo[1,2-a]pyridines in yields up to 95% using 2-aminopyridine as a nitrogen source. This transformation involves highly coupled cleavage of C-O bonds, sp<sup>3</sup>C-H bond oxidative activation, and intramolecular dehydrative coupling reaction to construction of N-heterobicyclic ring. With this protocol, a wide range of functionalized imidazo[1,2-a]pyridines sharing the same structure skeleton as those commercial drug molecules, such as Zolimidine, Alpidem, Saripidem, etc., were synthesized from different lignin \u03b2-O-4 model compounds and one \u03b2-O-4 polymer, emphasizing the application feasibility of lignin derivatives in N-heterobicyclic pharmaceutical synthesis."
+  },
+  {
+   "pmid": "33158242",
+   "doi": "10.3390/molecules25215132",
+   "title": "The New Dipeptide TSPO Ligands: Design, Synthesis and Structure-Anxiolytic Activity Relationship.",
+   "year": "2020",
+   "journal": "Molecules (Basel, Switzerland)",
+   "abstract": "The translocator protein (TSPO, 18 kDa) plays an important role in the synthesis of neurosteroids by promoting the transport of cholesterol from the outer to the inner mitochondrial membrane, which is the rate-limiting step in neurosteroidogenesis. Stimulation of TSPO by appropriate ligands increases the level of neurosteroids. The present study describes the design, synthesis and investigation of anxiolytic-like effects of a series of <i>N</i>-acyl-tryptophanyl-containing dipeptides. These novel dipeptide TSPO ligands were designed with the original drug-based peptide design strategy using alpidem as non-peptide prototype. The anxiolytic activities were investigated in Balb/C mice using the illuminated open-field and elevated plus-maze tests in outbred laboratory mice ICR (CD-1). Dipeptide GD-102 (<i>N</i>-phenylpropionyl-l-tryptophanyl-l-leucine amide) in the dose range of 0.01-0.5 mg/kg intraperitoneally (i.p.) has a pronounced anxiolytic activity. The anxiolytic effect of GD-102 was abolished by PK11195, a specific TSPO antagonist. The structure-activity relationship study made it possible to identify a pharmacophore fragment for the dipeptide TSPO ligand. It was shown that l,d-diastereomer of GD-102 has no activity, and the d,l-isomer has less pronounced activity. The anxiolytic activity also disappears by replacing the C-amide group with the methyl ester, a free carboxyl group or methylamide. Consecutive replacement of each amino acid residue with glycine showed the imp"
+  },
+  {
+   "pmid": "18294852",
+   "doi": "10.1016/j.bmc.2007.06.044",
+   "title": "Synthesis and structure-activity relationship studies in peripheral benzodiazepine receptor ligands related to alpidem.",
+   "year": "2008",
+   "journal": "Bioorganic & medicinal chemistry",
+   "abstract": "The exploration of the structure-affinity relationships concerning a new class of peripheral benzodiazepine receptor (PBR) ligands related to alpidem has been pursued in order to evaluate the consistency of the structure-affinity relationships among different classes (and subclasses) of PBR ligands. The target amide derivatives were prepared following a previously published procedure based on the condensation of pyrrolo[3,4-b]quinoline derivatives 11a,b with glyoxylic acid mono-hydrate and the subsequent amidation of the acids obtained via mixed anhydride. On the other hand, the preparation of compound 9g lacking the pharmacophoric (delta1) carbonyl group involved: (a) the double sequential attack of the dimethylmethyleneammonium salt obtained from bis(dimethylamino)methane and acetyl chloride to pyrrolo[3,4-b]quinoline derivative 11b, (b) the quaternization of the obtained allylamine derivative 13 with methyl iodide, and (c) the palladium-catalyzed allylation of N-methyl-p-anisidine by quaternary allylammonium cation 14. The structure-affinity relationship trends observed in this subclass of tricyclic alpidem-related PBR ligands find correlations in other classes (or subclasses) of PBR ligands. This result supports the initial pharmacophoric hypothesis and suggests a common mode of interaction at the PBR binding site."
+  },
+  {
+   "pmid": "26196520",
+   "doi": "10.1371/journal.pone.0131896",
+   "title": "A One Pot Synthesis of Novel Bioactive Tri-Substitute-Condensed-Imidazopyridines that Targets Snake Venom Phospholipase A2.",
+   "year": "2015",
+   "journal": "PloS one",
+   "abstract": "Drugs such as necopidem, saripidem, alpidem, zolpidem, and olprinone contain nitrogen-containing bicyclic, condensed-imidazo[1,2-\u03b1]pyridines as bioactive scaffolds. In this work, we report a high-yield one pot synthesis of 1-(2-methyl-8-aryl-substitued-imidazo[1,2-\u03b1]pyridin-3-yl)ethan-1-onefor the first-time. Subsequently, we performed in silico mode-of-action analysis and predicted that the synthesized imidazopyridines targets Phospholipase A2 (PLA2). In vitro analysis confirmed the predicted target PLA2 for the novel imidazopyridine derivative1-(2-Methyl-8-naphthalen-1-yl-imidazo [1,2-\u03b1]pyridine-3-yl)-ethanone (compound 3f) showing significant inhibitory activity towards snake venom PLA2 with an IC50 value of 14.3 \u03bcM. Evidently, the molecular docking analysis suggested that imidazopyridine compound was able to bind to the active site of the PLA2 with strong affinity, whose affinity values are comparable to nimesulide. Furthermore, we estimated the potential for oral bioavailability by Lipinski's Rule of Five. Hence, it is concluded that the compound 3f could be a lead molecule against snake venom PLA2."
+  },
+  {
+   "pmid": "12659934",
+   "doi": "10.1016/s0928-0987(03)00002-2",
+   "title": "Alpidem analogues containing a GABA or glycine moiety as new anticonvulsant agents.",
+   "year": "2003",
+   "journal": "European journal of pharmaceutical sciences : official journal of the European Federation for Pharmaceutical Sciences",
+   "abstract": "Alpidem analogues containing a GABA (1-3) or glycine (4-6) moiety were synthesized and their interaction with the GABA/benzodiazepine receptor complex at central (CBR) and peripheral (PBR) level was evaluated. In particular, their ability to modulate the specific binding of [3H]-GABA to washed membrane preparations from the rat cerebral cortex, as well as their effects on human recombinant GABA(A) receptors in Xenopus laevis oocytes, were assessed. Results from these in vitro assays showed that the most active compounds were 1 and 4. Intraperitoneal administration of compound 1 at a dose of 150 mg/kg significantly antagonized pentylenetetrazole-induced seizures in rats and the protective effects were evident for 90 min. However, compound 4 failed to interact with strychnine-sensitive Gly-binding sites. Consistent with these binding results, intraperitoneal administration of compound 4 at 150 mg/kg showed no effect against convulsions induced by strychnine, except for a prolonged time of the latency of convulsions. The results obtained suggest that compound 1 possesses interesting anticonvulsant activity and deserves further investigation as a novel lipophilic GABA derivative."
+  },
+  {
+   "pmid": "7901754",
+   "doi": "10.1016/s0026-895x(25)13278-1",
+   "title": "Potentiation of gamma-aminobutyric acid-induced chloride currents by various benzodiazepine site agonists with the alpha 1 gamma 2, beta 2 gamma 2 and alpha 1 beta 2 gamma 2 subtypes of cloned gamma-aminobutyric acid type A receptors.",
+   "year": "1993",
+   "journal": "Molecular pharmacology",
+   "abstract": "Previous studies with cloned gamma-aminobutyric acid type A receptors expressed in human embryonic kidney cells have indicated that the alpha 1 beta 2 gamma 2 and alpha 1 gamma 2 (but not alpha 1 beta 2) subtypes have benzodiazepine sites. We found in this study that even the beta 2 gamma 2 subtype displays gamma-aminobutyric acid-induced Cl- currents that are potentiated by triazolam (a triazolobenzodiazepine). The maximal efficacy of the drug among the subtypes was highest with the alpha 1 beta 2 gamma 2 subtype, followed by the alpha 1 gamma 2 and beta 2 gamma 2 subtypes. These observations led us to compare the ability of several benzodiazepine site agonists of diverse chemical structures to potentiate Cl- currents with these subtypes. With the alpha 1 gamma 2 subtype, diazepam, alpidem, zolpidem, Cl-218872, zopiclone, U-79098 (an imidazoquinoxaline derivative), and U-90167 (a diimidazoquinazoline derivative) at 5 microM potentiated Cl- currents to essentially similar levels (slightly lower for a few ligands), compared with those with the alpha 1 beta 2 gamma 2 subtype. With the beta 2 gamma 2 subtype, the type 1 ligands zolpidem, alpidem, and Cl-218872 showed no or very low levels of potentiation, whereas less selective ligands such as diazepam, zopiclone, U-78098, and U-90167 displayed levels of Cl- current potentiation comparable to those observed with the subtypes containing the alpha 1 and gamma 2 subunits. These data indicate that, in the presence of gamma 2, beta 2"
+  },
+  {
+   "pmid": "29543325",
+   "doi": "10.1002/14651858.cd011481.pub2",
+   "title": "Pharmacological interventions for benzodiazepine discontinuation in chronic benzodiazepine users.",
+   "year": "2018",
+   "journal": "The Cochrane database of systematic reviews",
+   "abstract": "<h4>Background</h4>Prolonged treatment with benzodiazepines is common practice despite clinical recommendations of short-term use. Benzodiazepines are used by approximately 4% of the general population, with increased prevalence in psychiatric populations and the elderly. After long-term use it is often difficult to discontinue benzodiazepines due to psychological and physiological dependence. This review investigated if pharmacological interventions can facilitate benzodiazepine tapering.<h4>Objectives</h4>To assess the benefits and harms of pharmacological interventions to facilitate discontinuation of chronic benzodiazepine use.<h4>Search methods</h4>We searched the following electronic databases up to October 2017: Cochrane Drugs and Alcohol Group's Specialised Register of Trials, CENTRAL, PubMed, Embase, CINAHL, and ISI Web of Science. We also searched ClinicalTrials.gov, the WHO ICTRP, and ISRCTN registry, and checked the reference lists of included studies for further references to relevant randomised controlled trials.<h4>Selection criteria</h4>We included randomised controlled trials comparing pharmacological treatment versus placebo or no intervention or versus another pharmacological intervention in adults who had been treated with benzodiazepines for at least two months and/or fulfilled criteria for benzodiazepine dependence (any criteria).<h4>Data collection and analysis</h4>We used standard methodological procedures expected by Cochrane.<h4>Main results</h4>We i"
+  }
+ ],
+ "clinic": [
+  {
+   "pmid": "39461622",
+   "doi": "10.1016/j.pbb.2024.173895",
+   "title": "Nonsedating anxiolytics.",
+   "year": "2024",
+   "journal": "Pharmacology, biochemistry, and behavior",
+   "abstract": "Anxiety disorders are the most prevalent psychiatric pathology with substantial cost to society, but the existing treatments are often inadequate. This has rekindled the interest in the GABA<sub>A</sub>-receptor (GABA<sub>A</sub>R) positive allosteric modulator (PAM) compounds, which have a long history in treatment of anxiety beginning with diazepam, chlordiazepoxide, and alprazolam. While the GABA<sub>A</sub>R PAMs possess remarkable anxiolytic efficacy, they have fallen out of favor due to a host of adverse effects including sedation, motor impairment, addictive potential and tolerance development. A substantial effort was thus devoted to the design of GABA<sub>A</sub>R PAMs as anxiolytics with reduced sedative liabilities. Several non-benzodiazepine (BZD) GABA<sub>A</sub>PAMs progressed to clinical trials (bretazenil, abecarnil, alpidem, and ocinaplon) with alpidem obtaining regulatory approval as anxiolytic, but later withdrawn from market due to hepatotoxicity. Advances in molecular biology gave birth to a host of subtype selective GABA<sub>A</sub>R-PAMs which suffered from signs of sedation and motor impairment and only three compounds progressed to proof-of-concept studies (TPA-023, AZD7325 and PF-06372865). TPA-023 was terminated due to toxicity in preclinical species while AZD7325 and PF-06372865 did not achieve efficacy endpoints in patients. We highlight a new compound, KRM-II-81, that is an imidazodiazepine selective for GABA<sub>A</sub>R containing \u03b12/3 and \u03b23 p"
+  },
+  {
+   "pmid": "40468388",
+   "doi": "10.1186/s40360-025-00958-4",
+   "title": "In Silico drug evaluation by molecular docking, ADME studies and DFT calculations of 2-(6-chloro-2-(4-chlorophenyl)imidazo[1,2-a]pyridin-3-yl)-N, N-dipropylacetamide.",
+   "year": "2025",
+   "journal": "BMC pharmacology & toxicology",
+   "abstract": "In this study, the structural, electronic, pharmacokinetic, and biological properties of molecule 2-(6-kloro-2-(4-klorofenil)imidazo[1,2-a]piridin-3-il)-N, N-dipropilasetamid (Alpidem), an imidazopyridine derivative anxiolytic known for its high BZ\u2081 (benzodiazepine-1) receptor affinity and low adverse effect profile, were comprehensively investigated by density functional theory (DFT) and in-silico methods. The alpidem molecule was optimized using the 6-311G(d, p) basis set with the B3LYP and B3PW91 methods; information on the stability and chemical reactivity of the structure was obtained via the highest occupied molecular orbital (HOMO), lowest unoccupied molecular orbital (LUMO), molecular electrostatic potential (MEP) maps, natural bonding orbital (NBO) analysis, non-linear optical (NLO) properties, and Mulliken charge distributions. Comparative analysis of two different methods has shown that the results are consistent with each other and provide reliable data. In addition, the drug similarity, bioavailability score, bioactivity values, absorption, distribution, metabolism, and excretion (ADME) profiles of the Alpidem molecule were calculated, and it was determined that the Alpidem molecule has pharmacologically favorable properties. Within the scope of molecular docking analyses, its interactions with two different enzymes (PDB ID: 2Z5X and 4BDT) associated with Alzheimer's disease were evaluated. The binding energy values obtained were -\u20098.00\u00a0kcal/mol (2Z5X) and -\u20099.60"
+  },
+  {
+   "pmid": "41585699",
+   "doi": "10.1021/acsomega.5c08365",
+   "title": "Imidazo[1,2\u2011&lt;i&gt;a&lt;/i&gt;]pyridines in Medicinal Chemistry: Recent Advances in Synthesis and Biological Activities.",
+   "year": "2026",
+   "journal": "ACS omega",
+   "abstract": "Imidazo-[1,2-<i>a</i>]-pyridines are widely recognized scaffolds present in several marketed drugs, including the anxiolytics alpidem, saripidem, necopidem, and zolpidem, which are some of the most prescribed medications for insomnia. In this review, we analyze publication trends, which reveal exponential growth in research involving this scaffold. We highlight recent synthetic strategies (2017-2025) for the preparation of imidazo-[1,2-<i>a</i>]-pyridine derivatives, such as condensation, multicomponent and tandem reactions, intramolecular cyclizations, and oxidative couplings under green conditions. In addition, we discuss innovative Medicinal Chemistry studies exploring their applications in the treatment of cancer, Alzheimer's disease, tuberculosis, and neglected tropical diseases. Significant advances have been made in identifying derivatives with potent activity against specific biological targets, including kinases, tubulin, HDACs, the cytochrome bc1 complex of <i>Mycobacterium tuberculosis</i>, and key enzymes involved in the pathogenesis of Alzheimer's disease, such as cholinesterases and secretases. Altogether, this review consolidates the vast therapeutic potential of the imidazo-[1,2-<i>a</i>]-pyridine core, emphasizing its synthetic versatility and broad spectrum of biological activities, which firmly establish it as a privileged scaffold for drug discovery."
+  },
+  {
+   "pmid": "33158242",
+   "doi": "10.3390/molecules25215132",
+   "title": "The New Dipeptide TSPO Ligands: Design, Synthesis and Structure-Anxiolytic Activity Relationship.",
+   "year": "2020",
+   "journal": "Molecules (Basel, Switzerland)",
+   "abstract": "The translocator protein (TSPO, 18 kDa) plays an important role in the synthesis of neurosteroids by promoting the transport of cholesterol from the outer to the inner mitochondrial membrane, which is the rate-limiting step in neurosteroidogenesis. Stimulation of TSPO by appropriate ligands increases the level of neurosteroids. The present study describes the design, synthesis and investigation of anxiolytic-like effects of a series of <i>N</i>-acyl-tryptophanyl-containing dipeptides. These novel dipeptide TSPO ligands were designed with the original drug-based peptide design strategy using alpidem as non-peptide prototype. The anxiolytic activities were investigated in Balb/C mice using the illuminated open-field and elevated plus-maze tests in outbred laboratory mice ICR (CD-1). Dipeptide GD-102 (<i>N</i>-phenylpropionyl-l-tryptophanyl-l-leucine amide) in the dose range of 0.01-0.5 mg/kg intraperitoneally (i.p.) has a pronounced anxiolytic activity. The anxiolytic effect of GD-102 was abolished by PK11195, a specific TSPO antagonist. The structure-activity relationship study made it possible to identify a pharmacophore fragment for the dipeptide TSPO ligand. It was shown that l,d-diastereomer of GD-102 has no activity, and the d,l-isomer has less pronounced activity. The anxiolytic activity also disappears by replacing the C-amide group with the methyl ester, a free carboxyl group or methylamide. Consecutive replacement of each amino acid residue with glycine showed the imp"
+  },
+  {
+   "pmid": "30669903",
+   "doi": "10.1080/02652048.2019.1571642",
+   "title": "Mesoporous particle-based microcontainers for intranasal delivery of imidazopyridine drugs.",
+   "year": "2018",
+   "journal": "Journal of microencapsulation",
+   "abstract": "The aim of this study was to develop mesoporous containers for entrapment of imidazopyridines, such as sedative-hypnotic medicine zolpidem, anxiolytic agent alpidem and their derivatives. For this purpose, calcium carbonate (size 1.2\u2009\u00b5m (PDI: 0.6), zeta potential: -10\u2009mV), manganese carbonate (2.5\u2009\u00b5m (PDI: 0.5), zeta potential: -12\u2009mV) and titanium dioxide particles (3.7\u2009\u00b5m (PDI: 0.4), zeta potential: -15\u2009mV) were used. The compounds were encapsulated applying two techniques: adsorption on the preformed particles and co-precipitation during the synthesis of the particles. The polymer shell of the containers was formed by electrostatic adsorption of polyelectrolytes on the surface of the particles. The best encapsulation efficacy was shown for zolpidem incorporated into calcium carbonate (5.4%) and manganese carbonate (4.6%) by adsorption. Release of the compounds from the containers based on the proposed particles were characterised by the short time burst effect (<10\u2009min) followed by desorption prolongation by formation of polymer shell. X-ray microtomography results demonstrate the prolonged retention of the containers with the mucoadhesive shell in the nasal cavity."
+  },
+  {
+   "pmid": "22981367",
+   "doi": "10.1016/j.tips.2012.08.003",
+   "title": "Anxioselective anxiolytics: on a quest for the Holy Grail.",
+   "year": "2012",
+   "journal": "Trends in pharmacological sciences",
+   "abstract": "The discovery of benzodiazepine receptors provided the impetus to discover and develop anxioselective anxiolytics ('Valium without the side effects'). The market potential for an anxioselective based on the \u03b3-aminobutyric acid A (GABA(A)) receptor resulted in clinical trials of multiple compounds. In contrast to the anxioselective profile displayed in preclinical models, compounds such as bretazenil, TPA023, and MRK 409 produced benzodiazepine-like side effects (sedation, dizziness) in Phase I studies, whereas alpidem and ocinaplon exhibited many of the characteristics of an anxioselective in the clinic. Alpidem was briefly marketed for the treatment of anxiety, but was withdrawn because of liver toxicity. Reversible elevations in liver enzymes halted development of ocinaplon in Phase III. The clinical profiles of these two molecules demonstrate that it is possible to develop GABA(A) receptor-based anxioselectives. However, despite the formidable molecular toolbox at our disposal, we are no better informed about the GABA(A) receptors responsible for an anxioselective profile in the clinic. Here, I discuss the evolution of a quest, spanning four decades, for molecules that retain the rapid and robust anti-anxiety actions of benzodiazepines without the side effects that limit their usefulness."
+  },
+  {
+   "pmid": "26518550",
+   "doi": "10.1134/s1607672915050063",
+   "title": "The first dipeptide ligand of translocator protein: Design and anxiolytic activity.",
+   "year": "2015",
+   "journal": "Doklady. Biochemistry and biophysics",
+   "abstract": "On the basis of the structure of Alpidem, a pyrazolopyrimidine ligand of the translocator protein (TSPO), a dipeptide TSPO ligand, N-carbobenzoxy-L-tryptophanyl-L-isoleucine amide (GD-23), was designed and synthesized using our own original peptide design strategy. This compound exhibited anxiolytic activity in BALB/cAnN mice in the \"open-field\" test and in outbred CD1 mice in the \"elevated plus maze\" test. The stereoselectivity of the anxiolytic effect of GD-23 is demonstrated. The results of this study suggest that GD-23 is a ligand of the translocator protein, and its structure can become the basis for creating anxiolytics with a fundamentally new mechanism of action."
+  },
+  {
+   "pmid": "37250767",
+   "doi": "10.1016/j.isci.2023.106834",
+   "title": "Imidazo[1,2-a]pyridine derivatives synthesis from lignin \u03b2-O-4 segments via a one-pot multicomponent reaction.",
+   "year": "2023",
+   "journal": "iScience",
+   "abstract": "The catalytic conversion of lignin into N-containing chemicals is of great significance for the realization of value-added biorefinery concept. In this article, a one-pot strategy was designed for the transformation of lignin \u03b2-O-4 model compounds to imidazo[1,2-a]pyridines in yields up to 95% using 2-aminopyridine as a nitrogen source. This transformation involves highly coupled cleavage of C-O bonds, sp<sup>3</sup>C-H bond oxidative activation, and intramolecular dehydrative coupling reaction to construction of N-heterobicyclic ring. With this protocol, a wide range of functionalized imidazo[1,2-a]pyridines sharing the same structure skeleton as those commercial drug molecules, such as Zolimidine, Alpidem, Saripidem, etc., were synthesized from different lignin \u03b2-O-4 model compounds and one \u03b2-O-4 polymer, emphasizing the application feasibility of lignin derivatives in N-heterobicyclic pharmaceutical synthesis."
+  },
+  {
+   "pmid": "26483966",
+   "doi": "10.32607/20758251-2015-7-3-108-112",
+   "title": "The Novel Dipeptide Translocator Protein Ligand, Referred to As GD-23, Exerts Anxiolytic and Nootropic Activities.",
+   "year": "2015",
+   "journal": "Acta naturae",
+   "abstract": "The translocator protein (TSPO) promotes the translocation of cholesterol to the inner mitochondrial membrane and mediates steroid formation. In this study, we first report on a biological evaluation of the dipeptide GD-23 (N-carbobenzoxy-L tryptophanyl-L isoleucine amide), a structural analogue of Alpidem, the principal TSPO ligand. We show that GD-23 in a dose range of 0.05 to 0.5 mg/kg (i.p.) exhibits anxiolytic activity in the elevated plus maze test and nootropic activity in the object recognition test in scopolamine-induced amnesia in rodents. It was shown that GD-23 did not affect spontaneous locomotor activity, holding promise as a nonsedative anxiolytic agent. The anxiolytic and nootropic activities of GD-23 were abrogated by the TSPO specific ligand PK11195, which thus suggests a role for TSPO in mediating the pharmacological activity of GD-23."
+  },
+  {
+   "pmid": "29543325",
+   "doi": "10.1002/14651858.cd011481.pub2",
+   "title": "Pharmacological interventions for benzodiazepine discontinuation in chronic benzodiazepine users.",
+   "year": "2018",
+   "journal": "The Cochrane database of systematic reviews",
+   "abstract": "<h4>Background</h4>Prolonged treatment with benzodiazepines is common practice despite clinical recommendations of short-term use. Benzodiazepines are used by approximately 4% of the general population, with increased prevalence in psychiatric populations and the elderly. After long-term use it is often difficult to discontinue benzodiazepines due to psychological and physiological dependence. This review investigated if pharmacological interventions can facilitate benzodiazepine tapering.<h4>Objectives</h4>To assess the benefits and harms of pharmacological interventions to facilitate discontinuation of chronic benzodiazepine use.<h4>Search methods</h4>We searched the following electronic databases up to October 2017: Cochrane Drugs and Alcohol Group's Specialised Register of Trials, CENTRAL, PubMed, Embase, CINAHL, and ISI Web of Science. We also searched ClinicalTrials.gov, the WHO ICTRP, and ISRCTN registry, and checked the reference lists of included studies for further references to relevant randomised controlled trials.<h4>Selection criteria</h4>We included randomised controlled trials comparing pharmacological treatment versus placebo or no intervention or versus another pharmacological intervention in adults who had been treated with benzodiazepines for at least two months and/or fulfilled criteria for benzodiazepine dependence (any criteria).<h4>Data collection and analysis</h4>We used standard methodological procedures expected by Cochrane.<h4>Main results</h4>We i"
+  },
+  {
+   "pmid": "28686934",
+   "doi": "10.1016/j.psychres.2017.06.063",
+   "title": "Z-drug for schizophrenia: A systematic review and meta-analysis.",
+   "year": "2017",
+   "journal": "Psychiatry research",
+   "abstract": "No systematic reviews and meta-analyses on the use of Z-drug for schizophrenia are available. Randomized, placebo-controlled, or non-pharmacological intervention-controlled trials published before 03/20/2017 were retrieved from major healthcare databases and clinical trial registries. A meta-analysis including only randomized, placebo-controlled trials was performed. Efficacy outcomes were measured as improvement in overall schizophrenia symptoms, total sleep time, and wake after sleep onset. Safety/acceptability outcomes were discontinuation rate and individual adverse events. Four trials [1 alpidem placebo-controlled study (n=66), 2 eszopiclone placebo-controlled studies (n=60), and 1 eszopiclone, shallow needling-controlled study (n=96)] were identified. The meta-analysis showed no significant differences in any outcome between pooled Z-drug and placebo treatment groups. For individual studies, alpidem was superior to placebo in improving the overall schizophrenia symptoms. One of the eszopiclone studies showed that eszopiclone was superior to placebo in improving the Insomnia Severity Index scores. Another eszopiclone study showed that eszopiclone did not differ from shallow needling therapy in improving both schizophrenia- and insomnia-related symptoms. Although this study failed to show significant benefits for the use of Z-drug in the treatment of schizophrenia, it showed that short-term use of eszopiclone is an acceptable method for treating persistent insomnia among "
+  },
+  {
+   "pmid": "8097214",
+   "doi": "10.1097/00004850-199300810-00005",
+   "title": "A comparison of alpidem and placebo in relieving benzodiazepine withdrawal symptoms.",
+   "year": "1993",
+   "journal": "International clinical psychopharmacology",
+   "abstract": "Chronic normal-dose benzodiazepine users requesting drug withdrawal were allocated to substitution with either the new anxiolytic alpidem (n = 13) or placebo (n = 12). During the first 2 weeks of the tapering programme, the dose of benzodiazepine was kept constant; for the next 2 weeks it was halved and half-dose alpidem (25 mg twice daily) or placebo substituted; for weeks 5 and 6, the benzodiazepine was discontinued and full-dose alpidem or placebo given; next alpidem or placebo were tapered to half-dose and then finally discontinued. Regular anxiety and tranquillizer withdrawal ratings were made. Nine of 12 patients given placebo withdrew successfully compared with four of 13 alpidem-treated patients. Anxiety and other symptom levels increased in the alpidem but not the placebo patients. It was concluded that alpidem is not helpful in helping patients withdrawing from a benzodiazepine withdrawal perhaps because of partial agonist properties. These actions may imply a lesser propensity to induce dependence on long-term use."
+  },
+  {
+   "pmid": "21916402",
+   "doi": "10.1021/jm200770f",
+   "title": "Synthesis and structure-activity relationship studies in translocator protein ligands based on a pyrazolo[3,4-b]quinoline scaffold.",
+   "year": "2011",
+   "journal": "Journal of medicinal chemistry",
+   "abstract": "As a further development of our large program focused on the medicinal chemistry of translocator protein [TSPO (18 kDa)] ligands, a new class of compounds related to alpidem has been designed using SSR180575, emapunil, and previously published pyrrolo[3,4-b]quinoline derivatives 9 as templates. The designed compounds were synthesized by alkylation of the easily accessible 4-methyl-2-phenyl-1H-pyrazolo[3,4-b]quinolin-3(2H)-one derivatives 13-15 with the required bromoacetamides. Along with the expected 2-(4-methyl-3-oxo-2-phenyl-2,3-dihydro-1H-pyrazolo[3,4-b]quinolin-1-yl)acetamide derivatives 10, 2-(4-methyl-3-oxo-2-phenyl-2H-pyrazolo[3,4-b]quinolin-9(3H)-yl)acetamide isomers 11 were isolated and characterized. The high TSPO affinity shown by new pyrazolo[3,4-b]quinoline derivatives 10 and especially 11 leads the way to further expand the chemical diversity in TSPO ligands and provides new templates and structure-affinity relationship data potentially useful in the design of new anxiolytic and neuroprotective agents."
+  },
+  {
+   "pmid": "1974071",
+   "doi": "10.1055/s-2007-1014547",
+   "title": "Studies with alpidem in normal volunteers and anxious patients.",
+   "year": "1990",
+   "journal": "Pharmacopsychiatry",
+   "abstract": "Alpidem, an imidazo-pyridine compound, has been evaluated as an anxiolytic in comparison with placebo and lorazepam. In the first of our normal volunteer studies, we compared single doses of alpidem, 25, 50 and 100 mg with lorazepam 2 mg and placebo on a range of cognitive, psychomotor and EEG variables. Lorazepam and the highest (100 mg) dose of alpidem impaired performance on a range of psychomotor tasks, the effects of the benzodiazepine being more severe and more prolonged. No impairment of performance was observed with the 25 and 50 mg doses. In the second study, the focus was on memory functions. Lorazepam, 2 mg, caused anterograde amnesia which was most apparent 1 h post-drug but persisted until 4 h: sedation was marked. By contrast, single doses (25, 50 mg) of alpidem had little effect on either memory or alertness. The third study compared the effects of alpidem (25, 50 mg) and lorazepam (1 mg) with placebo, each given twice-daily for 8 days to normal volunteers. On the final day, a test dose of ethanol was given. Lorazepam impaired many tests of cognitive and psychomotor function, and this impairment was enhanced by ethanol. By contrast, alpidem produced less impairment with less interaction with alcohol. In a fourth, clinical, study, 24 patients with a DSM III primary diagnosis of generalised anxiety disorder were treated, under double blind conditions, with doses adjusted according to clinical need of either alpidem 25-150 mg daily or lorazepam 1-6 mg daily.(ABSTR"
+  },
+  {
+   "pmid": "1974073",
+   "doi": "10.1055/s-2007-1014549",
+   "title": "On the therapeutic action of alpidem in anxiety disorders: an overview of the European data.",
+   "year": "1990",
+   "journal": "Pharmacopsychiatry",
+   "abstract": "This review analyzes the available data on the therapeutic activity of alpidem in various anxiety syndromes. Up to now, 17 studies have been completed in Europe, dealing with a total population of more than 1500 patients suffering from either chronic (n = 987) or situational anxiety (n = 400). In a series of five placebo-controlled double-blind studies in situations of stress-induced anxiety (gastroscopy, minor surgery, cardiac catheterization), the therapeutic efficacy of alpidem was evident in 53% of the patients and significantly (P less than 0.001) superior to that of placebo (30%). In more than 400 patients suffering from generalized anxiety or adjustment disorders with anxious mood, six double-blind studies run against placebo or reference drug over a period of two to three weeks indicated an anxiolytic effect superior (P less than 0.01) to that of placebo and comparable to that of reference drugs (DZ, LZP, CZP). A long-term (6-12 months) open-label study conducted on a population of more than 300 patients suffering from chronic anxiety indicated that no tachyphylaxis occurs during prolonged treatment and that following abrupt drug discontinuation no withdrawal or rebound phenomena are observed. Globally, alpidem appears to be well tolerated with a minimum of dose-related, sedative effects (6-7% of the cases) and no effects on memory or cognitive functions. Four studies conducted specifically in an elderly population (n = 191) indicate that the elderly patients do not s"
+  }
+ ],
+ "pet_occ": [
+  {
+   "pmid": "40468388",
+   "doi": "10.1186/s40360-025-00958-4",
+   "title": "In Silico drug evaluation by molecular docking, ADME studies and DFT calculations of 2-(6-chloro-2-(4-chlorophenyl)imidazo[1,2-a]pyridin-3-yl)-N, N-dipropylacetamide.",
+   "year": "2025",
+   "journal": "BMC pharmacology & toxicology",
+   "abstract": "In this study, the structural, electronic, pharmacokinetic, and biological properties of molecule 2-(6-kloro-2-(4-klorofenil)imidazo[1,2-a]piridin-3-il)-N, N-dipropilasetamid (Alpidem), an imidazopyridine derivative anxiolytic known for its high BZ\u2081 (benzodiazepine-1) receptor affinity and low adverse effect profile, were comprehensively investigated by density functional theory (DFT) and in-silico methods. The alpidem molecule was optimized using the 6-311G(d, p) basis set with the B3LYP and B3PW91 methods; information on the stability and chemical reactivity of the structure was obtained via the highest occupied molecular orbital (HOMO), lowest unoccupied molecular orbital (LUMO), molecular electrostatic potential (MEP) maps, natural bonding orbital (NBO) analysis, non-linear optical (NLO) properties, and Mulliken charge distributions. Comparative analysis of two different methods has shown that the results are consistent with each other and provide reliable data. In addition, the drug similarity, bioavailability score, bioactivity values, absorption, distribution, metabolism, and excretion (ADME) profiles of the Alpidem molecule were calculated, and it was determined that the Alpidem molecule has pharmacologically favorable properties. Within the scope of molecular docking analyses, its interactions with two different enzymes (PDB ID: 2Z5X and 4BDT) associated with Alzheimer's disease were evaluated. The binding energy values obtained were -\u20098.00\u00a0kcal/mol (2Z5X) and -\u20099.60"
+  },
+  {
+   "pmid": "41683852",
+   "doi": "10.3390/ijms27031430",
+   "title": "Benzodiazepine Dependence: Clinical and Molecular Aspects, Preventive Strategies and Therapeutic Approaches.",
+   "year": "2026",
+   "journal": "International journal of molecular sciences",
+   "abstract": "Benzodiazepines (BZDs) are globally prevalent psychotropic substances valued for their anxiolytic, hypnotic, anticonvulsant, and myorelaxant properties. Pharmacologically, they act as positive allosteric modulators of the ionotropic GABA<sub>A</sub> receptor, enhancing inhibitory synaptic transmission. However, prolonged use poses a significant public health concern, risking adverse effects such as cognitive impairment, motor incoordination, tolerance, and physical dependence. The development of tolerance is mediated by complex neurobiological changes, notably the downregulation of GABA<sub>A</sub> receptor subunits and a compensatory sensitization of excitatory glutamatergic systems. Effective management of established dependence requires comprehensive psychological intervention coupled with pharmacological substitution (switching to a long-acting BZD) and gradual dose tapering. Preventive measures are complex, emphasizing short-term prescriptions, minimum effective dosing, and selecting non-pharmacological or alternative pharmacological agents, such as SSRIs/SNRIs, to mitigate the risk of developing tolerance and dependence. This expert review aims to compile the most relevant, representative, and recent literature summarizing the pharmacology, clinical indications, adverse effects, misuse, and abuse of BZDs that ultimately lead to BZD use disorder (BUD). It also details the involved neurobiological mechanisms and discusses critical preventive and therapeutic strategies, pr"
+  },
+  {
+   "pmid": "36432736",
+   "doi": "10.3390/pharmaceutics14112545",
+   "title": "<sup>18</sup>F-Radiolabeled Translocator Protein (TSPO) PET Tracers: Recent Development of TSPO Radioligands and Their Application to PET Study.",
+   "year": "2022",
+   "journal": "Pharmaceutics",
+   "abstract": "Translocator protein 18 kDa (TSPO) is a transmembrane protein in the mitochondrial membrane, which has been identified as a peripheral benzodiazepine receptor. TSPO is generally present at high concentrations in steroid-producing cells and plays an important role in steroid synthesis, apoptosis, and cell proliferation. In the central nervous system, TSPO expression is relatively modest under normal physiological circumstances. However, some pathological disorders can lead to changes in TSPO expression. Overexpression of TSPO is associated with several diseases, such as neurodegenerative diseases, neuroinflammation, brain injury, and cancers. TSPO has therefore become an effective biomarker of related diseases. Positron emission tomography (PET), a non-invasive molecular imaging technique used for the clinical diagnosis of numerous diseases, can detect diseases related to TSPO expression. Several radiolabeled TSPO ligands have been developed for PET. In this review, we describe recent advances in the development of TSPO ligands, and <sup>18</sup>F-radiolabeled TSPO in particular, as PET tracers. This review covers pharmacokinetic studies, preclinical and clinical trials of <sup>18</sup>F-labeled TSPO PET ligands, and the synthesis of TSPO ligands."
+  },
+  {
+   "pmid": "39275061",
+   "doi": "10.3390/molecules29174212",
+   "title": "TSPO Radioligands for Neuroinflammation: An Overview.",
+   "year": "2024",
+   "journal": "Molecules (Basel, Switzerland)",
+   "abstract": "The translocator protein (TSPO) is predominately localized on the outer mitochondrial membrane in steroidogenic cells. In the brain, TSPO expression, low under normal conditions, results upregulated in response to glial cell activation, that occurs in neuroinflammation. As a consequence, TSPO has been extensively studied as a biomarker of such conditions by means of TSPO-targeted radiotracers. Although [<sup>11</sup>C]-PK11195, the prototypical TSPO radioligand, is still widely used for in vivo studies, it is endowed with severe limitations, mainly low sensitivity and poor amenability to quantification. Consequently, several efforts have been focused on the design of new radiotracers for the in vivo imaging of TSPO. The present review will provide an outlook on the latest advances in TSPO radioligands for neuroinflammation imaging. The final goal is to pave the way for (radio)chemists in the future design and development of novel effective and sensitive radiopharmaceuticals targeting TSPO."
+  },
+  {
+   "pmid": "35557664",
+   "doi": "10.1021/acsomega.2c00588",
+   "title": "The 18-kDa Translocator Protein PET Tracers as a Diagnostic Marker for Neuroinflammation: Development and Current Standing.",
+   "year": "2022",
+   "journal": "ACS omega",
+   "abstract": "Translocator protein (TSPO, 18 kDa) is an evolutionary, well-preserved, and tryptophan-rich 169-amino-acid protein which localizes on the contact sites between the outer and inner mitochondrial membranes of steroid-synthesizing cells. This mitochondrial protein is implicated in an extensive range of cellular activities, including steroid synthesis, cholesterol transport, apoptosis, mitochondrial respiration, and cell proliferation. The upregulation of TSPO is well documented in diverse disease conditions including neuroinflammation, cancer, brain injury, and inflammation in peripheral organs. On the basis of these outcomes, TSPO has been assumed to be a fascinating subcellular target for early stage imaging of the diseased state and for therapeutic purposes. The main outline of this Review is to give an update on dealing with the advances made in TSPO PET tracers for neuroinflammation, synchronously emphasizing the approaches applied for the design and advancement of new tracers with reference to their structure-activity relationship (SAR)."
+  },
+  {
+   "pmid": "35352645",
+   "doi": "10.2174/0929867329666220329204054",
+   "title": "Essential Principles and Recent Progress in the Development of TSPO PET Ligands for Neuroinflammation Imaging.",
+   "year": "2022",
+   "journal": "Current medicinal chemistry",
+   "abstract": "The translocator protein 18kDa (TSPO) is expressed in the outer mitochondrial membrane and is implicated in several functions, including cholesterol transport and steroidogenesis. Under normal physiological conditions, TSPO is present in very low concentrations in the human brain but is markedly upregulated in response to brain injury and inflammation. This upregulation is strongly associated with activated microglia. Therefore, TSPO is particularly suited for assessing active gliosis associated with brain lesions following injury or disease. For over three decades, TSPO has been studied as a biomarker. Numerous radioligands for positron emission tomography (PET) that target TSPO have been developed for imaging inflammatory progression in the brain. Although [<sup>11</sup>C]PK11195, the prototypical first-generation PET radioligand, is still widely used for in vivo studies, mainly now as its single more potent R-enantiomer, it has severe limitations, including low sensitivity and poor amenability to quantification. Second-generation radioligands are characterized by higher TSPO specific signals but suffer from other drawbacks, such as sensitivity to the TSPO single nucleotide polymorphism (SNP) rs6971. Therefore, their applications in human studies have the burden of needing to genotype subjects. Consequently, recent efforts are focused on developing improved radioligands that combine the optimal features of the second generation with the ability to overcome the differences i"
+  },
+  {
+   "pmid": "41585699",
+   "doi": "10.1021/acsomega.5c08365",
+   "title": "Imidazo[1,2\u2011&lt;i&gt;a&lt;/i&gt;]pyridines in Medicinal Chemistry: Recent Advances in Synthesis and Biological Activities.",
+   "year": "2026",
+   "journal": "ACS omega",
+   "abstract": "Imidazo-[1,2-<i>a</i>]-pyridines are widely recognized scaffolds present in several marketed drugs, including the anxiolytics alpidem, saripidem, necopidem, and zolpidem, which are some of the most prescribed medications for insomnia. In this review, we analyze publication trends, which reveal exponential growth in research involving this scaffold. We highlight recent synthetic strategies (2017-2025) for the preparation of imidazo-[1,2-<i>a</i>]-pyridine derivatives, such as condensation, multicomponent and tandem reactions, intramolecular cyclizations, and oxidative couplings under green conditions. In addition, we discuss innovative Medicinal Chemistry studies exploring their applications in the treatment of cancer, Alzheimer's disease, tuberculosis, and neglected tropical diseases. Significant advances have been made in identifying derivatives with potent activity against specific biological targets, including kinases, tubulin, HDACs, the cytochrome bc1 complex of <i>Mycobacterium tuberculosis</i>, and key enzymes involved in the pathogenesis of Alzheimer's disease, such as cholinesterases and secretases. Altogether, this review consolidates the vast therapeutic potential of the imidazo-[1,2-<i>a</i>]-pyridine core, emphasizing its synthetic versatility and broad spectrum of biological activities, which firmly establish it as a privileged scaffold for drug discovery."
+  },
+  {
+   "pmid": "29342117",
+   "doi": "10.3390/ijms19010276",
+   "title": "Assessment of TSPO in a Rat Experimental Autoimmune Myocarditis Model: A Comparison Study between [<sup>18</sup>F]Fluoromethyl-PBR28 and [<sup>18</sup>F]CB251.",
+   "year": "2018",
+   "journal": "International journal of molecular sciences",
+   "abstract": "Overexpression of the 18-kDa translocator protein (TSPO) is closely linked to inflammatory responses in the heart, including myocarditis, which can lead to myocardial necrosis. In vivo assessment of inflammatory responses has enabled the precise diagnosis of myocarditis to improve clinical outcomes. Here, we evaluated TSPO overexpression in a rat model of experimental autoimmune myocarditis (EAM) compared to healthy rats using two TSPO radiotracers, [<sup>18</sup>F]fluoromethyl-PBR28 ([<sup>18</sup>F]<b>1</b>) and [<sup>18</sup>F]CB251 ([<sup>18</sup>F]<b>2</b>). All radiolabeling methods were successfully applied to an automated module for the reproducible preparation of TSPO radiotracers. Both radiotracers were directly compared in an EAM rat model, as well as in healthy rats to determine whether either radiotracer provides a more promising assessment of in vivo TSPO overexpression. [<sup>18</sup>F]<b>2</b> provided more specific TSPO-uptake in the heart of the EAM rats (1.32-fold that of the heart-to-lung uptake ratio versus healthy controls), while [<sup>18</sup>F]<b>1</b> did not show a significant difference between the two groups. Histopathological characterization revealed that a prominent positron emission tomography (PET) signal of [<sup>18</sup>F]<b>2</b> in the EAM rats corresponded to the presence of a higher density of TSPO compared to the healthy controls. These results suggest that the imidazole[1,2-a]pyridine-based radiotracer [<sup>18</sup>F]<b>2</b> is a se"
+  },
+  {
+   "pmid": "26853260",
+   "doi": "10.1038/srep20422",
+   "title": "A Novel PET Imaging Probe for the Detection and Monitoring of Translocator Protein 18\u2009kDa Expression in Pathological Disorders.",
+   "year": "2016",
+   "journal": "Scientific reports",
+   "abstract": "A new fluorine-substituted ligand, compound 1 (CB251), with a very high affinity (Ki\u2009=\u20090.27 \u00b1 0.09\u2009nM) and selectivity for the 18-kDa translocator protein (TSPO), is presented as an attractive biomarker for the diagnosis of neuroinflammation, neurodegeneration and tumour progression. To test compound 1 as a TSPO PET imaging agent in vivo, 2-(2-(4-(2-[(18)F]fluoroethoxy)phenyl)-6,8-dichloroimidazo[1,2-a]pyridin-3-yl)-N,N-dipropylacetamide ([(18)F]1; [(18)F]CB251) was synthesized by nucleophilic aliphatic substitution in a single-step radiolabelling procedure with a 11.1\u2009\u00b1\u20093.5% (n\u2009=\u200914, decay corrected) radiochemical yield and over 99% radiochemical purity. In animal PET imaging studies, [(18)F]CB251 provided a clearly visible image of the inflammatory lesion with the binding potential of the specifically bound radioligand relative to the non-displaceable radioligand in tissue (BPND 1.83\u2009\u00b1\u20090.18), in a neuroinflammation rat model based on the unilateral stereotaxic injection of lipopolysaccharide (LPS), comparable to that of [(11)C]PBR28 (BPND 1.55\u2009\u00b1\u20090.41). [(18)F]CB251 showed moderate tumour uptake (1.96\u2009\u00b1\u20090.11%ID/g at 1\u2009h post injection) in human glioblastoma U87-MG xenografts. These results suggest that [(18)F]CB251 is a promising TSPO PET imaging agent for neuroinflammation and TSPO-rich cancers."
+  },
+  {
+   "pmid": "32802194",
+   "doi": "10.7150/thno.46875",
+   "title": "[<sup>18</sup>F]CB251 PET/MR imaging probe targeting translocator protein (TSPO) independent of its Polymorphism in a Neuroinflammation Model.",
+   "year": "2020",
+   "journal": "Theranostics",
+   "abstract": "The 18 kDa translocator protein (TSPO) has been proposed as a biomarker for the detection of neuroinflammation. Although various PET probes targeting TSPO have been developed, a highly selective probe for detecting TSPO is still needed because single nucleotide polymorphisms in the human TSPO gene greatly affect the binding affinity of TSPO ligands. Here, we describe the visualization of neuroinflammation with a multimodality imaging system using our recently developed TSPO-targeting radionuclide PET probe [<sup>18</sup>F]CB251, which is less affected by TSPO polymorphisms. <b>Methods:</b> To test the selectivity of [<sup>18</sup>F]CB251 for TSPO polymorphisms, 293FT cells expressing polymorphic TSPO were generated by introducing the coding sequences of wild-type (WT) and mutant (Alanine \u2192 Threonine at 147<sup>th</sup> Amino Acid; A147T) forms. Competitive inhibition assay was conducted with [<sup>3</sup>H]PK11195 and various TSPO ligands using membrane proteins isolated from 293FT cells expressing TSPO WT or mutant-A147T, representing high-affinity binder (HAB) or low-affinity binder (LAB), respectively. IC<sub>50</sub> values of each ligand to [<sup>3</sup>H]PK11195 in HAB or LAB were measured and the ratio of IC<sub>50</sub> values of each ligand to [<sup>3</sup>H]PK11195 in HAB to LAB was calculated, indicating the sensitivity of TSPO polymorphism. Cellular uptake of [<sup>18</sup>F]CB251 was measured with different TSPO polymorphisms, and phantom studies of [<sup>18</sup"
+  },
+  {
+   "pmid": "22981367",
+   "doi": "10.1016/j.tips.2012.08.003",
+   "title": "Anxioselective anxiolytics: on a quest for the Holy Grail.",
+   "year": "2012",
+   "journal": "Trends in pharmacological sciences",
+   "abstract": "The discovery of benzodiazepine receptors provided the impetus to discover and develop anxioselective anxiolytics ('Valium without the side effects'). The market potential for an anxioselective based on the \u03b3-aminobutyric acid A (GABA(A)) receptor resulted in clinical trials of multiple compounds. In contrast to the anxioselective profile displayed in preclinical models, compounds such as bretazenil, TPA023, and MRK 409 produced benzodiazepine-like side effects (sedation, dizziness) in Phase I studies, whereas alpidem and ocinaplon exhibited many of the characteristics of an anxioselective in the clinic. Alpidem was briefly marketed for the treatment of anxiety, but was withdrawn because of liver toxicity. Reversible elevations in liver enzymes halted development of ocinaplon in Phase III. The clinical profiles of these two molecules demonstrate that it is possible to develop GABA(A) receptor-based anxioselectives. However, despite the formidable molecular toolbox at our disposal, we are no better informed about the GABA(A) receptors responsible for an anxioselective profile in the clinic. Here, I discuss the evolution of a quest, spanning four decades, for molecules that retain the rapid and robust anti-anxiety actions of benzodiazepines without the side effects that limit their usefulness."
+  },
+  {
+   "pmid": "24802722",
+   "doi": "10.1111/bcp.12413",
+   "title": "The central nervous system effects of the partial GABA-A\u03b12,3 -selective receptor modulator AZD7325 in comparison with lorazepam in healthy males.",
+   "year": "2014",
+   "journal": "British journal of clinical pharmacology",
+   "abstract": "<h4>Aims</h4>AZD7325 is a novel \u03b12,3 -subtype-selective partial GABA-A-receptor modulator. This study investigated the pharmacodynamics of single oral doses of AZD7325 2\u2009mg and 10\u2009mg on the central nervous system (CNS) compared with placebo and lorazepam 2\u2009mg.<h4>Methods</h4>This double-blind, randomized, four way crossover study enrolled 16 healthy males and administered two validated CNS test batteries to measure drug effects on cognitive, neurophysiologic and psychomotor function and subjective feelings. The pharmacological selectivity of AZD7325 was compared with lorazepam by plotting saccadic peak velocity change from baseline (\u0394SPV) against body sway (\u0394Sway) and visual analogue scale for alertness(\u0394VASalertness ). This analysis has previously been used to identify \u03b12,3 -subtype-selectivity.<h4>Results</h4>In contrast with the robust impairment caused by lorazepam (all P < 0.05 vs. placebo), neither dose of AZD7325 induced statistically significant effects on any pharmacodynamic measurements. Lorazepam-induced SPV-reduction was linearly related to changes in other neurophysiologic biomarkers. In contrast, the slopes of the regression lines were flatter for AZD7325, particularly for the \u0394log(Sway) -\u0394SPV relation (estimate slope, AZD7325 10\u2009mg vs. lorazepam, difference [95% confidence interval], P value -0.00036 vs. -0.00206, 0.001704 [0.000639, 0.002768], P = 0.0018) and the \u0394VASalertness -\u0394SPV relationship (0.01855 vs. 0.08216, -0.06360 [-0.1046, -0.02257], P = 0.0024). "
+  },
+  {
+   "pmid": "34793859",
+   "doi": "10.1016/j.pharmthera.2021.108035",
+   "title": "GABAkines - Advances in the discovery, development, and commercialization of positive allosteric modulators of GABA&lt;sub&gt;A&lt;/sub&gt; receptors.",
+   "year": "2022",
+   "journal": "Pharmacology & therapeutics",
+   "abstract": "Positive allosteric modulators of \u03b3-aminobutyric acid-A (GABA<sub>A</sub>) receptors or GABAkines have been widely used medicines for over 70\u00a0years for anxiety, epilepsy, sleep, and other disorders. Traditional GABAkines like diazepam have safety and tolerability concerns that include sedation, motor-impairment, respiratory depression, tolerance and dependence. Multiple GABAkines have entered clinical development but the issue of side-effects has not been fully solved. The compounds that are presently being developed and commercialized include several neuroactive steroids (an allopregnanolone formulation (brexanolone), an allopregnanolone prodrug (LYT-300), Sage-324, zuranolone, and ganaxolone), the \u03b12/3-preferring GABAkine, KRM-II-81, and the \u03b12/3/5-preferring GABAkine PF-06372865 (darigabat). The neuroactive steroids are in clinical development for post-partum depression, intractable epilepsy, tremor, status epilepticus, and genetic epilepsy disorders. Darigabat is in development for epilepsy and anxiety. The imidazodiazepine, KRM-II-81 is efficacious in animal models for the treatment of epilepsy and post-traumatic epilepsy, acute and chronic pain, as well as anxiety and depression. The efficacy of KRM-II-81 in models of pharmacoresistant epilepsy, preventing the development of seizure sensitization, and in brain tissue of intractable epileptic patients bodes well for improved therapeutics. Medicinal chemistry efforts are also ongoing to identify novel and improved GABAkin"
+  },
+  {
+   "pmid": "27399688",
+   "doi": "10.3390/ijms17071085",
+   "title": "Synthesis and Evaluation of Tricarbonyl (99m)Tc-Labeled 2-(4-Chloro)phenyl-imidazo[1,2-a]pyridine Analogs as Novel SPECT Imaging Radiotracer for TSPO-Rich Cancer.",
+   "year": "2016",
+   "journal": "International journal of molecular sciences",
+   "abstract": "The 18-kDa translocator protein (TSPO) levels are associated with brain, breast, and prostate cancer progression and have emerged as viable targets for cancer therapy and imaging. In order to develop highly selective and active ligands with a high affinity for TSPO, imidazopyridine-based TSPO ligand (CB256, 3) was prepared as the precursor. (99m)Tc- and Re-CB256 (1 and 2, respectively) were synthesized in high radiochemical yield (74.5% \u00b1 6.4%, decay-corrected, n = 5) and chemical yield (65.6%) by the incorporation of the [(99m)Tc(CO)\u2083(H\u2082O)\u2083]\u207a and (NEt\u2084)\u2082[Re(CO)\u2083Br\u2083] followed by HPLC separation. Radio-ligand 1 was shown to be stable (>99%) when incubated in human serum for 4 h at 37 \u00b0C with a relatively low lipophilicity (logD = 2.15 \u00b1 0.02). The rhenium-185 and -187 complex 2 exhibited a moderate affinity (Ki = 159.3 \u00b1 8.7 nM) for TSPO, whereas its cytotoxicity evaluated on TSPO-rich tumor cell lines was lower than that observed for the precursor. In vitro uptake studies of 1 in C6 and U87-MG cells for 60 min was found to be 9.84% \u00b1 0.17% and 7.87% \u00b1 0.23% ID, respectively. Our results indicated that (99m)Tc-CB256 can be considered as a potential new TSPO-rich cancer SPECT imaging agent and provides the foundation for further in vivo evaluation."
+  },
+  {
+   "pmid": "25345894",
+   "doi": "10.1111/bpa.12196",
+   "title": "The 18\u2009kDa translocator protein, microglia and neuroinflammation.",
+   "year": "2014",
+   "journal": "Brain pathology (Zurich, Switzerland)",
+   "abstract": "The 18\u2009kDa translocator protein (TSPO), previously known as the peripheral benzodiazepine receptor, is expressed in the injured brain. It has become known as an imaging marker of \"neuroinflammation\" indicating active disease, and is best interpreted as a nondiagnostic biomarker and disease staging tool that refers to histopathology rather than disease etiology. The therapeutic potential of TSPO as a drug target is mostly based on the understanding that it is an outer mitochondrial membrane protein required for the translocation of cholesterol, which thus regulates the rate of steroid synthesis. This pivotal role together with the evolutionary conservation of TSPO has underpinned the belief that any loss or mutation of TSPO should be associated with significant physiological deficits or be outright incompatible with life. However, against prediction, full Tspo knockout mice are viable and across their lifespan do not show the phenotype expected if cholesterol transport and steroid synthesis were significantly impaired. Thus, the \"translocation\" function of TSPO remains to be better substantiated. Here, we discuss the literature before and after the introduction of the new nomenclature for TSPO and review some of the newer findings. In light of the controversy surrounding the function of TSPO, we emphasize the continued importance of identifying compounds with confirmed selectivity and suggest that TSPO expression is analyzed within specific disease contexts rather than merely "
+  }
+ ],
+ "review": [
+  {
+   "pmid": "40468388",
+   "doi": "10.1186/s40360-025-00958-4",
+   "title": "In Silico drug evaluation by molecular docking, ADME studies and DFT calculations of 2-(6-chloro-2-(4-chlorophenyl)imidazo[1,2-a]pyridin-3-yl)-N, N-dipropylacetamide.",
+   "year": "2025",
+   "journal": "BMC pharmacology & toxicology",
+   "abstract": "In this study, the structural, electronic, pharmacokinetic, and biological properties of molecule 2-(6-kloro-2-(4-klorofenil)imidazo[1,2-a]piridin-3-il)-N, N-dipropilasetamid (Alpidem), an imidazopyridine derivative anxiolytic known for its high BZ\u2081 (benzodiazepine-1) receptor affinity and low adverse effect profile, were comprehensively investigated by density functional theory (DFT) and in-silico methods. The alpidem molecule was optimized using the 6-311G(d, p) basis set with the B3LYP and B3PW91 methods; information on the stability and chemical reactivity of the structure was obtained via the highest occupied molecular orbital (HOMO), lowest unoccupied molecular orbital (LUMO), molecular electrostatic potential (MEP) maps, natural bonding orbital (NBO) analysis, non-linear optical (NLO) properties, and Mulliken charge distributions. Comparative analysis of two different methods has shown that the results are consistent with each other and provide reliable data. In addition, the drug similarity, bioavailability score, bioactivity values, absorption, distribution, metabolism, and excretion (ADME) profiles of the Alpidem molecule were calculated, and it was determined that the Alpidem molecule has pharmacologically favorable properties. Within the scope of molecular docking analyses, its interactions with two different enzymes (PDB ID: 2Z5X and 4BDT) associated with Alzheimer's disease were evaluated. The binding energy values obtained were -\u20098.00\u00a0kcal/mol (2Z5X) and -\u20099.60"
+  },
+  {
+   "pmid": "41585699",
+   "doi": "10.1021/acsomega.5c08365",
+   "title": "Imidazo[1,2\u2011&lt;i&gt;a&lt;/i&gt;]pyridines in Medicinal Chemistry: Recent Advances in Synthesis and Biological Activities.",
+   "year": "2026",
+   "journal": "ACS omega",
+   "abstract": "Imidazo-[1,2-<i>a</i>]-pyridines are widely recognized scaffolds present in several marketed drugs, including the anxiolytics alpidem, saripidem, necopidem, and zolpidem, which are some of the most prescribed medications for insomnia. In this review, we analyze publication trends, which reveal exponential growth in research involving this scaffold. We highlight recent synthetic strategies (2017-2025) for the preparation of imidazo-[1,2-<i>a</i>]-pyridine derivatives, such as condensation, multicomponent and tandem reactions, intramolecular cyclizations, and oxidative couplings under green conditions. In addition, we discuss innovative Medicinal Chemistry studies exploring their applications in the treatment of cancer, Alzheimer's disease, tuberculosis, and neglected tropical diseases. Significant advances have been made in identifying derivatives with potent activity against specific biological targets, including kinases, tubulin, HDACs, the cytochrome bc1 complex of <i>Mycobacterium tuberculosis</i>, and key enzymes involved in the pathogenesis of Alzheimer's disease, such as cholinesterases and secretases. Altogether, this review consolidates the vast therapeutic potential of the imidazo-[1,2-<i>a</i>]-pyridine core, emphasizing its synthetic versatility and broad spectrum of biological activities, which firmly establish it as a privileged scaffold for drug discovery."
+  },
+  {
+   "pmid": "39461622",
+   "doi": "10.1016/j.pbb.2024.173895",
+   "title": "Nonsedating anxiolytics.",
+   "year": "2024",
+   "journal": "Pharmacology, biochemistry, and behavior",
+   "abstract": "Anxiety disorders are the most prevalent psychiatric pathology with substantial cost to society, but the existing treatments are often inadequate. This has rekindled the interest in the GABA<sub>A</sub>-receptor (GABA<sub>A</sub>R) positive allosteric modulator (PAM) compounds, which have a long history in treatment of anxiety beginning with diazepam, chlordiazepoxide, and alprazolam. While the GABA<sub>A</sub>R PAMs possess remarkable anxiolytic efficacy, they have fallen out of favor due to a host of adverse effects including sedation, motor impairment, addictive potential and tolerance development. A substantial effort was thus devoted to the design of GABA<sub>A</sub>R PAMs as anxiolytics with reduced sedative liabilities. Several non-benzodiazepine (BZD) GABA<sub>A</sub>PAMs progressed to clinical trials (bretazenil, abecarnil, alpidem, and ocinaplon) with alpidem obtaining regulatory approval as anxiolytic, but later withdrawn from market due to hepatotoxicity. Advances in molecular biology gave birth to a host of subtype selective GABA<sub>A</sub>R-PAMs which suffered from signs of sedation and motor impairment and only three compounds progressed to proof-of-concept studies (TPA-023, AZD7325 and PF-06372865). TPA-023 was terminated due to toxicity in preclinical species while AZD7325 and PF-06372865 did not achieve efficacy endpoints in patients. We highlight a new compound, KRM-II-81, that is an imidazodiazepine selective for GABA<sub>A</sub>R containing \u03b12/3 and \u03b23 p"
+  },
+  {
+   "pmid": "37250767",
+   "doi": "10.1016/j.isci.2023.106834",
+   "title": "Imidazo[1,2-a]pyridine derivatives synthesis from lignin \u03b2-O-4 segments via a one-pot multicomponent reaction.",
+   "year": "2023",
+   "journal": "iScience",
+   "abstract": "The catalytic conversion of lignin into N-containing chemicals is of great significance for the realization of value-added biorefinery concept. In this article, a one-pot strategy was designed for the transformation of lignin \u03b2-O-4 model compounds to imidazo[1,2-a]pyridines in yields up to 95% using 2-aminopyridine as a nitrogen source. This transformation involves highly coupled cleavage of C-O bonds, sp<sup>3</sup>C-H bond oxidative activation, and intramolecular dehydrative coupling reaction to construction of N-heterobicyclic ring. With this protocol, a wide range of functionalized imidazo[1,2-a]pyridines sharing the same structure skeleton as those commercial drug molecules, such as Zolimidine, Alpidem, Saripidem, etc., were synthesized from different lignin \u03b2-O-4 model compounds and one \u03b2-O-4 polymer, emphasizing the application feasibility of lignin derivatives in N-heterobicyclic pharmaceutical synthesis."
+  },
+  {
+   "pmid": "38509674",
+   "doi": "10.2174/0118715265274067240223040333",
+   "title": "Imidazo[1,2-A]Pyridine: Potent Biological Activity, SAR and Docking Investigations (2017-2022).",
+   "year": "2024",
+   "journal": "Infectious disorders drug targets",
+   "abstract": "<h4>Background</h4>Regarding scientific research, Imidazo[1,2-a] pyridine derivatives are constantly being developed due to the scaffold's intriguing chemical structure and varied biological activity. They are distinctive organic nitrogen-bridged heterocyclic compounds that have several uses in medicines, organometallics and natural products. It has become a vital tool for medicinal chemists.<h4>Methods</h4>In order to gather scientific information on Imidazo[1,2-a] pyridines derivative, Google, PubMed, Scopus, Google Scholar, and other databases were searched. In the current study, the medicinal value and therapeutic effect of Imidazo[1,2-a] pyridines were investigated using above mentioned databases. The current study analyzed the detailed pharmacological activities of Imidazo[1,2-a] pyridine analogs through literature from diverse scientific research works.<h4>Results</h4>Due to its wide range of biological activities, including antiulcer, anticonvulsant, antiprotozoal, anthelmintic, antiepileptic, antifungal, antibacterial, analgesic, antiviral, anticancer, anti-inflammatory, antituberculosis, and antitumor properties, imidazopyridine is one of the most significant structural skeletons in the field of natural and pharmaceutical products. An imidazopyridine scaffold serves as the basis for a number of therapeutically utilized medications, including zolpidem, alpidem, olprinone, zolimidine, and necopidem.<h4>Conclusion</h4>This comprehensive study covers the period of the l"
+  },
+  {
+   "pmid": "28686934",
+   "doi": "10.1016/j.psychres.2017.06.063",
+   "title": "Z-drug for schizophrenia: A systematic review and meta-analysis.",
+   "year": "2017",
+   "journal": "Psychiatry research",
+   "abstract": "No systematic reviews and meta-analyses on the use of Z-drug for schizophrenia are available. Randomized, placebo-controlled, or non-pharmacological intervention-controlled trials published before 03/20/2017 were retrieved from major healthcare databases and clinical trial registries. A meta-analysis including only randomized, placebo-controlled trials was performed. Efficacy outcomes were measured as improvement in overall schizophrenia symptoms, total sleep time, and wake after sleep onset. Safety/acceptability outcomes were discontinuation rate and individual adverse events. Four trials [1 alpidem placebo-controlled study (n=66), 2 eszopiclone placebo-controlled studies (n=60), and 1 eszopiclone, shallow needling-controlled study (n=96)] were identified. The meta-analysis showed no significant differences in any outcome between pooled Z-drug and placebo treatment groups. For individual studies, alpidem was superior to placebo in improving the overall schizophrenia symptoms. One of the eszopiclone studies showed that eszopiclone was superior to placebo in improving the Insomnia Severity Index scores. Another eszopiclone study showed that eszopiclone did not differ from shallow needling therapy in improving both schizophrenia- and insomnia-related symptoms. Although this study failed to show significant benefits for the use of Z-drug in the treatment of schizophrenia, it showed that short-term use of eszopiclone is an acceptable method for treating persistent insomnia among "
+  },
+  {
+   "pmid": "22981367",
+   "doi": "10.1016/j.tips.2012.08.003",
+   "title": "Anxioselective anxiolytics: on a quest for the Holy Grail.",
+   "year": "2012",
+   "journal": "Trends in pharmacological sciences",
+   "abstract": "The discovery of benzodiazepine receptors provided the impetus to discover and develop anxioselective anxiolytics ('Valium without the side effects'). The market potential for an anxioselective based on the \u03b3-aminobutyric acid A (GABA(A)) receptor resulted in clinical trials of multiple compounds. In contrast to the anxioselective profile displayed in preclinical models, compounds such as bretazenil, TPA023, and MRK 409 produced benzodiazepine-like side effects (sedation, dizziness) in Phase I studies, whereas alpidem and ocinaplon exhibited many of the characteristics of an anxioselective in the clinic. Alpidem was briefly marketed for the treatment of anxiety, but was withdrawn because of liver toxicity. Reversible elevations in liver enzymes halted development of ocinaplon in Phase III. The clinical profiles of these two molecules demonstrate that it is possible to develop GABA(A) receptor-based anxioselectives. However, despite the formidable molecular toolbox at our disposal, we are no better informed about the GABA(A) receptors responsible for an anxioselective profile in the clinic. Here, I discuss the evolution of a quest, spanning four decades, for molecules that retain the rapid and robust anti-anxiety actions of benzodiazepines without the side effects that limit their usefulness."
+  },
+  {
+   "pmid": "27237332",
+   "doi": "10.2174/1568026616666160530153233",
+   "title": "Imidazo[1,2-a]pyridine Scaffold as Prospective Therapeutic Agents.",
+   "year": "2017",
+   "journal": "Current topics in medicinal chemistry",
+   "abstract": "Imidazo[1,2-a]pyridine is one of the most potential bicyclic 5-6 heterocyclic rings that is recognized as a \"drug prejudice\" scaffold due to its broad range of applications in medicinal chemistry such as anticancer, antimycobacterial, antileishmanial, anticonvulsant, antimicrobial, antiviral, antidiabetic, proton pump inhibitor, insecticidal activities. This scaffold has also been represented in various marketed preparations such as zolimidine, zolpidem, alpidem. Therefore, several attempts were made to carry out the structural modifications of this scaffold to discover and develop novel therapeutic agents. This review provides a valuable insight into the research findings of wide range of derivatives of imidazo[1,2-a]pyridine scaffold leading to promising heterocyclic compounds which could be explored further for the synthesis of new derivatives as well as construction of potential drug-like chemical libraries for biological screening in search of new therapeutic agents."
+  },
+  {
+   "pmid": "1974069",
+   "doi": "10.1055/s-2007-1014545",
+   "title": "Pharmacological and behavioral profile of alpidem as an anxiolytic.",
+   "year": "1990",
+   "journal": "Pharmacopsychiatry",
+   "abstract": "Pharmacological and behavioral studies in mice and rats have shown that the imidazopyridine alpidem possesses anxiolytic activity with a profile which is substantially different from that of benzodiazepines. Thus, in mice, alpidem inhibited marble-burying behavior and enhanced feeding under stressful conditions, as did benzodiazepines; in contrast to these drugs, however, alpidem was inactive against shock-induced fighting and shock-suppressed exploration. In rats, alpidem exerted anticonflict activity in the punished drinking test, but failed to antagonize punishment-induced inhibition of operant behavior. Moreover, in rats trained to discriminate chlordiazepoxide from saline, alpidem did not produce a benzodiazepine-like interoceptive stimulus. Alpidem also produced anticonvulsant effects in a variety of tests sensitive to benzodiazepines. However, the order of potencies against convulsions induced by different convulsive agents was different from that of the benzodiazepines. Alpidem decreased motor performance in the rotarod test and only produced a deficit in muscle strength at doses which were more than 20 times higher than the doses active in anxiolytic tests. Moreover, alpidem did not interfere with the acquisition of conditioned fear, except at very high doses, indicating a weak potential to impair memory. The effects of alpidem were antagonized by flumazenil, indicating that central omega receptors are involved in the action of this drug. The weak sedative effects of"
+  },
+  {
+   "pmid": "24357084",
+   "doi": "10.1007/s40263-013-0129-z",
+   "title": "The pharmacology of imepitoin: the first partial benzodiazepine receptor agonist developed for the treatment of epilepsy.",
+   "year": "2014",
+   "journal": "CNS drugs",
+   "abstract": "Although benzodiazepines (BZDs) offer a wide spectrum of antiepileptic activity against diverse types of epileptic seizures, their use in the treatment of epilepsy is limited because of adverse effects, loss of efficacy (tolerance), and development of physical and psychological dependence. BZDs act as positive allosteric modulators of the inhibitory neurotransmitter GABA by binding to the BZD recognition site (\"BZD receptor\") of the GABAA receptor. Traditional BZDs such as diazepam or clonazepam act as full agonists at this site, so that one strategy to resolve the disadvantages of these compounds would be the development of partial agonists with lower intrinsic efficacy at the BZD site of the GABAA receptor. Several BZD site partial or subtype selective compounds, including bretazenil, abecarnil, or alpidem, have been developed as anxioselective anxiolytic drugs, but epilepsy was not a target indication for such compounds. More recently, the imidazolone derivatives imepitoin (ELB138) and ELB139 were shown to act as low-affinity partial agonists at the BZD site of the GABAA receptor, and imepitoin was developed for the treatment of epilepsy. Imepitoin displayed a broad spectrum of anticonvulsant activity in diverse seizure and epilepsy models at tolerable doses, and, as expected from its mechanism of action, lacked tolerance and abuse liability in rodent and primate models. The more favorable pharmacokinetic profile of imepitoin in dogs versus humans led to the decision to de"
+  },
+  {
+   "pmid": "8096527",
+   "doi": null,
+   "title": "Alpidem in the treatment of panic disorder.",
+   "year": "1993",
+   "journal": "Journal of clinical psychopharmacology",
+   "abstract": "Alpidem, an imidazopyridine that acts at the gamma-aminobutyric acid/benzodiazepine receptor complex, has been reported to be an effective anxiolytic with a more favorable side effect profile than benzodiazepines. The effect of alpidem was investigated in an 8-week, open, clinical trial in 13 patients with panic disorder, with or without agoraphobia. Three patients were responders (much improved or very much improved), five patients were nonresponders, and five patients dropped out after less than 6 weeks of treatment. Significant improvement was seen in the sample as a whole for spontaneous panic attacks, phobic avoidance, and anticipatory anxiety. Most improvement occurred during the first 4 weeks of treatment, and responders had milder panic disorder at baseline. Adverse effects were generally mild. After 8 weeks of treatment, taper of medication over 2 weeks occurred without significant worsening of panic disorder symptoms. The efficacy of alpidem in the treatment of panic disorder remains uncertain and requires assessment in a controlled trial."
+  },
+  {
+   "pmid": "1974073",
+   "doi": "10.1055/s-2007-1014549",
+   "title": "On the therapeutic action of alpidem in anxiety disorders: an overview of the European data.",
+   "year": "1990",
+   "journal": "Pharmacopsychiatry",
+   "abstract": "This review analyzes the available data on the therapeutic activity of alpidem in various anxiety syndromes. Up to now, 17 studies have been completed in Europe, dealing with a total population of more than 1500 patients suffering from either chronic (n = 987) or situational anxiety (n = 400). In a series of five placebo-controlled double-blind studies in situations of stress-induced anxiety (gastroscopy, minor surgery, cardiac catheterization), the therapeutic efficacy of alpidem was evident in 53% of the patients and significantly (P less than 0.001) superior to that of placebo (30%). In more than 400 patients suffering from generalized anxiety or adjustment disorders with anxious mood, six double-blind studies run against placebo or reference drug over a period of two to three weeks indicated an anxiolytic effect superior (P less than 0.01) to that of placebo and comparable to that of reference drugs (DZ, LZP, CZP). A long-term (6-12 months) open-label study conducted on a population of more than 300 patients suffering from chronic anxiety indicated that no tachyphylaxis occurs during prolonged treatment and that following abrupt drug discontinuation no withdrawal or rebound phenomena are observed. Globally, alpidem appears to be well tolerated with a minimum of dose-related, sedative effects (6-7% of the cases) and no effects on memory or cognitive functions. Four studies conducted specifically in an elderly population (n = 191) indicate that the elderly patients do not s"
+  },
+  {
+   "pmid": "1974071",
+   "doi": "10.1055/s-2007-1014547",
+   "title": "Studies with alpidem in normal volunteers and anxious patients.",
+   "year": "1990",
+   "journal": "Pharmacopsychiatry",
+   "abstract": "Alpidem, an imidazo-pyridine compound, has been evaluated as an anxiolytic in comparison with placebo and lorazepam. In the first of our normal volunteer studies, we compared single doses of alpidem, 25, 50 and 100 mg with lorazepam 2 mg and placebo on a range of cognitive, psychomotor and EEG variables. Lorazepam and the highest (100 mg) dose of alpidem impaired performance on a range of psychomotor tasks, the effects of the benzodiazepine being more severe and more prolonged. No impairment of performance was observed with the 25 and 50 mg doses. In the second study, the focus was on memory functions. Lorazepam, 2 mg, caused anterograde amnesia which was most apparent 1 h post-drug but persisted until 4 h: sedation was marked. By contrast, single doses (25, 50 mg) of alpidem had little effect on either memory or alertness. The third study compared the effects of alpidem (25, 50 mg) and lorazepam (1 mg) with placebo, each given twice-daily for 8 days to normal volunteers. On the final day, a test dose of ethanol was given. Lorazepam impaired many tests of cognitive and psychomotor function, and this impairment was enhanced by ethanol. By contrast, alpidem produced less impairment with less interaction with alcohol. In a fourth, clinical, study, 24 patients with a DSM III primary diagnosis of generalised anxiety disorder were treated, under double blind conditions, with doses adjusted according to clinical need of either alpidem 25-150 mg daily or lorazepam 1-6 mg daily.(ABSTR"
+  },
+  {
+   "pmid": "2901120",
+   "doi": "10.1016/0091-3057(88)90211-0",
+   "title": "Clinical studies with the new anxiolytic alpidem in anxious patients: an overview of the European experiences.",
+   "year": "1988",
+   "journal": "Pharmacology, biochemistry, and behavior",
+   "abstract": "Alpidem is a new imidazopyridine compound which has been selected in animal pharmacology for its anxiolytic and anticonvulsant activity, and for its high therapeutic index. In healthy volunteers, alpidem was well tolerated up to doses of 300 mg and appeared to be devoid of CNS toxic effects. An extensive clinical development plan has been carried out in Europe to test its efficacy and safety in anxious patients. In a series of 5 double-blind placebo controlled parallel group studies, alpidem was administered as a single dose in a situation of stress induced anxiety where the stress was represented by diagnostic investigations such as gastroscopy, cardiac catheterisation or minor surgical operations. In these studies, 188 patients received placebo and 188 received alpidem; their anxiety was assessed before and after the drug administration by means of visual analogue scales and state anxiety inventories. Alpidem at 50 and 75 mg was significantly better than placebo in reducing stress induced anxiety. Alpidem was then administered to patients suffering from severe generalized anxiety in doses from 50 to 150 mg/day for 3-4 weeks in 3 double-blind placebo controlled studies: 127 patients received alpidem and 80 received placebo. Patients were assessed by means of rating scales and visual analogue scales. Alpidem did show an anxiolytic activity in this patient population and was well tolerated especially with regard to CNS side-effects.(ABSTRACT TRUNCATED AT 250 WORDS)"
+  },
+  {
+   "pmid": "1974072",
+   "doi": "10.1055/s-2007-1014548",
+   "title": "Alpidem and psychological performance in elderly subjects.",
+   "year": "1990",
+   "journal": "Pharmacopsychiatry",
+   "abstract": "With increasing age there is a concurrent increase in the side effects following psychotropic medication. The necessity of measuring the magnitude of the extent of the side effects using a properly constructed psychometric test battery is illustrated with reference to a dose ranging study compared to acute dose effects of 25, 50 and 100 mg alpidem in a population of elderly volunteers. The study was both placebo and verum (lorazepam 2 mg) controlled and the treatments were administered according to a crossover design with each subject acting as their own control. The effects of the verum were evident on all the tests and under these conditions there was no effect on psychological differences following doses of 25 and 50 mg alpidem. There was an initial deterioration one hour after dosing following 100 mg alpidem which was readily attenuated by three hours. No differences with any of the doses of alpidem were able to be detected at any other time point even though the verum continued to show the sensitivity of the battery to tests to sedative amnestic sensori-motor and information processing activities."
+  }
+ ]
+}

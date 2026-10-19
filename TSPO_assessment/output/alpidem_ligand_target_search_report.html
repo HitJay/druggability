@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Alpidem — Potential Target Search (TSPO / PBR and beyond)</title>
+<style>
+:root {
+  --bg:#0f1419; --panel:#1a2028; --panel-2:#232b36; --text:#d8dee9; --muted:#8895a7;
+  --accent:#5eb3ff; --ok:#7ec98f; --warn:#e5c07b; --err:#e06c75; --border:#2c3542; --code-bg:#12171d;
+}
+body { margin:0; padding:40px 20px; background:var(--bg); color:var(--text); line-height:1.6;
+  font-size:15px; font-family:-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif; }
+.container { max-width:1000px; margin:0 auto; }
+h1 { font-size:26px; margin:0 0 4px; }
+h2 { font-size:19px; margin:36px 0 10px; padding-bottom:6px; border-bottom:1px solid var(--border); color:var(--accent); }
+h3 { font-size:16px; margin:22px 0 8px; }
+.meta { color:var(--muted); font-size:13px; margin-bottom:24px; }
+table { width:100%; border-collapse:collapse; margin:12px 0; font-size:13.5px; }
+th { background:var(--panel-2); text-align:left; padding:8px 10px; border:1px solid var(--border); }
+td { padding:7px 10px; border:1px solid var(--border); background:var(--panel); vertical-align:top; }
+code, pre { background:var(--code-bg); border-radius:4px; font-size:12.5px; }
+code { padding:1px 5px; }
+pre { padding:12px 14px; overflow-x:auto; border:1px solid var(--border); }
+.callout { border-left:4px solid var(--accent); background:var(--panel); padding:12px 16px; margin:14px 0; border-radius:0 6px 6px 0; }
+.callout.ok { border-color:var(--ok); }
+.callout.warn { border-color:var(--warn); }
+.callout.err { border-color:var(--err); }
+.cards { display:flex; gap:14px; flex-wrap:wrap; margin:18px 0; }
+.card { flex:1 1 200px; background:var(--panel); border:1px solid var(--border); border-radius:8px; padding:14px 16px; }
+.card .num { font-size:22px; font-weight:700; color:var(--accent); }
+.card.ok .num { color:var(--ok); } .card.warn .num { color:var(--warn); } .card.err .num { color:var(--err); }
+.card .lbl { color:var(--muted); font-size:12.5px; margin-top:2px; }
+.pill { display:inline-block; padding:1px 8px; border-radius:10px; font-size:11.5px; border:1px solid var(--border); margin-right:4px; }
+.pill.ok { color:var(--ok); border-color:var(--ok); }
+.pill.warn { color:var(--warn); border-color:var(--warn); }
+.pill.err { color:var(--err); border-color:var(--err); }
+.pill.mut { color:var(--muted); }
+footer { margin-top:40px; padding-top:14px; border-top:1px solid var(--border); color:var(--muted); font-size:12.5px; }
+a { color:var(--accent); }
+.mut { color:var(--muted); }
+</style>
+</head>
+<body><div class="container">
+
+<h1>Alpidem — Potential Target Search</h1>
+<div class="meta">SL 80.0342 (Ananxyl, withdrawn 1994) · requester ZHCO (Cao Zheng) · companion to the PK11195/emapunil/etifoxine report (RIC-408) · 2026-10-16 · QYJI / RIC · data through ChEMBL 35, PubChem, Europe PMC, Open Targets v4, RCSB</div>
+
+<h2>1. Verdict</h2>
+<div class="cards">
+  <div class="card ok"><div class="num">TSPO + GABA-A</div><div class="lbl">Alpidem binds both at nM potency — the only two nM-band targets in all public data. Both are exposure-competent in brain.</div></div>
+  <div class="card"><div class="num">0.5–7.9 nM</div><div class="lbl">TSPO Ki (rat) vs free Cmax 1.7–6 nM → TSPO occupancy-competent, unlike etifoxine (10⁴ gap)</div></div>
+  <div class="card warn"><div class="num">0.19 µM</div><div class="lbl">PXR (measured, TR-FRET) — borderline: total Cmax 0.285 µM ≈ 1.5× Ki; hepatic exposure unknown</div></div>
+  <div class="card err"><div class="num">BSEP 4.8–9.2 µM</div><div class="lbl">Bile salt export pump inhibition + GSH depletion + reactive metabolites — coherent chain behind the idiosyncratic-DILI withdrawal</div></div>
+</div>
+<div class="callout ok"><b>Answer to the requester:</b> Beyond the five you list (TSPO/PBR, CBR/GABA-A, α1-acid glycoprotein, albumin — all confirmed in the data), the additional plausible targets are <b>PXR (NR1I2)</b> at 0.19–0.48 µM (the one newly detected nM-adjacent off-target) and <b>BSEP/ABCB11</b> at 4.8–9.2 µM plus a CYP/nuclear-receptor µM noise band. The 70% ChEMBL similarity neighbourhood (11 analogues) contains only TSPO and GABA-A binding families — the drug is a two-target compound at pharmacological concentrations. Zolpidem is the clean differentiation comparator: TSPO IC50 4.7 µM vs GABA-A Ki 14–27 nM, i.e. TSPO-negative, which supports alpidem-specific TSPO attribution.</div>
+
+<h2>2. Evidence per target</h2>
+<table>
+<tr><th>Target</th><th>Evidence</th><th>Potency</th><th>Exposure-compatible?</th><th>Tier</th></tr>
+<tr><td><b>TSPO / PBR</b> (rat P16257, human P30536)</td><td>6 independent binding assay families, incl. the Anzini-class chemistry papers; [3H]PK11195 and [3H]Ro5-4864 displacement (rat kidney/brain)</td><td>Ki/IC50 0.5–7.9 nM</td><td>yes — free Cmax 1.7–6 nM ≈ Ki (brain) <span class="pill ok">occupancy-competent</span></td><td><b>T1</b></td></tr>
+<tr><td><b>GABA-A central BZD site</b> (α1/2/3/5-containing αxβγ2)</td><td>[3H]flunitrazepam displacement across 16 rat subunit rows; functional potentiation of GABA-induced Cl⁻ currents (α1γ2, α1β2γ2) — partial/low-efficacy profile vs zolpidem</td><td>Ki/IC50 1–43 nM (26–28 nM typical)</td><td>yes in brain at anxiolytic doses; partial occupancy at 100–200 mg (free ~6 nM) <span class="pill ok">competent</span></td><td><b>T1</b> (secondary pharmacology)</td></tr>
+<tr><td>PXR / NR1I2 (human)</td><td>TR-FRET binding + agonism (one experiment family, cell-free); Tox21 agonist single-hit</td><td>Ki 0.19 µM; EC50 0.48 µM; Tox21 10.6 µM</td><td>borderline — total Cmax 0.285 µM ≈ 1.5× Ki; liver/plasma ratio unknown (13% F, high first-pass) <span class="pill warn">uncertain</span></td><td><b>T2</b></td></tr>
+<tr><td>Albumin (ALB)</td><td>ex-vivo + assay binding (matches Pacifici 1989)</td><td>assay Kd 2 µM; 97.2% bound at 45 g/L albumin</td><td>PK determinant, not a signalling target</td><td>T2 (PK role)</td></tr>
+<tr><td>α1-acid glycoprotein (ORM1)</td><td>ex-vivo binding (Pacifici 1989)</td><td>97.1% bound at 0.75 g/L; mix with albumin 99.1% bound; free fraction 0.61–1.31% across populations</td><td>PK determinant; AAG buffers hypoalbuminaemia (cirrhosis, neonates)</td><td>T2 (PK role)</td></tr>
+<tr><td><b>BSEP / ABCB11</b></td><td>3 independent transport-assay families (Sf21 + HEK293 vesicles)</td><td>IC50 4.8–9.2 µM</td><td>≈30× total Cmax, but liver exposure unknown; mechanistically coherent with the DILI chain <span class="pill warn">possible contributor</span></td><td><b>T2</b></td></tr>
+<tr><td>CYP2C9/3A4/2C19/1A2/2D6</td><td>NCGC qHTS + Tox21 reporter antagonism</td><td>2.2–17.4 µM</td><td>≥4–60× total Cmax</td><td>T4 (noise; CYP3A4/2C9 could perturb own metabolism)</td></tr>
+<tr><td>Nrf2/ARE, hERG, AR, PR, ERα, PPARG, ERRα, CAR, THRβ</td><td>Tox21/qHTS single-source hits</td><td>2.8–38.6 µM</td><td>≥5–135× Cmax; no orthogonal source</td><td>T4 (noise band)</td></tr>
+<tr><td>Sigma-1, HSD11B1, LXR, CAR-signalling, transporter set</td><td>absent from similarity neighbourhood + no PubChem hits</td><td>—</td><td>—</td><td>untested (<span class="pill mut">not tested ≠ non-binder</span>)</td></tr>
+</table>
+
+<h3>Exposure / occupancy backbone (measured, human)</h3>
+<pre>Total Cmax (ChEMBL-derived, single dose):   285 nM   (0.285 µM)
+Free Cmax (ChEMBL-derived):                   6 nM   (0.006 µM)
+Free fraction (Pacifici 1989, ex vivo):     0.61–1.31%  (albumin + AAG bound 97.1–99.1%)
+→ implied free ≈ 1.7–6 nM at 25–200 mg single doses (literature Cmax 17–115 ng/mL = 42–285 nM)
+
+vs TSPO Ki (rat)        0.5–7.9 nM  → brain occupancy plausible at steady state  [FACT]
+vs GABA-A Ki            1–43 nM     → partial occupancy; anxiolysis without full α1 sedation
+                                      (1993 electrophysiology: low-efficacy vs zolpidem)  [FACT]
+vs PXR Ki (human)       190 nM      → 1.5× total Cmax; hepatic free unknown       [OBS]
+vs BSEP IC50            4.8–9.2 µM  → only if hepatic accumulation >> plasma      [HYP]</pre>
+
+<h2>3. Safety-pharmacology anchor (why alpidem left the market)</h2>
+<div class="callout err"><b>DILI chain (each link measured):</b> 4 clinical acute-hepatitis cases incl. one fulminant death post-transplant (PMID:7750686, 7750714, 7875405) ← severe GSH depletion + metabolic activation in rat hepatocytes at 250–500 µM, worse with CYP1A induction; zolpidem clean even at 500 µM (PMID:11602696) ← high covalent binding to human liver microsomal protein (DILI-positive reference set, PMID:19720731) ← BSEP inhibition 4.8–9.2 µM (3 assay families) + mitochondrial membrane-potential disruption at 3.8 µM (Tox21). Zolpidem — same imidazopyridine scaffold, no TSPO binding, no GSH depletion, no DILI — is the controlled contrast. Withdrawn in France 1994, one year after launch.</div>
+
+<h2>4. Validation gates</h2>
+<h3>Vina structure arm — PASS</h3>
+<pre>Pocket                              Alpidem        Zolpidem     PK11195
+TSPO  4RYI co-crystal (pos. ctrl)   -8.02          -8.25        -9.42 (prev. run)
+PXR   2QNV LBD (measured off-tgt)   -7.81          -7.57        -7.55 (prev. run)
+CAR   1XVP LBD (negative control)   -9.03          -9.55        -10.89 (prev. run)
+GABA-A BZD site 6X3X (DZP pocket)   -6.80          -6.63        -8.81
+  └ diazepam into own pocket: -7.68 (control)</pre>
+<p><b>Reading:</b> the two measured T1/T2 signals (TSPO, PXR) are recovered by the structure arm; CAR is NOT recovered as an alpidem-specific signal (PK11195's CAR activation does not extend to alpidem — its only CAR row is a 24.8 µM Tox21 single-hit). GABA-A BZD-site scores are weakest of the four pockets for alpidem, consistent with its low-efficacy partial-agonist electrophysiology; PK11195 outscores it there, as expected from PK11195's known BZD-site affinity. Docking scores are supporting evidence, not affinities.</p>
+
+<h3>Similarity closure — clean boundary</h3>
+<div class="callout ok">ChEMBL 70% similarity around CHEMBL54349 returns 11 analogues (2-phenylindol-3-ylglyoxylamide / imidazopyridine TSPO chemistry). Their complete activity surface: TSPO (n=24 records, best 0.4–0.5 nM), GABA-A (n=12, 0–130 nM), CYP/ADMET band, nothing else ≥3 records. Whatever target family is absent here is genuinely absent from public data.</div>
+
+<h2>5. Genetics tiebreaker (Open Targets)</h2>
+<table>
+<tr><th>Target</th><th>Top filtered associations (score / genetics score)</th><th>Reading</th></tr>
+<tr><td>TSPO</td><td>anxiety disorder 0.391 (gen 0.000); HCC 0.097</td><td>anxiety phenotype link only — consistent with the anxiolytic indication</td></tr>
+<tr><td>GABRA1/2/3/5</td><td>anxiety 0.59–0.61 (gen 0.000); GABRA3/5 obesity 0.41–0.43</td><td>anxiety-dominant; no metabolic signal</td></tr>
+<tr><td>NR1I2 (PXR)</td><td>HCC 0.108; obesity 0.093 (gen 0.000)</td><td>hepatic/xenobiotic role, no anxiolytic relevance</td></tr>
+<tr><td>ABCB11 (BSEP)</td><td>intrahepatic cholestasis family 0.58–0.84 (gen 0.58–0.84)</td><td>strongest genetic anchor in the set — cholestasis/DILI, matches the withdrawal</td></tr>
+<tr><td>ALB / ORM1</td><td>liver-cirrhosis band 0.07–0.13 (gen 0.000)</td><td>PK proteins, as expected</td></tr>
+</table>
+<p class="mut">No TSPO or GABA-A metabolic/genetic link to diabetes/obesity — same conclusion as the PK11195/emapunil/etifoxine report.</p>
+
+<h2>6. Limits</h2>
+<ul>
+<li>All computational scores are supporting evidence, not proof of binding; only measured data reach Tier 1–2.</li>
+<li>TSPO potency is rodent-dominated (rat kidney/brain); the human A147T (rs6971) genotype question was not resolvable from public rows — relevant if alpidem is ever re-profiled (emapunil 12.6×, PK11195 1.2× sensitivity as calibration).</li>
+<li>ChEMBL holds zero activity records for CHEMBL54349 (name search also fails; the record is InChIKey/SMILES-resolved only) — the entire measured surface comes via PubChem-mirrored ChEMBL source assays + literature. This is a data-coverage artefact, not a clean-target claim.</li>
+<li>Zolpidem comparator fetched 500/637 curated records (EBI API instability); the TSPO-negative conclusion rests on the record present (IC50 4.7 µM) plus literature consistency.</li>
+<li>Liver/plasma concentration ratio for alpidem is unknown publicly; the PXR and BSEP exposure statements are plasma-anchored and marked uncertain/HYP accordingly.</li>
+<li>Active-metabolite claims: the three metabolites detected in rat (PMID:1680622) and human (PMID:1687121) have no public structure/potency records — "unresolved", not "inactive".</li>
+<li>Sources skipped with rationale: BindingDB REST retired, PDSP unreachable (same as the prior run).</li>
+</ul>
+
+<h2>7. Suggested next steps (for the biology team)</h2>
+<ol>
+<li>If TSPO re-profiling is intended: run alpidem against human WT vs A147T TSPO — the literature surface is rat-heavy and the clinical genotype question is open.</li>
+<li>If the DILI chain is the interest: BSEP IC50 + GSH depletion are the two measured anchors; hepatocyte-to-plasma concentration data would upgrade the BSEP route from HYP.</li>
+<li>For any anxiolytic re-formulation concept: alpidem's differentiation vs zolpidem is TSPO occupancy + partial GABA-A efficacy — a re-design should preserve both, not TSPO alone.</li>
+</ol>
+
+<footer>
+Sources: PubChem PUG-REST (CID 54897; 966 assays, 117 active — AIDs 40374/42316/42319/42333/275802/363485/672793/1209455/1209457/1443992/1615600/1615601/1657079/1849524/1849525/1925174/1925175/1961757/1961801/1961803 etc.) · ChEMBL 35 (CHEMBL54349, CHEMBL911; similarity 70% n=11) · Europe PMC (PMID:2574111 protein binding; 1687121/1680622 PK; 7901754 GABA-A currents; 11602696 hepatocyte toxicity; 19720731 covalent binding; 7750686/7750714/7875405 hepatitis cases; 8863805 Anzini 1996; 33158242 Gudasheva 2020; 26002041 steroidogenesis) · Open Targets v4 (2026-10-16) · RCSB 4RYI/2QNV/1XVP/6X3X · Vina docking in <code>TSPO_assessment/scripts/alpidem_ws4*.py</code>. Data files under <code>TSPO_assessment/data/alpidem_*.json</code>; tiered CSV <code>output/alpidem_tiered_targets_v1.csv</code>; unit tests <code>tests/test_alpidem_dataset.py</code> (7/7 pass). Companion to RIC-408 report <code>tspo_ligand_target_search_report.html</code>.
+</footer>
+</div></body>
+</html>
