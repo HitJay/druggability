@@ -1,0 +1,203 @@
+#!/usr/bin/env python3
+"""TSPO ligand-target assessment — 1920x1080 fixed-viewport BP one-pager (English).
+
+Layout: header (92px) / metric band (96px) / 3-column flex main (fixed 800px).
+Palette: NN corporate (#001965 deep blue, #00857C teal, #D9383A red) on white.
+Self-contained: no external assets, no images (pure CSS/HTML figures).
+"""
+html = r"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>TSPO ligand-target assessment — one-pager</title>
+<style>
+  html,body{width:1920px;height:1080px;margin:0;padding:0;overflow:hidden;background:#FFFFFF;
+            font-family:'Segoe UI',-apple-system,Arial,sans-serif;color:#1a2332;}
+  .page{width:1920px;height:1080px;display:grid;grid-template-rows:92px 96px 800px;
+        grid-template-columns:1fr;row-gap:12px;padding:20px 28px;box-sizing:border-box;background:#FFFFFF;}
+  /* header */
+  header{background:linear-gradient(90deg,#001965 0%,#0a2a7a 100%);border-radius:10px;
+         display:flex;align-items:center;justify-content:space-between;padding:0 28px;color:#fff;}
+  header h1{margin:0;font-size:26px;font-weight:600;letter-spacing:.2px;}
+  header .sub{font-size:14px;color:#bcd0ff;margin-top:3px;}
+  header .meta{text-align:right;font-size:13px;color:#cfe0ff;line-height:1.5;}
+  /* metric band */
+  .metrics{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;}
+  .metric{background:#f4f7fb;border:1px solid #dfe7f2;border-left:4px solid #00857C;border-radius:8px;
+          display:flex;flex-direction:column;justify-content:center;padding:8px 14px;}
+  .metric .v{font-size:26px;font-weight:700;color:#001965;line-height:1.15;}
+  .metric .l{font-size:11.5px;color:#5a6b85;margin-top:2px;line-height:1.3;}
+  .metric.red{border-left-color:#D9383A;} .metric.teal{border-left-color:#00857C;}
+  /* main */
+  main{display:grid;grid-template-columns:1.02fr 1.28fr 1.12fr;gap:12px;}
+  .col-stack{display:flex;flex-direction:column;gap:12px;min-height:0;}
+  .card{background:#ffffff;border:1px solid #dfe7f2;border-radius:10px;padding:12px 16px;
+        box-shadow:0 1px 4px rgba(16,42,90,.06);display:flex;flex-direction:column;min-height:0;}
+  .card h2{margin:0 0 8px;font-size:15px;color:#001965;border-bottom:2px solid #00857C;
+           padding-bottom:4px;display:flex;justify-content:space-between;align-items:baseline;}
+  .card h2 .tag{font-size:10.5px;font-weight:400;color:#5a6b85;}
+  .grow{flex:1 1 0;min-height:0;}
+  ul{margin:4px 0 0;padding-left:16px;}
+  li{margin:3px 0;font-size:12.5px;line-height:1.42;}
+  li b{color:#001965;}
+  .pill{display:inline-block;background:#e8f2f1;color:#00695c;border-radius:10px;
+        padding:1px 8px;font-size:10.5px;margin:2px 3px 2px 0;font-weight:600;}
+  .pill.blue{background:#e7edf9;color:#001965;} .pill.redp{background:#fdeaec;color:#b3273a;}
+  /* finding cards */
+  .finding{border-left:4px solid #00857C;background:#f7fafc;border-radius:6px;
+           padding:7px 10px;margin-top:6px;font-size:12.5px;line-height:1.42;}
+  .finding b{color:#001965;}
+  .finding .n{display:inline-block;background:#00857C;color:#fff;border-radius:4px;
+              font-size:10.5px;font-weight:700;padding:0 6px;margin-right:6px;}
+  .finding.alt{border-left-color:#001965;} .finding.warn{border-left-color:#D9383A;}
+  /* workflow */
+  .flow{display:flex;flex-direction:column;gap:0;margin-top:2px;}
+  .step{display:flex;align-items:flex-start;gap:9px;padding:4.5px 0;}
+  .step .num{flex-shrink:0;width:20px;height:20px;border-radius:50%;background:#00857C;color:#fff;
+             font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+  .step .t{font-size:12.5px;line-height:1.38;}
+  .step .t b{color:#001965;}
+  .step .t .d{color:#5a6b85;font-size:11.5px;}
+  .vline{width:2px;height:8px;background:#bcd6d3;margin-left:9px;}
+  /* tables */
+  table{border-collapse:collapse;width:100%;margin-top:4px;}
+  th{background:#001965;color:#fff;font-size:10.8px;padding:4px 7px;text-align:left;font-weight:600;}
+  td{font-size:11.8px;padding:3.5px 7px;border-bottom:1px solid #e6ecf5;line-height:1.35;}
+  td.num{text-align:right;font-variant-numeric:tabular-nums;}
+  .pos{color:#00695c;font-weight:700;} .neg{color:#b3273a;font-weight:700;}
+  tr.total td{font-weight:700;background:#f4f7fb;}
+  /* callout */
+  .callout{background:#fdf6ec;border-left:4px solid #e5a63c;border-radius:6px;
+           padding:7px 10px;font-size:11.8px;line-height:1.45;margin-top:8px;}
+  .callout b{color:#8a5b00;}
+  /* code strip */
+  .codestrip{font-family:Consolas,monospace;font-size:10.6px;background:#0e1a35;color:#c9d8ff;
+             border-radius:6px;padding:7px 10px;line-height:1.55;margin-top:6px;}
+  .codestrip .a{color:#7fd8c8;} .codestrip .c{color:#8895a7;}
+  .spacer{flex:1 1 auto;min-height:0;}
+  .refs{font-size:10.6px;color:#5a6b85;line-height:1.5;}
+</style>
+</head>
+<body><div class="page">
+
+<header>
+  <div>
+    <h1>TSPO ligand-target assessment — computational campaign synthesis</h1>
+    <div class="sub">PK11195-anchored target search extended to emapunil, FGIN-1-27 and 29 novel pockets — docking, MD pose-stability, and annihilation-TI FEP</div>
+  </div>
+  <div class="meta">
+    RIC-408 · Research Insights China<br>
+    Request: Z. Cao · Analysis: QYJI · Oct 2026<br>
+    Compute: local HPC Vina / OpenMM / openfe-md
+  </div>
+</header>
+
+<div class="metrics">
+  <div class="metric"><div class="v">7</div><div class="l">ligand-target requests closed (PK11195, emapunil, FGIN, alpidem, etifoxine, Ro5-4864, novel pockets)</div></div>
+  <div class="metric teal"><div class="v">5×</div><div class="l">independent evidence lines converging on CAR as the #2 PK11195 target</div></div>
+  <div class="metric teal"><div class="v">2</div><div class="l">ligands × 4 evidence layers confirming the novel TSPO dimer-interface pocket 4RYI_p26</div></div>
+  <div class="metric"><div class="v">16/17</div><div class="l">FGIN novel-pocket hits confirmed at 3-seed docking tier (13/16 md-stable)</div></div>
+  <div class="metric"><div class="v">57</div><div class="l">annihilation-TI anchors completed across 13 FGIN + 6 emapunil pockets</div></div>
+  <div class="metric red"><div class="v">55</div><div class="l">unit tests green; every number in deliverables re-derived from final artifacts</div></div>
+</div>
+
+<main>
+  <!-- ============ COLUMN 1 ============ -->
+  <div class="col-stack">
+    <div class="card">
+      <h2>Headline findings <span class="tag">computational — supporting evidence, not proof of binding</span></h2>
+      <div class="finding"><span class="n">1</span><b>CAR (NR1I3) is the #2 PK11195 target.</b> ChEMBL sub-&micro;M antagonism + PubChem + SwissTarget 0.888 + docking 1XVP &minus;10.89 kcal/mol + Boltz-2 fold reproduction (5.65 &Aring; RMSD). All TSPO PET-tracer safety reads must include the CAR/PXR nuclear-receptor axis (DILI, DDI).</div>
+      <div class="finding alt"><span class="n">2</span><b>New pocket: TSPO dimer interface (4RYI_p26).</b> Orthosteric overlap &lt;30%; emapunil &minus;7.64 / FGIN &minus;9.17, both MD-stable, TI-confirmed on both ligands (+7.7 / +7.6 kJ/mol). Mutation path ready: TSPO dimerization assay &times; LEU58 mutant.</div>
+      <div class="finding"><span class="n">3</span><b>SER196 (GABA-A TMD pocket 6X3X_p78): ligand-independent strong anchor.</b> Two chemically unrelated ligands independently lose ~+20 kJ/mol on annihilation — the top mutagenesis candidate of the round.</div>
+      <div class="finding alt"><span class="n">4</span><b>Exposure framing separates literature from real targets.</b> Free C<sub>max</sub> vs K<sub>i</sub> gaps of 10<sup>3</sup>&ndash;10<sup>4</sup> exclude routes (etifoxine 0.31 nM vs 7.8 &micro;M). Tiers T1&ndash;T4; "not tested &ne; non-binder".</div>
+      <div class="finding warn"><span class="n">5</span><b>Scores can deceive; dynamics rescue.</b> 4 pockets docked &le; &minus;7.8 but drifted 3.1&ndash;8.5 &Aring; in MD — rejected (OPRK1, 6HUG_p114, 7F61_p15, 7M93_p8). The method chain working as designed.</div>
+      <div class="spacer"></div>
+      <div class="codestrip">
+        <span class="c"># validated protocol chain (reusable per ligand series)</span><br>
+        curation &rarr; evidence mining &rarr; <span class="a">gated docking</span> &rarr; <span class="a">250 ps MD stability</span><br>
+        &rarr; <span class="a">annihilation TI (alanine scanning)</span> &rarr; tier CSV &rarr; tests &rarr; CIFS
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ COLUMN 2 ============ -->
+  <div class="card grow">
+    <h2>Method chain <span class="tag">identical protocol across ligands &rarr; directly comparable</span></h2>
+    <div class="flow">
+      <div class="step"><div class="num">1</div><div class="t"><b>Curation</b> — <span class="d">CID / InChIKey / ChEMBL resolution; racemate vs enantiomer tracked (PK11195); zero-record drugs (alpidem) recovered via InChIKey-exact + synonym scan</span></div></div>
+      <div class="vline"></div>
+      <div class="step"><div class="num">2</div><div class="t"><b>Evidence mining</b> — <span class="d">ChEMBL activities (protein-level filter) + PubChem assay summary + Europe PMC knockout evidence + similarity closure; every row tagged FACT / OBS / MECH / HYP</span></div></div>
+      <div class="vline"></div>
+      <div class="step"><div class="num">3</div><div class="t"><b>Gated docking</b> — <span class="d">gate = re-dock co-crystal ligand &lt; 2 &Aring; AND recover known off-targets; only then are cross-pocket scores compared (CAR precedent: bare cross-pocket scores are incomparable)</span></div></div>
+      <div class="vline"></div>
+      <div class="step"><div class="num">4</div><div class="t"><b>MD pose stability</b> — <span class="d">250 ps Langevin 300 K, all protein heavy atoms restrained 5 kcal/mol/&Aring;&sup2;; drift &le; 4 &Aring; = md-stable; MD is the decisive verdict for borderline docks</span></div></div>
+      <div class="vline"></div>
+      <div class="step"><div class="num">5</div><div class="t"><b>FEP: annihilation TI (computational alanine scanning)</b> — <span class="d">side-chain q/&epsilon; &times; (1&minus;&lambda;), 8 &lambda; windows, 27.5 ps/window; ddG &gt; 0 = ligand uses that side chain; native-IE identity validates each window; correct convention COUL 138.935 kJ&middot;nm/e&sup2;, ligand net charge 0</span></div></div>
+      <div class="vline"></div>
+      <div class="step"><div class="num">6</div><div class="t"><b>Tiering &amp; delivery</b> — <span class="d">vocabulary capped (anchor / computed-md / computed-dock / computed-negative / computed-ti / skipped / untested — never "computed-positive"); unit tests written before showing the CSV; CIFS copies sha256-verified; email numbers re-derived from final artifacts</span></div></div>
+    </div>
+    <div class="spacer"></div>
+    <h2>Novel-pocket screening loop <span class="tag">fpocket method-control first</span></h2>
+    <div class="finding alt"><span class="n">&#945;</span>fpocket must recover the co-crystal pocket in <b>every</b> structure (17/17) before any "no pocket" claim. Novelty gate: &lt;30% residue overlap with the known pocket, &gt;3 &Aring; from every ligand copy, DS &ge; 0.20, vol &ge; 250 &Aring;&sup3;. 29 novel pockets found; demoted-adjacent rows keep their data inline.</div>
+    <div class="spacer" style="flex:1 1 auto;"></div>
+    <h2>Numbers behind the headlines <span class="tag">all re-derived from final artifacts</span></h2>
+    <table>
+      <tr><th>Quantity</th><th>Value</th><th>Source layer</th></tr>
+      <tr><td>Known-pocket TI anchors (5 pockets &times; 2 ligands)</td><td class="num">21</td><td>FEP-A, double precision</td></tr>
+      <tr><td>Novel-pocket TI anchors (13 + 6 pockets &times; top-3)</td><td class="num">57</td><td>ws7, 4-GPU sweep</td></tr>
+      <tr><td>Strongest single anchor (OPRM1 ASP83A, emapunil)</td><td class="num">+16.3 kJ/mol</td><td>annihilation TI</td></tr>
+      <tr><td>Ligand-independent anchor (SER196A, both ligands)</td><td class="num">+20.0 / +20.6</td><td>annihilation TI</td></tr>
+      <tr><td>MD verdict flips vs docking score</td><td class="num">4 rejections</td><td>pose-stability MD</td></tr>
+      <tr><td>Erratum scope (IE units + ghost charge)</td><td class="num">0 tier changes</td><td>inline correction</td></tr>
+    </table>
+    </div>
+
+  <!-- ============ COLUMN 3 ============ -->
+  <div class="col-stack">
+    <div class="card">
+      <h2>Pocket evidence table <span class="tag">docking (3-seed best, kcal/mol) &middot; MD drift &middot; TI top anchor (kJ/mol)</span></h2>
+      <table>
+        <tr><th>Pocket</th><th>Target</th><th>emapunil</th><th>FGIN</th><th>MD</th><th>TI top anchor</th></tr>
+        <tr><td><b>4RYI_p26</b></td><td>TSPO dimer interface</td><td class="num">&minus;7.6</td><td class="num">&minus;9.2</td><td>stable &times;2</td><td>MET1A +7.7 / LEU58B +7.6</td></tr>
+        <tr><td><b>6X3X_p78</b></td><td>GABA-A TMD</td><td class="num">&minus;8.5</td><td class="num">&minus;9.6</td><td>stable &times;2</td><td class="pos">SER196A +20.6 / +20.0</td></tr>
+        <tr><td>4RYI (known)</td><td>TSPO orthosteric</td><td class="num">&minus;8.6</td><td class="num">&minus;8.5</td><td>stable &times;2</td><td>SER20A +13.9 / SER144A +7.6</td></tr>
+        <tr><td>4DJH_p53</td><td>OPRK1 rim (adjacent)</td><td class="num">&minus;9.1</td><td class="num">&minus;9.4</td><td>stable &times;2</td><td>TYR420A +7.5 / LEU66A +5.0</td></tr>
+        <tr><td>4WB9_p1</td><td>ALDH1A1</td><td class="num">&minus;8.8</td><td class="num">&minus;8.1</td><td>stable &times;2</td><td>LYS105A +13.1 / TYR289A +14.1</td></tr>
+        <tr><td>6HUG_p15</td><td>GABA-A pore side</td><td class="num">&minus;8.3</td><td class="num">&minus;8.6</td><td>stable</td><td>THR253C +15.9</td></tr>
+        <tr><td>1XVP</td><td>CAR LBD (known)</td><td class="num">PK11195 &minus;10.9 &middot; emap &minus;8.4</td><td class="num">&mdash;</td><td>stable</td><td>PHE59A +9.2</td></tr>
+        <tr class="total"><td colspan="2">MD-rejected (score &le; &minus;7.8)</td><td colspan="2">OPRK1 &middot; 6HUG_p114 &middot; 7F61_p15 &middot; 7M93_p8</td><td>&#10007;</td><td>computed-negative</td></tr>
+      </table>
+      <div class="refs" style="margin-top:5px;">TI ddG &gt; 0 = annihilating that side chain costs binding free energy = the ligand uses it. All TI in double precision; zero-window artifact guarded by unit test.</div>
+    </div>
+    <div class="card grow">
+      <h2>Experimental hand-off <span class="tag">TI anchors = mutation shortlist</span></h2>
+      <ul>
+        <li><b>SER196 mutant &times; GABA-A electrophysiology</b> — tests the ~1000&times; anchor at 6X3X_p78; both ligands should lose potency in parallel if the pocket is real.</li>
+        <li><b>LEU58 mutant &times; TSPO dimerization assay</b> (BRET/FRET) — one experiment resolves whether the interface pocket is functional.</li>
+        <li><b>Predicted-null anchors as built-in negative controls</b> (e.g. 7M93_p18 PHE72/GLU69 &asymp; 0 kJ/mol) — saves a control arm.</li>
+        <li><b>Radioligand displacement priority</b> follows the TI ranking; cross-ligand-confirmed pockets first.</li>
+        <li><b>A147T polymorphism (rs6971)</b>: emapunil 12.6&times; vs PK11195 1.2&times; sensitivity — patient stratification angle.</li>
+      </ul>
+      <div class="callout"><b>Boundary:</b> all computational layers rank and generate hypotheses; tier assignment (T1&ndash;T2) requires measured data. Human TSPO has no structure of any organism with these ligands bound (P30536 = zero PDB entries) — the bacterial 4RYI anchor is the field-standard substitute.</div>
+      <div class="spacer"></div>
+      <div style="border-top:1px solid #e6ecf5;padding-top:6px;">
+        <span class="pill blue">RIC-408</span><span class="pill">gated docking</span><span class="pill">250 ps MD</span><span class="pill">annihilation TI</span><span class="pill">fpocket novel pockets</span><span class="pill">55 unit tests</span><span class="pill redp">supporting evidence only</span>
+        <div class="refs" style="margin-top:5px;">Deliverables: R:\DT\TDE_TV\shared_folder\QYJI\druggability\TSPO_assessment\ (01&ndash;06 folders: per-ligand reports, novel-pocket round, FEP supplements; tier CSVs; email drafts). Synthesis doc: docs/tspo-ligand-target-assessment.md. Commits 4a9aa35&hellip;c11b61d.</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+</div></body></html>
+"""
+out = "/das/user/QYJI/druggability/TSPO_assessment/output/tspo_assessment_onepager.html"
+open(out, "w").write(html)
+
+# QA: tag balance + no Chinese + key numbers present
+import re
+assert len(re.findall(r'<div\b', html)) == len(re.findall(r'</div>', html)), "div imbalance"
+cjk = [c for c in html if '\u4e00' <= c <= '\u9fff']
+assert not cjk, f"Chinese chars: {cjk[:5]}"
+for token in ["4RYI_p26", "SER196A", "+20.6", "&minus;9.2", "16/17", "57", "CAR", "138.935", "c11b61d"]:
+    assert token in html, f"missing {token}"
+print("OK", out, len(html), "bytes")
