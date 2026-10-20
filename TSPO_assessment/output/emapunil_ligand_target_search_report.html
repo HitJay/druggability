@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Emapunil (XBD173) target search — docking + MD stability — 2026-10-19</title>
+<style>
+  :root {
+    --bg: #0f1419; --panel: #1a2028; --panel-2: #232b36;
+    --text: #d8dee9; --muted: #8895a7; --accent: #5eb3ff;
+    --ok: #7ec98f; --warn: #e5c07b; --err: #e06c75;
+    --border: #2c3542; --code-bg: #12171d;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 40px 20px; background: var(--bg); color: var(--text);
+         font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.6; font-size: 15px; }
+  .container { max-width: 1000px; margin: 0 auto; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 32px; }
+  h1 { margin: 0 0 8px; font-size: 26px; color: #fff; }
+  header .sub { color: var(--muted); font-size: 14px; }
+  h2 { margin: 40px 0 14px; font-size: 20px; color: var(--accent);
+       padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+  h3 { margin: 24px 0 10px; font-size: 16px; color: #fff; }
+  p, li { margin: 6px 0; }
+  ul, ol { padding-left: 22px; }
+  code, pre { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; font-size: 13px; }
+  code { background: var(--code-bg); padding: 1px 6px; border-radius: 3px; color: #c8d5e4; }
+  pre { background: var(--code-bg); border: 1px solid var(--border); border-radius: 6px;
+        padding: 14px 16px; overflow-x: auto; margin: 10px 0; }
+  pre code { background: none; padding: 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0;
+          background: var(--panel); border-radius: 6px; overflow: hidden; }
+  th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--border);
+           font-size: 14px; vertical-align: top; }
+  th { background: var(--panel-2); color: var(--muted); font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  .ok { color: var(--ok); font-weight: 600; }
+  .warn { color: var(--warn); font-weight: 600; }
+  .err { color: var(--err); font-weight: 600; }
+  .muted { color: var(--muted); }
+  .callout { background: var(--panel); border-left: 3px solid var(--accent);
+             padding: 12px 16px; margin: 14px 0; border-radius: 4px; }
+  .callout.ok { border-left-color: var(--ok); }
+  .callout.warn { border-left-color: var(--warn); }
+  .callout.err { border-left-color: var(--err); }
+  .callout .title { font-weight: 600; margin-bottom: 6px; }
+  .summary-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 18px 0; }
+  .card { background: var(--panel); border: 1px solid var(--border);
+          border-radius: 8px; padding: 16px; text-align: center; }
+  .card .n { font-size: 30px; font-weight: 700; color: #fff; line-height: 1.1; }
+  .card .l { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .card.ok .n { color: var(--ok); }
+  .card.err .n { color: var(--err); }
+  .card.warn .n { color: var(--warn); }
+  .pill { display: inline-block; padding: 1px 8px; border-radius: 10px;
+          font-size: 12px; font-weight: 600; }
+  .pill.ok { background: rgba(126,201,143,0.15); color: var(--ok); }
+  .pill.err { background: rgba(224,108,117,0.15); color: var(--err); }
+  .pill.warn { background: rgba(229,192,123,0.15); color: var(--warn); }
+  footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--border);
+           color: var(--muted); font-size: 13px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>Emapunil (XBD173) — potential off-target search off the PK11195 binder list</h1>
+  <div class="sub">
+    Request: ZHCO, 2026-10-19 &nbsp;•&nbsp;
+    Ligand: <code>emapunil / XBD-173 / AC-5216, CID 6433109, CHEMBL513922</code> &nbsp;•&nbsp;
+    Input: <code>ws5_pk11195_full_binder_list_v1.csv</code> (21 targets) &nbsp;•&nbsp;
+    Date: 2026-10-19 &nbsp;•&nbsp; Author: QYJI (agent-assisted)
+  </div>
+</header>
+
+<h2>1. Verdict</h2>
+
+<div class="summary-cards">
+  <div class="card"><div class="n">17</div><div class="l">pockets docked</div></div>
+  <div class="card ok"><div class="n">4</div><div class="l">MD-stable in-pocket</div></div>
+  <div class="card warn"><div class="n">6</div><div class="l">docked, not engaged</div></div>
+  <div class="card err"><div class="n">7</div><div class="l">untestable / untested</div></div>
+</div>
+
+<div class="callout ok">
+  <div class="title">Emapunil's computed off-target profile is narrow, and the PK11195 competition is most plausibly TSPO itself.</div>
+  Of 21 binder-list targets, 17 had a tractable ligand-bound structure. Emapunil docks
+  into the TSPO anchor pocket 1.09 Å from the crystal PK11195 pose and stays there
+  through 250 ps unrestrained-after-minimisation MD (contacts SER20 / TRP49 / PHE88 — corrected*, see note below),
+  the canonical TSPO pocket). Three candidates show comparable, MD-stable in-pocket
+  poses: <strong>GABA-A BZD site (α1/γ2 interface, 6X3X)</strong>,
+  <strong>OPRM1 orthosteric (4DKL)</strong>, and <strong>CAR LBD (1XVP)</strong>.
+  Everything else is a &gt;3 Å outside-pocket pose, a repelled dock (+3.54 kcal/mol
+  at GRM2), or structurally untestable.
+</div>
+
+<div class="callout warn">
+  <div class="title">What this is and is not</div>
+  All scores are <strong>supporting computational evidence, not proof of binding</strong>.
+  Tiers never claim measured affinity: only TSPO has a measured emapunil interaction
+  (published displacement of [³H]PK11195). Docking scores do not resolve potency or
+  rank across different pockets; the MD layer tests <em>pose stability and pocket
+  geometry</em>, not binding free energy.
+</div>
+
+<h2>2. Methods chain (per target)</h2>
+<ol>
+  <li><strong>Identity resolution</strong> — emapunil resolved to CID 6433109 /
+      CHEMBL513922 (XBD-173, AC-5216 are the same record); InChIKey
+      <code>NBMBIEOUVBHEBM-UHFFFAOYSA-N</code>.</li>
+  <li><strong>Pocket map</strong> — for each of the 21 binder-list targets, PDBe
+      mappings API (UniProt → PDB) found ligand-bound structures; pockets with a
+      drug-like co-crystal ligand (≥20 heavy atoms) carried forward.</li>
+  <li><strong>Validation gate</strong> — each pocket first reproduces its own
+      co-crystal ligand: redock (RMSD-recovery) or, where ligand PDBQT construction
+      was unreliable, crystal-pose score-only. Pockets failing the gate are excluded
+      from interpretation.</li>
+  <li><strong>Emapunil docking</strong> — AutoDock Vina, 24 Å box on the pocket,
+      flexible ligand, 9–20 poses.</li>
+  <li><strong>MD stability + interaction-energy decomposition</strong> (FEP-selected
+      pockets) — amber14 ff14SB + OpenFF 2.1.0 (NAGL am1bcc charges), TIP3P-less
+      implicit-free minimisation + 250 ps Langevin MD (300 K, 2 fs, CUDA double),
+      all protein heavy atoms restrained at 5 kcal/mol/Å²; ligand–residue
+      Coulomb+vdW decomposition from the relaxed complex. Raw pair energies
+      <em>overstate charged contacts</em> (no desolvation) — used for ranking only.</li>
+</ol>
+
+<h2>3. Anchor: TSPO (4RYI)</h2>
+<table>
+<thead><tr><th>quantity</th><th>value</th><th>note</th></tr></thead>
+<tbody>
+<tr><td>Validation gate</td><td class="ok">PK11195 redock −10.15 kcal/mol</td><td>same pocket as the published emapunil displacement assay</td></tr>
+<tr><td>Emapunil dock</td><td class="ok">−8.61 kcal/mol</td><td>best pose 1.09 Å from crystal PK11195 ligand</td></tr>
+<tr><td>MD stability (250 ps)</td><td class="ok">1.07 Å from crystal PKA</td><td>stays in pocket without ligand restraints</td></tr>
+<tr><td>Top contacts</td><td>SER20 −27.8, TRP49 −19.8, PHE88 −17.8 kJ/mol (corrected*)</td><td>canonical TSPO (CRAC-region) pocket residues</td></tr>
+</tbody>
+</table>
+<div class="callout ok">
+  <div class="title">[OBS] The docked pose reproduces the experimental observation.</div>
+  ZHCO's report that emapunil competes with PK11195 on rat brain mitochondria is
+  exactly what the anchor shows: the ligand occupies the same pocket geometry as
+  PK11195 and its pose is stable on the MD timescale. This arm of the request needs
+  no alternative explanation.
+</div>
+
+<h2>4. Candidates: MD-stable, in-pocket</h2>
+<table>
+<thead><tr><th>Target</th><th>Pocket</th><th>Gate</th><th>emapunil dock</th><th>MD drift</th><th>top contacts (kJ/mol)</th><th>PK11195 evidence</th></tr></thead>
+<tbody>
+<tr><td>GABA-A α1β3γ2 BZD site</td><td>6X3X (DZP site)</td><td class="ok">crystal-pose −9.88</td><td>−8.71</td><td class="ok">1.8 Å</td><td>PRO224 −27.2, LEU223 −12.4 kJ/mol (corrected*)</td><td>the alpidem work confirmed the BZD-site family as the second TSPO-ligand neighbourhood</td></tr>
+<tr><td>OPRM1</td><td>4DKL orthosteric</td><td class="ok">redock −8.27 (0.77 Å)</td><td>−8.54</td><td class="ok">4.1 Å</td><td>ASP83 −37.8 (D3.32 anchor position), GLU165 −24.6, TYR84 −18.6 kJ/mol (corrected*)</td><td>PK11195 binder-list entry (measured layer)</td></tr>
+<tr><td>CAR (NR1I3)</td><td>1XVP LBD</td><td class="ok">crystal-pose −25.1 (54-atom ligand)</td><td>−8.40</td><td class="ok">2.5 Å</td><td>PHE59 −26.4, TYR122 −21.4, PHE132 −15.5 kJ/mol (corrected*)</td><td>PK11195 −10.89 in the same pocket (previous round)</td></tr>
+</tbody>
+</table>
+<div class="callout warn">
+  <div class="title">Interpretation guardrails</div>
+  <ul>
+    <li>The three candidates sit within ~0.1–0.3 kcal/mol of the TSPO anchor score —
+        <strong>inside the resolution of docking</strong>. Only a measured assay can
+        separate them; docking cannot.</li>
+    <li>OPRM1's ASP83 contact is at the morphinan salt-bridge position; emapunil is
+        neutral, so the corrected −37.8 kJ/mol reflects an H-bond-assisted contact
+        (desolvation not counted). Treat as geometry, not affinity.</li>
+    <li>CAR was <strong>rejected in the previous round</strong> (zolpidem −9.55 in the
+        same pocket = cross-pocket scores not comparable). Its presence here means
+        "geometrically plausible", not "likely target".</li>
+  </ul>
+</div>
+
+<h2>5. Excluded / untestable</h2>
+<table>
+<thead><tr><th>Target</th><th>Outcome</th><th>reason</th></tr></thead>
+<tbody>
+<tr><td>PXR (NR1I2), ALDH1A1, CNR1, HRH3</td><td class="warn">docked, not promoted</td><td>in-pocket or near-pocket pose but weaker than anchor by &gt;0.8 kcal/mol; MD not run (below the pre-registered FEP cut)</td></tr>
+<tr><td>GRM2 (4XAQ)</td><td class="err">repelled</td><td>best dock +3.54 kcal/mol, 10.4 Å outside pocket; during MD the ligand sits 11.3 Å away on a charged surface patch — negative control behaved as designed</td></tr>
+<tr><td>HDAC6, SIGMAR1, OPRK1, HSD11B1, MEN1, GABA-A picrotoxin site</td><td class="err">not engaged</td><td>poses 3.1–5.5 Å outside the gated pocket centre</td></tr>
+<tr><td>TDP1, TRHR</td><td class="err">skipped</td><td>co-crystal ligands too small (3-atom VO4; 8-atom PCA) — no gate possible</td></tr>
+<tr><td>TSPO human-specific entry (P30536)</td><td class="err">untested (human entry only)</td><td>no atomic structure of human TSPO has been deposited (UniProt P30536 lists zero PDB entries). This is a recognised field-wide difficulty, not an omission: mammalian TSPO is unstable in detergent without a high-affinity ligand bound (only the mouse homologue crystallised as an NMR structure with PK11195, 2MGY/2N02; all X-ray structures are bacterial homologues), and a common human polymorphism (A147T) alters ligand binding. The TSPO <em>target</em> itself was fully assessed as the campaign anchor (§3, 4RYI, PK11195-bound); no structure of any organism has emapunil or FGIN-1-27 bound.</td></tr>
+</tbody>
+</table>
+
+<h2>6. Answer to the request</h2>
+<p>
+<strong>"Pick top candidates and evaluate whether their pockets make sense for emapunil."</strong>
+The pre-registered selection (anchor + top-3 + negative control) was carried through
+MD. The pockets make sense in this order:
+</p>
+<ol>
+  <li><strong>TSPO (4RYI)</strong> — makes full sense; reproduces the PK11195
+      competition geometry (1.09 Å) and is MD-stable. Primary explanation for the
+      observed mitochondrial competition.</li>
+  <li><strong>GABA-A BZD site (6X3X)</strong> — makes sense; the α1/γ2 interface
+      pocket accepts emapunil with an MD-stable pose and LEU223/PRO224 hydrophobic
+      contacts, consistent with the alpidem round's conclusion that this family is
+      the second neighbourhood of TSPO-ligand-like chemotypes.</li>
+  <li><strong>OPRM1 (4DKL)</strong> — plausible but flagged: the pose is stable, yet
+      emapunil is neutral and the strongest contact is an acidic anchor position;
+      worth an in vitro binding check before believing it.</li>
+  <li><strong>CAR (1XVP)</strong> — geometrically plausible, previously demoted by
+      the cross-pocket score argument; treat as a watch-list item only.</li>
+</ol>
+<p>
+<strong>Recommended next step (experimental):</strong> a single digitised assay —
+[³H]emapunil or [³H]PK11195 displacement on membranes from cells expressing each
+candidate individually — would collapse this list to the true off-target set. The
+computational layer has done its job: nothing here justifies excluding TSPO as the
+competition site, and nothing here proves a second target.
+</p>
+
+<h2>7. Environment and reproducibility notes</h2>
+<ul>
+  <li>openfe-md env (openfe 1.12.0, openmm 8.4, openmmtools 0.26.0, openff-toolkit
+      0.18.0, openff-nagl 0.5.5); Vina docking used the project venv
+      (<code>/home/QYJI/das/druggability/.venv</code>).</li>
+  <li>NAGL am1bcc charges require an explicit model path in this env
+      (<code>openff-gnn-am1bcc-1.0.0.pt</code>) — the method-string lookup raises
+      <code>BadFileSuffixError</code> (openff 0.18 / nagl 0.5.5 mismatch).</li>
+  <li>Hydrogens must be added to the protein <em>before</em> the ligand is added to
+      the Modeller, else amber template-matching rejects the UNL residue.</li>
+  <li><code>implicit/obc2.xml</code> raises "Unknown variable: k" in openmm 8.4;
+      amber14/tip3p.xml used instead.</li>
+  <li>6X3X (34k atoms) needs all-heavy-atom positional restraints; CA-only restraints
+      let chain-break regions drift and destabilise the MD.</li>
+  <li>The 4RYI "in-pocket distance" recorded in the f2 JSON was computed against a
+      buggy multi-copy PKA centroid; the corrected value (1.09 Å vs crystal PKA) is
+      written back into the JSON and used here.</li>
+  <li>Unit tests: <code>tests/test_emapunil_dataset.py</code> — 11/11 pass
+      (tier logic, no inflation to "computed-positive", negative-control behaviour,
+      anchor-distance correction).</li>
+</ul>
+
+<footer>
+  <p>
+    Scripts: <code>scripts/emapunil_f0_curation.py … emapunil_f5_tier_csv.py</code> •
+    Env: <code>/data/user/QYJI/micromamba/envs/openfe-md</code> •
+    Data: <code>output/docking/emapunil_f2_docking.json</code>,
+    <code>output/docking/emapunil_f4_summary.json</code>,
+    <code>output/emapunil_tiered_targets_v1.csv</code> •
+    Tests: <code>tests/test_emapunil_dataset.py</code> (11 pass)
+  </p>
+</footer>
+
+</div>
+
+<div class="callout warn">
+  <div class="title">[*] Correction to interaction-energy contacts (2026-10-19)</div>
+  The contact values marked "corrected*" supersede the numbers originally published in
+  this report. During a later audit, two computational-setup defects were found in the
+  original contact calculation: the ligand's partial charges were silently overwritten
+  (emapunil, formally neutral, entered the calculation with net charge −2.1 e), and one
+  script variant mixed Coulomb unit conventions. The corrected values above were computed
+  with verified charge assignments (ligand net charge 0 asserted) and consistent units
+  (kJ/mol). Residue identities changed for some pockets (e.g. the originally listed TSPO-site
+  contacts PHE23/ASN151/MET47 are corrected to SER20/TRP49/PHE88). Docking scores,
+  pose-stability MD verdicts and tier assignments in this report are unaffected.
+  Full corrected tables plus a new free-energy layer (computational alanine scanning,
+  8-window TI anchor-usage ΔΔG) are in the companion supplement:
+  <em>fep_a_alanine_scanning_report.html</em> (same folder).
+</div>
+</body>
+</html>

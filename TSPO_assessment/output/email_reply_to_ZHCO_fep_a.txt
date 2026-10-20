@@ -1,0 +1,18 @@
+Subject: TSPO ligand-target reports — corrected contact analysis + new alanine-scanning layer (emapunil & FGIN-1-27)
+
+Hi Zheng,
+
+two follow-ups on the emapunil and FGIN-1-27 reports from earlier this week: a correction to the interaction-energy contact tables, and a new free-energy layer that answers the pocket-anchor question directly.
+
+1. Correction (please read first). While adding the new analysis we audited the interaction-energy tables in both reports and found two technical problems in how they were computed: the ligand's partial charges were silently corrupted by a forcefield-setup side effect (emapunil is neutral but entered the calculation with net charge -2.1 e), and one script variant mixed unit conventions. The affected tables are the "top contacts" lists (for emapunil at the TSPO site, the listed PHE23/ASN151/MET47 contacts are artifacts; the corrected dominant contacts are SER20, TRP49 and PHE88). The docking scores, the 250 ps pose-stability verdicts and all tier assignments in the reports are unaffected. The corrected contact tables are in the supplement, section "Erratum".
+
+2. New layer: computational alanine scanning. For each pocket we computed the free-energy cost of switching off the ligand's interaction with the top anchor residue's side chain (8-window thermodynamic integration, amber14 + OpenFF charges, standard Massova-Kollman formulation). Positive values mean the ligand genuinely uses that residue. Headlines: for emapunil, the TSPO-site anchor SER20 (+13.9 kJ/mol), the OPRM1 salt-bridge-position contact ASP83 (+16.3) and the GABA-A BZD-site anchor PRO224 (+11.5) are all confirmed as real energetic dependencies — this strengthens the dual-target reading for emapunil. For FGIN, the TSPO-site anchors are confirmed (+7.6/+3.9), the CNR1 and CAR poses engage their pockets moderately, and the OPRK1 docked pose shows strong contacts (+20.7/+20.6) even though the pose was rejected by pose-stability MD — the two layers measure different things, and OPRK1 stays rejected.
+
+3. Caveats. Sampling is short, the protocol is vacuum (no solvent/entropy), and the values are directional rankings of anchor usage, not binding free energies. The GRM2 negative-control poses are surface-docked and show nonzero surface interactions, which confirms the method detects real contacts but does not change the control verdict. As before: computational scores are supporting evidence, not proof of binding — the radioligand displacement panel remains the decisive experiment.
+
+The supplement (self-contained HTML with both tables, the erratum and the caveats) is at R:\DT\TDE_TV\shared_folder\QYJI\druggability\TSPO_assessment\03_emapunil\fep_a_alanine_scanning_report.html and the machine-readable table at R:\DT\TDE_TV\shared_folder\QYJI\druggability\TSPO_assessment\03_emapunil\fep_a_summary.csv.
+
+Happy to re-run any pocket with longer sampling if you want a specific anchor pinned down before the displacement panel goes out.
+
+Best,
+QYJI

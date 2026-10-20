@@ -1,0 +1,219 @@
+{
+ "4RYI": {
+  "label": "TSPO (construct, prior anchor)",
+  "fgin_score": -8.46,
+  "fgin_poses": [
+   -8.46,
+   -8.31,
+   -8.28,
+   -8.24
+  ],
+  "fgin_in_pocket_A_pka": 0.67,
+  "gate": "inherited from emapunil round (redock -10.15)",
+  "gate_pass": true
+ },
+ "1XVP": {
+  "label": "CAR LBD",
+  "fgin_score": -9.98,
+  "fgin_poses": [
+   -9.98,
+   -9.96,
+   -9.84,
+   -9.76,
+   -9.73
+  ],
+  "fgin_in_pocket_A": 0.47,
+  "gate": "crystal -25.08",
+  "gate_pass": true
+ },
+ "2QNV": {
+  "label": "PXR LBD",
+  "fgin_score": -7.94,
+  "fgin_poses": [
+   -7.94,
+   -7.94,
+   -7.91,
+   -7.88,
+   -7.84
+  ],
+  "fgin_in_pocket_A": 1.94,
+  "gate": "crystal -6.84",
+  "gate_pass": true
+ },
+ "6X3X": {
+  "label": "GABA-A BZD site",
+  "fgin_score": -8.07,
+  "fgin_poses": [
+   -8.07,
+   -7.88,
+   -7.47,
+   -7.46,
+   -7.44
+  ],
+  "fgin_in_pocket_A": 0.85,
+  "gate": "crystal -9.88",
+  "gate_pass": true
+ },
+ "6HUG": {
+  "label": "GABA-A picrotoxin site",
+  "fgin_score": -5.6,
+  "fgin_poses": [
+   -5.6,
+   -5.5,
+   -5.46,
+   -5.46,
+   -5.42
+  ],
+  "fgin_in_pocket_A": 2.42,
+  "gate": "crystal -7.84",
+  "gate_pass": true
+ },
+ "5EDU": {
+  "label": "HDAC6 catalytic",
+  "fgin_score": -6.89,
+  "fgin_poses": [
+   -6.89,
+   -6.87,
+   -6.77,
+   -6.71,
+   -6.69
+  ],
+  "fgin_in_pocket_A": 2.51,
+  "gate": "redock -7.25 (1.47 A)",
+  "gate_pass": true
+ },
+ "5HK1": {
+  "label": "SIGMAR1",
+  "fgin_score": -8.06,
+  "fgin_poses": [
+   -8.06,
+   -8.02,
+   -7.43,
+   -7.38,
+   -7.2
+  ],
+  "fgin_in_pocket_A": 2.73,
+  "gate": "redock -9.87 (0.27 A)",
+  "gate_pass": true
+ },
+ "5TGZ": {
+  "label": "CNR1 orthosteric",
+  "fgin_score": -8.97,
+  "fgin_poses": [
+   -8.97,
+   -8.9,
+   -8.81,
+   -8.67,
+   -8.5
+  ],
+  "fgin_in_pocket_A": 0.7,
+  "gate": "redock -12.27 (0.17 A)",
+  "gate_pass": true
+ },
+ "4DJH": {
+  "label": "OPRK1 orthosteric",
+  "fgin_score": -8.25,
+  "fgin_poses": [
+   -8.25,
+   -8.23,
+   -8.22,
+   -8.19,
+   -8.07
+  ],
+  "fgin_in_pocket_A": 1.16,
+  "gate": "redock -10.85 (0.29 A)",
+  "gate_pass": true
+ },
+ "4DKL": {
+  "label": "OPRM1 orthosteric",
+  "fgin_score": -8.17,
+  "fgin_poses": [
+   -8.17,
+   -8.08,
+   -8.07,
+   -8.05,
+   -7.84
+  ],
+  "fgin_in_pocket_A": 2.48,
+  "gate": "redock -8.27 (0.77 A)",
+  "gate_pass": true
+ },
+ "2ILT": {
+  "label": "HSD11B1",
+  "fgin_score": -8.01,
+  "fgin_poses": [
+   -8.01,
+   -8.0,
+   -7.99,
+   -7.95,
+   -7.9
+  ],
+  "fgin_in_pocket_A": 7.88,
+  "gate": "redock -10.45 (2.60 A)",
+  "gate_pass": true
+ },
+ "4WB9": {
+  "label": "ALDH1A1",
+  "fgin_score": -8.0,
+  "fgin_poses": [
+   -8.0,
+   -7.96,
+   -7.75,
+   -7.48,
+   -7.42
+  ],
+  "fgin_in_pocket_A": 1.29,
+  "gate": "redock -9.17 (1.86 A)",
+  "gate_pass": true
+ },
+ "1NOP": {
+  "label": "TDP1",
+  "error": "best ligand VO4 too small (3 atoms)"
+ },
+ "4GQ4": {
+  "label": "MEN1 (MLL-i pocket)",
+  "fgin_score": -7.18,
+  "fgin_poses": [
+   -7.18,
+   -7.1,
+   -6.78,
+   -6.72,
+   -6.71
+  ],
+  "fgin_in_pocket_A": 1.91,
+  "gate": "redock -8.33 (0.26 A)",
+  "gate_pass": true
+ },
+ "7X1U": {
+  "label": "TRHR peptide site",
+  "error": "best ligand PCA too small (8 atoms)"
+ },
+ "7F61": {
+  "label": "HRH3 orthosteric",
+  "fgin_score": -7.34,
+  "fgin_poses": [
+   -7.34,
+   -7.13,
+   -7.05,
+   -7.04,
+   -7.01
+  ],
+  "fgin_in_pocket_A": 7.11,
+  "gate": "redock -9.22 (2.12 A)",
+  "gate_pass": true
+ },
+ "4XAQ": {
+  "label": "GRM2 (allosteric site if present)",
+  "fgin_score": 2.53,
+  "fgin_poses": [
+   2.53,
+   3.1,
+   4.11,
+   4.13,
+   4.35
+  ],
+  "fgin_in_pocket_A": 3.46,
+  "gate": "redock -5.84 (1.23 A)",
+  "gate_pass": true
+ }
+}

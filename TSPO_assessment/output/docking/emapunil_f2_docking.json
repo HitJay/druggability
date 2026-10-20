@@ -1,0 +1,486 @@
+{
+ "4RYI": {
+  "label": "TSPO (construct, prior anchor)",
+  "pdb": "4RYI",
+  "pocket_ligand": "PKA",
+  "center": [
+   33.8889,
+   38.4884,
+   18.367160000000002
+  ],
+  "redock_score": -10.15,
+  "redock_recovery_A": 10.64,
+  "emapunil_score": -8.61,
+  "emapunil_in_pocket_A": 10.7,
+  "eligible_for_FEP": false,
+  "emapunil_in_pocket_A_corrected": 1.09,
+  "note": "f2 'center' recorded a multi-copy PKA centroid (bug); true pose-to-PKA distance = 1.09 A"
+ },
+ "1XVP": {
+  "label": "CAR LBD",
+  "pdb": "1XVP",
+  "pocket_ligand": "CID",
+  "center": [
+   25.60187037037037,
+   54.191296296296294,
+   29.557074074074077
+  ],
+  "crystal_pose_atoms": 54,
+  "crystal_pose_score": -25.08,
+  "gate_pass": true,
+  "emapunil_score": -8.4,
+  "emapunil_in_pocket_A": 0.92,
+  "eligible_for_FEP": true
+ },
+ "2QNV": {
+  "label": "PXR LBD",
+  "pdb": "2QNV",
+  "pocket_ligand": "CDZ",
+  "center": [
+   12.035413793103448,
+   15.19555172413793,
+   22.11658620689655
+  ],
+  "crystal_pose_atoms": 29,
+  "crystal_pose_score": -6.84,
+  "gate_pass": true,
+  "emapunil_score": -7.8,
+  "emapunil_in_pocket_A": 2.99,
+  "eligible_for_FEP": true
+ },
+ "6X3X": {
+  "label": "GABA-A BZD site",
+  "pdb": "6X3X",
+  "pocket_ligand": "DZP",
+  "center": [
+   145.5435,
+   123.6115,
+   122.43005000000001
+  ],
+  "crystal_pose_atoms": 20,
+  "crystal_pose_score": -9.88,
+  "gate_pass": true,
+  "emapunil_score": -8.71,
+  "emapunil_in_pocket_A": 0.69,
+  "eligible_for_FEP": true
+ },
+ "6HUG": {
+  "label": "GABA-A picrotoxin site",
+  "pdb": "6HUG",
+  "pocket_ligand": "PIO",
+  "center": [
+   122.89517021276596,
+   154.41606382978725,
+   90.55510638297872
+  ],
+  "crystal_pose_atoms": 47,
+  "crystal_pose_score": -7.84,
+  "gate_pass": true,
+  "emapunil_score": -5.86,
+  "emapunil_in_pocket_A": 3.5,
+  "eligible_for_FEP": false
+ },
+ "5EDU": {
+  "label": "HDAC6 catalytic",
+  "pdb": "5EDU",
+  "pocket_ligand": "TSN",
+  "chain": "B",
+  "center": [
+   -1.424227272727273,
+   8.129636363636363,
+   5.905818181818182
+  ],
+  "redock_score": -7.25,
+  "redock_poses": [
+   -7.25,
+   -7.21,
+   -6.75,
+   -6.59,
+   -6.31
+  ],
+  "redock_centroid": [
+   -0.4741363636363637,
+   7.677318181818182,
+   6.935363636363636
+  ],
+  "redock_recovery_A": 1.47,
+  "emapunil_score": -7.74,
+  "emapunil_poses": [
+   -7.74,
+   -7.48,
+   -7.36,
+   -6.92
+  ],
+  "emapunil_centroid": [
+   0.489590909090909,
+   6.141454545454545,
+   3.1790000000000003
+  ],
+  "emapunil_in_pocket_A": 3.88,
+  "eligible_for_FEP": false
+ },
+ "5HK1": {
+  "label": "SIGMAR1",
+  "pdb": "5HK1",
+  "pocket_ligand": "61W",
+  "chain": "A",
+  "center": [
+   11.787809523809525,
+   37.22952380952381,
+   -34.863285714285716
+  ],
+  "redock_score": -9.87,
+  "redock_poses": [
+   -9.87,
+   -9.58,
+   -9.5,
+   -9.48,
+   -9.35
+  ],
+  "redock_centroid": [
+   11.525761904761904,
+   37.228904761904765,
+   -34.92961904761905
+  ],
+  "redock_recovery_A": 0.27,
+  "emapunil_score": -7.44,
+  "emapunil_poses": [
+   -7.44,
+   -7.04,
+   -6.37,
+   -5.94,
+   -5.66
+  ],
+  "emapunil_centroid": [
+   12.711727272727273,
+   36.24981818181818,
+   -32.06540909090909
+  ],
+  "emapunil_in_pocket_A": 3.11,
+  "eligible_for_FEP": false
+ },
+ "5TGZ": {
+  "label": "CNR1 orthosteric",
+  "pdb": "5TGZ",
+  "pocket_ligand": "ZDG",
+  "chain": "A",
+  "center": [
+   43.63784848484848,
+   27.469757575757573,
+   318.53066666666666
+  ],
+  "redock_score": -12.27,
+  "redock_poses": [
+   -12.27
+  ],
+  "redock_centroid": [
+   43.51436363636363,
+   27.55227272727273,
+   318.607696969697
+  ],
+  "redock_recovery_A": 0.17,
+  "emapunil_score": -7.28,
+  "emapunil_poses": [
+   -7.28,
+   -6.89,
+   -6.88,
+   -6.84,
+   -6.74
+  ],
+  "emapunil_centroid": [
+   44.52431818181818,
+   27.48304545454545,
+   317.234
+  ],
+  "emapunil_in_pocket_A": 1.57,
+  "eligible_for_FEP": true
+ },
+ "4DJH": {
+  "label": "OPRK1 orthosteric",
+  "pdb": "4DJH",
+  "pocket_ligand": "JDC",
+  "chain": "A",
+  "center": [
+   3.6840882352941176,
+   -24.008794117647057,
+   59.47123529411765
+  ],
+  "redock_score": -10.85,
+  "redock_poses": [
+   -10.85,
+   -9.82,
+   -9.8,
+   -9.71,
+   -9.46
+  ],
+  "redock_centroid": [
+   3.513735294117647,
+   -24.245411764705885,
+   59.43535294117647
+  ],
+  "redock_recovery_A": 0.29,
+  "emapunil_score": -7.17,
+  "emapunil_poses": [
+   -7.17,
+   -7.14,
+   -7.07,
+   -7.01,
+   -6.84
+  ],
+  "emapunil_centroid": [
+   5.505590909090909,
+   -26.327136363636363,
+   61.088818181818176
+  ],
+  "emapunil_in_pocket_A": 3.36,
+  "eligible_for_FEP": false
+ },
+ "4DKL": {
+  "label": "OPRM1 orthosteric",
+  "pdb": "4DKL",
+  "pocket_ligand": "BF0",
+  "chain": "A",
+  "center": [
+   -27.99687878787879,
+   -13.204272727272727,
+   -11.084121212121213
+  ],
+  "redock_score": -8.27,
+  "redock_poses": [
+   -8.27,
+   -8.24,
+   -7.97,
+   -7.9,
+   -7.79
+  ],
+  "redock_centroid": [
+   -27.267454545454545,
+   -13.42039393939394,
+   -10.968333333333334
+  ],
+  "redock_recovery_A": 0.77,
+  "emapunil_score": -8.54,
+  "emapunil_poses": [
+   -8.54,
+   -7.59,
+   -6.95,
+   -6.76,
+   -6.66
+  ],
+  "emapunil_centroid": [
+   -28.16559090909091,
+   -10.427999999999999,
+   -10.973636363636363
+  ],
+  "emapunil_in_pocket_A": 2.78,
+  "eligible_for_FEP": true
+ },
+ "2ILT": {
+  "label": "HSD11B1",
+  "pdb": "2ILT",
+  "pocket_ligand": "NAP",
+  "chain": "A",
+  "center": [
+   56.826812499999996,
+   110.13425000000001,
+   45.004
+  ],
+  "redock_score": -10.45,
+  "redock_poses": [
+   -10.45,
+   -10.34,
+   -10.21,
+   -10.17,
+   -9.93
+  ],
+  "redock_centroid": [
+   59.08641666666667,
+   108.87583333333333,
+   45.22239583333334
+  ],
+  "redock_recovery_A": 2.6,
+  "emapunil_score": -8.22,
+  "emapunil_poses": [
+   -8.22,
+   -7.92,
+   -7.77,
+   -7.72,
+   -7.55
+  ],
+  "emapunil_centroid": [
+   59.519000000000005,
+   105.36345454545454,
+   45.464136363636364
+  ],
+  "emapunil_in_pocket_A": 5.5,
+  "eligible_for_FEP": false
+ },
+ "4WB9": {
+  "label": "ALDH1A1",
+  "pdb": "4WB9",
+  "pocket_ligand": "NAI",
+  "chain": "A",
+  "center": [
+   -9.669545454545455,
+   -40.342704545454545,
+   -30.866886363636365
+  ],
+  "redock_score": -9.17,
+  "redock_poses": [
+   -9.17,
+   -9.06,
+   -8.9,
+   -8.88,
+   -8.75
+  ],
+  "redock_centroid": [
+   -11.068318181818183,
+   -40.16943181818181,
+   -32.077068181818184
+  ],
+  "redock_recovery_A": 1.86,
+  "emapunil_score": -7.68,
+  "emapunil_poses": [
+   -7.68,
+   -7.6,
+   -7.39,
+   -7.25,
+   -6.69
+  ],
+  "emapunil_centroid": [
+   -9.827318181818182,
+   -39.488090909090914,
+   -31.762545454545453
+  ],
+  "emapunil_in_pocket_A": 1.25,
+  "eligible_for_FEP": true
+ },
+ "1NOP": {
+  "label": "TDP1",
+  "error": "best ligand VO4 too small (3 atoms)"
+ },
+ "4GQ4": {
+  "label": "MEN1 (MLL-i pocket)",
+  "pdb": "4GQ4",
+  "pocket_ligand": "0RT",
+  "chain": "A",
+  "center": [
+   -11.37951851851852,
+   11.117222222222223,
+   12.095222222222223
+  ],
+  "redock_score": -8.33,
+  "redock_poses": [
+   -8.33,
+   -8.32,
+   -8.23,
+   -7.99,
+   -7.96
+  ],
+  "redock_centroid": [
+   -11.317074074074073,
+   11.32711111111111,
+   11.949407407407408
+  ],
+  "redock_recovery_A": 0.26,
+  "emapunil_score": -7.42,
+  "emapunil_poses": [
+   -7.42,
+   -7.21,
+   -7.08,
+   -7.07,
+   -6.85
+  ],
+  "emapunil_centroid": [
+   -13.720954545454545,
+   14.03418181818182,
+   10.583136363636363
+  ],
+  "emapunil_in_pocket_A": 4.03,
+  "eligible_for_FEP": false
+ },
+ "7X1U": {
+  "label": "TRHR peptide site",
+  "error": "best ligand PCA too small (8 atoms)"
+ },
+ "7F61": {
+  "label": "HRH3 orthosteric",
+  "pdb": "7F61",
+  "pocket_ligand": "CLR",
+  "chain": "A",
+  "center": [
+   -6.834499999999999,
+   47.559000000000005,
+   -3.4624642857142858
+  ],
+  "redock_score": -9.22,
+  "redock_poses": [
+   -9.22,
+   -9.14,
+   -8.88,
+   -8.84,
+   -8.78
+  ],
+  "redock_centroid": [
+   -7.946178571428571,
+   49.36289285714286,
+   -3.6211785714285716
+  ],
+  "redock_recovery_A": 2.12,
+  "emapunil_score": -7.25,
+  "emapunil_poses": [
+   -7.25,
+   -6.85,
+   -6.81,
+   -6.77,
+   -6.76
+  ],
+  "emapunil_centroid": [
+   -7.114727272727273,
+   47.53645454545454,
+   -4.108954545454545
+  ],
+  "emapunil_in_pocket_A": 0.7,
+  "eligible_for_FEP": true
+ },
+ "4XAQ": {
+  "label": "GRM2 (allosteric site if present)",
+  "pdb": "4XAQ",
+  "pocket_ligand": "40F",
+  "chain": "A",
+  "center": [
+   -8.297076923076922,
+   35.06976923076923,
+   27.80053846153846
+  ],
+  "redock_score": -5.84,
+  "redock_poses": [
+   -5.84,
+   -5.67,
+   -5.6,
+   -5.51,
+   -5.2
+  ],
+  "redock_centroid": [
+   -7.862923076923077,
+   34.974,
+   28.944999999999997
+  ],
+  "redock_recovery_A": 1.23,
+  "emapunil_score": 3.54,
+  "emapunil_poses": [
+   3.54,
+   4.95,
+   5.86,
+   6.26,
+   6.33
+  ],
+  "emapunil_centroid": [
+   0.5654545454545454,
+   38.529,
+   31.905909090909095
+  ],
+  "emapunil_in_pocket_A": 10.36,
+  "eligible_for_FEP": false
+ }
+}

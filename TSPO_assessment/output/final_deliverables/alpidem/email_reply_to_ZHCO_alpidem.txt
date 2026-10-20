@@ -1,0 +1,21 @@
+Subject: Re: Alpidem — potential targets beyond TSPO/PBR, CBR/GABA-A, AAG and albumin
+
+Hi Zheng,
+
+Alpidem is done, same treatment as the three TSPO ligands. Full report and tiered CSV (12 rows, every row source-linked):
+
+R:\DT\TDE_TV\shared_folder\QYJI\druggability\TSPO_assessment\alpidem_ligand_target_search_report.html
+R:\DT\TDE_TV\shared_folder\QYJI\druggability\TSPO_assessment\alpidem_tiered_targets_v1.csv
+
+1. The five you list are all confirmed in the measured data, and the extra surface is small. TSPO/PBR: Ki 0.5-7.9 nM (rat kidney/brain, [3H]PK11195 and Ro5-4864 displacement). CBR/GABA-A: Ki 1-43 nM ([3H]flunitrazepam site, 16 subunit rows) plus functional GABA chloride-current potentiation, but low-efficacy versus zolpidem — the basis of anxiolysis without sedation. Albumin (97.2% bound) and alpha1-acid glycoprotein (97.1% bound, 99.1% in mixture) match Pacifici 1989 exactly. Beyond these, only two additional targets reach plausible territory: PXR/NR1I2 (measured binding/agonism 0.19-0.48 uM — borderline, total Cmax 0.285 uM) and BSEP/ABCB11 (IC50 4.8-9.2 uM, three assay families). Everything else in PubChem is a 3-40 uM single-source noise band.
+
+2. Exposure anchor (measured): total Cmax 285 nM, free Cmax 6 nM, free fraction 0.61-1.31% across populations. Unlike etifoxine (10^4 gap), alpidem's free concentration sits right at its TSPO Ki — TSPO occupancy-competent in brain [FACT], with partial GABA-A occupancy explaining the clean anxiolytic profile.
+
+3. Zolpidem is the clean differentiation comparator: TSPO IC50 4.7 uM versus GABA-A Ki 14-27 nM — TSPO-negative, non-hepatotoxic, non-GSH-depleting. That contrast supports the alpidem-specific attribution of both the TSPO binding and the idiosyncratic-DILI chain (4 hepatitis cases incl. one fulminant death; GSH depletion + reactive metabolites + BSEP inhibition + mitochondrial membrane-potential disruption at 3.8 uM), which is why it was withdrawn in 1994 one year after launch.
+
+4. The 70% similarity neighbourhood (11 analogues) contains only TSPO and GABA-A binding families — no sigma-1, no CAR (PK11195's CAR activation does not extend to alpidem), no metabolic nuclear-receptor signal. One data caveat: ChEMBL holds zero activity records under alpidem's own ID (resolved via InChIKey only), so the whole measured surface comes from PubChem-mirrored source assays plus literature; and TSPO potency is rodent-dominated — the human A147T genotype question is open if re-profiling is ever considered.
+
+Happy to extend the CSV with the per-assay rows (AID-level, 966 assays screened) if useful.
+
+Best regards,
+Qiuye

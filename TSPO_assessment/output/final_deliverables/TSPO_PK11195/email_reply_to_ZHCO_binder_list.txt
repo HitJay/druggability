@@ -1,0 +1,20 @@
+Subject: Re: TSPO ligands — full PK11195 binder list
+
+Hi Zheng,
+
+Glad it is useful. The full PK11195 binder list is here as a CSV (29 rows, every row traceable to a source):
+
+R:\DT\TDE_TV\shared_folder\QYJI\druggability\TSPO_assessment\ws5_pk11195_full_binder_list_v1.csv
+
+How to read it — three evidence layers, ordered by confidence within each:
+
+1. Measured (ChEMBL, 14 targets). Sub-micromolar band: TSPO (rat Ki 0.31 nM, human Ki/IC50 1.1-11.1 nM, A147T-variant band 29-36 nM) and CAR/NR1I3 (functional antagonism IC50 25 nM; inverse agonism 245-390 nM; converted to an agonist in primary hepatocytes, PMID:28442602). Micromolar-to-percent band, likely not physiologically meaningful: GABA-A channel rows (one has an unscoreable negative value), TRHR 44% competition, HDAC6 2.1% inhibition, plus a PubChem flat-screen tail (NPSR 199 nM, menin/MLL, TDP1, ALDH1A1, PMP22 - all unconfirmed, all flagged tier-4 noise).
+
+2. Predicted (SwissTargetPrediction, top-12 of 100). TSPO 0.899 and CAR 0.888 are ranks 1-2 and agree with the measured data; the rest (HSD11B1 0.669, SIGMAR1 0.567, ALOX15 0.544, GRM2, CNR1, OPRK1, TMEM97, OPRM1, GRM5, HRH3) are prediction-only with no measured record in ChEMBL. HSD11B1 is worth a footnote since 11beta-HSD1 inhibitors are T2D-relevant, but there is no biochemical support yet.
+
+3. Structural (docking + de-novo co-folding). Vina: TSPO pocket -9.42 (positive control), CAR LBD -10.89, PXR LBD -7.55. Boltz-2 co-fold from sequence+SMILES only reproduced the CAR pocket assignment: predicted PK11195 centroid 2.52 A from the co-crystal agonist F15 in 1XVP, 9/12 contacting residues shared including the H11/H12 activation region.
+
+Bottom line unchanged: TSPO is the primary binder, CAR is the dominant plausible off-target, everything else is prediction-only or flat-screen noise. All rows carry a tier label (1 primary / 3 CNS channel / 4 noise) and the raw 148-row ChEMBL extract behind layer 1 is in the same folder if you want per-document values.
+
+Best regards,
+Qiuye

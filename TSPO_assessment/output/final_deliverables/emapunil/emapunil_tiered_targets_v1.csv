@@ -1,0 +1,24 @@
+target,gene,pk11195_evidence,pk11195_source_layer,pocket_pdb,gate,emapunil_dock,pose_in_pocket_A,md_sumIE_kJmol,md_top_contact,assessment,layer
+Translocator protein (rat),TSPO,0.31 nM (Ki),measured (ChEMBL 35),4RYI,redock -10.15 / recovery 10.64 A,-8.61,1.1,-62.3,PHE23,TSPO anchor: pose 1.09 A from crystal PK11195; MD-stable; contacts PHE23/ASN151/MET47 (canonical TSPO pocket),anchor
+Constitutive androstane receptor,NR1I3,0.888  (),predicted (SwissTargetPrediction),1XVP,crystal-pose score -25.08,-8.40,0.9,-138.1,PHE59,"in-pocket dock, MD-stable through 250 ps; top contact PHE59",computed-md
+GABA-A receptor alpha1/beta2/gamma2,"GABRA1/2,GABRB2,GABRG2",  (Activity),measured (ChEMBL 35),6X3X,crystal-pose score -9.88,-8.71,0.7,-17.1,LEU223,"in-pocket dock, MD-stable through 250 ps; top contact LEU223",computed-md
+Mu-type opioid receptor,OPRM1,0.374  (),predicted (SwissTargetPrediction),4DKL,redock -8.27 / recovery 0.77 A,-8.54,2.8,-432.3,ASP83,"in-pocket dock, MD-stable through 250 ps; top contact ASP83",computed-md
+Aldehyde dehydrogenase 1A1,ALDH1A1,19953 nM (Potency),measured (ChEMBL 35),4WB9,redock -9.17 / recovery 1.86 A,-7.68,1.2,,,"in-pocket dock (gate-passed); MD not run — comparable to anchor score, unvalidated dynamics",computed-dock
+Cannabinoid receptor 1,CNR1,0.470  (),predicted (SwissTargetPrediction),5TGZ,redock -12.27 / recovery 0.17 A,-7.28,1.6,,,"in-pocket dock (gate-passed); MD not run — comparable to anchor score, unvalidated dynamics",computed-dock
+Histamine H3 receptor,HRH3,0.308  (),predicted (SwissTargetPrediction),7F61,redock -9.22 / recovery 2.12 A,-7.25,0.7,,,"in-pocket dock (gate-passed); MD not run — comparable to anchor score, unvalidated dynamics",computed-dock
+PXR LBD (2QNV),NR1I2,  (),structural (docking/co-fold),2QNV,crystal-pose score -6.84,-7.80,3.0,,,"in-pocket dock (gate-passed); MD not run — comparable to anchor score, unvalidated dynamics",computed-dock
+GABA-A receptor anion channel,GABRA-family,48 % (Activity),measured (ChEMBL 35),6HUG,crystal-pose score -7.84,-5.86,3.5,,,pose 3.5 A outside pocket: no engagement,computed-negative
+Protein deacetylase HDAC6,HDAC6,2.1 % (Inhibition),measured (ChEMBL 35),5EDU,redock -7.25 / recovery 1.47 A,-7.74,3.9,,,pose 3.9 A outside pocket: no engagement,computed-negative
+Menin/MLL methyltransferase complex,MEN1/KMT2A,7943 nM (Potency),measured (ChEMBL 35),4GQ4,redock -8.33 / recovery 0.26 A,-7.42,4.0,,,pose 4.0 A outside pocket: no engagement,computed-negative
+11-beta-hydroxysteroid dehydrogenase 1,HSD11B1,0.669  (),predicted (SwissTargetPrediction),2ILT,redock -10.45 / recovery 2.60 A,-8.22,5.5,,,no pocket engagement (repelled or far outside pocket),computed-negative
+Sigma non-opioid intracellular receptor 1,SIGMAR1,0.567  (),predicted (SwissTargetPrediction),5HK1,redock -9.87 / recovery 0.27 A,-7.44,3.1,,,pose 3.1 A outside pocket: no engagement,computed-negative
+Metabotropic glutamate receptor 2,GRM2,0.521  (),predicted (SwissTargetPrediction),4XAQ,redock -5.84 / recovery 1.23 A,3.54,10.4,-877.0,ARG199,no pocket engagement (repelled or far outside pocket),computed-negative
+Kappa-type opioid receptor,OPRK1,0.467  (),predicted (SwissTargetPrediction),4DJH,redock -10.85 / recovery 0.29 A,-7.17,3.4,,,pose 3.4 A outside pocket: no engagement,computed-negative
+Thyrotropin-releasing hormone receptor,TRHR,44 % (Competition),measured (ChEMBL 35),7X1U,no usable co-crystal ligand,,,,,structure present but pocket not gateable (tiny/absent ligand),skipped
+Tyrosyl-DNA phosphodiesterase 1,TDP1,18356 nM (Potency),measured (ChEMBL 35),1NOP,no usable co-crystal ligand,,,,,structure present but pocket not gateable (tiny/absent ligand),skipped
+Unchecked panel target,Unchecked panel target,0 % (Inhibition),measured (ChEMBL 35),none,untested,,,,,no drug-like structure available; not testable by docking,untested
+Neuropeptide S receptor,NPSR,199.5 nM (Potency),measured (ChEMBL 35),none,untested,,,,,no drug-like structure available; not testable by docking,untested
+Peripheral myelin protein 22,PMP22,75686 nM (Potency),measured (ChEMBL 35),none,untested,,,,,no drug-like structure available; not testable by docking,untested
+Polyunsaturated fatty acid lipoxygenase ALOX15,ALOX15,0.544  (),predicted (SwissTargetPrediction),none,untested,,,,,no drug-like structure available; not testable by docking,untested
+Sigma intracellular receptor 2,TMEM97,0.388  (),predicted (SwissTargetPrediction),none,untested,,,,,no drug-like structure available; not testable by docking,untested
+Metabotropic glutamate receptor 5,GRM5,0.324  (),predicted (SwissTargetPrediction),none,untested,,,,,no drug-like structure available; not testable by docking,untested
