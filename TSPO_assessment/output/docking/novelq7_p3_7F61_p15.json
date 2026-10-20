@@ -1,0 +1,23 @@
+{
+ "tag": "7F61_p15",
+ "pdb": "7F61",
+ "ligand": "fgin",
+ "chains_kept": [
+  "A"
+ ],
+ "md_drift_A": 5.41,
+ "runtime_s": 33,
+ "sum_IE_kJmol": -204.3,
+ "ie_units": "kJ/mol, COUL=138.935, no-PBC, no desolvation",
+ "top_contacts": {
+  "ASN192A": -45.19,
+  "TYR196A": -30.16,
+  "ALA230A": -20.41,
+  "SER234A": -20.11,
+  "LEU193A": -13.45,
+  "VAL233A": -12.79,
+  "VAL231A": -7.63,
+  "LYS227A": -6.31
+ },
+ "verdict": "md-unstable"
+}

@@ -1,0 +1,24 @@
+{
+ "tag": "6X3X_p78",
+ "pdb": "6X3X",
+ "ligand": "fgin",
+ "chains_kept": [
+  "D",
+  "E"
+ ],
+ "md_drift_A": 1.1,
+ "runtime_s": 90,
+ "sum_IE_kJmol": -338.6,
+ "ie_units": "kJ/mol, COUL=138.935, no-PBC, no desolvation",
+ "top_contacts": {
+  "SER196A": -72.36,
+  "GLU165B": -47.86,
+  "GLN195A": -36.72,
+  "TYR34B": -16.3,
+  "PHE53B": -14.66,
+  "TYR151A": -13.62,
+  "TYR201A": -13.61,
+  "THR198A": -13.16
+ },
+ "verdict": "md-stable"
+}

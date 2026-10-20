@@ -1,0 +1,24 @@
+{
+ "tag": "6X3X_p9",
+ "pdb": "6X3X",
+ "ligand": "fgin",
+ "chains_kept": [
+  "D",
+  "E"
+ ],
+ "md_drift_A": 2.2,
+ "runtime_s": 85,
+ "sum_IE_kJmol": -171.4,
+ "ie_units": "kJ/mol, COUL=138.935, no-PBC, no desolvation",
+ "top_contacts": {
+  "ALA282A": -29.56,
+  "ASP278A": -26.09,
+  "TRP279A": -21.27,
+  "ILE214B": -17.27,
+  "ILE218B": -15.57,
+  "TYR285A": -14.8,
+  "VAL283A": -7.07,
+  "ALA286A": -6.96
+ },
+ "verdict": "md-stable"
+}

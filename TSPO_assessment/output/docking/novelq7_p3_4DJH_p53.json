@@ -1,0 +1,23 @@
+{
+ "tag": "4DJH_p53",
+ "pdb": "4DJH",
+ "ligand": "fgin",
+ "chains_kept": [
+  "A"
+ ],
+ "md_drift_A": 0.81,
+ "runtime_s": 48,
+ "sum_IE_kJmol": 1971.9,
+ "ie_units": "kJ/mol, COUL=138.935, no-PBC, no desolvation",
+ "top_contacts": {
+  "ILE8A": -19.3,
+  "LEU66A": -16.95,
+  "TYR413A": -15.02,
+  "TYR12A": -12.17,
+  "PRO5A": -11.77,
+  "GLN61A": -8.79,
+  "THR9A": -8.74,
+  "TYR420A": -7.72
+ },
+ "verdict": "md-stable"
+}

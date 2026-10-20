@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ws7 — FGIN-1-27 across fpocket novel pockets: docking, MD stability, annihilation TI</title>
+<style>
+:root { --bg:#0f1419; --panel:#1a2028; --panel2:#232b36; --text:#d8dee9; --muted:#8895a7;
+        --accent:#5eb3ff; --ok:#7ec98f; --warn:#e5c07b; --err:#e06c75; --border:#2c3542; }
+body { margin:0; padding:40px 20px; background:var(--bg); color:var(--text); line-height:1.6;
+       font-size:15px; font-family:-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif; }
+.container { max-width:1060px; margin:0 auto; }
+h1 { font-size:22px; } h2 { font-size:18px; border-bottom:1px solid var(--border); padding-bottom:6px; }
+code { background:#12171d; padding:1px 5px; border-radius:3px; }
+table { border-collapse:collapse; width:100%; margin:14px 0; font-size:13.5px; }
+th { background:var(--panel2); text-align:left; padding:6px 8px; border:1px solid var(--border); }
+td { padding:5px 8px; border:1px solid var(--border); }
+.num { text-align:right; font-variant-numeric:tabular-nums; }
+.pos { color:var(--ok); } .neg { color:var(--err); }
+.callout { border-left:4px solid var(--accent); background:var(--panel); padding:10px 14px; margin:14px 0; border-radius:0 6px 6px 0; }
+.callout.warn { border-color:var(--warn); } .callout.ok { border-color:var(--ok); }
+.muted { color:var(--muted); font-size:13px; }
+footer { margin-top:30px; border-top:1px solid var(--border); padding-top:10px; color:var(--muted); font-size:12.5px; }
+</style>
+</head>
+<body><div class="container">
+<h1>FGIN-1-27 across the fpocket novel-pocket set — docking, MD pose-stability, annihilation TI</h1>
+<p class="muted">Request (Z. Cao, 2026-10-19): run the fpocket novel pockets on the PK11195 target list for FGIN-1-27,
+docking + MD, then FEP on prioritized pockets; emapunil reuses the ws6 campaign as the cross-ligand comparator.
+All numbers on this page are computational supporting evidence, not proof of binding.</p>
+
+<div class="callout ok"><b>Verdict.</b> FGIN-1-27 engages the novel-pocket set as broadly as emapunil
+(15/29 scan-engaged both), confirms <b>16/17</b> at the 3-seed hit tier (emapunil: 10/10 on its shortlist),
+and survives pose-stability MD on <b>13/16</b>. Annihilation TI on the top-3 side-chain anchors of every
+docking+MD survivor (13 pockets, FGIN; 6-pocket cross-set, emapunil) shows every confirmed pocket is held by
+real side-chain interactions (top ddG +3.6 to +20.0 kJ/mol). The headline novel pocket remains
+<b>4RYI_p26 — the TSPO dimer-interface second pocket</b>: FGIN -9.17 kcal/mol (best seed, 3-seed stable),
+emapunil -7.64, both ligands md-stable, TI top anchors +7.6 (FGIN LEU58B) / +7.7 (emapunil MET1A) kJ/mol.</p></div>
+
+<h2>1. Layers and gates (identical protocol across both ligands)</h2>
+<table>
+<tr><th>Layer</th><th>Protocol</th><th>Gate</th></tr>
+<tr><td>Scan docking</td><td>Vina exh16, 5 poses, 24 Å box on fpocket centroid</td><td>engaged: best ≤ −7.0 kcal/mol and pose1 centroid offset ≤ 6 Å</td></tr>
+<tr><td>Hit tier</td><td>3 independent runs × exh32 (seed sensitivity)</td><td>confirmed: best-of-seeds ≤ −7.0 and offset ≤ 6 Å</td></tr>
+<tr><td>MD pose-stability</td><td>250 ps LangevinMiddle 300 K, all protein heavy atoms restrained 5 kcal/mol/Å²</td><td>md-stable: ligand centroid drift ≤ 4 Å</td></tr>
+<tr><td>Annihilation TI</td><td>top-3 side-chain anchors per pocket, q/ε × (1−λ), 8 λ windows, 27.5 ps/window, protein 5 + ligand 1 kcal/mol/Å² restraints</td><td>ddG &gt; 0 ⇒ ligand uses that side chain (loss of binding energy on annihilation)</td></tr>
+</table>
+<p class="muted">MD drift is the decisive verdict for borderline docks — the score stage liked 6HUG_p114 (−8.45),
+the dynamics stage killed it (4.6 Å drift). Report vocabulary stays capped: computed-dock / computed-md /
+computed-ti / computed-negative / skipped; no "computed-positive".</p>
+
+<h2>2. FGIN-1-27 results by pocket (all layers)</h2>
+<table>
+<tr><th>Pocket</th><th>Target</th><th>scan best</th><th>hit best3</th><th>MD verdict</th><th>TI top ddG (kJ/mol)</th><th>emap scan</th><th>emap MD</th><th>emap TI top</th><th>layer</th></tr>
+<tr><td>4DJH_p53</td><td>OPRK1</td><td class='num'></td><td class='num'>-9.39</td><td>md-stable</td><td class='num'>5.0</td><td class='num'>-9.09</td><td>md-stable</td><td class='num'>7.5</td><td>computed-ti+demoted-adjacent</td></tr>
+<tr><td>4DJH_p54</td><td>OPRK1</td><td class='num'>-9.48</td><td class='num'></td><td></td><td class='num'></td><td class='num'>-9.07</td><td></td><td class='num'></td><td>skipped</td></tr>
+<tr><td>4DKL_p2</td><td>OPRM1</td><td class='num'>-6.15</td><td class='num'>-6.69</td><td></td><td class='num'></td><td class='num'>-7.34</td><td>md-unstable</td><td class='num'></td><td>skipped</td></tr>
+<tr><td>4RYI_p26</td><td>TSPO</td><td class='num'>-9.07</td><td class='num'>-9.17</td><td>md-stable</td><td class='num'>7.6</td><td class='num'>-7.64</td><td>md-stable</td><td class='num'>7.7</td><td>computed-ti</td></tr>
+<tr><td>4WB9_p1</td><td>ALDH1A1</td><td class='num'>-8.1</td><td class='num'>-8.14</td><td>md-stable</td><td class='num'>14.1</td><td class='num'>-8.76</td><td>md-stable</td><td class='num'>13.1</td><td>computed-ti</td></tr>
+<tr><td>6HUG_p114</td><td>GABRA-family</td><td class='num'>-8.38</td><td class='num'>-8.45</td><td>md-unstable</td><td class='num'></td><td class='num'>-8.55</td><td>md-unstable</td><td class='num'></td><td>computed-negative</td></tr>
+<tr><td>6HUG_p15</td><td>GABRA-family</td><td class='num'>-8.67</td><td class='num'>-8.56</td><td>md-stable</td><td class='num'>15.9</td><td class='num'>-8.31</td><td></td><td class='num'></td><td>computed-ti</td></tr>
+<tr><td>6X3X_p128</td><td>GABRA1/GABRB3/GABRG2</td><td class='num'>-7.85</td><td class='num'>-7.88</td><td>md-stable</td><td class='num'>5.5</td><td class='num'>-7.45</td><td>md-stable</td><td class='num'>6.3</td><td>computed-ti</td></tr>
+<tr><td>6X3X_p78</td><td>GABRA1/GABRB3/GABRG2</td><td class='num'>-9.48</td><td class='num'>-9.6</td><td>md-stable</td><td class='num'>20.0</td><td class='num'>-8.51</td><td>md-stable</td><td class='num'>20.6</td><td>computed-ti</td></tr>
+<tr><td>6X3X_p9</td><td>GABRA1/GABRB3/GABRG2</td><td class='num'>-7.47</td><td class='num'>-7.21</td><td>md-stable</td><td class='num'>6.1</td><td class='num'>-6.57</td><td></td><td class='num'></td><td>computed-ti</td></tr>
+<tr><td>7F61_p15</td><td>HRH3</td><td class='num'>-7.54</td><td class='num'>-7.83</td><td>md-unstable</td><td class='num'></td><td class='num'>-9.23</td><td>md-stable</td><td class='num'></td><td>computed-negative</td></tr>
+<tr><td>7M93_p18</td><td>TMEM97</td><td class='num'>-8.15</td><td class='num'>-8.32</td><td>md-stable</td><td class='num'>4.7</td><td class='num'>-7.51</td><td>md-stable</td><td class='num'>5.5</td><td>computed-ti</td></tr>
+<tr><td>7M93_p26</td><td>TMEM97</td><td class='num'>-7.85</td><td class='num'>-7.87</td><td>md-stable</td><td class='num'>5.2</td><td class='num'>-7.39</td><td></td><td class='num'></td><td>computed-ti</td></tr>
+<tr><td>7M93_p8</td><td>TMEM97</td><td class='num'>-7.97</td><td class='num'>-7.98</td><td>md-unstable</td><td class='num'></td><td class='num'>-7.5</td><td></td><td class='num'></td><td>computed-negative</td></tr>
+<tr><td>9ZIR_p1</td><td>TMEM97</td><td class='num'>-7.62</td><td class='num'>-7.74</td><td>md-stable</td><td class='num'>6.4</td><td class='num'>-7.61</td><td></td><td class='num'></td><td>computed-ti</td></tr>
+<tr><td>9ZIR_p11</td><td>TMEM97</td><td class='num'>-8.38</td><td class='num'>-8.34</td><td>md-stable</td><td class='num'>8.9</td><td class='num'>-7.59</td><td>md-unstable</td><td class='num'></td><td>computed-ti</td></tr>
+<tr><td>9ZIR_p3</td><td>TMEM97</td><td class='num'>-7.19</td><td class='num'>-7.29</td><td>md-stable</td><td class='num'>8.6</td><td class='num'>-7.26</td><td></td><td class='num'></td><td>computed-ti</td></tr>
+<tr><td>9ZIR_p6</td><td>TMEM97</td><td class='num'>-7.97</td><td class='num'>-8.1</td><td>md-stable</td><td class='num'>7.2</td><td class='num'>-7.27</td><td></td><td class='num'></td><td>computed-ti</td></tr>
+</table>
+<p class="muted">Rejections are findings, not failures: 6HUG_p114, 7F61_p15, 7M93_p8 docked ≤ −7.8 but drifted
+4.6–8.5 Å in MD (computed-negative). 4DKL_p2 (OPRM1) confirmed for emapunil but not for FGIN (−6.69).
+4DJH_p53 (OPRK1) is demoted-adjacent to the orthosteric pocket in the novelty gate and keeps its data inline.</p>
+
+<h2>3. Annihilation TI — side-chain usage per pocket</h2>
+<h3>FGIN-1-27 (13 md-stable pockets × top-3 anchors)</h3>
+<table><tr><th>Pocket</th><th>Anchor</th><th>ddG (kJ/mol)</th><th>ddG (kcal/mol)</th><th>native IE t0</th></tr>
+<tr><td>6X3X_p78</td><td>SER196A</td><td class='num pos'>+20.0</td><td class='num'>+4.77</td><td class='num'>-46.3</td></tr>
+<tr><td>6X3X_p78</td><td>GLU165B</td><td class='num pos'>+17.2</td><td class='num'>+4.10</td><td class='num'>-38.9</td></tr>
+<tr><td>6HUG_p15</td><td>THR253C</td><td class='num pos'>+15.9</td><td class='num'>+3.79</td><td class='num'>-37.4</td></tr>
+<tr><td>4WB9_p1</td><td>TYR289A</td><td class='num pos'>+14.1</td><td class='num'>+3.38</td><td class='num'>-29.4</td></tr>
+<tr><td>6HUG_p15</td><td>THR260D</td><td class='num pos'>+12.4</td><td class='num'>+2.96</td><td class='num'>-20.2</td></tr>
+<tr><td>6HUG_p15</td><td>GLU263B</td><td class='num pos'>+10.1</td><td class='num'>+2.40</td><td class='num'>-19.9</td></tr>
+<tr><td>9ZIR_p11</td><td>ARG156B</td><td class='num pos'>+8.9</td><td class='num'>+2.14</td><td class='num'>-20.9</td></tr>
+<tr><td>9ZIR_p3</td><td>MET25A</td><td class='num pos'>+8.6</td><td class='num'>+2.05</td><td class='num'>-16.5</td></tr>
+<tr><td>9ZIR_p3</td><td>ILE21A</td><td class='num pos'>+8.5</td><td class='num'>+2.04</td><td class='num'>-14.6</td></tr>
+<tr><td>9ZIR_p11</td><td>PHE72A</td><td class='num pos'>+8.4</td><td class='num'>+2.00</td><td class='num'>-13.2</td></tr>
+<tr><td>4WB9_p1</td><td>ASN113A</td><td class='num pos'>+8.0</td><td class='num'>+1.91</td><td class='num'>-10.9</td></tr>
+<tr><td>4RYI_p26</td><td>LEU58B</td><td class='num pos'>+7.6</td><td class='num'>+1.82</td><td class='num'>-14.0</td></tr>
+<tr><td>9ZIR_p6</td><td>PHE73B</td><td class='num pos'>+7.2</td><td class='num'>+1.72</td><td class='num'>-11.9</td></tr>
+<tr><td>4RYI_p26</td><td>PHE9B</td><td class='num pos'>+7.0</td><td class='num'>+1.68</td><td class='num'>-10.0</td></tr>
+<tr><td>4RYI_p26</td><td>PHE9A</td><td class='num pos'>+6.5</td><td class='num'>+1.54</td><td class='num'>-14.7</td></tr>
+<tr><td>9ZIR_p1</td><td>TYR47A</td><td class='num pos'>+6.4</td><td class='num'>+1.52</td><td class='num'>-7.9</td></tr>
+<tr><td>6X3X_p9</td><td>TRP279A</td><td class='num pos'>+6.1</td><td class='num'>+1.46</td><td class='num'>-9.3</td></tr>
+<tr><td>9ZIR_p1</td><td>VAL139A</td><td class='num pos'>+6.0</td><td class='num'>+1.43</td><td class='num'>-8.3</td></tr>
+<tr><td>9ZIR_p1</td><td>ASP26A</td><td class='num pos'>+5.8</td><td class='num'>+1.38</td><td class='num'>-11.1</td></tr>
+<tr><td>6X3X_p9</td><td>ASP278A</td><td class='num pos'>+5.7</td><td class='num'>+1.37</td><td class='num'>-11.5</td></tr>
+<tr><td>9ZIR_p11</td><td>ILE98A</td><td class='num pos'>+5.6</td><td class='num'>+1.34</td><td class='num'>-9.4</td></tr>
+<tr><td>6X3X_p128</td><td>PHE283A</td><td class='num pos'>+5.5</td><td class='num'>+1.33</td><td class='num'>-7.6</td></tr>
+<tr><td>9ZIR_p3</td><td>TYR147A</td><td class='num pos'>+5.5</td><td class='num'>+1.32</td><td class='num'>-7.1</td></tr>
+<tr><td>7M93_p26</td><td>ILE98A</td><td class='num pos'>+5.2</td><td class='num'>+1.25</td><td class='num'>-9.8</td></tr>
+<tr><td>4DJH_p53</td><td>LEU66A</td><td class='num pos'>+5.0</td><td class='num'>+1.18</td><td class='num'>-8.2</td></tr>
+<tr><td>6X3X_p128</td><td>LEU223B</td><td class='num pos'>+4.9</td><td class='num'>+1.17</td><td class='num'>-6.1</td></tr>
+<tr><td>7M93_p18</td><td>ILE98B</td><td class='num pos'>+4.7</td><td class='num'>+1.13</td><td class='num'>-8.6</td></tr>
+<tr><td>7M93_p26</td><td>PRO95A</td><td class='num pos'>+4.6</td><td class='num'>+1.10</td><td class='num'>-10.0</td></tr>
+<tr><td>6X3X_p128</td><td>MET227B</td><td class='num pos'>+4.5</td><td class='num'>+1.09</td><td class='num'>-7.5</td></tr>
+<tr><td>7M93_p18</td><td>PHE72B</td><td class='num pos'>+4.2</td><td class='num'>+1.01</td><td class='num'>-5.4</td></tr>
+<tr><td>7M93_p26</td><td>PHE72A</td><td class='num pos'>+3.6</td><td class='num'>+0.87</td><td class='num'>-4.7</td></tr>
+<tr><td>9ZIR_p6</td><td>ILE99B</td><td class='num pos'>+3.6</td><td class='num'>+0.87</td><td class='num'>-6.9</td></tr>
+<tr><td>4DJH_p53</td><td>TYR413A</td><td class='num pos'>+3.0</td><td class='num'>+0.73</td><td class='num'>-2.7</td></tr>
+<tr><td>4DJH_p53</td><td>ILE8A</td><td class='num pos'>+2.6</td><td class='num'>+0.62</td><td class='num'>-4.3</td></tr>
+<tr><td>7M93_p18</td><td>PRO95B</td><td class='num pos'>+1.8</td><td class='num'>+0.42</td><td class='num'>-3.7</td></tr>
+<tr><td>6X3X_p9</td><td>ALA282A</td><td class='num pos'>+1.7</td><td class='num'>+0.41</td><td class='num'>-3.5</td></tr>
+<tr><td>4WB9_p1</td><td>TYR449A</td><td class='num pos'>+1.2</td><td class='num'>+0.28</td><td class='num'>-1.4</td></tr>
+<tr><td>9ZIR_p6</td><td>VAL72B</td><td class='num neg'>-0.2</td><td class='num'>-0.04</td><td class='num'>1.0</td></tr>
+<tr><td>6X3X_p78</td><td>GLN195A</td><td class='num neg'>-0.8</td><td class='num'>-0.20</td><td class='num'>2.1</td></tr>
+</table>
+<h3>emapunil (6-pocket cross-set where both ligands are md-stable)</h3>
+<table><tr><th>Pocket</th><th>Anchor</th><th>ddG (kJ/mol)</th><th>ddG (kcal/mol)</th><th>native IE t0</th></tr>
+<tr><td>6X3X_p78</td><td>SER196A</td><td class='num pos'>+20.6</td><td class='num'>+4.92</td><td class='num'>-46.8</td></tr>
+<tr><td>4WB9_p1</td><td>LYS105A</td><td class='num pos'>+13.1</td><td class='num'>+3.13</td><td class='num'>-25.1</td></tr>
+<tr><td>4RYI_p26</td><td>MET1A</td><td class='num pos'>+7.7</td><td class='num'>+1.83</td><td class='num'>-15.2</td></tr>
+<tr><td>4DJH_p53</td><td>TYR420A</td><td class='num pos'>+7.5</td><td class='num'>+1.78</td><td class='num'>-14.1</td></tr>
+<tr><td>4WB9_p1</td><td>ASN113A</td><td class='num pos'>+6.3</td><td class='num'>+1.51</td><td class='num'>-11.0</td></tr>
+<tr><td>6X3X_p78</td><td>ARG108B</td><td class='num pos'>+6.3</td><td class='num'>+1.51</td><td class='num'>-14.4</td></tr>
+<tr><td>6X3X_p128</td><td>ASN259A</td><td class='num pos'>+6.3</td><td class='num'>+1.51</td><td class='num'>-11.9</td></tr>
+<tr><td>7M93_p18</td><td>ARG155A</td><td class='num pos'>+5.5</td><td class='num'>+1.32</td><td class='num'>-15.9</td></tr>
+<tr><td>6X3X_p128</td><td>MET280A</td><td class='num pos'>+5.3</td><td class='num'>+1.27</td><td class='num'>-10.2</td></tr>
+<tr><td>6X3X_p128</td><td>LEU223B</td><td class='num pos'>+4.7</td><td class='num'>+1.13</td><td class='num'>-8.6</td></tr>
+<tr><td>4RYI_p26</td><td>LEU58A</td><td class='num pos'>+3.0</td><td class='num'>+0.71</td><td class='num'>-6.8</td></tr>
+<tr><td>4DJH_p53</td><td>THR421A</td><td class='num pos'>+2.3</td><td class='num'>+0.54</td><td class='num'>-5.1</td></tr>
+<tr><td>4WB9_p1</td><td>GLY450A</td><td class='num pos'>+1.7</td><td class='num'>+0.40</td><td class='num'>-3.9</td></tr>
+<tr><td>4DJH_p53</td><td>ALA417A</td><td class='num pos'>+1.5</td><td class='num'>+0.36</td><td class='num'>-2.0</td></tr>
+<tr><td>4RYI_p26</td><td>TYR13A</td><td class='num pos'>+0.6</td><td class='num'>+0.14</td><td class='num'>-1.0</td></tr>
+<tr><td>6X3X_p78</td><td>GLU165A</td><td class='num pos'>+0.1</td><td class='num'>+0.02</td><td class='num'>-0.2</td></tr>
+<tr><td>7M93_p18</td><td>PHE72A</td><td class='num pos'>+0.0</td><td class='num'>+0.00</td><td class='num'>-0.0</td></tr>
+<tr><td>7M93_p18</td><td>GLU69A</td><td class='num neg'>-0.2</td><td class='num'>-0.06</td><td class='num'>0.0</td></tr>
+</table>
+<p class="muted">Positive ddG = annihilating that side chain costs binding free energy = the ligand uses it.
+Near-zero rows with near-zero native IE (e.g. 7M93_p18 emapunil PHE72A/GLU69A) are anchors whose t0 contact is
+negligible — they were carried by the ws6 IE ranking but the TI layer shows no side-chain dependency.
+Units: kJ/mol throughout, Coulomb constant 138.935 kJ·nm/e² (the corrected convention; ws6 IE numbers are not
+directly comparable — see §4).</p>
+
+<h2>4. Caveats</h2>
+<div class="callout warn">
+<ul>
+<li>Computational scores are supporting evidence, not proof of binding; only measured data can enter Tier 1–2 of the target assessment.</li>
+<li>TI here annihilates side chains at the docked/relaxed geometry (computational alanine scanning). It answers
+"does the ligand use this side chain", not absolute affinity; ε/q scaling only, σ fixed.</li>
+<li>12 anchors in the first parallel sweep silently returned exact-zero windows (a mixed-precision CUDA artifact
+observed under 4-GPU contention). All suspect jobs were re-run sequentially in double precision; every reported
+number passes the non-zero-window test in <code>tests/test_novelq7_dataset.py</code>.</li>
+<li>MD is 250 ps per pocket — pose-stability timescale only, not residence time or binding kinetics.</li>
+<li>IE/TI share the no-desolvation limitation: charged contacts are overstated; ranking use only.</li>
+<li>Residue numbering follows the pdbfixer-processed complexes (chain-suffixed), self-consistent within this round.</li>
+</ul>
+</div>
+
+<h2>5. Provenance</h2>
+<p class="muted">Scripts: <code>scripts/novelq7_p1_fgin_docking.py</code>, <code>novelq7_p3_md_stability.py</code>,
+<code>novelq7_p4_fep.py</code> + <code>novelq7_p4_runner.py</code>, <code>novelq7_p5_tier_csv.py</code>, this page
+<code>novelq7_p6_report.py</code>. Data: <code>output/docking/novelq7_p1_fgin_scan.jsonl</code>,
+<code>novelq7_p2_fgin_hittier.json</code>, <code>novelq7_p3_*.json</code>, <code>output/fep_a7/scan7_*.json</code>,
+tier CSV <code>output/novelq7_tiered_targets_v1.csv</code>. Tests: 55 passed (11 in
+<code>tests/test_novelq7_dataset.py</code>). Ligand identity: FGIN-1-27, PubChem CID 132496,
+InChIKey VUWXAQFLTSBUDB-UHFFFAOYSA-N. Environment: openfe-md (openfe 1.12.0 / openmm 8.4 / openff 0.18), CUDA.</p>
+
+<footer>ws7 novel-pocket round for the TSPO ligand-target campaign (RIC-408 series) — generated 2026-10-20.
+Self-contained; no external assets. Companion files: novelq7_tiered_targets_v1.csv, email draft.</footer>
+</div></body></html>

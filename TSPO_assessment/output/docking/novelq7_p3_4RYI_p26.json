@@ -1,0 +1,24 @@
+{
+ "tag": "4RYI_p26",
+ "pdb": "4RYI",
+ "ligand": "fgin",
+ "chains_kept": [
+  "A",
+  "B"
+ ],
+ "md_drift_A": 2.98,
+ "runtime_s": 35,
+ "sum_IE_kJmol": -219.0,
+ "ie_units": "kJ/mol, COUL=138.935, no-PBC, no desolvation",
+ "top_contacts": {
+  "LEU58B": -29.12,
+  "PHE9A": -25.81,
+  "PHE9B": -18.18,
+  "MET1B": -17.58,
+  "PHE10A": -11.61,
+  "LEU55B": -10.3,
+  "ILE6B": -10.15,
+  "PHE10B": -9.9
+ },
+ "verdict": "md-stable"
+}

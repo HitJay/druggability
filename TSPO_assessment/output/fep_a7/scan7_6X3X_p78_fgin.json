@@ -1,0 +1,128 @@
+{
+ "tag": "6X3X_p78",
+ "ligand": "fgin",
+ "method": "side-chain annihilation TI (fep_a3 recipe), 8 windows, 2.5 ps eq + 25 ps sampling per window, protein-heavy 5 kcal/mol/A^2, ligand heavy 1 kcal/mol/A^2 restraints",
+ "anchors": {
+  "SER196A": {
+   "native_IE_kJmol_t0": -46.33,
+   "windows": [
+    {
+     "lambda": 0.0,
+     "minus_dUdlam_kJmol": -44.34
+    },
+    {
+     "lambda": 0.15,
+     "minus_dUdlam_kJmol": -37.04
+    },
+    {
+     "lambda": 0.3,
+     "minus_dUdlam_kJmol": -29.49
+    },
+    {
+     "lambda": 0.45,
+     "minus_dUdlam_kJmol": -20.62
+    },
+    {
+     "lambda": 0.6,
+     "minus_dUdlam_kJmol": -14.55
+    },
+    {
+     "lambda": 0.75,
+     "minus_dUdlam_kJmol": -7.77
+    },
+    {
+     "lambda": 0.9,
+     "minus_dUdlam_kJmol": -1.84
+    },
+    {
+     "lambda": 1.0,
+     "minus_dUdlam_kJmol": 0.0
+    }
+   ],
+   "ddG_kJmol": 19.98,
+   "ddG_kcalmol": 4.77,
+   "interpretation": "positive => ligand uses this side chain"
+  },
+  "GLU165B": {
+   "native_IE_kJmol_t0": -38.92,
+   "windows": [
+    {
+     "lambda": 0.0,
+     "minus_dUdlam_kJmol": -34.52
+    },
+    {
+     "lambda": 0.15,
+     "minus_dUdlam_kJmol": -28.98
+    },
+    {
+     "lambda": 0.3,
+     "minus_dUdlam_kJmol": -24.17
+    },
+    {
+     "lambda": 0.45,
+     "minus_dUdlam_kJmol": -18.35
+    },
+    {
+     "lambda": 0.6,
+     "minus_dUdlam_kJmol": -13.45
+    },
+    {
+     "lambda": 0.75,
+     "minus_dUdlam_kJmol": -8.88
+    },
+    {
+     "lambda": 0.9,
+     "minus_dUdlam_kJmol": -4.08
+    },
+    {
+     "lambda": 1.0,
+     "minus_dUdlam_kJmol": 0.0
+    }
+   ],
+   "ddG_kJmol": 17.17,
+   "ddG_kcalmol": 4.1,
+   "interpretation": "positive => ligand uses this side chain"
+  },
+  "GLN195A": {
+   "native_IE_kJmol_t0": 2.08,
+   "windows": [
+    {
+     "lambda": 0.0,
+     "minus_dUdlam_kJmol": 2.02
+    },
+    {
+     "lambda": 0.15,
+     "minus_dUdlam_kJmol": 1.61
+    },
+    {
+     "lambda": 0.3,
+     "minus_dUdlam_kJmol": 1.28
+    },
+    {
+     "lambda": 0.45,
+     "minus_dUdlam_kJmol": 0.94
+    },
+    {
+     "lambda": 0.6,
+     "minus_dUdlam_kJmol": 0.56
+    },
+    {
+     "lambda": 0.75,
+     "minus_dUdlam_kJmol": 0.19
+    },
+    {
+     "lambda": 0.9,
+     "minus_dUdlam_kJmol": -0.04
+    },
+    {
+     "lambda": 1.0,
+     "minus_dUdlam_kJmol": 0.0
+    }
+   ],
+   "ddG_kJmol": -0.83,
+   "ddG_kcalmol": -0.2,
+   "interpretation": "~zero/negative => no net contribution"
+  }
+ },
+ "runtime_s": 84
+}

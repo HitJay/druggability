@@ -1,0 +1,27 @@
+{
+ "tag": "6HUG_p15",
+ "pdb": "6HUG",
+ "ligand": "fgin",
+ "chains_kept": [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E"
+ ],
+ "md_drift_A": 1.62,
+ "runtime_s": 434,
+ "sum_IE_kJmol": -317.4,
+ "ie_units": "kJ/mol, COUL=138.935, no-PBC, no desolvation",
+ "top_contacts": {
+  "THR253C": -48.61,
+  "THR260D": -27.78,
+  "GLU263B": -23.3,
+  "THR256C": -21.53,
+  "HIS260E": -18.62,
+  "THR256B": -17.5,
+  "THR252C": -17.0,
+  "ILE257B": -14.63
+ },
+ "verdict": "md-stable"
+}

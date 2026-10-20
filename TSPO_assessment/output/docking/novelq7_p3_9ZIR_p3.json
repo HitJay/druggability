@@ -1,0 +1,23 @@
+{
+ "tag": "9ZIR_p3",
+ "pdb": "9ZIR",
+ "ligand": "fgin",
+ "chains_kept": [
+  "D"
+ ],
+ "md_drift_A": 2.23,
+ "runtime_s": 24,
+ "sum_IE_kJmol": -173.4,
+ "ie_units": "kJ/mol, COUL=138.935, no-PBC, no desolvation",
+ "top_contacts": {
+  "MET25A": -31.88,
+  "ILE21A": -28.81,
+  "TYR147A": -17.53,
+  "TYR144A": -16.48,
+  "TYR47A": -14.31,
+  "VAL143A": -10.47,
+  "LEU24A": -8.49,
+  "PRO20A": -8.01
+ },
+ "verdict": "md-stable"
+}

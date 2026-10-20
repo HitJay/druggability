@@ -1,0 +1,24 @@
+{
+ "tag": "9ZIR_p11",
+ "pdb": "9ZIR",
+ "ligand": "fgin",
+ "chains_kept": [
+  "A",
+  "C"
+ ],
+ "md_drift_A": 2.11,
+ "runtime_s": 36,
+ "sum_IE_kJmol": -194.7,
+ "ie_units": "kJ/mol, COUL=138.935, no-PBC, no desolvation",
+ "top_contacts": {
+  "PHE72A": -36.9,
+  "ARG156B": -23.95,
+  "ILE98A": -23.44,
+  "PHE76A": -12.0,
+  "LEU151B": -8.58,
+  "VAL155B": -6.52,
+  "TYR99A": -5.46,
+  "HIS102A": -5.44
+ },
+ "verdict": "md-stable"
+}

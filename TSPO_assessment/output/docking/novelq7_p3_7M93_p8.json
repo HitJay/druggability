@@ -1,0 +1,24 @@
+{
+ "tag": "7M93_p8",
+ "pdb": "7M93",
+ "ligand": "fgin",
+ "chains_kept": [
+  "A",
+  "B"
+ ],
+ "md_drift_A": 8.53,
+ "runtime_s": 42,
+ "sum_IE_kJmol": -225.8,
+ "ie_units": "kJ/mol, COUL=138.935, no-PBC, no desolvation",
+ "top_contacts": {
+  "ARG160A": -134.78,
+  "LYS165A": -21.17,
+  "VAL159A": -16.25,
+  "TRP93B": -11.46,
+  "TYR165B": -9.67,
+  "LEU156A": -6.37,
+  "PRO97B": -5.56,
+  "ARG4A": -5.36
+ },
+ "verdict": "md-unstable"
+}

@@ -1,0 +1,24 @@
+{
+ "tag": "6HUG_p114",
+ "pdb": "6HUG",
+ "ligand": "fgin",
+ "chains_kept": [
+  "C",
+  "D"
+ ],
+ "md_drift_A": 4.59,
+ "runtime_s": 87,
+ "sum_IE_kJmol": -268.8,
+ "ie_units": "kJ/mol, COUL=138.935, no-PBC, no desolvation",
+ "top_contacts": {
+  "GLU164A": -55.03,
+  "SER197B": -30.36,
+  "LYS148B": -29.75,
+  "TYR33A": -28.65,
+  "HIS94B": -22.34,
+  "PHE52A": -21.47,
+  "GLN196B": -19.3,
+  "VAL195B": -10.11
+ },
+ "verdict": "md-unstable"
+}

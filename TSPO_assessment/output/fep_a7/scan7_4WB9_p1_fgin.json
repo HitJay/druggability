@@ -1,0 +1,128 @@
+{
+ "tag": "4WB9_p1",
+ "ligand": "fgin",
+ "method": "side-chain annihilation TI (fep_a3 recipe), 8 windows, 2.5 ps eq + 25 ps sampling per window, protein-heavy 5 kcal/mol/A^2, ligand heavy 1 kcal/mol/A^2 restraints",
+ "anchors": {
+  "TYR289A": {
+   "native_IE_kJmol_t0": -29.38,
+   "windows": [
+    {
+     "lambda": 0.0,
+     "minus_dUdlam_kJmol": -30.34
+    },
+    {
+     "lambda": 0.15,
+     "minus_dUdlam_kJmol": -24.72
+    },
+    {
+     "lambda": 0.3,
+     "minus_dUdlam_kJmol": -18.73
+    },
+    {
+     "lambda": 0.45,
+     "minus_dUdlam_kJmol": -15.05
+    },
+    {
+     "lambda": 0.6,
+     "minus_dUdlam_kJmol": -10.48
+    },
+    {
+     "lambda": 0.75,
+     "minus_dUdlam_kJmol": -7.11
+    },
+    {
+     "lambda": 0.9,
+     "minus_dUdlam_kJmol": -3.6
+    },
+    {
+     "lambda": 1.0,
+     "minus_dUdlam_kJmol": 0.0
+    }
+   ],
+   "ddG_kJmol": 14.14,
+   "ddG_kcalmol": 3.38,
+   "interpretation": "positive => ligand uses this side chain"
+  },
+  "TYR449A": {
+   "native_IE_kJmol_t0": -1.42,
+   "windows": [
+    {
+     "lambda": 0.0,
+     "minus_dUdlam_kJmol": -1.77
+    },
+    {
+     "lambda": 0.15,
+     "minus_dUdlam_kJmol": -1.78
+    },
+    {
+     "lambda": 0.3,
+     "minus_dUdlam_kJmol": -1.51
+    },
+    {
+     "lambda": 0.45,
+     "minus_dUdlam_kJmol": -1.25
+    },
+    {
+     "lambda": 0.6,
+     "minus_dUdlam_kJmol": -1.08
+    },
+    {
+     "lambda": 0.75,
+     "minus_dUdlam_kJmol": -0.82
+    },
+    {
+     "lambda": 0.9,
+     "minus_dUdlam_kJmol": -0.53
+    },
+    {
+     "lambda": 1.0,
+     "minus_dUdlam_kJmol": 0.0
+    }
+   ],
+   "ddG_kJmol": 1.17,
+   "ddG_kcalmol": 0.28,
+   "interpretation": "positive => ligand uses this side chain"
+  },
+  "ASN113A": {
+   "native_IE_kJmol_t0": -10.86,
+   "windows": [
+    {
+     "lambda": 0.0,
+     "minus_dUdlam_kJmol": -18.02
+    },
+    {
+     "lambda": 0.15,
+     "minus_dUdlam_kJmol": -13.28
+    },
+    {
+     "lambda": 0.3,
+     "minus_dUdlam_kJmol": -10.11
+    },
+    {
+     "lambda": 0.45,
+     "minus_dUdlam_kJmol": -8.35
+    },
+    {
+     "lambda": 0.6,
+     "minus_dUdlam_kJmol": -6.31
+    },
+    {
+     "lambda": 0.75,
+     "minus_dUdlam_kJmol": -4.34
+    },
+    {
+     "lambda": 0.9,
+     "minus_dUdlam_kJmol": -2.1
+    },
+    {
+     "lambda": 1.0,
+     "minus_dUdlam_kJmol": 0.0
+    }
+   ],
+   "ddG_kJmol": 7.97,
+   "ddG_kcalmol": 1.91,
+   "interpretation": "positive => ligand uses this side chain"
+  }
+ },
+ "runtime_s": 51
+}

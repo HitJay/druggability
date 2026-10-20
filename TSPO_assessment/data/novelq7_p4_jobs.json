@@ -1,0 +1,173 @@
+[
+ {
+  "tag": "4DJH_p53",
+  "ligand": "fgin",
+  "anchors": [
+   "ILE8A",
+   "LEU66A",
+   "TYR413A"
+  ]
+ },
+ {
+  "tag": "4RYI_p26",
+  "ligand": "fgin",
+  "anchors": [
+   "LEU58B",
+   "PHE9A",
+   "PHE9B"
+  ]
+ },
+ {
+  "tag": "4WB9_p1",
+  "ligand": "fgin",
+  "anchors": [
+   "TYR289A",
+   "TYR449A",
+   "ASN113A"
+  ]
+ },
+ {
+  "tag": "6HUG_p15",
+  "ligand": "fgin",
+  "anchors": [
+   "THR253C",
+   "THR260D",
+   "GLU263B"
+  ]
+ },
+ {
+  "tag": "6X3X_p128",
+  "ligand": "fgin",
+  "anchors": [
+   "PHE283A",
+   "LEU223B",
+   "MET227B"
+  ]
+ },
+ {
+  "tag": "6X3X_p78",
+  "ligand": "fgin",
+  "anchors": [
+   "SER196A",
+   "GLU165B",
+   "GLN195A"
+  ]
+ },
+ {
+  "tag": "6X3X_p9",
+  "ligand": "fgin",
+  "anchors": [
+   "ALA282A",
+   "ASP278A",
+   "TRP279A"
+  ]
+ },
+ {
+  "tag": "7M93_p18",
+  "ligand": "fgin",
+  "anchors": [
+   "PHE72B",
+   "ILE98B",
+   "PRO95B"
+  ]
+ },
+ {
+  "tag": "7M93_p26",
+  "ligand": "fgin",
+  "anchors": [
+   "ILE98A",
+   "PRO95A",
+   "PHE72A"
+  ]
+ },
+ {
+  "tag": "9ZIR_p1",
+  "ligand": "fgin",
+  "anchors": [
+   "VAL139A",
+   "ASP26A",
+   "TYR47A"
+  ]
+ },
+ {
+  "tag": "9ZIR_p11",
+  "ligand": "fgin",
+  "anchors": [
+   "PHE72A",
+   "ARG156B",
+   "ILE98A"
+  ]
+ },
+ {
+  "tag": "9ZIR_p3",
+  "ligand": "fgin",
+  "anchors": [
+   "MET25A",
+   "ILE21A",
+   "TYR147A"
+  ]
+ },
+ {
+  "tag": "9ZIR_p6",
+  "ligand": "fgin",
+  "anchors": [
+   "PHE73B",
+   "VAL72B",
+   "ILE99B"
+  ]
+ },
+ {
+  "tag": "4DJH_p53",
+  "ligand": "emapunil",
+  "anchors": [
+   "ALA417",
+   "TYR420",
+   "THR421"
+  ]
+ },
+ {
+  "tag": "4RYI_p26",
+  "ligand": "emapunil",
+  "anchors": [
+   "MET1",
+   "LEU58",
+   "TYR13"
+  ]
+ },
+ {
+  "tag": "4WB9_p1",
+  "ligand": "emapunil",
+  "anchors": [
+   "LYS105",
+   "GLY450",
+   "ASN113"
+  ]
+ },
+ {
+  "tag": "6X3X_p128",
+  "ligand": "emapunil",
+  "anchors": [
+   "LEU223",
+   "MET280",
+   "ASN259"
+  ]
+ },
+ {
+  "tag": "6X3X_p78",
+  "ligand": "emapunil",
+  "anchors": [
+   "SER196",
+   "GLU165",
+   "ARG108"
+  ]
+ },
+ {
+  "tag": "7M93_p18",
+  "ligand": "emapunil",
+  "anchors": [
+   "ARG155",
+   "PHE72",
+   "GLU69"
+  ]
+ }
+]

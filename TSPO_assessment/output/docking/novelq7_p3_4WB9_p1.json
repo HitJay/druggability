@@ -1,0 +1,23 @@
+{
+ "tag": "4WB9_p1",
+ "pdb": "4WB9",
+ "ligand": "fgin",
+ "chains_kept": [
+  "A"
+ ],
+ "md_drift_A": 2.46,
+ "runtime_s": 51,
+ "sum_IE_kJmol": -267.2,
+ "ie_units": "kJ/mol, COUL=138.935, no-PBC, no desolvation",
+ "top_contacts": {
+  "TYR289A": -43.91,
+  "TYR449A": -42.61,
+  "ASN113A": -22.39,
+  "VAL452A": -21.13,
+  "LYS105A": -17.48,
+  "PHE163A": -15.39,
+  "GLY450A": -14.89,
+  "ILE296A": -13.68
+ },
+ "verdict": "md-stable"
+}

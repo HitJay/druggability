@@ -1,0 +1,18 @@
+Subject: FGIN-1-27 on the fpocket novel pockets — docking, MD stability, and FEP results
+
+Hi Zheng,
+
+the FGIN-1-27 novel-pocket round you asked for is complete, using the same protocol as the emapunil round so the two ligands are directly comparable. Everything below is computational supporting evidence, not proof of binding; the tier vocabulary and gates are unchanged. Deliverables (report, tier CSV) are at R:\DT\TDE_TV\shared_folder\QYJI\druggability\TSPO_assessment\06_novel_pockets_fgin\.
+
+1. Docking. FGIN-1-27 engages the fpocket novel pockets as broadly as emapunil: 15 of 29 at the scan tier and 16 of 17 confirmed at the 3-seed hit tier (exhaustiveness 32, seed-sensitivity check; gate best-of-seeds <= -7.0 kcal/mol and pose within 6 A of the pocket centroid). The strongest novel pockets are 6X3X_p78 in the GABA-A transmembrane domain (-9.60), 4DJH_p53 at the OPRK1 pocket rim (-9.39, demoted-adjacent in the novelty gate, data kept inline), and 4RYI_p26, the TSPO dimer-interface second pocket (-9.17). For each of these FGIN scores better than emapunil did in the previous round (by 1.1-1.5 kcal/mol on the two GABA-A/TSPO headline pockets and 0.3 kcal/mol on the OPRK1 rim).
+
+2. MD pose stability. 250 ps per pocket with restrained protein: 13 of 16 confirmed pockets are md-stable (drift <= 4 A). Three rejections are worth noting because the score stage liked them: 6HUG_p114 (-8.45, drift 4.6 A), 7F61_p15 (-7.83, drift 5.4 A) and 7M93_p8 (-7.98, drift 8.5 A). These are marked computed-negative in the CSV — dynamics overruled the docking score, which is the methodology working as intended.
+
+3. FEP (annihilation TI). For every docking+MD survivor I ran computational alanine scanning on the top-3 side-chain anchors: 8-window TI annihilating each side chain's charge and epsilon (q,eps x (1-lambda)), reporting ddG as the binding free energy lost on annihilation, so positive = the ligand uses that side chain. All 13 FGIN pockets show real side-chain dependency (per-pocket top anchors +4.7 to +20.0 kJ/mol). The strongest single anchor is SER196A in 6X3X_p78 at +20.0 kJ/mol (+4.8 kcal/mol) for FGIN, with the same anchor at +20.6 for emapunil — an unusually strong and ligand-independent serine interaction worth a closer look. On the TSPO dimer-interface pocket 4RYI_p26 both ligands confirm real usage: FGIN +7.6 kJ/mol at LEU58(B) and emapunil +7.7 at MET1(A). The emapunil TI layer covers the six pockets where both ligands are md-stable, so the cross-ligand comparison is like-for-like.
+
+4. Caveats. The TI layer measures side-chain usage at the docked geometry, not absolute affinity. MD is pose-stability timescale only. Interaction energies share the no-desolvation limitation (charged contacts overstated, ranking use only). One methodological note: the ws6 emapunil round's per-contact IE numbers used a pre-correction unit convention and are not directly comparable to this round's kJ/mol numbers; the corrected convention (Coulomb 138.935 kJ nm/e^2) is used throughout here and in the FEP-A supplement from earlier today.
+
+The full per-pocket table with both ligands side by side is in the CSV; the report has the complete TI table for all 57 anchors. Happy to prioritize any pocket for a longer-timescale simulation or a specific experimental follow-up.
+
+Best,
+QYJI

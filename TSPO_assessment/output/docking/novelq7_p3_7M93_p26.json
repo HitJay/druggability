@@ -1,0 +1,24 @@
+{
+ "tag": "7M93_p26",
+ "pdb": "7M93",
+ "ligand": "fgin",
+ "chains_kept": [
+  "C",
+  "D"
+ ],
+ "md_drift_A": 3.46,
+ "runtime_s": 36,
+ "sum_IE_kJmol": -191.4,
+ "ie_units": "kJ/mol, COUL=138.935, no-PBC, no desolvation",
+ "top_contacts": {
+  "ILE98A": -20.6,
+  "PRO95A": -17.3,
+  "PHE72A": -16.72,
+  "PHE76A": -14.37,
+  "VAL158B": -13.99,
+  "ARG93B": -11.22,
+  "VAL101B": -8.05,
+  "MET104B": -7.74
+ },
+ "verdict": "md-stable"
+}

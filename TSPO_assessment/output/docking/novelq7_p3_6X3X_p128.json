@@ -1,0 +1,25 @@
+{
+ "tag": "6X3X_p128",
+ "pdb": "6X3X",
+ "ligand": "fgin",
+ "chains_kept": [
+  "C",
+  "D",
+  "E"
+ ],
+ "md_drift_A": 2.08,
+ "runtime_s": 167,
+ "sum_IE_kJmol": -162.3,
+ "ie_units": "kJ/mol, COUL=138.935, no-PBC, no desolvation",
+ "top_contacts": {
+  "PHE283A": -15.95,
+  "LEU223B": -14.7,
+  "MET227B": -14.65,
+  "VAL284A": -12.66,
+  "PHE287A": -11.94,
+  "ASP276A": -11.03,
+  "ILE219B": -9.71,
+  "PRO224B": -8.45
+ },
+ "verdict": "md-stable"
+}
