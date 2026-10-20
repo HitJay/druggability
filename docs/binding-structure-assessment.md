@@ -102,6 +102,7 @@ GHSR 反向激动剂筛选实例：7931 个 ChEMBL 化合物 × 2 个受体构�
 | GRB10 PPI 小分子筛选 | `output/2026-06-29/grb10_inhibition_cmpd_research/`、`output/2026-06-30/grb10_*` | Vina 对接 + Boltz-2 + AI pose 评审 v3 + 细胞可穿透性 + liability 筛查 全链路 |
 | GRB14 FEP 方法探针 | `output/2026-07-01/grb14_openfe_fep_probe/` | OpenFE/OpenMM RBFE smoke test（仅方法验证，非生产结果） |
 | DrugCLIP 环境安装与 Agent 工具链 | `output/2026-07-02/drugclip_install_probe/`, `src/bbbkit/druggability/drugclip.py` | Embedding 检索式虚拟筛选工具链（已封装为生产级 Agent Tool，通过全流程测试） |
+| TSPO 配体系列靶点评估（RIC-408） | `TSPO_assessment/`，综述见 [tspo-ligand-target-assessment.md](tspo-ligand-target-assessment.md) | 门禁对接 + MD 姿态稳定性 + 湮灭式 TI（computational alanine scanning，55 tests）+ 新口袋筛查流水线（fpocket → 双层对接 → MD → TI）；CAR=#2 靶点五路证据收敛、TSPO 二聚体界面第二口袋 4RYI_p26 双配体四层证据 |
 
 ## 下一步建议
 
