@@ -1,0 +1,202 @@
+{
+ "method": "computational alanine scanning: side-chain charge/epsilon annihilation vs ligand, thermodynamic integration over 8 lambda windows (2.5 ps eq + 25 ps sampling each), amber14/protein.ff14SB + SMIRNOFF (openff-2.1.0, NAGL am1bcc, net charge 0), protein heavy atoms restrained 5 kcal/mol/A^2, ligand heavy atoms restrained 1 kcal/mol/A^2 to the relaxed pose, vacuum (no solvent), 300 K",
+ "sign_convention": "positive ddG = annihilating the ligand-anchor side-chain interaction costs binding free energy = the ligand USES this residue; ~0 = no net contribution",
+ "caveats": [
+  "short sampling (27.5 ps per window): ddG values are directional estimates, not converged free energies; treat as ranking evidence only",
+  "vacuum protocol (no solvent/entropy): absolute values are not binding dG",
+  "4XAQ is a negative-control pocket (docked pose is a surface site, not the orthosteric pocket): its nonzero ddG reflects that the ligand genuinely interacts with the surface site it was docked to, and confirms the protocol detects real interactions; it must NOT be read as specific binding",
+  "1XVP/fgin required CUDA double precision (mixed precision diverged)",
+  "6X3X required pre-minimisation (t0 clashes, +1.2e5 kJ/mol)"
+ ],
+ "rows": [
+  {
+   "ligand": "emapunil",
+   "pdb": "4DKL",
+   "pocket": "OPRM1 orthosteric",
+   "anchor_residue": "ASP83A",
+   "ddG_kJmol": 16.31,
+   "ddG_kcalmol": 3.9,
+   "native_IE_kJmol_t0": -33.78
+  },
+  {
+   "ligand": "emapunil",
+   "pdb": "4RYI",
+   "pocket": "TSPO anchor (bacterial TSPO + PK11195)",
+   "anchor_residue": "SER20A",
+   "ddG_kJmol": 13.86,
+   "ddG_kcalmol": 3.31,
+   "native_IE_kJmol_t0": -29.07
+  },
+  {
+   "ligand": "emapunil",
+   "pdb": "6X3X",
+   "pocket": "GABA-A benzodiazepine site",
+   "anchor_residue": "PRO224B",
+   "ddG_kJmol": 11.45,
+   "ddG_kcalmol": 2.74,
+   "native_IE_kJmol_t0": -22.68
+  },
+  {
+   "ligand": "emapunil",
+   "pdb": "1XVP",
+   "pocket": "CAR ligand-binding domain",
+   "anchor_residue": "PHE59A",
+   "ddG_kJmol": 9.18,
+   "ddG_kcalmol": 2.19,
+   "native_IE_kJmol_t0": -14.1
+  },
+  {
+   "ligand": "emapunil",
+   "pdb": "4XAQ",
+   "pocket": "GRM2 negative-control pocket",
+   "anchor_residue": "ARG227A",
+   "ddG_kJmol": 9.06,
+   "ddG_kcalmol": 2.16,
+   "native_IE_kJmol_t0": -13.1
+  },
+  {
+   "ligand": "emapunil",
+   "pdb": "4DKL",
+   "pocket": "OPRM1 orthosteric",
+   "anchor_residue": "TYR84A",
+   "ddG_kJmol": 6.52,
+   "ddG_kcalmol": 1.56,
+   "native_IE_kJmol_t0": -11.47
+  },
+  {
+   "ligand": "emapunil",
+   "pdb": "4RYI",
+   "pocket": "TSPO anchor (bacterial TSPO + PK11195)",
+   "anchor_residue": "PHE88A",
+   "ddG_kJmol": 6.29,
+   "ddG_kcalmol": 1.5,
+   "native_IE_kJmol_t0": -5.82
+  },
+  {
+   "ligand": "emapunil",
+   "pdb": "1XVP",
+   "pocket": "CAR ligand-binding domain",
+   "anchor_residue": "TYR122A",
+   "ddG_kJmol": 5.06,
+   "ddG_kcalmol": 1.21,
+   "native_IE_kJmol_t0": -12.7
+  },
+  {
+   "ligand": "emapunil",
+   "pdb": "6X3X",
+   "pocket": "GABA-A benzodiazepine site",
+   "anchor_residue": "LEU223B",
+   "ddG_kJmol": 4.89,
+   "ddG_kcalmol": 1.17,
+   "native_IE_kJmol_t0": -7.57
+  },
+  {
+   "ligand": "emapunil",
+   "pdb": "4RYI",
+   "pocket": "TSPO anchor (bacterial TSPO + PK11195)",
+   "anchor_residue": "TRP49A",
+   "ddG_kJmol": 3.45,
+   "ddG_kcalmol": 0.83,
+   "native_IE_kJmol_t0": -4.78
+  },
+  {
+   "ligand": "fgin",
+   "pdb": "4XAQ",
+   "pocket": "GRM2 negative-control pocket",
+   "anchor_residue": "ASP102A",
+   "ddG_kJmol": 23.57,
+   "ddG_kcalmol": 5.63,
+   "native_IE_kJmol_t0": -48.87
+  },
+  {
+   "ligand": "fgin",
+   "pdb": "4DJH",
+   "pocket": "OPRK1 orthosteric",
+   "anchor_residue": "ASP84A",
+   "ddG_kJmol": 20.69,
+   "ddG_kcalmol": 4.95,
+   "native_IE_kJmol_t0": -40.31
+  },
+  {
+   "ligand": "fgin",
+   "pdb": "4DJH",
+   "pocket": "OPRK1 orthosteric",
+   "anchor_residue": "TYR412A",
+   "ddG_kJmol": 20.6,
+   "ddG_kcalmol": 4.92,
+   "native_IE_kJmol_t0": -45.64
+  },
+  {
+   "ligand": "fgin",
+   "pdb": "4RYI",
+   "pocket": "TSPO anchor (bacterial TSPO + PK11195)",
+   "anchor_residue": "SER144A",
+   "ddG_kJmol": 7.55,
+   "ddG_kcalmol": 1.8,
+   "native_IE_kJmol_t0": -14.39
+  },
+  {
+   "ligand": "fgin",
+   "pdb": "1XVP",
+   "pocket": "CAR ligand-binding domain",
+   "anchor_residue": "ASN63A",
+   "ddG_kJmol": 7.14,
+   "ddG_kcalmol": 1.71,
+   "native_IE_kJmol_t0": -18.65
+  },
+  {
+   "ligand": "fgin",
+   "pdb": "1XVP",
+   "pocket": "CAR ligand-binding domain",
+   "anchor_residue": "PHE59A",
+   "ddG_kJmol": 6.89,
+   "ddG_kcalmol": 1.65,
+   "native_IE_kJmol_t0": -11.38
+  },
+  {
+   "ligand": "fgin",
+   "pdb": "1XVP",
+   "pocket": "CAR ligand-binding domain",
+   "anchor_residue": "PHE132A",
+   "ddG_kJmol": 5.92,
+   "ddG_kcalmol": 1.41,
+   "native_IE_kJmol_t0": -9.33
+  },
+  {
+   "ligand": "fgin",
+   "pdb": "5TGZ",
+   "pocket": "CNR1 orthosteric",
+   "anchor_residue": "PHE75A",
+   "ddG_kJmol": 5.17,
+   "ddG_kcalmol": 1.24,
+   "native_IE_kJmol_t0": -10.36
+  },
+  {
+   "ligand": "fgin",
+   "pdb": "5TGZ",
+   "pocket": "CNR1 orthosteric",
+   "anchor_residue": "SER410A",
+   "ddG_kJmol": 5.07,
+   "ddG_kcalmol": 1.21,
+   "native_IE_kJmol_t0": -11.01
+  },
+  {
+   "ligand": "fgin",
+   "pdb": "5TGZ",
+   "pocket": "CNR1 orthosteric",
+   "anchor_residue": "TRP383A",
+   "ddG_kJmol": 4.87,
+   "ddG_kcalmol": 1.16,
+   "native_IE_kJmol_t0": -9.69
+  },
+  {
+   "ligand": "fgin",
+   "pdb": "4RYI",
+   "pocket": "TSPO anchor (bacterial TSPO + PK11195)",
+   "anchor_residue": "TRP49A",
+   "ddG_kJmol": 3.93,
+   "ddG_kcalmol": 0.94,
+   "native_IE_kJmol_t0": -13.63
+  }
+ ]
+}

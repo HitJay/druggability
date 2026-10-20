@@ -1,0 +1,4 @@
+LIGAND_SMILES = {
+    "emapunil": "CCN(CC1=CC=CC=C1)C(=O)CN2C3=NC(=NC=C3N(C2=O)C)C4=CC=CC=C4",
+    "fgin": "CCCCCCN(CCCCCC)C(=O)CC1=C(NC2=CC=CC=C21)C3=CC=C(C=C3)F",
+}

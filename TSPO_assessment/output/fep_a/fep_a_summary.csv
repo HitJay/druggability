@@ -1,0 +1,22 @@
+ligand,pdb,pocket,anchor_residue,ddG_kJmol,ddG_kcalmol,native_IE_kJmol_t0
+emapunil,4DKL,OPRM1 orthosteric,ASP83A,16.31,3.9,-33.78
+emapunil,4RYI,TSPO anchor (bacterial TSPO + PK11195),SER20A,13.86,3.31,-29.07
+emapunil,6X3X,GABA-A benzodiazepine site,PRO224B,11.45,2.74,-22.68
+emapunil,1XVP,CAR ligand-binding domain,PHE59A,9.18,2.19,-14.1
+emapunil,4XAQ,GRM2 negative-control pocket,ARG227A,9.06,2.16,-13.1
+emapunil,4DKL,OPRM1 orthosteric,TYR84A,6.52,1.56,-11.47
+emapunil,4RYI,TSPO anchor (bacterial TSPO + PK11195),PHE88A,6.29,1.5,-5.82
+emapunil,1XVP,CAR ligand-binding domain,TYR122A,5.06,1.21,-12.7
+emapunil,6X3X,GABA-A benzodiazepine site,LEU223B,4.89,1.17,-7.57
+emapunil,4RYI,TSPO anchor (bacterial TSPO + PK11195),TRP49A,3.45,0.83,-4.78
+fgin,4XAQ,GRM2 negative-control pocket,ASP102A,23.57,5.63,-48.87
+fgin,4DJH,OPRK1 orthosteric,ASP84A,20.69,4.95,-40.31
+fgin,4DJH,OPRK1 orthosteric,TYR412A,20.6,4.92,-45.64
+fgin,4RYI,TSPO anchor (bacterial TSPO + PK11195),SER144A,7.55,1.8,-14.39
+fgin,1XVP,CAR ligand-binding domain,ASN63A,7.14,1.71,-18.65
+fgin,1XVP,CAR ligand-binding domain,PHE59A,6.89,1.65,-11.38
+fgin,1XVP,CAR ligand-binding domain,PHE132A,5.92,1.41,-9.33
+fgin,5TGZ,CNR1 orthosteric,PHE75A,5.17,1.24,-10.36
+fgin,5TGZ,CNR1 orthosteric,SER410A,5.07,1.21,-11.01
+fgin,5TGZ,CNR1 orthosteric,TRP383A,4.87,1.16,-9.69
+fgin,4RYI,TSPO anchor (bacterial TSPO + PK11195),TRP49A,3.93,0.94,-13.63

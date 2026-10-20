@@ -1,0 +1,48 @@
+{
+ "pdb": "4XAQ",
+ "ligand": "emapunil",
+ "method": "side-chain annihilation TI, 8 windows, 2.5 ps eq + 25 ps sampling per window, protein-heavy restraints 5 kcal/mol/A^2, ligand heavy atoms restrained 1 kcal/mol/A^2 to relaxed pose",
+ "anchors": {
+  "ARG227A": {
+   "native_IE_kJmol_t0": -13.1,
+   "windows": [
+    {
+     "lambda": 0.0,
+     "minus_dUdlam_kJmol": -15.61
+    },
+    {
+     "lambda": 0.15,
+     "minus_dUdlam_kJmol": -14.27
+    },
+    {
+     "lambda": 0.3,
+     "minus_dUdlam_kJmol": -11.81
+    },
+    {
+     "lambda": 0.45,
+     "minus_dUdlam_kJmol": -9.77
+    },
+    {
+     "lambda": 0.6,
+     "minus_dUdlam_kJmol": -8.66
+    },
+    {
+     "lambda": 0.75,
+     "minus_dUdlam_kJmol": -5.25
+    },
+    {
+     "lambda": 0.9,
+     "minus_dUdlam_kJmol": -3.38
+    },
+    {
+     "lambda": 1.0,
+     "minus_dUdlam_kJmol": 0.0
+    }
+   ],
+   "ddG_kJmol": 9.06,
+   "ddG_kcalmol": 2.16,
+   "interpretation": "positive => annihilation costs binding free energy => ligand uses this side chain"
+  }
+ },
+ "runtime_s": 83
+}

@@ -1,0 +1,48 @@
+{
+ "pdb": "4XAQ",
+ "ligand": "fgin",
+ "method": "side-chain annihilation TI, 8 windows, 2.5 ps eq + 25 ps sampling per window, protein-heavy restraints 5 kcal/mol/A^2, ligand heavy atoms restrained 1 kcal/mol/A^2 to relaxed pose",
+ "anchors": {
+  "ASP102A": {
+   "native_IE_kJmol_t0": -48.87,
+   "windows": [
+    {
+     "lambda": 0.0,
+     "minus_dUdlam_kJmol": -48.66
+    },
+    {
+     "lambda": 0.15,
+     "minus_dUdlam_kJmol": -40.46
+    },
+    {
+     "lambda": 0.3,
+     "minus_dUdlam_kJmol": -31.85
+    },
+    {
+     "lambda": 0.45,
+     "minus_dUdlam_kJmol": -26.34
+    },
+    {
+     "lambda": 0.6,
+     "minus_dUdlam_kJmol": -18.57
+    },
+    {
+     "lambda": 0.75,
+     "minus_dUdlam_kJmol": -11.79
+    },
+    {
+     "lambda": 0.9,
+     "minus_dUdlam_kJmol": -4.53
+    },
+    {
+     "lambda": 1.0,
+     "minus_dUdlam_kJmol": 0.0
+    }
+   ],
+   "ddG_kJmol": 23.57,
+   "ddG_kcalmol": 5.63,
+   "interpretation": "positive => annihilation costs binding free energy => ligand uses this side chain"
+  }
+ },
+ "runtime_s": 88
+}

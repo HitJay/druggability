@@ -1,0 +1,88 @@
+{
+ "pdb": "1XVP",
+ "ligand": "emapunil",
+ "method": "side-chain annihilation TI, 8 windows, 2.5 ps eq + 25 ps sampling per window, protein-heavy restraints 5 kcal/mol/A^2, ligand heavy atoms restrained 1 kcal/mol/A^2 to relaxed pose",
+ "anchors": {
+  "PHE59A": {
+   "native_IE_kJmol_t0": -14.1,
+   "windows": [
+    {
+     "lambda": 0.0,
+     "minus_dUdlam_kJmol": -15.6
+    },
+    {
+     "lambda": 0.15,
+     "minus_dUdlam_kJmol": -13.76
+    },
+    {
+     "lambda": 0.3,
+     "minus_dUdlam_kJmol": -12.16
+    },
+    {
+     "lambda": 0.45,
+     "minus_dUdlam_kJmol": -9.97
+    },
+    {
+     "lambda": 0.6,
+     "minus_dUdlam_kJmol": -8.43
+    },
+    {
+     "lambda": 0.75,
+     "minus_dUdlam_kJmol": -6.31
+    },
+    {
+     "lambda": 0.9,
+     "minus_dUdlam_kJmol": -3.35
+    },
+    {
+     "lambda": 1.0,
+     "minus_dUdlam_kJmol": 0.0
+    }
+   ],
+   "ddG_kJmol": 9.18,
+   "ddG_kcalmol": 2.19,
+   "interpretation": "positive => annihilation costs binding free energy => ligand uses this side chain"
+  },
+  "TYR122A": {
+   "native_IE_kJmol_t0": -12.7,
+   "windows": [
+    {
+     "lambda": 0.0,
+     "minus_dUdlam_kJmol": -10.74
+    },
+    {
+     "lambda": 0.15,
+     "minus_dUdlam_kJmol": -9.32
+    },
+    {
+     "lambda": 0.3,
+     "minus_dUdlam_kJmol": -8.04
+    },
+    {
+     "lambda": 0.45,
+     "minus_dUdlam_kJmol": -5.12
+    },
+    {
+     "lambda": 0.6,
+     "minus_dUdlam_kJmol": -4.1
+    },
+    {
+     "lambda": 0.75,
+     "minus_dUdlam_kJmol": -2.56
+    },
+    {
+     "lambda": 0.9,
+     "minus_dUdlam_kJmol": 0.92
+    },
+    {
+     "lambda": 1.0,
+     "minus_dUdlam_kJmol": 0.0
+    }
+   ],
+   "ddG_kJmol": 5.06,
+   "ddG_kcalmol": 1.21,
+   "interpretation": "positive => annihilation costs binding free energy => ligand uses this side chain"
+  }
+ },
+ "runtime_s": 36
+}

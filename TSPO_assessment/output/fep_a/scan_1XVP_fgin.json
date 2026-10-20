@@ -1,0 +1,128 @@
+{
+ "pdb": "1XVP",
+ "ligand": "fgin",
+ "method": "side-chain annihilation TI, 8 windows, 2.5 ps eq + 25 ps sampling per window, protein-heavy restraints 5 kcal/mol/A^2, ligand heavy atoms restrained 1 kcal/mol/A^2 to relaxed pose",
+ "anchors": {
+  "ASN63A": {
+   "native_IE_kJmol_t0": -18.65,
+   "windows": [
+    {
+     "lambda": 0.0,
+     "minus_dUdlam_kJmol": -11.99
+    },
+    {
+     "lambda": 0.15,
+     "minus_dUdlam_kJmol": -11.42
+    },
+    {
+     "lambda": 0.3,
+     "minus_dUdlam_kJmol": -9.8
+    },
+    {
+     "lambda": 0.45,
+     "minus_dUdlam_kJmol": -7.88
+    },
+    {
+     "lambda": 0.6,
+     "minus_dUdlam_kJmol": -6.42
+    },
+    {
+     "lambda": 0.75,
+     "minus_dUdlam_kJmol": -4.31
+    },
+    {
+     "lambda": 0.9,
+     "minus_dUdlam_kJmol": -2.15
+    },
+    {
+     "lambda": 1.0,
+     "minus_dUdlam_kJmol": 0.0
+    }
+   ],
+   "ddG_kJmol": 7.14,
+   "ddG_kcalmol": 1.71,
+   "interpretation": "positive => annihilation costs binding free energy => ligand uses this side chain"
+  },
+  "PHE59A": {
+   "native_IE_kJmol_t0": -11.38,
+   "windows": [
+    {
+     "lambda": 0.0,
+     "minus_dUdlam_kJmol": -12.02
+    },
+    {
+     "lambda": 0.15,
+     "minus_dUdlam_kJmol": -11.83
+    },
+    {
+     "lambda": 0.3,
+     "minus_dUdlam_kJmol": -9.84
+    },
+    {
+     "lambda": 0.45,
+     "minus_dUdlam_kJmol": -7.94
+    },
+    {
+     "lambda": 0.6,
+     "minus_dUdlam_kJmol": -5.99
+    },
+    {
+     "lambda": 0.75,
+     "minus_dUdlam_kJmol": -3.61
+    },
+    {
+     "lambda": 0.9,
+     "minus_dUdlam_kJmol": -0.82
+    },
+    {
+     "lambda": 1.0,
+     "minus_dUdlam_kJmol": 0.0
+    }
+   ],
+   "ddG_kJmol": 6.89,
+   "ddG_kcalmol": 1.65,
+   "interpretation": "positive => annihilation costs binding free energy => ligand uses this side chain"
+  },
+  "PHE132A": {
+   "native_IE_kJmol_t0": -9.33,
+   "windows": [
+    {
+     "lambda": 0.0,
+     "minus_dUdlam_kJmol": -9.74
+    },
+    {
+     "lambda": 0.15,
+     "minus_dUdlam_kJmol": -8.73
+    },
+    {
+     "lambda": 0.3,
+     "minus_dUdlam_kJmol": -7.96
+    },
+    {
+     "lambda": 0.45,
+     "minus_dUdlam_kJmol": -6.71
+    },
+    {
+     "lambda": 0.6,
+     "minus_dUdlam_kJmol": -5.41
+    },
+    {
+     "lambda": 0.75,
+     "minus_dUdlam_kJmol": -3.85
+    },
+    {
+     "lambda": 0.9,
+     "minus_dUdlam_kJmol": -2.32
+    },
+    {
+     "lambda": 1.0,
+     "minus_dUdlam_kJmol": 0.0
+    }
+   ],
+   "ddG_kJmol": 5.92,
+   "ddG_kcalmol": 1.41,
+   "interpretation": "positive => annihilation costs binding free energy => ligand uses this side chain"
+  }
+ },
+ "runtime_s": 70
+}

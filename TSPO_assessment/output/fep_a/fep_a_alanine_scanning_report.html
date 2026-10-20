@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>FEP-A computational alanine scanning — emapunil &amp; FGIN-1-27 pocket anchors</title>
+<style>
+  body{font-family:'Segoe UI',Arial,sans-serif;max-width:1080px;margin:24px auto;color:#1a1a2e;line-height:1.5;padding:0 16px}
+  h1{color:#001965;font-size:1.5em;border-bottom:3px solid #00857C;padding-bottom:8px}
+  h2{color:#001965;font-size:1.15em;margin-top:28px}
+  table{border-collapse:collapse;width:100%;margin:12px 0;font-size:0.92em}
+  th{background:#001965;color:#fff;text-align:left;padding:6px 10px}
+  td{border-bottom:1px solid #d8dee6;padding:5px 10px}
+  tr:nth-child(even) td{background:#f4f7fa}
+  .num{text-align:right;font-variant-numeric:tabular-nums}
+  .pos{color:#00857C;font-weight:600}
+  .ctrl{color:#D9383A;font-weight:600}
+  .box{background:#eef4f8;border-left:4px solid #00857C;padding:10px 14px;margin:14px 0}
+  .warn{background:#fdf0ef;border-left:4px solid #D9383A;padding:10px 14px;margin:14px 0}
+  .small{font-size:0.82em;color:#556}
+  code{background:#f0f2f5;padding:1px 5px;border-radius:3px;font-size:0.9em}
+</style>
+</head>
+<body>
+<h1>FEP-grade computational alanine scanning — do the docked poses actually use the pocket anchors?</h1>
+<p class="small">Supplement to the emapunil (XBD-173) and FGIN-1-27 ligand-target search reports · 2026-10-19 · all energies kJ/mol unless stated</p>
+
+<div class="warn">
+<b>Erratum on the earlier interaction-energy contacts.</b> The "top contacts" tables in the two
+delivered reports were computed on a system in which the ligand net charge was silently corrupted
+(−2.1 e for formally neutral emapunil) by a forcefield-setup side effect, and one script variant
+mixed Coulomb unit conventions. The affected residue identities and magnitudes are therefore not
+reliable — e.g. the reported TSPO-site contacts <i>PHE23 −19.6 / ASN151 −10.0 / MET47 −7.8</i> for
+emapunil are artifacts (PHE23 is ≈ 0 in the corrected calculation). The corrected contacts and the
+new free-energy layer below supersede those tables. Docking scores, MD pose-stability verdicts and
+tier assignments in the original reports are unaffected.
+</div>
+
+<h2>Method (one paragraph)</h2>
+<p>For each pocket we took the MD-relaxed complex, rebuilt the force field cleanly
+(amber14 ff14SB protein + OpenFF 2.1.0 ligand with NAGL AM1BCC charges, ligand net charge
+asserted 0), restrained protein heavy atoms (5 kcal/mol/Å²) and ligand heavy atoms
+(1 kcal/mol/Å²) to the relaxed pose, minimised, then annihilated the non-bonded interaction
+between the ligand and one anchor residue's side chain (charges and well-depths scaled by
+1−λ) over 8 λ windows with 27.5 ps sampling each. The integrated cost,
+ΔΔG<sub>annihilate</sub>, is the free-energy price of removing that specific contact:
+<b>positive = the ligand uses this residue</b>. This is the standard computational-alanine-scanning
+formulation (Massova &amp; Kollman 1999) — the same question as a residue→Ala mutation FEP,
+implemented without topology surgery.</p>
+
+<h2>emapunil — anchor usage ΔΔG (kJ/mol, kcal/mol in parentheses)</h2>
+<table>
+<tr><th>Pocket</th><th>Anchor</th><th class="num">ΔΔG</th><th>Reading</th></tr>
+<tr><td rowspan="2">4DKL — OPRM1 orthosteric</td><td>ASP83A</td><td class="num pos">+16.3 (3.9)</td><td>strongest single anchor overall; salt-bridge-position contact real at the docked geometry</td></tr>
+<tr><td>TYR84A</td><td class="num pos">+6.5 (1.6)</td><td></td></tr>
+<tr><td rowspan="3">4RYI — TSPO anchor site</td><td>SER20A</td><td class="num pos">+13.9 (3.3)</td><td>strongest TSPO-site anchor; explains PK11195-competitive geometry</td></tr>
+<tr><td>PHE88A</td><td class="num pos">+6.3 (1.5)</td><td></td></tr>
+<tr><td>TRP49A</td><td class="num pos">+3.5 (0.8)</td><td>moderate</td></tr>
+<tr><td rowspan="2">6X3X — GABA-A BZD site</td><td>PRO224B</td><td class="num pos">+11.5 (2.7)</td><td>BZD-site usage confirmed — supports the dual-target reading</td></tr>
+<tr><td>LEU223B</td><td class="num pos">+4.9 (1.2)</td><td></td></tr>
+<tr><td rowspan="2">1XVP — CAR LBD</td><td>PHE59A</td><td class="num pos">+9.2 (2.2)</td><td>CAR pose engages its pocket</td></tr>
+<tr><td>TYR122A</td><td class="num pos">+5.1 (1.2)</td><td></td></tr>
+<tr><td>4XAQ — GRM2 (negative control)</td><td>ARG227A</td><td class="num">+9.1 (2.2)</td><td>see control note below</td></tr>
+</table>
+
+<h2>FGIN-1-27 — anchor usage ΔΔG (kJ/mol)</h2>
+<table>
+<tr><th>Pocket</th><th>Anchor</th><th class="num">ΔΔG</th><th>Reading</th></tr>
+<tr><td rowspan="2">4DJH — OPRK1 orthosteric</td><td>ASP84A</td><td class="num pos">+20.7 (4.95)</td><td>strong interaction at the docked geometry — despite the pose being rejected by pose-stability MD (drift); the two layers measure different things</td></tr>
+<tr><td>TYR412A</td><td class="num pos">+20.6 (4.9)</td><td></td></tr>
+<tr><td rowspan="2">4RYI — TSPO anchor site</td><td>SER144A</td><td class="num pos">+7.6 (1.8)</td><td>TSPO-site usage confirmed</td></tr>
+<tr><td>TRP49A</td><td class="num pos">+3.9 (0.9)</td><td></td></tr>
+<tr><td rowspan="3">1XVP — CAR LBD</td><td>ASN63A</td><td class="num pos">+7.1 (1.7)</td><td>CAR pose engages its pocket</td></tr>
+<tr><td>PHE59A</td><td class="num pos">+6.9 (1.7)</td><td></td></tr>
+<tr><td>PHE132A</td><td class="num pos">+5.9 (1.4)</td><td></td></tr>
+<tr><td rowspan="3">5TGZ — CNR1 orthosteric</td><td>PHE75A</td><td class="num pos">+5.2 (1.2)</td><td>CNR1 pose engages its pocket</td></tr>
+<tr><td>SER410A</td><td class="num pos">+5.1 (1.2)</td><td></td></tr>
+<tr><td>TRP383A</td><td class="num pos">+4.9 (1.2)</td><td></td></tr>
+<tr><td>4XAQ — GRM2 (negative control)</td><td>ASP102A</td><td class="num ctrl">+23.6 (5.6)</td><td>see control note below</td></tr>
+</table>
+
+<h2>Negative-control reading</h2>
+<p>The 4XAQ (GRM2) poses are surface-docked, not in a pocket — that is why they were used as
+controls. The nonzero control ΔΔG values (+9.1 emapunil, +23.6 FGIN) mean the ligand genuinely
+interacts with whatever surface it was docked onto; they do <b>not</b> indicate specific binding.
+The control's message stays: the GRM2 docking pose is not pocket-like (repelled in docking,
+10–11 Å outside the pocket), so GRM2 remains a non-candidate. FGIN's larger control value is
+consistent with its higher lipophilicity (more non-specific surface adhesion).</p>
+
+<div class="box">
+<b>Scope &amp; caveats.</b> Sampling is short (27.5 ps per window): the ΔΔG values are directional
+estimates for <i>ranking anchor usage</i>, not converged free energies, and the vacuum protocol
+carries no solvent/entropy terms — absolute numbers must not be read as binding energies.
+The annihilation measures the contact at the restrained docked/relaxed geometry. Per-pocket
+comparisons are meaningful; cross-pocket magnitude comparisons are not (different pockets,
+different poses). As throughout the campaign: computational scores are supporting evidence,
+not proof of binding — only measured data (radioligand displacement etc.) can establish binding.
+</div>
+
+<p class="small">Files: per-anchor window data <code>output/fep_a/scan_*.json</code>; aggregated
+table <code>output/fep_a/fep_a_summary.csv</code>; corrected per-residue contact tables
+<code>output/fep_a/contacts_*.json</code>. Scripts: <code>scripts/fep_a3_scan.py</code> +
+<code>scripts/fep_a3_lib.py</code>.</p>
+</body>
+</html>
