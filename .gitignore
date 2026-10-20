@@ -117,3 +117,19 @@ TSPO_assessment/output/novel_pockets/mdrec_*
 TSPO_assessment/output/novel_pockets/md_*
 TSPO_assessment/output/novel_pockets/mdrelaxed_*
 TSPO_assessment/output/novel_pockets/*.cif
+
+# FEP-A round: superseded perses dead-end intermediates + worker logs stay out (audit lives in scan7/scan JSONs)
+TSPO_assessment/output/fep_a/superseded/
+TSPO_assessment/output/fep_a7/*.log
+TSPO_assessment/output/docking/novelq7_p3_worker*.log
+TSPO_assessment/output/docking/novelq7_p3_re*.log
+TSPO_assessment/output/docking/novelq_p6_*.log
+
+# ws7 dispatch bookkeeping (shortlist + jobs are audit, worker/retry slices are not)
+TSPO_assessment/data/novelq7_p3_worker*.json
+TSPO_assessment/data/novelq7_p3_re*.json
+TSPO_assessment/data/novelq7_p4_worker*.json
+TSPO_assessment/data/novelq7_p4_re*.json
+
+# docking control mol2 re-docks (regenerable from run scripts)
+TSPO_assessment/output/docking/*.mol2
