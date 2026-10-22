@@ -4,7 +4,7 @@ theme: default
 paginate: true
 size: 16:9
 header: 'TSPO 配体 – 靶点搜索评估'
-footer: 'RIC-408 · Computational Sciences · 2026-10-16'
+footer: 'RIC-408 · Computational Sciences · 2026-10-22'
 style: |
   @font-face { font-family: 'Noto Sans SC'; src: local('Noto Sans CJK SC'); }
   section { font-size: 20px; font-family: 'Noto Sans CJK SC', 'Noto Sans SC', sans-serif; padding: 40px 60px; }
@@ -35,14 +35,14 @@ style: |
 ## 靶点搜索 – 代谢表型究竟由哪个靶点驱动？
 
 **需求方**：ZHCO，Group 3 TSPO proposal
-**分析日期**：2026-10-14（报告 v0.2）· slide 2026-10-16
+**项目周期**：2026-10-14 → 10-20（7 轮工作流）· slide 更新 2026-10-22
 **RIC-408** · 分析：Jin Qiuye (Computational Sciences)
 
-配体：**PK11195** · **Emapunil (XBD173)** · **Etifoxine** · Ro5-4864（对照）
+配体：**PK11195** · **Emapunil (XBD173)** · **Etifoxine** · **Alpidem** · Ro5-4864（对照）
 
 完整报告：`tspo_ligand_target_search_report.html` — 全部结论按 <span class="fact">FACT</span> / <span class="obs">OBS</span> / <span class="hyp">MECH / HYP</span> 分级并逐行标注来源
 
-<!-- Note (CN): 开场——这次不讲算法，讲一个药理学问题：三个"TSPO配体"的代谢表型到底是不是TSPO介导的。结论先行：PK11195指向肝脏CAR，emapunil是唯一干净的TSPO故事但代谢证据空缺，etifoxine在临床暴露下TSPO排除、大概率走肠道菌群。 -->
+<!-- Note (CN): 开场——这次不讲算法，讲一个药理学问题：三个"TSPO配体"的代谢表型到底是不是TSPO介导的。结论先行：PK11195指向肝脏CAR，emapunil是唯一干净的TSPO故事但代谢证据空缺，etifoxine在临床暴露下TSPO排除、大概率走肠道菌群。10-16后新增结构验证阶段（对接→MD→TI），第5页讲第二口袋与两个突变实验建议。 -->
 
 ---
 
@@ -91,15 +91,17 @@ style: |
 
 **两级阶梯**：<span class="good">Gate 1</span> = 独立确认的亚µM 结合 + 正确的组织 / 疾病语境 → 进入靶点短名单 · <span class="good">Gate 2</span> = 在有记录的临床 / 动物暴露量下占据可行 → 该靶点才能真正承载表型。
 
+**首版报告（2026-10-16）后新增** — 对接短名单加结构验证臂：<span class="good">MD 姿态稳定性</span>（250 ps，漂移 ≤ 4 Å = 稳定）→ <span class="good">湮灭式 TI / computational alanine scanning</span>（top-3 侧链锚点 × 8 λ 窗）。分数只做排序；动力学 + TI 定夺。
+
 > 流程内质量控制：对接**验证门**（将 PK11195 重对接回 TSPO 自身共晶口袋 — PASS）· DrugCLIP 反向模式**未通过 decoy 门**（decoy 排名高于真配体）→ 已从所有结论中排除 · 每条结论按 FACT / OBS / MECH / HYP 分级并逐行标注来源。
 
-<!-- Note (CN): 方法页——五家族证据图谱：①实测结合(ChEMBL+PubChem)②文献挖掘(EPMC+KO反向证据)③组织表达GTEx+遗传学OT④对接验证门+SwissTarget相似性⑤暴露量/占据率计算。两级门：Gate1=独立确认的亚微摩尔结合+正确组织/疾病语境→进短名单；Gate2=真实暴露下占据可行→才能承载表型。质量控制：对接验证门PASS；DrugCLIP反向门禁失败（decoy排名高于真配体）→排除出结论；每条结论带FACT/OBS/MECH/HYP标签。 -->
+<!-- Note (CN): 方法页——五家族证据图谱：①实测结合(ChEMBL+PubChem)②文献挖掘(EPMC+KO反向证据)③组织表达GTEx+遗传学OT④对接验证门+SwissTarget相似性⑤暴露量/占据率计算。两级门：Gate1=独立确认的亚微摩尔结合+正确组织/疾病语境→进短名单；Gate2=真实暴露下占据可行→才能承载表型。质量控制：对接验证门PASS；DrugCLIP反向门禁失败（decoy排名高于真配体）→排除出结论；每条结论带FACT/OBS/MECH/HYP标签。新增：对接短名单加结构验证臂——MD姿态稳定性(250 ps,漂移≤4 Å=稳定)→湮灭式TI/computational alanine scanning(top-3锚点×8 λ窗)；分数排序，动力学+TI定夺。 -->
 
 ---
 
 ## 3. PK11195 — 表型指向 CAR，而非 TSPO
 
-<span class="fact">FACT</span> **CAR（NR1I3，肝核受体）是最强的非 TSPO 靶点** — 四个独立方法家族一致确认：
+<span class="fact">FACT</span> **CAR（NR1I3，肝核受体）是最强的非 TSPO 靶点** — 五个独立方法家族一致确认：
 
 | 证据 | 结果 | 来源 |
 |---|---|---|
@@ -107,6 +109,7 @@ style: |
 | CAR 结合（qHTS） | 0.025–0.39 µM 活性 | PubChem |
 | 分子对接，CAR LBD | **−10.89** kcal/mol（TSPO 自身共晶口袋 −9.42） | Vina 验证门：PASS |
 | 相似性预测 | CAR 排名 **第2**（0.888），仅次于 TSPO（0.899） | SwissTargetPrediction |
+| 复合物折叠（Boltz-2，CAR LBD + PK11195） | 复现共晶姿态，**5.65 Å RMSD** | Boltz-2 |
 
 > 在肝细胞中，代谢将 PK11195 从 CAR **拮抗剂**转化为 CAR **激动剂**，诱导 CYP2B6 / CYP3A4（PMID:28442602）。CAR 表达高度肝特异：**肝 98.7 TPM，其余组织 <1**（GTEx）。
 
@@ -117,7 +120,7 @@ style: |
 
 > **核心发现**：PK11195 的代谢表型最符合 <span class="highlight">肝脏 CAR 激活 + 类禁食状态</span> — 引用它作为 TSPO 证据不成立。
 
-<!-- Note (CN): 核心页，多停留。CAR四来源验证（ChEMBL生化+细胞、PubChem qHTS、Vina、SwissTarget），肝细胞代谢翻转成激动剂。KO大鼠反向+胰岛分泌抑制是主动跑反向假说的结果。被追问docking细节就指向报告第8-9节。 -->
+<!-- Note (CN): 核心页，多停留。CAR五来源验证（ChEMBL生化+细胞、PubChem qHTS、Vina、SwissTarget、Boltz-2折叠复现5.65 Å），肝细胞代谢翻转成激动剂。KO大鼠反向+胰岛分泌抑制是主动跑反向假说的结果。被追问docking细节就指向报告第8-9节。 -->
 
 ---
 
@@ -144,12 +147,33 @@ style: |
 
 ---
 
-## 5. 对 Proposal 的结论
+## 5. 首版报告之后 — TSPO 结构层发现与建议实验
+
+**MD + 湮灭式 TI（computational alanine scanning）扫过全部对接短名单** — 已知口袋 21 锚点（emapunil + FGIN-1-27），29 个新口袋 57 锚点。
+
+<div class="small">
+
+| 发现 | 证据 | 建议实验 |
+|---|---|---|
+| **4RYI_p26 — TSPO 二聚体界面第二口袋**（与正构口袋残基重叠 <30%） | Emapunil −7.6 / FGIN −9.2 kcal/mol；MD 3 seed 稳定；TI 双向坐实：MET1A +7.7 / LEU58B +7.6 kJ/mol | **LEU58 突变 + TSPO 二聚化 assay** |
+| **6X3X_p78 SER196** — GABA-A TMD 口袋的配体无关强锚 | 两种化学型独立给出 ≈ **+20 kJ/mol**（约 1000 倍亲和力代价） | **SER196 突变 + GABA-A 电生理** |
+| 分数会骗人，动力学救回 | OPRK1 −8.25 漂移 3.1 Å；ws7 另 3 个口袋漂 4.6–8.5 Å → 否决 | —（方法链按设计工作） |
+
+</div>
+
+> 所有计算层仅做排序与假设生成 — tier 判定仍需实测数据。完整结果已交付 ZHCO（更正版报告内联 IE 勘误；对接 / MD / tier 数字不受影响）。
+
+<!-- Note (CN): 10-16后新增的结构验证阶段一页讲完：MD姿态稳定性+湮灭式TI，已知口袋21锚点+新口袋57锚点。两个最重要发现：①TSPO二聚体界面第二口袋4RYI_p26（emapunil+FGIN双配体四层证据，实验路径现成：LEU58突变+二聚化assay）；②6X3X_p78 SER196两个化学型独立+20 kJ/mol≈千倍亲和力代价（唯一配体无关强锚，GABA-A TMD新调制位点，实验优先级最高）。两个突变实验建议已交ZHCO。边界：所有计算层只做排序和假设生成，tier判定仍需实测数据。 -->
+
+---
+
+## 6. 对 Proposal 的结论
 
 | 配体 | 表型最可能的驱动者 | 真实暴露下的 TSPO | 判定 |
 |---|---|---|---|
 | **PK11195** | **CAR 激活（肝）** + 类禁食肝状态 | 结合成立；获益归因有争议 | <span class="warn">⚠️ 不可作为 TSPO 证据引用</span> |
 | **Emapunil** | TSPO — 但代谢效应未证实；DBI 轴假说 | 成立（~13% WT / ~3% A147T） | <span class="good">✅ 唯一可检验的 TSPO 故事</span> |
+| **Alpidem** | GABA-A 苯二氮卓位点（对接 −8.0，低于临床暴露）；TSPO 可能性低 | 可能性低（剂量受限） | <span class="highlight">❌ TSPO 主张被否决</span> |
 | **Etifoxine** | 肠道菌群 / 胆汁酸轴 | 不成立（<0.01%） | <span class="highlight">❌ 真实暴露下 TSPO 被排除</span> |
 | Ro5-4864 | TSPO 选择性对照，与 PK11195 共表型 | — | 对照配体 |
 
@@ -161,4 +185,4 @@ style: |
 
 > **需要团队提供**：emapunil / PK11195 的 T2D 引用 · proposal 假设的 PK11195 对映体 · 内部胰岛 / 脂肪 TSPO 表达或 PET 数据
 
-<!-- Note (CN): 收尾三句话：PK11195别默认归因TSPO；emapunil是唯一可检验的TSPO代谢故事；etifoxine的减重读出不能当TSPO证据。要三样东西：两篇T2D引用、对映体假设、内部表达/PET数据。全表在ws4_tiered_targets_v0.3.csv，逐行证据在报告HTML。 -->
+<!-- Note (CN): 收尾三句话：PK11195别默认归因TSPO；emapunil是唯一可检验的TSPO代谢故事；etifoxine的减重读出不能当TSPO证据。第二轮：alpidem加入且TSPO主张被否决；结构阶段发现第二口袋+两个突变实验建议（SER196/LEU58）。要三样东西：两篇T2D引用、对映体假设、内部表达/PET数据。全表在ws4_tiered_targets_v0.3.csv，逐行证据在报告HTML。 -->

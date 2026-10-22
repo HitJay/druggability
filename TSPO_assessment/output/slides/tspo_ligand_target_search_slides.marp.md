@@ -4,7 +4,7 @@ theme: default
 paginate: true
 size: 16:9
 header: 'TSPO Ligands – Target Search Assessment'
-footer: 'RIC-408 · Computational Sciences · 2026-10-16'
+footer: 'RIC-408 · Computational Sciences · 2026-10-22'
 style: |
   section { font-size: 22px; padding: 40px 60px; }
   section.title { font-size: 30px; text-align: center; }
@@ -34,14 +34,14 @@ style: |
 ## Target Search – What Drives the Reported Metabolic Phenotypes?
 
 **Requestor**: ZHCO, Group 3 TSPO proposal
-**Analysis date**: 2026-10-14 (report v0.2) · deck 2026-10-16
+**Campaign**: 2026-10-14 → 10-20 (7 workstreams) · deck updated 2026-10-22
 **RIC-408** · Analyst: Jin Qiuye (Computational Sciences)
 
-Ligands: **PK11195** · **Emapunil (XBD173)** · **Etifoxine** · Ro5-4864 (control)
+Ligands: **PK11195** · **Emapunil (XBD173)** · **Etifoxine** · **Alpidem** · Ro5-4864 (control)
 
 Full report: `tspo_ligand_target_search_report.html` — all claims tagged <span class="fact">FACT</span> / <span class="obs">OBS</span> / <span class="hyp">MECH / HYP</span> with sources per row
 
-<!-- Note (CN): 开场——这次不讲算法，讲一个药理学问题：三个"TSPO配体"的代谢表型到底是不是TSPO介导的。结论先行：PK11195指向肝脏CAR，emapunil是唯一干净的TSPO故事但代谢证据空缺，etifoxine在临床暴露下TSPO排除、大概率走肠道菌群。 -->
+<!-- Note (CN): 开场——这次不讲算法，讲一个药理学问题：三个"TSPO配体"的代谢表型到底是不是TSPO介导的。结论先行：PK11195指向肝脏CAR，emapunil是唯一干净的TSPO故事但代谢证据空缺，etifoxine在临床暴露下TSPO排除、大概率走肠道菌群。10-16后新增结构验证阶段（对接→MD→TI），第5页讲第二口袋与两个突变实验建议。 -->
 
 ---
 
@@ -88,17 +88,17 @@ The proposal cites metabolic benefits for three clinical TSPO ligands:
 
 </div>
 
-**Two-gate ladder**: <span class="good">Gate 1</span> = independently confirmed sub-µM binding + right tissue / disease context → target enters the shortlist · <span class="good">Gate 2</span> = occupancy at documented clinical / animal exposure → the target can actually carry the phenotype.
+**Two-gate ladder**: <span class="good">Gate 1</span> = confirmed sub-µM binding + right tissue / disease context → shortlist · <span class="good">Gate 2</span> = occupancy at real exposure → carries the phenotype. <span class="good">Added 2026-10-16+</span>: docking shortlists further validated by <span class="good">MD pose stability</span> (drift ≤ 4 Å) → <span class="good">annihilation TI</span> / computational alanine scanning. Scores rank; dynamics + TI decide.
 
-> Quality controls inside the pipeline: docking **validation gate** (redock PK11195 into its own TSPO co-crystal pocket — PASS) · DrugCLIP reverse mode **failed its decoy gate** (decoys outrank true ligands) → excluded from all conclusions · every claim tagged FACT / OBS / MECH / HYP with source per row.
+> QC: docking **validation gate** (PK11195 redock into its own TSPO pocket — PASS) · DrugCLIP reverse **failed its decoy gate** → excluded · every claim tagged FACT / OBS / MECH / HYP with source per row.
 
-<!-- Note (CN): 方法页——五家族证据图谱：①实测结合(ChEMBL+PubChem)②文献挖掘(EPMC+KO反向证据)③组织表达GTEx+遗传学OT④对接验证门+SwissTarget相似性⑤暴露量/占据率计算。两级门：Gate1=独立确认的亚微摩尔结合+正确组织/疾病语境→进短名单；Gate2=真实暴露下占据可行→才能承载表型。质量控制：对接验证门PASS；DrugCLIP反向门禁失败（decoy排名高于真配体）→排除出结论；每条结论带FACT/OBS/MECH/HYP标签。 -->
+<!-- Note (CN): 方法页——五家族证据图谱：①实测结合(ChEMBL+PubChem)②文献挖掘(EPMC+KO反向证据)③组织表达GTEx+遗传学OT④对接验证门+SwissTarget相似性⑤暴露量/占据率计算。两级门：Gate1=独立确认的亚微摩尔结合+正确组织/疾病语境→进短名单；Gate2=真实暴露下占据可行→才能承载表型。质量控制：对接验证门PASS；DrugCLIP反向门禁失败（decoy排名高于真配体）→排除出结论；每条结论带FACT/OBS/MECH/HYP标签。新增：对接短名单加结构验证臂——MD姿态稳定性(250 ps,漂移≤4 Å=稳定)→湮灭式TI/computational alanine scanning(top-3锚点×8 λ窗)；分数排序，动力学+TI定夺。 -->
 
 ---
 
 ## 3. PK11195 — the Phenotype Points to CAR, Not TSPO
 
-<span class="fact">FACT</span> **CAR (NR1I3), a liver nuclear receptor, is the strongest non-TSPO target** — confirmed by four independent method families:
+<span class="fact">FACT</span> **CAR (NR1I3), a liver nuclear receptor — the strongest non-TSPO target**, confirmed by **five independent method families**:
 
 | Evidence | Result | Source |
 |---|---|---|
@@ -106,17 +106,18 @@ The proposal cites metabolic benefits for three clinical TSPO ligands:
 | CAR binding (qHTS) | 0.025–0.39 µM actives | PubChem |
 | Docking, CAR LBD | **−10.89** kcal/mol (vs TSPO −9.42 in own co-crystal pocket) | Vina validation gate: PASS |
 | Similarity prediction | CAR ranked **#2** (0.888), just behind TSPO (0.899) | SwissTargetPrediction |
+| Complex fold (Boltz-2, CAR LBD + PK11195) | reproduces the co-crystal pose, **5.65 Å RMSD** | Boltz-2 |
 
-> In hepatocytes, metabolism converts PK11195 from a CAR **antagonist** into a CAR **agonist**, inducing CYP2B6 / CYP3A4 (PMID:28442602). CAR is liver-specific: **98.7 TPM in liver, <1 elsewhere** (GTEx).
+> In hepatocytes, metabolism converts PK11195 from a CAR **antagonist** into an **agonist**, inducing CYP2B6 / CYP3A4 (PMID:28442602). CAR is liver-specific: **98.7 TPM in liver, <1 elsewhere** (GTEx).
 
 **Two independent lines argue against a TSPO-mediated benefit:**
 
 - <span class="obs">OBS</span> TSPO-knockout rats on high-fat diet show **worse** steatosis and insulin resistance (PMID:40195072)
 - <span class="obs">OBS</span> PK11195 **inhibits** glucose-induced insulin secretion in isolated islets (PMID:10935532)
 
-> **Key finding**: PK11195's metabolic phenotype is most consistent with <span class="highlight">hepatic CAR activation + a fasting-like state</span> — citing it as TSPO evidence is not supported.
+> **Key finding**: the phenotype fits **hepatic CAR activation + a fasting-like state** — not TSPO.
 
-<!-- Note (CN): 核心页，多停留。CAR四来源验证（ChEMBL生化+细胞、PubChem qHTS、Vina、SwissTarget），肝细胞代谢翻转成激动剂。KO大鼠反向+胰岛分泌抑制是主动跑反向假说的结果。被追问docking细节就指向报告第8-9节。 -->
+<!-- Note (CN): 核心页，多停留。CAR五来源验证（ChEMBL生化+细胞、PubChem qHTS、Vina、SwissTarget、Boltz-2折叠复现5.65 Å），肝细胞代谢翻转成激动剂。KO大鼠反向+胰岛分泌抑制是主动跑反向假说的结果。被追问docking细节就指向报告第8-9节。 -->
 
 ---
 
@@ -143,12 +144,33 @@ The proposal cites metabolic benefits for three clinical TSPO ligands:
 
 ---
 
-## 5. Bottom Line for the Proposal
+## 5. Beyond the First Report — TSPO Structural Findings & Suggested Experiments
+
+**MD + annihilation TI (computational alanine scanning) across the docking shortlists** — 21 anchors on known pockets (emapunil + FGIN-1-27), 57 anchors across 29 novel pockets.
+
+<div class="small">
+
+| Finding | Evidence | Suggested experiment |
+|---|---|---|
+| **4RYI_p26 — second pocket at the TSPO dimer interface** (<30% residue overlap with the canonical pocket) | Emapunil −7.6 / FGIN −9.2 kcal/mol; MD-stable (3 seeds); TI confirmed both ways: MET1A +7.7 / LEU58B +7.6 kJ/mol | **LEU58 mutation + TSPO dimerization assay** |
+| **6X3X_p78 SER196** — ligand-independent strong anchor on a GABA-A TMD pocket | Two chemotypes independently ≈ **+20 kJ/mol** (~1000× affinity cost) at the same residue | **SER196 mutation + GABA-A electrophysiology** |
+| Scores mislead; dynamics rescues | OPRK1 −8.25 drifts 3.1 Å; 3 further ws7 pockets drift 4.6–8.5 Å → rejected | — (method working as designed) |
+
+</div>
+
+> All computed layers rank and generate hypotheses only — tier verdicts need measured data. Full results handed to ZHCO (corrected reports carry an inline IE erratum; docking / MD / tier numbers unaffected).
+
+<!-- Note (CN): 10-16后新增的结构验证阶段一页讲完：MD姿态稳定性+湮灭式TI，已知口袋21锚点+新口袋57锚点。两个最重要发现：①TSPO二聚体界面第二口袋4RYI_p26（emapunil+FGIN双配体四层证据，实验路径现成：LEU58突变+二聚化assay）；②6X3X_p78 SER196两个化学型独立+20 kJ/mol≈千倍亲和力代价（唯一配体无关强锚，GABA-A TMD新调制位点，实验优先级最高）。两个突变实验建议已交ZHCO。边界：所有计算层只做排序和假设生成，tier判定仍需实测数据。 -->
+
+---
+
+## 6. Bottom Line for the Proposal
 
 | Ligand | Most plausible driver of the phenotype | TSPO at real exposure | Verdict |
 |---|---|---|---|
 | **PK11195** | **CAR activation (liver)** + fasting-like hepatic state | Binding yes; benefit attribution disputed | <span class="warn">⚠️ Do not cite as TSPO evidence</span> |
 | **Emapunil** | TSPO — but metabolic effect unproven; DBI-axis hypothesis | Yes (~13% WT / ~3% A147T) | <span class="good">✅ Only testable TSPO story</span> |
+| **Alpidem** | GABA-A benzodiazepine site (docked −8.0, below clinical exposure); TSPO unlikely | Unlikely (dose-limited) | <span class="highlight">❌ TSPO claim rejected</span> |
 | **Etifoxine** | Gut microbiome / bile-acid axis | No (<0.01%) | <span class="highlight">❌ TSPO excluded at exposure</span> |
 | Ro5-4864 | TSPO-selective class control, co-phenotyped with PK11195 | — | Control ligand |
 
@@ -160,4 +182,4 @@ The proposal cites metabolic benefits for three clinical TSPO ligands:
 
 > **Asks for the team**: emapunil / PK11195 T2D citations · which PK11195 enantiomer the proposal assumes · internal islet / adipose TSPO expression or PET data
 
-<!-- Note (CN): 收尾三句话：PK11195别默认归因TSPO；emapunil是唯一可检验的TSPO代谢故事；etifoxine的减重读出不能当TSPO证据。要三样东西：两篇T2D引用、对映体假设、内部表达/PET数据。全表在ws4_tiered_targets_v0.3.csv，逐行证据在报告HTML。 -->
+<!-- Note (CN): 收尾三句话：PK11195别默认归因TSPO；emapunil是唯一可检验的TSPO代谢故事；etifoxine的减重读出不能当TSPO证据。第二轮：alpidem加入且TSPO主张被否决；结构阶段发现第二口袋+两个突变实验建议（SER196/LEU58）。要三样东西：两篇T2D引用、对映体假设、内部表达/PET数据。全表在ws4_tiered_targets_v0.3.csv，逐行证据在报告HTML。 -->
