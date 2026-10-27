@@ -32,10 +32,19 @@ from .drugclip import (
 )
 from .peptide.pipeline import CandidateAssessmentReport, assess_peptide_candidate
 
+# 界面致病突变映射 (Pei et al. 2026 Sci Rep 方法学)
+from .interface_variants import (
+    InterfaceVariantResult,
+    SavRecord,
+    map_pathogenic_to_interface,
+    summarize_for_target,
+)
+
 # 暴露核心子模块
 from . import peptide
 from . import search
 from . import report
+from . import interface_variants
 
 logger = logging.getLogger(__name__)
 

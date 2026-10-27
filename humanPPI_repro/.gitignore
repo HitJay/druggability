@@ -9,4 +9,4 @@ __pycache__/
 # Data S6 unpacked products: 3.2GB (PPI_database_pairs 950k rows text + 3 binary ~700-800MB
 # each). Kept on disk for evaluation, never in git. Re-extract via:
 #   tar xzf downloads/screened_pairs.tar.gz -C data/
-humanPPI_repro/data/screened_pairs/
+data/screened_pairs/

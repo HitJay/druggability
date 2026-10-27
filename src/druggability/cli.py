@@ -230,6 +230,23 @@ def _setup_parser() -> argparse.ArgumentParser:
     p_pep.add_argument("--bootstrap", type=int, default=200, help="report: 端到端预测的 bootstrap 次数（默认 200）")
     p_pep.add_argument("--protraction", action="store_true", help="report: 对含修饰肽叠加 protraction 惩罚（WS2 hybrid）")
 
+    # ── interface-variants: 疾病突变映射到 PPI 界面 ──
+    p_iv = sub.add_parser(
+        "interface-variants",
+        help="疾病突变映射到蛋白互作界面 (SAV QC + AlphaMissense + 双证据 + 6Å 界面判定)")
+    p_iv.add_argument("uniprot_a", help="蛋白 A 的 UniProt accession (如 P41180)")
+    p_iv.add_argument("uniprot_b", help="伙伴蛋白 B 的 UniProt accession")
+    p_iv.add_argument(
+        "--complex-pdb", default=None,
+        help="二元复合物 PDB (RF2-PPI/AF-multimer 输出); 省略则只做 QC+致病 SAV 清点")
+    p_iv.add_argument("--chain-a", default="A", help="复合物中蛋白 A 的 chain ID (默认 A)")
+    p_iv.add_argument("--chain-b", default="B", help="复合物中蛋白 B 的 chain ID (默认 B)")
+    p_iv.add_argument("--model-dir", default="data/af_models",
+                      help="AFDB 模型缓存目录 (默认 data/af_models)")
+    p_iv.add_argument("--cutoff", type=float, default=6.0,
+                      help="界面判定距离阈值 Å (默认 6.0, 论文同款)")
+    p_iv.add_argument("--json", action="store_true", help="输出 JSON")
+
     return parser
 
 
@@ -811,6 +828,49 @@ def _cmd_peptide(args: argparse.Namespace) -> None:
               f"{b['test']['AUC']:9.3f}{b['test']['MCC']:9.3f}  {sota}")
 
 
+def _cmd_interface_variants(args: argparse.Namespace) -> None:
+    from druggability.interface_variants import map_pathogenic_to_interface
+
+    result = map_pathogenic_to_interface(
+        args.uniprot_a,
+        args.uniprot_b,
+        complex_pdb=args.complex_pdb,
+        chains_a=args.chain_a,
+        chains_b=args.chain_b,
+        model_dir=args.model_dir,
+        cutoff_a=args.cutoff,
+    )
+    d = result.to_dict()
+
+    if args.json:
+        print(json.dumps(d, ensure_ascii=False, indent=2))
+        return
+
+    print(f"\n{'='*60}")
+    print(f"  Interface pathogenic variants: {args.uniprot_a} x {args.uniprot_b}")
+    print(f"{'='*60}")
+    print(f"  Model source:        {d['model_source']}")
+    print(f"  Seq mismatch A/B:    {d['seq_mismatch_frac_a']:.1%} / {d['seq_mismatch_frac_b']:.1%}")
+    print(f"  Interface residues:  A={d['n_interface_res_a']}  B={d['n_interface_res_b']}")
+    print(f"  Pathogenic SAVs:     A={d['n_pathogenic_savs_a']}  B={d['n_pathogenic_savs_b']}")
+    print(f"  At interface:        {d['n_interface_pathogenic']}"
+          f"  (richness {d['interface_mutation_richness']:.3f})")
+    for w in d["warnings"]:
+        print(f"  WARNING: {w}")
+    for side in ("a", "b"):
+        rows = d[f"interface_pathogenic_{side}"]
+        if not rows:
+            continue
+        print(f"\n  --- {args.uniprot_a if side == 'a' else args.uniprot_b} interface hits ---")
+        for r in rows:
+            ev = "+".join(r["sources"])
+            am = f"AM={r['am_prob']:.2f}" if r["am_prob"] is not None else "AM=n/a"
+            print(f"    {r['wt']}{r['position']}{r['mut']}  [{ev}]  {am}")
+            if r["note"]:
+                print(f"        {r['note'][:100]}")
+    print()
+
+
 def main() -> None:
     parser = _setup_parser()
     args = parser.parse_args()
@@ -825,6 +885,7 @@ def main() -> None:
         "report": _cmd_report,
         "image2smiles": _cmd_image2smiles,
         "peptide": _cmd_peptide,
+        "interface-variants": _cmd_interface_variants,
     }
     fn = dispatch.get(args.command)
     if fn:
