@@ -1,0 +1,1 @@
+This folder contains the final set of predicted PPIs generated in our study, along with additional metadata. There are two files in this folder. “final_predictions_80.tsv” includes all predictions obtained at an expected precision of 80%, while “final_predictions_90.tsv” includes predictions obtained at an expected precision of 90%. The latter is a subset of the former.
