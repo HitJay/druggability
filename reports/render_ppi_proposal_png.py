@@ -481,7 +481,7 @@ html = f"""<!DOCTYPE html>
           </div>
           <div class="pos-stack">
             <div class="pos-card teal">
-              <div><strong class="teal">Golden Rule &amp; External Validation:</strong> Use strictly as a <strong>POSITIVE hypothesis generator</strong> (never discard a biological candidate due to a low score). Confirmed by Lambourne et al. (<em>Nat Commun</em> 2026) and Kutay lab TMEM209-Nup210 co-IP (<em>J Cell Sci</em> 2026).</div>
+              <div><strong class="teal">Prospective Validation (2024&ndash;2026 Time-Split Audit):</strong> <strong>11 &lsquo;zero-prior-evidence&rsquo; pairs in Data S6</strong> (cutoff Sep 2023) have since been independently proved by cryo-EM or co-IP &mdash; e.g., <em>DND1-NANOS3</em> (Mol Cell 2026), <em>DHX35-GPATCH1</em> (Cell Res 2025), <em>EFCAB10-AK8</em> &amp; <em>MTR-MMADHC</em> (PNAS 2025/26), <em>TMEM209-NUP210</em> (JCS 2026).</div>
             </div>
             <div class="pos-card">
               <div><strong class="navy">Immediate Pilot &mdash; 99 Cardiometabolic Novel PPI Leads (Data S6):</strong> Prioritize our <strong>99 unflagged novel PPI leads across 5 indications</strong> (Obesity, T2D, CKD, MASH, CVD; Tier A/B/C targets) by integrating local PR precision, GTEx co-expression, and interface pathogenic SAV burden &rarr; nominate <strong>Top-10 for co-IP</strong>.</div>

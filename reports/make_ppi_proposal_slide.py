@@ -228,8 +228,8 @@ text(rx2 + 0.08, 4.71, col_w - 0.16, 0.86, [
 
 # Bottom 2 full-width cards (y=5.69 and y=6.33)
 bot_cards = [
-    ("Golden Rule & External Validation",
-     "Use strictly as a POSITIVE hypothesis generator (never discard a biological candidate due to a low score). Confirmed by Lambourne et al. (Nat Commun 2026) and Kutay lab TMEM209-Nup210 co-IP (J Cell Sci 2026).",
+    ("Prospective Validation (2024–2026 Time-Split Audit)",
+     "11 'zero-prior-evidence' pairs in Data S6 (cutoff Sep 2023) have since been independently proved by cryo-EM or co-IP — e.g., DND1-NANOS3 (Mol Cell 2026), DHX35-GPATCH1 (Cell Res 2025), EFCAB10-AK8 & MTR-MMADHC (PNAS 2025/26), TMEM209-NUP210 (JCS 2026).",
      TEAL, 5.69),
     ("Immediate Pilot — 99 Cardiometabolic Novel PPI Leads (Data S6)",
      "Prioritize our 99 unflagged novel PPI leads across 5 indications (Obesity, T2D, CKD, MASH, CVD; Tier A/B/C targets) by integrating local PR precision, GTEx co-expression, and interface pathogenic SAV burden -> nominate Top-10 for co-IP.",
