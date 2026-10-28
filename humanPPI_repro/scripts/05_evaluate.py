@@ -10,7 +10,7 @@ Outputs:
   results/author_crosscheck.tsv        pair, ours, authors (for pairs in both)
   results/author_crosscheck_stats.json correlation + agreement summary
 """
-import glob, gzip, json, os, sys
+import glob, gzip, json, math, os, sys
 import numpy as np
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -53,7 +53,8 @@ with open(os.path.join(RESULTS, "all_scores.tsv"), "w") as f:
     for p in all_pairs:
         f.write(f"{p}\t{labels[p]}\t{scores.get(p, float('nan')):.6f}\n")
 
-scored = [(p, scores[p], labels[p]) for p in all_pairs if p in scores]
+scored = [(p, scores[p], labels[p]) for p in all_pairs
+          if p in scores and not math.isnan(scores[p])]
 n_pos = sum(1 for _, _, l in scored if l == "positive")
 n_neg = sum(1 for _, _, l in scored if l == "negative")
 missing = len(all_pairs) - len(scored)
@@ -73,8 +74,10 @@ prec_c = np.concatenate([[prec[0] if len(prec) else 1.0], prec])
 aucpr = float(np.sum(np.diff(rec_c) * prec_c[1:]))
 
 def recall_at_precision(target):
+    # deepest rank still meeting the precision target (curve holds target on a
+    # contiguous prefix before FP mass accumulates; ok[0] would just be rank 1)
     ok = np.where(prec >= target)[0]
-    return float(rec[ok[0]]) if len(ok) else 0.0, (int(ok[0]) if len(ok) else None)
+    return (float(rec[ok[-1]]), int(ok[-1])) if len(ok) else (0.0, None)
 
 r90, i90 = recall_at_precision(0.90)
 r80, i80 = recall_at_precision(0.80)
@@ -136,6 +139,9 @@ if os.path.exists(AUTHOR_SCORES):
                 except ValueError:
                     pass
     common = sorted(set(author) & set(scores))
+    # drop pairs where either side produced nan (network can emit nan on degenerate MSAs)
+    common = [p for p in common
+              if not (math.isnan(scores[p]) or math.isnan(author.get(p, float("nan"))))]
     with open(os.path.join(RESULTS, "author_crosscheck.tsv"), "w") as f:
         f.write("pair\tlabel\tp_ours\tp_authors\n")
         for p in common:
@@ -146,7 +152,7 @@ if os.path.exists(AUTHOR_SCORES):
         "pairs_in_author_scores": len(author),
         "pairs_compared": len(common),
         "pearson_r": float(np.corrcoef(a, b)[0, 1]) if len(common) > 2 else None,
-        "spearman_r": float(__import__("scipy.stats", fromlist=["spearmanr"]).spearmanr(a, b).statistic) if len(common) > 2 else None,
+        "spearman_r": float(__import__("scipy.stats", fromlist=["spearmanr"]).spearmanr(a, b)[0]) if len(common) > 2 else None,
         "mean_abs_diff": float(np.mean(np.abs(a - b))) if common else None,
         "frac_abs_diff_le_0.1": float(np.mean(np.abs(a - b) <= 0.1)) if common else None,
     }
