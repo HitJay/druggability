@@ -70,6 +70,9 @@ OXTR_assessment/fep_setup/*.xml
 *.pptx
 *.pdf
 docs/monthly_report_2026_05_draft.md
+reports/*.png
+reports/*.html
+reports/*_email_to_*.txt
 
 # GPR81 follow-up deliverables (regenerable from build_*.py scripts; CIFS archive copy under output/2026-08-05/)
 data/gpr81_phase1/followup_2026-08/figures
