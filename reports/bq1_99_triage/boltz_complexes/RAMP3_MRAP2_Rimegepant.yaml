@@ -1,0 +1,16 @@
+version: 1
+sequences:
+  - protein:
+      id: R
+      sequence: CNETGMLERLPLCGKAFADMMGKVDVWKWCNLSEFIVYYESFTNCTEMEANVVGCYWPNPLAQGFITGIHRQFFSNCTVDRVHLEDPPDEVLIPLIVIPVVLTVAMAGLVVWRSKRTDTLL
+      msa: /das/user/QYJI/druggability/reports/bq1_99_triage/boltz_complexes/msas/RAMP3_28_148.a3m
+  - protein:
+      id: L
+      sequence: YEYYEIGPVSFEGLKAHKYSIVIGFWVGLAVFVIFMFFVLTLLTKTGAPHQDNAESSEKRFRMNSFVSDFGRPLEPDKVFSRQGNEESRSLFHCYINEVERLDRAK
+      msa: /das/user/QYJI/druggability/reports/bq1_99_triage/boltz_complexes/msas/MRAP2_25_130.a3m
+  - ligand:
+      id: B
+      smiles: 'CC1=CC(=CC=C1)C2=C(N=CC=C2)N3CCC(CC3)OC(=O)N4CCC(CC4)N5C6=C(C=CC=C6)NC5=O'
+properties:
+  - affinity:
+      binder: B

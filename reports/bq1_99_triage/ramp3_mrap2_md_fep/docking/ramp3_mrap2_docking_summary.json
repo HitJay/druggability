@@ -1,0 +1,46 @@
+{
+  "center_A": [
+    8.192,
+    13.951,
+    -16.163
+  ],
+  "center_B": [
+    -1.521,
+    9.884,
+    -29.881
+  ],
+  "results": [
+    {
+      "compound": "Rimegepant",
+      "role": "Approved CGRP/RAMP1-3 interface antagonist",
+      "smiles": "CC1=CC(=CC=C1)C2=C(N=CC=C2)N3CCC(CC3)OC(=O)N4CCC(CC4)N5C6=C(C=CC=C6)NC5=O",
+      "Interface_Groove_SiteA_kcal_mol": -7.394,
+      "Distal_Control_SiteB_kcal_mol": -6.838,
+      "ddG_pocket_selectivity_kcal_mol": -0.56
+    },
+    {
+      "compound": "Telcagepant",
+      "role": "Clinical CGRP/RAMP ectodomain antagonist",
+      "smiles": "C1CC(C(=O)NC2=CC=CC=C21)NC(=O)N3CCC(CC3)N4C5=CC=CC=C5NC4=O",
+      "Interface_Groove_SiteA_kcal_mol": -5.425,
+      "Distal_Control_SiteB_kcal_mol": -5.406,
+      "ddG_pocket_selectivity_kcal_mol": -0.02
+    },
+    {
+      "compound": "Ubrogepant",
+      "role": "Approved gepant RAMP-interface scaffold",
+      "smiles": "CC1CN(C(=O)C2=C1C=CC(=C2)C3=CC=CC=C3)CC(C(=O)N4CCC(CC4)N5C6=C(C=CC=C6)NC5=O)N",
+      "Interface_Groove_SiteA_kcal_mol": -7.805,
+      "Distal_Control_SiteB_kcal_mol": -7.085,
+      "ddG_pocket_selectivity_kcal_mol": -0.72
+    },
+    {
+      "compound": "Zavegepant",
+      "role": "Intranasal RAMP-binding gepant",
+      "smiles": "CN1CCN(CC1)C2CCN(CC2)C(=O)O[C@H](CC3=CC(=C(C(=C3)Br)O)Br)C(=O)NCC4=CC5=C(C=C4)NC(=O)N5",
+      "Interface_Groove_SiteA_kcal_mol": -6.953,
+      "Distal_Control_SiteB_kcal_mol": -6.161,
+      "ddG_pocket_selectivity_kcal_mol": -0.79
+    }
+  ]
+}

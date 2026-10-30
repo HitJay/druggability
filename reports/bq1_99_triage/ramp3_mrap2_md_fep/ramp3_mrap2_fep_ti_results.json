@@ -1,0 +1,354 @@
+{
+  "LEU115L": {
+    "description": "MRAP2 p.Leu115Val (Human Obesity Variant at Interface Core)",
+    "native_IE_kJmol": -39.7,
+    "ddG_kJmol": 21.82,
+    "ddG_kcalmol": 5.21,
+    "windows": [
+      {
+        "lambda": 0.0,
+        "minus_dUdlam_kJmol": -43.0
+      },
+      {
+        "lambda": 0.15,
+        "minus_dUdlam_kJmol": -35.78
+      },
+      {
+        "lambda": 0.3,
+        "minus_dUdlam_kJmol": -31.61
+      },
+      {
+        "lambda": 0.45,
+        "minus_dUdlam_kJmol": -24.68
+      },
+      {
+        "lambda": 0.6,
+        "minus_dUdlam_kJmol": -18.82
+      },
+      {
+        "lambda": 0.75,
+        "minus_dUdlam_kJmol": -10.78
+      },
+      {
+        "lambda": 0.9,
+        "minus_dUdlam_kJmol": -2.72
+      },
+      {
+        "lambda": 1.0,
+        "minus_dUdlam_kJmol": 0.0
+      }
+    ],
+    "screened_IE_kJmol": -12.56,
+    "vdw_IE_kJmol": -9.41,
+    "screened_elec_IE_kJmol": -3.15,
+    "ddG_screened_kcalmol": 5.21
+  },
+  "ARG125L": {
+    "description": "MRAP2 p.Arg125Cys (Human Obesity Variant at Salt-Bridge Rim)",
+    "native_IE_kJmol": -1089.46,
+    "ddG_kJmol": 523.1,
+    "ddG_kcalmol": 125.02,
+    "windows": [
+      {
+        "lambda": 0.0,
+        "minus_dUdlam_kJmol": -1092.89
+      },
+      {
+        "lambda": 0.15,
+        "minus_dUdlam_kJmol": -910.94
+      },
+      {
+        "lambda": 0.3,
+        "minus_dUdlam_kJmol": -733.94
+      },
+      {
+        "lambda": 0.45,
+        "minus_dUdlam_kJmol": -565.03
+      },
+      {
+        "lambda": 0.6,
+        "minus_dUdlam_kJmol": -401.62
+      },
+      {
+        "lambda": 0.75,
+        "minus_dUdlam_kJmol": -250.65
+      },
+      {
+        "lambda": 0.9,
+        "minus_dUdlam_kJmol": -94.47
+      },
+      {
+        "lambda": 1.0,
+        "minus_dUdlam_kJmol": 0.0
+      }
+    ],
+    "screened_IE_kJmol": -26.08,
+    "vdw_IE_kJmol": -69.58,
+    "screened_elec_IE_kJmol": 43.5,
+    "ddG_screened_kcalmol": 6.25
+  },
+  "ASN88L": {
+    "description": "MRAP2 p.Asn88Tyr (Human Obesity Variant at ECD Loop)",
+    "native_IE_kJmol": 7.53,
+    "ddG_kJmol": -3.68,
+    "ddG_kcalmol": -0.88,
+    "windows": [
+      {
+        "lambda": 0.0,
+        "minus_dUdlam_kJmol": 8.54
+      },
+      {
+        "lambda": 0.15,
+        "minus_dUdlam_kJmol": 7.23
+      },
+      {
+        "lambda": 0.3,
+        "minus_dUdlam_kJmol": 5.36
+      },
+      {
+        "lambda": 0.45,
+        "minus_dUdlam_kJmol": 3.62
+      },
+      {
+        "lambda": 0.6,
+        "minus_dUdlam_kJmol": 2.24
+      },
+      {
+        "lambda": 0.75,
+        "minus_dUdlam_kJmol": 1.45
+      },
+      {
+        "lambda": 0.9,
+        "minus_dUdlam_kJmol": 0.43
+      },
+      {
+        "lambda": 1.0,
+        "minus_dUdlam_kJmol": 0.0
+      }
+    ],
+    "screened_IE_kJmol": 0.73,
+    "vdw_IE_kJmol": 0.38,
+    "screened_elec_IE_kJmol": 0.35,
+    "ddG_screened_kcalmol": -0.88
+  },
+  "PHE85L": {
+    "description": "MRAP2 Phe85 (Primary Aromatic Anchor to RAMP3 Trp56/Gln99)",
+    "native_IE_kJmol": -17.22,
+    "ddG_kJmol": 12.86,
+    "ddG_kcalmol": 3.07,
+    "windows": [
+      {
+        "lambda": 0.0,
+        "minus_dUdlam_kJmol": -19.72
+      },
+      {
+        "lambda": 0.15,
+        "minus_dUdlam_kJmol": -19.69
+      },
+      {
+        "lambda": 0.3,
+        "minus_dUdlam_kJmol": -19.99
+      },
+      {
+        "lambda": 0.45,
+        "minus_dUdlam_kJmol": -11.88
+      },
+      {
+        "lambda": 0.6,
+        "minus_dUdlam_kJmol": -12.47
+      },
+      {
+        "lambda": 0.75,
+        "minus_dUdlam_kJmol": -8.08
+      },
+      {
+        "lambda": 0.9,
+        "minus_dUdlam_kJmol": -4.52
+      },
+      {
+        "lambda": 1.0,
+        "minus_dUdlam_kJmol": 0.0
+      }
+    ],
+    "screened_IE_kJmol": 33.32,
+    "vdw_IE_kJmol": 35.17,
+    "screened_elec_IE_kJmol": -1.85,
+    "ddG_screened_kcalmol": 3.07
+  },
+  "MET87L": {
+    "description": "MRAP2 Met87 (Hydrophobic Core Anchor to RAMP3 Trp56)",
+    "native_IE_kJmol": -29.39,
+    "ddG_kJmol": 13.76,
+    "ddG_kcalmol": 3.29,
+    "windows": [
+      {
+        "lambda": 0.0,
+        "minus_dUdlam_kJmol": -22.1
+      },
+      {
+        "lambda": 0.15,
+        "minus_dUdlam_kJmol": -17.88
+      },
+      {
+        "lambda": 0.3,
+        "minus_dUdlam_kJmol": -16.98
+      },
+      {
+        "lambda": 0.45,
+        "minus_dUdlam_kJmol": -19.39
+      },
+      {
+        "lambda": 0.6,
+        "minus_dUdlam_kJmol": -13.59
+      },
+      {
+        "lambda": 0.75,
+        "minus_dUdlam_kJmol": -9.5
+      },
+      {
+        "lambda": 0.9,
+        "minus_dUdlam_kJmol": -4.01
+      },
+      {
+        "lambda": 1.0,
+        "minus_dUdlam_kJmol": 0.0
+      }
+    ],
+    "screened_IE_kJmol": 17.4,
+    "vdw_IE_kJmol": 14.51,
+    "screened_elec_IE_kJmol": 2.89,
+    "ddG_screened_kcalmol": 3.29
+  },
+  "TRP50L": {
+    "description": "MRAP2 Trp50 (TM-Helix Coevolving Anchor to RAMP3 Val137)",
+    "native_IE_kJmol": -18.68,
+    "ddG_kJmol": 8.54,
+    "ddG_kcalmol": 2.04,
+    "windows": [
+      {
+        "lambda": 0.0,
+        "minus_dUdlam_kJmol": -16.17
+      },
+      {
+        "lambda": 0.15,
+        "minus_dUdlam_kJmol": -13.64
+      },
+      {
+        "lambda": 0.3,
+        "minus_dUdlam_kJmol": -11.32
+      },
+      {
+        "lambda": 0.45,
+        "minus_dUdlam_kJmol": -9.49
+      },
+      {
+        "lambda": 0.6,
+        "minus_dUdlam_kJmol": -7.16
+      },
+      {
+        "lambda": 0.75,
+        "minus_dUdlam_kJmol": -5.07
+      },
+      {
+        "lambda": 0.9,
+        "minus_dUdlam_kJmol": -2.58
+      },
+      {
+        "lambda": 1.0,
+        "minus_dUdlam_kJmol": 0.0
+      }
+    ],
+    "screened_IE_kJmol": 4.45,
+    "vdw_IE_kJmol": 5.82,
+    "screened_elec_IE_kJmol": -1.37,
+    "ddG_screened_kcalmol": 2.04
+  },
+  "TRP56R": {
+    "description": "RAMP3 Trp56 (ECD Hydrophobic Anchor to MRAP2 Phe85/Met87)",
+    "native_IE_kJmol": -19.43,
+    "ddG_kJmol": 10.49,
+    "ddG_kcalmol": 2.51,
+    "windows": [
+      {
+        "lambda": 0.0,
+        "minus_dUdlam_kJmol": -17.62
+      },
+      {
+        "lambda": 0.15,
+        "minus_dUdlam_kJmol": -16.02
+      },
+      {
+        "lambda": 0.3,
+        "minus_dUdlam_kJmol": -14.89
+      },
+      {
+        "lambda": 0.45,
+        "minus_dUdlam_kJmol": -11.17
+      },
+      {
+        "lambda": 0.6,
+        "minus_dUdlam_kJmol": -9.62
+      },
+      {
+        "lambda": 0.75,
+        "minus_dUdlam_kJmol": -6.62
+      },
+      {
+        "lambda": 0.9,
+        "minus_dUdlam_kJmol": -3.32
+      },
+      {
+        "lambda": 1.0,
+        "minus_dUdlam_kJmol": 0.0
+      }
+    ],
+    "screened_IE_kJmol": 33.39,
+    "vdw_IE_kJmol": 30.88,
+    "screened_elec_IE_kJmol": 2.51,
+    "ddG_screened_kcalmol": 2.51
+  },
+  "ASP107R": {
+    "description": "RAMP3 Asp107 (Juxtamembrane Counter-Residue to MRAP2 Leu115)",
+    "native_IE_kJmol": 69.43,
+    "ddG_kJmol": -37.66,
+    "ddG_kcalmol": -9.0,
+    "windows": [
+      {
+        "lambda": 0.0,
+        "minus_dUdlam_kJmol": 65.17
+      },
+      {
+        "lambda": 0.15,
+        "minus_dUdlam_kJmol": 60.24
+      },
+      {
+        "lambda": 0.3,
+        "minus_dUdlam_kJmol": 51.34
+      },
+      {
+        "lambda": 0.45,
+        "minus_dUdlam_kJmol": 45.18
+      },
+      {
+        "lambda": 0.6,
+        "minus_dUdlam_kJmol": 32.5
+      },
+      {
+        "lambda": 0.75,
+        "minus_dUdlam_kJmol": 22.36
+      },
+      {
+        "lambda": 0.9,
+        "minus_dUdlam_kJmol": 8.24
+      },
+      {
+        "lambda": 1.0,
+        "minus_dUdlam_kJmol": 0.0
+      }
+    ],
+    "screened_IE_kJmol": 2.45,
+    "vdw_IE_kJmol": 0.14,
+    "screened_elec_IE_kJmol": 2.31,
+    "ddG_screened_kcalmol": -0.45
+  }
+}
