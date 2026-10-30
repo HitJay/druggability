@@ -84,6 +84,11 @@ reports/bq1_99_triage/boltz_complexes/boltz_results_*/lightning_logs/
 reports/bq1_99_triage/boltz_complexes/boltz_results_*/processed/
 reports/bq1_99_triage/boltz_complexes/boltz_results_*/predictions/*/*.npz
 reports/bq1_99_triage/ramp3_mrap2_md_fep/*_out/
+reports/bq1_99_triage/amylin_mrap2_study/*.png
+reports/bq1_99_triage/amylin_mrap2_study/msas/
+reports/bq1_99_triage/amylin_mrap2_study/boltz_runs/boltz_results_*/lightning_logs/
+reports/bq1_99_triage/amylin_mrap2_study/boltz_runs/boltz_results_*/processed/
+reports/bq1_99_triage/amylin_mrap2_study/boltz_runs/boltz_results_*/predictions/*/*.npz
 
 # GPR81 follow-up deliverables (regenerable from build_*.py scripts; CIFS archive copy under output/2026-08-05/)
 data/gpr81_phase1/followup_2026-08/figures

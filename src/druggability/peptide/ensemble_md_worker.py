@@ -190,6 +190,16 @@ def main():
     rec_traj = traj.atom_slice(rec_indices)
     pep_traj = traj.atom_slice(pep_indices)
 
+    # Re-image peptide chain relative to receptor COM under PBC so NoCutoff GBn2 MM/GBSA sees true bound distance
+    n_rec_atoms = len(rec_indices)
+    for f_idx in range(n_frames):
+        box = traj.unitcell_lengths[f_idx]
+        com_rec = solute_traj.xyz[f_idx, :n_rec_atoms].mean(axis=0)
+        com_pep = solute_traj.xyz[f_idx, n_rec_atoms:].mean(axis=0)
+        shift = np.round((com_pep - com_rec) / box) * box
+        solute_traj.xyz[f_idx, n_rec_atoms:] -= shift
+        pep_traj.xyz[f_idx] -= shift
+
     # Compute Peptide Backbone RMSD on sliced peptide
     pep_bb = pep_traj.topology.select("backbone")
     if len(pep_bb) == 0:

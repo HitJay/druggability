@@ -8,6 +8,7 @@ from playwright.async_api import async_playwright
 ROOT = Path("/das/user/QYJI/druggability")
 IMG_PATH = ROOT / "humanPPI_repro/results/repro_2panel_evidence.png"
 BQ1_IMG_PATH = ROOT / "reports/bq1_99_triage/bq1_99_triage_and_fep_2panel.png"
+AMY_IMG_PATH = ROOT / "reports/bq1_99_triage/amylin_mrap2_study/amylin_mrap2_competition_md_2panel.png"
 OUT_HTML = ROOT / "reports/ppi_group_meeting_deck_2026-10-29.html"
 OUT_PDF = ROOT / "reports/ppi_group_meeting_deck_2026-10-29.pdf"
 SLIDE_DIR = ROOT / "reports/deck_slides_2026-10-29"
@@ -15,6 +16,7 @@ SLIDE_DIR.mkdir(parents=True, exist_ok=True)
 
 b64_img = base64.b64encode(IMG_PATH.read_bytes()).decode("ascii")
 b64_bq1 = base64.b64encode(BQ1_IMG_PATH.read_bytes()).decode("ascii")
+b64_amy = base64.b64encode(AMY_IMG_PATH.read_bytes()).decode("ascii")
 
 html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -752,12 +754,156 @@ html = f"""<!DOCTYPE html>
   </div>
 </div>
 
+<!-- ==================== SLIDE 7 (APPENDIX S1): AMYLIN RECEPTOR COMPETITION & MD ==================== -->
+<div class="slide" id="slide-7">
+  <div class="hdr">
+    <div class="hdr-l">
+      <h1>Appendix: Does MRAP2 Compete with Amylin or Destabilize AMY1R / AMY3R?</h1>
+      <div class="sub"><strong>SUPPLEMENTARY DEEP-DIVE (ZHCO FOLLOW-UP)</strong> &nbsp;|&nbsp; <em>Cryo-EM Superposition (7TYF/7TZF), Quaternary Boltz-2 Co-Folding, and 8-System A100 Explicit-Solvent MD</em></div>
+    </div>
+    <div class="hdr-r">
+      <div class="badge">APPENDIX S1 &nbsp;|&nbsp; RIC-410</div>
+      <div class="meta">Group Meeting &nbsp;|&nbsp; Novo Nordisk</div>
+    </div>
+  </div>
+
+  <div class="body-area">
+    <div style="display: grid; grid-template-columns: 1045px 715px; gap: 24px; flex: 1;">
+      <!-- Left: Quantitative Comparison Table -->
+      <div style="background:#F2F4F8; border:1.5px solid #D0D7E5; display:flex; flex-direction:column; justify-content:space-between;">
+        <div>
+          <div style="height:46px; background:#001965; color:#FFF; font-size:15.5px; font-weight:700; padding:0 20px; display:flex; align-items:center;">
+            Quantitative Comparison: Cryo-EM Baselines vs Subunit &amp; Orthosteric Competition
+          </div>
+          <div style="padding:12px 16px; display:grid; grid-template-columns:repeat(3, 1fr); gap:12px;">
+            <div style="background:#FFF; border:1.5px solid #001965; padding:7px 8px; text-align:center;">
+              <div style="font-size:14.5px; font-weight:800; color:#001965;">Cryo-EM Fact (7TYF/7TZF)</div>
+              <div style="font-size:11.5px; font-weight:700;">98.5% Amylin ICs on CTR; RAMP W84/P85 caps Tyr37</div>
+            </div>
+            <div style="background:#FFF; border:1.5px solid #00857C; padding:7px 8px; text-align:center;">
+              <div style="font-size:14.5px; font-weight:800; color:#00857C;">Mech 1: Subunit Competition</div>
+              <div style="font-size:11.5px; font-weight:700;">80.0% RAMP3 &amp; 75.7% RAMP1 CTR-face shared w/ MRAP2</div>
+            </div>
+            <div style="background:#FFF; border:1.5px solid #D9383A; padding:7px 8px; text-align:center;">
+              <div style="font-size:14.5px; font-weight:800; color:#D9383A;">Mech 2: 7TM Pocket Block</div>
+              <div style="font-size:11.5px; font-weight:700;">Amylin 7TM contacts drop 92&rarr;2 (AMY1R) &amp; 96&rarr;0 (AMY3R)</div>
+            </div>
+          </div>
+
+          <div style="padding:0 16px;">
+            <table class="std-tbl" style="font-size:12.0px;">
+              <thead>
+                <tr>
+                  <th style="width:19%;">System / Condition</th>
+                  <th style="width:17%;">Chains Evaluated</th>
+                  <th style="width:22%;">3D Overlap / 7TM Contacts</th>
+                  <th style="width:22%;">A100 MD &lt;dG_GBn2&gt; &amp; &lt;E_vdW&gt;</th>
+                  <th style="width:20%;">Biophysical Conclusion</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong style="color:#001965;">Cryo-EM AMY1R (7TYF)</strong></td>
+                  <td>CTR+RAMP1 : Amylin</td>
+                  <td>87 7TM + 48 ECD + 2 RAMP1 (W84/P85)</td>
+                  <td>&lt;dG&gt; = &minus;221.3 &plusmn; 5.1 | &lt;E_vdW&gt; = &minus;222.2</td>
+                  <td>Native AMY1R reference (RMSD 0.41&Aring;)</td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#001965;">Cryo-EM AMY3R (7TZF)</strong></td>
+                  <td>CTR+RAMP3 : Amylin</td>
+                  <td>91 7TM + 45 ECD + 3 RAMP3 (E74/W84/P85)</td>
+                  <td>&lt;dG&gt; = &minus;197.5 &plusmn; 7.1 | &lt;E_vdW&gt; = &minus;227.7</td>
+                  <td>Native AMY3R reference (RMSD 0.48&Aring;)</td>
+                </tr>
+                <tr style="background:#EBF7F5;">
+                  <td><strong style="color:#00857C;">RAMP3 Subunit Comp.</strong></td>
+                  <td>RAMP3:MRAP2 vs CTR</td>
+                  <td>32/40 (80.0%) CTR face shared; 222 clashes</td>
+                  <td><strong>&minus;212.9 (&minus;254.0 vdW) vs &minus;189.5 (&minus;217.5)</strong></td>
+                  <td>MRAP2 outcompetes CTR (ddG = &minus;23.4)</td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#001965;">RAMP1 Subunit Comp.</strong></td>
+                  <td>RAMP1:MRAP2 vs CTR</td>
+                  <td>28/37 (75.7%) CTR face shared; 172 clashes</td>
+                  <td>&minus;156.8 (&minus;198.5 vdW) vs &minus;159.2 (&minus;202.7)</td>
+                  <td>Comparable affinity; blocks AMY1R</td>
+                </tr>
+                <tr>
+                  <td><strong style="color:#001965;">AMY1R Ternary (&minus;MRAP2)</strong></td>
+                  <td>CTR+RAMP1 : Amylin</td>
+                  <td>92 7TM + 73 ECD ICs (N-loop RMSD 1.27&Aring;)</td>
+                  <td>&lt;dG&gt; = &minus;237.8 &plusmn; 6.7 | &lt;E_vdW&gt; = &minus;269.5</td>
+                  <td>Deep 7TM orthosteric engagement</td>
+                </tr>
+                <tr style="background:#EBF7F5;">
+                  <td><strong style="color:#D9383A;">AMY1R Quat. (+MRAP2)</strong></td>
+                  <td>CTR+RAMP1+M : Amylin</td>
+                  <td>2 7TM ICs (&minus;97.8%); displaced 21.7&Aring;</td>
+                  <td><strong>&lt;dG&gt; = &minus;113.5 &plusmn; 4.1 (ddG = +124.3)</strong></td>
+                  <td>MRAP2 ejects RAMP1 or cuts dG by 52%</td>
+                </tr>
+                <tr style="background:#EBF7F5;">
+                  <td><strong style="color:#D9383A;">AMY3R &minus;/+ MRAP2</strong></td>
+                  <td>CTR+RAMP3(&plusmn;M) : Amy</td>
+                  <td>96 &rarr; 0 7TM ICs (&minus;100%); displaced 24.5&Aring;</td>
+                  <td><strong>&minus;164.2 (&minus;223.6) &rarr; &minus;148.9 (&minus;163.1 vdW)</strong></td>
+                  <td>MRAP2 68&ndash;88 plugs 7TM (ddE = +60.5)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div style="margin:10px 16px 14px 16px; background:#FFF; border:1px solid #D0D7E5; border-left:8px solid #D9383A; padding:10px 15px; font-size:12.6px; line-height:1.36;">
+          <strong style="color:#D9383A;">Testable Wet-Lab Hypothesis (cAMP / BRET / Surface ELISA):</strong> Co-expressing WT MRAP2 will competitively sequester RAMP3/RAMP1 away from CTR and attenuate amylin/cagrilintide potency, whereas our FEP-designed obesity point-mutants (<strong>MRAP2 L115A/V, R125A/C</strong>) will lose RAMP binding and restore normal AMY1R/AMY3R signaling.
+        </div>
+      </div>
+
+      <!-- Right: 2-Panel Competition & MD Plot + Summary -->
+      <div style="background:#E8EEF7; border:1.5px solid #D0D7E5; display:flex; flex-direction:column; justify-content:space-between;">
+        <div style="height:46px; background:#00857C; color:#FFF; font-size:15.5px; font-weight:700; padding:0 20px; display:flex; align-items:center;">
+          Dual-Mechanism Competition &amp; A100 MD Energetics
+        </div>
+        <div style="padding:12px 16px; display:flex; flex-direction:column; justify-content:space-between; flex:1; gap:12px;">
+          <div style="background:#FFF; border:1px solid #D0D7E5; padding:6px; height:285px; display:flex; align-items:center; justify-content:center;">
+            <img src="data:image/png;base64,{b64_amy}" style="width:100%; height:100%; object-fit:contain;">
+          </div>
+
+          <div style="background:#FFF; border:1.5px solid #001965; flex:1; display:flex; flex-direction:column;">
+            <div style="background:#001965; color:#FFF; font-size:13.5px; font-weight:700; padding:7px 14px;">ANSWERS TO ZHENG&rsquo;S TWO QUESTIONS (MECHANISM SUMMARY)</div>
+            <div style="padding:10px 14px; font-size:12.5px; line-height:1.38; display:flex; flex-direction:column; justify-content:space-between; flex:1;">
+              <div>
+                <strong style="color:#001965; font-size:13.2px;">1. Do Amylin and MRAP2 Compete in Binding to Amylin Receptors?</strong><br>
+                <strong>YES &mdash; at two structural levels:</strong><br>
+                &bull; <strong>Subunit Sequestration (MRAP2 vs CTR for RAMP1/3):</strong> MRAP2 occupies <strong>80.0% (32/40)</strong> of RAMP3&rsquo;s and <strong>75.7% (28/37)</strong> of RAMP1&rsquo;s CTR-binding residues, and binds RAMP3 more tightly than CTR in MD (<strong>ddG = &minus;23.43 kcal/mol</strong>).<br>
+                &bull; <strong>Tyr37 Pocket Cap Occlusion:</strong> MRAP2 covers <strong>100%</strong> of the RAMP1/3 Trp84&ndash;Pro85 shelf that caps amylin&rsquo;s C-terminal Tyr37-NH2.
+              </div>
+              <div>
+                <strong style="color:#D9383A; font-size:13.2px;">2. Does MRAP2 Affect the Stability of Amylin / Receptor Complexes?</strong><br>
+                <strong>YES &mdash; severe destabilization &amp; 7TM ejection:</strong><br>
+                &bull; In quaternary co-folding + MD, MRAP2 invades the CTR ECL2/ECL3/7TM entrance, reducing amylin&rsquo;s 7TM contacts by <strong>97.8% in AMY1R (ddG = +124.26 kcal/mol)</strong> and <strong>100% in AMY3R (ddE_vdW = +60.49 kcal/mol)</strong>.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ftr">
+    <div>References: Zhang et al., <em>Science</em> 390, eadt1630 (2025) | Pei, Zhang &amp; Cong, <em>Sci Rep</em> 16:25590 (2026) | Cao et al., <em>Science</em> 375, eabm9601 (2022)</div>
+    <div>druggability repo &nbsp;|&nbsp; Appendix S1</div>
+  </div>
+</div>
+
 </body>
 </html>
 """
 
 OUT_HTML.write_text(html, encoding="utf-8")
-print("Wrote 6-slide HTML:", OUT_HTML)
+print("Wrote 7-slide HTML:", OUT_HTML)
 
 
 async def render_all():
@@ -771,7 +917,7 @@ async def render_all():
         await page.goto(f"file://{OUT_HTML}", wait_until="networkidle")
         await page.wait_for_timeout(400)
 
-        # Print 6-page PDF
+        # Print 7-page PDF
         await page.pdf(
             path=str(OUT_PDF),
             width="1920px",
@@ -782,7 +928,7 @@ async def render_all():
         print(f"Rendered PDF: {OUT_PDF} ({OUT_PDF.stat().st_size:,} bytes)")
 
         # Screenshot each slide element at 2x
-        for i in range(1, 7):
+        for i in range(1, 8):
             el = await page.query_selector(f"#slide-{i}")
             out_png = SLIDE_DIR / f"slide_{i:02d}@2x.png"
             await el.screenshot(path=str(out_png))

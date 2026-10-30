@@ -1,0 +1,326 @@
+{
+  "ok": true,
+  "complex_name": "AMY3R_7TZF_holo",
+  "receptor_chains": [
+    "R"
+  ],
+  "peptide_chains": [
+    "E"
+  ],
+  "length_ns": 0.2,
+  "n_snapshots": 15,
+  "mean_delta_g_gbn2": -189.47,
+  "std_delta_g_gbn2": 8.72,
+  "delta_g_gbn2_trajectory": [
+    -202.18,
+    -184.26,
+    -187.44,
+    -183.44,
+    -189.06,
+    -173.2,
+    -179.03,
+    -194.56,
+    -175.13,
+    -192.7,
+    -192.29,
+    -197.49,
+    -191.91,
+    -201.78,
+    -197.52
+  ],
+  "mean_vdw_ie_kcal": -217.53,
+  "std_vdw_ie_kcal": 5.69,
+  "mean_total_nb_ie_kcal": -388.35,
+  "std_total_nb_ie_kcal": 140.97,
+  "mean_pep_rmsd": 0.51,
+  "final_pep_rmsd": 0.58,
+  "mean_comp_rmsd": 0.47,
+  "pep_rmsd_trajectory": [
+    0.01,
+    0.3,
+    0.41,
+    0.48,
+    0.5,
+    0.54,
+    0.57,
+    0.59,
+    0.61,
+    0.63,
+    0.59,
+    0.58,
+    0.59,
+    0.61,
+    0.58
+  ],
+  "ns_per_day": 0.0,
+  "hbond_persistence": [
+    {
+      "donor": "LYS113@NZ",
+      "acceptor": "THR206@OG1",
+      "frame_count": 2,
+      "total_frames": 15,
+      "persistence_pct": 13.3
+    },
+    {
+      "donor": "LYS113@NZ",
+      "acceptor": "GLN217@OE1",
+      "frame_count": 2,
+      "total_frames": 15,
+      "persistence_pct": 13.3
+    },
+    {
+      "donor": "VAL77@N",
+      "acceptor": "TYR13@OH",
+      "frame_count": 1,
+      "total_frames": 15,
+      "persistence_pct": 6.7
+    },
+    {
+      "donor": "ARG5@NE",
+      "acceptor": "GLU38@OE1",
+      "frame_count": 1,
+      "total_frames": 15,
+      "persistence_pct": 6.7
+    },
+    {
+      "donor": "ARG5@NH1",
+      "acceptor": "GLU38@OE1",
+      "frame_count": 1,
+      "total_frames": 15,
+      "persistence_pct": 6.7
+    },
+    {
+      "donor": "GLN12@NE2",
+      "acceptor": "TYR37@OH",
+      "frame_count": 1,
+      "total_frames": 15,
+      "persistence_pct": 6.7
+    },
+    {
+      "donor": "GLN12@NE2",
+      "acceptor": "THR41@OG1",
+      "frame_count": 1,
+      "total_frames": 15,
+      "persistence_pct": 6.7
+    },
+    {
+      "donor": "LYS14@NZ",
+      "acceptor": "ASP78@OD1",
+      "frame_count": 1,
+      "total_frames": 15,
+      "persistence_pct": 6.7
+    },
+    {
+      "donor": "LYS14@NZ",
+      "acceptor": "ASP78@OD2",
+      "frame_count": 1,
+      "total_frames": 15,
+      "persistence_pct": 6.7
+    },
+    {
+      "donor": "GLN20@NE2",
+      "acceptor": "PHE72@O",
+      "frame_count": 1,
+      "total_frames": 15,
+      "persistence_pct": 6.7
+    },
+    {
+      "donor": "TRP36@N",
+      "acceptor": "GLN61@OE1",
+      "frame_count": 1,
+      "total_frames": 15,
+      "persistence_pct": 6.7
+    },
+    {
+      "donor": "ARG218@N",
+      "acceptor": "SER112@O",
+      "frame_count": 1,
+      "total_frames": 15,
+      "persistence_pct": 6.7
+    },
+    {
+      "donor": "ARG218@NE",
+      "acceptor": "ARG114@O",
+      "frame_count": 1,
+      "total_frames": 15,
+      "persistence_pct": 6.7
+    },
+    {
+      "donor": "ARG218@NH1",
+      "acceptor": "ARG114@O",
+      "frame_count": 1,
+      "total_frames": 15,
+      "persistence_pct": 6.7
+    },
+    {
+      "donor": "ASN246@N",
+      "acceptor": "HIS81@NE2",
+      "frame_count": 1,
+      "total_frames": 15,
+      "persistence_pct": 6.7
+    }
+  ],
+  "per_residue_decomposition": [
+    {
+      "res_label": "GLU38",
+      "res_seq": 38,
+      "res_name": "GLU",
+      "mean_energy_kcal_mol": -161.01,
+      "std_energy_kcal_mol": 33.67,
+      "mean_vdw_kcal_mol": -1.47
+    },
+    {
+      "res_label": "ASP78",
+      "res_seq": 78,
+      "res_name": "ASP",
+      "mean_energy_kcal_mol": -60.42,
+      "std_energy_kcal_mol": 35.91,
+      "mean_vdw_kcal_mol": 0.0
+    },
+    {
+      "res_label": "GLN61",
+      "res_seq": 61,
+      "res_name": "GLN",
+      "mean_energy_kcal_mol": -53.93,
+      "std_energy_kcal_mol": 34.16,
+      "mean_vdw_kcal_mol": -8.09
+    },
+    {
+      "res_label": "ASP84",
+      "res_seq": 84,
+      "res_name": "ASP",
+      "mean_energy_kcal_mol": -44.85,
+      "std_energy_kcal_mol": 51.59,
+      "mean_vdw_kcal_mol": -3.23
+    },
+    {
+      "res_label": "ARG114",
+      "res_seq": 114,
+      "res_name": "ARG",
+      "mean_energy_kcal_mol": -41.81,
+      "std_energy_kcal_mol": 41.85,
+      "mean_vdw_kcal_mol": -5.04
+    },
+    {
+      "res_label": "GLU45",
+      "res_seq": 45,
+      "res_name": "GLU",
+      "mean_energy_kcal_mol": -41.21,
+      "std_energy_kcal_mol": 30.19,
+      "mean_vdw_kcal_mol": -0.62
+    },
+    {
+      "res_label": "LEU93",
+      "res_seq": 93,
+      "res_name": "LEU",
+      "mean_energy_kcal_mol": -33.51,
+      "std_energy_kcal_mol": 25.0,
+      "mean_vdw_kcal_mol": -6.56
+    },
+    {
+      "res_label": "LYS113",
+      "res_seq": 113,
+      "res_name": "LYS",
+      "mean_energy_kcal_mol": -30.4,
+      "std_energy_kcal_mol": 28.41,
+      "mean_vdw_kcal_mol": -8.69
+    },
+    {
+      "res_label": "TYR37",
+      "res_seq": 37,
+      "res_name": "TYR",
+      "mean_energy_kcal_mol": -29.87,
+      "std_energy_kcal_mol": 34.59,
+      "mean_vdw_kcal_mol": -5.74
+    },
+    {
+      "res_label": "LEU82",
+      "res_seq": 82,
+      "res_name": "LEU",
+      "mean_energy_kcal_mol": -28.79,
+      "std_energy_kcal_mol": 37.64,
+      "mean_vdw_kcal_mol": -7.39
+    },
+    {
+      "res_label": "CYS53",
+      "res_seq": 53,
+      "res_name": "CYS",
+      "mean_energy_kcal_mol": -24.76,
+      "std_energy_kcal_mol": 24.64,
+      "mean_vdw_kcal_mol": -0.28
+    },
+    {
+      "res_label": "VAL35",
+      "res_seq": 35,
+      "res_name": "VAL",
+      "mean_energy_kcal_mol": -21.62,
+      "std_energy_kcal_mol": 19.85,
+      "mean_vdw_kcal_mol": -0.23
+    },
+    {
+      "res_label": "VAL102",
+      "res_seq": 102,
+      "res_name": "VAL",
+      "mean_energy_kcal_mol": -17.99,
+      "std_energy_kcal_mol": 18.53,
+      "mean_vdw_kcal_mol": -1.51
+    },
+    {
+      "res_label": "ASP87",
+      "res_seq": 87,
+      "res_name": "ASP",
+      "mean_energy_kcal_mol": -17.8,
+      "std_energy_kcal_mol": 17.72,
+      "mean_vdw_kcal_mol": -0.02
+    },
+    {
+      "res_label": "ILE34",
+      "res_seq": 34,
+      "res_name": "ILE",
+      "mean_energy_kcal_mol": -16.86,
+      "std_energy_kcal_mol": 18.11,
+      "mean_vdw_kcal_mol": -3.66
+    },
+    {
+      "res_label": "HIS81",
+      "res_seq": 81,
+      "res_name": "HIS",
+      "mean_energy_kcal_mol": -15.45,
+      "std_energy_kcal_mol": 39.88,
+      "mean_vdw_kcal_mol": -7.95
+    },
+    {
+      "res_label": "TYR54",
+      "res_seq": 54,
+      "res_name": "TYR",
+      "mean_energy_kcal_mol": -15.19,
+      "std_energy_kcal_mol": 27.79,
+      "mean_vdw_kcal_mol": -4.48
+    },
+    {
+      "res_label": "SER31",
+      "res_seq": 31,
+      "res_name": "SER",
+      "mean_energy_kcal_mol": -15.12,
+      "std_energy_kcal_mol": 21.05,
+      "mean_vdw_kcal_mol": -0.3
+    },
+    {
+      "res_label": "ALA105",
+      "res_seq": 105,
+      "res_name": "ALA",
+      "mean_energy_kcal_mol": -14.53,
+      "std_energy_kcal_mol": 20.79,
+      "mean_vdw_kcal_mol": -3.9
+    },
+    {
+      "res_label": "ILE94",
+      "res_seq": 94,
+      "res_name": "ILE",
+      "mean_energy_kcal_mol": -14.15,
+      "std_energy_kcal_mol": 15.75,
+      "mean_vdw_kcal_mol": -7.88
+    }
+  ],
+  "elapsed_seconds": 47.18
+}

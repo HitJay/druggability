@@ -93,16 +93,16 @@ def add_header_footer(slide, page_num, total_pages, title, subtitle, section_tag
          (subtitle, {"size": 10.2, "color": ICE, "italic": True})]
     ])
     text(slide, 10.55, 0.18, 2.30, 0.54, [
-        [(f"SLIDE {page_num} OF {total_pages}  |  RIC-410", {"size": 10.2, "bold": True, "color": WHITE})],
+        [(f"SLIDE {page_num} OF {total_pages}  |  RIC-410" if isinstance(page_num, int) else f"{page_num}  |  RIC-410", {"size": 10.2, "bold": True, "color": WHITE})],
         [("Group Meeting  |  Novo Nordisk", {"size": 9.2, "color": ICE})]
     ], align=PP_ALIGN.RIGHT, space_after=2)
     # Footer
     rect(slide, 0.48, 7.08, W - 0.96, 0.01, BORDER)
     text(slide, 0.48, 7.13, 9.0, 0.25,
-         "References: Zhang et al., Science 390, eadt1630 (2025) | Pei, Zhang & Cong, Sci Rep 16:25590 (2026) | Lambourne et al., Nat Commun (2026)",
+         "References: Zhang et al., Science 390, eadt1630 (2025) | Pei, Zhang & Cong, Sci Rep 16:25590 (2026) | Cao et al., Science 375, eabm9601 (2022)",
          size=8.5, color=GREY)
     text(slide, 9.50, 7.13, 3.35, 0.25,
-         f"druggability repo  |  Page {page_num}/{total_pages}",
+         f"druggability repo  |  Page {page_num}/{total_pages}" if isinstance(page_num, int) else f"druggability repo  |  {page_num}",
          size=8.5, color=GREY, align=PP_ALIGN.RIGHT)
 
 
@@ -711,9 +711,135 @@ set_notes(s6, """【Slide 6 口播讲稿（约 2 分钟）】
    - **A100 显式水 MD（200 ps）**：主链 RMSD 仅 **0.49 Å**，复合物结合极其稳定；
    - **FEP 突变能量热点扫描（右上 Panel B）**：最令人振奋的是，MRAP2 上已知的两个**人类单基因肥胖临床突变位点——Arg125（R125C，距 RAMP3 D113 仅 3.33 Å）和 Leu115（L115V，距 RAMP3 D107 仅 1.97 Å）**，在 FEP 突变计算中恰好是整个结合面最强的 #1 和 #2 能量热点（**突变后结合能损失 ddG 分别为 +6.25 kcal/mol 和 +5.21 kcal/mol**），而外围环区的 N88Y 突变位点 ddG 为 -0.88 kcal/mol（提示通过大侧链空间位阻致病）；
    - **界面复合凹槽对接**：临床 RAMP 拮抗剂分子骨架（Ubrogepant -7.81 kcal/mol，Rimegepant -7.39 kcal/mol 且三元共折叠 ligand_ipTM = 0.950）相比非界面负对照区展现出显著的界面凹槽选择性。
-   - **湿实验转化**：我们已经锁定了 **MRAP2 L115A/V、R125C/A 与 RAMP3 W56A** 作为精确破坏结合的 co-IP / BRET 点突变负对照。
+   • **湿实验转化**：我们已经锁定了 **MRAP2 L115A/V、R125C/A 与 RAMP3 W56A** 作为精确破坏结合的 co-IP / BRET 点突变负对照。
 我的汇报完了，欢迎大家讨论拍板！""")
+
+
+# ==============================================================================
+# SLIDE 7 (APPENDIX S1): In Silico Test of MRAP2 Competition & Stability on Amylin Receptors
+# ==============================================================================
+s7 = add_blank_slide()
+add_header_footer(
+    s7, "APPENDIX S1", 6,
+    "Appendix: Does MRAP2 Compete with Amylin or Destabilize AMY1R / AMY3R?",
+    "Cryo-EM Superposition (7TYF/7TZF), Quaternary Boltz-2 Co-Folding, and 8-System A100 Explicit-Solvent MD",
+    "SUPPLEMENTARY DEEP-DIVE (ZHCO FOLLOW-UP)"
+)
+
+# Left Column: Dual-Mechanism Table (x=0.48, y=1.12, w=7.25, h=5.82)
+rect(s7, 0.48, 1.12, 7.25, 5.82, LIGHT, line=BORDER)
+rect(s7, 0.48, 1.12, 7.25, 0.36, NAVY)
+text(s7, 0.64, 1.18, 6.95, 0.24,
+     "Quantitative Comparison: Cryo-EM Baselines vs Subunit & Orthosteric Competition",
+     size=10.3, bold=True, color=WHITE)
+
+# 3 Mini Mechanism Pills (y=1.55, h=0.56)
+m_pills = [
+    ("Cryo-EM Fact (7TYF/7TZF)", "98.5% Amylin ICs on CTR; RAMP W84/P85 caps Tyr37", NAVY),
+    ("Mech 1: Subunit Competition", "80.0% RAMP3 & 75.7% RAMP1 CTR-face shared w/ MRAP2", TEAL),
+    ("Mech 2: 7TM Pocket Block", "Amylin 7TM contacts drop 92->2 (AMY1R) & 96->0 (AMY3R)", RED),
+]
+mpw = 2.23
+mpg = 0.14
+mpx = 0.62
+for m_val, m_sub, m_col in m_pills:
+    rect(s7, mpx, 1.55, mpw, 0.56, WHITE, line=m_col, line_w=1.2)
+    text(s7, mpx + 0.04, 1.60, mpw - 0.08, 0.46, [
+        [(m_val, {"size": 8.6, "bold": True, "color": m_col})],
+        [(m_sub, {"size": 6.9, "bold": True, "color": INK})],
+    ], align=PP_ALIGN.CENTER, space_after=1)
+    mpx += mpw + mpg
+
+# Table of 7 Key Systems (y=2.20, h=3.70)
+s7_rows = [
+    ("System / Condition", "Chains Evaluated", "3D Overlap / 7TM Contacts", "A100 MD <dG_GBn2> & <E_vdW> (kcal/mol)", "Biophysical Conclusion"),
+    ("Cryo-EM AMY1R (7TYF)", "CTR+RAMP1 : Amylin", "87 7TM + 48 ECD + 2 RAMP1 (W84/P85)", "<dG> = -221.3 ± 5.1 | <E_vdW> = -222.2", "Native AMY1R reference (RMSD 0.41A)"),
+    ("Cryo-EM AMY3R (7TZF)", "CTR+RAMP3 : Amylin", "91 7TM + 45 ECD + 3 RAMP3 (E74/W84/P85)", "<dG> = -197.5 ± 7.1 | <E_vdW> = -227.7", "Native AMY3R reference (RMSD 0.48A)"),
+    ("RAMP3 Subunit Comp.", "RAMP3:MRAP2 vs CTR", "32/40 (80.0%) CTR face shared; 222 clashes", "-212.9 (-254.0 vdW) vs -189.5 (-217.5)", "MRAP2 outcompetes CTR (ddG = -23.4)"),
+    ("RAMP1 Subunit Comp.", "RAMP1:MRAP2 vs CTR", "28/37 (75.7%) CTR face shared; 172 clashes", "-156.8 (-198.5 vdW) vs -159.2 (-202.7)", "Comparable affinity; blocks AMY1R"),
+    ("AMY1R Ternary (-MRAP2)", "CTR+RAMP1 : Amylin", "92 7TM + 73 ECD ICs (N-loop RMSD 1.27A)", "<dG> = -237.8 ± 6.7 | <E_vdW> = -269.5", "Deep 7TM orthosteric engagement"),
+    ("AMY1R Quat. (+MRAP2)", "CTR+RAMP1+M : Amylin", "2 7TM ICs (-97.8%); displaced 21.7A", "<dG> = -113.5 ± 4.1 (ddG = +124.3)", "MRAP2 ejects RAMP1 or cuts dG by 52%"),
+    ("AMY3R -/+ MRAP2", "CTR+RAMP3(±M) : Amy", "96 -> 0 7TM ICs (-100%); displaced 24.5A", "-164.2 (-223.6) -> -148.9 (-163.1 vdW)", "MRAP2 68-88 plugs 7TM (ddE = +60.5)"),
+]
+
+t7_shape = s7.shapes.add_table(len(s7_rows), 5, Inches(0.62), Inches(2.20), Inches(6.97), Inches(3.70))
+t7 = t7_shape.table
+t7_widths = [1.32, 1.15, 1.55, 1.55, 1.40]
+for ci, w_in in enumerate(t7_widths):
+    t7.columns[ci].width = Inches(w_in)
+
+for ri, rvals in enumerate(s7_rows):
+    for ci, val in enumerate(rvals):
+        cell = t7.cell(ri, ci)
+        cell.vertical_anchor = MSO_ANCHOR.MIDDLE
+        cell.margin_left = cell.margin_right = Inches(0.04)
+        cell.margin_top = cell.margin_bottom = Inches(0.02)
+        cell.fill.solid()
+        if ri == 0:
+            cell.fill.fore_color.rgb = NAVY
+        elif ri in (3, 6, 7):
+            cell.fill.fore_color.rgb = GREEN_BG
+        elif ri % 2 == 1:
+            cell.fill.fore_color.rgb = WHITE
+        else:
+            cell.fill.fore_color.rgb = ICE
+        p_cell = cell.text_frame.paragraphs[0]
+        p_cell.alignment = PP_ALIGN.LEFT
+        run = p_cell.add_run()
+        run.text = val
+        run.font.name = "Calibri"
+        run.font.size = Pt(7.8 if ri == 0 else 7.2)
+        run.font.bold = (ri == 0 or ci == 0 or (ri in (3, 6, 7) and ci == 3))
+        run.font.color.rgb = WHITE if ri == 0 else (RED if ri in (6, 7) and ci == 0 else (NAVY if ci == 0 else INK))
+
+# Bottom note inside Left Column (y=5.98, h=0.84)
+rect(s7, 0.62, 5.98, 6.97, 0.84, WHITE, line=BORDER)
+rect(s7, 0.62, 5.98, 0.07, 0.84, RED)
+text(s7, 0.78, 6.03, 6.72, 0.74, [
+    [("Testable Wet-Lab Hypothesis (cAMP / BRET / Surface ELISA): ", {"size": 8.6, "bold": True, "color": RED}),
+     ("Co-expressing WT MRAP2 will competitively sequester RAMP3/RAMP1 away from CTR and attenuate amylin/cagrilintide potency, whereas our FEP-designed obesity point-mutants (MRAP2 L115A/V, R125A/C) will lose RAMP binding and restore normal AMY1R/AMY3R signaling.",
+      {"size": 7.9, "color": INK})]
+])
+
+# Right Column: 2-Panel Competition & MD Energetics Plot + Mechanistic Summary (x=7.90, y=1.12, w=4.95, h=5.82)
+rect(s7, 7.90, 1.12, 4.95, 5.82, ICE, line=BORDER)
+rect(s7, 7.90, 1.12, 4.95, 0.36, TEAL)
+text(s7, 8.06, 1.18, 4.65, 0.24,
+     "Dual-Mechanism Competition & A100 MD Energetics",
+     size=10.5, bold=True, color=WHITE)
+
+AMY_IMG = "/das/user/QYJI/druggability/reports/bq1_99_triage/amylin_mrap2_study/amylin_mrap2_competition_md_2panel.png"
+rect(s7, 8.04, 1.55, 4.67, 2.02, WHITE, line=BORDER)
+s7.shapes.add_picture(AMY_IMG, Inches(8.06), Inches(1.57), Inches(4.63), Inches(1.98))
+
+rect(s7, 8.04, 3.65, 4.67, 3.17, WHITE, line=NAVY, line_w=1.2)
+rect(s7, 8.04, 3.65, 4.67, 0.26, NAVY)
+text(s7, 8.16, 3.69, 4.45, 0.20, "ANSWERS TO ZHENG'S TWO QUESTIONS (MECHANISM SUMMARY)", size=8.5, bold=True, color=WHITE)
+text(s7, 8.16, 3.97, 4.45, 2.78, [
+    [("1. Do Amylin and MRAP2 Compete in Binding to Amylin Receptors?", {"size": 8.5, "bold": True, "color": NAVY})],
+    [("   YES — at two structural levels:\n"
+      "   • Subunit Sequestration (MRAP2 vs CTR for RAMP1/3): MRAP2 occupies 80.0% (32/40) of RAMP3's and 75.7% (28/37) of RAMP1's CTR-binding residues, and binds RAMP3 more tightly than CTR in MD (ddG = -23.43 kcal/mol).\n"
+      "   • Tyr37 Pocket Cap Occlusion: MRAP2 covers 100% of the RAMP1/3 Trp84-Pro85 shelf that caps amylin's C-terminal Tyr37-NH2.", {"size": 7.7, "color": INK})],
+    [("2. Does MRAP2 Affect the Stability of Amylin / Receptor Complexes?", {"size": 8.5, "bold": True, "color": RED})],
+    [("   YES — severe destabilization & 7TM ejection:\n"
+      "   • In quaternary co-folding + MD, MRAP2 invades the CTR ECL2/ECL3/7TM entrance, reducing amylin's 7TM contacts by 97.8% in AMY1R (ddG = +124.26 kcal/mol) and 100% in AMY3R (ddE_vdW = +60.49 kcal/mol).", {"size": 7.7, "color": INK})],
+], space_after=2.0)
+
+set_notes(s7, """【Appendix S1（补充页 Slide 7）口播讲稿 — 回答曹峥关于 Amylin 受体竞争与稳定性的追问】
+如果会上大家问到：“RAMP1 和 RAMP3 也是我们 Amylin / CagriSema 受体（AMY1R = CTR+RAMP1，AMY3R = CTR+RAMP3）的必需亚基，那 MRAP2 结合 RAMP1/3 会不会和 Amylin 竞争，或者影响 Amylin 受体复合物的稳定性？”
+这一页补充材料直接给出了结合 Cryo-EM 结构（7TYF/7TZF）、四元 Boltz-2 共折叠和 8 组 A100 显式水 MD 的定量答案：
+
+1. 第一个层面（亚基级直接互斥竞争）：
+   - 在冷冻电镜结构里，Amylin 98% 以上的接触都在 CTR 主亚基上，RAMP1/3 主要是通过胞外域的 Trp84-Pro85 疏水平台去“封盖”Amylin 的 C 端 Tyr37-NH2。
+   - 当我们把 RAMP3:MRAP2 和 RAMP1:MRAP2 叠合到冷冻电镜的 AMY3R 和 AMY1R 上时，发现 MRAP2 占据了 RAMP3 上 80%（32/40）和 RAMP1 上 75.7%（28/37）原本用来结合 CTR 的残基（跟 CTR 产生 172 到 222 对严重原子碰撞），并且 100% 盖住了结合 Amylin Tyr37 的 Trp84-Pro85 位点！
+   - 更关键的是，在 A100 显式水 MD 中，MRAP2 与 RAMP3 的结合力（<dG> = -212.9 kcal/mol，<E_vdW> = -254.0 kcal/mol）比天然 CTR 与 RAMP3 的结合力（-189.5 kcal/mol）还要强 23.4 kcal/mol！这意味着高表达的 MRAP2 会直接把 RAMP3 从 CTR 身边“抢走（sequester）”，阻止功能性 Amylin 受体的组装。
+
+2. 第二个层面（四元复合物正构口袋阻断与失稳）：
+   - 如果强行把 CTR + RAMP1/3 + Amylin + MRAP2 放在一起做四元共折叠和显式水 MD：
+   - 没有 MRAP2 时，Amylin 的 N 端二硫键环深深插进 CTR 的 7TM 跨膜核心（92–96 个跨膜接触，结合能高达 -237.8 和 -164.2 kcal/mol）；
+   - 加入 MRAP2 后，MRAP2 的近膜区（68–88 位氨基酸）直接堵在 CTR 的正构口袋入口，把 Amylin 从 7TM 核心里顶了出来（距离偏移 22–25 Å，Amylin 的 7TM 接触在 AMY1R 中丢失 97.8%，在 AMY3R 中 100% 归零），导致 Amylin 与受体的 MD 结合能分别恶化了 +124.3 kcal/mol（腰斩 52%）和 +60.5 kcal/mol（范德华吸引能损失 27%）。
+   - 这直接给出了一个非常漂亮的湿实验预测：野生型 MRAP2 会负向抑制 Amylin 受体信号，而我们用 FEP 找出的两个肥胖突变（MRAP2 L115V/A 和 R125C/A）因为抓不住 RAMP3，反而会解除对 Amylin 受体的抑制！""")
 
 out_deck = "/das/user/QYJI/druggability/reports/ppi_group_meeting_deck_2026-10-29.pptx"
 prs.save(out_deck)
-print("Saved 6-slide group meeting PPTX:", out_deck)
+print("Saved 7-slide group meeting PPTX (6 main + 1 Appendix):", out_deck)
