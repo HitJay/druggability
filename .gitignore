@@ -73,6 +73,17 @@ docs/monthly_report_2026_05_draft.md
 reports/*.png
 reports/*.html
 reports/*_email_to_*.txt
+reports/deck_slides_*/
+reports/bq1_99_triage/reply_email_to_*.txt
+reports/bq1_99_triage/*.png
+reports/bq1_99_triage/*.xlsx
+reports/bq1_99_triage/*_cache.json
+reports/bq1_99_triage/rf2_run/
+reports/bq1_99_triage/boltz_complexes/msas/
+reports/bq1_99_triage/boltz_complexes/boltz_results_*/lightning_logs/
+reports/bq1_99_triage/boltz_complexes/boltz_results_*/processed/
+reports/bq1_99_triage/boltz_complexes/boltz_results_*/predictions/*/*.npz
+reports/bq1_99_triage/ramp3_mrap2_md_fep/*_out/
 
 # GPR81 follow-up deliverables (regenerable from build_*.py scripts; CIFS archive copy under output/2026-08-05/)
 data/gpr81_phase1/followup_2026-08/figures

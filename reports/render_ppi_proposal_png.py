@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Generate self-contained 1920x1080 HTML one-pager (Biology-friendly edition) and render @1x/@2x/@3x PNG via Playwright."""
+"""Generate self-contained 1920x1080 HTML one-pager (Group Meeting Edition) and render @1x/@2x/@3x PNG via Playwright."""
 import asyncio
 import base64
 from pathlib import Path
@@ -18,7 +18,7 @@ html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Proteome-Wide Binding Partner &amp; Disease-Interface Triage</title>
+<title>Proteome-Wide PPI &amp; Disease-Interface Triage: Baker Achievement &amp; Campaign Business Questions</title>
 <style>
   * {{ box-sizing: border-box; margin: 0; padding: 0; }}
   html, body {{
@@ -39,23 +39,23 @@ html = f"""<!DOCTYPE html>
   }}
   /* Top Header Banner */
   .header {{
-    height: 138px;
+    height: 136px;
     background: #001965;
-    padding: 20px 64px;
+    padding: 18px 64px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-shrink: 0;
   }}
   .header-left h1 {{
-    font-size: 31px;
+    font-size: 28.5px;
     font-weight: 700;
     color: #FFFFFF;
     letter-spacing: -0.3px;
     margin-bottom: 8px;
   }}
   .header-left .sub {{
-    font-size: 16.5px;
+    font-size: 16px;
     color: #E8EEF7;
   }}
   .header-left .sub strong {{
@@ -68,6 +68,7 @@ html = f"""<!DOCTYPE html>
   .header-right {{
     text-align: right;
     color: #FFFFFF;
+    flex-shrink: 0;
   }}
   .header-right .badge {{
     display: inline-block;
@@ -75,7 +76,7 @@ html = f"""<!DOCTYPE html>
     border: 1px solid rgba(255,255,255,0.3);
     padding: 5px 14px;
     border-radius: 4px;
-    font-size: 15.5px;
+    font-size: 15px;
     font-weight: 700;
     letter-spacing: 0.5px;
     margin-bottom: 6px;
@@ -88,7 +89,7 @@ html = f"""<!DOCTYPE html>
   /* Main 2-Column Workspace */
   .main {{
     flex: 1;
-    padding: 22px 64px 14px 64px;
+    padding: 20px 64px 12px 64px;
     display: grid;
     grid-template-columns: 880px 884px;
     gap: 28px;
@@ -107,11 +108,11 @@ html = f"""<!DOCTYPE html>
     background: #E8EEF7;
   }}
   .panel-hdr {{
-    height: 50px;
-    padding: 0 22px;
+    height: 48px;
+    padding: 0 20px;
     display: flex;
     align-items: center;
-    font-size: 17.5px;
+    font-size: 17px;
     font-weight: 700;
     color: #FFFFFF;
     letter-spacing: 0.1px;
@@ -122,7 +123,7 @@ html = f"""<!DOCTYPE html>
   .hdr-red  {{ background: #D9383A; }}
 
   .panel-body {{
-    padding: 16px 20px;
+    padding: 14px 18px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -134,35 +135,35 @@ html = f"""<!DOCTYPE html>
   .kpi-grid {{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 14px;
+    gap: 12px;
     flex-shrink: 0;
   }}
   .kpi-card {{
     background: #FFFFFF;
     border: 1px solid #D0D7E5;
     border-top: 6px solid #001965;
-    padding: 10px 8px 9px 8px;
+    padding: 9px 6px 8px 6px;
     text-align: center;
   }}
   .kpi-card.teal {{ border-top-color: #00857C; }}
   .kpi-card.red  {{ border-top-color: #D9383A; }}
   .kpi-val {{
-    font-size: 27px;
+    font-size: 23px;
     font-weight: 800;
     color: #001965;
-    line-height: 1.15;
+    line-height: 1.18;
     margin-bottom: 4px;
   }}
   .kpi-card.teal .kpi-val {{ color: #00857C; }}
   .kpi-card.red  .kpi-val {{ color: #D9383A; }}
   .kpi-lbl {{
-    font-size: 13px;
+    font-size: 12.8px;
     font-weight: 700;
     color: #1A1A2E;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
   }}
   .kpi-sub {{
-    font-size: 11.5px;
+    font-size: 11.2px;
     color: #5A6070;
   }}
 
@@ -174,7 +175,7 @@ html = f"""<!DOCTYPE html>
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 365px;
+    height: 358px;
     flex-shrink: 0;
   }}
   .plot-box img {{
@@ -188,99 +189,88 @@ html = f"""<!DOCTYPE html>
     background: #FFFFFF;
     border: 1px solid #D0D7E5;
     border-left: 8px solid #00857C;
-    padding: 12px 18px;
+    padding: 11px 16px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 9px;
+    gap: 8px;
     flex-shrink: 0;
   }}
   .ev-row {{
-    font-size: 13.3px;
-    line-height: 1.37;
+    font-size: 13.0px;
+    line-height: 1.35;
     color: #1A1A2E;
   }}
-  .ev-row strong.teal {{ color: #00857C; font-size: 13.8px; }}
-  .ev-row strong.navy {{ color: #001965; font-size: 13.8px; }}
+  .ev-row strong.teal {{ color: #00857C; font-size: 13.4px; }}
+  .ev-row strong.navy {{ color: #001965; font-size: 13.4px; }}
 
   /* Right Column Stack */
   .right-col {{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 20px;
+    gap: 16px;
     min-height: 0;
   }}
 
-  /* 4-Step Funnel */
-  .steps-row {{
-    display: flex;
-    align-items: stretch;
-    justify-content: space-between;
-    gap: 6px;
+  /* 3 Business Question Cards */
+  .bq-row {{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
   }}
-  .step-card {{
-    flex: 1;
+  .bq-card {{
     background: #FFFFFF;
     border: 1px solid #D0D7E5;
     display: flex;
     flex-direction: column;
   }}
-  .step-hdr {{
-    height: 36px;
+  .bq-hdr {{
+    height: 34px;
     background: #001965;
     color: #FFFFFF;
-    font-size: 13.2px;
+    font-size: 13px;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
   }}
-  .step-hdr.teal {{ background: #00857C; }}
-  .step-hdr.red  {{ background: #D9383A; }}
-  .step-sub {{
-    font-size: 13.2px;
+  .bq-hdr.teal {{ background: #00857C; }}
+  .bq-hdr.red  {{ background: #D9383A; }}
+  .bq-sub {{
+    font-size: 12.4px;
     font-weight: 700;
     color: #001965;
     text-align: center;
-    padding: 7px 6px 4px 6px;
+    padding: 6px 8px 3px 8px;
   }}
-  .step-sub.teal {{ color: #00857C; }}
-  .step-sub.red  {{ color: #D9383A; }}
-  .step-body {{
-    font-size: 12.0px;
-    line-height: 1.35;
+  .bq-sub.teal {{ color: #00857C; }}
+  .bq-sub.red  {{ color: #D9383A; }}
+  .bq-body {{
+    font-size: 11.9px;
+    line-height: 1.34;
     color: #1A1A2E;
     padding: 4px 10px 10px 10px;
   }}
-  .chevron {{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #00857C;
-    font-size: 22px;
-    font-weight: 900;
-    padding: 0 1px;
-  }}
 
-  /* Three Orthogonal Layers Callout */
+  /* Handoff Callout */
   .layer-strip {{
     background: #FFFFFF;
     border: 1px solid #D0D7E5;
     border-left: 8px solid #001965;
-    padding: 11px 16px;
-    font-size: 13.3px;
-    line-height: 1.37;
-    margin-top: 12px;
+    padding: 10px 15px;
+    font-size: 12.9px;
+    line-height: 1.35;
+    margin-top: 10px;
   }}
-  .layer-strip strong {{ color: #001965; font-size: 13.8px; }}
+  .layer-strip strong {{ color: #001965; font-size: 13.4px; }}
 
   /* Bottom Right Matrix + 2 Cards */
   .matrix-grid {{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 14px;
-    margin-bottom: 10px;
+    gap: 12px;
+    margin-bottom: 9px;
   }}
   .mat-box {{
     border: 1.5px solid #00857C;
@@ -293,10 +283,10 @@ html = f"""<!DOCTYPE html>
     background: #FDF2F2;
   }}
   .mat-hdr {{
-    height: 32px;
+    height: 30px;
     background: #00857C;
     color: #FFFFFF;
-    font-size: 12.5px;
+    font-size: 12.2px;
     font-weight: 700;
     padding: 0 12px;
     display: flex;
@@ -307,12 +297,12 @@ html = f"""<!DOCTYPE html>
     background: #D9383A;
   }}
   .mat-body {{
-    padding: 8px 12px;
+    padding: 7px 11px;
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    font-size: 12.2px;
-    line-height: 1.34;
+    gap: 4px;
+    font-size: 11.9px;
+    line-height: 1.32;
   }}
   .mat-body strong.teal {{ color: #00857C; }}
   .mat-body strong.red  {{ color: #D9383A; }}
@@ -321,32 +311,32 @@ html = f"""<!DOCTYPE html>
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 10px;
+    gap: 8px;
     flex: 1;
   }}
   .pos-card {{
     background: #FFFFFF;
     border: 1px solid #D0D7E5;
     border-left: 8px solid #001965;
-    padding: 10px 16px;
-    font-size: 13.1px;
-    line-height: 1.35;
+    padding: 8px 14px;
+    font-size: 12.6px;
+    line-height: 1.33;
     display: flex;
     align-items: center;
     flex: 1;
   }}
   .pos-card.teal {{ border-left-color: #00857C; }}
-  .pos-card strong.navy {{ color: #001965; font-size: 13.6px; }}
-  .pos-card strong.teal {{ color: #00857C; font-size: 13.6px; }}
+  .pos-card strong.navy {{ color: #001965; font-size: 13.1px; }}
+  .pos-card strong.teal {{ color: #00857C; font-size: 13.1px; }}
 
   /* Footer */
   .footer {{
-    height: 40px;
-    padding: 0 64px 10px 64px;
+    height: 38px;
+    padding: 0 64px 8px 64px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 12.2px;
+    font-size: 12px;
     color: #5A6070;
     flex-shrink: 0;
   }}
@@ -357,15 +347,15 @@ html = f"""<!DOCTYPE html>
   <!-- Header -->
   <div class="header">
     <div class="header-left">
-      <h1>Proteome-Wide Binding Partner &amp; Disease-Interface Triage</h1>
+      <h1>Proteome-Wide PPI &amp; Disease-Interface Triage: Baker Achievement &amp; Campaign Business Questions</h1>
       <div class="sub">
-        <strong>Pre-Screening Target Complexes Before Wet-Lab Assays</strong> &nbsp;|&nbsp;
+        <strong>What Baker &amp; Cong&rsquo;s Team Achieved + What Business Question Our Campaign Solves</strong> &nbsp;|&nbsp;
         <em>Zhang et al., Science 2025 + Pei et al., Sci Rep 2026</em>
       </div>
     </div>
     <div class="header-right">
-      <div class="badge">PROPOSAL &nbsp;|&nbsp; RIC-410</div>
-      <div class="meta">2026-10-28 &nbsp;|&nbsp; Novo Nordisk</div>
+      <div class="badge">GROUP MEETING &nbsp;|&nbsp; RIC-410</div>
+      <div class="meta">2026-10-29 &nbsp;|&nbsp; Novo Nordisk</div>
     </div>
   </div>
 
@@ -373,27 +363,27 @@ html = f"""<!DOCTYPE html>
   <div class="main">
     <!-- Left Column: Section 1 -->
     <div class="panel">
-      <div class="panel-hdr hdr-teal">1. Why It Matters &amp; In-House Validation (33,000 Benchmark Pairs)</div>
+      <div class="panel-hdr hdr-teal">1. What Baker &amp; Cong&rsquo;s Team Achieved (Science 2025) &amp; In-House Reproduction</div>
       <div class="panel-body">
         <div class="kpi-grid">
           <div class="kpi-card">
-            <div class="kpi-val">262x</div>
-            <div class="kpi-lbl">vs Random Screening</div>
-            <div class="kpi-sub">AUC 0.262 vs 0.001 (1:1000)</div>
+            <div class="kpi-val">200M&rarr;17.8k</div>
+            <div class="kpi-lbl">Baker Interactome</div>
+            <div class="kpi-sub">3,631 novel @90% prec (2,700 S6)</div>
           </div>
           <div class="kpi-card teal">
-            <div class="kpi-val">43.2%</div>
-            <div class="kpi-lbl">Large-Complex Recall</div>
-            <div class="kpi-sub">At &ge;90% precision (51.8% @0.5)</div>
+            <div class="kpi-val">262x</div>
+            <div class="kpi-lbl">In-House Enrichment</div>
+            <div class="kpi-sub">AUCPR 0.262 vs 0.001 (1:1000)</div>
           </div>
           <div class="kpi-card">
-            <div class="kpi-val">0.919</div>
-            <div class="kpi-lbl">Author Score Parity</div>
-            <div class="kpi-sub">Pearson r across 8,977 pairs</div>
+            <div class="kpi-val">43.2%</div>
+            <div class="kpi-lbl">Large-Complex Recall</div>
+            <div class="kpi-sub">Interfaces &gt;1500 &Aring;&sup2; (r=0.919)</div>
           </div>
           <div class="kpi-card red">
             <div class="kpi-val">~6 hrs</div>
-            <div class="kpi-lbl">Per Target Screen</div>
+            <div class="kpi-lbl">Per-Target Screen</div>
             <div class="kpi-sub">1 bait vs 20,260 human proteins</div>
           </div>
         </div>
@@ -404,16 +394,16 @@ html = f"""<!DOCTYPE html>
 
         <div class="ev-box">
           <div class="ev-row">
-            <strong class="teal">Biological Bottleneck (FACT):</strong>
-            Affinity purification (AP-MS / co-IP) often misses low-abundance or membrane complexes. Zhang et al. (<em>Science</em> 2025) identified <strong>17,849 high-precision human PPIs</strong> (3,631 novel) with <strong>29,246 3D structures</strong>.
+            <strong class="teal">2025 Science vs 2026 Sci Rep Division (FACT):</strong>
+            <strong>2025</strong> built the engine (7x omicMSAs, 17x AFDB DDI training &rarr; RF2-PPI; 191M&rarr;111.2M&rarr;43.6M&rarr;1.9M funnel; <strong>17,849 PPIs @90% prec</strong> [de novo + prior-guided], 3,631 novel, 2,700 Data S6 lacking complex templates, 1,413 uncharacterized). <strong>2026</strong> added no new screen; it mined 2025 models for disease SAVs &amp; AF3 assemblies.
           </div>
           <div class="ev-row">
-            <strong class="navy">Why Recall is 20.8% Overall (MECH):</strong>
-            At realistic 1:1000 proteome odds, sensitivity depends on contact area: <strong>43.2% recall on large stable complexes (&gt;1500 &Aring;&sup2;)</strong> vs 4.5% on small transient motifs (&lt;800 &Aring;&sup2;). Balanced 1:1 AUC = <strong>0.813</strong>.
+            <strong class="navy">Why Recall is 20.8% Overall &amp; Where It Excels (MECH):</strong>
+            At realistic 1:1000 proteome odds (balanced 1:1 AUC=0.813), recall is <strong>43.2% on large stable complexes (&gt;1500 &Aring;&sup2;)</strong> vs 4.5% on small transient SLiMs (&lt;800 &Aring;&sup2;). Over half of 2,700 Data S6 novel PPIs (<strong>1,556; 58%</strong>) are <strong>transmembrane complexes</strong> missed by AP-MS.
           </div>
           <div class="ev-row">
-            <strong class="navy">Human Genetics Proof-of-Concept (OBS):</strong>
-            On Calcium-Sensing Receptor (<strong>CASR</strong>), our module mapped <strong>89 clinical pathogenic mutations</strong> (HHC1/HYPOC1); <strong>64% cluster directly at the ECD dimerization interface (&le;612)</strong>, confirming biological validity.
+            <strong class="navy">Prospective Audit &amp; Variant Interpretation Caveat (OBS):</strong>
+            <strong>11 Data S6 pairs</strong> (cutoff Sep 2023) are now proved by cryo-EM/co-IP (<em>DND1-NANOS3</em>, <em>DHX35-GPATCH1</em>, <em>TMEM209-NUP210</em>). On <strong>CASR</strong>, <strong>64% of 89 pathogenic SAVs</strong> map to the ECD dimer interface (<em>note: interface SAVs propose testable disruption hypotheses, not proof of loss-of-binding</em>).
           </div>
         </div>
       </div>
@@ -421,53 +411,45 @@ html = f"""<!DOCTYPE html>
 
     <!-- Right Column: Section 2 & Section 3 -->
     <div class="right-col">
-      <!-- Top-Right: Funnel -->
+      <!-- Top-Right: 3 Business Questions -->
       <div class="panel panel-blue">
-        <div class="panel-hdr hdr-navy">2. From Target of Interest to Wet-Lab Assay Design (~6 Hours / Target)</div>
-        <div class="panel-body" style="padding: 14px 18px;">
-          <div class="steps-row">
-            <div class="step-card">
-              <div class="step-hdr">Step 1: Target Input</div>
-              <div class="step-sub">1 Bait Protein</div>
-              <div class="step-body">Provide any target UniProt ID; screened against 20,260 human proteins with deep evolutionary alignments</div>
+        <div class="panel-hdr hdr-navy">2. Campaign Business Question Menu (3 Candidate Questions for Alignment)</div>
+        <div class="panel-body" style="padding: 12px 16px;">
+          <div class="bq-row">
+            <div class="bq-card">
+              <div class="bq-hdr">BQ-1: Portfolio Partner Mining</div>
+              <div class="bq-sub">99 Leads &rarr; 8 Pass All 4/4</div>
+              <div class="bq-body">Strict 4-Criteria Triage on 99 Data S6 cardiometabolic leads (C1 Both-Genetics 60 [46 Human], C2 Pathway 43, C3 Direct Perturb. 14, C4 CM Co-expr 56) &rarr; <strong>8 pass all 4/4</strong> (<strong>#1 RAMP3&ndash;MRAP2</strong>, <strong>#2 RAMP1&ndash;MRAP2</strong>).</div>
             </div>
-            <div class="chevron">&#10095;</div>
-            <div class="step-card">
-              <div class="step-hdr">Step 2: Partner Screen</div>
-              <div class="step-sub">Binding Probability</div>
-              <div class="step-body">Rapid coevolutionary &amp; structural scoring (~6h on 6 GPUs); calibrated against our local 90% precision cutoff</div>
+            <div class="bq-card">
+              <div class="bq-hdr teal">BQ-2: De Novo Target Screen</div>
+              <div class="bq-sub teal">1 Bait vs 20,260 Human Proteins</div>
+              <div class="bq-body">For an internal priority receptor or enzyme (especially <strong>transmembrane or organelle targets</strong> where detergent AP-MS fails), what is its missing endogenous co-receptor, trafficking chaperone, or E3 ligase (<strong>~6 GPU-h/target</strong>)?</div>
             </div>
-            <div class="chevron">&#10095;</div>
-            <div class="step-card">
-              <div class="step-hdr teal">Step 3: 3D &amp; Genetics</div>
-              <div class="step-sub teal">Interface Mapping</div>
-              <div class="step-body">3D complex model (6&Aring; contact residues) + clinical disease-mutation enrichment (ClinVar / UniProt / AlphaMissense)</div>
-            </div>
-            <div class="chevron">&#10095;</div>
-            <div class="step-card">
-              <div class="step-hdr red">Step 4: Assay Design</div>
-              <div class="step-sub red">Wet-Lab Handoff</div>
-              <div class="step-body">Top-N partner list + exact interface point-mutations to design negative controls for co-IP / BioID / BRET</div>
+            <div class="bq-card">
+              <div class="bq-hdr red">BQ-3: Disease-Interface Assay</div>
+              <div class="bq-sub red">3D Pocket &amp; Disruptor Mutants</div>
+              <div class="bq-body">Given a target complex or human genetics signal, where is the exact <strong>6&Aring; contact surface</strong> and which clinical pathogenic variants (ClinVar / AlphaMissense) sit at the interface to design <strong>point-mutant negative controls</strong>?</div>
             </div>
           </div>
           <div class="layer-strip">
-            <strong>What Biology Teams Receive per Candidate:</strong>
-            (1) Calibrated binding confidence, (2) 3D complex structure with pocket/interface coordinates, and (3) Human genetic disease variants at the contact surface &mdash; directly guiding mutational validation.
+            <strong>End-to-End Handoff to Wet-Lab (~6 GPU-h / Target):</strong>
+            (1) Calibrated partner probability (@90% precision cutoff), (2) 3D complex coordinates (6&Aring; contact residues), and (3) Interface pathogenic variants (Pei et al. 2026) &rarr; exact point-mutant negative controls for co-IP / BioID / BRET.
           </div>
         </div>
       </div>
 
       <!-- Bottom-Right: Biological Fit Matrix + Immediate Pilot -->
       <div class="panel" style="flex: 1;">
-        <div class="panel-hdr hdr-red">3. Biological Fit Matrix, Golden Rule &amp; Cardiometabolic Pilot</div>
-        <div class="panel-body" style="padding: 14px 18px;">
+        <div class="panel-hdr hdr-red">3. Biological Fit Matrix, Golden Rule &amp; Proposed Pilot Decision</div>
+        <div class="panel-body" style="padding: 12px 16px;">
           <div class="matrix-grid">
             <div class="mat-box">
               <div class="mat-hdr">IDEAL TARGETS (HIGH SENSITIVITY)</div>
               <div class="mat-body">
                 <div>&bull; <strong class="teal">Obligate &amp; constitutive complexes</strong> (43.2% recall on interfaces &gt;1500 &Aring;&sup2;)</div>
-                <div>&bull; <strong class="teal">Transmembrane &amp; organelle complexes</strong> hard to solubilize in standard AP-MS</div>
-                <div>&bull; <strong class="teal">Endogenous receptor / enzyme complexes</strong> &amp; genetic disease-linked interfaces</div>
+                <div>&bull; <strong class="teal">Transmembrane &amp; organelle complexes</strong> (58% of Data S6; missed by detergent AP-MS)</div>
+                <div>&bull; <strong class="teal">Co-receptors, chaperones &amp; enzymes</strong> with human genetic variants at interface</div>
               </div>
             </div>
             <div class="mat-box red">
@@ -475,16 +457,16 @@ html = f"""<!DOCTYPE html>
               <div class="mat-body">
                 <div>&bull; <strong class="red">Transient / PTM-triggered signaling</strong> (e.g., GPCR-arrestin, kinase-substrate)</div>
                 <div>&bull; <strong class="red">Disordered short linear motifs (SLiMs)</strong> (4.5% recall on interfaces &lt;800 &Aring;&sup2;)</div>
-                <div>&bull; <strong class="red">Immune receptors (TCR/BCR/MHC)</strong> &amp; fast-evolving / lineage-specific pairs</div>
+                <div>&bull; <strong class="red">Immune receptors (TCR/BCR/MHC)</strong> &amp; lineage-specific / paralog swaps</div>
               </div>
             </div>
           </div>
           <div class="pos-stack">
             <div class="pos-card teal">
-              <div><strong class="teal">Prospective Validation (2024&ndash;2026 Time-Split Audit):</strong> <strong>11 &lsquo;zero-prior-evidence&rsquo; pairs in Data S6</strong> (cutoff Sep 2023) have since been independently proved by cryo-EM or co-IP &mdash; e.g., <em>DND1-NANOS3</em> (Mol Cell 2026), <em>DHX35-GPATCH1</em> (Cell Res 2025), <em>EFCAB10-AK8</em> &amp; <em>MTR-MMADHC</em> (PNAS 2025/26), <em>TMEM209-NUP210</em> (JCS 2026).</div>
+              <div><strong class="teal">Golden Rule for Campaign Governance:</strong> Use strictly as a <strong>POSITIVE hypothesis generator &amp; 3D assay design tool</strong> &mdash; never discard a biologically supported candidate due to a low score (confirmed by Lambourne et al., <em>Nat Commun</em> 2026).</div>
             </div>
             <div class="pos-card">
-              <div><strong class="navy">Immediate Pilot &mdash; 99 Cardiometabolic Novel PPI Leads (Data S6):</strong> Prioritize our <strong>99 unflagged novel PPI leads across 5 indications</strong> (Obesity, T2D, CKD, MASH, CVD; Tier A/B/C targets) by integrating local PR precision, GTEx co-expression, and interface pathogenic SAV burden &rarr; nominate <strong>Top-10 for co-IP</strong>.</div>
+              <div><strong class="navy">Phase-1 Pilot Executed (BQ-1 4-Criteria Triage + Docking / MD / FEP):</strong> <strong>8/99 cardiometabolic leads pass all 4 strict criteria</strong> (6 with human GWAS/ClinVar on both proteins: <em>RAMP3&ndash;MRAP2</em> #1, <em>RAMP1&ndash;MRAP2</em> #2, <em>NR3C1&ndash;FOXO3</em> #3). #1 <strong>RAMP3&ndash;MRAP2</strong> verified by Boltz-2 (ipTM=0.868), MD (0.49&Aring;) &amp; FEP.</div>
             </div>
           </div>
         </div>
