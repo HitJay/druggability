@@ -161,8 +161,8 @@ text(s1, rx + 0.20, 2.64, cw - 0.40, 0.28,
      "PART 2: Campaign Business Questions for Alignment (Slides 5-6)",
      size=11.8, bold=True, color=WHITE)
 text(s1, rx + 0.20, 3.12, cw - 0.40, 3.00, [
-    [("• BQ-1 (Portfolio Partner Mining — Ready Now):", {"size": 10.6, "bold": True, "color": NAVY})],
-    [("  Triage the 99 unflagged novel PPI leads across 120 cardiometabolic targets in Data S6 (18 Tier A + 8 NN pipeline incl. RAMP1/2/3, CASR, TTR) -> nominate Top-10 for co-IP.", {"size": 9.8, "color": INK})],
+    [("• BQ-1 (Portfolio Partner Mining — Completed Pilot):", {"size": 10.6, "bold": True, "color": NAVY})],
+    [("  Triaged 99 unflagged Data S6 cardiometabolic leads across 4 strict criteria -> 8 leads pass all 4/4 (led by #1 RAMP3-MRAP2 & #2 RAMP1-MRAP2; 14 pass 3/4) + MD/FEP completed.", {"size": 9.8, "color": INK})],
     [("• BQ-2 (De Novo Target Screen — On-Demand Service):", {"size": 10.6, "bold": True, "color": TEAL})],
     [("  Screen any priority internal receptor/transporter bait against all 20,260 human proteins in ~6 GPU-h to find missing co-receptors, chaperones, or E3 ligases missed by AP-MS.", {"size": 9.8, "color": INK})],
     [("• BQ-3 (Disease-Interface & Assay Control Design):", {"size": 10.6, "bold": True, "color": RED})],
@@ -565,18 +565,18 @@ set_notes(s5, """【Slide 5 口播讲稿（约 2 分钟）】
 接下来进入第二部分，也是领导特别指出的“What is the business question for the campaign (TBD)”：
 既然工具和算力都已经就绪，我们不能为了算而算，必须锚定明确的业务问题。结合我们部门在心代（Obesity, T2D, CKD, MASH, CVD/HF）和新靶点探索的需求，我们梳理了 3 个候选的 Business Questions（BQ-1 到 BQ-3）：
 
-1. 第一列 BQ-1（存量心代靶点的新调控伙伴挖掘 — 推荐作为立即可跑的 Phase-1 Pilot）：
-   - 业务问题：在 Baker 发布的 2,700 个完全零先验新互作（Data S6）里，哪些跟我们心代管线靶点直接结合的新伙伴，是真正具有生物学调控价值的辅助受体或伴侣蛋白？
-   - 现有基础：曹峥（ZHCO）前期已经把 Data S6 的 2,700 对和 656 个心代药物靶点做了交叉，找出了 198 对单靶点互作，并用非对称过滤（剔除 NDUF 呼吸链同家族亚基、Metformin 泛靶点等假象）筛出了 **99 个干净的未标记新互作候选对（Unflagged Leads）**。
-   - 投入与产出：只需要 1–2 天计算，把这 99 对全部过一遍本地精度校准、GTEx 靶器官共表达和 3D 界面致病突变映射，直接浓缩出 Top-10 交付湿实验验证。
+1. 第一列 BQ-1（存量心代靶点的新调控伙伴挖掘 — 已完成 99 对初筛的 Phase-1 Pilot）：
+   - 业务问题：在 Baker 发布的 2,700 个完全零先验新互作（Data S6）里，哪些跟我们心代管线靶点直接结合的新伙伴，能通过严格四维标准（双蛋白遗传学、共同通路、直接扰动、疾病共表达）的检验？
+   - 初步结果：曹峥（ZHCO）前期从 Data S6 中筛出了 **99 个干净的未标记心代新互作候选对（Unflagged Leads）**。我们已经用 Druggability Agent 完成了严格 4 维初筛：C1 双蛋白遗传学（60 对，含 46 对纯人类 GWAS/ClinVar）、C2 共同通路（43 对）、C3 直接扰动（14 对）、C4 心代共表达（56 对）→ **共有 8 对全部通过 4/4 标准**（另有 14 对通过 3/4），由 **#1 RAMP3–MRAP2** 和 **#2 RAMP1–MRAP2** 领衔！
+   - 深度核验与交付：我们已经针对 #1 RAMP3–MRAP2 完成了 Boltz-2 + omicMSA 建模（ipTM=0.868）、A100 显式水 MD（RMSD 0.49 Å）、FEP 肥胖突变热点扫描（R125 +6.25 与 L115 +5.21 kcal/mol）以及 Gepant 界面凹槽对接（-7.81 kcal/mol），形成了 8 对 4/4 清单 + L115A/R125A/W56A 点突变负对照方案，随时可交湿实验跑 co-IP / BRET（详情见下一页 Slide 6）。
 
 2. 第二列 BQ-2（高优疑难靶点的全蛋白组从头筛查 — 按需定制服务）：
    - 业务问题：当生物团队研究一个重点靶点（尤其是跨膜受体、转运体或细胞器蛋白，传统去垢剂 AP-MS 抓不到真伙伴），想知道它的内源辅助受体、转运伴侣或组织特异性 E3 连接酶是谁？
-   - 投入与产出：给 1 个靶点 UniProt ID，我们在 6 张 A100 上跑约 6 个小时，就能把它和全人类 20,260 个蛋白通扫一遍，交付高置信度伙伴清单。
+   - 投入与产出：给 1 个靶点 UniProt ID，我们在 6 张 A100 上跑约 6 个小时，就能把它和全人类 20,260 个蛋白通扫一遍，交付高置信度伙伴清单（@90% / @80% 精度）+ 3D 复合物结构 + GTEx 共表达矩阵。
 
 3. 第三列 BQ-3（3D 结合界面与人类遗传学突变赋能湿实验设计 — 实验转化加速器）：
    - 业务问题：当生物学家拿到一个候选结合伙伴（无论来自计算预测还是内部 AP-MS 初筛），结合面到底在哪？怎么设计不破坏整体折叠的“单点突变负对照（disruptor mutant）”来证明特异性结合？
-   - 投入与产出：单对只需 15 分钟，输出 6 Å 接触面残基 + ClinVar/AlphaMissense 临床致病突变富集，直接给出 2–3 个用于 co-IP / BRET 的点突变负对照设计。""")
+   - 投入与产出：单对只需 15 分钟，输出 6 Å 接触面残基 + ClinVar/AlphaMissense 临床致病突变富集，直接给出 2–3 个用于 co-IP / BioID 的点突变负对照设计。""")
 
 
 # ==============================================================================
@@ -689,7 +689,7 @@ text(s6, 8.16, 3.97, 4.45, 2.78, [
     [("• Explicit-Solvent MD (A100, Amber14SB + TIP3P, 200 ps):", {"size": 8.5, "bold": True, "color": TEAL})],
     [("  Complex remains tightly bound with backbone RMSD = 0.49 A (2,558 ns/day).", {"size": 7.8, "color": INK})],
     [("• FEP Mutational Hotspot Scan (Obesity Variants at Interface):", {"size": 8.5, "bold": True, "color": RED})],
-    [("  Human obesity SAVs MRAP2 R125 (d=3.33A to RAMP3 D113, ddG = +6.25 kcal/mol) & L115 (d=1.97A to D107, ddG = +5.21 kcal/mol) are top energetic hotspots alongside M87 (+3.29), F85 (+3.07) & RAMP3 W56 (+2.51 kcal/mol).", {"size": 7.8, "color": INK})],
+    [("  Human obesity SAVs MRAP2 R125 (d=3.33A to RAMP3 D113, ddG = +6.25 kcal/mol) & L115 (d=1.97A to D107, ddG = +5.21 kcal/mol) are top energetic hotspots alongside M87 (+3.29), F85 (+3.07) & RAMP3 W56 (+2.51), vs peripheral loop N88Y (-0.88 kcal/mol).", {"size": 7.8, "color": INK})],
     [("• Interface Groove Docking (AutoDock Vina + Boltz-2 Ternary):", {"size": 8.5, "bold": True, "color": NAVY})],
     [("  RAMP-antagonist scaffolds Ubrogepant (-7.81 vs -7.09 kcal/mol control) & Rimegepant (-7.39 kcal/mol, ternary ligand_ipTM = 0.950) selectively bind the composite RAMP3-MRAP2 ECD groove -> propose L115A/R125A/W56A co-IP disruptor controls.", {"size": 7.8, "color": INK})],
 ], space_after=1.8)
@@ -758,8 +758,8 @@ s7_rows = [
     ("RAMP3 Subunit Comp.", "RAMP3:MRAP2 vs CTR", "32/40 (80.0%) CTR face shared; 222 clashes", "-212.9 (-254.0 vdW) vs -189.5 (-217.5)", "MRAP2 outcompetes CTR (ddG = -23.4)"),
     ("RAMP1 Subunit Comp.", "RAMP1:MRAP2 vs CTR", "28/37 (75.7%) CTR face shared; 172 clashes", "-156.8 (-198.5 vdW) vs -159.2 (-202.7)", "Comparable affinity; blocks AMY1R"),
     ("AMY1R Ternary (-MRAP2)", "CTR+RAMP1 : Amylin", "92 7TM + 73 ECD ICs (N-loop RMSD 1.27A)", "<dG> = -237.8 ± 6.7 | <E_vdW> = -269.5", "Deep 7TM orthosteric engagement"),
-    ("AMY1R Quat. (+MRAP2)", "CTR+RAMP1+M : Amylin", "2 7TM ICs (-97.8%); displaced 21.7A", "<dG> = -113.5 ± 4.1 (ddG = +124.3)", "MRAP2 ejects RAMP1 or cuts dG by 52%"),
-    ("AMY3R -/+ MRAP2", "CTR+RAMP3(±M) : Amy", "96 -> 0 7TM ICs (-100%); displaced 24.5A", "-164.2 (-223.6) -> -148.9 (-163.1 vdW)", "MRAP2 68-88 plugs 7TM (ddE = +60.5)"),
+    ("AMY1R Quat. (+MRAP2)", "CTR+RAMP1+M : Amylin", "2 7TM ICs (-97.8%); displaced 21.7A", "<dG> = -113.5 | <E_vdW> = -149.6", "ddG = +124.3 | ddE_vdW = +119.9"),
+    ("AMY3R -/+ MRAP2", "CTR+RAMP3(±M) : Amy", "96 -> 0 7TM ICs (-100%); displaced 24.5A", "-164.2 (-223.6) -> -148.9 (-163.1 vdW)", "ddG = +15.3 | ddE_vdW = +60.5"),
 ]
 
 t7_shape = s7.shapes.add_table(len(s7_rows), 5, Inches(0.62), Inches(2.20), Inches(6.97), Inches(3.70))
@@ -822,7 +822,7 @@ text(s7, 8.16, 3.97, 4.45, 2.78, [
       "   • Tyr37 Pocket Cap Occlusion: MRAP2 covers 100% of the RAMP1/3 Trp84-Pro85 shelf that caps amylin's C-terminal Tyr37-NH2.", {"size": 7.7, "color": INK})],
     [("2. Does MRAP2 Affect the Stability of Amylin / Receptor Complexes?", {"size": 8.5, "bold": True, "color": RED})],
     [("   YES — severe destabilization & 7TM ejection:\n"
-      "   • In quaternary co-folding + MD, MRAP2 invades the CTR ECL2/ECL3/7TM entrance, reducing amylin's 7TM contacts by 97.8% in AMY1R (ddG = +124.26 kcal/mol) and 100% in AMY3R (ddE_vdW = +60.49 kcal/mol).", {"size": 7.7, "color": INK})],
+      "   • In quaternary co-folding + MD, MRAP2 invades the CTR ECL2/ECL3/7TM entrance, reducing amylin's 7TM contacts by 97.8% in AMY1R (ddG = +124.26, ddE_vdW = +119.92 kcal/mol) and 100% in AMY3R (ddG = +15.26, ddE_vdW = +60.49 kcal/mol).", {"size": 7.7, "color": INK})],
 ], space_after=2.0)
 
 set_notes(s7, """【Appendix S1（补充页 Slide 7）口播讲稿 — 回答曹峥关于 Amylin 受体竞争与稳定性的追问】
@@ -830,14 +830,16 @@ set_notes(s7, """【Appendix S1（补充页 Slide 7）口播讲稿 — 回答曹
 这一页补充材料直接给出了结合 Cryo-EM 结构（7TYF/7TZF）、四元 Boltz-2 共折叠和 8 组 A100 显式水 MD 的定量答案：
 
 1. 第一个层面（亚基级直接互斥竞争）：
-   - 在冷冻电镜结构里，Amylin 98% 以上的接触都在 CTR 主亚基上，RAMP1/3 主要是通过胞外域的 Trp84-Pro85 疏水平台去“封盖”Amylin 的 C 端 Tyr37-NH2。
-   - 当我们把 RAMP3:MRAP2 和 RAMP1:MRAP2 叠合到冷冻电镜的 AMY3R 和 AMY1R 上时，发现 MRAP2 占据了 RAMP3 上 80%（32/40）和 RAMP1 上 75.7%（28/37）原本用来结合 CTR 的残基（跟 CTR 产生 172 到 222 对严重原子碰撞），并且 100% 盖住了结合 Amylin Tyr37 的 Trp84-Pro85 位点！
-   - 更关键的是，在 A100 显式水 MD 中，MRAP2 与 RAMP3 的结合力（<dG> = -212.9 kcal/mol，<E_vdW> = -254.0 kcal/mol）比天然 CTR 与 RAMP3 的结合力（-189.5 kcal/mol）还要强 23.4 kcal/mol！这意味着高表达的 MRAP2 会直接把 RAMP3 从 CTR 身边“抢走（sequester）”，阻止功能性 Amylin 受体的组装。
+   - 在冷冻电镜结构里，Amylin 98.5% 以上的接触都在 CTR 主亚基上，RAMP1/3 主要是通过胞外域的 Trp84-Pro85 疏水平台去“封盖”Amylin 的 C 端 Tyr37-NH2。
+   - 当我们把 RAMP3:MRAP2 和 RAMP1:MRAP2 叠合到冷冻电镜的 AMY3R 和 AMY1R 上时，发现 MRAP2 占据了 RAMP3 上 80.0%（32/40）和 RAMP1 上 75.7%（28/37）原本用来结合 CTR 的残基（跟 CTR 产生 172 到 222 对严重原子碰撞），并且 100% 盖住了结合 Amylin Tyr37 的 Trp84-Pro85 位点！
+   - 更关键的是，在 A100 显式水 MD 中，MRAP2 与 RAMP3 的结合力（<dG_GBn2> = -212.9 kcal/mol，<E_vdW> = -254.0 kcal/mol）比天然 CTR 与 RAMP3 的结合力（<dG_GBn2> = -189.5 kcal/mol，<E_vdW> = -217.5 kcal/mol）还要强 23.4 kcal/mol（RAMP1 上两者相当：-156.8 vs -159.2 kcal/mol）！这意味着高表达的 MRAP2 会直接把 RAMP3 从 CTR 身边“抢走（sequester）”，阻止功能性 Amylin 受体的组装。
 
 2. 第二个层面（四元复合物正构口袋阻断与失稳）：
    - 如果强行把 CTR + RAMP1/3 + Amylin + MRAP2 放在一起做四元共折叠和显式水 MD：
-   - 没有 MRAP2 时，Amylin 的 N 端二硫键环深深插进 CTR 的 7TM 跨膜核心（92–96 个跨膜接触，结合能高达 -237.8 和 -164.2 kcal/mol）；
-   - 加入 MRAP2 后，MRAP2 的近膜区（68–88 位氨基酸）直接堵在 CTR 的正构口袋入口，把 Amylin 从 7TM 核心里顶了出来（距离偏移 22–25 Å，Amylin 的 7TM 接触在 AMY1R 中丢失 97.8%，在 AMY3R 中 100% 归零），导致 Amylin 与受体的 MD 结合能分别恶化了 +124.3 kcal/mol（腰斩 52%）和 +60.5 kcal/mol（范德华吸引能损失 27%）。
+   - 没有 MRAP2 时，Amylin 的 N 端二硫键环深深插进 CTR 的 7TM 跨膜核心（92–96 个跨膜接触，AMY1R 与 AMY3R 的总结合自由能 <dG_GBn2> 分别为 -237.8 和 -164.2 kcal/mol，范德华吸引能 <E_vdW> 分别为 -269.5 和 -223.6 kcal/mol）；
+   - 加入 MRAP2 后，MRAP2 的近膜区（68–88 位氨基酸）直接堵在 CTR 的正构口袋入口，把 Amylin 从 7TM 核心里顶了出来（距离偏移 21.7–24.5 Å，Amylin 的 7TM 接触在 AMY1R 中丢失 97.8% [92→2]，在 AMY3R 中 100% 归零 [96→0]）：
+     • 在 AMY1R 中，总结合自由能 <dG_GBn2> 从 -237.8 恶化至 -113.5 kcal/mol（损失 ddG = +124.3 kcal/mol，腰斩 52%），范德华吸引能 <E_vdW> 从 -269.5 恶化至 -149.6 kcal/mol（损失 ddE_vdW = +119.9 kcal/mol，减弱 44%）；
+     • 在 AMY3R 中，总结合自由能 <dG_GBn2> 从 -164.2 恶化至 -148.9 kcal/mol（损失 ddG = +15.3 kcal/mol），范德华吸引能 <E_vdW> 从 -223.6 恶化至 -163.1 kcal/mol（损失 ddE_vdW = +60.5 kcal/mol，减弱 27%）。
    - 这直接给出了一个非常漂亮的湿实验预测：野生型 MRAP2 会负向抑制 Amylin 受体信号，而我们用 FEP 找出的两个肥胖突变（MRAP2 L115V/A 和 R125C/A）因为抓不住 RAMP3，反而会解除对 Amylin 受体的抑制！""")
 
 out_deck = "/das/user/QYJI/druggability/reports/ppi_group_meeting_deck_2026-10-29.pptx"

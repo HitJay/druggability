@@ -380,7 +380,7 @@ ax2.axvline(0, color="#1A1A2E", linewidth=0.8)
 ax2.axvline(2.0, color=RED, linestyle="--", linewidth=0.8, alpha=0.7)
 ax2.set_yticks(y2)
 ax2.set_yticklabels(fep_labels, fontsize=7.2, fontweight="bold", color="#1A1A2E")
-ax2.set_xlabel("FEP Binding Free Energy Change ddG (kcal/mol)", fontsize=8.0, fontweight="bold", color="#1A1A2E")
+ax2.set_xlabel("FEP Binding Free Energy ddG (kcal/mol)", fontsize=7.6, fontweight="bold", color="#1A1A2E")
 ax2.set_title("B. RAMP3-MRAP2 FEP Hotspots", fontsize=8.8, fontweight="bold", color=NAVY, pad=8)
 ax2.set_xlim(-1.8, 8.2)
 ax2.grid(axis="x", linestyle="--", alpha=0.35)
@@ -392,7 +392,8 @@ for bar, v in zip(bars2, fep_vals):
              va="center", ha="left", fontsize=7.3, fontweight="bold",
              color=RED if v > 4.0 else "#1A1A2E")
 
-fig.tight_layout(pad=1.1)
+fig.tight_layout(pad=1.0)
+fig.subplots_adjust(right=0.96)
 fig_out = OUT_DIR / "bq1_99_triage_and_fep_2panel.png"
 fig.savefig(fig_out, dpi=300)
 print("Saved 2-panel figure:", fig_out)

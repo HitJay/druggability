@@ -257,8 +257,8 @@ html = f"""<!DOCTYPE html>
         </div>
         <div style="padding: 22px 26px; display: flex; flex-direction: column; gap: 15px; font-size: 15.2px; line-height: 1.42;">
           <div>
-            <strong style="color: #001965; font-size: 16px;">&bull; BQ-1 (Portfolio Partner Mining &mdash; Ready Now):</strong><br>
-            Triage the <strong>99 unflagged novel PPI leads</strong> across 120 cardiometabolic targets in Data S6 (18 Tier A + 8 NN pipeline incl. <em>RAMP1/2/3, CASR, TTR</em>) &rarr; nominate <strong>Top-10 for co-IP</strong>.
+            <strong style="color: #001965; font-size: 16px;">&bull; BQ-1 (Portfolio Partner Mining &mdash; Completed Pilot):</strong><br>
+            Triaged <strong>99 unflagged Data S6 cardiometabolic leads</strong> across 4 strict criteria &rarr; <strong>8 leads pass all 4/4</strong> (led by <em>#1 RAMP3&ndash;MRAP2</em> &amp; <em>#2 RAMP1&ndash;MRAP2</em>; 14 pass 3/4) + MD/FEP completed.
           </div>
           <div>
             <strong style="color: #00857C; font-size: 16px;">&bull; BQ-2 (De Novo Target Screen &mdash; On-Demand Service):</strong><br>
@@ -739,7 +739,7 @@ html = f"""<!DOCTYPE html>
             <div style="padding:10px 14px; font-size:12.5px; line-height:1.36; display:flex; flex-direction:column; justify-content:space-between; flex:1;">
               <div><strong style="color:#001965;">&bull; 3D Complex &amp; Coevolution (RF2-PPI + Boltz-2 omicMSA):</strong><br><strong>ipTM = 0.868, ptm = 0.834</strong> (180 inter-chain contacts &le;5&Aring;: 21 TM-TM + 159 ECD/juxtamembrane). RF2-PPI TM helix contact prob = 0.590 (RAMP3) / 0.865 (RAMP1).</div>
               <div><strong style="color:#00857C;">&bull; Explicit-Solvent MD (A100, Amber14SB + TIP3P, 200 ps):</strong><br>Complex remains tightly bound with <strong>backbone RMSD = 0.49 &Aring;</strong> (2,558 ns/day).</div>
-              <div><strong style="color:#D9383A;">&bull; FEP Mutational Hotspot Scan (Obesity Variants at Interface):</strong><br>Human obesity SAVs <strong>MRAP2 R125</strong> (d=3.33&Aring; to RAMP3 D113, <strong>ddG = +6.25 kcal/mol</strong>) &amp; <strong>L115</strong> (d=1.97&Aring; to D107, <strong>ddG = +5.21 kcal/mol</strong>) are top energetic hotspots alongside M87 (+3.29), F85 (+3.07) &amp; RAMP3 W56 (+2.51 kcal/mol).</div>
+              <div><strong style="color:#D9383A;">&bull; FEP Mutational Hotspot Scan (Obesity Variants at Interface):</strong><br>Human obesity SAVs <strong>MRAP2 R125</strong> (d=3.33&Aring; to RAMP3 D113, <strong>ddG = +6.25 kcal/mol</strong>) &amp; <strong>L115</strong> (d=1.97&Aring; to D107, <strong>ddG = +5.21 kcal/mol</strong>) are top energetic hotspots alongside M87 (+3.29), F85 (+3.07) &amp; RAMP3 W56 (+2.51), vs peripheral loop N88Y (&minus;0.88 kcal/mol).</div>
               <div><strong style="color:#001965;">&bull; Interface Groove Docking (AutoDock Vina + Boltz-2 Ternary):</strong><br>RAMP-antagonist scaffolds <strong>Ubrogepant (-7.81 vs -7.09 kcal/mol control)</strong> &amp; <strong>Rimegepant (-7.39 kcal/mol, ternary ligand_ipTM = 0.950)</strong> selectively bind the composite RAMP3&ndash;MRAP2 ECD groove &rarr; propose <strong>L115A / R125A / W56A</strong> co-IP disruptor controls.</div>
             </div>
           </div>
@@ -841,15 +841,15 @@ html = f"""<!DOCTYPE html>
                   <td><strong style="color:#D9383A;">AMY1R Quat. (+MRAP2)</strong></td>
                   <td>CTR+RAMP1+M : Amylin</td>
                   <td>2 7TM ICs (&minus;97.8%); displaced 21.7&Aring;</td>
-                  <td><strong>&lt;dG&gt; = &minus;113.5 &plusmn; 4.1 (ddG = +124.3)</strong></td>
-                  <td>MRAP2 ejects RAMP1 or cuts dG by 52%</td>
+                  <td><strong>&lt;dG&gt; = &minus;113.5 | &lt;E_vdW&gt; = &minus;149.6</strong></td>
+                  <td>ddG = +124.3 | ddE_vdW = +119.9</td>
                 </tr>
                 <tr style="background:#EBF7F5;">
                   <td><strong style="color:#D9383A;">AMY3R &minus;/+ MRAP2</strong></td>
                   <td>CTR+RAMP3(&plusmn;M) : Amy</td>
                   <td>96 &rarr; 0 7TM ICs (&minus;100%); displaced 24.5&Aring;</td>
                   <td><strong>&minus;164.2 (&minus;223.6) &rarr; &minus;148.9 (&minus;163.1 vdW)</strong></td>
-                  <td>MRAP2 68&ndash;88 plugs 7TM (ddE = +60.5)</td>
+                  <td>ddG = +15.3 | ddE_vdW = +60.5</td>
                 </tr>
               </tbody>
             </table>
@@ -883,7 +883,7 @@ html = f"""<!DOCTYPE html>
               <div>
                 <strong style="color:#D9383A; font-size:13.2px;">2. Does MRAP2 Affect the Stability of Amylin / Receptor Complexes?</strong><br>
                 <strong>YES &mdash; severe destabilization &amp; 7TM ejection:</strong><br>
-                &bull; In quaternary co-folding + MD, MRAP2 invades the CTR ECL2/ECL3/7TM entrance, reducing amylin&rsquo;s 7TM contacts by <strong>97.8% in AMY1R (ddG = +124.26 kcal/mol)</strong> and <strong>100% in AMY3R (ddE_vdW = +60.49 kcal/mol)</strong>.
+                &bull; In quaternary co-folding + MD, MRAP2 invades the CTR ECL2/ECL3/7TM entrance, reducing amylin&rsquo;s 7TM contacts by <strong>97.8% in AMY1R (ddG = +124.26, ddE_vdW = +119.92 kcal/mol)</strong> and <strong>100% in AMY3R (ddG = +15.26, ddE_vdW = +60.49 kcal/mol)</strong>.
               </div>
             </div>
           </div>
