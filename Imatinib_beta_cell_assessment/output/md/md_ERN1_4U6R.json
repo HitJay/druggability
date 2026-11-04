@@ -1,0 +1,36 @@
+{
+  "gene": "ERN1",
+  "pdb": "4U6R",
+  "role": "candidate_pathway",
+  "status": "ok",
+  "platform": "OpenMM_250ps_exact_meeko_pose",
+  "ie_units": "kJ/mol (COUL=138.935456 kJ*nm/e^2, r in nm)",
+  "pose_align_nn_rmsd_A": 0.0,
+  "centroid_drift_A": 1.4,
+  "ligand_rmsd_A": 2.21,
+  "end_dist_to_pocket_center_A": 2.74,
+  "md_stable": true,
+  "sum_top5_IE_kJmol": -162.98,
+  "sum_top5_IE_kcalmol": -38.95,
+  "top_contacts_kJmol": {
+    "ASP94A": -56.31,
+    "GLU38A": -38.63,
+    "LEU9A": -33.01,
+    "LYS79A": -18.48,
+    "VAL18A": -16.55,
+    "ILE62A": -14.46,
+    "SER93A": -14.07,
+    "ALA27A": -11.2
+  },
+  "runtime_s": 201.0,
+  "top_contacts_uniprot_kJmol": {
+    "ASP711A": -56.31,
+    "GLU612A": -38.63,
+    "LEU577A": -33.01,
+    "LYS690A": -18.48,
+    "VAL586A": -16.55,
+    "ILE642A": -14.46,
+    "SER710A": -14.07,
+    "ALA597A": -11.2
+  }
+}

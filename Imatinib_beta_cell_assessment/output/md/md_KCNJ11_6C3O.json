@@ -1,0 +1,36 @@
+{
+  "gene": "KCNJ11",
+  "pdb": "6C3O",
+  "role": "candidate_channel",
+  "status": "ok",
+  "platform": "OpenMM_250ps_exact_meeko_pose",
+  "ie_units": "kJ/mol (COUL=138.935456 kJ*nm/e^2, r in nm)",
+  "pose_align_nn_rmsd_A": 0.0,
+  "centroid_drift_A": 1.39,
+  "ligand_rmsd_A": 1.77,
+  "end_dist_to_pocket_center_A": 1.67,
+  "md_stable": true,
+  "sum_top5_IE_kJmol": -238.57,
+  "sum_top5_IE_kcalmol": -57.02,
+  "top_contacts_kJmol": {
+    "LYS4A": -74.17,
+    "LYS15A": -57.66,
+    "ILE12A": -40.22,
+    "LYS3A": -35.46,
+    "GLU9A": -31.06,
+    "GLU7B": -28.1,
+    "ARG1A": -25.32,
+    "HIS16A": -24.33
+  },
+  "runtime_s": 179.9,
+  "top_contacts_uniprot_kJmol": {
+    "LYS39A": -74.17,
+    "LYS185A": -57.66,
+    "ILE182A": -40.22,
+    "LYS38A": -35.46,
+    "GLU179A": -31.06,
+    "GLU51B": -28.1,
+    "ARG34A": -25.32,
+    "HIS186A": -24.33
+  }
+}

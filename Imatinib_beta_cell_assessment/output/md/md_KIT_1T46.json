@@ -1,0 +1,36 @@
+{
+  "gene": "KIT",
+  "pdb": "1T46",
+  "role": "anchor_primary",
+  "status": "ok",
+  "platform": "OpenMM_250ps_exact_meeko_pose",
+  "ie_units": "kJ/mol (COUL=138.935456 kJ*nm/e^2, r in nm)",
+  "pose_align_nn_rmsd_A": 0.0,
+  "centroid_drift_A": 0.35,
+  "ligand_rmsd_A": 0.86,
+  "end_dist_to_pocket_center_A": 0.13,
+  "md_stable": true,
+  "sum_top5_IE_kJmol": -191.6,
+  "sum_top5_IE_kcalmol": -45.79,
+  "top_contacts_kJmol": {
+    "GLU40A": -65.3,
+    "ASP108A": -37.88,
+    "CYS107A": -37.82,
+    "CYS69A": -28.3,
+    "THR66A": -22.3,
+    "LYS105A": -21.88,
+    "TYR68A": -20.37,
+    "PHE109A": -17.33
+  },
+  "runtime_s": 242.1,
+  "top_contacts_uniprot_kJmol": {
+    "GLU640A": -65.3,
+    "ASP810A": -37.88,
+    "CYS809A": -37.82,
+    "CYS673A": -28.3,
+    "THR670A": -22.3,
+    "LYS807A": -21.88,
+    "TYR672A": -20.37,
+    "PHE811A": -17.33
+  }
+}

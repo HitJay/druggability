@@ -1,0 +1,36 @@
+{
+  "gene": "DDR1",
+  "pdb": "4BKJ",
+  "role": "anchor_primary",
+  "status": "ok",
+  "platform": "OpenMM_250ps_exact_meeko_pose",
+  "ie_units": "kJ/mol (COUL=138.935456 kJ*nm/e^2, r in nm)",
+  "pose_align_nn_rmsd_A": 0.0,
+  "centroid_drift_A": 0.8,
+  "ligand_rmsd_A": 1.07,
+  "end_dist_to_pocket_center_A": 0.68,
+  "md_stable": true,
+  "sum_top5_IE_kJmol": -189.66,
+  "sum_top5_IE_kcalmol": -45.33,
+  "top_contacts_kJmol": {
+    "GLU32A": -60.51,
+    "ARG101A": -41.67,
+    "ASP96A": -40.26,
+    "ALA95A": -24.6,
+    "THR57A": -22.62,
+    "PHE97A": -22.07,
+    "LYS21A": -20.97,
+    "MET36A": -16.12
+  },
+  "runtime_s": 213.1,
+  "top_contacts_uniprot_kJmol": {
+    "GLU672A": -60.51,
+    "ARG789A": -41.67,
+    "ASP784A": -40.26,
+    "ALA783A": -24.6,
+    "THR701A": -22.62,
+    "PHE785A": -22.07,
+    "LYS655A": -20.97,
+    "MET676A": -16.12
+  }
+}

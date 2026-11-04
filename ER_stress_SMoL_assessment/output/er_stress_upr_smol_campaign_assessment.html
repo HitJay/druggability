@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Pancreatic Beta-Cell ER Stress &amp; UPR SMoL Campaign — Target Tractability, Probe Selectivity &amp; Safety Assessment — 2026-11-04</title>
+<style>
+  :root {
+    --bg: #0f1419; --panel: #1a2028; --panel-2: #232b36;
+    --text: #d8dee9; --muted: #8895a7; --accent: #5eb3ff;
+    --ok: #7ec98f; --warn: #e5c07b; --err: #e06c75;
+    --border: #2c3542; --code-bg: #12171d;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 36px 24px; background: var(--bg); color: var(--text);
+         font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+         line-height: 1.6; font-size: 14.5px; }
+  .container { max-width: 1320px; margin: 0 auto; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 18px; margin-bottom: 24px; }
+  h1 { margin: 0 0 8px; font-size: 25px; color: #fff; }
+  header .sub { color: var(--muted); font-size: 13.5px; }
+  h2 { margin: 32px 0 12px; font-size: 19.5px; color: var(--accent);
+       padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+  h3 { margin: 20px 0 8px; font-size: 16px; color: #fff; }
+  p, li { margin: 6px 0; }
+  ul, ol { padding-left: 22px; }
+  code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; font-size: 12.5px;
+         background: var(--code-bg); padding: 1px 6px; border-radius: 3px; color: #c8d5e4; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0;
+          background: var(--panel); border-radius: 6px; overflow: hidden; }
+  th, td { text-align: left; padding: 9px 11px; border-bottom: 1px solid var(--border);
+           font-size: 13px; vertical-align: top; }
+  th { background: var(--panel-2); color: var(--muted); font-weight: 600; }
+  tr:last-child td { border-bottom: none; }
+  .ok { color: var(--ok); font-weight: 600; }
+  .warn { color: var(--warn); font-weight: 600; }
+  .err { color: var(--err); font-weight: 600; }
+  .muted { color: var(--muted); font-size: 12px; }
+  .callout { background: var(--panel); border-left: 3px solid var(--accent);
+             padding: 13px 16px; margin: 14px 0; border-radius: 4px; }
+  .callout.ok { border-left-color: var(--ok); }
+  .callout.warn { border-left-color: var(--warn); }
+  .callout.err { border-left-color: var(--err); }
+  .callout .title { font-weight: 600; margin-bottom: 6px; color: #fff; font-size: 15px; }
+  .summary-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 18px 0; }
+  .card { background: var(--panel); border: 1px solid var(--border);
+          border-radius: 8px; padding: 15px; text-align: center; }
+  .card .n { font-size: 26px; font-weight: 700; color: #fff; line-height: 1.15; }
+  .card .l { color: var(--muted); font-size: 12.5px; margin-top: 5px; }
+  .card.ok .n { color: var(--ok); }
+  .card.err .n { color: var(--err); }
+  .card.warn .n { color: var(--warn); }
+  .pill { display: inline-block; padding: 2px 8px; border-radius: 10px;
+          font-size: 11.5px; font-weight: 600; white-space: nowrap; }
+  .pill.ok { background: rgba(126,201,143,0.15); color: var(--ok); }
+  .pill.err { background: rgba(224,108,117,0.15); color: var(--err); }
+  .pill.warn { background: rgba(229,192,123,0.15); color: var(--warn); }
+  .pill.muted { background: rgba(136,149,167,0.15); color: var(--muted); }
+  footer { margin-top: 44px; padding-top: 18px; border-top: 1px solid var(--border);
+           color: var(--muted); font-size: 12.5px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>Pancreatic &beta;-Cell ER Stress &amp; UPR Small-Molecule Campaign — Target Tractability, Probe Selectivity &amp; Safety Assessment</h1>
+  <div class="sub">
+    Requester: JXDL (Li Jiang) &nbsp;&bull;&nbsp;
+    Jira Tracking: <code>RIC-413</code> (linked to <code>RIC-412</code> Imatinib &beta;-Cell Campaign) &nbsp;&bull;&nbsp;
+    Assay Context: <code>EndoC-&beta;H1 UPR Reporters under Glucolipotoxicity (GLTx)</code> &nbsp;&bull;&nbsp;
+    Date: 2026-11-04 &nbsp;&bull;&nbsp; Author: QYJI
+  </div>
+</header>
+
+<h2>1. Executive Verdict &amp; Strategic Track Prioritization</h2>
+
+<div class="summary-cards">
+  <div class="card"><div class="n">3 Branches / 5 Tracks</div><div class="l">PERK, IRE1&alpha; (RNase &amp; Kinase), ATF6 (Act &amp; Inh)</div></div>
+  <div class="card ok"><div class="n">#1 IRE1&alpha; Kinase / #2 ATF6</div><div class="l">Top Prioritized Tracks (KIRA8/PAIR &amp; AA147/PDI)</div></div>
+  <div class="card warn"><div class="n">3 Off-Target Traps</div><div class="l">GSK2606414/6157 hit RIPK1+KIT; KIRA6 hits KIT+LYN</div></div>
+  <div class="card err"><div class="n">2 Target Deconvolutions</div><div class="l">AA147 binds PDIA1/3/4; Ceapin-A7 glues ATF6–ABCD3</div></div>
+</div>
+
+<div class="callout ok">
+  <div class="title">Bottom-Line Conclusion: Prioritize Track 3 (IRE1&alpha; Kinase Allosteric Attenuation via KIRA8/PAIRs) and Track 4 (Adaptive ATF6 Activation via AA147/PDIA1); Upgrade Off-Target Tool Probes (GSK2606414 &rarr; HC-5770 + ISRIB; KIRA6 &rarr; KIRA8); Reclassify Track 5 (Ceapin-A7) as a Negative Control Only.</div>
+  <ul>
+    <li><strong>1. TrackPrioritization — Terminal vs. Adaptive UPR Divergence in &beta;-Cells [FACT + MECH]:</strong> Under chronic glucolipotoxicity (GLTx), the three UPR branches do not play equal roles. <strong>IRE1&alpha; hyper-oligomerization (RIDD)</strong> and <strong>sustained PERK–eIF2&alpha;–ATF4–CHOP signaling</strong> drive insulin mRNA degradation, translational block, and terminal &beta;-cell apoptosis, whereas <strong>ATF6&alpha; cleavage (ATF6f)</strong> and <strong>dimeric IRE1&alpha;–XBP1s splicing</strong> are adaptive and required to expand ER folding capacity and chaperone stores (<code>BiP/HSPA5</code>; Yong et al., <em>Nat Rev Endocrinol</em> 2021, PMID: 34163039). Consequently:
+      <ul>
+        <li><span class="pill ok">Rank #1 (Track 3 — IRE1&alpha; Kinase Allosteric Modulators)</span> is the premier small-molecule track for both structural druggability (24 human co-crystal structures, up to 1.74 &Aring;) and therapeutic index, because allosteric kinase modulators (<code>KIRA8 / AMG-18</code> and helix-&alpha;C partial antagonists <code>PAIRs</code>, PDB <code>7BMK</code>) selectively dismantle hyper-oligomeric toxic <strong>RIDD</strong> while preserving dimeric adaptive <strong>XBP1s</strong> splicing (PMID: 28380378, 34556859).</li>
+        <li><span class="pill ok">Rank #2 (Track 4 — ATF6 Pathway Activation via AA147 / AA263)</span> is the strongest phenotypic pro-survival mechanism in GLTx-stressed &beta;-cells, selectively upregulating adaptive ER chaperones. However, <strong>AA147 is NOT a direct ATF6 ligand [FACT]</strong>: it is a metabolically activated prodrug that covalently modifies ER protein disulfide isomerases (<code>PDIA1/P4HB</code>, <code>PDIA4</code>, <code>PDIA3</code>; PMID: 30084354, 37523656), requiring structure-based efforts to target PDI rather than ATF6.</li>
+        <li><span class="pill warn">Rank #3 (Track 2 — IRE1&alpha; RNase Covalent Aldehydes: 4&mu;8C, STF-083010, MKC-8866)</span> acts via reversible Schiff-base imine formation with catalytic <code>Lys907</code> (PDB <code>4PL3</code>; PMID: 22315414, 25164867). While useful as a pharmacological benchmark (use clinical lead <code>MKC-8866 / ORIN1001</code> rather than aqueous-unstable <code>STF-083010</code>), catalytic RNase blockade eliminates adaptive <code>XBP1s</code> alongside toxic RIDD and carries aldehyde warhead off-target reactivity.</li>
+        <li><span class="pill warn">Rank #4 (Track 1 — PERK Kinase Inhibitors: GSK2606414, GSK2656157, HC-5770)</span> carries a severe on-target genetic safety liability: human biallelic <em>EIF2AK3</em> loss-of-function causes <strong>Wolcott–Rallison syndrome</strong> (neonatal permanent diabetes + exocrine pancreatic atrophy; PMID: 42945448), and full pharmacological PERK inhibition triggers rapid pancreatic acinar necrosis and proinsulin overload (PMID: 23333938, 41686355). Only <strong>partial/low-dose attenuation (20–50 nM)</strong> or transient T1D PD-L1 stabilization with selective <strong>HC-5770 (AMG-44)</strong> is viable (PMID: 38889047, 42155730).</li>
+        <li><span class="pill err">Rank #5 (Track 5 — ATF6 Inhibitor Ceapin-A7: Negative Control Only)</span> traps ATF6 in the ER by acting as a neomorphic inter-organelle molecular glue tethering cytosolic <code>ATF6&alpha;</code> to peroxisomal <code>ABCD3 (PMP70)</code> (PMID: 31149896). Because ATF6 is adaptive in &beta;-cells, Ceapin-A7 <em>sensitizes</em> cells to ER-stress death (PMID: 27435960) and should be deployed strictly as an assay negative/counter-screen control to block AA147 rescue.</li>
+      </ul>
+    </li>
+    <li><strong>2. Critical Chemical-Probe Hygiene for EndoC-&beta;H1 GLTx Assays [FACT]:</strong> Three of the nine showcase compounds have major off-target liabilities at standard 0.5–10 &mu;M cellular concentrations that directly confound &beta;-cell survival and inflammation readouts:
+      <ul>
+        <li><code>GSK2606414</code> and <code>GSK2656157</code> are sub-20 nM <strong>RIPK1 kinase inhibitors</strong> (blocking TNF&alpha;-induced necroptosis ~100&times; more potently than Nec-1s, completely independent of PERK; Rojas-Rivera et al., <em>Cell Death Differ</em> 2017, PMID: 28452996) and nanomolar <strong>c-KIT inhibitors</strong> (K<sub>d</sub> = 664 nM; PMID: 30931942). <strong>Action:</strong> Replace or pair with <strong>HC-5770 (AMG-PERK-44)</strong> (which spares RIPK1 and c-KIT; PMID: 38889047) and downstream eIF2B activator <strong>ISRIB</strong> (5 nM, avoids complete PERK-null pancreatic toxicity).</li>
+        <li><code>KIRA6</code> inhibits <strong>c-KIT</strong> (cellular nanomolar IC<sub>50</sub>, K<sub>d</sub> 10.8 &mu;M; PMID: 30931942) and Src-family kinase <strong>LYN</strong> (PMID: 40786050) at concentrations overlapping IRE1&alpha; inhibition. <strong>Action:</strong> Upgrade to mono-selective <strong>KIRA8 (AMG-18)</strong> (IC<sub>50</sub> ~5 nM, proven to reverse diabetes in Akita &amp; NOD mice; PMID: 28380378).</li>
+      </ul>
+    </li>
+    <li><strong>3. Direct Synergy with Completed Imatinib &beta;-Cell Campaign (RIC-412) [FACT + OBS]:</strong> In <code>RIC-412</code>, we demonstrated that <strong>imatinib (STI571)</strong> achieves 54–95% clinical occupancy of human &beta;-cell <strong>ABL1 (c-Abl)</strong> and <strong>ABL2 (Arg)</strong> (Vina <code>-11.19</code> and <code>-11.84 kcal/mol</code>, 250 ps MD drift 0.66–0.73 &Aring;), which translocate to the ER membrane under stress to scaffold and hyperactivate <strong>IRE1&alpha; RNase</strong> (Morita et al., <em>Cell Metab</em> 2017, PMID: 28380378). Including <strong>imatinib (0.5–1 &mu;M) or asciminib</strong> alongside <strong>KIRA8</strong> and <strong>MKC-8866</strong> in the EndoC-&beta;H1 UPR reporter assay provides a clinically benchmarked (Phase 2 T1D trial, PMID: 34214479) upstream vs. direct IRE1&alpha; comparison.</li>
+  </ul>
+</div>
+
+<h2>2. Master Campaign Triage Matrix (5 Showcase Tracks + 2 Recommended Controls)</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rank &amp; Track</th>
+      <th>UPR Branch &amp; Nominal Node</th>
+      <th>True Molecular Target (Gene / UniProt)</th>
+      <th>Showcase Compounds &rarr; Recommended Clean Probe</th>
+      <th>Binding Mode &amp; Structural Druggability (PDB)</th>
+      <th>Key Selectivity, Genetic &amp; Safety Gate</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="pill ok">Rank #1</span><br><strong>Track 3</strong></td>
+      <td><strong>IRE1&alpha; Branch</strong><br>Kinase Domain Allosteric Site</td>
+      <td><code>ERN1</code> (O75460)<br><span class="muted">Direct kinase pocket binder</span></td>
+      <td>Showcase: <code>KIRA6</code><br><span class="ok">&rarr; Upgrade: <code>KIRA8 (AMG-18)</code> &amp; <code>PAIRs (G-1749)</code></span></td>
+      <td><strong>Non-covalent Type-II / Helix-&alpha;C displacement</strong><br>24 human PDBs: <code>4U6R</code> (2.50 &Aring;), <code>4YZ9</code> (2.46 &Aring;), <code>6URC</code> (2.20 &Aring;), <code>6W39</code> (1.74 &Aring;), <code>7BMK</code> (1.85 &Aring; PAIR)</td>
+      <td><span class="ok">Best Druggability &amp; TI:</span> Breaks IRE1&alpha; hyper-oligomers to stop insulin mRNA decay (RIDD) while PAIRs spare dimeric XBP1s (PMID: 34556859). <strong>Caveat:</strong> KIRA6 hits KIT/LYN (PMID: 30931942); use KIRA8 (PMID: 28380378).</td>
+    </tr>
+    <tr>
+      <td><span class="pill ok">Rank #2</span><br><strong>Track 4</strong></td>
+      <td><strong>ATF6 Branch</strong><br>Trafficking / Activation</td>
+      <td><code>P4HB / PDIA1</code> (P07237) + <code>PDIA4</code>, <code>PDIA3</code><br><span class="err">NOT direct ATF6 binder</span></td>
+      <td>Showcase: <code>AA147</code><br><span class="ok">&rarr; Add: <code>AA263</code></span></td>
+      <td><strong>Metabolic prodrug &rarr; quinone-methide covalent Cys modifier on ER PDIs</strong><br>ATF6: <code>0 PDBs</code>. PDIA1 (P4HB): <code>14 PDBs</code> (<code>4EKZ</code> 2.51 &Aring;, <code>6I7S</code> 2.50 &Aring;, <code>8GDY</code> 2.05 &Aring;)</td>
+      <td><span class="warn">Target Deconvolution Gate:</span> AA147 covalently modifies PDIA1 (GTEx Pancreas 960.6 TPM, #2 pancreas gene) to reduce ATF6 disulfide oligomers so ATF6 monomer traffics to Golgi (PMID: 30084354). Titrate at 1–5 &mu;M to avoid blocking PDIA1-mediated proinsulin folding.</td>
+    </tr>
+    <tr>
+      <td><span class="pill warn">Rank #3</span><br><strong>Track 2</strong></td>
+      <td><strong>IRE1&alpha; Branch</strong><br>RNase Catalytic Domain</td>
+      <td><code>ERN1</code> (O75460)<br><span class="muted">Direct RNase Lys907 adduct</span></td>
+      <td>Showcase: <code>4&mu;8C</code>, <code>STF-083010</code>, <code>MKC-8866</code><br><span class="ok">&rarr; Prioritize: <code>MKC-8866 (ORIN1001)</code></span></td>
+      <td><strong>Reversible covalent Schiff base (imine) with catalytic Lys907</strong><br>Murine co-crystals: <code>4PL3</code> (2.90 &Aring; MKC9989), <code>4PL4</code> (3.00 &Aring;), <code>4PL5</code> (3.40 &Aring;; PMID: 25164867)</td>
+      <td><span class="warn">Warhead &amp; XBP1s Gate:</span> Salicylaldehyde warhead has systemic lysine reactivity; full RNase inhibition blocks adaptive XBP1s (<em>ERN1</em> gnomAD LoF oe = 0.34). Drop unstable prodrug STF-083010; use clinical lead MKC-8866.</td>
+    </tr>
+    <tr>
+      <td><span class="pill warn">Rank #4</span><br><strong>Track 1</strong></td>
+      <td><strong>PERK Branch</strong><br>Kinase Catalytic Domain</td>
+      <td><code>EIF2AK3</code> (Q9NZJ5)<br><span class="muted">Direct kinase pocket binder</span></td>
+      <td>Showcase: <code>GSK2606414</code>, <code>GSK2656157</code>, <code>HC-5770</code><br><span class="ok">&rarr; Use ONLY: <code>HC-5770 (AMG-44)</code> at low dose (20–50 nM)</span></td>
+      <td><strong>Non-covalent Type-I.5 / DFG-out kinase inhibitor</strong><br>15 human PDBs: <code>4G31</code> (2.28 &Aring; GSK2606414), <code>4M7I</code> (2.34 &Aring; GSK2656157), <code>4X7K</code> (1.80 &Aring;), <code>8EQE</code> (2.56 &Aring;)</td>
+      <td><span class="err">Severe On-Target &amp; Off-Target Gate:</span> Human <em>EIF2AK3</em> LoF causes Wolcott–Rallison neonatal diabetes + acinar atrophy (HPA acinar 394.5 nCPM). GSK2606414/6157 are sub-20 nM RIPK1 &amp; 664 nM KIT inhibitors (PMID: 28452996, 30931942). Only partial attenuation via RIPK1-sparing HC-5770 is safe.</td>
+    </tr>
+    <tr>
+      <td><span class="pill err">Rank #5</span><br><strong>Track 5</strong></td>
+      <td><strong>ATF6 Branch</strong><br>ER Retention / Inhibition</td>
+      <td><code>ATF6</code> + <code>ABCD3 / PMP70</code> (P28288)<br><span class="err">Inter-organelle molecular glue</span></td>
+      <td>Showcase: <code>Ceapin-A7</code><br><span class="err">&rarr; Role: Assay Negative Control ONLY</span></td>
+      <td><strong>Neomorphic tether between ER cytosolic ATF6&alpha;(2–150) &amp; peroxisomal ABCD3 TM domain</strong><br>ATF6: <code>0 PDBs</code>. ABCD3: <code>4 cryo-EM PDBs</code> (<code>8Z0F</code>, <code>8Z9X</code> 2.96 &Aring;)</td>
+      <td><span class="err">Wrong Therapeutic Direction for GLTx:</span> ATF6 is cytoprotective in &beta;-cells; Ceapin-A7 blocks adaptive chaperone induction and <em>increases</em> ER-stress apoptosis (PMID: 27435960, 31149896). Use strictly to confirm ATF6 dependence of AA147.</td>
+    </tr>
+    <tr>
+      <td><span class="pill muted">Control A</span><br><strong>Track 6</strong></td>
+      <td><strong>Downstream ISR</strong><br>eIF2B GEF Complex</td>
+      <td><code>EIF2B1–5</code><br><span class="muted">Decameric eIF2B stapler</span></td>
+      <td>Recommended addition:<br><span class="ok"><code>ISRIB</code> (5 nM)</span></td>
+      <td><strong>Allosteric eIF2B dimer-of-pentamers stabilizer</strong><br>Human cryo-EM: <code>6CAJ</code>, <code>7L7G</code></td>
+      <td><span class="ok">State-Dependent Safety Buffer:</span> Relieves mild/moderate eIF2&alpha;-P translational block without causing Wolcott–Rallison pancreatic acinar necrosis, and has zero RIPK1/KIT off-target activity (PMID: 41595662).</td>
+    </tr>
+    <tr>
+      <td><span class="pill muted">Control B</span><br><strong>Track 7</strong></td>
+      <td><strong>Upstream IRE1&alpha; Rheostat</strong><br>Cytosolic ABL–IRE1&alpha; Axis</td>
+      <td><code>ABL1</code> (P00519) &amp; <code>ABL2</code> (P42684)<br><span class="muted">Cross-link from RIC-412</span></td>
+      <td>Recommended addition:<br><span class="ok"><code>Imatinib</code> (0.5 &mu;M) / <code>Asciminib</code></span></td>
+      <td><strong>Type-II DFG-out / Myristoyl allosteric pocket</strong><br>Validated in <code>RIC-412</code>: <code>2HYY</code> (-11.19 kcal/mol), <code>3GVU</code> (-11.84 kcal/mol)</td>
+      <td><span class="ok">Clinical Benchmark Control:</span> Attenuates ER-stress IRE1&alpha; RNase hyperactivation upstream in human &beta;-cells (PMID: 28380378) with Phase 2 T1D clinical C-peptide preservation (PMID: 34214479).</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>3. Human Genetics, Expression &amp; Structural Tractability of Core Nodes &amp; True Effectors</h2>
+
+<p>Data compiled directly from <strong>Open Targets Platform v4</strong> (gnomAD v4 constraint, DepMap 1,258-cell-line CRISPR essentiality, IMPC mouse phenotypes), <strong>GTEx v8</strong> median tissue expression, <strong>Human Protein Atlas (HPA)</strong> pancreatic single-cell RNA-seq, and <strong>UniProt / RCSB PDB</strong> structure census.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Gene Symbol (Protein)</th>
+      <th>Role in Campaign</th>
+      <th>gnomAD v4 LoF <code>oe</code> (90% CI)</th>
+      <th>DepMap Mean Effect (Essential Lines)</th>
+      <th>Pancreas Expression (GTEx TPM / HPA scRNA)</th>
+      <th>Human &amp; Mouse Genetic Phenotype [FACT]</th>
+      <th>PDB Structure Census</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>EIF2AK3</strong><br><span class="muted">PERK (Q9NZJ5)</span></td>
+      <td>Track 1 Direct Target</td>
+      <td><span class="warn">0.44</span><br><span class="muted">(0.35–0.56, bin 2)</span></td>
+      <td><code>-0.042</code><br><span class="muted">(16 / 1257 &lt; -0.5)</span></td>
+      <td>GTEx: <code>18.3 TPM</code><br>HPA: <code>20.1 nTPM</code><br><span class="err">Acinar: 394.5 nCPM</span></td>
+      <td><strong>Human biallelic LoF &rarr; Wolcott–Rallison syndrome</strong> (permanent neonatal diabetes, exocrine pancreas atrophy, skeletal dysplasia; PMID: 42945448). <em>Perk<sup>-/-</sup></em> mice: beta-cell loss &amp; exocrine insufficiency; <em>Perk<sup>+/-</sup></em>: improved HFD GSIS (PMID: 37956968).</td>
+      <td><strong>15 PDBs</strong> (12 kinase co-crystals, 1.80–2.92 &Aring;; <code>4G31</code>, <code>4M7I</code>, <code>4X7K</code>)</td>
+    </tr>
+    <tr>
+      <td><strong>ERN1</strong><br><span class="muted">IRE1&alpha; (O75460)</span></td>
+      <td>Track 2 (RNase) &amp; Track 3 (Kinase) Direct Target</td>
+      <td><span class="err">0.34</span><br><span class="muted">(0.27–0.45, bin 1)</span></td>
+      <td><code>+0.053</code><br><span class="muted">(7 / 1258 &lt; -0.5)</span></td>
+      <td>GTEx: <code>18.3 TPM</code><br>HPA: <code>63.0 nTPM</code><br>&beta;-cell: <code>3.86 nCPM</code> (Islet: <code>31.8 nCPM</code>)</td>
+      <td><strong>Strongly LoF-intolerant in humans.</strong> <em>Ern1<sup>-/-</sup></em> mice: embryonic lethal (placental labyrinth defect). Beta-cell constitutive KO impairs proinsulin folding (loss of XBP1s), whereas selective RIDD/oligomer attenuation protects Akita &amp; NOD beta cells (PMID: 28380378).</td>
+      <td><strong>26 human PDBs</strong> (1.74–3.55 &Aring;; <code>4U6R</code>, <code>6URC</code>, <code>7BMK</code>) + <strong>3 murine covalent RNase PDBs</strong> (<code>4PL3–4PL5</code>)</td>
+    </tr>
+    <tr>
+      <td><strong>ATF6</strong><br><span class="muted">ATF6&alpha; (P18850)</span></td>
+      <td>Track 4/5 Pathway Node</td>
+      <td><span class="ok">0.63</span><br><span class="muted">(0.51–0.80, bin 3)</span></td>
+      <td><code>-0.095</code><br><span class="muted">(20 / 1258 &lt; -0.5)</span></td>
+      <td>GTEx: <code>10.3 TPM</code><br><span class="muted">(ATF6B: 31.5 TPM)</span></td>
+      <td>Human biallelic LoF &rarr; congenital achromatopsia / cone photoreceptor loss (PMID: 29440509). <em>Atf6<sup>-/-</sup></em> mice: hepatic steatosis and hypersensitivity to ER stress-induced cell death; <em>Atf6a/b</em> double KO is embryonic lethal.</td>
+      <td><span class="err">0 PDBs</span> (AlphaFold only; intrinsically disordered bZIP + luminal region)</td>
+    </tr>
+    <tr>
+      <td><strong>P4HB</strong><br><span class="muted">PDIA1 (P07237)</span></td>
+      <td><strong>True Covalent Target of AA147 (Track 4)</strong></td>
+      <td><span class="warn">0.38</span><br><span class="muted">(0.27–0.55, bin 2)</span></td>
+      <td><code>-0.100</code><br><span class="muted">(8 / 1258 &lt; -0.5)</span></td>
+      <td><span class="ok">GTEx: 960.6 TPM (#2 tissue)</span><br>HPA: <code>2,108.3 nTPM</code></td>
+      <td>Essential ER oxidoreductase required for proinsulin disulfide bond maturation and ATF6 disulfide oligomer maintenance. Also supported by paralogs <code>PDIA4</code> (65.8 TPM, oe = 0.53) and <code>PDIA3</code> (113.7 TPM, oe = 0.28).</td>
+      <td><strong>14 PDBs</strong> (<code>4EKZ</code> 2.51 &Aring;, <code>6I7S</code> 2.50 &Aring;, <code>8GDY</code> 2.05 &Aring;)</td>
+    </tr>
+    <tr>
+      <td><strong>ABCD3</strong><br><span class="muted">PMP70 (P28288)</span></td>
+      <td><strong>True Peroxisomal Tether of Ceapin-A7 (Track 5)</strong></td>
+      <td><span class="warn">0.39</span><br><span class="muted">(0.30–0.50, bin 1)</span></td>
+      <td><code>-0.122</code><br><span class="muted">(23 / 1258 &lt; -0.5)</span></td>
+      <td>GTEx: <code>9.2 TPM</code><br><span class="muted">(Liver: 23.5 TPM)</span></td>
+      <td>Peroxisomal branched/very-long-chain fatty acid ABC transporter; Ceapin-A7 glues cytosolic ATF6&alpha; to ABCD3 TM helices without blocking ABCD3 transport (PMID: 31149896).</td>
+      <td><strong>4 cryo-EM PDBs</strong> (<code>8Z0F</code> 3.27 &Aring;, <code>8Z9X</code> 2.96 &Aring;, <code>9NGJ</code> 3.13 &Aring;)</td>
+    </tr>
+    <tr>
+      <td><strong>HSPA5</strong><br><span class="muted">BiP / GRP78 (P11021)</span></td>
+      <td>Master Luminal Chaperone &amp; Reporter Readout</td>
+      <td><span class="err">0.32</span><br><span class="muted">(0.22–0.49, bin 1; mis oe = 0.46)</span></td>
+      <td><span class="err">-1.269</span><br><span class="muted">(1234 / 1258 pan-essential)</span></td>
+      <td>GTEx: <code>164.1 TPM</code></td>
+      <td>Pan-essential ER chaperone (DepMap -1.27 across 98% of human cell lines). Direct small-molecule inhibition of BiP is lethal to &beta;-cells; therapeutic goal of Track 4 (AA147) is transcriptional <em>upregulation</em> of BiP via ATF6f.</td>
+      <td><strong>28+ PDBs</strong> (ATPase &amp; substrate-binding domains)</td>
+    </tr>
+    <tr>
+      <td><strong>MBTPS1 / MBTPS2</strong><br><span class="muted">Golgi S1P / S2P Proteases</span></td>
+      <td>Golgi Cleavage Enzymes of ATF6 (Track 4/5)</td>
+      <td>MBTPS1: <code>0.74</code><br>MBTPS2: <span class="err">0.06 (X-linked)</span></td>
+      <td>MBTPS1: <span class="err">-0.631</span> (751/1258)<br>MBTPS2: <span class="err">-0.639</span> (785/1258)</td>
+      <td>GTEx Pancreas:<br>MBTPS1 <code>21.5 TPM</code><br>MBTPS2 <code>2.25 TPM</code></td>
+      <td>Cleave both ATF6 and SREBP1/2; direct S1P/S2P inhibitors (e.g. PF-429242) block cholesterol/lipid biosynthesis globally and are pan-essential in DepMap — confirming why ATF6 modulation must act at ER trafficking rather than S1P/S2P cleavage.</td>
+      <td>MBTPS2 intramembrane metalloprotease homologs</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>4. Deep-Dive Audit by Track: Mechanism, Pitfalls &amp; Actionable Next Steps</h2>
+
+<div class="callout ok">
+  <div class="title">Track 3 (Rank #1) — IRE1&alpha; Kinase Allosteric Modulators (KIRA6 &rarr; KIRA8 / AMG-18 &amp; PAIRs)</div>
+  <p><strong>Why this is the #1 Small-Molecule Track:</strong> Unlike RNase covalent aldehydes (Track 2) that indiscriminately wipe out both adaptive <code>XBP1s</code> and pro-apoptotic <code>RIDD</code>, the kinase ATP-binding pocket of IRE1&alpha; allosterically controls RNase oligomerization state through the <strong>helix-&alpha;C / DFG conformation</strong> [FACT].</p>
+  <ul>
+    <li><strong>Biphasic / Rheostatic Control of IRE1&alpha; Fate:</strong> Dimeric IRE1&alpha; splices <em>XBP1</em> mRNA (adaptive), whereas higher-order homo-oligomers perform endonucleolytic decay of insulin mRNA and ER-localized transcripts (RIDD, terminal apoptosis; Ghosh et al., <em>Cell</em> 2014, PMID: 25018104). Recently, Feldman et al. (<em>Nat Chem Biol</em> 2021, PMID: 34556859; PDB <code>7BMK</code>, 1.85 &Aring;) demonstrated that <strong>ATP-competitive Partial Antagonists of IRE1&alpha; RNase ("PAIRs")</strong> partially displace helix-&alpha;C to block oligomerization and RIDD while preserving dimeric XBP1 splicing in insulinoma cells.</li>
+    <li><strong>Critical Probe Upgrade (Drop KIRA6 &rarr; Use KIRA8 / AMG-18):</strong> Although KIRA6 is listed in the showcase table, Mahameed et al. (<em>Cell Death Dis</em> 2019, PMID: 30931942) and subsequent profiling (PMID: 40786050) proved that KIRA6 potently inhibits <strong>c-KIT</strong> and <strong>LYN</strong> at nanomolar-to-low-micromolar cellular concentrations. By contrast, <strong>KIRA8 (AMG-18, CID 118721244, CHEMBL3665060)</strong> is a mono-selective sulfonamide Type-II IRE1&alpha; inhibitor (IC<sub>50</sub> ~5 nM) that reverses established diabetes in Akita and NOD mice (Morita et al., <em>Cell Metab</em> 2017, PMID: 28380378).</li>
+    <li><strong>Computational &amp; Assay Readiness:</strong> Immediately ready for dual-conformation ensemble docking and MD across oligomer-promoting vs. monomer-stabilizing (<code>4U6R</code>, <code>4YZ9</code>, <code>6URC</code>) and PAIR-bound (<code>7BMK</code>) human crystal structures.</li>
+  </ul>
+</div>
+
+<div class="callout ok">
+  <div class="title">Track 4 (Rank #2) — ATF6 Trafficking Activators (AA147 &amp; AA263)</div>
+  <p><strong>Why this is the #2 Track (Phenotypic Winner, Structural Caveat):</strong> Selective activation of the ATF6&alpha; transcriptional program (upregulating <code>BiP/HSPA5</code>, <code>GRP94</code>, and ERAD components without inducing PERK/CHOP or IRE1&alpha;/RIDD) is an ideal adaptive mechanism to help &beta;-cells cope with heavy proinsulin folding loads under GLTx (Plate et al., <em>eLife</em> 2016, PMID: 27435961).</p>
+  <ul>
+    <li><strong>Crucial Target Deconvolution [FACT]:</strong> <code>AA147</code> is frequently described in review tables as an "ATF6 activator", but chemoproteomic target identification by Paxman et al. (<em>eLife</em> 2018, PMID: 30084354) and Kline et al. (<em>ACS Chem Biol</em> 2023, PMID: 37523656) proved that <strong>AA147 does not bind ATF6</strong>. Instead, its 2-amino-<em>p</em>-cresol moiety undergoes ER oxidase-mediated metabolic activation to an <em>ortho</em>-quinone methide electrophile that covalently modifies catalytic cysteines on ER-resident <strong>protein disulfide isomerases (primarily PDIA1/P4HB, PDIA4/ERp72, and PDIA3/ERp57)</strong>. Modifying a subset of PDI pool shifts ATF6&alpha; from ER-retained disulfide oligomers to reduced monomers that package into COPII vesicles for Golgi S1P/S2P cleavage.</li>
+    <li><strong>&beta;-Cell Specific Dosing Nuance:</strong> In human pancreas, <strong>P4HB (PDIA1)</strong> is the second highest-expressed gene in the entire organ (GTEx <code>960.6 TPM</code>, HPA <code>2,108.3 nTPM</code>) and is directly required to form the three native disulfide bonds (A6–A11, A7–B7, A20–B19) of proinsulin. Therefore, in EndoC-&beta;H1 cells, AA147 must be titrated within its adaptive window (typically <strong>1–5 &mu;M</strong>; along with next-gen analog <strong>AA263</strong>, PMID: 41586813) so that partial PDI modulation releases ATF6 monomer without over-inhibiting proinsulin disulfide folding.</li>
+    <li><strong>Computational Implication:</strong> Do not dock AA147 into AlphaFold models of ATF6. Any structure-based design for this track must model covalent quinone-methide adduct formation at the catalytic <code>CXXC</code> thioredoxin domains of human <strong>PDIA1 (PDB <code>4EKZ</code>, <code>6I7S</code>)</strong>.</li>
+  </ul>
+</div>
+
+<div class="callout warn">
+  <div class="title">Track 2 (Rank #3) — IRE1&alpha; RNase Domain Covalent Inhibitors (4&mu;8C, STF-083010, MKC-8866 / ORIN1001)</div>
+  <ul>
+    <li><strong>Covalent Mechanism:</strong> All three compounds belong to the <strong>hydroxy-aryl-aldehyde (HAA) / salicylaldehyde</strong> class that forms a reversible covalent Schiff base (imine) with the &epsilon;-amino group of <strong>Lys907</strong> inside the IRE1&alpha; endoribonuclease active site (Cross et al., <em>PNAS</em> 2012, PMID: 22315414; Sanches et al., <em>Nat Commun</em> 2014, PMID: 25164867; PDB <code>4PL3</code>, <code>4PL4</code>, <code>4PL5</code>).</li>
+    <li><strong>Compound Selection Hygiene:</strong> <code>STF-083010</code> is a sulfonyl-imine prodrug that rapidly hydrolyzes in aqueous media into its active hydroxynaphthaldehyde core and displays variable cellular potency; <code>4&mu;8C</code> has strong cell-free potency (IC<sub>50</sub> ~76 nM) but high serum protein binding and modest cellular potency (EC<sub>50</sub> 1–5 &mu;M). <strong>MKC-8866 (ORIN1001, CID 89542346)</strong> is the optimized clinical candidate from this series (entered Phase 1/2 oncology trials) and should be the primary RNase-site tool compound tested in EndoC-&beta;H1.</li>
+    <li><strong>Translational Limitation in Diabetes:</strong> Unlike allosteric kinase modulators (PAIRs) that can separate RIDD from XBP1s, covalent modification of <code>Lys907</code> physically blocks the catalytic RNA-cleavage pocket for <em>both</em> substrates. Chronic suppression of physiological XBP1s in &beta;-cells impairs basal ERAD and proinsulin maturation.</li>
+  </ul>
+</div>
+
+<div class="callout warn">
+  <div class="title">Track 1 (Rank #4) — PERK Kinase Inhibitors (GSK2606414, GSK2656157, HC-5770) — Severe Toxicity &amp; Off-Target Gate</div>
+  <ul>
+    <li><strong>On-Target Genetic &amp; Preclinical Pancreatic Toxicity [FACT]:</strong> In humans, biallelic loss-of-function mutations in <em>EIF2AK3</em> (PERK) cause <strong>Wolcott–Rallison syndrome</strong>, presenting as fulminant neonatal permanent insulin-dependent diabetes and exocrine pancreatic insufficiency (PMID: 42945448). Consistently, full pharmacological dosing of <code>GSK2606414</code> or <code>GSK2656157</code> in mice causes severe exocrine pancreatic acinar degeneration (where PERK is expressed at <code>394.5 nCPM</code>) and islet atrophy within 2–3 weeks, which halted GSK's clinical development of both compounds (Atkins et al., <em>Cancer Res</em> 2013, PMID: 23333938; Axten et al., <em>J Med Chem</em> 2013, PMID: 24900593).</li>
+    <li><strong>Confounding Off-Target Trap in GSK2606414 &amp; GSK2656157 [FACT]:</strong> Rojas-Rivera et al. (<em>Cell Death Differ</em> 2017, PMID: 28452996) demonstrated that both GSK2606414 and GSK2656157 are <strong>direct, sub-20 nM RIPK1 inhibitors</strong> (~100-fold more potent than Nec-1s) that completely block TNF&alpha;-mediated necroptosis/apoptosis at concentrations below those required to inhibit PERK in cells. Additionally, GSK2606414 binds and degrades <strong>c-KIT</strong> at nanomolar cellular concentrations (K<sub>d</sub> = 664 nM; PMID: 30931942). Any survival rescue observed with GSK2606414/6157 in cytokine- or GLTx-treated islets is heavily confounded by RIPK1 blockade.</li>
+    <li><strong>How to Salvage Track 1 Safely:</strong>
+      <ol>
+        <li><strong>Drop GSK2606414/2656157 and use HC-5770 (AMG-PERK-44, CHEMBL3407862):</strong> HC-5770 is a highly selective PERK inhibitor that does <em>not</em> inhibit RIPK1 or c-KIT and was recently validated in human islets, EndoC-&beta;H1 cells, and NOD mice to stabilize &beta;-cell PD-L1 via GOLM1 and delay autoimmune diabetes at low doses (Muralidharan et al., <em>J Clin Invest</em> 2024, PMID: 38889047).</li>
+        <li><strong>Operate strictly in the Ultra-Low-Dose Window (20–50 nM) or Pair with ISRIB (5 nM):</strong> Partial PERK attenuation (mimicking <em>Perk<sup>+/-</sup></em> heterozygosity; PMID: 37956968, 37670417, 42155730) or state-dependent downstream eIF2B stabilization with <strong>ISRIB</strong> relieves translational attenuation without triggering the Wolcott–Rallison acinar/beta-cell crash.</li>
+      </ol>
+    </li>
+  </ul>
+</div>
+
+<div class="callout err">
+  <div class="title">Track 5 (Rank #5) — ATF6 Inhibitor Ceapin-A7 — Reclassify as Assay Negative Control Only</div>
+  <ul>
+    <li><strong>True Mechanism (Inter-Organelle Molecular Glue) [FACT]:</strong> Genome-wide CRISPRi and proteomics by Torres et al. (<em>eLife</em> 2019, PMID: 31149896) established that <code>Ceapin-A7</code> does not inhibit a catalytic site on ATF6; instead, it acts as a neomorphic molecular glue that tethers the cytosolic N-terminal domain of ER-resident <strong>ATF6&alpha;</strong> directly to the transmembrane region of the peroxisomal fatty-acid transporter <strong>ABCD3 (PMP70)</strong>, physically trapping ATF6 at ER–peroxisome contact sites and preventing COPII trafficking to the Golgi.</li>
+    <li><strong>Why Ceapin-A7 Is Counter-Productive as a Diabetes Drug Lead:</strong> In &beta;-cells challenged with GLTx, the ATF6&alpha; branch is purely adaptive (boosting BiP and ER folding capacity). Gallagher et al. (<em>eLife</em> 2016, PMID: 27435960) showed that Ceapin-A7 has no toxicity in unstressed cells but <strong>markedly sensitizes ER-stressed cells to apoptosis</strong>. Therefore, Ceapin-A7 should be used in the EndoC-&beta;H1 campaign strictly as a <strong>pathway-deconvolution negative control</strong> (e.g., demonstrating that co-treatment with Ceapin-A7 abolishes the protective effect of AA147).</li>
+  </ul>
+</div>
+
+<h2>5. Recommended Experimental Panel &amp; Next-Step Computational Options</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Proposed Action Layer</th>
+      <th>Concrete Recommendation for EndoC-&beta;H1 GLTx Assay &amp; Computational Follow-Up</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1. Clean 6-Compound Wet-Lab Panel for EndoC-&beta;H1 UPR Reporters</strong></td>
+      <td>
+        Instead of running all 9 legacy tool compounds blindly, we recommend a clean, mechanism-deconvoluted 6-compound core panel under GLTx:<br>
+        &bull; <strong>IRE1&alpha; Allosteric (Rank #1):</strong> <code>KIRA8 / AMG-18</code> (0.1–1 &mu;M) + upstream rheostat benchmark <code>Imatinib</code> (0.5 &mu;M, from <code>RIC-412</code>)<br>
+        &bull; <strong>ATF6 Adaptive Activator (Rank #2):</strong> <code>AA147</code> (1–5 &mu;M; optional <code>AA263</code>)<br>
+        &bull; <strong>IRE1&alpha; RNase Covalent Benchmark (Rank #3):</strong> <code>MKC-8866 / ORIN1001</code> (0.5–2 &mu;M; replacing unstable STF-083010)<br>
+        &bull; <strong>PERK / ISR Partial Attenuation (Rank #4):</strong> <code>HC-5770 / AMG-44</code> (low-dose titration 10–100 nM, avoiding RIPK1-confounded GSK2606414) + <code>ISRIB</code> (5–50 nM)<br>
+        &bull; <strong>Pathway Negative Control (Rank #5):</strong> <code>Ceapin-A7</code> (1–6 &mu;M, alone and in combination with AA147)
+      </td>
+    </tr>
+    <tr>
+      <td><strong>2. Optional Follow-Up Computational Workstreams (Upon Your Confirmation)</strong></td>
+      <td>
+        No heavy docking or MD calculations were executed in this initial triage pass. If we decide to pursue structure-based virtual screening or lead optimization on specific tracks, the highest-ROI computational workstreams are:<br>
+        &bull; <strong>Workstream A (IRE1&alpha; Kinase PAIR vs. KIRA Selectivity):</strong> Dual-state ensemble docking &amp; 250 ps OpenMM MD across human IRE1&alpha; <code>7BMK</code> (PAIR partial antagonist helix-&alpha;C state, 1.85 &Aring;) vs. <code>4U6R / 6URC</code> (Type-II full KIRA state) to design binders that suppress RIDD while sparing XBP1s.<br>
+        &bull; <strong>Workstream B (PERK Low-Occupancy / Selectivity Counter-Screen):</strong> Structure-based selectivity profiling of PERK <code>4G31 / 4X7K</code> against off-target <code>RIPK1</code> and <code>c-KIT (1T46)</code>.<br>
+        &bull; <strong>Workstream C (PDIA1 Covalent Adduct Modeling for AA147 Analogs):</strong> Covalent docking against human <code>P4HB / PDIA1 (4EKZ / 6I7S)</code> catalytic <code>CXXC</code> motifs.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<footer>
+  Prepared by QYJI (Research Insights China) &nbsp;&bull;&nbsp; Jira: <code>RIC-413</code> &nbsp;&bull;&nbsp; Shared Drive: <code>R:\DT\TDE_TV\shared_folder\QYJI\druggability\ER_stress_SMoL\</code>
+</footer>
+
+</div>
+</body>
+</html>

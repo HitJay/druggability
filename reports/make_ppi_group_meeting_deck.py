@@ -1,15 +1,15 @@
 #!/usr/bin/env python
-"""Generate a 6-slide editable PPTX deck for the 5-10 min group meeting presentation (RIC-410).
+"""Generate the optimized 8-slide editable PPTX deck (6 main slides + 2 Appendix slides) for the ~10 min group meeting scientific update (RIC-410).
 
-Leadership ask:
-  "bring a 5-10mins presentation to group meeting next week on the summary of what David Baker's team
-   achieved and what the business question for the campaign is (TBD)"
-
-Design anti-overlap rules enforced:
-  1. All slide titles, subtitles, card headers, and card sub-banners are sized and width-allocated
-     so they fit strictly on a SINGLE line (zero 2-line title wrap overlaps).
-  2. Multi-bullet bodies inside any card use a SINGLE unified TextFrame with multiple paragraphs
-     rather than stacked separate textboxes, making intra-card vertical text collisions impossible.
+Structure aligned with Lingling's feedback & group meeting plan:
+  - Slide 1: Title & Executive Framing (3 pillars: Pipeline Landscape, New PPI Module & Boundaries, Assay-Gated Exploratory Plan)
+  - Slide 2: Druggability Agent Platform: Systematic 6-Module Capability Landscape & Validated Benchmarks
+  - Slide 3: Module 2 Deep-Dive: Baker Engine Summary, In-House A100 Validation & 4 Reading Rules (Consolidated from old Slides 2+3)
+  - Slide 4: Prospective Time-Split Validation (2024-2026) & Biological Fit Matrix
+  - Slide 5: Preliminary Campaign Plan: 3 Candidate Business Questions & Wet-Lab Assay Readiness Gate
+  - Slide 6: Dry-Run Proof-of-Concept: BQ-1 99-Lead Triage & RAMP3-MRAP2 Cross-Module Audit
+  - Appendix S1 (Slide 7): Does MRAP2 Compete with Amylin or Destabilize AMY1R / AMY3R? (Cryo-EM + 8-System MD)
+  - Appendix S2 (Slide 8): Detailed Two-Study Comparison (2025 Science vs 2026 Sci Rep) & Cascade Numbers
 
 Every slide has full Chinese oral speaker notes + Q&A defense in slide.notes_slide.
 Slide canvas is 100% pure English (0 CJK characters).
@@ -57,8 +57,8 @@ def rect(slide, x, y, w, h, fill, line=None, line_w=0.75, shape_type=MSO_SHAPE.R
     return s
 
 
-def text(slide, x, y, w, h, runs, size=11, bold=False, color=INK, align=PP_ALIGN.LEFT,
-         anchor=MSO_ANCHOR.TOP, space_after=3, font="Calibri"):
+def text(slide, x, y, w, h, runs, size: float = 11.0, bold=False, color=INK, align=PP_ALIGN.LEFT,
+         anchor=MSO_ANCHOR.TOP, space_after: float = 3.0, font="Calibri"):
     tb = slide.shapes.add_textbox(Inches(x), Inches(y), Inches(w), Inches(h))
     tf = tb.text_frame
     tf.word_wrap = True
@@ -83,27 +83,24 @@ def text(slide, x, y, w, h, runs, size=11, bold=False, color=INK, align=PP_ALIGN
     return tb
 
 
-def add_header_footer(slide, page_num, total_pages, title, subtitle, section_tag):
+def add_header_footer(slide, page_num, total_pages, title, subtitle, section_tag,
+                      footer_left="References: Zhang et al., Science 390, eadt1630 (2025) | Pei, Zhang & Cong, Sci Rep 16:25590 (2026) | Lambourne et al., Nat Commun (2026)"):
     rect(slide, 0, 0, W, H, WHITE)
     rect(slide, 0, 0, W, 0.96, NAVY)
-    # Give title w=10.0 in at 17.5 pt so even 80-char titles stay on 1 line
-    text(slide, 0.48, 0.14, 10.00, 0.36, title, size=17.5, bold=True, color=WHITE)
-    text(slide, 0.48, 0.55, 10.00, 0.28, [
-        [(section_tag + "  |  ", {"size": 10.2, "bold": True, "color": ICE}),
-         (subtitle, {"size": 10.2, "color": ICE, "italic": True})]
+    text(slide, 0.45, 0.14, 10.10, 0.36, title, size=17.2, bold=True, color=WHITE)
+    text(slide, 0.45, 0.55, 10.10, 0.28, [
+        [(section_tag + "  |  ", {"size": 10.0, "bold": True, "color": ICE}),
+         (subtitle, {"size": 10.0, "color": ICE, "italic": True})]
     ])
-    text(slide, 10.55, 0.18, 2.30, 0.54, [
-        [(f"SLIDE {page_num} OF {total_pages}  |  RIC-410" if isinstance(page_num, int) else f"{page_num}  |  RIC-410", {"size": 10.2, "bold": True, "color": WHITE})],
-        [("Group Meeting  |  Novo Nordisk", {"size": 9.2, "color": ICE})]
+    badge_str = f"SLIDE {page_num} OF {total_pages}  |  RIC-410" if isinstance(page_num, int) else f"{page_num}  |  RIC-410"
+    text(slide, 10.60, 0.18, 2.28, 0.54, [
+        [(badge_str, {"size": 10.0, "bold": True, "color": WHITE})],
+        [("Scientific Update  |  Novo Nordisk", {"size": 9.0, "color": ICE})]
     ], align=PP_ALIGN.RIGHT, space_after=2)
-    # Footer
-    rect(slide, 0.48, 7.08, W - 0.96, 0.01, BORDER)
-    text(slide, 0.48, 7.13, 9.0, 0.25,
-         "References: Zhang et al., Science 390, eadt1630 (2025) | Pei, Zhang & Cong, Sci Rep 16:25590 (2026) | Cao et al., Science 375, eabm9601 (2022)",
-         size=8.5, color=GREY)
-    text(slide, 9.50, 7.13, 3.35, 0.25,
-         f"druggability repo  |  Page {page_num}/{total_pages}" if isinstance(page_num, int) else f"druggability repo  |  {page_num}",
-         size=8.5, color=GREY, align=PP_ALIGN.RIGHT)
+    rect(slide, 0.45, 7.08, W - 0.90, 0.01, BORDER)
+    text(slide, 0.45, 7.12, 9.50, 0.25, footer_left, size=8.2, color=GREY)
+    page_str = f"druggability repo  |  Page {page_num}/{total_pages}" if isinstance(page_num, int) else f"druggability repo  |  {page_num}"
+    text(slide, 10.00, 7.12, 2.88, 0.25, page_str, size=8.2, color=GREY, align=PP_ALIGN.RIGHT)
 
 
 def set_notes(slide, notes_str):
@@ -112,102 +109,779 @@ def set_notes(slide, notes_str):
 
 
 # ==============================================================================
-# SLIDE 1: Title & Executive Summary (1 min)
+# SLIDE 1: Title & Executive Framing (~1 min)
 # ==============================================================================
 s1 = add_blank_slide()
 rect(s1, 0, 0, W, H, NAVY)
 rect(s1, 0, 0, W, 0.12, TEAL)
 
-# Top badge
-rect(s1, 0.65, 0.48, 3.90, 0.36, TEAL)
-text(s1, 0.65, 0.53, 3.90, 0.26, "GROUP MEETING BRIEFING (5-10 MIN)  |  RIC-410",
-     size=10.2, bold=True, color=WHITE, align=PP_ALIGN.CENTER)
+rect(s1, 0.60, 0.45, 4.40, 0.36, TEAL)
+text(s1, 0.60, 0.50, 4.40, 0.26, "SCIENTIFIC UPDATE (~10 MIN)  |  PLANNING STAGE  |  RIC-410",
+     size=10.0, bold=True, color=WHITE, align=PP_ALIGN.CENTER)
 
-# Separate Title, Subtitle, and Presenter into well-spaced boxes (no overlap)
-text(s1, 0.65, 1.00, 12.0, 0.55,
-     "Proteome-Wide PPI & Disease-Interface Triage",
-     size=29, bold=True, color=WHITE)
+text(s1, 0.60, 0.96, 12.10, 0.52,
+     "Druggability Pipeline Landscape & Preliminary PPI Screening Plan",
+     size=27.5, bold=True, color=WHITE)
 
-text(s1, 0.65, 1.62, 12.0, 0.36,
-     "1. What David Baker & Qian Cong's Team Achieved   |   2. What Business Question Our Campaign Solves",
-     size=15.0, bold=True, color=ICE)
+text(s1, 0.60, 1.54, 12.10, 0.34,
+     "1. End-to-End Capability Landscape   |   2. Proteome PPI Module & Boundaries   |   3. Assay-Gated Exploratory Plan",
+     size=13.8, bold=True, color=ICE)
 
-text(s1, 0.65, 2.08, 12.0, 0.30,
-     "Presenter: Qiuye Jin (QYJI)   |   Cardiometabolic Data S6 Partner: Zheng Cao (ZHCO)   |   October 2026",
-     size=11.0, color=ICE)
+text(s1, 0.60, 1.98, 12.10, 0.28,
+     "Presenter: Qiuye Jin (QYJI)   |   Cardiometabolic Data S6 Collaborator: Zheng Cao (ZHCO)   |   Research Insights China (RIC)",
+     size=10.8, color=ICE)
 
-# 2 Big Executive Summary Cards side by side (y=2.55, h=3.70)
-cw = 5.85
-# Card 1: Question 1 Summary
-rect(s1, 0.65, 2.55, cw, 3.70, WHITE, line=TEAL, line_w=1.5)
-rect(s1, 0.65, 2.55, cw, 0.44, TEAL)
-text(s1, 0.85, 2.64, cw - 0.40, 0.28,
-     "PART 1: What Baker & Cong's Team Achieved (Slides 2-4)",
-     size=11.8, bold=True, color=WHITE)
-text(s1, 0.85, 3.12, cw - 0.40, 3.00, [
-    [("• Solved the Human Interactome Scale & Signal Bottleneck (Science 2025):", {"size": 10.6, "bold": True, "color": NAVY})],
-    [("  Assembled 7x deeper omicMSAs from 30 PB raw eukaryotic reads + distilled 223k AFDB domain-domain pairs (17x larger training set) to train RF2-PPI (20x faster than AF2).", {"size": 9.8, "color": INK})],
-    [("• Mapped 17,849 High-Precision Human PPIs (@90% Precision):", {"size": 10.6, "bold": True, "color": NAVY})],
-    [("  Includes 3,631 novel interactions (2,700 lacking complex templates in Data S6, 58% transmembrane) + ~16,000 clinical disease mutations mapped to 3D interfaces (Sci Rep 2026).", {"size": 9.8, "color": INK})],
-    [("• Verified In-House on 6x A100 GPUs & Prospectively Validated:", {"size": 10.6, "bold": True, "color": TEAL})],
-    [("  262x enrichment over random proteome screening (r=0.919 parity; 43.2% recall on large stable complexes >1500 A2; 11 Data S6 pairs proved by cryo-EM/co-IP in 2024-2026).", {"size": 9.8, "color": INK})],
-], space_after=3.5)
+# 3 Executive Summary Pillars on Slide 1 (y=2.42, h=3.82)
+cw1 = 3.88
+gap1 = 0.24
+s1_cards = [
+    ("1. Pipeline Landscape (Slide 2)", "6 Integrated Modules Across Modalities", TEAL, [
+        ("End-to-End Platform",
+         "Built a 6-stage computational pipeline under `druggability`: (1) Target Genetics & Safety, (2) Proteome PPI & SAVs, (3) Peptide & BBB, (4) Pocket & Virtual Screening, (5) Explicit MD & FEP/TI, and (6) 3D Delivery."),
+        ("Battle-Tested on Internal Projects",
+         "Validated across OXTR peptide selectivity (RIC-403), GPR81 anti-flushing FEP (RIC-396), TSPO target fishing (RIC-408), GIGYF1 glue pocket (RIC-407), and peptide BBB / 3_safety (RIC-349/409)."),
+    ]),
+    ("2. New PPI Capability (Slides 3-4)", "Baker RF2-PPI Validation & Boundaries", WHITE, [
+        ("What Baker & Cong Achieved",
+         "Science 2025 (7x omicMSAs + RF2-PPI -> 17,849 PPIs @90% prec; 2,700 zero-prior in Data S6) + Sci Rep 2026 (clinical SAVs mapped to 3D interfaces)."),
+        ("In-House Audit & Scope Rules",
+         "Reproduced on 6x A100 GPUs (262x lift over random; r=0.919). High sensitivity on large/transmembrane complexes (43.2% recall >1,500 A2), blind spot on transient SLiMs (4.5%) -> positive generator only."),
+    ]),
+    ("3. Exploratory Plan & Gate (Slides 5-6)", "3 Business Options Gated on Wet-Lab Assay", RED, [
+        ("3 Candidate Business Questions",
+         "BQ-1 (99 cardiometabolic Data S6 leads triage), BQ-2 (on-demand 1-vs-20,260 bait screen in ~6 GPU-h), and BQ-3 (6A disease-interface & point-mutant control design)."),
+        ("Dry-Run PoC & Assay Readiness Gate",
+         "Completed dry-run triage (8/99 pass 4/4; #1 RAMP3-MRAP2 audited via Boltz-2, MD & FEP). Next step is gated on checking wet-lab screening/validation assay readiness (co-IP / BRET / cAMP)."),
+    ]),
+]
 
-# Card 2: Question 2 Summary
-rx = 0.65 + cw + 0.33
-rect(s1, rx, 2.55, cw, 3.70, WHITE, line=RED, line_w=1.5)
-rect(s1, rx, 2.55, cw, 0.44, RED)
-text(s1, rx + 0.20, 2.64, cw - 0.40, 0.28,
-     "PART 2: Campaign Business Questions for Alignment (Slides 5-6)",
-     size=11.8, bold=True, color=WHITE)
-text(s1, rx + 0.20, 3.12, cw - 0.40, 3.00, [
-    [("• BQ-1 (Portfolio Partner Mining — Completed Pilot):", {"size": 10.6, "bold": True, "color": NAVY})],
-    [("  Triaged 99 unflagged Data S6 cardiometabolic leads across 4 strict criteria -> 8 leads pass all 4/4 (led by #1 RAMP3-MRAP2 & #2 RAMP1-MRAP2; 14 pass 3/4) + MD/FEP completed.", {"size": 9.8, "color": INK})],
-    [("• BQ-2 (De Novo Target Screen — On-Demand Service):", {"size": 10.6, "bold": True, "color": TEAL})],
-    [("  Screen any priority internal receptor/transporter bait against all 20,260 human proteins in ~6 GPU-h to find missing co-receptors, chaperones, or E3 ligases missed by AP-MS.", {"size": 9.8, "color": INK})],
-    [("• BQ-3 (Disease-Interface & Assay Control Design):", {"size": 10.6, "bold": True, "color": RED})],
-    [("  Deliver 3D complex coordinates (6A contact surface) + clinical pathogenic variants (ClinVar / AlphaMissense) to design exact point-mutant negative controls for co-IP/BRET.", {"size": 9.8, "color": INK})],
-], space_after=3.5)
+x1 = 0.60
+for c_hdr, c_sub, c_col, c_items in s1_cards:
+    hdr_bg = TEAL if c_col != RED else RED
+    rect(s1, x1, 2.42, cw1, 3.82, WHITE, line=hdr_bg, line_w=1.5)
+    rect(s1, x1, 2.42, cw1, 0.40, hdr_bg)
+    text(s1, x1 + 0.14, 2.50, cw1 - 0.28, 0.26, c_hdr, size=11.2, bold=True, color=WHITE)
+    rect(s1, x1, 2.82, cw1, 0.28, ICE)
+    text(s1, x1 + 0.14, 2.86, cw1 - 0.28, 0.20, c_sub, size=9.2, bold=True, color=NAVY)
+    paras = []
+    for it_t, it_b in c_items:
+        paras.append([
+            ("• " + it_t + ":\n", {"size": 9.8, "bold": True, "color": NAVY if hdr_bg == TEAL else RED}),
+            (it_b, {"size": 9.1, "color": INK}),
+        ])
+    text(s1, x1 + 0.14, 3.20, cw1 - 0.28, 2.94, paras, space_after=6.0)
+    x1 += cw1 + gap1
 
-# Bottom Takeaway Strip on Title Slide
-rect(s1, 0.65, 6.45, 12.03, 0.58, ICE)
-text(s1, 0.85, 6.53, 11.63, 0.44, [
-    [("Goal of Today's 5-10 Min Discussion: ", {"size": 10.8, "bold": True, "color": RED}),
-     ("Review the technical capability and boundaries (Part 1), and decide which Business Question(s) and pilot targets to prioritize for Phase-1 wet-lab handoff (Part 2).",
-      {"size": 10.4, "bold": True, "color": NAVY})]
+rect(s1, 0.60, 6.42, 12.12, 0.58, ICE)
+text(s1, 0.80, 6.50, 11.72, 0.44, [
+    [("Goal of Today's 10-Min Update (Planning Stage): ", {"size": 10.5, "bold": True, "color": RED}),
+     ("Share our systematic druggability pipeline landscape (Part 1), clarify what the new PPI module can/cannot do (Part 2), and align on how to check wet-lab assay readiness before committing to a campaign (Part 3).",
+      {"size": 10.0, "bold": True, "color": NAVY})]
 ])
 
-set_notes(s1, """【Slide 1 口播讲稿（约 45 秒）】
-大家好！根据领导上周的建议，今天用 5 到 8 分钟跟大家汇报两件事：
-第一部分（Slide 2–4）：总结 David Baker 和 Qian Cong 团队去年底在 Science 和今年在 Scientific Reports 上到底做成了什么突破，以及我们在内部复现验证后摸清的能力边界（什么时候准、什么时候是盲区）。
-第二部分（Slide 5–6）：讨论我们内部推进这个 Campaign 的核心 Business Question 到底应该定在哪——我们梳理了三个直接服务心代和靶点发现的候选业务问题（包括曹峥前期筛出的 99 个心代靶点新互作对，以及按需扫全蛋白组服务），供大家今天一起拍板。""")
+set_notes(s1, """【Slide 1 口播讲稿（约 1 分钟）】
+大家好！非常感谢 Lingling 安排今天这 10 分钟的 Scientific Update。
+在之前跟大家聊 Baker 团队全蛋白组 PPI 预测的时候，我们意识到如果只单独讲一篇文章，大家很容易觉得它是一个孤立的计算脚本；同时我们目前还处于早期的探索与规划阶段（Planning Stage）。
+因此今天的汇报分为三个部分：
+1. 第一部分（Slide 2）：先把我们过去几个月在 `druggability` 管线里已经建成的 6 大核心计算模块和真实交付案例做个全景盘点，说明新引入的 PPI 模块在整个管线里处于什么位置；
+2. 第二部分（Slide 3–4）：用最精炼的篇幅总结 Baker & Cong 团队（Science 2025 / Sci Rep 2026）做成了什么、我们在 6 张 A100 上的实测表现，以及它的适用边界（什么靶点好用、什么情况是盲区）；
+3. 第三部分（Slide 5–6）：汇报我们初步梳理的 3 个业务问题选项（BQ-1/2/3）和在 99 对心代候选上的 Dry-Run 概念验证（如 RAMP3–MRAP2）。最关键的是，我们目前还在 Plan 阶段，后续到底推不推、怎么推，完全取决于先跟生物团队核对下游湿实验 Screening / Validation Assay（如 co-IP、BRET、cAMP）是否 Ready。""")
 
 
 # ==============================================================================
-# SLIDE 2: Part 1A — Two-Study Division of Labor & Scientific Caveats (ZHCO Synthesis)
+# SLIDE 2: Systematic Druggability Pipeline Landscape & Validated Benchmarks (~2 min)
 # ==============================================================================
 s2 = add_blank_slide()
 add_header_footer(
     s2, 2, 6,
-    "What Baker & Cong Achieved: 2025 Science vs 2026 Sci Rep & Caveats",
-    "5-Stage Proteome Engine (2025), Case-Study Extension (2026), and Rigorous Reading Rules",
-    "PART 1A: TWO-STUDY SYNTHESIS"
+    "Druggability Agent Platform: Systematic Capability Landscape & Benchmarks",
+    "6 Integrated Modules Across Target Genetics, PPI, Peptide/BBB, Virtual Screening, MD/FEP & 3D Delivery",
+    "PART 1: PIPELINE CAPABILITY LANDSCAPE",
+    footer_left="Platform: druggability repo (hpccnrd001 A100 Cluster)  |  Validated tickets: RIC-349, RIC-392, RIC-396, RIC-403, RIC-407, RIC-408, RIC-410"
 )
 
-# Top Problem & Relationship Banner (y=1.10, h=0.84)
-rect(s2, 0.48, 1.10, 12.37, 0.84, LIGHT, line=BORDER)
-rect(s2, 0.48, 1.10, 0.09, 0.84, NAVY)
-text(s2, 0.72, 1.15, 11.95, 0.74, [
+# 2A. Top Workflow Pipeline Chevron Bar (6 End-to-End Stages) (y=1.08, h=0.48)
+stages = [
+    ("Stage 1: Target & Genetics", "Open Targets / GWAS / Safety", NAVY),
+    ("Stage 2: PPI & Interfaces", "RF2-PPI / Boltz-2 / SAVs", TEAL),
+    ("Stage 3: Peptide & BBB", "PRODIGY / Lipidation / ESM-2", NAVY),
+    ("Stage 4: Pocket & VS", "fpocket / DrugCLIP / Vina", TEAL),
+    ("Stage 5: Explicit MD & FEP", "A100 OpenMM / Alchemical TI", RED),
+    ("Stage 6: 3D & Assay Design", "3Dmol HTML / Point-Mutants", NAVY),
+]
+sw = 1.98
+sgap = 0.11
+sx = 0.45
+for idx, (st_hdr, st_sub, st_col) in enumerate(stages):
+    rect(s2, sx, 1.08, sw, 0.48, ICE, line=st_col, line_w=1.1)
+    rect(s2, sx, 1.08, 0.06, 0.48, st_col)
+    text(s2, sx + 0.10, 1.12, sw - 0.14, 0.40, [
+        [(st_hdr, {"size": 8.4, "bold": True, "color": st_col})],
+        [(st_sub, {"size": 7.3, "color": INK})],
+    ], space_after=1)
+    if idx < len(stages) - 1:
+        text(s2, sx + sw, 1.18, sgap, 0.26, "▸", size=10.5, bold=True, color=GREY, align=PP_ALIGN.CENTER)
+    sx += sw + sgap
+
+# 2B. Six Core Capability Pillar Cards (2 rows x 3 cols) (y=1.66, h=2.66 total)
+cards = [
+    ("1. Target Tractability, Genetics & Safety", "druggability.tractability | ligandability | 3_safety", NAVY, [
+        ("5-Axis Target Profiling", "Open Targets GraphQL + ChEMBL ligandability + fpocket + clinical precedents + safety across SM / Antibody / Peptide / PROTAC."),
+        ("Human Genetics & Safety Gate", "GWAS / ClinVar / UKB WES variant mapping + bidirectional target safety evaluation (W40-W44 & 25-gene T2D/obesity panels)."),
+    ]),
+    ("2. Proteome PPI & Interface Variants [NEW]", "RF2-PPI (6x A100) | Boltz-2 | interface_variants", TEAL, [
+        ("Proteome Partner Screen", "20,260-protein coevolution + structure funnel (~6 GPU-h/bait; 262x enrichment over random; 43.2% recall on complexes >1,500 A2)."),
+        ("3D Disease-Variant Triage", "Maps UniProt + AlphaMissense pathogenic SAVs onto 6A contact surfaces to design surgical point-mutant negative controls."),
+    ]),
+    ("3. Peptide Engineering & CNS/BBB Exposure", "druggability.peptide (affinity | scan | chem_mod | bbb)", NAVY, [
+        ("Peptide Structural Pharmacology", "PRODIGY contact affinity (dG/Kd), high-throughput Ala/20-AA mutational hotspot scan, and subtype selectivity counter-screens."),
+        ("Protraction & BBB Platform", "3D cone steric audit for C16/C18/C20 lipidation exit vectors + ESM-2 multi-task heads (BBB AUC=0.89, hemolytic AUC=1.00)."),
+    ]),
+    ("4. Pocket Detection, AI VS & Target Fishing", "druggability.pocket | drugclip | vina | image2smiles", TEAL, [
+        ("Multi-Tier Virtual Screening", "Contrastive DrugCLIP (2.94M library in ~22s) -> tight-box AutoDock Vina (redocking <2.0 A QC gate) -> Boltz-2 affinity & Murcko clustering."),
+        ("Off-Target Deconvolution & OCR", "5-layer ligand target fishing + clinical Cmax,u/Ki occupancy gating; DECIMER/MolScribe chemical structure recovery from literature."),
+    ]),
+    ("5. Explicit-Solvent MD & Alchemical FEP/TI", "OpenMM 8.3 CUDA | openmmtools.alchemy (A100)", RED, [
+        ("High-Throughput Explicit MD", "All-atom Amber14SB + TIP3P water + 0.15M NaCl on A100 (>2,100 ns/day); resolves static MM/GBSA vacuum cavity artifacts & steric ejection."),
+        ("Alchemical FEP & Annihilation TI", "Dual-topology relative FEP & mutational hotspot free-energy scans to quantify residue/variant energetic contributions (ddG in kcal/mol)."),
+    ]),
+    ("6. Automated 3D Dossiers & Wet-Lab Governance", "druggability.report | 3Dmol.js | Scientific Boundaries", NAVY, [
+        ("Zero-Install 3D Deliverables", "Self-contained 3Dmol.js WebGL HTML dossiers, editable NN-styled PPTX + vector PDF decks, and ranked Excel/CSV scorecards."),
+        ("Audit & Boundary Governance", "Strict [FACT]/[OBS]/[MECH]/[HYP] tagging; mandatory homolog negative controls (ipTM != potency); positive hypothesis generator only."),
+    ]),
+]
+
+cw = 3.98
+cgap_x = 0.245
+cgap_y = 0.12
+ch = 1.27
+for idx, (c_title, c_tag, c_col, c_bullets) in enumerate(cards):
+    row = idx // 3
+    col = idx % 3
+    cx = 0.45 + col * (cw + cgap_x)
+    cy = 1.66 + row * (ch + cgap_y)
+    rect(s2, cx, cy, cw, ch, WHITE, line=BORDER)
+    rect(s2, cx, cy, cw, 0.24, c_col)
+    text(s2, cx + 0.10, cy + 0.03, cw - 0.20, 0.18, c_title, size=8.6, bold=True, color=WHITE)
+    rect(s2, cx, cy + 0.24, cw, 0.17, LIGHT)
+    text(s2, cx + 0.10, cy + 0.25, cw - 0.20, 0.15, c_tag, size=7.1, bold=True, color=c_col, font="Consolas")
+    paras = []
+    for b_hdr, b_desc in c_bullets:
+        paras.append([
+            ("• " + b_hdr + ": ", {"size": 7.6, "bold": True, "color": c_col}),
+            (b_desc, {"size": 7.3, "color": INK})
+        ])
+    text(s2, cx + 0.10, cy + 0.44, cw - 0.20, ch - 0.47, paras, space_after=1.5)
+
+# 2C. Bottom Table: Production-Validated Internal Case Studies Across Modalities (y=4.42, h=2.58)
+rect(s2, 0.45, 4.42, 12.43, 0.28, NAVY)
+text(s2, 0.57, 4.46, 12.15, 0.20,
+     "Production-Validated Portfolio Benchmarks Across Modalities (Real Executed Outputs & Wet-Lab Handovers)",
+     size=9.2, bold=True, color=WHITE)
+
+bench_rows = [
+    ("Modality / Domain", "Project & Ticket", "Computational Stack Executed", "Headline Verified Biophysical / Biological Finding", "Deliverable & Status"),
+    ("Peptide Selectivity & Protraction", "OXTR vs V1a/V1b/V2R & GLP-1R (RIC-403)", "Cryo-EM 7QVM/7DW9 + PRODIGY + A100 Explicit MD + 3D Lipidation Cone", "Explained >1,000x selectivity: Pro7Gly releases V2R TM1 clash (3.51A, 70.8A MD ejection); verified Leu8 C18-diacid exit vector (0 clashes, ~160h PK).", "3D HTML + 12-Slide Deck Delivered (Mingyue)"),
+    ("Small-Molecule GPCR & FEP", "GPR81 (HCAR1) vs HCAR2/3 (RIC-396)", "45-Cmpd Vina + Boltz-2 Affinity + Steric Contradiction + 3-Leg OpenFEP", "Eliminated flushing liability via HCAR2 basic clash wall (+45.2 kcal/mol); proved AZ1 vs lactate mutual exclusion; converged c30/c31 FEP.", "3D HTML + 45-Cmpd Scorecard Delivered (UHYG)"),
+    ("Ligand Target Fishing & TI", "TSPO 5-Ligand Panel (PK11195, Emapunil) (RIC-408)", "5-Source Curation + 17-Pocket Vina Gate + 250ps MD + 57-Anchor TI", "Proved CAR (NR1I3) is PK11195 #2 target (IC50 25-56 nM, 5 methods); discovered TSPO dimer pocket 4RYI_p26 (LEU58 +7.6 kJ/mol) & Cmax/Ki gate.", "6-Round Dossiers + 7-Slide Deck Delivered (ZHCO)"),
+    ("Molecular Glue & Cryptic Pocket", "GIGYF1-GRB10/14 & GHSR VS (RIC-407 / RIC-392)", "Crystal 7RUQ/2AUH + UKB 454k WES Mutagenesis + 7,931-Cmpd Vina/Boltz-2", "Identified 445 A3 cryptic glue pocket at GIGYF1 interface; UKB p.Tyr498Cys drops affinity >80x (+2.74 kcal/mol, T2D OR=5.91); 20 GHSR chemotypes.", "3D Glue Dossier & Ranked Hits (GO Decision)"),
+    ("Peptide CNS/BBB & Safety Gate", "MC4R / RORA BBB & 3_Safety (RIC-349 / RIC-409)", "ESM-2 + Protraction Penaliser + Local vLLM Safety Gate + 175-Gene Dry/Wet", "BBB test AUC=0.89 (flagged protracted peptide CNS exclusion); 298 target-direction safety audits (0 gate errors); 175-gene HepG2 ATP/TMRM calibration.", "Production CLI / Service & Weekly Panels"),
+    ("Proteome PPI & Interface Triage", "Cardiometabolic Data S6 99-Lead Dry-Run (RIC-410)", "RF2-PPI (6x A100) + 4-Criteria Triage + Boltz-2 omicMSA + A100 MD & FEP", "8/99 leads pass all 4/4 criteria (#1 RAMP3-MRAP2 ipTM=0.868, MD RMSD 0.49A); obesity SAVs R125/L115 are top FEP hotspots (+6.25/+5.21 kcal/mol).", "Exploratory Dry-Run Ready for Assay Check"),
+]
+
+tbl1_shape = s2.shapes.add_table(len(bench_rows), 5, Inches(0.45), Inches(4.70), Inches(12.43), Inches(2.30))
+tbl1 = tbl1_shape.table
+t1_widths = [1.75, 1.95, 2.55, 4.18, 2.00]
+for ci, w_in in enumerate(t1_widths):
+    tbl1.columns[ci].width = Inches(w_in)
+
+for ri, rvals in enumerate(bench_rows):
+    for ci, val in enumerate(rvals):
+        cell = tbl1.cell(ri, ci)
+        cell.vertical_anchor = MSO_ANCHOR.MIDDLE
+        cell.margin_left = cell.margin_right = Inches(0.05)
+        cell.margin_top = cell.margin_bottom = Inches(0.02)
+        cell.fill.solid()
+        if ri == 0:
+            cell.fill.fore_color.rgb = TEAL
+        elif ri == len(bench_rows) - 1:
+            cell.fill.fore_color.rgb = GREEN_BG
+        elif ri % 2 == 1:
+            cell.fill.fore_color.rgb = WHITE
+        else:
+            cell.fill.fore_color.rgb = ICE
+        p = cell.text_frame.paragraphs[0]
+        p.alignment = PP_ALIGN.LEFT
+        run = p.add_run()
+        run.text = val
+        run.font.name = "Calibri"
+        run.font.size = Pt(7.8 if ri == 0 else 7.1)
+        run.font.bold = (ri == 0 or ci in (0, 1) or ri == len(bench_rows) - 1)
+        run.font.color.rgb = WHITE if ri == 0 else (TEAL if ri == len(bench_rows) - 1 and ci == 0 else (NAVY if ci == 0 else INK))
+
+set_notes(s2, """【Slide 2 口播讲稿：Druggability Agent 全管线系统能力全景与已验证项目（约 2 分钟）】
+1. 为什么先看这张全景图？（顶部 Stage 1–6 工作流横幅）
+   - 过去几个月，我们围绕心代与罕见病管线，已经把 `druggability` 建设成了一套覆盖 6 个阶段的端到端计算药理学平台：
+     Stage 1（靶点遗传学与 3_safety 安全门禁）→ Stage 2（全蛋白组 PPI 与致病界面映射）→ Stage 3（多肽药理、脂化长效化与 BBB 穿透）→ Stage 4（隐性口袋、DrugCLIP 毫秒级初筛与靶点去卷积）→ Stage 5（A100 显式水 MD 与 FEP/TI 能量热点计算）→ Stage 6（自包含 3D WebGL 报告与湿实验突变设计）。
+   - Baker 团队的 RF2-PPI 全蛋白组互作筛查补齐了我们在 Stage 2（发现未知内源调控伙伴/辅助受体）的拼图，而且它筛出的复合物可以直接无缝调用下游已经成熟的 Stage 4（界面对接）和 Stage 5（显式水 MD 与 FEP）。
+2. 中间 6 张卡片与底部 6 个真实交付案例：
+   - 底部表格列出了这套管线近期已经交付给生物团队的真实项目：包括交给 Mingyue 的 OXTR 催产素 >1,000 倍选择性与脂化出射角审计（RIC-403）、交给杨欢的 GPR81 抗潮红选择性与 FEP（RIC-396）、交给曹峥的 TSPO 五配体靶点钓钩与 CAR 核受体去卷积（RIC-408）、GIGYF1–GRB10 分子胶隐性口袋（RIC-407）、多肽 BBB 与 298 个靶点方向安全门禁（RIC-349/409），以及今天重点讨论的 PPI 模块（RIC-410）。""")
+
+
+# ==============================================================================
+# SLIDE 3: Module 2 Deep-Dive — Baker Engine Summary, In-House Validation & Caveats (~2 min)
+# ==============================================================================
+s3 = add_blank_slide()
+add_header_footer(
+    s3, 3, 6,
+    "Module 2 Deep-Dive: Baker Engine Summary, A100 Validation & Reading Rules",
+    "Consolidated Summary of Science 2025 / Sci Rep 2026, 33,000-Pair In-House Audit, and 4 Rigorous Caveats",
+    "PART 2A: PPI ENGINE & IN-HOUSE VALIDATION"
+)
+
+# Top Two-Study Synthesis Banner (y=1.08, h=0.68)
+rect(s3, 0.45, 1.08, 12.43, 0.68, LIGHT, line=BORDER)
+rect(s3, 0.45, 1.08, 0.08, 0.68, NAVY)
+text(s3, 0.65, 1.13, 12.10, 0.58, [
+    [("What Baker & Cong Achieved (2025 Science vs 2026 Sci Rep Division of Labor — Details in Appendix S2): ", {"size": 9.6, "bold": True, "color": NAVY}),
+     ("2025 Science built the engine (7x eukaryotic omicMSAs + 17x AFDB domain-contact training -> RF2-PPI, 20x faster than AF2) and screened 19,528 human proteins (~191M pairs -> 17,849 PPIs @90% prec; 3,631 novel; 2,700 zero-prior in Data S6). 2026 Sci Rep added no new screen; it mapped clinical disease SAVs onto 2025 3D interfaces & AF3 assemblies.",
+      {"size": 8.8, "color": INK})]
+])
+
+# 4 KPI Cards (y=1.84, h=0.76)
+kpis_s3 = [
+    ("262x Enrichment", "Weighted AUCPR 0.262 vs 0.001", "1:1,000 proteome prior (1:1 AUC = 0.813)", NAVY),
+    ("r = 0.919 Parity", "8,977 Shared Benchmark Pairs", "623 TPs & 0 FPs at >=90% precision", TEAL),
+    ("43.2% vs 4.5%", "Large vs Small Interface Recall", ">1,500 A2 stable vs <800 A2 SLiMs", NAVY),
+    ("~6 GPU-Hours", "Per Target Proteome Screen", "1 bait vs 20,260 proteins on 6x A100", RED),
+]
+kw3 = 2.92
+kg3 = 0.25
+kx3 = 0.45
+for val, lbl, sub, col in kpis_s3:
+    rect(s3, kx3, 1.84, kw3, 0.76, WHITE, line=BORDER)
+    rect(s3, kx3, 1.84, kw3, 0.05, col)
+    text(s3, kx3 + 0.06, 1.91, kw3 - 0.12, 0.65, [
+        [(val, {"size": 14.0, "bold": True, "color": col})],
+        [(lbl, {"size": 8.8, "bold": True, "color": INK})],
+        [(sub, {"size": 7.6, "color": GREY})],
+    ], align=PP_ALIGN.CENTER, space_after=1.5)
+    kx3 += kw3 + kg3
+
+# Left: High-DPI 2-Panel Evidence Plot (x=0.45, y=2.70, w=6.80, h=2.92)
+IMG = "/das/user/QYJI/druggability/humanPPI_repro/results/repro_2panel_evidence.png"
+rect(s3, 0.45, 2.70, 6.80, 2.92, WHITE, line=BORDER)
+s3.shapes.add_picture(IMG, Inches(0.50), Inches(2.75), Inches(6.70), Inches(2.82))
+
+# Right: Physical Mechanism + 4 Rigorous Reading Rules (x=7.42, y=2.70, w=5.46, h=2.92)
+rect(s3, 7.42, 2.70, 5.46, 2.92, LIGHT, line=BORDER)
+rect(s3, 7.42, 2.70, 5.46, 0.34, RED)
+text(s3, 7.56, 2.75, 5.20, 0.24, "Physical Mechanism & 4 Rigorous Reading Rules (Do Not Overclaim)", size=10.2, bold=True, color=WHITE)
+
+text(s3, 7.56, 3.10, 5.20, 2.46, [
+    [("• Why Overall Recall is 20.8% (Panel B Mechanism [MECH]): ", {"size": 8.6, "bold": True, "color": NAVY}),
+     ("Coevolution scales with contact area: 43.2% recall on large stable complexes (>1,500 A2; 51.8% @0.50) vs 4.5% on small transient SLiMs (<800 A2). 58% of Data S6 novel hits are transmembrane complexes.", {"size": 8.1, "color": INK})],
+    [("• Rule 1 (Not 17.8k Blind Hits): ", {"size": 8.5, "bold": True, "color": RED}),
+     ("14,218 of 17,849 PPIs combined prior evidence with lower cutoffs; 3,631 are novel (2,700 zero-prior in Data S6).", {"size": 8.0, "color": INK})],
+    [("• Rule 2 ('No PDB Template' != Unknown Fold): ", {"size": 8.5, "bold": True, "color": RED}),
+     ("Data S6 pairs lack homologous COMPLEX templates in PDB, not monomer structures.", {"size": 8.0, "color": INK})],
+    [("• Rule 3 & 4 (Interface SAV & ipTM != Proven In Vivo Effect): ", {"size": 8.5, "bold": True, "color": RED}),
+     ("Interface SAVs (<6A) and high pLDDT/ipTM propose testable structural hypotheses; they do not prove binding loss or tissue co-expression without wet-lab assays.", {"size": 8.0, "color": INK})],
+], space_after=2.5)
+
+# Bottom: Disease-Interface Module Verification on CASR (y=5.72, h=1.24)
+rect(s3, 0.45, 5.72, 12.43, 1.24, GREEN_BG, line=TEAL, line_w=1.2)
+rect(s3, 0.45, 5.72, 0.08, 1.24, TEAL)
+text(s3, 0.65, 5.78, 12.10, 1.12, [
+    [("In-House Disease-Interface Module (`druggability.interface_variants`, 22 Unit Tests) — Verified on CASR (P41180) [OBS]:",
+      {"size": 9.8, "bold": True, "color": TEAL})],
+    [("• Dual-Evidence Pathogenic Filter: Combines sequence alignment QC (<5% mismatch), UniProt clinical disease variants + EBI AlphaMissense pathogenicity, and 6 A CB/CA contact geometry.\n"
+      "• CASR Proof-of-Concept (Tier-A CKD target in Data S6): Mapped 89 clinical pathogenic mutations (HHC1 / HYPOC1); 64% cluster directly at the extracellular dimerization interface (residues <=612), enabling automated nomination of point-mutant negative controls.",
+      {"size": 8.8, "color": INK})]
+], space_after=2)
+
+set_notes(s3, """【Slide 3 口播讲稿（约 2 分钟，合并原 Slide 2+3，精简 Baker 文献背景并突出物理机制与 4 条科学红线）】
+1. 顶部横幅（一句话讲清 Baker 两篇论文的关系，细节放 Appendix S2）：
+   - 2025 Science 造出了计算引擎（7 倍深真核 omicMSA + 17 倍大 AFDB 结构域接触训练集 → 比 AF2 快 20 倍的 RF2-PPI），从 1.91 亿对人类蛋白中筛出 17,849 个 >=90% 精度的互作（含 2,700 个无同源复合物模板的 Data S6 新互作）；2026 Sci Rep 没有重训模型或重跑筛查，而是把临床致病突变（SAVs）映射到 2025 预测的 3D 界面上。
+2. 左栏双图（我们在 6 张 A100 上的 33,000 对基准复现与物理机制）：
+   - Panel A：在全蛋白组 1:1,000 极低信噪比下，随机盲筛 AUC 仅 0.001，我们本地复现达到 0.262（浓缩富集 262 倍，与原作者打分相关性 r=0.919）。
+   - Panel B（核心物理机制）：为什么总体召回率是 20.8%？因为共进化信号取决于接触面积——对 >1,500 Å² 的大界面稳定复合物召回率达 43.2%（中等阈值 51.8%），而对 <800 Å² 的瞬时短基序（SLiMs）仅 4.5%。同时 Data S6 中 58% 是传统去垢剂 AP-MS 容易漏掉的跨膜蛋白复合物。
+3. 右栏 4 条科学红线（曹峥梳理的防夸大界定）与底部 CASR 实测：
+   - 明确 17,849 不全是盲筛新发现（3,631 个为新互作）、Data S6 无复合物模板不等于单体结构未知、界面突变和 ipTM 只提供可检验假设而非湿实验定论。底部展示我们在钙敏感受体 CASR 上实测，89 个临床致病突变中 64% 聚簇在二聚体界面。""")
+
+
+# ==============================================================================
+# SLIDE 4: Prospective Time-Split Validation (2024-2026) & Biological Fit Matrix (~1.5 min)
+# ==============================================================================
+s4 = add_blank_slide()
+add_header_footer(
+    s4, 4, 6,
+    "Prospective Time-Split Validation (2024-2026) & Biological Fit Matrix",
+    "11 Data S6 'Zero-Prior' Predictions Confirmed by Independent Wet Labs Since Cutoff + Operating Rules",
+    "PART 2B: PROSPECTIVE PROOF & OPERATING BOUNDARIES"
+)
+
+# Left Panel: Prospective Time-Split Table (x=0.45, y=1.12, w=7.38, h=5.82)
+rect(s4, 0.45, 1.12, 7.38, 5.82, LIGHT, line=BORDER)
+rect(s4, 0.45, 1.12, 7.38, 0.36, TEAL)
+text(s4, 0.61, 1.18, 7.05, 0.24,
+     "Prospective Audit: Data S6 'Zero-Prior' Pairs Confirmed in 2024-2026 (11 Cases)",
+     size=10.8, bold=True, color=WHITE)
+
+text(s4, 0.61, 1.54, 7.05, 0.40,
+     "Data S6 defined 2,700 novel pairs with zero DB (Sep 2023) & zero PDB complex template (Jan 2024) support. Over the subsequent two years, 11 pairs were independently validated by structures or co-IP (>50% are transmembrane/organelle complexes*):",
+     size=8.6, color=INK)
+
+rows_data = [
+    ("Data S6 Novel Pair", "RF / AF / AFM", "2024-2026 Independent Publication", "Wet-Lab Validation & Biological Role"),
+    ("DND1 - NANOS3", "0.52 / 0.97 / 1.00", "Mol Cell 2026 & Nat Commun 2025", "Cryo-EM/X-ray + co-IP: germ-granule RNA complex"),
+    ("GPATCH1 - DHX35", "0.73 / 1.00 / 1.00", "Cell Research 2025 (PMID 40016598)", "Cryo-EM structure: spliceosomal quality-control B*Q"),
+    ("NUP210 - TMEM209*", "0.28 / 0.99 / 0.99", "J Cell Sci 2026 (PMID 41582553)", "Endogenous co-IP + TMD rescue: 4th TM nucleoporin"),
+    ("MTR - MMADHC*", "0.38 / 0.99 / 1.00", "PNAS 2026 (PMID 42709793)", "Co-IP + flux: B12 chaperone binds MTR in mitochondria"),
+    ("EFCAB10 - AK8", "1.00 / 0.98 / 0.99", "PNAS 2025 (PMID 41055978)", "KO mice + co-IP: anchors AK8 to ciliary radial spoke"),
+    ("TOR1A - CLCC1*", "0.81 / 0.93 / 0.93", "Mol Cells 2026 (PMID 42551441)", "Co-IP + rescue: ER Cl- channel in DYT1 dystonia"),
+    ("GLMP - MFSD1* (+4 more)", "0.99 / 1.00 / 1.00", "Nat Cell Biol 2024 / EMBO Rep 2024", "Lysosomal transporter + PPTC7-FBXL4, TMEM131, SPARK"),
+]
+
+tbl_shape = s4.shapes.add_table(len(rows_data), 4, Inches(0.59), Inches(2.00), Inches(7.10), Inches(3.82))
+tbl = tbl_shape.table
+col_widths = [1.45, 1.15, 1.95, 2.55]
+for ci, w_in in enumerate(col_widths):
+    tbl.columns[ci].width = Inches(w_in)
+
+for ri, rvals in enumerate(rows_data):
+    for ci, val in enumerate(rvals):
+        cell = tbl.cell(ri, ci)
+        cell.vertical_anchor = MSO_ANCHOR.MIDDLE
+        cell.margin_left = cell.margin_right = Inches(0.06)
+        cell.margin_top = cell.margin_bottom = Inches(0.03)
+        cell.fill.solid()
+        if ri == 0:
+            cell.fill.fore_color.rgb = NAVY
+        elif ri % 2 == 1:
+            cell.fill.fore_color.rgb = WHITE
+        else:
+            cell.fill.fore_color.rgb = ICE
+        p = cell.text_frame.paragraphs[0]
+        p.alignment = PP_ALIGN.LEFT if ci != 1 else PP_ALIGN.CENTER
+        run = p.add_run()
+        run.text = val
+        run.font.name = "Calibri"
+        run.font.size = Pt(8.5 if ri == 0 else 8.2)
+        run.font.bold = (ri == 0 or ci == 0)
+        run.font.color.rgb = WHITE if ri == 0 else (NAVY if ci == 0 else INK)
+
+rect(s4, 0.59, 5.94, 7.10, 0.88, WHITE, line=BORDER)
+rect(s4, 0.59, 5.94, 0.07, 0.88, NAVY)
+text(s4, 0.75, 6.00, 6.84, 0.76, [
+    [("Category B — Resolving Direct 3D Mechanism for Known AP-MS Hits: ", {"size": 8.8, "bold": True, "color": NAVY}),
+     ("Beyond de novo Data S6 pairs, the 3D complex predictions resolved how NUDT5 allosterically blocks PPAT in purine synthesis (Science 2025, PMID 41196949) and how SMG5-SMG6 dimerizes in NMD (Nat Commun 2026) — turning noisy AP-MS hits into point-mutant-verified mechanisms. (* = Transmembrane / Organelle).",
+      {"size": 8.1, "color": INK})]
+])
+
+# Right Panel: Biological Fit Matrix & Governance Rule (x=8.00, y=1.12, w=4.88, h=5.82)
+rect(s4, 8.00, 1.12, 4.88, 5.82, LIGHT, line=BORDER)
+rect(s4, 8.00, 1.12, 4.88, 0.36, RED)
+text(s4, 8.16, 1.18, 4.55, 0.24,
+     "Biological Fit Matrix & Campaign Governance",
+     size=10.8, bold=True, color=WHITE)
+
+rect(s4, 8.14, 1.60, 4.60, 1.88, GREEN_BG, line=TEAL, line_w=1.2)
+rect(s4, 8.14, 1.60, 4.60, 0.28, TEAL)
+text(s4, 8.26, 1.65, 4.35, 0.20, "IDEAL TARGETS (HIGH SENSITIVITY — USE HERE)", size=9.0, bold=True, color=WHITE)
+text(s4, 8.26, 1.95, 4.35, 1.46, [
+    [("• Transmembrane & Organelle Complexes (58% of S6):", {"size": 8.8, "bold": True, "color": TEAL})],
+    [("  Hard to solubilize in detergent AP-MS (e.g., GPCR accessory proteins RAMP1/2/3, ER/lysosomal channels).", {"size": 8.2, "color": INK})],
+    [("• Large Constitutive / Obligate Assemblies (>1,500 A2):", {"size": 8.8, "bold": True, "color": TEAL})],
+    [("  43.2% recall at >=90% precision (51.8% at moderate cutoff).", {"size": 8.2, "color": INK})],
+    [("• Disease-Mutated Interfaces (ClinVar / Human Genetics):", {"size": 8.8, "bold": True, "color": TEAL})],
+    [("  Pinpoints exact contact residues to design disruptor controls.", {"size": 8.2, "color": INK})],
+], space_after=1.5)
+
+rect(s4, 8.14, 3.60, 4.60, 1.88, RED_BG, line=RED, line_w=1.2)
+rect(s4, 8.14, 3.60, 4.60, 0.28, RED)
+text(s4, 8.26, 3.65, 4.35, 0.20, "KNOWN BLIND SPOTS (DO NOT USE TO EXCLUDE)", size=9.0, bold=True, color=WHITE)
+text(s4, 8.26, 3.95, 4.35, 1.46, [
+    [("• Transient / PTM-Triggered Signaling Complexes:", {"size": 8.8, "bold": True, "color": RED})],
+    [("  Phosphorylation- or ligand-dependent recruitment (e.g., GPCR-arrestin, kinase-substrate) lacks static coevolution.", {"size": 8.2, "color": INK})],
+    [("• Disordered Short Linear Motifs (SLiMs, <800 A2):", {"size": 8.8, "bold": True, "color": RED})],
+    [("  Only 4.5% recall at high precision (underrepresented in training).", {"size": 8.2, "color": INK})],
+    [("• Fast-Evolving / Immune / Tissue-Restricted Paralogs:", {"size": 8.8, "bold": True, "color": RED})],
+    [("  Coevolution reflects family conservation, not tissue specificity.", {"size": 8.2, "color": INK})],
+], space_after=1.5)
+
+rect(s4, 8.14, 5.60, 4.60, 1.22, AMBER_BG, line=AMBER, line_w=1.2)
+rect(s4, 8.14, 5.60, 0.08, 1.22, AMBER)
+text(s4, 8.32, 5.66, 4.32, 1.10, [
+    [("Golden Rule (Lambourne et al., Nat Commun 2026):", {"size": 9.2, "bold": True, "color": AMBER})],
+    [("1. Positive Hypothesis Generator Only: High score (@90% precision) + co-expression = strong wet-lab lead; low score NEVER disproves a biological hypothesis.\n"
+      "2. Mandatory Tissue Co-Expression Gate: Always filter predicted pairs by GTEx / single-cell co-expression in the disease tissue.",
+      {"size": 8.1, "color": INK})]
+], space_after=2)
+
+set_notes(s4, """【Slide 4 口播讲稿（约 1.5 分钟）】
+1. 左栏（2024–2026 前瞻性时间切片盲测验证）：
+   - Data S6 锁库截点是 2023 年 9 月。过去两年里，已有 11 个当年完全“零先验证据”的预测对被独立实验室用 Cryo-EM 或内源 co-IP 证实（如 DND1–NANOS3、GPATCH1–DHX35、核孔第 4 跨膜蛋白 NUP210–TMEM209、线粒体伴侣 MTR–MMADHC），且超过一半是传统去垢剂 AP-MS 容易漏掉的跨膜或细胞器膜蛋白。
+2. 右栏（红绿适用边界与黄金治理法则）：
+   - 绿色（高灵敏度适用区）：跨膜/细胞器复合物、大界面稳定复合物（>1,500 Å²）、带临床致病突变的结合界面。
+   - 红色（盲区，绝不用作阴性排除）：磷酸化/配体诱导的瞬时招募（如 GPCR-arrestin）、无序短基序（SLiMs）、免疫受体与同源亚型。
+   - 黄金法则：只作阳性假设生成与 3D 突变辅助设计，绝不用低分枪毙生物团队已有假设；进入湿实验前必须过靶器官共表达门禁。""")
+
+
+# ==============================================================================
+# SLIDE 5: Preliminary Campaign Plan — 3 Candidate Business Questions & Assay Gate (~1.5 min)
+# ==============================================================================
+s5 = add_blank_slide()
+add_header_footer(
+    s5, 5, 6,
+    "Preliminary Campaign Plan: 3 Candidate Business Questions & Assay Gate",
+    "Exploratory Planning Options & Stepwise Decision Gated on Downstream Wet-Lab Assay Readiness",
+    "PART 3A: EXPLORATORY PLAN & ASSAY GATE"
+)
+
+# Top Planning-Stage Framing Banner (y=1.10, h=0.72)
+rect(s5, 0.45, 1.10, 12.43, 0.72, AMBER_BG, line=AMBER, line_w=1.2)
+rect(s5, 0.45, 1.10, 0.09, 0.72, AMBER)
+text(s5, 0.68, 1.16, 12.05, 0.60, [
+    [("Current Status — Exploratory Planning Stage (No Premature Scale-Up): ", {"size": 10.2, "bold": True, "color": AMBER}),
+     ("While our computational pipeline (Modules 1-6) is ready, we are currently in the planning phase. Below are 3 candidate Business Questions (BQ-1 to BQ-3); actual campaign execution will be strictly gated on whether downstream wet-lab screening/validation assays are ready.",
+      {"size": 9.2, "color": INK})]
+])
+
+# 3 Candidate Business Question Cards (y=1.94, h=3.68)
+col_w5 = 3.98
+gap5 = 0.245
+bqs = [
+    ("BQ-1: Portfolio Partner Mining",
+     "Triage 99 Cardiometabolic Data S6 Leads",
+     NAVY,
+     [
+         ("Candidate Question",
+          "Among Baker's 2,700 zero-prior PPIs (Data S6), which novel interactors of our cardiometabolic targets pass strict 4-criteria triage (Genetics, Pathway, Perturbation, Co-expression)?"),
+         ("Dry-Run Status (Completed)",
+          "Audited 99 unflagged leads via Module 1 + Module 2 -> 8 leads pass all 4/4 criteria (led by #1 RAMP3-MRAP2 & #2 RAMP1-MRAP2; 14 pass 3/4)."),
+         ("Required Wet-Lab Assay Gate",
+          "Requires ready co-IP / NanoBiT / BRET or surface receptor trafficking assay in the relevant target biology team before nominating any wet-lab validation."),
+     ]),
+    ("BQ-2: On-Demand Bait Screen",
+     "1 Priority Target vs 20,260 Human Proteins",
+     TEAL,
+     [
+         ("Candidate Question",
+          "When an internal project has a priority receptor/transporter where detergent AP-MS fails, can we screen 20,260 proteins (~6 GPU-h/bait) to find missing co-receptors, chaperones, or E3 ligases?"),
+         ("Dry-Run Status (Capability Ready)",
+          "6x A100 pipeline operational (~6 GPU-h per target bait); automatically filters hits by @90% precision cutoff and GTEx target-organ co-expression."),
+         ("Required Wet-Lab Assay Gate",
+          "Only triggered on-demand when a project team has both a clear biological bottleneck and a ready functional/binding readout to test top 3-5 predicted partners."),
+     ]),
+    ("BQ-3: 3D Interface & Controls",
+     "Surgical Point-Mutant Negative Controls",
+     RED,
+     [
+         ("Candidate Question",
+          "When biologists already have a candidate partner or disease variant, where is the 6A contact surface and which single-residue mutations selectively disrupt binding without misfolding?"),
+         ("Dry-Run Status (Verified on CASR & MRAP2)",
+          "Runs in ~15 min/pair (`interface-variants`) + optional Module 5 explicit MD & FEP hotspot scan to rank energetic anchor residues (ddG in kcal/mol)."),
+         ("Required Wet-Lab Assay Gate",
+          "Directly supports teams already running mutagenesis / co-IP / BRET who need 2-3 surgical point-mutant negative controls instead of crude domain truncations."),
+     ]),
+]
+
+bx5 = 0.45
+for b_hdr, b_sub, b_col, b_rows in bqs:
+    rect(s5, bx5, 1.94, col_w5, 3.68, WHITE, line=BORDER)
+    rect(s5, bx5, 1.94, col_w5, 0.34, b_col)
+    text(s5, bx5 + 0.12, 1.99, col_w5 - 0.24, 0.24, b_hdr, size=10.6, bold=True, color=WHITE)
+    rect(s5, bx5, 2.28, col_w5, 0.28, LIGHT)
+    text(s5, bx5 + 0.12, 2.32, col_w5 - 0.24, 0.20, b_sub, size=8.8, bold=True, color=b_col)
+    paras = []
+    for r_title, r_body in b_rows:
+        paras.append([
+            ("• " + r_title + ": ", {"size": 8.6, "bold": True, "color": b_col}),
+            (r_body, {"size": 8.2, "color": INK})
+        ])
+    text(s5, bx5 + 0.12, 2.62, col_w5 - 0.24, 2.92, paras, space_after=4.5)
+    bx5 += col_w5 + gap5
+
+# Bottom Stepwise Assay-Readiness Decision Gate (y=5.74, h=1.22)
+rect(s5, 0.45, 5.74, 12.43, 1.22, GREEN_BG, line=TEAL, line_w=1.2)
+rect(s5, 0.45, 5.74, 0.09, 1.22, TEAL)
+text(s5, 0.68, 5.80, 12.05, 1.10, [
+    [("Proposed Stepwise Governance & Assay Readiness Gate (How We Decide Next Steps):", {"size": 9.8, "bold": True, "color": TEAL})],
+    [("• Step 1 (Computational Dry-Run — Done): Completed 4-criteria triage on 99 cardiometabolic S6 leads + cross-module MD/FEP proof-of-concept on #1 RAMP3-MRAP2 (Slide 6).\n"
+      "• Step 2 (Biology & Assay Readiness Check — Current Step): Review top candidates with biology leads to check (i) biological interest and (ii) whether screening/validation assays (co-IP, NanoBiT/BRET, cAMP, surface ELISA) are established and have capacity.\n"
+      "• Step 3 (Go / No-Go Decision): Only launch focused wet-lab validation on 1-2 pairs where the assay is ready; hold broader proteome screens until assay bandwidth is confirmed.",
+      {"size": 8.5, "color": INK})]
+], space_after=1.5)
+
+set_notes(s5, """【Slide 5 口播讲稿（约 1.5 分钟，重点突出“还在 Plan 阶段，一切以湿实验 Screening Assay 是否 Ready 为决策前提”）】
+1. 顶部黄框（定调：克制、务实、不盲目铺摊子）：
+   - 虽然我们第 2 页展示的计算管线（Module 1–6）已经全部就绪，但对于 PPI 这条线，我们目前明确处在**探索与规划阶段（Exploratory Planning Stage）**。
+2. 中间三列（3 个候选的 Business Questions 及各自对应的湿实验门禁）：
+   - **BQ-1（存量 99 对心代新伙伴挖掘）**：我们已经跑完了计算 Dry-Run（筛出 8 对全过 4/4 标准，见下一页 Slide 6），但下一步推不推，取决于对应靶点的生物团队手里有没有现成的 co-IP / BRET 或膜表面表达 Assay。
+   - **BQ-2（按需 1-vs-20,260 全蛋白组筛查）**：单靶点只需 ~6 GPU 小时，但我们绝不盲目批量扫靶点，只有当某个重点项目（如难溶跨膜受体）遇到明确痛点、且下游已经准备好验证 Assay 时，才按需触发。
+   - **BQ-3（3D 界面映射与点突变负对照设计）**：服务于已经在做 co-IP / 突变实验的生物学家，15 分钟加短轨迹 FEP 帮他们挑出 2–3 个不破坏整体折叠的精准点突变负对照。
+3. 底部绿框（三步走决策门禁）：
+   - Step 1（计算 Dry-Run 已完成）→ Step 2（当前阶段：跟生物团队核对哪些靶点的湿实验 Screening/Validation Assay 已经 Ready、通量如何）→ Step 3（仅针对 Assay 就绪的 1–2 个候选做小规模试水，再决定是否扩展）。""")
+
+
+# ==============================================================================
+# SLIDE 6: Dry-Run Proof-of-Concept — BQ-1 99-Lead Triage & RAMP3-MRAP2 Audit (~2 min)
+# ==============================================================================
+s6 = add_blank_slide()
+add_header_footer(
+    s6, 6, 6,
+    "Dry-Run PoC: BQ-1 99-Lead Triage & RAMP3-MRAP2 Cross-Module Audit",
+    "Illustrating How Modules 1-6 Work Together on a Candidate Pair Before Checking Wet-Lab Assay Readiness",
+    "PART 3B: DRY-RUN EXAMPLE & ASSAY DISCUSSION"
+)
+
+# Left Column: 4-Criteria Funnel & Top 4/4 Ranked Leads Table (x=0.45, y=1.12, w=7.28, h=5.82)
+rect(s6, 0.45, 1.12, 7.28, 5.82, LIGHT, line=BORDER)
+rect(s6, 0.45, 1.12, 7.28, 0.36, NAVY)
+text(s6, 0.61, 1.18, 6.95, 0.24,
+     "BQ-1 Dry-Run: 4-Criteria Triage Across 99 Cardiometabolic Data S6 Leads",
+     size=10.5, bold=True, color=WHITE)
+
+f_pills = [
+    ("C1: Genetics", "60/99 (46 Human)", NAVY),
+    ("C2: Pathway", "43/99 Shared Path.", NAVY),
+    ("C3: Perturb.", "14/99 Direct Evid.", TEAL),
+    ("C4: Co-Prog.", "56/99 CM Co-Expr.", TEAL),
+    ("8 Pass 4/4", "#1 RAMP3-MRAP2", RED),
+]
+pw = 1.29
+pg = 0.12
+px6 = 0.59
+for p_val, p_sub, p_col in f_pills:
+    rect(s6, px6, 1.55, pw, 0.58, WHITE, line=p_col, line_w=1.2)
+    text(s6, px6 + 0.03, 1.60, pw - 0.06, 0.48, [
+        [(p_val, {"size": 9.8, "bold": True, "color": p_col})],
+        [(p_sub, {"size": 7.4, "bold": True, "color": INK})],
+    ], align=PP_ALIGN.CENTER, space_after=1)
+    px6 += pw + pg
+
+lead_rows = [
+    ("Rank & Pair (Tier)", "Indications", "RF / AF / AFM", "C1 Both-Protein Genetics & C2 Pathway", "C3 Direct Perturbation & C4 CM Co-Expr"),
+    ("#1 RAMP3 - MRAP2 (Tier A, NN)", "Obesity; T2D; HF", "0.75 / 0.96 / 0.76", "RAMP3(T2D GWAS) + MRAP2(MC4R Obesity); GPCR path", "Co-IP & surface GPCR regulation (PMID 37085333); STRING coexpr=0.047"),
+    ("#2 RAMP1 - MRAP2 (Tier A, NN)", "Obesity; T2D; HF", "0.78 / 0.91 / 0.82", "RAMP1(HCM GWAS) + MRAP2(MC4R Obesity); GPCR path", "Reciprocal GPCR trafficking perturbation (PMID 37085333); co-expressed"),
+    ("#3 NR3C1 - FOXO3 (Tier B)", "T2D; Obesity; CKD", "0.31 / 0.93 / 0.95", "NR3C1(AFib GWAS=0.84) + FOXO3(Obesity=0.42); FOXO path", "Direct regulatory interaction (STRING exp=0.363); coexpr=0.102"),
+    ("#4 CD80 - CSF3 (Tier C)", "MASH; CVD", "0.52 / 0.96 / 0.98", "CD80(Cirrhosis=0.28) + CSF3(AFib=0.14); Cytokine path", "STRING exp=0.062; shared MI & diabetes expression (coexpr=0.075)"),
+    ("#5 TLR4 - LTBR (Tier C)", "T2D; MASH", "0.26 / 0.86 / 0.72", "TLR4(T2D GWAS=0.56) + LTBR(Cirrhosis=0.17); NF-kB path", "Consistent hub mRNA perturbation (PMID 37414270); coexpr=0.086"),
+    ("#6 GP1BA - F2RL2 (Tier C)", "MASH; CKD; CVD", "0.25 / 0.85 / 0.73", "GP1BA(Liver=0.09) + F2RL2(GN=0.14); Hemostasis/GPCR", "STRING exp=0.069; shared myocardial infarction expression (coexpr=0.088)"),
+    ("#7-#8 (KO Mouse): ITGA2B, IL18", "CVD; HF; T2D", "0.56 - 0.59 (Mean)", "ITGA2B-ACVRL1 (PAH GWAS=0.83) & IL18-CCL17 (CM=0.28)", "Plus 14 pairs passing 3/4 criteria (IL17A-FCN2, BRD3-KDM1A, TLR4-CTSS)"),
+]
+
+t2_shape = s6.shapes.add_table(len(lead_rows), 5, Inches(0.59), Inches(2.22), Inches(7.00), Inches(3.68))
+t2 = t2_shape.table
+t2_widths = [1.45, 0.92, 0.95, 1.78, 1.90]
+for ci, w_in in enumerate(t2_widths):
+    t2.columns[ci].width = Inches(w_in)
+
+for ri, rvals in enumerate(lead_rows):
+    for ci, val in enumerate(rvals):
+        cell = t2.cell(ri, ci)
+        cell.vertical_anchor = MSO_ANCHOR.MIDDLE
+        cell.margin_left = cell.margin_right = Inches(0.04)
+        cell.margin_top = cell.margin_bottom = Inches(0.02)
+        cell.fill.solid()
+        if ri == 0:
+            cell.fill.fore_color.rgb = NAVY
+        elif ri == 1:
+            cell.fill.fore_color.rgb = GREEN_BG
+        elif ri % 2 == 1:
+            cell.fill.fore_color.rgb = WHITE
+        else:
+            cell.fill.fore_color.rgb = ICE
+        p = cell.text_frame.paragraphs[0]
+        p.alignment = PP_ALIGN.LEFT if ci not in (1, 2) else PP_ALIGN.CENTER
+        run = p.add_run()
+        run.text = val
+        run.font.name = "Calibri"
+        run.font.size = Pt(8.0 if ri == 0 else 7.4)
+        run.font.bold = (ri in (0, 1) or ci == 0)
+        run.font.color.rgb = WHITE if ri == 0 else (TEAL if ri == 1 and ci == 0 else (NAVY if ci == 0 else INK))
+
+rect(s6, 0.59, 5.98, 7.00, 0.84, WHITE, line=BORDER)
+rect(s6, 0.59, 5.98, 0.07, 0.84, AMBER)
+text(s6, 0.75, 6.03, 6.75, 0.74, [
+    [("Next Step — Check Screening / Validation Assay Readiness with Biology Teams: ", {"size": 8.6, "bold": True, "color": AMBER}),
+     ("Before scaling up, check with GPCR/Cardiometabolic biology teams whether co-IP / BRET / cAMP assays for RAMP1/3-MRAP2 (or NR3C1-FOXO3) are established and whether testing 2-3 point-mutant controls fits current assay bandwidth.",
+      {"size": 7.9, "color": INK})]
+])
+
+# Right Column: #1 Winner (RAMP3-MRAP2) Cross-Module Proof-of-Concept (x=7.90, y=1.12, w=4.98, h=5.82)
+rect(s6, 7.90, 1.12, 4.98, 5.82, ICE, line=BORDER)
+rect(s6, 7.90, 1.12, 4.98, 0.36, RED)
+text(s6, 8.06, 1.18, 4.68, 0.24,
+     "#1 Example (RAMP3-MRAP2): Cross-Module Pipeline Dry-Run",
+     size=10.5, bold=True, color=WHITE)
+
+BQ1_IMG = "/das/user/QYJI/druggability/reports/bq1_99_triage/bq1_99_triage_and_fep_2panel.png"
+rect(s6, 8.04, 1.55, 4.70, 2.02, WHITE, line=BORDER)
+s6.shapes.add_picture(BQ1_IMG, Inches(8.06), Inches(1.57), Inches(4.66), Inches(1.98))
+
+rect(s6, 8.04, 3.65, 4.70, 3.17, WHITE, line=NAVY, line_w=1.2)
+rect(s6, 8.04, 3.65, 4.70, 0.26, NAVY)
+text(s6, 8.16, 3.69, 4.48, 0.20, "HOW MODULES 2, 3, 4, 5 & 6 CONVERGE ON ONE CANDIDATE", size=8.5, bold=True, color=WHITE)
+text(s6, 8.16, 3.97, 4.48, 2.78, [
+    [("• Mod 2 (Boltz-2 + omicMSA Complex):", {"size": 8.4, "bold": True, "color": NAVY})],
+    [("  ipTM = 0.868, ptm = 0.834 (180 inter-chain contacts <=5A: 21 TM-TM + 159 ECD/juxtamembrane). RF2-PPI TM contact prob = 0.590 (RAMP3) / 0.865 (RAMP1).", {"size": 7.7, "color": INK})],
+    [("• Mod 5 (A100 Explicit-Solvent MD & FEP Hotspots):", {"size": 8.4, "bold": True, "color": RED})],
+    [("  Stable in A100 MD (backbone RMSD = 0.49 A). Human monogenic obesity SAVs MRAP2 R125C (ddG = +6.25 kcal/mol) & L115V (+5.21 kcal/mol) rank as #1 & #2 FEP hotspots.", {"size": 7.7, "color": INK})],
+    [("• Mod 3/5 (AMY1R/3R Subunit Competition — Appendix S1):", {"size": 8.4, "bold": True, "color": NAVY})],
+    [("  Cryo-EM (7TYF/7TZF) + 8-system MD show MRAP2 occupies 80% of RAMP3's CTR face (ddG = -23.4 kcal/mol vs CTR) and blocks Amylin 7TM entry (96->0 contacts).", {"size": 7.7, "color": INK})],
+    [("• Mod 4 & 6 (Groove Docking & Assay-Ready Controls):", {"size": 8.4, "bold": True, "color": RED})],
+    [("  Ubrogepant (-7.81 kcal/mol) & Rimegepant (ligand_ipTM=0.950) dock in ECD groove; MRAP2 L115A/R125A & RAMP3 W56A controls ready if wet-lab assay is available.", {"size": 7.7, "color": INK})],
+], space_after=1.6)
+
+set_notes(s6, """【Slide 6 口播讲稿（约 2 分钟，作为全管线协同的 Dry-Run 样板，并落脚到向生物团队征求 Assay 就绪度反馈）】
+1. 左栏（BQ-1 99 对心代候选 4 维漏斗初筛）：
+   - 按照曹峥设计的 4 条标准（C1 双蛋白心代遗传学 60 对[46 纯人类]、C2 共同通路 43 对、C3 直接扰动 14 对、C4 共表达 56 对），共有 8 对全部通过 4/4 标准（#1 RAMP3–MRAP2、#2 RAMP1–MRAP2、#3 NR3C1–FOXO3 等）。
+2. 右栏（以 #1 RAMP3–MRAP2 展示我们 Slide 2 的六大模块如何在一个靶点对上协同发力）：
+   - Module 2（共折叠）：Boltz-2 + omicMSA 给出高置信度复合物（ipTM=0.868，180 对残基接触）；
+   - Module 5（A100 显式水 MD 与 FEP 突变热点）：复合物在显式水 MD 中极稳定（RMSD 0.49 Å）；更重要的是，人类单基因重度肥胖突变 MRAP2 R125C（+6.25 kcal/mol）和 L115V（+5.21 kcal/mol）恰好是结合面上最强的 #1 和 #2 能量热点；
+   - Module 3/5（Amylin 受体竞争审计，详见 Appendix S1）：叠合 Cryo-EM 结构（7TYF/7TZF）与 8 体系 MD 显示，MRAP2 占据了 RAMP3 上 80% 的 CTR 结合面，并在四元复合物中阻断 Amylin 插入 7TM 口袋；
+   - Module 4 & 6（凹槽对接与点突变负对照）：Ubrogepant/Rimegepant 选择性结合复合凹槽，并给出了 L115A/R125A/W56A 点突变负对照。
+3. 左下黄框（开放性收尾，呼应领导要求）：
+   - 以上是我们计算侧跑通的 Dry-Run 样板。下一步我们不急于扩大计算规模，而是想先请教组里做 GPCR / 心代生物学的同事：目前针对 RAMP1/3–MRAP2（或表里的其他候选），我们的湿实验 Screening / Validation Assay（比如 co-IP、BRET 或 cAMP 功能实验）是否 Ready？如果 Assay 现成，我们可以优先拿 1 个靶点对试水验证。感谢大家，欢迎讨论！""")
+
+
+# ==============================================================================
+# SLIDE 7 (APPENDIX S1): In Silico Test of MRAP2 Competition & Stability on Amylin Receptors
+# ==============================================================================
+s7 = add_blank_slide()
+add_header_footer(
+    s7, "APPENDIX S1", 6,
+    "Appendix S1: Does MRAP2 Compete with Amylin or Destabilize AMY1R / AMY3R?",
+    "Cryo-EM Superposition (7TYF/7TZF), Quaternary Boltz-2 Co-Folding, and 8-System A100 Explicit-Solvent MD",
+    "SUPPLEMENTARY DEEP-DIVE (ZHCO FOLLOW-UP)",
+    footer_left="References: Zhang et al., Science 390, eadt1630 (2025) | Pei, Zhang & Cong, Sci Rep 16:25590 (2026) | Cao et al., Science 375, eabm9601 (2022)"
+)
+
+rect(s7, 0.45, 1.12, 7.28, 5.82, LIGHT, line=BORDER)
+rect(s7, 0.45, 1.12, 7.28, 0.36, NAVY)
+text(s7, 0.61, 1.18, 6.95, 0.24,
+     "Quantitative Comparison: Cryo-EM Baselines vs Subunit & Orthosteric Competition",
+     size=10.3, bold=True, color=WHITE)
+
+m_pills = [
+    ("Cryo-EM Fact (7TYF/7TZF)", "98.5% Amylin ICs on CTR; RAMP W84/P85 caps Tyr37", NAVY),
+    ("Mech 1: Subunit Competition", "80.0% RAMP3 & 75.7% RAMP1 CTR-face shared w/ MRAP2", TEAL),
+    ("Mech 2: 7TM Pocket Block", "Amylin 7TM contacts drop 92->2 (AMY1R) & 96->0 (AMY3R)", RED),
+]
+mpw = 2.24
+mpg = 0.14
+mpx = 0.59
+for m_val, m_sub, m_col in m_pills:
+    rect(s7, mpx, 1.55, mpw, 0.56, WHITE, line=m_col, line_w=1.2)
+    text(s7, mpx + 0.04, 1.60, mpw - 0.08, 0.46, [
+        [(m_val, {"size": 8.6, "bold": True, "color": m_col})],
+        [(m_sub, {"size": 6.9, "bold": True, "color": INK})],
+    ], align=PP_ALIGN.CENTER, space_after=1)
+    mpx += mpw + mpg
+
+s7_rows = [
+    ("System / Condition", "Chains Evaluated", "3D Overlap / 7TM Contacts", "A100 MD <dG_GBn2> & <E_vdW> (kcal/mol)", "Biophysical Conclusion"),
+    ("Cryo-EM AMY1R (7TYF)", "CTR+RAMP1 : Amylin", "87 7TM + 48 ECD + 2 RAMP1 (W84/P85)", "<dG> = -221.3 ± 5.1 | <E_vdW> = -222.2", "Native AMY1R reference (RMSD 0.41A)"),
+    ("Cryo-EM AMY3R (7TZF)", "CTR+RAMP3 : Amylin", "91 7TM + 45 ECD + 3 RAMP3 (E74/W84/P85)", "<dG> = -197.5 ± 7.1 | <E_vdW> = -227.7", "Native AMY3R reference (RMSD 0.48A)"),
+    ("RAMP3 Subunit Comp.", "RAMP3:MRAP2 vs CTR", "32/40 (80.0%) CTR face shared; 222 clashes", "-212.9 (-254.0 vdW) vs -189.5 (-217.5)", "MRAP2 outcompetes CTR (ddG = -23.4)"),
+    ("RAMP1 Subunit Comp.", "RAMP1:MRAP2 vs CTR", "28/37 (75.7%) CTR face shared; 172 clashes", "-156.8 (-198.5 vdW) vs -159.2 (-202.7)", "Comparable affinity; blocks AMY1R"),
+    ("AMY1R Ternary (-MRAP2)", "CTR+RAMP1 : Amylin", "92 7TM + 73 ECD ICs (N-loop RMSD 1.27A)", "<dG> = -237.8 ± 6.7 | <E_vdW> = -269.5", "Deep 7TM orthosteric engagement"),
+    ("AMY1R Quat. (+MRAP2)", "CTR+RAMP1+M : Amylin", "2 7TM ICs (-97.8%); displaced 21.7A", "<dG> = -113.5 | <E_vdW> = -149.6", "ddG = +124.3 | ddE_vdW = +119.9"),
+    ("AMY3R -/+ MRAP2", "CTR+RAMP3(±M) : Amy", "96 -> 0 7TM ICs (-100%); displaced 24.5A", "-164.2 (-223.6) -> -148.9 (-163.1 vdW)", "ddG = +15.3 | ddE_vdW = +60.5"),
+]
+
+t7_shape = s7.shapes.add_table(len(s7_rows), 5, Inches(0.59), Inches(2.20), Inches(7.00), Inches(3.70))
+t7 = t7_shape.table
+t7_widths = [1.35, 1.15, 1.55, 1.55, 1.40]
+for ci, w_in in enumerate(t7_widths):
+    t7.columns[ci].width = Inches(w_in)
+
+for ri, rvals in enumerate(s7_rows):
+    for ci, val in enumerate(rvals):
+        cell = t7.cell(ri, ci)
+        cell.vertical_anchor = MSO_ANCHOR.MIDDLE
+        cell.margin_left = cell.margin_right = Inches(0.04)
+        cell.margin_top = cell.margin_bottom = Inches(0.02)
+        cell.fill.solid()
+        if ri == 0:
+            cell.fill.fore_color.rgb = NAVY
+        elif ri in (3, 6, 7):
+            cell.fill.fore_color.rgb = GREEN_BG
+        elif ri % 2 == 1:
+            cell.fill.fore_color.rgb = WHITE
+        else:
+            cell.fill.fore_color.rgb = ICE
+        p_cell = cell.text_frame.paragraphs[0]
+        p_cell.alignment = PP_ALIGN.LEFT
+        run = p_cell.add_run()
+        run.text = val
+        run.font.name = "Calibri"
+        run.font.size = Pt(7.8 if ri == 0 else 7.2)
+        run.font.bold = (ri == 0 or ci == 0 or (ri in (3, 6, 7) and ci == 3))
+        run.font.color.rgb = WHITE if ri == 0 else (RED if ri in (6, 7) and ci == 0 else (NAVY if ci == 0 else INK))
+
+rect(s7, 0.59, 5.98, 7.00, 0.84, WHITE, line=BORDER)
+rect(s7, 0.59, 5.98, 0.07, 0.84, RED)
+text(s7, 0.75, 6.03, 6.75, 0.74, [
+    [("Testable Wet-Lab Hypothesis (If Amylin cAMP / BRET Assay is Ready): ", {"size": 8.6, "bold": True, "color": RED}),
+     ("Co-expressing WT MRAP2 will competitively sequester RAMP3/RAMP1 away from CTR and attenuate amylin/cagrilintide potency, whereas our FEP-designed obesity point-mutants (MRAP2 L115A/V, R125A/C) will lose RAMP binding and restore normal AMY1R/AMY3R signaling.",
+      {"size": 7.9, "color": INK})]
+])
+
+rect(s7, 7.90, 1.12, 4.98, 5.82, ICE, line=BORDER)
+rect(s7, 7.90, 1.12, 4.98, 0.36, TEAL)
+text(s7, 8.06, 1.18, 4.68, 0.24,
+     "Dual-Mechanism Competition & A100 MD Energetics",
+     size=10.5, bold=True, color=WHITE)
+
+AMY_IMG = "/das/user/QYJI/druggability/reports/bq1_99_triage/amylin_mrap2_study/amylin_mrap2_competition_md_2panel.png"
+rect(s7, 8.04, 1.55, 4.70, 2.02, WHITE, line=BORDER)
+s7.shapes.add_picture(AMY_IMG, Inches(8.06), Inches(1.57), Inches(4.66), Inches(1.98))
+
+rect(s7, 8.04, 3.65, 4.70, 3.17, WHITE, line=NAVY, line_w=1.2)
+rect(s7, 8.04, 3.65, 4.70, 0.26, NAVY)
+text(s7, 8.16, 3.69, 4.48, 0.20, "ANSWERS TO ZHENG'S TWO QUESTIONS (MECHANISM SUMMARY)", size=8.5, bold=True, color=WHITE)
+text(s7, 8.16, 3.97, 4.48, 2.78, [
+    [("1. Do Amylin and MRAP2 Compete in Binding to Amylin Receptors?", {"size": 8.5, "bold": True, "color": NAVY})],
+    [("   YES — at two structural levels:\n"
+      "   • Subunit Sequestration (MRAP2 vs CTR for RAMP1/3): MRAP2 occupies 80.0% (32/40) of RAMP3's and 75.7% (28/37) of RAMP1's CTR-binding residues, and binds RAMP3 more tightly than CTR in MD (ddG = -23.43 kcal/mol).\n"
+      "   • Tyr37 Pocket Cap Occlusion: MRAP2 covers 100% of the RAMP1/3 Trp84-Pro85 shelf that caps amylin's C-terminal Tyr37-NH2.", {"size": 7.7, "color": INK})],
+    [("2. Does MRAP2 Affect the Stability of Amylin / Receptor Complexes?", {"size": 8.5, "bold": True, "color": RED})],
+    [("   YES — severe destabilization & 7TM ejection:\n"
+      "   • In quaternary co-folding + MD, MRAP2 invades the CTR ECL2/ECL3/7TM entrance, reducing amylin's 7TM contacts by 97.8% in AMY1R (ddG = +124.26, ddE_vdW = +119.92 kcal/mol) and 100% in AMY3R (ddG = +15.26, ddE_vdW = +60.49 kcal/mol).", {"size": 7.7, "color": INK})],
+], space_after=2.0)
+
+set_notes(s7, """【Appendix S1（备查页 Slide 7）口播讲稿 — 回答关于 Amylin 受体竞争与稳定性的追问】
+如果会上问到 RAMP1/3–MRAP2 是否会影响 Amylin 受体（AMY1R/AMY3R）组装或信号，翻出本页：
+1. 亚基级直接竞争：MRAP2 占据了 RAMP3 上 80.0%（32/40）和 RAMP1 上 75.7%（28/37）原本结合 CTR 的残基，且 100% 盖住封盖 Amylin Tyr37 的 Trp84-Pro85 位点；显式水 MD 中 MRAP2 与 RAMP3 结合能（-212.9 kcal/mol）强于天然 CTR:RAMP3（-189.5 kcal/mol，ddG = -23.4 kcal/mol）。
+2. 四元复合物正构口袋阻断：强行共折叠 + MD 时，MRAP2 堵住 CTR 正构口袋入口，使 Amylin 的 7TM 接触在 AMY1R 中丢失 97.8%（92→2，ddG = +124.3 kcal/mol），在 AMY3R 中 100% 归零（96→0，ddE_vdW = +60.5 kcal/mol）。""")
+
+
+# ==============================================================================
+# SLIDE 8 (APPENDIX S2): Detailed Two-Study Synthesis (2025 Science vs 2026 Sci Rep)
+# ==============================================================================
+s8 = add_blank_slide()
+add_header_footer(
+    s8, "APPENDIX S2", 6,
+    "Appendix S2: Detailed Two-Study Comparison (2025 Science vs 2026 Sci Rep)",
+    "5-Stage Proteome Screening Cascade (2025), Curated Disease-Variant Case Studies (2026), and Reading Rules",
+    "SUPPLEMENTARY LITERATURE SYNTHESIS (ZHCO)"
+)
+
+rect(s8, 0.45, 1.10, 12.43, 0.84, LIGHT, line=BORDER)
+rect(s8, 0.45, 1.10, 0.09, 0.84, NAVY)
+text(s8, 0.68, 1.15, 12.05, 0.74, [
     [("How the Two Publications Connect (Figure 1-3 Synthesis):", {"size": 10.6, "bold": True, "color": NAVY})],
     [("• 1st Study (Zhang et al., Science 2025): Built the computational engine (`omicMSAs` + `RF2-PPI`) and screened the human proteome (19,528 proteins -> 17,849 PPIs @90% prec).\n"
       "• 2nd Study (Pei, Zhang & Cong, Sci Rep 2026): Did NOT retrain a model or run a new proteome screen; used the 2025 resource as input for curated case studies (interface disease variants & AlphaFold3 multi-subunit complexes).",
       {"size": 9.4, "color": INK})]
 ], space_after=1.5)
 
-# 3 Columns: Use a SINGLE TextFrame per card body so items never collide! (y=2.04, h=3.84)
-col_w = 3.96
-gap = 0.245
-pillars = [
+col_w8 = 3.98
+gap8 = 0.245
+pillars8 = [
     ("1st Study: 2025 Science", "Proteome-Scale Engine & Resource", NAVY, [
         ("Stage 1-2: 7x omicMSAs + RF2-PPI",
          "Assembled 21,415 eukaryotic species from 30 PB raw reads (7x deeper MSAs). Distilled 223,440 AFDB domain-domain contacts (17x larger training set) + negative pairs -> RF2-PPI (20x faster than AF2)."),
@@ -236,612 +910,33 @@ pillars = [
     ]),
 ]
 
-px = 0.48
-for hdr_top, hdr_sub, col, items in pillars:
-    rect(s2, px, 2.04, col_w, 3.84, WHITE, line=BORDER)
-    rect(s2, px, 2.04, col_w, 0.36, col)
-    text(s2, px + 0.14, 2.09, col_w - 0.28, 0.25, hdr_top, size=11.0, bold=True, color=WHITE)
-    rect(s2, px, 2.40, col_w, 0.30, ICE)
-    text(s2, px + 0.14, 2.44, col_w - 0.28, 0.22, hdr_sub, size=9.6, bold=True, color=col)
+px8 = 0.45
+for hdr_top, hdr_sub, col, items in pillars8:
+    rect(s8, px8, 2.04, col_w8, 3.84, WHITE, line=BORDER)
+    rect(s8, px8, 2.04, col_w8, 0.36, col)
+    text(s8, px8 + 0.14, 2.09, col_w8 - 0.28, 0.25, hdr_top, size=11.0, bold=True, color=WHITE)
+    rect(s8, px8, 2.40, col_w8, 0.30, ICE)
+    text(s8, px8 + 0.14, 2.44, col_w8 - 0.28, 0.22, hdr_sub, size=9.6, bold=True, color=col)
     paras = []
     for it_title, it_desc in items:
         paras.append([
             ("• " + it_title + ": ", {"size": 8.9, "bold": True, "color": col}),
             (it_desc, {"size": 8.4, "color": INK})
         ])
-    text(s2, px + 0.14, 2.76, col_w - 0.28, 3.04, paras, space_after=4.0)
-    px += col_w + gap
+    text(s8, px8 + 0.14, 2.76, col_w8 - 0.28, 3.04, paras, space_after=4.0)
+    px8 += col_w8 + gap8
 
-# Bottom Funnel Summary Strip (y=5.98, h=0.96)
-rect(s2, 0.48, 5.98, 12.37, 0.96, ICE, line=NAVY, line_w=1.0)
-rect(s2, 0.48, 5.98, 0.09, 0.96, NAVY)
-text(s2, 0.72, 6.06, 11.95, 0.80, [
+rect(s8, 0.45, 5.98, 12.43, 0.96, ICE, line=NAVY, line_w=1.0)
+rect(s8, 0.45, 5.98, 0.09, 0.96, NAVY)
+text(s8, 0.68, 6.06, 12.05, 0.80, [
     [("Exact 2025 Screening Cascade & Output Breakdown: ", {"size": 10.2, "bold": True, "color": NAVY}),
      ("20,296 human proteins -> 19,528 screened (~191M pairs) -> 111.2M localization-filtered -> 43.6M DCA-filtered -> ~1.9M RF2-PPI hits -> AF2 3D modeling -> 29,256 PPIs (@80% est. precision) & 17,849 PPIs (@90% est. precision) -> 3,631 unreported -> 2,700 lacking homologous complex templates (Data S6).",
       {"size": 9.4, "color": INK})]
 ])
 
-set_notes(s2, """【Slide 2 口播讲稿（约 1.5 分钟，融合 ZHCO 文献梳理与四条严谨科学界定）】
-首先回答第一个问题：David Baker 和西南医学中心 Qian Cong 团队在 2025 年 Science 和 2026 年 Scientific Reports 这两篇姊妹篇里到底做成了什么？它们之间是什么关系？
-曹峥（ZHCO）帮我们把这两篇文献的脉络和严谨边界梳理得非常清楚（顶部横幅 + 三列）：
-1. 两篇文章的分工关系：
-   - 第一篇（2025 Science，左列）是“造引擎 + 建全蛋白组图谱”：通过 30 PB 原始测序组装出 21,415 个真核物种的 7 倍深 omicMSAs，加上从 2 亿个 AFDB 单体里提取结构域接触（扩大 17 倍训练集）并引入阴性样本，训出比 AF2 快 20 倍的 RF2-PPI。然后对 19,528 个人类蛋白（1.91 亿对）走四级漏斗：亚细胞共定位过滤（1.112 亿对）→ DCA 共进化预筛（4360 万对）→ RF2-PPI 快筛（~190 万对）→ AF2 建模，最终得到 29,256 个（80% 估计精度）和 17,849 个（90% 估计精度）PPI，包含 3,631 个新互作、2,700 个无同源复合物模板（Data S6）、1,413 个未知功能蛋白互作、4,950 个带疾病突变的界面，以及 404 个多亚基复合物（139 个新亚基）。
-   - 第二篇（2026 Sci Rep，中列）**没有重新训练模型，也没有重跑全蛋白组筛查**，而是直接以 2025 年预测出的结构和界面为输入，挑选代表性生物学案例做深度机制挖掘和 AlphaFold3 多亚基组装：比如发现错配修复 PMS1 与范可尼贫血通路 FAAP24 的连接、暗蛋白 C12orf57（界面携带致病突变 L51Q）与内体回收复合体 ANKRD50 的结合、纤毛病突变 WDR19 V80D 落在 BBS7–WDR19 界面、线粒体复合物 IV 缺陷突变 SCO1 P174L 与 COA6 W59C 在界面正对接触，以及用 AF3 拼出 NRZ 新亚基 C19orf25 和 BLOC-1/BORC 复合物。
-2. 右列红框（汇报给领导和生物学团队时最关键的 4 条科学严谨性界定，绝不夸大）：
-   - 界定 1（不全是盲筛新发现）：17,849 个高置信互作结合了“从头盲筛”和“先验数据库证据引导（允许更低阈值）”，其中只有 3,631 个是真正未见报道的新互作（2,700 个在 Data S6）。
-   - 界定 2（无模板 ≠ 单体结构未知）：Data S6 的 2,700 对指的是“PDB 里没有同源的**复合物**结构模板”，而不是单个蛋白没有结构。
-   - 界定 3（界面上有致病突变 ≠ 已证实打断结合）：4,950 个界面落有临床突变，只是提出了“突变可能通过影响结合或组装致病”的可检验分子假设，本身不等于湿实验已证明它破坏结合；同样，训练用的 AFDB 结构域接触也是预测值而非晶体结构。
-   - 界定 4（高 pLDDT/ipTM ≠ 体内真结合）：结构置信度只代表局部几何堆积合理，不能替代靶器官共表达和湿实验验证。""")
-
-
-# ==============================================================================
-# SLIDE 3: Part 1B — In-House Reproduction & Mechanistic Sensitivity (1.5 min)
-# ==============================================================================
-s3 = add_blank_slide()
-add_header_footer(
-    s3, 3, 6,
-    "In-House Benchmark Reproduction & Physical Sensitivity Mechanism",
-    "Verified on 33,000 Pairs (6x A100 GPUs): 43.2% Recall on Large Complexes vs 4.5% on Small Motifs",
-    "PART 1B: IN-HOUSE VALIDATION"
-)
-
-# Top 4 KPI Cards: use a single unified textbox inside each KPI card so rows never collide
-kpis_s3 = [
-    ("262x Enrichment", "Weighted AUCPR 0.262 vs 0.001", "1:1,000 proteome prior (1:1 AUC = 0.813)", NAVY),
-    ("r = 0.919 Parity", "8,977 Shared Benchmark Pairs", "623 TPs & 0 FPs at >=90% precision", TEAL),
-    ("43.2% vs 4.5%", "Large vs Small Interface Recall", ">1,500 A2 stable vs <800 A2 SLiMs", NAVY),
-    ("~6 GPU-Hours", "Per Target Proteome Screen", "1 bait vs 20,260 proteins on 6x A100", RED),
-]
-kw3 = 2.91
-kg3 = 0.24
-kx3 = 0.48
-for val, lbl, sub, col in kpis_s3:
-    rect(s3, kx3, 1.12, kw3, 0.92, WHITE, line=BORDER)
-    rect(s3, kx3, 1.12, kw3, 0.06, col)
-    text(s3, kx3 + 0.08, 1.22, kw3 - 0.16, 0.78, [
-        [(val, {"size": 15.5, "bold": True, "color": col})],
-        [(lbl, {"size": 9.4, "bold": True, "color": INK})],
-        [(sub, {"size": 8.0, "color": GREY})],
-    ], align=PP_ALIGN.CENTER, space_after=2)
-    kx3 += kw3 + kg3
-
-# Left: High-DPI 2-Panel Evidence Plot (x=0.48, y=2.20, w=7.25, h=3.10)
-IMG = "/das/user/QYJI/druggability/humanPPI_repro/results/repro_2panel_evidence.png"
-rect(s3, 0.48, 2.20, 7.25, 3.12, WHITE, line=BORDER)
-slide_img_w = 7.15
-slide_img_h = slide_img_w * (3.15 / 7.6)  # 2.963 in
-s3.shapes.add_picture(IMG, Inches(0.53), Inches(2.27), Inches(slide_img_w), Inches(slide_img_h))
-
-# Right: Mechanistic Interpretation Box (x=7.92, y=2.20, w=4.93, h=3.12)
-rect(s3, 7.92, 2.20, 4.93, 3.12, LIGHT, line=BORDER)
-rect(s3, 7.92, 2.20, 4.93, 0.36, NAVY)
-text(s3, 8.08, 2.26, 4.60, 0.24, "How to Read These Two Plots (Biology First)", size=11.0, bold=True, color=WHITE)
-
-text(s3, 8.08, 2.66, 4.62, 2.58, [
-    [("1. Panel A (Left) — Precision Under 1:1,000 Proteome Odds:", {"size": 10.0, "bold": True, "color": NAVY})],
-    [("   In a blind proteome screen, 99.9% of pairs do not bind (random baseline AUC = 0.001). Our reproduced pipeline achieves AUC = 0.262 (262x enrichment) and 20.8% recall at >=90% precision (623 true hits, zero false positives).", {"size": 9.1, "color": INK})],
-    [("2. Panel B (Right) — Why Average Recall is 20.8% (MECH):", {"size": 10.0, "bold": True, "color": TEAL})],
-    [("   Coevolutionary signal scales with buried surface area:\n"
-      "   • Large/Stable (>1,500 A2, >50 contact residues): 43.2% recall at >=90% precision (51.8% at moderate cutoff).\n"
-      "   • Medium (800-1,500 A2): 19.4% recall.\n"
-      "   • Small/Transient (<800 A2, <=10 residues, SLiMs): 4.5% recall.", {"size": 9.1, "color": INK})],
-], space_after=3)
-
-# Bottom: Human Genetics Interface Module Verification (CASR Proof-of-Concept) (y=5.46, h=1.48)
-rect(s3, 0.48, 5.46, 12.37, 1.48, GREEN_BG, line=TEAL, line_w=1.2)
-rect(s3, 0.48, 5.46, 0.09, 1.48, TEAL)
-text(s3, 0.72, 5.54, 11.95, 1.32, [
-    [("In-House Reproduction of Pei et al. (Sci Rep 2026) Disease-Interface Module — Verified on CASR (P41180) [OBS]:",
-      {"size": 10.6, "bold": True, "color": TEAL})],
-    [("• Dual-Evidence Pathogenic Rule: Implemented automated SAV quality control (<5% sequence mismatch) + dual-source pathogenicity filter (UniProt disease variants + EBI AlphaMissense per-protein scores) + 6 A CB/CA interface geometry (`src/druggability/interface_variants.py`, 22 unit tests passing).\n"
-      "• Biological Proof-of-Concept on Calcium-Sensing Receptor (CASR, Tier-A CKD target in Data S6): Identified 89 clinical pathogenic mutations (HHC1 / HYPOC1); 64% cluster directly at the extracellular dimerization interface (residues <=612), proposing concrete point-mutant hypotheses for wet-lab mutagenesis.",
-      {"size": 9.4, "color": INK})]
-], space_after=3)
-
-set_notes(s3, """【Slide 3 口播讲稿（约 1.5 分钟）】
-为了确保这套方法在我们手里真实可用、不是纸上谈兵，我们在内部 6 张 A100 上把完整的 33,000 对基准集（3,000 个三大数据库共识真阳性 + 30,000 个阴性对）和疾病突变界面映射模块跑通并做了严格核验：
-1. 看左边的 Panel A：如果模拟全蛋白组真实 1:1000 的极低信噪比（每 1 个真伙伴混在 1000 个随机蛋白里），随机盲筛的 AUC 只有 0.001，而我们本地复现的 RF2-PPI 达到了 0.262，相当于把实验命中率浓缩富集了 262 倍（如果换算成大家熟悉的 1:1 平衡测试集，AUC 是 0.813）。在 >=90% 精度红线以上，我们抓出了 623 个真阳性，且保持零假阳性；与作者官方分数的皮尔逊相关性达到 0.919。
-2. 大家一定会问：为什么在 90% 精度下，总体召回率是 20.8%？剩下的近 80% 去哪了？
-   这就是右边 Panel B 揭示的核心物理机制：我们按 PDB 复合物真实的物理接触面积分层后发现，模型对“大界面、稳定结合的复合物（>1500 Å²，超过 50 个接触残基）”召回率高达 43.2%（中等阈值下超过一半，达 51.8%）；而对“小界面、瞬时结合的短线性基序（<800 Å²，比如激酶底物瞬时磷酸化位点）”召回率只有 4.5%。
-   这句话对我们做项目立项至关重要：它不是一把万能锤，而是一台专门捕捉“稳定结构复合物、跨膜复合物和辅助亚基”的高精度显微镜。
-3. 底部的绿框：我们还把今年跟进发表的 Sci Rep (2026) 临床突变映射方法写成了内部标准模块（结合 UniProt 临床注释 + AlphaMissense 双证据规则 + 6 Å 界面几何）。拿 Data S6 里的慢性肾病上市药靶点钙敏感受体 CASR 实测，抓出的 89 个临床致病突变里有 64% 直接聚簇在胞外二聚化结合面上——这意味着我们给生物团队交付候选蛋白时，能同时给出“打断结合该突变哪几个氨基酸”的湿实验负对照方案。""")
-
-
-# ==============================================================================
-# SLIDE 4: Part 1C — Prospective Validation (2024-2026) & Biological Fit Matrix (1.5 min)
-# ==============================================================================
-s4 = add_blank_slide()
-add_header_footer(
-    s4, 4, 6,
-    "Prospective Time-Split Validation (2024-2026) & Biological Fit Matrix",
-    "11 Data S6 Predictions Independently Confirmed by Cryo-EM / Co-IP Since Cutoff",
-    "PART 1C: PROSPECTIVE AUDIT & BOUNDARIES"
-)
-
-# Left Panel: Prospective Time-Split Table (x=0.48, y=1.12, w=7.35, h=5.82)
-rect(s4, 0.48, 1.12, 7.35, 5.82, LIGHT, line=BORDER)
-rect(s4, 0.48, 1.12, 7.35, 0.36, TEAL)
-text(s4, 0.64, 1.18, 7.05, 0.24,
-     "Prospective Audit: Data S6 'Zero-Prior' Pairs Confirmed in 2024-2026 (11 Cases)",
-     size=10.8, bold=True, color=WHITE)
-
-text(s4, 0.64, 1.54, 7.05, 0.40,
-     "Data S6 defined 2,700 novel pairs with zero DB (Sep 2023) & zero PDB complex template (Jan 2024) support. Over the subsequent two years, 11 pairs were independently validated by structures or co-IP (>50% are transmembrane/organelle complexes*):",
-     size=8.6, color=INK)
-
-rows_data = [
-    ("Data S6 Novel Pair", "RF / AF / AFM", "2024-2026 Independent Publication", "Wet-Lab Validation & Biological Role"),
-    ("DND1 - NANOS3", "0.52 / 0.97 / 1.00", "Mol Cell 2026 & Nat Commun 2025", "Cryo-EM/X-ray + co-IP: germ-granule RNA complex"),
-    ("GPATCH1 - DHX35", "0.73 / 1.00 / 1.00", "Cell Research 2025 (PMID 40016598)", "Cryo-EM structure: spliceosomal quality-control B*Q"),
-    ("NUP210 - TMEM209*", "0.28 / 0.99 / 0.99", "J Cell Sci 2026 (PMID 41582553)", "Endogenous co-IP + TMD rescue: 4th TM nucleoporin"),
-    ("MTR - MMADHC*", "0.38 / 0.99 / 1.00", "PNAS 2026 (PMID 42709793)", "Co-IP + flux: B12 chaperone binds MTR in mitochondria"),
-    ("EFCAB10 - AK8", "1.00 / 0.98 / 0.99", "PNAS 2025 (PMID 41055978)", "KO mice + co-IP: anchors AK8 to ciliary radial spoke"),
-    ("TOR1A - CLCC1*", "0.81 / 0.93 / 0.93", "Mol Cells 2026 (PMID 42551441)", "Co-IP + rescue: ER Cl- channel in DYT1 dystonia"),
-    ("GLMP - MFSD1* (+4 more)", "0.99 / 1.00 / 1.00", "Nat Cell Biol 2024 / EMBO Rep 2024", "Lysosomal transporter + PPTC7-FBXL4, TMEM131, SPARK"),
-]
-
-tbl_shape = s4.shapes.add_table(len(rows_data), 4, Inches(0.62), Inches(2.00), Inches(7.07), Inches(3.82))
-tbl = tbl_shape.table
-col_widths = [1.42, 1.15, 1.95, 2.55]
-for ci, w_in in enumerate(col_widths):
-    tbl.columns[ci].width = Inches(w_in)
-
-for ri, rvals in enumerate(rows_data):
-    for ci, val in enumerate(rvals):
-        cell = tbl.cell(ri, ci)
-        cell.vertical_anchor = MSO_ANCHOR.MIDDLE
-        cell.margin_left = cell.margin_right = Inches(0.06)
-        cell.margin_top = cell.margin_bottom = Inches(0.03)
-        cell.fill.solid()
-        if ri == 0:
-            cell.fill.fore_color.rgb = NAVY
-        elif ri % 2 == 1:
-            cell.fill.fore_color.rgb = WHITE
-        else:
-            cell.fill.fore_color.rgb = ICE
-        p = cell.text_frame.paragraphs[0]
-        p.alignment = PP_ALIGN.LEFT if ci != 1 else PP_ALIGN.CENTER
-        run = p.add_run()
-        run.text = val
-        run.font.name = "Calibri"
-        run.font.size = Pt(8.5 if ri == 0 else 8.2)
-        run.font.bold = (ri == 0 or ci == 0)
-        run.font.color.rgb = WHITE if ri == 0 else (NAVY if ci == 0 else INK)
-
-# Bottom note inside Left Panel (y=5.92, h=0.90)
-rect(s4, 0.62, 5.94, 7.07, 0.88, WHITE, line=BORDER)
-rect(s4, 0.62, 5.94, 0.07, 0.88, NAVY)
-text(s4, 0.78, 6.00, 6.80, 0.76, [
-    [("Category B — Resolving Direct 3D Mechanism for Known AP-MS Hits: ", {"size": 8.8, "bold": True, "color": NAVY}),
-     ("Beyond de novo Data S6 pairs, the 3D complex predictions resolved how NUDT5 allosterically blocks PPAT in purine synthesis (Science 2025, PMID 41196949) and how SMG5-SMG6 dimerizes in NMD (Nat Commun 2026) — turning noisy AP-MS hits into point-mutant-verified mechanisms. (* = Transmembrane / Organelle).",
-      {"size": 8.1, "color": INK})]
-])
-
-# Right Panel: Biological Fit Matrix & Governance Rule (x=8.02, y=1.12, w=4.83, h=5.82)
-rect(s4, 8.02, 1.12, 4.83, 5.82, LIGHT, line=BORDER)
-rect(s4, 8.02, 1.12, 4.83, 0.36, RED)
-text(s4, 8.18, 1.18, 4.50, 0.24,
-     "Biological Fit Matrix & Campaign Governance",
-     size=10.8, bold=True, color=WHITE)
-
-# Green Box: Ideal Targets (y=1.60, h=1.88)
-rect(s4, 8.16, 1.60, 4.55, 1.88, GREEN_BG, line=TEAL, line_w=1.2)
-rect(s4, 8.16, 1.60, 4.55, 0.28, TEAL)
-text(s4, 8.28, 1.65, 4.30, 0.20, "IDEAL TARGETS (HIGH SENSITIVITY — USE HERE)", size=9.0, bold=True, color=WHITE)
-text(s4, 8.28, 1.95, 4.30, 1.46, [
-    [("• Transmembrane & Organelle Complexes (58% of S6):", {"size": 8.8, "bold": True, "color": TEAL})],
-    [("  Hard to solubilize in detergent AP-MS (e.g., GPCR accessory proteins RAMP1/2/3, ER/lysosomal channels).", {"size": 8.2, "color": INK})],
-    [("• Large Constitutive / Obligate Assemblies (>1,500 A2):", {"size": 8.8, "bold": True, "color": TEAL})],
-    [("  43.2% recall at >=90% precision (51.8% at moderate cutoff).", {"size": 8.2, "color": INK})],
-    [("• Disease-Mutated Interfaces (ClinVar / Human Genetics):", {"size": 8.8, "bold": True, "color": TEAL})],
-    [("  Pinpoints exact contact residues to design disruptor controls.", {"size": 8.2, "color": INK})],
-], space_after=1.5)
-
-# Red Box: Blind Spots (y=3.60, h=1.88)
-rect(s4, 8.16, 3.60, 4.55, 1.88, RED_BG, line=RED, line_w=1.2)
-rect(s4, 8.16, 3.60, 4.55, 0.28, RED)
-text(s4, 8.28, 3.65, 4.30, 0.20, "KNOWN BLIND SPOTS (DO NOT USE TO EXCLUDE)", size=9.0, bold=True, color=WHITE)
-text(s4, 8.28, 3.95, 4.30, 1.46, [
-    [("• Transient / PTM-Triggered Signaling Complexes:", {"size": 8.8, "bold": True, "color": RED})],
-    [("  Phosphorylation- or ligand-dependent recruitment (e.g., GPCR-arrestin, kinase-substrate) lacks static coevolution.", {"size": 8.2, "color": INK})],
-    [("• Disordered Short Linear Motifs (SLiMs, <800 A2):", {"size": 8.8, "bold": True, "color": RED})],
-    [("  Only 4.5% recall at high precision (underrepresented in training).", {"size": 8.2, "color": INK})],
-    [("• Fast-Evolving / Immune / Tissue-Restricted Paralogs:", {"size": 8.8, "bold": True, "color": RED})],
-    [("  Coevolution reflects family conservation, not tissue specificity.", {"size": 8.2, "color": INK})],
-], space_after=1.5)
-
-# Golden Rule Box (y=5.60, h=1.22)
-rect(s4, 8.16, 5.60, 4.55, 1.22, AMBER_BG, line=AMBER, line_w=1.2)
-rect(s4, 8.16, 5.60, 0.08, 1.22, AMBER)
-text(s4, 8.34, 5.66, 4.28, 1.10, [
-    [("Golden Rule (Lambourne et al., Nat Commun 2026):", {"size": 9.2, "bold": True, "color": AMBER})],
-    [("1. Positive Hypothesis Generator Only: High score (@90% precision) + co-expression = strong wet-lab lead; low score NEVER disproves a biological hypothesis.\n"
-      "2. Mandatory Tissue Co-Expression Gate: Always filter predicted pairs by GTEx / single-cell co-expression in the disease tissue.",
-      {"size": 8.1, "color": INK})]
-], space_after=2)
-
-set_notes(s4, """【Slide 4 口播讲稿（约 1.5 分钟）】
-大家可能会问：Baker 团队在 Data S6 里报的那 2,700 个“三大数据库和 PDB 里完全零记录”的全新预测，到底是不是计算伪影？
-因为 Data S6 锁库的时间截点是 2023 年 9 月（预印本发在 2024 年 10 月），过去这两年（2024–2026）刚好给我们提供了一个极其干净的“前瞻性时间切片盲测（Prospective Time-Split Validation）”：
-- 我们系统检索了过去两年的文献，发现 Data S6 里已经有 **11 个当年完全零先验的预测对**，被全球独立课题组用冷冻电镜（Cryo-EM）、晶体结构或内源 co-IP 实锤证实了！
-- 左表列出了代表性案例：比如生殖细胞里的 DND1-NANOS3（2026 年刚发了 Mol Cell 结构）、剪接体质量控制复合物 GPATCH1-DHX35（2025 年 Cell Research 冷冻电镜结构）、核孔第 4 个跨膜蛋白 TMEM209-NUP210（2026 年 J Cell Sci 内源 co-IP 证实）、线粒体维生素 B12 伴侣 MTR-MMADHC（2026 年 PNAS 证实）。
-- 请大家注意左表带星号（*）的条目：**超过一半被前瞻证实的案例都是跨膜蛋白或细胞器膜复合物**——这再次印证了它在捕捉“传统湿实验难溶跨膜复合物”上的独特优势。
-
-右边总结了我们内部使用这项技术的**红绿边界与治理铁律**：
-- 绿色（最适用）：跨膜与细胞器复合物、大界面稳定复合物（>1500 Å²）、以及带有人类遗传学致病突变的调控界面。
-- 红色（天然盲区）：磷酸化或配体诱导的瞬时招募（如 GPCR-arrestin）、无序区短基序（SLiMs，召回率仅 4.5%）、以及快速演化的免疫受体。
-- 底部黄框（黄金治理法则，也是今年 Nat Commun 外部审计的核心结论）：第一，**严禁把低分当作阴性排除依据**（只做阳性假设生成和 3D 点突变设计）；第二，由于共进化分不清同一蛋白家族在不同组织的亚型（paralog），所有预测进入湿实验前**必须经过疾病靶器官的 GTEx / 单细胞共表达过滤**。""")
-
-
-# ==============================================================================
-# SLIDE 5: Part 2A — What is the Business Question for the Campaign? (2 min)
-# ==============================================================================
-s5 = add_blank_slide()
-add_header_footer(
-    s5, 5, 6,
-    "What is the Business Question for Our Campaign? (3 Options Menu)",
-    "Translating Baker's Interactome Engine into Concrete Drug Discovery & Assay Decisions",
-    "PART 2A: CAMPAIGN BUSINESS QUESTIONS"
-)
-
-# Top Framing Banner (y=1.12, h=0.72)
-rect(s5, 0.48, 1.12, 12.37, 0.72, ICE, line=NAVY, line_w=1.0)
-rect(s5, 0.48, 1.12, 0.09, 0.72, NAVY)
-text(s5, 0.72, 1.20, 11.95, 0.56, [
-    [("Why Define the Business Question Now? ", {"size": 10.6, "bold": True, "color": NAVY}),
-     ("Our pipeline and 6-GPU screening capability are fully operational. Rather than running unfocused screens, we propose three concrete Business Questions (BQ-1, BQ-2, BQ-3) tailored to different stages of our cardiometabolic and rare-disease portfolio.",
-      {"size": 9.6, "color": INK})]
-])
-
-# 3 Detailed Business Question Columns: Use a SINGLE TextFrame per card body so bullets never collide!
-bqs = [
-    ("BQ-1: Portfolio Partner Mining",
-     "99 Data S6 Leads -> 8 Pass All 4/4 Criteria",
-     NAVY,
-     [
-         ("The Business Question",
-          "Among Baker's 2,700 zero-prior-evidence human PPIs (Data S6), which novel interactors of our cardiometabolic targets pass strict 4-criteria triage (Genetics, Pathway, Perturbation, Co-progression)?"),
-         ("Preliminary Result on 99 Unflagged Leads",
-          "Strict 4-criteria audit across 99 leads: C1 Both-Genetics (60; 46 Human GWAS/ClinVar), C2 Pathway (43), C3 Direct Perturb. (14), C4 CM Co-expr (56) -> 8 leads pass all 4/4 (led by #1 RAMP3-MRAP2 & #2 RAMP1-MRAP2)."),
-         ("Deep-Dive on #1 Winner (RAMP3-MRAP2)",
-          "Boltz-2 + omicMSA complex (ipTM=0.868), A100 MD (RMSD 0.49A), FEP hotspot scan (obesity SAVs R125 +6.25 & L115 +5.21 kcal/mol), and gepant groove docking (-7.81 kcal/mol) completed."),
-         ("Wet-Lab Deliverable",
-          "8-pair 4/4 ranked dossier + RAMP3-MRAP2 3D coordinates & L115A/R125A/W56A disruptor controls ready for co-IP / BRET."),
-     ]),
-    ("BQ-2: De Novo Proteome Screen",
-     "Find Missing Partners for Priority Baits",
-     TEAL,
-     [
-         ("The Business Question",
-          "When an internal biology project has a high-priority target (especially a transmembrane receptor, transporter, or intracellular target where detergent AP-MS fails), what is its missing endogenous partner?"),
-         ("Target Archetypes",
-          "1) Orphan / membrane receptors needing unknown accessory proteins or trafficking chaperones. 2) Intracellular targets needing tissue-specific endogenous E3 ligases or deubiquitinases for proximity concepts."),
-         ("Compute & Timeline",
-          "~6 GPU-hours per target bait (1 bait protein vs all 20,260 human proteins on 6x A100 GPUs)."),
-         ("Wet-Lab Deliverable",
-          "Calibrated partner shortlist (@90% / @80% precision) + 3D complex structures + GTEx co-expression matrix."),
-     ]),
-    ("BQ-3: 3D Interface & Genetics Triage",
-     "De-Risk Mechanism & Design Assay Controls",
-     RED,
-     [
-         ("The Business Question",
-          "When biology teams already have a suspect binding partner (from AP-MS, literature, or genetics) or a human disease variant of unknown mechanism, where is the exact 3D contact surface and how do we test it?"),
-         ("Scientific Problem Solved",
-          "Standard AP-MS cannot distinguish direct vs indirect binding, and domain truncations often misfold the whole protein. Biologists need surgical single-residue disruptor mutations."),
-         ("Compute & Timeline",
-          "~15 minutes per pair via `bbbkit interface-variants` (UniProt + AlphaMissense + 6A CB/CA contact geometry)."),
-         ("Wet-Lab Deliverable",
-          "Atomic 3D interface coordinates + human pathogenic SAV enrichment + 2-3 specific point-mutations to selectively abolish binding in co-IP / BioID."),
-     ]),
-]
-
-bx = 0.48
-for b_hdr, b_sub, b_col, b_rows in bqs:
-    rect(s5, bx, 1.98, col_w, 4.05, WHITE, line=BORDER)
-    rect(s5, bx, 1.98, col_w, 0.36, b_col)
-    text(s5, bx + 0.12, 2.03, col_w - 0.24, 0.25, b_hdr, size=11.0, bold=True, color=WHITE)
-    rect(s5, bx, 2.34, col_w, 0.32, LIGHT)
-    text(s5, bx + 0.12, 2.38, col_w - 0.24, 0.24, b_sub, size=9.2, bold=True, color=b_col)
-    paras = []
-    for r_title, r_body in b_rows:
-        paras.append([
-            ("• " + r_title + ": ", {"size": 8.9, "bold": True, "color": b_col}),
-            (r_body, {"size": 8.4, "color": INK})
-        ])
-    text(s5, bx + 0.14, 2.74, col_w - 0.28, 3.20, paras, space_after=4.5)
-    bx += col_w + gap
-
-# Bottom Synergy Strip (y=6.15, h=0.80)
-rect(s5, 0.48, 6.15, 12.37, 0.80, GREEN_BG, line=TEAL, line_w=1.0)
-rect(s5, 0.48, 6.15, 0.09, 0.80, TEAL)
-text(s5, 0.72, 6.23, 11.95, 0.64, [
-    [("How the 3 Business Questions Fit Together as One Modular Pipeline: ", {"size": 10.2, "bold": True, "color": TEAL}),
-     ("BQ-1 (99 Cardiometabolic Data S6 Leads) and BQ-2 (1-Bait Proteome Screen) generate high-precision partner hypotheses; BQ-3 (3D Interface + Pathogenic SAV Mapping) automatically runs on the top hits so every candidate handed to wet-lab biology arrives with an actionable 3D model and point-mutant negative control.",
-      {"size": 9.3, "color": INK})]
-])
-
-set_notes(s5, """【Slide 5 口播讲稿（约 2 分钟）】
-接下来进入第二部分，也是领导特别指出的“What is the business question for the campaign (TBD)”：
-既然工具和算力都已经就绪，我们不能为了算而算，必须锚定明确的业务问题。结合我们部门在心代（Obesity, T2D, CKD, MASH, CVD/HF）和新靶点探索的需求，我们梳理了 3 个候选的 Business Questions（BQ-1 到 BQ-3）：
-
-1. 第一列 BQ-1（存量心代靶点的新调控伙伴挖掘 — 已完成 99 对初筛的 Phase-1 Pilot）：
-   - 业务问题：在 Baker 发布的 2,700 个完全零先验新互作（Data S6）里，哪些跟我们心代管线靶点直接结合的新伙伴，能通过严格四维标准（双蛋白遗传学、共同通路、直接扰动、疾病共表达）的检验？
-   - 初步结果：曹峥（ZHCO）前期从 Data S6 中筛出了 **99 个干净的未标记心代新互作候选对（Unflagged Leads）**。我们已经用 Druggability Agent 完成了严格 4 维初筛：C1 双蛋白遗传学（60 对，含 46 对纯人类 GWAS/ClinVar）、C2 共同通路（43 对）、C3 直接扰动（14 对）、C4 心代共表达（56 对）→ **共有 8 对全部通过 4/4 标准**（另有 14 对通过 3/4），由 **#1 RAMP3–MRAP2** 和 **#2 RAMP1–MRAP2** 领衔！
-   - 深度核验与交付：我们已经针对 #1 RAMP3–MRAP2 完成了 Boltz-2 + omicMSA 建模（ipTM=0.868）、A100 显式水 MD（RMSD 0.49 Å）、FEP 肥胖突变热点扫描（R125 +6.25 与 L115 +5.21 kcal/mol）以及 Gepant 界面凹槽对接（-7.81 kcal/mol），形成了 8 对 4/4 清单 + L115A/R125A/W56A 点突变负对照方案，随时可交湿实验跑 co-IP / BRET（详情见下一页 Slide 6）。
-
-2. 第二列 BQ-2（高优疑难靶点的全蛋白组从头筛查 — 按需定制服务）：
-   - 业务问题：当生物团队研究一个重点靶点（尤其是跨膜受体、转运体或细胞器蛋白，传统去垢剂 AP-MS 抓不到真伙伴），想知道它的内源辅助受体、转运伴侣或组织特异性 E3 连接酶是谁？
-   - 投入与产出：给 1 个靶点 UniProt ID，我们在 6 张 A100 上跑约 6 个小时，就能把它和全人类 20,260 个蛋白通扫一遍，交付高置信度伙伴清单（@90% / @80% 精度）+ 3D 复合物结构 + GTEx 共表达矩阵。
-
-3. 第三列 BQ-3（3D 结合界面与人类遗传学突变赋能湿实验设计 — 实验转化加速器）：
-   - 业务问题：当生物学家拿到一个候选结合伙伴（无论来自计算预测还是内部 AP-MS 初筛），结合面到底在哪？怎么设计不破坏整体折叠的“单点突变负对照（disruptor mutant）”来证明特异性结合？
-   - 投入与产出：单对只需 15 分钟，输出 6 Å 接触面残基 + ClinVar/AlphaMissense 临床致病突变富集，直接给出 2–3 个用于 co-IP / BioID 的点突变负对照设计。""")
-
-
-# ==============================================================================
-# SLIDE 6: Part 2B — Preliminary Execution of BQ-1 (4-Criteria Triage + Docking / MD / FEP) (2 min)
-# ==============================================================================
-s6 = add_blank_slide()
-add_header_footer(
-    s6, 6, 6,
-    "BQ-1 Preliminary Result: 4-Criteria Triage (99 Leads) & RAMP3-MRAP2 MD/FEP",
-    "8/99 Cardiometabolic Leads Pass All 4 Strict Criteria; #1 RAMP3-MRAP2 Characterized by Boltz-2, MD & FEP",
-    "PART 2B: BQ-1 PRELIMINARY RESULTS"
-)
-
-# Left Column: 4-Criteria Funnel & Top 4/4 Ranked Leads Table (x=0.48, y=1.12, w=7.25, h=5.82)
-rect(s6, 0.48, 1.12, 7.25, 5.82, LIGHT, line=BORDER)
-rect(s6, 0.48, 1.12, 7.25, 0.36, NAVY)
-text(s6, 0.64, 1.18, 6.95, 0.24,
-     "BQ-1 Strict 4-Criteria Triage Across 99 Unflagged Cardiometabolic Leads",
-     size=10.5, bold=True, color=WHITE)
-
-# 5 Mini Funnel Pills inside Left Column (y=1.55, h=0.58)
-f_pills = [
-    ("C1: Genetics", "60/99 (46 Human)", NAVY),
-    ("C2: Pathway", "43/99 Shared Path.", NAVY),
-    ("C3: Perturb.", "14/99 Direct Evid.", TEAL),
-    ("C4: Co-Prog.", "56/99 CM Co-Expr.", TEAL),
-    ("8 Pass 4/4", "#1 RAMP3-MRAP2", RED),
-]
-pw = 1.29
-pg = 0.12
-px6 = 0.62
-for p_val, p_sub, p_col in f_pills:
-    rect(s6, px6, 1.55, pw, 0.58, WHITE, line=p_col, line_w=1.2)
-    text(s6, px6 + 0.03, 1.60, pw - 0.06, 0.48, [
-        [(p_val, {"size": 9.8, "bold": True, "color": p_col})],
-        [(p_sub, {"size": 7.4, "bold": True, "color": INK})],
-    ], align=PP_ALIGN.CENTER, space_after=1)
-    px6 += pw + pg
-
-# Table of All 8 4/4 Passing Leads (exact match to Excel Sheet 1) (y=2.22, h=3.68)
-lead_rows = [
-    ("Rank & Pair (Tier)", "Indications", "RF / AF / AFM", "C1 Both-Protein Genetics & C2 Pathway", "C3 Direct Perturbation & C4 CM Co-Expr"),
-    ("#1 RAMP3 - MRAP2 (Tier A, NN)", "Obesity; T2D; HF", "0.75 / 0.96 / 0.76", "RAMP3(T2D GWAS) + MRAP2(MC4R Obesity); GPCR path", "Co-IP & surface GPCR regulation (PMID 37085333); STRING coexpr=0.047"),
-    ("#2 RAMP1 - MRAP2 (Tier A, NN)", "Obesity; T2D; HF", "0.78 / 0.91 / 0.82", "RAMP1(HCM GWAS) + MRAP2(MC4R Obesity); GPCR path", "Reciprocal GPCR trafficking perturbation (PMID 37085333); co-expressed"),
-    ("#3 NR3C1 - FOXO3 (Tier B)", "T2D; Obesity; CKD", "0.31 / 0.93 / 0.95", "NR3C1(AFib GWAS=0.84) + FOXO3(Obesity=0.42); FOXO path", "Direct regulatory interaction (STRING exp=0.363); coexpr=0.102"),
-    ("#4 CD80 - CSF3 (Tier C)", "MASH; CVD", "0.52 / 0.96 / 0.98", "CD80(Cirrhosis=0.28) + CSF3(AFib=0.14); Cytokine path", "STRING exp=0.062; shared MI & diabetes expression (coexpr=0.075)"),
-    ("#5 TLR4 - LTBR (Tier C)", "T2D; MASH", "0.26 / 0.86 / 0.72", "TLR4(T2D GWAS=0.56) + LTBR(Cirrhosis=0.17); NF-kB path", "Consistent hub mRNA perturbation (PMID 37414270); coexpr=0.086"),
-    ("#6 GP1BA - F2RL2 (Tier C)", "MASH; CKD; CVD", "0.25 / 0.85 / 0.73", "GP1BA(Liver=0.09) + F2RL2(GN=0.14); Hemostasis/GPCR", "STRING exp=0.069; shared myocardial infarction expression (coexpr=0.088)"),
-    ("#7-#8 (KO Mouse): ITGA2B, IL18", "CVD; HF; T2D", "0.56 - 0.59 (Mean)", "ITGA2B-ACVRL1 (PAH GWAS=0.83) & IL18-CCL17 (CM=0.28)", "Plus 14 pairs passing 3/4 criteria (IL17A-FCN2, BRD3-KDM1A, TLR4-CTSS)"),
-]
-
-t2_shape = s6.shapes.add_table(len(lead_rows), 5, Inches(0.62), Inches(2.22), Inches(6.97), Inches(3.68))
-t2 = t2_shape.table
-t2_widths = [1.45, 0.92, 0.95, 1.75, 1.90]
-for ci, w_in in enumerate(t2_widths):
-    t2.columns[ci].width = Inches(w_in)
-
-for ri, rvals in enumerate(lead_rows):
-    for ci, val in enumerate(rvals):
-        cell = t2.cell(ri, ci)
-        cell.vertical_anchor = MSO_ANCHOR.MIDDLE
-        cell.margin_left = cell.margin_right = Inches(0.04)
-        cell.margin_top = cell.margin_bottom = Inches(0.02)
-        cell.fill.solid()
-        if ri == 0:
-            cell.fill.fore_color.rgb = NAVY
-        elif ri == 1:
-            cell.fill.fore_color.rgb = GREEN_BG
-        elif ri % 2 == 1:
-            cell.fill.fore_color.rgb = WHITE
-        else:
-            cell.fill.fore_color.rgb = ICE
-        p = cell.text_frame.paragraphs[0]
-        p.alignment = PP_ALIGN.LEFT if ci not in (1, 2) else PP_ALIGN.CENTER
-        run = p.add_run()
-        run.text = val
-        run.font.name = "Calibri"
-        run.font.size = Pt(8.0 if ri == 0 else 7.4)
-        run.font.bold = (ri in (0, 1) or ci == 0)
-        run.font.color.rgb = WHITE if ri == 0 else (TEAL if ri == 1 and ci == 0 else (NAVY if ci == 0 else INK))
-
-# Bottom note inside Left Column (y=5.98, h=0.84)
-rect(s6, 0.62, 5.98, 6.97, 0.84, WHITE, line=BORDER)
-rect(s6, 0.62, 5.98, 0.07, 0.84, TEAL)
-text(s6, 0.78, 6.03, 6.72, 0.74, [
-    [("Why RAMP3-MRAP2 is the #1 Winner for Structural & Energetic Deep-Dive: ", {"size": 8.6, "bold": True, "color": TEAL}),
-     ("Passes all 4 criteria + Tier-A approved & Novo Amylin/CagriSema co-receptor (RAMP3) paired with human monogenic obesity protein MRAP2. Two human obesity variants on MRAP2 (p.Leu115Val, p.Arg125Cys) sit directly inside the 3D interface.",
-      {"size": 7.9, "color": INK})]
-])
-
-# Right Column: #1 Winner (RAMP3-MRAP2) 3D Complex, Docking, MD & FEP Analysis (x=7.90, y=1.12, w=4.95, h=5.82)
-rect(s6, 7.90, 1.12, 4.95, 5.82, ICE, line=BORDER)
-rect(s6, 7.90, 1.12, 4.95, 0.36, RED)
-text(s6, 8.06, 1.18, 4.65, 0.24,
-     "#1 Winner (RAMP3-MRAP2): 3D Complex, Docking, MD & FEP",
-     size=10.5, bold=True, color=WHITE)
-
-# Embedded 2-Panel Triage + FEP Plot (y=1.55, h=2.02)
-BQ1_IMG = "/das/user/QYJI/druggability/reports/bq1_99_triage/bq1_99_triage_and_fep_2panel.png"
-rect(s6, 8.04, 1.55, 4.67, 2.02, WHITE, line=BORDER)
-s6.shapes.add_picture(BQ1_IMG, Inches(8.06), Inches(1.57), Inches(4.63), Inches(1.98))
-
-# Quantitative Summary Card of 3D + MD + FEP + Docking + Next Steps (y=3.65, h=3.17)
-rect(s6, 8.04, 3.65, 4.67, 3.17, WHITE, line=NAVY, line_w=1.2)
-rect(s6, 8.04, 3.65, 4.67, 0.26, NAVY)
-text(s6, 8.16, 3.69, 4.45, 0.20, "QUANTITATIVE BIOPHYSICAL & DRUGGABILITY SUMMARY", size=8.6, bold=True, color=WHITE)
-text(s6, 8.16, 3.97, 4.45, 2.78, [
-    [("• 3D Complex & Coevolution (RF2-PPI + Boltz-2 omicMSA):", {"size": 8.5, "bold": True, "color": NAVY})],
-    [("  ipTM = 0.868, ptm = 0.834 (180 inter-chain contacts <=5A: 21 TM-TM + 159 ECD/juxtamembrane). RF2-PPI TM helix contact prob = 0.590 (RAMP3) / 0.865 (RAMP1).", {"size": 7.8, "color": INK})],
-    [("• Explicit-Solvent MD (A100, Amber14SB + TIP3P, 200 ps):", {"size": 8.5, "bold": True, "color": TEAL})],
-    [("  Complex remains tightly bound with backbone RMSD = 0.49 A (2,558 ns/day).", {"size": 7.8, "color": INK})],
-    [("• FEP Mutational Hotspot Scan (Obesity Variants at Interface):", {"size": 8.5, "bold": True, "color": RED})],
-    [("  Human obesity SAVs MRAP2 R125 (d=3.33A to RAMP3 D113, ddG = +6.25 kcal/mol) & L115 (d=1.97A to D107, ddG = +5.21 kcal/mol) are top energetic hotspots alongside M87 (+3.29), F85 (+3.07) & RAMP3 W56 (+2.51), vs peripheral loop N88Y (-0.88 kcal/mol).", {"size": 7.8, "color": INK})],
-    [("• Interface Groove Docking (AutoDock Vina + Boltz-2 Ternary):", {"size": 8.5, "bold": True, "color": NAVY})],
-    [("  RAMP-antagonist scaffolds Ubrogepant (-7.81 vs -7.09 kcal/mol control) & Rimegepant (-7.39 kcal/mol, ternary ligand_ipTM = 0.950) selectively bind the composite RAMP3-MRAP2 ECD groove -> propose L115A/R125A/W56A co-IP disruptor controls.", {"size": 7.8, "color": INK})],
-], space_after=1.8)
-
-set_notes(s6, """【Slide 6 口播讲稿（约 2 分钟）】
-最后一页，我们直接展示针对 **BQ-1（99 个心代 Data S6 候选互作对）** 刚刚跑完的 **严格 4 维自动化初筛 + Top-1 候选（RAMP3–MRAP2）全链路结构/动力学/FEP 初步结果**：
-
-1. 看左栏：按照曹峥（ZHCO）设计的 4 条生物学与遗传学标准，我们用 Druggability Agent 对 99 个干净的单靶点心代互作对做了严格核验：
-   - **C1（已知靶点与未知伙伴双方均有心代疾病遗传学证据）**：60/99 对（61%）通过（其中 **46 对为双方均有纯人类 GWAS/ClinVar 遗传关联**，14 对含敲除小鼠表型）；
-   - **C2（共同信号通路或生物学过程）**：43/99 对（43%）通过；
-   - **C3（文献或实验库显示直接双蛋白扰动/调控证据）**：14/99 对（14%）通过；
-   - **C4（心代疾病进展共表达或 STRING 共表达）**：56/99 对（57%）通过。
-   - **四项严格标准全过（Pass 4/4）一共 8 对（8.1%，其中前 6 对均为双蛋白纯人类遗传关联）**！左表列出了全部 8 对：
-     • **第 1 名 RAMP3–MRAP2 与第 2 名 RAMP1–MRAP2**：RAMP1/3 是我们 Amylin / CagriSema 管线的核心辅助受体（分别有 T2D 与肥厚型心肌病 GWAS 关联），而 MRAP2 是著名的人类单基因重度肥胖致病基因（Nature 2013），且悬浮微珠阵列与 co-IP（PMID 37085333）已证实两者形成异源复合物并相互调控膜表面表达；
-     • **第 3 名 NR3C1–FOXO3**（房颤/肥胖双人遗传 + FOXO 代谢转录通路 + STRING 实验互作 0.363）、**第 4 名 CD80–CSF3**、**第 5 名 TLR4–LTBR**、**第 6 名 GP1BA–F2RL2**，以及含小鼠表型的 **第 7–8 名 ITGA2B–ACVRL1、IL18–CCL17**（另有 14 对通过 3/4 标准，如 IL17A–FCN2、BRD3–KDM1A、TLR4–CTSS）。
-
-2. 看右栏：按照第 5 步方案，我们挑出综合排名 **#1 的 RAMP3–MRAP2**，完成了 3D 建模、显式水分子动力学（MD）、自由能微扰（FEP 突变热点扫描）与复合口袋小分子对接：
-   - **3D 复合物与共进化**：用 Baker 的 21,415 个真核物种 omicMSA 跑 Boltz-2，界面置信度 **ipTM 高达 0.868**（共有 180 对跨链残基接触 <=5 Å，包含 21 对跨膜螺旋接触和 159 对胞外/近膜接触）；
-   - **A100 显式水 MD（200 ps）**：主链 RMSD 仅 **0.49 Å**，复合物结合极其稳定；
-   - **FEP 突变能量热点扫描（右上 Panel B）**：最令人振奋的是，MRAP2 上已知的两个**人类单基因肥胖临床突变位点——Arg125（R125C，距 RAMP3 D113 仅 3.33 Å）和 Leu115（L115V，距 RAMP3 D107 仅 1.97 Å）**，在 FEP 突变计算中恰好是整个结合面最强的 #1 和 #2 能量热点（**突变后结合能损失 ddG 分别为 +6.25 kcal/mol 和 +5.21 kcal/mol**），而外围环区的 N88Y 突变位点 ddG 为 -0.88 kcal/mol（提示通过大侧链空间位阻致病）；
-   - **界面复合凹槽对接**：临床 RAMP 拮抗剂分子骨架（Ubrogepant -7.81 kcal/mol，Rimegepant -7.39 kcal/mol 且三元共折叠 ligand_ipTM = 0.950）相比非界面负对照区展现出显著的界面凹槽选择性。
-   • **湿实验转化**：我们已经锁定了 **MRAP2 L115A/V、R125C/A 与 RAMP3 W56A** 作为精确破坏结合的 co-IP / BRET 点突变负对照。
-我的汇报完了，欢迎大家讨论拍板！""")
-
-
-# ==============================================================================
-# SLIDE 7 (APPENDIX S1): In Silico Test of MRAP2 Competition & Stability on Amylin Receptors
-# ==============================================================================
-s7 = add_blank_slide()
-add_header_footer(
-    s7, "APPENDIX S1", 6,
-    "Appendix: Does MRAP2 Compete with Amylin or Destabilize AMY1R / AMY3R?",
-    "Cryo-EM Superposition (7TYF/7TZF), Quaternary Boltz-2 Co-Folding, and 8-System A100 Explicit-Solvent MD",
-    "SUPPLEMENTARY DEEP-DIVE (ZHCO FOLLOW-UP)"
-)
-
-# Left Column: Dual-Mechanism Table (x=0.48, y=1.12, w=7.25, h=5.82)
-rect(s7, 0.48, 1.12, 7.25, 5.82, LIGHT, line=BORDER)
-rect(s7, 0.48, 1.12, 7.25, 0.36, NAVY)
-text(s7, 0.64, 1.18, 6.95, 0.24,
-     "Quantitative Comparison: Cryo-EM Baselines vs Subunit & Orthosteric Competition",
-     size=10.3, bold=True, color=WHITE)
-
-# 3 Mini Mechanism Pills (y=1.55, h=0.56)
-m_pills = [
-    ("Cryo-EM Fact (7TYF/7TZF)", "98.5% Amylin ICs on CTR; RAMP W84/P85 caps Tyr37", NAVY),
-    ("Mech 1: Subunit Competition", "80.0% RAMP3 & 75.7% RAMP1 CTR-face shared w/ MRAP2", TEAL),
-    ("Mech 2: 7TM Pocket Block", "Amylin 7TM contacts drop 92->2 (AMY1R) & 96->0 (AMY3R)", RED),
-]
-mpw = 2.23
-mpg = 0.14
-mpx = 0.62
-for m_val, m_sub, m_col in m_pills:
-    rect(s7, mpx, 1.55, mpw, 0.56, WHITE, line=m_col, line_w=1.2)
-    text(s7, mpx + 0.04, 1.60, mpw - 0.08, 0.46, [
-        [(m_val, {"size": 8.6, "bold": True, "color": m_col})],
-        [(m_sub, {"size": 6.9, "bold": True, "color": INK})],
-    ], align=PP_ALIGN.CENTER, space_after=1)
-    mpx += mpw + mpg
-
-# Table of 7 Key Systems (y=2.20, h=3.70)
-s7_rows = [
-    ("System / Condition", "Chains Evaluated", "3D Overlap / 7TM Contacts", "A100 MD <dG_GBn2> & <E_vdW> (kcal/mol)", "Biophysical Conclusion"),
-    ("Cryo-EM AMY1R (7TYF)", "CTR+RAMP1 : Amylin", "87 7TM + 48 ECD + 2 RAMP1 (W84/P85)", "<dG> = -221.3 ± 5.1 | <E_vdW> = -222.2", "Native AMY1R reference (RMSD 0.41A)"),
-    ("Cryo-EM AMY3R (7TZF)", "CTR+RAMP3 : Amylin", "91 7TM + 45 ECD + 3 RAMP3 (E74/W84/P85)", "<dG> = -197.5 ± 7.1 | <E_vdW> = -227.7", "Native AMY3R reference (RMSD 0.48A)"),
-    ("RAMP3 Subunit Comp.", "RAMP3:MRAP2 vs CTR", "32/40 (80.0%) CTR face shared; 222 clashes", "-212.9 (-254.0 vdW) vs -189.5 (-217.5)", "MRAP2 outcompetes CTR (ddG = -23.4)"),
-    ("RAMP1 Subunit Comp.", "RAMP1:MRAP2 vs CTR", "28/37 (75.7%) CTR face shared; 172 clashes", "-156.8 (-198.5 vdW) vs -159.2 (-202.7)", "Comparable affinity; blocks AMY1R"),
-    ("AMY1R Ternary (-MRAP2)", "CTR+RAMP1 : Amylin", "92 7TM + 73 ECD ICs (N-loop RMSD 1.27A)", "<dG> = -237.8 ± 6.7 | <E_vdW> = -269.5", "Deep 7TM orthosteric engagement"),
-    ("AMY1R Quat. (+MRAP2)", "CTR+RAMP1+M : Amylin", "2 7TM ICs (-97.8%); displaced 21.7A", "<dG> = -113.5 | <E_vdW> = -149.6", "ddG = +124.3 | ddE_vdW = +119.9"),
-    ("AMY3R -/+ MRAP2", "CTR+RAMP3(±M) : Amy", "96 -> 0 7TM ICs (-100%); displaced 24.5A", "-164.2 (-223.6) -> -148.9 (-163.1 vdW)", "ddG = +15.3 | ddE_vdW = +60.5"),
-]
-
-t7_shape = s7.shapes.add_table(len(s7_rows), 5, Inches(0.62), Inches(2.20), Inches(6.97), Inches(3.70))
-t7 = t7_shape.table
-t7_widths = [1.32, 1.15, 1.55, 1.55, 1.40]
-for ci, w_in in enumerate(t7_widths):
-    t7.columns[ci].width = Inches(w_in)
-
-for ri, rvals in enumerate(s7_rows):
-    for ci, val in enumerate(rvals):
-        cell = t7.cell(ri, ci)
-        cell.vertical_anchor = MSO_ANCHOR.MIDDLE
-        cell.margin_left = cell.margin_right = Inches(0.04)
-        cell.margin_top = cell.margin_bottom = Inches(0.02)
-        cell.fill.solid()
-        if ri == 0:
-            cell.fill.fore_color.rgb = NAVY
-        elif ri in (3, 6, 7):
-            cell.fill.fore_color.rgb = GREEN_BG
-        elif ri % 2 == 1:
-            cell.fill.fore_color.rgb = WHITE
-        else:
-            cell.fill.fore_color.rgb = ICE
-        p_cell = cell.text_frame.paragraphs[0]
-        p_cell.alignment = PP_ALIGN.LEFT
-        run = p_cell.add_run()
-        run.text = val
-        run.font.name = "Calibri"
-        run.font.size = Pt(7.8 if ri == 0 else 7.2)
-        run.font.bold = (ri == 0 or ci == 0 or (ri in (3, 6, 7) and ci == 3))
-        run.font.color.rgb = WHITE if ri == 0 else (RED if ri in (6, 7) and ci == 0 else (NAVY if ci == 0 else INK))
-
-# Bottom note inside Left Column (y=5.98, h=0.84)
-rect(s7, 0.62, 5.98, 6.97, 0.84, WHITE, line=BORDER)
-rect(s7, 0.62, 5.98, 0.07, 0.84, RED)
-text(s7, 0.78, 6.03, 6.72, 0.74, [
-    [("Testable Wet-Lab Hypothesis (cAMP / BRET / Surface ELISA): ", {"size": 8.6, "bold": True, "color": RED}),
-     ("Co-expressing WT MRAP2 will competitively sequester RAMP3/RAMP1 away from CTR and attenuate amylin/cagrilintide potency, whereas our FEP-designed obesity point-mutants (MRAP2 L115A/V, R125A/C) will lose RAMP binding and restore normal AMY1R/AMY3R signaling.",
-      {"size": 7.9, "color": INK})]
-])
-
-# Right Column: 2-Panel Competition & MD Energetics Plot + Mechanistic Summary (x=7.90, y=1.12, w=4.95, h=5.82)
-rect(s7, 7.90, 1.12, 4.95, 5.82, ICE, line=BORDER)
-rect(s7, 7.90, 1.12, 4.95, 0.36, TEAL)
-text(s7, 8.06, 1.18, 4.65, 0.24,
-     "Dual-Mechanism Competition & A100 MD Energetics",
-     size=10.5, bold=True, color=WHITE)
-
-AMY_IMG = "/das/user/QYJI/druggability/reports/bq1_99_triage/amylin_mrap2_study/amylin_mrap2_competition_md_2panel.png"
-rect(s7, 8.04, 1.55, 4.67, 2.02, WHITE, line=BORDER)
-s7.shapes.add_picture(AMY_IMG, Inches(8.06), Inches(1.57), Inches(4.63), Inches(1.98))
-
-rect(s7, 8.04, 3.65, 4.67, 3.17, WHITE, line=NAVY, line_w=1.2)
-rect(s7, 8.04, 3.65, 4.67, 0.26, NAVY)
-text(s7, 8.16, 3.69, 4.45, 0.20, "ANSWERS TO ZHENG'S TWO QUESTIONS (MECHANISM SUMMARY)", size=8.5, bold=True, color=WHITE)
-text(s7, 8.16, 3.97, 4.45, 2.78, [
-    [("1. Do Amylin and MRAP2 Compete in Binding to Amylin Receptors?", {"size": 8.5, "bold": True, "color": NAVY})],
-    [("   YES — at two structural levels:\n"
-      "   • Subunit Sequestration (MRAP2 vs CTR for RAMP1/3): MRAP2 occupies 80.0% (32/40) of RAMP3's and 75.7% (28/37) of RAMP1's CTR-binding residues, and binds RAMP3 more tightly than CTR in MD (ddG = -23.43 kcal/mol).\n"
-      "   • Tyr37 Pocket Cap Occlusion: MRAP2 covers 100% of the RAMP1/3 Trp84-Pro85 shelf that caps amylin's C-terminal Tyr37-NH2.", {"size": 7.7, "color": INK})],
-    [("2. Does MRAP2 Affect the Stability of Amylin / Receptor Complexes?", {"size": 8.5, "bold": True, "color": RED})],
-    [("   YES — severe destabilization & 7TM ejection:\n"
-      "   • In quaternary co-folding + MD, MRAP2 invades the CTR ECL2/ECL3/7TM entrance, reducing amylin's 7TM contacts by 97.8% in AMY1R (ddG = +124.26, ddE_vdW = +119.92 kcal/mol) and 100% in AMY3R (ddG = +15.26, ddE_vdW = +60.49 kcal/mol).", {"size": 7.7, "color": INK})],
-], space_after=2.0)
-
-set_notes(s7, """【Appendix S1（补充页 Slide 7）口播讲稿 — 回答曹峥关于 Amylin 受体竞争与稳定性的追问】
-如果会上大家问到：“RAMP1 和 RAMP3 也是我们 Amylin / CagriSema 受体（AMY1R = CTR+RAMP1，AMY3R = CTR+RAMP3）的必需亚基，那 MRAP2 结合 RAMP1/3 会不会和 Amylin 竞争，或者影响 Amylin 受体复合物的稳定性？”
-这一页补充材料直接给出了结合 Cryo-EM 结构（7TYF/7TZF）、四元 Boltz-2 共折叠和 8 组 A100 显式水 MD 的定量答案：
-
-1. 第一个层面（亚基级直接互斥竞争）：
-   - 在冷冻电镜结构里，Amylin 98.5% 以上的接触都在 CTR 主亚基上，RAMP1/3 主要是通过胞外域的 Trp84-Pro85 疏水平台去“封盖”Amylin 的 C 端 Tyr37-NH2。
-   - 当我们把 RAMP3:MRAP2 和 RAMP1:MRAP2 叠合到冷冻电镜的 AMY3R 和 AMY1R 上时，发现 MRAP2 占据了 RAMP3 上 80.0%（32/40）和 RAMP1 上 75.7%（28/37）原本用来结合 CTR 的残基（跟 CTR 产生 172 到 222 对严重原子碰撞），并且 100% 盖住了结合 Amylin Tyr37 的 Trp84-Pro85 位点！
-   - 更关键的是，在 A100 显式水 MD 中，MRAP2 与 RAMP3 的结合力（<dG_GBn2> = -212.9 kcal/mol，<E_vdW> = -254.0 kcal/mol）比天然 CTR 与 RAMP3 的结合力（<dG_GBn2> = -189.5 kcal/mol，<E_vdW> = -217.5 kcal/mol）还要强 23.4 kcal/mol（RAMP1 上两者相当：-156.8 vs -159.2 kcal/mol）！这意味着高表达的 MRAP2 会直接把 RAMP3 从 CTR 身边“抢走（sequester）”，阻止功能性 Amylin 受体的组装。
-
-2. 第二个层面（四元复合物正构口袋阻断与失稳）：
-   - 如果强行把 CTR + RAMP1/3 + Amylin + MRAP2 放在一起做四元共折叠和显式水 MD：
-   - 没有 MRAP2 时，Amylin 的 N 端二硫键环深深插进 CTR 的 7TM 跨膜核心（92–96 个跨膜接触，AMY1R 与 AMY3R 的总结合自由能 <dG_GBn2> 分别为 -237.8 和 -164.2 kcal/mol，范德华吸引能 <E_vdW> 分别为 -269.5 和 -223.6 kcal/mol）；
-   - 加入 MRAP2 后，MRAP2 的近膜区（68–88 位氨基酸）直接堵在 CTR 的正构口袋入口，把 Amylin 从 7TM 核心里顶了出来（距离偏移 21.7–24.5 Å，Amylin 的 7TM 接触在 AMY1R 中丢失 97.8% [92→2]，在 AMY3R 中 100% 归零 [96→0]）：
-     • 在 AMY1R 中，总结合自由能 <dG_GBn2> 从 -237.8 恶化至 -113.5 kcal/mol（损失 ddG = +124.3 kcal/mol，腰斩 52%），范德华吸引能 <E_vdW> 从 -269.5 恶化至 -149.6 kcal/mol（损失 ddE_vdW = +119.9 kcal/mol，减弱 44%）；
-     • 在 AMY3R 中，总结合自由能 <dG_GBn2> 从 -164.2 恶化至 -148.9 kcal/mol（损失 ddG = +15.3 kcal/mol），范德华吸引能 <E_vdW> 从 -223.6 恶化至 -163.1 kcal/mol（损失 ddE_vdW = +60.5 kcal/mol，减弱 27%）。
-   - 这直接给出了一个非常漂亮的湿实验预测：野生型 MRAP2 会负向抑制 Amylin 受体信号，而我们用 FEP 找出的两个肥胖突变（MRAP2 L115V/A 和 R125C/A）因为抓不住 RAMP3，反而会解除对 Amylin 受体的抑制！""")
+set_notes(s8, """【Appendix S2（备查页 Slide 8）口播讲稿 — 供追问 Baker 2025 vs 2026 文献漏斗数字与案例细节时翻出】
+保留完整的五级筛选漏斗数字（20,296 人类蛋白 → 19,528 入筛 [~1.91 亿对] → 1.112 亿共定位 → 4360 万 DCA → ~190 万 RF2-PPI → AF2 建模 → 29,256 [@80%] / 17,849 [@90%]）以及 2026 Sci Rep 的具体生物学案例（PMS1-FAAP24、C12orf57 L51Q、BBS7-WDR19 V80D、SCO1-COA6、C19orf25-NRZ），方便会中随时备查。""")
 
 out_deck = "/das/user/QYJI/druggability/reports/ppi_group_meeting_deck_2026-10-29.pptx"
 prs.save(out_deck)
-print("Saved 7-slide group meeting PPTX (6 main + 1 Appendix):", out_deck)
+print("Saved optimized 8-slide group meeting PPTX (6 main + 2 Appendix):", out_deck)

@@ -1,0 +1,282 @@
+{
+  "6NZD": {
+    "title": "Cryo-EM Structure of the Lysosomal Folliculin Complex (FLCN-FNIP2-RagA-RagC-Ragulator)",
+    "method": "ELECTRON MICROSCOPY",
+    "resolution": 3.6,
+    "pmid": null,
+    "journal": "Science",
+    "year": 2019
+  },
+  "6ULG": {
+    "title": "Cryo-EM structure of the FLCN-FNIP2-Rag-Ragulator complex",
+    "method": "ELECTRON MICROSCOPY",
+    "resolution": 3.31,
+    "pmid": null,
+    "journal": "Cell",
+    "year": 2019
+  },
+  "8DHB": {
+    "title": "Active FLCN GAP complex",
+    "method": "ELECTRON MICROSCOPY",
+    "resolution": 3.53,
+    "pmid": null,
+    "journal": "Sci Adv",
+    "year": 2022
+  },
+  "3E00": {
+    "title": "Intact PPAR gamma - RXR alpha Nuclear Receptor Complex on DNA bound with GW9662, 9-cis Retinoic Acid and NCOA2 Peptide",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 3.1,
+    "pmid": null,
+    "journal": "Nature",
+    "year": 2008
+  },
+  "1RDT": {
+    "title": "Crystal Structure of a new rexinoid bound to the RXRalpha ligand binding doamin in the RXRalpha/PPARgamma heterodimer",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 2.4,
+    "pmid": null,
+    "journal": "J.Med.Chem.",
+    "year": 2004
+  },
+  "1FM6": {
+    "title": "THE 2.1 ANGSTROM RESOLUTION CRYSTAL STRUCTURE OF THE HETERODIMER OF THE HUMAN RXRALPHA AND PPARGAMMA LIGAND BINDING DOMAINS RESPECTIVELY BOUND WITH 9-CIS RETINOIC ACID AND ROSIGLITAZONE AND CO-ACTIVATOR PEPTIDES.",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 2.1,
+    "pmid": null,
+    "journal": "Mol.Cell",
+    "year": 2000
+  },
+  "1K74": {
+    "title": "The 2.3 Angstrom resolution crystal structure of the heterodimer of the human PPARgamma and RXRalpha ligand binding domains respectively bound with GW409544 and 9-cis retinoic acid and co-activator peptides.",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 2.3,
+    "pmid": null,
+    "journal": "Proc.Natl.Acad.Sci.USA",
+    "year": 2001
+  },
+  "7L29": {
+    "title": "Crystal structure of the catalytic domain of human PDE3A bound to AMP",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 2.08,
+    "pmid": null,
+    "journal": "Nat Commun",
+    "year": 2021
+  },
+  "5K32": {
+    "title": "PDE4D crystal structure in complex with small molecule inhibitor",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 1.99,
+    "pmid": null,
+    "journal": "J. Med. Chem.",
+    "year": 2018
+  },
+  "7RUQ": {
+    "title": "Structure of the human GIGYF1-TNRC6C complex",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 1.79,
+    "pmid": null,
+    "journal": "Rna",
+    "year": 2023
+  },
+  "2AUH": {
+    "title": "Crystal structure of the Grb14 BPS region in complex with the insulin receptor tyrosine kinase",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 3.2,
+    "pmid": null,
+    "journal": "Mol.Cell",
+    "year": 2005
+  },
+  "2FVJ": {
+    "title": "A novel anti-adipogenic partial agonist of peroxisome proliferator-activated receptor-gamma (PPARG) recruits pparg-coactivator-1 alpha (PGC1A) but potentiates insulin signaling in vitro",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 1.99,
+    "pmid": null,
+    "journal": "Mol.Endocrinol.",
+    "year": 2006
+  },
+  "6F6U": {
+    "title": "Crystal structure of the PDE4D catalytic domain in complex with GEBR-7b",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 1.828,
+    "pmid": null,
+    "journal": "Biochemistry",
+    "year": 2018
+  },
+  "6D94": {
+    "title": "Crystal structure of PPAR gamma in complex with Mediator of RNA polymerase II transcription subunit 1",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 1.9,
+    "pmid": null,
+    "journal": "Proc.Natl.Acad.Sci.USA",
+    "year": 2022
+  },
+  "6ONJ": {
+    "title": "Crystal structure of PPARgamma ligand binding domain in complex with TRAP220 peptide and agonist rosiglitazone",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 2.3,
+    "pmid": null,
+    "journal": "Nat Commun",
+    "year": 2020
+  },
+  "3VN2": {
+    "title": "Crystal Structure of PPARgamma complexed with Telmisartan",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 2.18,
+    "pmid": null,
+    "journal": "Hypertens Res",
+    "year": 2012
+  },
+  "5DV6": {
+    "title": "Human PPARgamma ligand binding dmain complexed with SB1404 in a covalent bonded form",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 2.8,
+    "pmid": null,
+    "journal": "To Be Published",
+    "year": null
+  },
+  "7APO": {
+    "title": "Crystal structure of RARalpha ligand binding domain in complex with a fragment of the TIF2 coactivator",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 2.4,
+    "pmid": null,
+    "journal": "J.Mol.Biol.",
+    "year": 2021
+  },
+  "7L28": {
+    "title": "Crystal structure of the catalytic domain of human PDE3A bound to Trequinsin",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 2.2,
+    "pmid": null,
+    "journal": "Nat Commun",
+    "year": 2021
+  },
+  "8ULG": {
+    "title": "Cryo-EM structure of bovine phosphodiesterase 6 bound to IBMX",
+    "method": "ELECTRON MICROSCOPY",
+    "resolution": 3.2,
+    "pmid": null,
+    "journal": "J.Biol.Chem.",
+    "year": 2023
+  },
+  "6CYD": {
+    "title": "PDE2 in complex with compound 7",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 1.69,
+    "pmid": null,
+    "journal": "ACS Med Chem Lett",
+    "year": 2018
+  },
+  "8FCY": {
+    "title": "Engineered human dynein motor domain in microtubule-bound state",
+    "method": "ELECTRON MICROSCOPY",
+    "resolution": 3.4,
+    "pmid": null,
+    "journal": "Nat.Struct.Mol.Biol.",
+    "year": 2023
+  },
+  "8FCZ": {
+    "title": "Crystal structure of ground-state rhodopsin in complex with a nanobody",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 3.7,
+    "pmid": null,
+    "journal": "Nat Commun",
+    "year": 2023
+  },
+  "8FD0": {
+    "title": "Crystal structure of bovine rod opsin in complex with a nanobody",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 3.71,
+    "pmid": null,
+    "journal": "Nat Commun",
+    "year": 2023
+  },
+  "8DH9": {
+    "title": "Leptin-bound leptin receptor complex-D3-D7",
+    "method": "ELECTRON MICROSCOPY",
+    "resolution": 4.5,
+    "pmid": null,
+    "journal": "Nat Commun",
+    "year": 2023
+  },
+  "8DHA": {
+    "title": "Leptin-bound leptin receptor complex- focused interaction",
+    "method": "ELECTRON MICROSCOPY",
+    "resolution": 3.8,
+    "pmid": null,
+    "journal": "Nat Commun",
+    "year": 2023
+  },
+  "8JE2": {
+    "title": "Cryo-EM structure of neddylated Cul2-Rbx1-EloBC-FEM1B complexed with FNIP1-FLCN",
+    "method": "ELECTRON MICROSCOPY",
+    "resolution": 3.63,
+    "pmid": null,
+    "journal": "Embo J.",
+    "year": 2024
+  },
+  "6SER": {
+    "title": "Crystal structure of human STARD10",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 2.299,
+    "pmid": null,
+    "journal": "Mol Metab",
+    "year": 2020
+  },
+  "1SO2": {
+    "title": "CATALYTIC DOMAIN OF HUMAN PHOSPHODIESTERASE 3B In COMPLEX WITH A DIHYDROPYRIDAZINE INHIBITOR",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 2.4,
+    "pmid": null,
+    "journal": "Biochemistry",
+    "year": 2004
+  },
+  "8SYC": {
+    "title": "Crystal structure of PDE3B in complex with GSK4394835A",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 2.7,
+    "pmid": null,
+    "journal": "J.Med.Chem.",
+    "year": 2024
+  },
+  "9YUD": {
+    "title": "Re-Refined Human Phosphodiesterase 3B complexed with GSK4394835A",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 2.7,
+    "pmid": null,
+    "journal": "J.Med.Chem.",
+    "year": 2025
+  },
+  "4K81": {
+    "title": "Crystal structure of the Grb14 RA and PH domains in complex with GTP-loaded H-Ras",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 2.4,
+    "pmid": null,
+    "journal": "Plos One",
+    "year": 2013
+  },
+  "2AUG": {
+    "title": "Crystal structure of the Grb14 SH2 domain",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 2.3,
+    "pmid": null,
+    "journal": "Mol.Cell",
+    "year": 2005
+  },
+  "7LSW": {
+    "title": "Structure of Full Beta-Hairpin LIR from FNIP2 Bound to GABARAP",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 3.05,
+    "pmid": null,
+    "journal": "Sci Adv",
+    "year": 2021
+  },
+  "7LT6": {
+    "title": "Structure of Partial Beta-Hairpin LIR from FNIP2 Bound to GABARAP",
+    "method": "X-RAY DIFFRACTION",
+    "resolution": 1.8,
+    "pmid": null,
+    "journal": "Sci Adv",
+    "year": 2021
+  }
+}

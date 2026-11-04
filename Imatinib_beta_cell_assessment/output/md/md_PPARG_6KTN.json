@@ -1,0 +1,36 @@
+{
+  "gene": "PPARG",
+  "pdb": "6KTN",
+  "role": "candidate_pathway",
+  "status": "ok",
+  "platform": "OpenMM_250ps_exact_meeko_pose",
+  "ie_units": "kJ/mol (COUL=138.935456 kJ*nm/e^2, r in nm)",
+  "pose_align_nn_rmsd_A": 0.0,
+  "centroid_drift_A": 0.47,
+  "ligand_rmsd_A": 1.1,
+  "end_dist_to_pocket_center_A": 2.42,
+  "md_stable": true,
+  "sum_top5_IE_kJmol": -266.34,
+  "sum_top5_IE_kcalmol": -63.66,
+  "top_contacts_kJmol": {
+    "LYS31A": -71.85,
+    "GLU52A": -62.01,
+    "SER76A": -50.71,
+    "GLU48A": -43.31,
+    "ILE75A": -38.46,
+    "ALA45A": -29.63,
+    "LYS29A": -28.81,
+    "MET63A": -27.91
+  },
+  "runtime_s": 231.8,
+  "top_contacts_uniprot_kJmol": {
+    "LYS265A": -71.85,
+    "GLU295A": -62.01,
+    "SER342A": -50.71,
+    "GLU291A": -43.31,
+    "ILE341A": -38.46,
+    "ALA288A": -29.63,
+    "LYS263A": -28.81,
+    "MET329A": -27.91
+  }
+}

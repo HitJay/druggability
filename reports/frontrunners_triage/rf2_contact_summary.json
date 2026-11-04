@@ -1,0 +1,787 @@
+{
+  "P11474_P37231": {
+    "has_npz": true,
+    "max_prob": 0.240478515625,
+    "top_residue_contacts": [
+      "ESRRA:D152-PPARG:A146 (p=0.240)",
+      "ESRRA:R153-PPARG:A146 (p=0.240)",
+      "ESRRA:G157-PPARG:G158 (p=0.228)",
+      "ESRRA:R155-PPARG:G158 (p=0.226)",
+      "ESRRA:R150-PPARG:A146 (p=0.224)"
+    ],
+    "sav_hits_p1": [],
+    "sav_hits_p2": []
+  },
+  "P06400_P37231": {
+    "has_npz": true,
+    "max_prob": 0.284423828125,
+    "top_residue_contacts": [
+      "RB1:A603-PPARG:A461 (p=0.284)",
+      "RB1:A603-PPARG:L464 (p=0.276)",
+      "RB1:M605-PPARG:L464 (p=0.273)",
+      "RB1:M605-PPARG:A461 (p=0.272)",
+      "RB1:L607-PPARG:L464 (p=0.269)"
+    ],
+    "sav_hits_p1": [
+      {
+        "pos": 436,
+        "wt": "Q",
+        "mut": "K",
+        "label": "Q436K",
+        "is_disease_annotated": false,
+        "note": "Q -> K (in dbSNP:rs4151534)",
+        "ftId": "VAR_019379"
+      },
+      {
+        "pos": 616,
+        "wt": "K",
+        "mut": "E",
+        "label": "K616E",
+        "is_disease_annotated": true,
+        "note": "K -> E (in RB)",
+        "ftId": "VAR_011581"
+      }
+    ],
+    "sav_hits_p2": [
+      {
+        "pos": 318,
+        "wt": "V",
+        "mut": "M",
+        "label": "V318M",
+        "is_disease_annotated": true,
+        "note": "V -> M (in diabetes; dbSNP:rs72551362)",
+        "ftId": "VAR_010727"
+      },
+      {
+        "pos": 425,
+        "wt": "R",
+        "mut": "C",
+        "label": "R425C",
+        "is_disease_annotated": true,
+        "note": "R -> C (in FPLD3; dbSNP:rs72551364)",
+        "ftId": "VAR_022701"
+      },
+      {
+        "pos": 495,
+        "wt": "P",
+        "mut": "L",
+        "label": "P495L",
+        "is_disease_annotated": true,
+        "note": "P -> L (in diabetes; dbSNP:rs121909244)",
+        "ftId": "VAR_010728"
+      }
+    ]
+  },
+  "O14497_P37231": {
+    "has_npz": false,
+    "max_prob": 0.1652,
+    "top_residue_contacts": [],
+    "sav_hits_p1": [],
+    "sav_hits_p2": []
+  },
+  "P05141_Q13233": {
+    "has_npz": false,
+    "max_prob": 0.1013,
+    "top_residue_contacts": [],
+    "sav_hits_p1": [],
+    "sav_hits_p2": []
+  },
+  "P02689_P37231": {
+    "has_npz": true,
+    "max_prob": 0.040924072265625,
+    "top_residue_contacts": [],
+    "sav_hits_p1": [],
+    "sav_hits_p2": []
+  },
+  "P37231_Q15648": {
+    "has_npz": true,
+    "max_prob": 0.10174560546875,
+    "top_residue_contacts": [
+      "PPARG:G148-MED1:G1580 (p=0.102)",
+      "PPARG:C156-MED1:C489 (p=0.101)",
+      "PPARG:G202-MED1:G1580 (p=0.100)",
+      "PPARG:F415-MED1:F303 (p=0.096)",
+      "PPARG:R165-MED1:M1574 (p=0.095)"
+    ],
+    "sav_hits_p1": [],
+    "sav_hits_p2": []
+  },
+  "P37231_P48443": {
+    "has_npz": true,
+    "max_prob": 0.14013671875,
+    "top_residue_contacts": [
+      "PPARG:G161-RXRG:G161 (p=0.140)",
+      "PPARG:G158-RXRG:G161 (p=0.134)",
+      "PPARG:E157-RXRG:G161 (p=0.119)",
+      "PPARG:E157-RXRG:K160 (p=0.103)",
+      "PPARG:E157-RXRG:F162 (p=0.095)"
+    ],
+    "sav_hits_p1": [],
+    "sav_hits_p2": []
+  },
+  "P05141_Q13422": {
+    "has_npz": true,
+    "max_prob": 0.202880859375,
+    "top_residue_contacts": [
+      "SLC25A5:Y187-IKZF1:E325 (p=0.203)",
+      "SLC25A5:Y81-IKZF1:E325 (p=0.182)",
+      "SLC25A5:D135-IKZF1:E325 (p=0.179)",
+      "SLC25A5:T84-IKZF1:E325 (p=0.176)",
+      "SLC25A5:D232-IKZF1:E325 (p=0.175)"
+    ],
+    "sav_hits_p1": [],
+    "sav_hits_p2": []
+  },
+  "Q13131_Q8TF40": {
+    "has_npz": false,
+    "max_prob": 0.436,
+    "top_residue_contacts": [],
+    "sav_hits_p1": [],
+    "sav_hits_p2": []
+  },
+  "P37231_Q9Y6Q9": {
+    "has_npz": false,
+    "max_prob": 0.1981,
+    "top_residue_contacts": [],
+    "sav_hits_p1": [],
+    "sav_hits_p2": []
+  },
+  "Q96LA8_Q9Y365": {
+    "has_npz": true,
+    "max_prob": 0.8994140625,
+    "top_residue_contacts": [
+      "PRMT6:G281-STARD10:V110 (p=0.899)",
+      "PRMT6:E244-STARD10:T109 (p=0.868)",
+      "PRMT6:G281-STARD10:T109 (p=0.864)",
+      "PRMT6:Y280-STARD10:N111 (p=0.849)",
+      "PRMT6:G281-STARD10:N111 (p=0.841)"
+    ],
+    "sav_hits_p1": [
+      {
+        "pos": 194,
+        "wt": "A",
+        "mut": "V",
+        "label": "A194V",
+        "is_disease_annotated": false,
+        "note": "A -> V (in dbSNP:rs2232016)",
+        "ftId": "VAR_057150"
+      }
+    ],
+    "sav_hits_p2": []
+  },
+  "O95398_Q13370": {
+    "has_npz": true,
+    "max_prob": 0.209716796875,
+    "top_residue_contacts": [
+      "RAPGEF3:G594-PDE3B:E797 (p=0.210)",
+      "RAPGEF3:G132-PDE3B:A126 (p=0.197)",
+      "RAPGEF3:D593-PDE3B:E797 (p=0.197)",
+      "RAPGEF3:G154-PDE3B:S120 (p=0.194)",
+      "RAPGEF3:G594-PDE3B:G800 (p=0.193)"
+    ],
+    "sav_hits_p1": [
+      {
+        "pos": 193,
+        "wt": "R",
+        "mut": "G",
+        "label": "R193G",
+        "is_disease_annotated": false,
+        "note": "R -> G (in dbSNP:rs2016123)",
+        "ftId": "VAR_047925"
+      },
+      {
+        "pos": 374,
+        "wt": "G",
+        "mut": "S",
+        "label": "G374S",
+        "is_disease_annotated": false,
+        "note": "G -> S (in dbSNP:rs12422983)",
+        "ftId": "VAR_047926"
+      },
+      {
+        "pos": 517,
+        "wt": "C",
+        "mut": "Y",
+        "label": "C517Y",
+        "is_disease_annotated": false,
+        "note": "C -> Y (in dbSNP:rs61709815)",
+        "ftId": "VAR_061784"
+      }
+    ],
+    "sav_hits_p2": []
+  },
+  "P05141_P55196": {
+    "has_npz": true,
+    "max_prob": 0.2369384765625,
+    "top_residue_contacts": [
+      "SLC25A5:G120-AFDN:G41 (p=0.237)",
+      "SLC25A5:G16-AFDN:G41 (p=0.225)",
+      "SLC25A5:G16-AFDN:G1019 (p=0.224)",
+      "SLC25A5:G16-AFDN:K58 (p=0.221)",
+      "SLC25A5:G73-AFDN:G1019 (p=0.216)"
+    ],
+    "sav_hits_p1": [
+      {
+        "pos": 111,
+        "wt": "L",
+        "mut": "R",
+        "label": "L111R",
+        "is_disease_annotated": false,
+        "note": "L -> R (in dbSNP:rs371749)",
+        "ftId": "VAR_030039"
+      }
+    ],
+    "sav_hits_p2": []
+  },
+  "P37231_Q92731": {
+    "has_npz": true,
+    "max_prob": 0.1341552734375,
+    "top_residue_contacts": [
+      "PPARG:E157-ESR2:E167 (p=0.134)",
+      "PPARG:E157-ESR2:A171 (p=0.128)",
+      "PPARG:G158-ESR2:A171 (p=0.124)",
+      "PPARG:E157-ESR2:K170 (p=0.117)",
+      "PPARG:G161-ESR2:A171 (p=0.116)"
+    ],
+    "sav_hits_p1": [],
+    "sav_hits_p2": []
+  },
+  "Q13370_Q14432": {
+    "has_npz": false,
+    "max_prob": 0.1995,
+    "top_residue_contacts": [],
+    "sav_hits_p1": [],
+    "sav_hits_p2": []
+  },
+  "Q8TF40_Q9UGJ0": {
+    "has_npz": false,
+    "max_prob": 0.4988,
+    "top_residue_contacts": [],
+    "sav_hits_p1": [],
+    "sav_hits_p2": []
+  },
+  "Q8TF40_Q9NP79": {
+    "has_npz": true,
+    "max_prob": 0.14111328125,
+    "top_residue_contacts": [
+      "FNIP1:D491-VTA1:A222 (p=0.141)",
+      "FNIP1:E483-VTA1:P221 (p=0.139)",
+      "FNIP1:K484-VTA1:P221 (p=0.138)",
+      "FNIP1:L482-VTA1:H219 (p=0.138)",
+      "FNIP1:E483-VTA1:H219 (p=0.138)"
+    ],
+    "sav_hits_p1": [
+      {
+        "pos": 844,
+        "wt": "I",
+        "mut": "V",
+        "label": "I844V",
+        "is_disease_annotated": false,
+        "note": "I -> V (in dbSNP:rs7717874)",
+        "ftId": "VAR_036828"
+      }
+    ],
+    "sav_hits_p2": []
+  },
+  "Q8NFG4_Q8TF40": {
+    "has_npz": true,
+    "max_prob": 0.9892578125,
+    "top_residue_contacts": [
+      "FLCN:C506-FNIP1:F1116 (p=0.989)",
+      "FLCN:Q502-FNIP1:M1120 (p=0.987)",
+      "FLCN:C506-FNIP1:M1120 (p=0.981)",
+      "FLCN:V499-FNIP1:Y1124 (p=0.980)",
+      "FLCN:C506-FNIP1:K1117 (p=0.979)"
+    ],
+    "sav_hits_p1": [
+      {
+        "pos": 132,
+        "wt": "E",
+        "mut": "K",
+        "label": "E132K",
+        "is_disease_annotated": true,
+        "note": "E -> K (in PSP; dbSNP:rs2145009956)",
+        "ftId": "VAR_066024"
+      },
+      {
+        "pos": 238,
+        "wt": "A",
+        "mut": "V",
+        "label": "A238V",
+        "is_disease_annotated": true,
+        "note": "A -> V (in a renal cell carcinoma cell line)",
+        "ftId": "VAR_025357"
+      },
+      {
+        "pos": 429,
+        "wt": "H",
+        "mut": "Y",
+        "label": "H429Y",
+        "is_disease_annotated": true,
+        "note": "H -> Y (in PSP; dbSNP:rs375082054)",
+        "ftId": "VAR_066028"
+      },
+      {
+        "pos": 444,
+        "wt": "A",
+        "mut": "S",
+        "label": "A444S",
+        "is_disease_annotated": true,
+        "note": "A -> S (in a primary clear-cell renal cell carcinoma; somatic mutation)\"",
+        "ftId": "VAR_025360"
+      },
+      {
+        "pos": 445,
+        "wt": "A",
+        "mut": "T",
+        "label": "A445T",
+        "is_disease_annotated": true,
+        "note": "A -> T (in a sporadic colorectal carcinoma; somatic mutation; dbSNP:rs41419545)\"",
+        "ftId": "VAR_025361"
+      },
+      {
+        "pos": 508,
+        "wt": "K",
+        "mut": "R",
+        "label": "K508R",
+        "is_disease_annotated": true,
+        "note": "K -> R (in BHD1; does not impair protein stability, growth suppression activity or intracellular localization of folliculin; dbSNP:rs199643834)\"",
+        "ftId": "VAR_066029"
+      }
+    ],
+    "sav_hits_p2": [
+      {
+        "pos": 354,
+        "wt": "S",
+        "mut": "L",
+        "label": "S354L",
+        "is_disease_annotated": false,
+        "note": "S -> L (in dbSNP:rs13177318)",
+        "ftId": "VAR_036825"
+      },
+      {
+        "pos": 844,
+        "wt": "I",
+        "mut": "V",
+        "label": "I844V",
+        "is_disease_annotated": false,
+        "note": "I -> V (in dbSNP:rs7717874)",
+        "ftId": "VAR_036828"
+      },
+      {
+        "pos": 1118,
+        "wt": "S",
+        "mut": "N",
+        "label": "S1118N",
+        "is_disease_annotated": true,
+        "note": "S -> N (in IMD93; uncertain significance; dbSNP:rs2149501551)\"",
+        "ftId": "VAR_086808"
+      }
+    ]
+  },
+  "Q8N4J0_Q8TF40": {
+    "has_npz": true,
+    "max_prob": 0.1485595703125,
+    "top_residue_contacts": [
+      "CARNMT1:F153-FNIP1:N312 (p=0.149)",
+      "CARNMT1:N353-FNIP1:N312 (p=0.141)",
+      "CARNMT1:N350-FNIP1:P303 (p=0.138)",
+      "CARNMT1:N353-FNIP1:D315 (p=0.138)",
+      "CARNMT1:F153-FNIP1:F311 (p=0.137)"
+    ],
+    "sav_hits_p1": [],
+    "sav_hits_p2": []
+  },
+  "P37231_Q13133": {
+    "has_npz": true,
+    "max_prob": 0.431884765625,
+    "top_residue_contacts": [
+      "PPARG:E157-NR1H3:E116 (p=0.432)",
+      "PPARG:G161-NR1H3:G120 (p=0.375)",
+      "PPARG:G161-NR1H3:E116 (p=0.337)",
+      "PPARG:K160-NR1H3:E116 (p=0.319)",
+      "PPARG:G161-NR1H3:G117 (p=0.298)"
+    ],
+    "sav_hits_p1": [],
+    "sav_hits_p2": []
+  },
+  "P37231_Q14693": {
+    "has_npz": false,
+    "max_prob": 0.1272,
+    "top_residue_contacts": [],
+    "sav_hits_p1": [],
+    "sav_hits_p2": []
+  },
+  "Q7L523_Q8TF40": {
+    "has_npz": false,
+    "max_prob": 0.2002,
+    "top_residue_contacts": [],
+    "sav_hits_p1": [],
+    "sav_hits_p2": []
+  },
+  "A0JLT2_P37231": {
+    "has_npz": true,
+    "max_prob": 0.443603515625,
+    "top_residue_contacts": [
+      "MED19:M166-PPARG:L464 (p=0.444)",
+      "MED19:L165-PPARG:A461 (p=0.432)",
+      "MED19:L165-PPARG:L464 (p=0.424)",
+      "MED19:H167-PPARG:L464 (p=0.410)",
+      "MED19:I168-PPARG:T468 (p=0.409)"
+    ],
+    "sav_hits_p1": [],
+    "sav_hits_p2": [
+      {
+        "pos": 425,
+        "wt": "R",
+        "mut": "C",
+        "label": "R425C",
+        "is_disease_annotated": true,
+        "note": "R -> C (in FPLD3; dbSNP:rs72551364)",
+        "ftId": "VAR_022701"
+      }
+    ]
+  },
+  "Q8TF40_Q9Y297": {
+    "has_npz": true,
+    "max_prob": 0.1287841796875,
+    "top_residue_contacts": [
+      "FNIP1:M241-BTRC:I603 (p=0.129)",
+      "FNIP1:R288-BTRC:D574 (p=0.125)",
+      "FNIP1:R287-BTRC:D574 (p=0.124)",
+      "FNIP1:R288-BTRC:D575 (p=0.124)",
+      "FNIP1:C88-BTRC:C87 (p=0.122)"
+    ],
+    "sav_hits_p1": [],
+    "sav_hits_p2": []
+  },
+  "P54619_Q8TF40": {
+    "has_npz": true,
+    "max_prob": 0.162841796875,
+    "top_residue_contacts": [
+      "PRKAG1:E159-FNIP1:D530 (p=0.163)",
+      "PRKAG1:S160-FNIP1:D530 (p=0.163)",
+      "PRKAG1:G161-FNIP1:D530 (p=0.159)",
+      "PRKAG1:S160-FNIP1:Q529 (p=0.151)",
+      "PRKAG1:E159-FNIP1:Q529 (p=0.143)"
+    ],
+    "sav_hits_p1": [],
+    "sav_hits_p2": [
+      {
+        "pos": 738,
+        "wt": "V",
+        "mut": "L",
+        "label": "V738L",
+        "is_disease_annotated": false,
+        "note": "V -> L (in dbSNP:rs12109782)",
+        "ftId": "VAR_036827"
+      },
+      {
+        "pos": 844,
+        "wt": "I",
+        "mut": "V",
+        "label": "I844V",
+        "is_disease_annotated": false,
+        "note": "I -> V (in dbSNP:rs7717874)",
+        "ftId": "VAR_036828"
+      }
+    ]
+  },
+  "Q14449_Q9H2K2": {
+    "has_npz": true,
+    "max_prob": 0.160400390625,
+    "top_residue_contacts": [
+      "GRB14:A378-TNKS2:D1045 (p=0.160)",
+      "GRB14:A378-TNKS2:S1066 (p=0.160)",
+      "GRB14:A378-TNKS2:S1065 (p=0.159)",
+      "GRB14:G482-TNKS2:G157 (p=0.158)",
+      "GRB14:A378-TNKS2:G1144 (p=0.156)"
+    ],
+    "sav_hits_p1": [
+      {
+        "pos": 507,
+        "wt": "H",
+        "mut": "Y",
+        "label": "H507Y",
+        "is_disease_annotated": false,
+        "note": "H -> Y (in a patient with amyotrophic lateral sclerosis; dbSNP:rs144301087)\"",
+        "ftId": "VAR_065759"
+      }
+    ],
+    "sav_hits_p2": []
+  },
+  "Q13370_Q9BXB1": {
+    "has_npz": false,
+    "max_prob": 0.594,
+    "top_residue_contacts": [],
+    "sav_hits_p1": [],
+    "sav_hits_p2": []
+  },
+  "Q8NFG4_Q9P278": {
+    "has_npz": false,
+    "max_prob": 0.9976,
+    "top_residue_contacts": [],
+    "sav_hits_p1": [],
+    "sav_hits_p2": []
+  },
+  "Q13370_Q92556": {
+    "has_npz": true,
+    "max_prob": 0.1883544921875,
+    "top_residue_contacts": [
+      "PDE3B:P866-ELMO1:E47 (p=0.188)",
+      "PDE3B:N869-ELMO1:G619 (p=0.175)",
+      "PDE3B:G253-ELMO1:G668 (p=0.172)",
+      "PDE3B:G940-ELMO1:D113 (p=0.168)",
+      "PDE3B:P866-ELMO1:N45 (p=0.167)"
+    ],
+    "sav_hits_p1": [],
+    "sav_hits_p2": [
+      {
+        "pos": 362,
+        "wt": "I",
+        "mut": "S",
+        "label": "I362S",
+        "is_disease_annotated": false,
+        "note": "I -> S",
+        "ftId": "VAR_065824"
+      }
+    ]
+  },
+  "Q13370_Q5HYI7": {
+    "has_npz": true,
+    "max_prob": 0.1583251953125,
+    "top_residue_contacts": [
+      "PDE3B:A255-MTX3:P133 (p=0.158)",
+      "PDE3B:G254-MTX3:P133 (p=0.157)",
+      "PDE3B:K335-MTX3:D278 (p=0.155)",
+      "PDE3B:M327-MTX3:M277 (p=0.154)",
+      "PDE3B:G256-MTX3:P133 (p=0.151)"
+    ],
+    "sav_hits_p1": [],
+    "sav_hits_p2": []
+  },
+  "O95817_Q8NFG4": {
+    "has_npz": true,
+    "max_prob": 0.140625,
+    "top_residue_contacts": [
+      "BAG3:P209-FLCN:T555 (p=0.141)",
+      "BAG3:V210-FLCN:T555 (p=0.136)",
+      "BAG3:I211-FLCN:T555 (p=0.136)",
+      "BAG3:H212-FLCN:T555 (p=0.130)",
+      "BAG3:I208-FLCN:T555 (p=0.124)"
+    ],
+    "sav_hits_p1": [
+      {
+        "pos": 209,
+        "wt": "P",
+        "mut": "L",
+        "label": "P209L",
+        "is_disease_annotated": true,
+        "note": "P -> L (in MFM6; pathogenic; affects function in protein folding; results in decreased adenyl-nucleotide exchange factor activity; results in aggregation of HSP70 chaperones and proteasomal substrates; reduced thermal stability; affects quaternary structure an",
+        "ftId": "VAR_063089"
+      },
+      {
+        "pos": 209,
+        "wt": "P",
+        "mut": "Q",
+        "label": "P209Q",
+        "is_disease_annotated": true,
+        "note": "P -> Q (in MFM6; likely pathogenic; dbSNP:rs121918312)\"",
+        "ftId": "VAR_090425"
+      },
+      {
+        "pos": 209,
+        "wt": "P",
+        "mut": "S",
+        "label": "P209S",
+        "is_disease_annotated": true,
+        "note": "P -> S (in CMT2JJ; likely pathogenic; dbSNP:rs1589630141)\"",
+        "ftId": "VAR_090426"
+      },
+      {
+        "pos": 455,
+        "wt": "E",
+        "mut": "K",
+        "label": "E455K",
+        "is_disease_annotated": true,
+        "note": "E -> K (in CMD1HH; dbSNP:rs397516881)",
+        "ftId": "VAR_066785"
+      },
+      {
+        "pos": 462,
+        "wt": "L",
+        "mut": "P",
+        "label": "L462P",
+        "is_disease_annotated": true,
+        "note": "L -> P (in CMD1HH; dbSNP:rs397514507)",
+        "ftId": "VAR_066786"
+      }
+    ],
+    "sav_hits_p2": []
+  },
+  "P37231_P51843": {
+    "has_npz": true,
+    "max_prob": 0.04656982421875,
+    "top_residue_contacts": [],
+    "sav_hits_p1": [
+      {
+        "pos": 425,
+        "wt": "R",
+        "mut": "C",
+        "label": "R425C",
+        "is_disease_annotated": true,
+        "note": "R -> C (in FPLD3; dbSNP:rs72551364)",
+        "ftId": "VAR_022701"
+      }
+    ],
+    "sav_hits_p2": [
+      {
+        "pos": 267,
+        "wt": "R",
+        "mut": "P",
+        "label": "R267P",
+        "is_disease_annotated": true,
+        "note": "R -> P (in AHC; impairs transcriptional silencing of the StAR promoter; dbSNP:rs104894888)\"",
+        "ftId": "VAR_004738"
+      },
+      {
+        "pos": 377,
+        "wt": "E",
+        "mut": "K",
+        "label": "E377K",
+        "is_disease_annotated": true,
+        "note": "E -> K (in AHC)",
+        "ftId": "VAR_004742"
+      },
+      {
+        "pos": 380,
+        "wt": "Y",
+        "mut": "D",
+        "label": "Y380D",
+        "is_disease_annotated": true,
+        "note": "Y -> D (in AHC; dbSNP:rs104894900)",
+        "ftId": "VAR_018300"
+      },
+      {
+        "pos": 381,
+        "wt": "L",
+        "mut": "H",
+        "label": "L381H",
+        "is_disease_annotated": true,
+        "note": "L -> H (in AHC; dbSNP:rs104894899)",
+        "ftId": "VAR_018301"
+      },
+      {
+        "pos": 382,
+        "wt": "K",
+        "mut": "N",
+        "label": "K382N",
+        "is_disease_annotated": true,
+        "note": "K -> N (in AHC; dbSNP:rs104894896)",
+        "ftId": "VAR_004743"
+      },
+      {
+        "pos": 385,
+        "wt": "V",
+        "mut": "G",
+        "label": "V385G",
+        "is_disease_annotated": true,
+        "note": "V -> G (in AHC)",
+        "ftId": "VAR_004744"
+      }
+    ]
+  },
+  "P37231_Q15788": {
+    "has_npz": false,
+    "max_prob": 0.203,
+    "top_residue_contacts": [],
+    "sav_hits_p1": [],
+    "sav_hits_p2": []
+  },
+  "Q8TF40_Q9UKB1": {
+    "has_npz": false,
+    "max_prob": 0.419,
+    "top_residue_contacts": [],
+    "sav_hits_p1": [],
+    "sav_hits_p2": []
+  },
+  "P37231_P55055": {
+    "has_npz": true,
+    "max_prob": 0.50048828125,
+    "top_residue_contacts": [
+      "PPARG:L464-NR1H2:M422 (p=0.500)",
+      "PPARG:T468-NR1H2:V425 (p=0.465)",
+      "PPARG:L464-NR1H2:L421 (p=0.414)",
+      "PPARG:Q465-NR1H2:V425 (p=0.404)",
+      "PPARG:T468-NR1H2:M422 (p=0.401)"
+    ],
+    "sav_hits_p1": [
+      {
+        "pos": 425,
+        "wt": "R",
+        "mut": "C",
+        "label": "R425C",
+        "is_disease_annotated": true,
+        "note": "R -> C (in FPLD3; dbSNP:rs72551364)",
+        "ftId": "VAR_022701"
+      }
+    ],
+    "sav_hits_p2": []
+  },
+  "P05141_Q6FI81": {
+    "has_npz": true,
+    "max_prob": 0.09442138671875,
+    "top_residue_contacts": [
+      "SLC25A5:K105-CIAPIN1:D208 (p=0.094)",
+      "SLC25A5:K92-CIAPIN1:N203 (p=0.089)",
+      "SLC25A5:D93-CIAPIN1:D207 (p=0.089)",
+      "SLC25A5:K92-CIAPIN1:A202 (p=0.086)",
+      "SLC25A5:D93-CIAPIN1:E206 (p=0.086)"
+    ],
+    "sav_hits_p1": [],
+    "sav_hits_p2": []
+  },
+  "P05141_P54252": {
+    "has_npz": true,
+    "max_prob": 0.196533203125,
+    "top_residue_contacts": [
+      "SLC25A5:K295-ATXN3:T54 (p=0.197)",
+      "SLC25A5:K206-ATXN3:T54 (p=0.179)",
+      "SLC25A5:K295-ATXN3:V53 (p=0.153)",
+      "SLC25A5:K206-ATXN3:V53 (p=0.145)",
+      "SLC25A5:D93-ATXN3:T54 (p=0.136)"
+    ],
+    "sav_hits_p1": [],
+    "sav_hits_p2": []
+  },
+  "P37231_Q9Y613": {
+    "has_npz": true,
+    "max_prob": 0.1925048828125,
+    "top_residue_contacts": [
+      "PPARG:A461-FHOD1:F34 (p=0.193)",
+      "PPARG:A461-FHOD1:P35 (p=0.191)",
+      "PPARG:Q465-FHOD1:F34 (p=0.180)",
+      "PPARG:L464-FHOD1:F34 (p=0.179)",
+      "PPARG:A461-FHOD1:A32 (p=0.174)"
+    ],
+    "sav_hits_p1": [
+      {
+        "pos": 425,
+        "wt": "R",
+        "mut": "C",
+        "label": "R425C",
+        "is_disease_annotated": true,
+        "note": "R -> C (in FPLD3; dbSNP:rs72551364)",
+        "ftId": "VAR_022701"
+      }
+    ],
+    "sav_hits_p2": []
+  },
+  "Q08499_Q13370": {
+    "has_npz": false,
+    "max_prob": 0.1593,
+    "top_residue_contacts": [],
+    "sav_hits_p1": [],
+    "sav_hits_p2": []
+  }
+}

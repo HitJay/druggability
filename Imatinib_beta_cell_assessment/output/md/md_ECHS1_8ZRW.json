@@ -1,0 +1,36 @@
+{
+  "gene": "ECHS1",
+  "pdb": "8ZRW",
+  "role": "negative_control",
+  "status": "ok",
+  "platform": "OpenMM_250ps_exact_meeko_pose",
+  "ie_units": "kJ/mol (COUL=138.935456 kJ*nm/e^2, r in nm)",
+  "pose_align_nn_rmsd_A": 0.0,
+  "centroid_drift_A": 4.37,
+  "ligand_rmsd_A": 5.39,
+  "end_dist_to_pocket_center_A": 6.57,
+  "md_stable": false,
+  "sum_top5_IE_kJmol": -220.21,
+  "sum_top5_IE_kcalmol": -52.63,
+  "top_contacts_kJmol": {
+    "ARG73A": -100.26,
+    "LYS15B": -54.55,
+    "GLU57A": -26.37,
+    "PRO56A": -23.6,
+    "PHE12B": -15.43,
+    "PHE42A": -12.83,
+    "ILE60A": -10.65,
+    "ALA24A": -10.15
+  },
+  "runtime_s": 217.3,
+  "top_contacts_uniprot_kJmol": {
+    "ARG197A": -100.26,
+    "LYS282C": -54.55,
+    "GLU164A": -26.37,
+    "PRO163A": -23.6,
+    "PHE279C": -15.43,
+    "PHE139A": -12.83,
+    "ILE167A": -10.65,
+    "ALA96A": -10.15
+  }
+}

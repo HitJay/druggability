@@ -1,0 +1,36 @@
+{
+  "gene": "PDGFRA",
+  "pdb": "6JOL",
+  "role": "anchor_primary",
+  "status": "ok",
+  "platform": "OpenMM_250ps_exact_meeko_pose",
+  "ie_units": "kJ/mol (COUL=138.935456 kJ*nm/e^2, r in nm)",
+  "pose_align_nn_rmsd_A": 0.0,
+  "centroid_drift_A": 0.31,
+  "ligand_rmsd_A": 0.79,
+  "end_dist_to_pocket_center_A": 0.42,
+  "md_stable": true,
+  "sum_top5_IE_kJmol": -197.63,
+  "sum_top5_IE_kcalmol": -47.23,
+  "top_contacts_kJmol": {
+    "LYS23A": -48.74,
+    "GLU34A": -45.48,
+    "CYS100A": -41.21,
+    "CYS63A": -31.87,
+    "THR60A": -30.33,
+    "ASP101A": -30.18,
+    "MET38A": -25.21,
+    "TYR62A": -22.05
+  },
+  "runtime_s": 239.9,
+  "top_contacts_uniprot_kJmol": {
+    "LYS627A": -48.74,
+    "GLU644A": -45.48,
+    "CYS835A": -41.21,
+    "CYS677A": -31.87,
+    "THR674A": -30.33,
+    "ASP836A": -30.18,
+    "MET648A": -25.21,
+    "TYR676A": -22.05
+  }
+}

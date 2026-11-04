@@ -1,0 +1,70 @@
+{
+  "gene": "ECHS1",
+  "pdb": "8ZRW",
+  "pocket_type": "other_cocrystal",
+  "cocrystal_lig": "CO8:A:301",
+  "cocrystal_n_heavy": 57,
+  "pocket_center": [
+    94.54,
+    78.4,
+    126.65
+  ],
+  "crystal_in_place_score": -17.22,
+  "redock_score": -17.59,
+  "redock_poses": [
+    -17.59
+  ],
+  "redock_recovery_A": 0.15,
+  "gate_pass": true,
+  "imatinib_best_score": -9.48,
+  "imatinib_mean_score": -9.45,
+  "imatinib_std_score": 0.02,
+  "imatinib_inter_kcal": -13.36,
+  "imatinib_intra_kcal": -1.07,
+  "imatinib_in_pocket_A": 5.11,
+  "imatinib_run_dists_A": [
+    5.17,
+    5.11,
+    5.16
+  ],
+  "imatinib_runs": [
+    {
+      "run": 1,
+      "top_score": -9.45,
+      "centroid_dist_A": 5.17,
+      "poses": [
+        -9.45,
+        -9.31,
+        -9.28,
+        -9.2,
+        -8.99
+      ]
+    },
+    {
+      "run": 2,
+      "top_score": -9.48,
+      "centroid_dist_A": 5.11,
+      "poses": [
+        -9.48,
+        -9.27,
+        -9.12,
+        -9.05,
+        -9.0
+      ]
+    },
+    {
+      "run": 3,
+      "top_score": -9.42,
+      "centroid_dist_A": 5.16,
+      "poses": [
+        -9.42,
+        -9.42,
+        -9.14,
+        -9.03,
+        -7.3
+      ]
+    }
+  ],
+  "in_pocket_engaged": false,
+  "runtime_s": 50.4
+}

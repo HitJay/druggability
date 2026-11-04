@@ -1,0 +1,55 @@
+{
+  "name": "Imatinib",
+  "synonyms": [
+    "Imatinib mesylate",
+    "Gleevec",
+    "Glivec",
+    "STI571",
+    "STI-571",
+    "CGP-57148B"
+  ],
+  "pubchem_cid": 5291,
+  "chembl_id_parent": "CHEMBL941",
+  "chembl_id_salt": "CHEMBL1642",
+  "active_metabolite": {
+    "name": "N-desmethyl imatinib (CGP74588)",
+    "chembl_id": "CHEMBL160714",
+    "note": "Primary active metabolite (~10-15% of parent AUC, equipotent at ABL1/KIT/PDGFR)"
+  },
+  "canonical_smiles": "CC1=C(C=C(C=C1)NC(=O)C2=CC=C(C=C2)CN3CCN(CC3)C)NC4=NC=CC(=N4)C5=CN=CC=C5",
+  "inchikey": "KTUFNOKKBVMGRW-UHFFFAOYSA-N",
+  "formula": "C29H31N7O",
+  "molecular_weight": 493.6,
+  "pdb_ligand_code": "STI",
+  "clinical_pk": {
+    "standard_dose": "400 mg QD oral (also tested in Phase 2 recent-onset T1D trial, Gitelman et al. Lancet Diabetes Endocrinol 2021, PMID 34214479)",
+    "total_cmax_uM": 5.2,
+    "total_cmax_range_uM": [
+      4.0,
+      7.5
+    ],
+    "total_ctrough_uM": 2.0,
+    "plasma_protein_binding_pct": 95.0,
+    "primary_binding_proteins": [
+      "ALB (human serum albumin)",
+      "ORM1 (alpha-1-acid glycoprotein)"
+    ],
+    "free_fraction_fu": 0.05,
+    "free_cmax_nM": 260.0,
+    "free_cmax_range_nM": [
+      150.0,
+      375.0
+    ],
+    "free_ctrough_nM": 100.0,
+    "in_vitro_islet_assay_conc_uM": [
+      1.0,
+      3.0,
+      10.0
+    ],
+    "pk_source_pmids": [
+      "15738082",
+      "16503800",
+      "34214479"
+    ]
+  }
+}

@@ -90,6 +90,20 @@ reports/bq1_99_triage/amylin_mrap2_study/boltz_runs/boltz_results_*/lightning_lo
 reports/bq1_99_triage/amylin_mrap2_study/boltz_runs/boltz_results_*/processed/
 reports/bq1_99_triage/amylin_mrap2_study/boltz_runs/boltz_results_*/predictions/*/*.npz
 
+# Frontrunners 39-pair triage: audit artifacts only (TSV/MD/JSON summaries + build scripts)
+reports/frontrunners_triage/reply_email_to_*.txt
+reports/frontrunners_triage/*.xlsx
+reports/frontrunners_triage/*_cache.json
+reports/frontrunners_triage/rf2_run/
+reports/frontrunners_triage/pdb_structures/
+reports/frontrunners_triage/Top5_PPI_Frontrunners_7Criteria_Dossier_*.txt
+
+# ER stress & Imatinib beta-cell assessments: audit artifacts + deliverables (exclude email drafts)
+!ER_stress_SMoL_assessment/output/
+ER_stress_SMoL_assessment/output/email_reply_to_*.txt
+!Imatinib_beta_cell_assessment/output/
+Imatinib_beta_cell_assessment/output/final_deliverables/email_reply_to_*.txt
+
 # GPR81 follow-up deliverables (regenerable from build_*.py scripts; CIFS archive copy under output/2026-08-05/)
 data/gpr81_phase1/followup_2026-08/figures
 data/gpr81_phase1/followup_2026-08/gpr81_followup_report.html

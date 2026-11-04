@@ -1,0 +1,74 @@
+{
+  "gene": "DDR2",
+  "pdb": "7AYM",
+  "pocket_type": "other_cocrystal",
+  "cocrystal_lig": "4VD:A:901",
+  "cocrystal_n_heavy": 31,
+  "pocket_center": [
+    2.03,
+    -9.37,
+    -11.55
+  ],
+  "crystal_in_place_score": -11.43,
+  "redock_score": -12.21,
+  "redock_poses": [
+    -12.21,
+    -11.2,
+    -11.03,
+    -10.86,
+    -10.42
+  ],
+  "redock_recovery_A": 0.3,
+  "gate_pass": true,
+  "imatinib_best_score": -10.64,
+  "imatinib_mean_score": -10.63,
+  "imatinib_std_score": 0.01,
+  "imatinib_inter_kcal": -14.99,
+  "imatinib_intra_kcal": -0.98,
+  "imatinib_in_pocket_A": 2.25,
+  "imatinib_run_dists_A": [
+    2.3,
+    2.3,
+    2.25
+  ],
+  "imatinib_runs": [
+    {
+      "run": 1,
+      "top_score": -10.61,
+      "centroid_dist_A": 2.3,
+      "poses": [
+        -10.61,
+        -10.14,
+        -10.05,
+        -9.86,
+        -9.57
+      ]
+    },
+    {
+      "run": 2,
+      "top_score": -10.63,
+      "centroid_dist_A": 2.3,
+      "poses": [
+        -10.63,
+        -10.15,
+        -9.89,
+        -9.82,
+        -9.77
+      ]
+    },
+    {
+      "run": 3,
+      "top_score": -10.64,
+      "centroid_dist_A": 2.25,
+      "poses": [
+        -10.64,
+        -10.18,
+        -10.12,
+        -9.8,
+        -9.75
+      ]
+    }
+  ],
+  "in_pocket_engaged": true,
+  "runtime_s": 159.6
+}

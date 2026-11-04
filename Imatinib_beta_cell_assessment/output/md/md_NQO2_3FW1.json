@@ -1,0 +1,36 @@
+{
+  "gene": "NQO2",
+  "pdb": "3FW1",
+  "role": "candidate_offtarget",
+  "status": "ok",
+  "platform": "OpenMM_250ps_exact_meeko_pose",
+  "ie_units": "kJ/mol (COUL=138.935456 kJ*nm/e^2, r in nm)",
+  "pose_align_nn_rmsd_A": 0.0,
+  "centroid_drift_A": 1.38,
+  "ligand_rmsd_A": 3.21,
+  "end_dist_to_pocket_center_A": 2.44,
+  "md_stable": true,
+  "sum_top5_IE_kJmol": -132.22,
+  "sum_top5_IE_kcalmol": -31.6,
+  "top_contacts_kJmol": {
+    "GLN20B": -41.95,
+    "ASN29A": -23.29,
+    "GLU39A": -22.72,
+    "GLY18A": -22.29,
+    "ILE26B": -21.97,
+    "TRP10A": -21.2,
+    "PHE46B": -20.84,
+    "GLY4B": -14.45
+  },
+  "runtime_s": 193.0,
+  "top_contacts_uniprot_kJmol": {
+    "GLN122B": -41.95,
+    "ASN161A": -23.29,
+    "GLU193A": -22.72,
+    "GLY149A": -22.29,
+    "ILE128B": -21.97,
+    "TRP105A": -21.2,
+    "PHE178B": -20.84,
+    "GLY68B": -14.45
+  }
+}

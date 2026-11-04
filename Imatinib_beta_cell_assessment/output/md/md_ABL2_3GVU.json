@@ -1,0 +1,36 @@
+{
+  "gene": "ABL2",
+  "pdb": "3GVU",
+  "role": "anchor_primary",
+  "status": "ok",
+  "platform": "OpenMM_250ps_exact_meeko_pose",
+  "ie_units": "kJ/mol (COUL=138.935456 kJ*nm/e^2, r in nm)",
+  "pose_align_nn_rmsd_A": 0.0,
+  "centroid_drift_A": 0.73,
+  "ligand_rmsd_A": 1.22,
+  "end_dist_to_pocket_center_A": 0.68,
+  "md_stable": true,
+  "sum_top5_IE_kJmol": -207.7,
+  "sum_top5_IE_kcalmol": -49.64,
+  "top_contacts_kJmol": {
+    "GLU35A": -80.35,
+    "ASP97A": -38.53,
+    "THR60A": -34.38,
+    "PHE98A": -27.7,
+    "MET39A": -26.74,
+    "MET63A": -26.01,
+    "ALA96A": -23.59,
+    "TYR12A": -23.12
+  },
+  "runtime_s": 198.7,
+  "top_contacts_uniprot_kJmol": {
+    "GLU332A": -80.35,
+    "ASP427A": -38.53,
+    "THR361A": -34.38,
+    "PHE428A": -27.7,
+    "MET336A": -26.74,
+    "MET364A": -26.01,
+    "ALA426A": -23.59,
+    "TYR299A": -23.12
+  }
+}

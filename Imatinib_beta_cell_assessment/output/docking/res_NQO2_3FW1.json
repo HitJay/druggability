@@ -1,0 +1,75 @@
+{
+  "gene": "NQO2",
+  "pdb": "3FW1",
+  "pocket_type": "imatinib_cocrystal",
+  "cocrystal_lig": "STI:A:233",
+  "cocrystal_n_heavy": 37,
+  "pocket_center": [
+    47.43,
+    27.83,
+    26.82
+  ],
+  "crystal_in_place_score": null,
+  "redock_score": -9.51,
+  "redock_poses": [
+    -9.51,
+    -9.38,
+    -8.86,
+    -8.3,
+    -8.16
+  ],
+  "redock_recovery_A": 2.27,
+  "gate_pass": true,
+  "imatinib_best_score": -9.79,
+  "imatinib_mean_score": -9.73,
+  "imatinib_std_score": 0.04,
+  "imatinib_inter_kcal": -13.8,
+  "imatinib_intra_kcal": -0.5,
+  "imatinib_in_pocket_A": 2.38,
+  "imatinib_run_dists_A": [
+    2.38,
+    2.35,
+    2.33
+  ],
+  "imatinib_runs": [
+    {
+      "run": 1,
+      "top_score": -9.79,
+      "centroid_dist_A": 2.38,
+      "poses": [
+        -9.79,
+        -9.51,
+        -9.26,
+        -9.24,
+        -9.09
+      ]
+    },
+    {
+      "run": 2,
+      "top_score": -9.69,
+      "centroid_dist_A": 2.35,
+      "poses": [
+        -9.69,
+        -9.33,
+        -9.26,
+        -9.17,
+        -9.12
+      ]
+    },
+    {
+      "run": 3,
+      "top_score": -9.71,
+      "centroid_dist_A": 2.33,
+      "poses": [
+        -9.71,
+        -9.5,
+        -9.3,
+        -9.15,
+        -8.67
+      ]
+    }
+  ],
+  "in_pocket_engaged": true,
+  "runtime_s": 25.0,
+  "note": "Biological dimer reconstructed via REMARK 350 BIOMT2 (active site sits at homodimer interface over FAD); 14 A tight box."
+}
