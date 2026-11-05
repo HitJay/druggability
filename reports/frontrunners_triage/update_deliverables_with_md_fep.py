@@ -54,7 +54,7 @@ thin_border = Border(
 )
 
 ws5.merge_cells("A1:N1")
-ws5["A1"] = "Template-Free Prioritized PPI Frontrunners (10 Complexes Across Top 5 Axes) — Boltz-2 + omicMSA Docking, Explicit-Solvent NPT MD, MM/GBSA & 8-Lambda Alchemical TI FEP Audit"
+ws5["A1"] = "Template-Free Prioritized PPI Frontrunners (11 Complexes Across Top 5 Axes) — Boltz-2 + omicMSA Docking, Explicit-Solvent NPT MD, MM/GBSA & 8-Lambda Alchemical TI FEP Audit"
 ws5["A1"].font = font_title
 ws5["A1"].fill = fill_navy
 ws5["A1"].alignment = Alignment(vertical="center", horizontal="left", indent=1)
@@ -112,10 +112,10 @@ for ri, d in enumerate(all_md_fep, 4):
         cell.font = font_bold if ci in (1, 3, 12) else font_cell
         cell.alignment = Alignment(vertical="center", horizontal="center" if ci in range(6, 14) else "left", wrap_text=True)
 
-# Part B: Full 100-Row 8-Lambda Alchemical TI FEP Mutational Hotspot Scan Table
-start_b = 16
+# Part B: Full 110-Row 8-Lambda Alchemical TI FEP Mutational Hotspot Scan Table
+start_b = 17
 ws5.merge_cells(f"A{start_b}:N{start_b}")
-ws5[f"A{start_b}"] = "Part B: 8-Lambda Alchemical TI FEP Mutational Hotspot Scan Across All 10 Template-Free Complexes (100 Mutations Audited, Precision=double)"
+ws5[f"A{start_b}"] = "Part B: 8-Lambda Alchemical TI FEP Mutational Hotspot Scan Across All 11 Template-Free Complexes (110 Mutations Audited, Precision=double)"
 ws5[f"A{start_b}"].font = font_sec
 ws5[f"A{start_b}"].fill = fill_teal
 ws5[f"A{start_b}"].alignment = Alignment(vertical="center", horizontal="left", indent=1)
@@ -188,7 +188,7 @@ bars1 = ax1.barh(y_a, dg_vals, height=0.62, color=colors_a, edgecolor="#1A1A2E",
 ax1.set_yticks(y_a)
 ax1.set_yticklabels(labels_a, fontsize=8.0, fontweight="bold", color="#1A1A2E")
 ax1.set_xlabel("Explicit-Solvent Ensemble |-dG_GBn2| (kcal/mol)", fontsize=8.8, fontweight="bold", color="#1A1A2E")
-ax1.set_title("A. 10 Template-Free Frontrunners: MD Stability & MM/GBSA", fontsize=9.5, fontweight="bold", color=NAVY, pad=8)
+ax1.set_title("A. 11 Template-Free Frontrunners: MD Stability & MM/GBSA", fontsize=9.5, fontweight="bold", color=NAVY, pad=8)
 ax1.set_xlim(0, 620)
 ax1.grid(axis="x", linestyle="--", alpha=0.35)
 ax1.spines["top"].set_visible(False)
@@ -201,20 +201,20 @@ for bar, d in zip(bars1, all_md_fep):
 
 # Panel B: Key Validated Interface SAVs & Experimental Mutagens — 8-Lambda Alchemical TI FEP ddG (kcal/mol)
 fep_highlights = [
-    ("FBXW11 R363W (SAV)", 19.28, RED),
-    ("FBXW11 R447Q (SAV)", 15.47, RED),
-    ("PDE3B R12A (Mutagen)", 11.01, TEAL),
-    ("PDE3B K9A (Mutagen)", 10.14, TEAL),
-    ("LGR4 R156 (Core Anchor)", 10.08, NAVY),
-    ("GRB14 Q363 (BPS Contact)", 6.98, NAVY),
-    ("FNIP1 D253 (BTRC Degron)", 6.63, TEAL),
-    ("PRMT6 E244 (STARD10 Core)", 6.40, NAVY),
-    ("PDE3B R6A (Mutagen)", 5.65, TEAL),
-    ("BTRC R510A (Mutagen)", 5.49, TEAL),
-    ("GRB14 Q348A (Mutagen)", 4.16, TEAL),
-    ("PRKAG1 P134 (FNIP1 Core)", 4.08, NAVY),
-    ("FNIP1 K495 (PRKAG1 Core)", 3.71, NAVY),
-    ("BTRC Y307A (Mutagen)", 3.26, TEAL),
+    ("FBXW11 R363W (SAV)", 19.42, RED),
+    ("FBXW11 R447Q (SAV)", 15.35, RED),
+    ("PPARG D424 (RF2 #2)", 12.56, NAVY),
+    ("PDE3B R12A (Mutagen)", 11.04, TEAL),
+    ("PDE3B K9A (Mutagen)", 10.15, TEAL),
+    ("LGR4 R156 (Core Anchor)", 9.92, NAVY),
+    ("GRB14 R33 (N-term TNKS2)", 8.31, NAVY),
+    ("FBXW11 R63 (RF2 #1)", 8.19, NAVY),
+    ("PRMT6 E244 (RF2 #2)", 6.17, NAVY),
+    ("BTRC R510A (Mutagen)", 5.63, TEAL),
+    ("PDE3B R6A (Mutagen)", 5.48, TEAL),
+    ("GRB14 D38 (N-term TNKS2)", 5.39, NAVY),
+    ("GRB14 Q348A (Mutagen)", 4.19, TEAL),
+    ("BTRC Y307A (Mutagen)", 3.28, TEAL),
 ]
 fep_names = [x[0] for x in fep_highlights]
 fep_ddg = [x[1] for x in fep_highlights]
@@ -239,12 +239,20 @@ fig_path = OUT_DIR / "frontrunners_template_free_md_fep_2panel.png"
 fig.savefig(fig_path, dpi=300, bbox_inches="tight", pad_inches=0.18)
 print("Saved 2-panel MD+FEP figure:", fig_path)
 
-# Sync updated workbook, figure, and PDBs to shared folder
+dossier_md = OUT_DIR / "Top5_PPI_Frontrunners_7Criteria_Dossier_2026-11-03.md"
+dossier_txt = OUT_DIR / "Top5_PPI_Frontrunners_7Criteria_Dossier_2026-11-03.txt"
+if dossier_md.exists():
+    shutil.copyfile(dossier_md, dossier_txt)
+
+# Sync updated workbook, figure, dossier, and PDBs to shared folder
 if SHARED_DIR.exists():
     shutil.copyfile(xlsx_path, SHARED_DIR / xlsx_path.name)
     shutil.copyfile(fig_path, SHARED_DIR / fig_path.name)
+    if dossier_md.exists():
+        shutil.copyfile(dossier_md, SHARED_DIR / dossier_md.name)
+        shutil.copyfile(dossier_txt, SHARED_DIR / dossier_txt.name)
     pdb_shared = SHARED_DIR / "02_TemplateFree_Docked_PDBs"
     pdb_shared.mkdir(parents=True, exist_ok=True)
     for pdb_f in sorted((MD_FEP_DIR / "pdbs").glob("*.pdb")):
         shutil.copyfile(pdb_f, pdb_shared / pdb_f.name)
-    print("Synced updated Excel, figure, and 10 canonical PDBs to:", SHARED_DIR)
+    print("Synced updated Excel, figure, dossier, and 11 canonical PDBs to:", SHARED_DIR)

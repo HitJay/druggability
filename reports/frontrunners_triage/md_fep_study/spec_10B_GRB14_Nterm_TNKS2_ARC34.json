@@ -1,0 +1,60 @@
+{
+  "id": "10B_GRB14_Nterm_TNKS2_ARC34",
+  "axis": "Axis 5B-TrueNterm (PMID:11278563 Experimentally Mapped N-term 1-110 + ARC Repeats 10-19)",
+  "pair_label": "GRB14(N-term 1-115)-TNKS2(ARC3-4 330-650)",
+  "chainA": {
+    "id": "A",
+    "gene": "GRB14",
+    "uniprot": "Q14449",
+    "start": 1,
+    "end": 115
+  },
+  "chainB": {
+    "id": "B",
+    "gene": "TNKS2",
+    "uniprot": "Q9H2K2",
+    "start": 330,
+    "end": 650
+  },
+  "fep_targets": [
+    [
+      "A",
+      90,
+      "GRB14 Phe90 (Human Coding SAV p.Phe90Ile, rs61748245)"
+    ],
+    [
+      "A",
+      48,
+      "GRB14 Arg48 (Putative Tankyrase-Binding Motif RALLPLPDG Pos 1)"
+    ],
+    [
+      "A",
+      54,
+      "GRB14 Asp54 (Putative Tankyrase-Binding Motif RALLPLPDG Asp)"
+    ],
+    [
+      "A",
+      32,
+      "GRB14 Gly32 (Putative Tankyrase-Binding Motif GRGDAHD)"
+    ],
+    [
+      "B",
+      401,
+      "TNKS2 Leu401 (Validated ARC3 Substrate-Abolishing Mutagen L401W, PMID:22153077)"
+    ],
+    [
+      "B",
+      560,
+      "TNKS2 Leu560 (Validated ARC4 Substrate-Abolishing Mutagen L560W, PMID:22153077)"
+    ],
+    [
+      "B",
+      553,
+      "TNKS2 His553 (Validated FIH Hydroxylation Mutagen H553D/N, PMID:21251231)"
+    ]
+  ],
+  "seqA_len": 115,
+  "seqB_len": 321,
+  "total_len": 436,
+  "yaml_file": "/das/user/QYJI/druggability/reports/frontrunners_triage/md_fep_study/boltz_inputs/10B_GRB14_Nterm_TNKS2_ARC34.yaml"
+}
