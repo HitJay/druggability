@@ -1,0 +1,467 @@
+#!/usr/bin/env python3
+"""Build the concise, highly legible Druggability Agent Platform Capability One-Pager (English).
+
+Outputs:
+  - /das/user/QYJI/druggability/docs/druggability_capability_onepager_en.html
+  - /TDE_TV/shared_folder/QYJI/druggability/druggability_capability_onepager_en.html
+"""
+import re
+import shutil
+from pathlib import Path
+
+REPO_ROOT = Path("/das/user/QYJI/druggability")
+LOCAL_HTML = REPO_ROOT / "docs/druggability_capability_onepager_en.html"
+SHARED_HTML = Path("/TDE_TV/shared_folder/QYJI/druggability/druggability_capability_onepager_en.html")
+
+HTML = r"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Druggability Agent Platform — Executive Capability One-Pager</title>
+<style>
+  :root {
+    --blue: #001965;
+    --navy-dark: #0A2540;
+    --teal: #00857C;
+    --teal-light: #E6F6F5;
+    --coral: #D9383A;
+    --coral-light: #FDF2F2;
+    --slate: #475569;
+    --bg: #F1F5F9;
+    --card-border: #CBD5E1;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Helvetica, Arial, sans-serif;
+    color: #1E293B;
+    background: var(--bg);
+    margin: 0;
+    line-height: 1.5;
+    font-size: 14.5px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1420px; margin: 0 auto; padding: 0 24px 28px; }
+
+  /* ── Header ── */
+  header.top {
+    background: linear-gradient(135deg, #001965 0%, #0A2540 62%, #00857C 100%);
+    color: #fff;
+    padding: 20px 32px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 14px rgba(0, 25, 101, 0.14);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+  }
+  header.top h1 { margin: 0 0 4px; font-size: 25px; font-weight: 700; letter-spacing: -0.3px; }
+  header.top .sub { font-size: 14.8px; color: #E2E8F0; line-height: 1.42; max-width: 940px; }
+  header.top .meta {
+    text-align: right;
+    font-size: 13.5px;
+    color: #CBD5E1;
+    line-height: 1.52;
+    flex-shrink: 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.24);
+    padding-left: 20px;
+  }
+  header.top .meta b { color: #fff; }
+
+  /* ── KPI Strip ── */
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin-top: 14px;
+  }
+  .kpi {
+    background: #fff;
+    border: 1px solid var(--card-border);
+    border-left: 4.5px solid var(--blue);
+    border-radius: 8px;
+    padding: 10px 14px;
+    box-shadow: 0 1px 3px rgba(0, 25, 101, 0.05);
+  }
+  .kpi.teal { border-left-color: var(--teal); }
+  .kpi.coral { border-left-color: var(--coral); }
+  .kpi .v { font-size: 22px; font-weight: 800; color: var(--blue); line-height: 1.15; }
+  .kpi.teal .v { color: var(--teal); }
+  .kpi.coral .v { color: var(--coral); }
+  .kpi .l { font-size: 13px; color: var(--slate); margin-top: 3px; line-height: 1.32; font-weight: 500; }
+
+  /* ── Section Headings ── */
+  h2.sec {
+    color: var(--blue);
+    font-size: 16px;
+    margin: 18px 0 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2.5px solid var(--teal);
+    padding-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  h2.sec .subnote { font-size: 13px; color: var(--slate); font-weight: 400; text-transform: none; letter-spacing: 0; }
+
+  /* ── 6 Capability Pillar Cards (3x2 Grid) ── */
+  .grid6 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 12px 16px;
+    box-shadow: 0 1px 3px rgba(0, 25, 101, 0.05);
+    border: 1px solid var(--card-border);
+    border-top: 3.5px solid var(--blue);
+    display: flex;
+    flex-direction: column;
+  }
+  .card.teal { border-top-color: var(--teal); }
+  .card.coral { border-top-color: var(--coral); }
+  .card h3 {
+    margin: 0 0 3px;
+    font-size: 15.5px;
+    color: var(--blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card .tag {
+    font-size: 12.4px;
+    color: var(--teal);
+    font-weight: 600;
+    font-family: ui-monospace, Menlo, Consolas, monospace;
+    margin-bottom: 5px;
+  }
+  .card ul { margin: 2px 0 0; padding-left: 17px; }
+  .card li { margin: 3.5px 0; font-size: 13.8px; color: #334155; line-height: 1.42; }
+  .card li b { color: var(--navy-dark); }
+  .badge {
+    display: inline-block;
+    font-size: 11.2px;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 1px 7px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .b-prod { background: var(--teal-light); color: var(--teal); }
+  .b-gpu { background: #EEF2FF; color: #4338CA; }
+  .b-new { background: var(--coral-light); color: var(--coral); }
+
+  /* ── Benchmark Table ── */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 13.8px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 25, 101, 0.05);
+    border: 1px solid var(--card-border);
+  }
+  th {
+    background: var(--blue);
+    color: #fff;
+    text-align: left;
+    padding: 8.5px 12px;
+    font-weight: 600;
+    font-size: 13.2px;
+    letter-spacing: 0.2px;
+  }
+  td {
+    padding: 7.5px 12px;
+    border-bottom: 1px solid #E2E8F0;
+    vertical-align: middle;
+    line-height: 1.42;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #F8FAFC; }
+  .sub-td { font-size: 12.4px; color: var(--slate); display: block; margin-top: 1px; }
+  .st {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12.2px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .st-ok { background: #DCFCE7; color: #15803D; }
+  .st-go { background: #E0E7FF; color: #3730A3; }
+
+  /* ── Bottom 2-Column Panels ── */
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .panel {
+    background: #fff;
+    border-radius: 8px;
+    padding: 13px 18px;
+    box-shadow: 0 1px 3px rgba(0, 25, 101, 0.05);
+    border: 1px solid var(--card-border);
+  }
+  .panel.boundary { border-left: 4.5px solid var(--coral); }
+  .panel.stack { border-left: 4.5px solid var(--teal); }
+  .panel h3 { margin: 0 0 7px; font-size: 15.2px; color: var(--blue); }
+  .panel ul { margin: 0; padding-left: 17px; }
+  .panel li { margin: 4.5px 0; font-size: 13.8px; line-height: 1.44; color: #334155; }
+  .panel li b { color: var(--navy-dark); }
+
+  .pills { display: flex; gap: 6px; flex-wrap: wrap; margin: 4px 0 9px; }
+  .pill {
+    background: #F1F5F9;
+    border: 1px solid #CBD5E1;
+    border-radius: 14px;
+    padding: 2px 10px;
+    font-size: 12.4px;
+    color: var(--navy-dark);
+    font-family: ui-monospace, Menlo, Consolas, monospace;
+  }
+  .pill.hl { background: var(--teal-light); border-color: var(--teal); color: var(--teal); font-weight: 600; }
+
+  code {
+    font-family: ui-monospace, Menlo, Consolas, monospace;
+    font-size: 12.6px;
+    background: #F1F5F9;
+    padding: 1px 5px;
+    border-radius: 4px;
+    color: var(--blue);
+  }
+  footer {
+    margin-top: 14px;
+    font-size: 12.6px;
+    color: var(--slate);
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--card-border);
+    padding-top: 9px;
+  }
+  @media print {
+    body { background: #fff; }
+    .wrap { max-width: 100%; padding: 0 10px; }
+    .card, .panel, .kpi, table { box-shadow: none; }
+    header.top { border-radius: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <div>
+      <h1>Druggability Agent Platform — Executive Capability One-Pager</h1>
+      <div class="sub">End-to-end computational target assessment &amp; structural pharmacology: Target Genetics &amp; Safety &rarr; Proteome PPI &amp; SAVs &rarr; Peptide &amp; BBB Engineering &rarr; Pocket &amp; Target Fishing &rarr; Explicit MD &amp; Alchemical FEP/TI &rarr; 3D WebGL &amp; Deck Delivery.</div>
+    </div>
+    <div class="meta">
+      Platform: <b>druggability (v0.3.0)</b><br>
+      Compute: <b>Novo HPC (A100 &amp; 8&times;L20 GPUs)</b><br>
+      Team: <b>Research Insights China (RIC) · Nov 2026</b>
+    </div>
+  </header>
+
+  <!-- ════ HEADLINE KPI STRIP ════ -->
+  <div class="kpi-row">
+    <div class="kpi"><div class="v">6 Modules</div><div class="l">Unified Python &amp; CLI pipeline across SM, Peptide, PPI &amp; RNAi</div></div>
+    <div class="kpi teal"><div class="v">9 Campaigns</div><div class="l">Delivered across GPCR, Incretin, Beta-Cell &amp; Metabolic PPI</div></div>
+    <div class="kpi"><div class="v">20,260</div><div class="l">Human proteome PPI funnel (~6 GPU-h/bait; 262&times; enrichment)</div></div>
+    <div class="kpi teal"><div class="v">&gt;2,100 ns/d</div><div class="l">Explicit-solvent MD &amp; 8-&lambda; double-precision TI/FEP</div></div>
+    <div class="kpi"><div class="v">25+ APIs</div><div class="l">Open Targets, UKB WES, ChEMBL &amp; internal sc177 ELN/PDBs</div></div>
+    <div class="kpi coral"><div class="v">4-Tier Audit</div><div class="l">Strict [FACT / OBS / MECH / HYP] tagging &amp; pytest gates</div></div>
+  </div>
+
+  <!-- ════ 6 CORE CAPABILITY MODULES (3x2) ════ -->
+  <h2 class="sec">Six Core Capability Modules <span class="subnote">Modular architecture under the top-level <code>druggability</code> namespace</span></h2>
+  <div class="grid6">
+    <div class="card">
+      <h3>1 · Target Genetics &amp; Safety <span class="badge b-prod">Production</span></h3>
+      <div class="tag">druggability.tractability · nn_data_service · 3_safety</div>
+      <ul>
+        <li><b>5-Axis Target Triage</b>: SM/AB/PROTAC tractability, ChEMBL ligandability, structure, clinical precedents &amp; bidirectional safety.</li>
+        <li><b>Human Genetics &amp; Internal Data</b>: Open Targets v4, UKB 454k/1M exomes, and <code>sc177</code> OData v4 (ELN, NNC compounds, internal PDBs).</li>
+      </ul>
+    </div>
+
+    <div class="card teal">
+      <h3>2 · Proteome PPI &amp; Interface SAVs <span class="badge b-new">New · GPU</span></h3>
+      <div class="tag">RF2-PPI (A100/L20) · Boltz-2 omicMSA · interface_variants</div>
+      <ul>
+        <li><b>Proteome Partner Discovery</b>: Baker 7&times; omicMSA + RF2-PPI + AF2 funnel (43.2% recall on &gt;1,500 &Aring;&sup2; complexes; 39 frontrunners audited).</li>
+        <li><b>3D Disease-SAV Mapping</b>: Maps UniProt &amp; AlphaMissense pathogenic variants onto 6 &Aring; contact surfaces to design point-mutant controls.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>3 · Peptide &amp; CNS/BBB Engineering <span class="badge b-gpu">A100 GPU</span></h3>
+      <div class="tag">druggability.peptide (affinity · scan · chem_mod · bbb)</div>
+      <ul>
+        <li><b>Contact Affinity &amp; Scanning</b>: PRODIGY physical contact networks (&Delta;G, K<sub>d</sub>) and high-throughput Ala / 20-AA mutational hotspot scans.</li>
+        <li><b>Protraction &amp; BBB Exposure</b>: 3D steric cone audit for C16/C18/C20 lipidation exit vectors + ESM-2 BBB head (test AUC = 0.89).</li>
+      </ul>
+    </div>
+
+    <div class="card teal">
+      <h3>4 · Pocket Detection &amp; Target Fishing <span class="badge b-gpu">A100 AI</span></h3>
+      <div class="tag">druggability.pocket · drugclip · vina · image2smiles</div>
+      <ul>
+        <li><b>Multi-Tier Virtual Screening</b>: Contrastive DrugCLIP (2.94M library in 22s) &rarr; tight-box Vina (&lt;2.0 &Aring; redock gate) &rarr; Boltz-2 cross-validation.</li>
+        <li><b>Off-Target Deconvolution</b>: 5-source target fishing + clinical free C<sub>max</sub>/K<sub>i</sub> occupancy gating + single-cell RNA expression triage.</li>
+      </ul>
+    </div>
+
+    <div class="card coral">
+      <h3>5 · Explicit MD &amp; Alchemical FEP/TI <span class="badge b-gpu">A100 / L20</span></h3>
+      <div class="tag">druggability.md · OpenMM 8.3 CUDA · openmmtools</div>
+      <ul>
+        <li><b>Explicit-Solvent Dynamics</b>: All-atom Amber14SB + TIP3P water + 0.15M NaCl MD; vetoes false-positive docking poses and static void artifacts.</li>
+        <li><b>Alchemical FEP &amp; Annihilation TI</b>: Congeneric relative FEP and 8-&lambda; double-precision computational alanine scanning (167 anchors audited).</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>6 · 3D Dossiers &amp; Assay Governance <span class="badge b-prod">Production</span></h3>
+      <div class="tag">druggability.report · 3Dmol.js · Marp PPTX/PDF</div>
+      <ul>
+        <li><b>Zero-Install Deliverables</b>: Self-contained 3Dmol.js WebGL HTML hubs, editable NN-styled PPTX + vector PDF decks, and companion <code>.txt</code> emails.</li>
+        <li><b>Selectivity Counter-Screens</b>: Automated family counter-screens (OXTR vs V2R; HCAR1 vs HCAR2/3; PPARG–LPIN1 vs MED1/NCOA1).</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ════ VALIDATED BENCHMARKS TABLE ════ -->
+  <h2 class="sec">Production-Validated Campaigns &amp; Benchmarks <span class="subnote">All headline figures re-derived from final repository &amp; CIFS artifacts</span></h2>
+  <table>
+    <tr>
+      <th style="width:21%;">Campaign &amp; Ticket</th>
+      <th style="width:22%;">Modality &amp; Stack</th>
+      <th style="width:39%;">Key Verified Biophysical / Biological Finding</th>
+      <th style="width:18%;">Handover &amp; Status</th>
+    </tr>
+    <tr>
+      <td><b>PPI Frontrunners (39) &amp; Data S6 (99)</b><span class="sub-td">RIC-410 · Metabolic Interactome</span></td>
+      <td>RF2-PPI + 7-Criteria Triage + Boltz-2 + MD &amp; 110-Mutant TI</td>
+      <td><b>22/39 frontrunners pass 6/6 criteria</b> (16 therapeutic + 6 <code>3_safety RED</code> counter-screens). 11 template-free complexes MD-stable (RMSD 0.44–0.50 &Aring;): <b>PPARG–LPIN1</b> Asp424 clamp (+12.6 kcal/mol) spares H12 Pro495 edema axis; <b>RAMP3–MRAP2</b> obesity SAVs R125/L115 (+6.25/+5.21 kcal/mol).</td>
+      <td><span class="st st-go">&check; 5-Sheet XLSX + 11 PDBs</span><span class="sub-td">ZHCO / JXDL / LLJG</span></td>
+    </tr>
+    <tr>
+      <td><b>TSPO 5-Ligand Panel &amp; 29 Pockets</b><span class="sub-td">RIC-408 · PK11195, Emapunil, FGIN</span></td>
+      <td>5-Source Curation + 17-Pocket Vina Gate + MD + 78-Anchor TI</td>
+      <td><b>CAR (NR1I3) confirmed as PK11195 #2 target</b> across 5 independent lines (1XVP &minus;10.9 kcal/mol); discovered <b>TSPO dimer pocket 4RYI_p26</b> (LEU58B +7.6 kJ/mol) and GABA-A TMD anchor <b>SER196A</b> (+20.6 kJ/mol); MD vetoed 4 false-positive docked poses.</td>
+      <td><span class="st st-ok">&check; 6-Round Dossiers</span><span class="sub-td">ZHCO · 55 unit tests</span></td>
+    </tr>
+    <tr>
+      <td><b>Imatinib Beta-Cell Deconvolution</b><span class="sub-td">RIC-412 · Off-Target &amp; Exposure Gate</span></td>
+      <td>28 Candidates · 25 Gated PDBs + HPA scRNA + 250 ps MD</td>
+      <td>Identified <b>4 Tier-1 intrinsic beta-cell targets</b> (&gt;50% occ @ 260 nM free C<sub>max</sub>): <b>DDR1</b> (#1 expressed 81.4 nCPM, &minus;12.5 kcal/mol, drift 0.80 &Aring;), <b>ABL1/2</b> (ER-stress IRE1&alpha; attenuation), and <b>NQO2</b>; proved KIT/PDGFRA act via islet stroma and falsified ECHS1.</td>
+      <td><span class="st st-ok">&check; HTML Dossier + CSV</span><span class="sub-td">HQGH · 18 unit tests</span></td>
+    </tr>
+    <tr>
+      <td><b>Beta-Cell ER Stress / UPR SMoL</b><span class="sub-td">RIC-413 · 5 Tracks &times; 9 Probes</span></td>
+      <td>Target Tractability (24 IRE1&alpha; PDBs) + Probe Selectivity &amp; Safety</td>
+      <td>Ranked <b>#1 IRE1&alpha; Kinase Allosteric (KIRA8 / 7BMK)</b> and <b>#2 ATF6 Activator AA147</b> (covalent PDIA1/P4HB prodrug, not direct ATF6 binder); flagged GSK2606414/2656157 sub-20 nM RIPK1/KIT traps (&rarr; upgrade to HC-5770 + ISRIB) and Ceapin-A7 negative control.</td>
+      <td><span class="st st-ok">&check; HTML Report + CSV</span><span class="sub-td">Delivered (JXDL)</span></td>
+    </tr>
+    <tr>
+      <td><b>OXTR vs V1a/V1b/V2R &amp; GLP-1R</b><span class="sub-td">RIC-403 · Oxytocin, Carbetocin &amp; Sema</span></td>
+      <td>Cryo-EM 7QVM / 7DW9 / 6X18 · PRODIGY + A100 MD + 3D Cone</td>
+      <td><b>&gt;1,000-fold selectivity explained</b>: Pro7Gly releases V2R TM1 constriction (3.51 &Aring; shift, 70.8 &Aring; MD ejection); verified <b>Leu8 C18-diacid exit vector</b> (0 clashes, 4.76 &Aring; clearance, ~160h PK) and Semaglutide GLP-1R benchmark (K<sub>d</sub> = 277 pM).</td>
+      <td><span class="st st-ok">&check; 3D HTML + 12-Slide Deck</span><span class="sub-td">Delivered (Mingyue)</span></td>
+    </tr>
+    <tr>
+      <td><b>GPR81 (HCAR1) vs HCAR2/3</b><span class="sub-td">RIC-396 · Anti-Flushing &amp; OpenFEP</span></td>
+      <td>Cryo-EM 8T2S / 9KT9 · 45-Cmpd Vina/Boltz-2 + 3-Leg OpenFEP</td>
+      <td><b>Flushing liability eliminated</b>: HCAR1 Arg71/Glu153 acidic anchor vs HCAR2 triple-basic clash wall (+3 charge flip, &Delta;&Delta;G = +45.2 kcal/mol); proved AZ1 vs Lactate steric mutual exclusion; converged 3-leg OpenFEP for c30 vs c31.</td>
+      <td><span class="st st-ok">&check; 3D HTML + Scorecard</span><span class="sub-td">Delivered (UHYG)</span></td>
+    </tr>
+    <tr>
+      <td><b>GIGYF1 Glue, GHSR VS &amp; BBB</b><span class="sub-td">RIC-407 · RIC-392 · RIC-349/409</span></td>
+      <td>Crystal 7RUQ/2AUH + UKB WES · 7,931-Cmpd Vina · ESM-2 &amp; <code>3_safety</code></td>
+      <td><b>GIGYF1–GRB10/14</b>: UKB p.Tyr498Cys drops affinity &gt;80&times; (+2.74 kcal/mol, T2D OR=5.91) with 445 &Aring;&sup3; cryptic glue pocket; <b>GHSR</b>: 20 inverse-agonist chemotypes; <b>BBB</b>: test AUC=0.89; <b>3_safety</b>: 522-pair gold benchmark (Argon F1=0.824).</td>
+      <td><span class="st st-go">&check; GO &amp; Prod Services</span><span class="sub-td">RIC Portfolio</span></td>
+    </tr>
+  </table>
+
+  <!-- ════ SCIENTIFIC BOUNDARIES & INFRASTRUCTURE ════ -->
+  <h2 class="sec">Scientific Boundaries, Veracity Governance &amp; Handover Hub <span class="subnote">Enforced across every computational campaign and external deliverable</span></h2>
+  <div class="grid2">
+    <div class="panel boundary">
+      <h3>Methodological Boundaries &amp; Audit Rules</h3>
+      <ul>
+        <li><b>Positive Hypothesis Generator Only</b>: Computational models prioritize candidates and design surgical mutants; formal Tier-1/GO milestones require orthogonal wet-lab validation (co-IP, NanoBRET, SPR, HTRF).</li>
+        <li><b>AI Confidence &ne; Functional Potency</b>: Boltz-2/AF2 <code>ipTM</code> measures fold plausibility, not binding affinity (homolog negative controls can score &gt;0.90); RF2-PPI has high recall on &gt;1,500 &Aring;&sup2; interfaces (43.2%) but low recall on &lt;800 &Aring;&sup2; transient SLiMs (4.5%).</li>
+        <li><b>Dynamics Rescue Static Artifacts</b>: Top docked or mutated poses are gated by explicit-solvent MD (vetoing drifting poses) and double-precision alchemical TI/FEP (eliminating mixed-precision zero-window and static cavity artifacts).</li>
+        <li><b>Exposure &amp; Cell-Type Framing</b>: Literature activities are gated by clinical free C<sub>max</sub>/K<sub>i</sub> occupancy and human single-cell expression; every claim is tagged <code>[FACT]</code>, <code>[OBS]</code>, <code>[MECH]</code>, or <code>[HYP]</code>.</li>
+      </ul>
+    </div>
+
+    <div class="panel stack">
+      <h3>Production Compute Stack &amp; Shared Folder Handover</h3>
+      <div class="pills">
+        <span class="pill hl">druggability v0.3.0</span>
+        <span class="pill hl">OpenMM 8.3 (A100 / L20)</span>
+        <span class="pill hl">Alchemical TI / OpenFEP</span>
+        <span class="pill hl">RF2-PPI &amp; Boltz-2</span>
+        <span class="pill hl">sc177 OData (ELN/PDB)</span>
+        <span class="pill">PRODIGY &amp; Ala-Scan</span>
+        <span class="pill">DrugCLIP &amp; Vina</span>
+        <span class="pill">ESM-2 BBB Platform</span>
+        <span class="pill">3_safety Gate</span>
+        <span class="pill">3Dmol.js &amp; Marp Decks</span>
+      </div>
+      <ul>
+        <li><b>Shared Root</b>: <code>R:\DT\TDE_TV\shared_folder\QYJI\druggability\</code> (100% pure English self-contained HTML, PPTX+PDF decks, CSV/XLSX scorecards &amp; companion <code>.txt</code> emails).</li>
+        <li><b>PPI Frontrunners &amp; Data S6 (RIC-410)</b>: <code>...\BnG4K\</code> (39-pair 5-sheet XLSX, 11 docked PDBs, 2-page proposal &amp; 8-slide deck).</li>
+        <li><b>Beta-Cell &amp; Off-Target Suites</b>: <code>...\TSPO_assessment\</code> (RIC-408) · <code>...\Imatinib_beta_cell_assessment\</code> (RIC-412) · <code>...\ER_stress_SMoL\</code> (RIC-413).</li>
+        <li><b>GPCR &amp; Glue Suites</b>: <code>...\OXTR_assessment\</code> (RIC-403) · <code>...\GPR81\</code> (RIC-396) · <code>...\GIGYF1_assessment\</code> (RIC-407) · <code>...\GLP1R_assessment\</code>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <span>Druggability Agent Platform · Novo Nordisk Research Insights China (RIC) · Maintained by Qiuye Jin (QYJI)</span>
+    <span>Verified November 2026 · All metrics audited against repository unit tests &amp; primary artifacts</span>
+  </footer>
+</div>
+
+</body>
+</html>
+"""
+
+
+def main():
+    # 1. Structural & veracity assertions
+    opens = len(re.findall(r"<div\b", HTML))
+    closes = len(re.findall(r"</div>", HTML))
+    assert opens == closes, f"div tag mismatch: {opens} opens vs {closes} closes"
+
+    cjk = [c for c in HTML if "\u4e00" <= c <= "\u9fff"]
+    assert not cjk, f"CJK characters found in English deliverable: {cjk[:5]}"
+
+    for token in [
+        "druggability (v0.3.0)",
+        "20,260",
+        "22/39",
+        "PPARG–LPIN1",
+        "RAMP3–MRAP2",
+        "4RYI_p26",
+        "DDR1",
+        "KIRA8",
+        "AA147",
+        "Pro7Gly",
+        "HCAR1",
+        "sc177",
+        "[FACT]",
+    ]:
+        assert token in HTML, f"Missing guarded token: {token}"
+
+    # 2. Write local repo copy and CIFS copy (using copyfile for CIFS compatibility)
+    LOCAL_HTML.write_text(HTML, encoding="utf-8")
+    shutil.copyfile(LOCAL_HTML, SHARED_HTML)
+    print(f"Wrote {LOCAL_HTML} ({LOCAL_HTML.stat().st_size} bytes)")
+    print(f"Synced {SHARED_HTML} ({SHARED_HTML.stat().st_size} bytes)")
+
+
+if __name__ == "__main__":
+    main()

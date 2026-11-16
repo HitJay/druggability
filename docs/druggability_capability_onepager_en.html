@@ -3,278 +3,412 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Druggability Agent Platform — Comprehensive Capability One-Pager</title>
+<title>Druggability Agent Platform — Executive Capability One-Pager</title>
 <style>
-  :root{
+  :root {
     --blue: #001965;
     --navy-dark: #0A2540;
     --teal: #00857C;
     --teal-light: #E6F6F5;
     --coral: #D9383A;
     --coral-light: #FDF2F2;
-    --amber: #B45309;
-    --amber-light: #FEF3C7;
     --slate: #475569;
-    --bg-light: #F8FAFC;
-    --card-border: #E2E8F0;
-    --line: #CBD5E1;
+    --bg: #F1F5F9;
+    --card-border: #CBD5E1;
   }
-  *{box-sizing:border-box}
-  body{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans",Helvetica,Arial,sans-serif;
-    color:#1E293B;background:#F1F5F9;margin:0;line-height:1.45;font-size:13.5px;
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Helvetica, Arial, sans-serif;
+    color: #1E293B;
+    background: var(--bg);
+    margin: 0;
+    line-height: 1.5;
+    font-size: 14.5px;
+    -webkit-font-smoothing: antialiased;
   }
-  .wrap{max-width:1280px;margin:0 auto;padding:0 18px 40px;}
-  header.top{
-    background:linear-gradient(135deg,#001965 0%,#0A2540 60%,#00857C 100%);
-    color:#fff;padding:26px 36px;border-radius:0 0 14px 14px;box-shadow:0 4px 16px rgba(0,25,101,.15);
-  }
-  header.top h1{margin:0 0 6px;font-size:25px;font-weight:700;letter-spacing:-0.3px;}
-  header.top .sub{font-size:14px;color:#E2E8F0;max-width:1100px;line-height:1.42;}
-  header.top .meta{margin-top:12px;font-size:12px;color:#94A3B8;display:flex;gap:18px;flex-wrap:wrap;}
-  header.top .meta span{display:inline-flex;align-items:center;gap:5px;}
+  .wrap { max-width: 1420px; margin: 0 auto; padding: 0 24px 28px; }
 
-  h2.sec{
-    color:var(--blue);font-size:14.5px;margin:24px 0 10px;text-transform:uppercase;
-    letter-spacing:.7px;border-bottom:2.5px solid var(--teal);padding-bottom:5px;
-    display:flex;justify-content:space-between;align-items:flex-end;
+  /* ── Header ── */
+  header.top {
+    background: linear-gradient(135deg, #001965 0%, #0A2540 62%, #00857C 100%);
+    color: #fff;
+    padding: 20px 32px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 14px rgba(0, 25, 101, 0.14);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
   }
-  h2.sec .subnote{font-size:11px;color:var(--slate);font-weight:400;text-transform:none;letter-spacing:0;}
-
-  /* ── 5 capability cards ── */
-  .grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
-  .card{
-    background:#fff;border-radius:8px;padding:12px 14px;box-shadow:0 1px 3px rgba(0,25,101,.06);
-    border:1px solid var(--card-border);border-top:3.5px solid var(--blue);display:flex;flex-direction:column;
+  header.top h1 { margin: 0 0 4px; font-size: 25px; font-weight: 700; letter-spacing: -0.3px; }
+  header.top .sub { font-size: 14.8px; color: #E2E8F0; line-height: 1.42; max-width: 940px; }
+  header.top .meta {
+    text-align: right;
+    font-size: 13.5px;
+    color: #CBD5E1;
+    line-height: 1.52;
+    flex-shrink: 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.24);
+    padding-left: 20px;
   }
-  .card.featured{border-top-color:var(--teal);background:linear-gradient(180deg,#F8FEFD 0%,#FFFFFF 100%);}
-  .card h3{margin:0 0 4px;font-size:13.5px;color:var(--blue);display:flex;justify-content:space-between;align-items:flex-start;}
-  .card .tag{font-size:10.5px;color:var(--teal);font-weight:600;font-family:ui-monospace,Menlo,Consolas,monospace;margin-bottom:6px;}
-  .card ul{margin:4px 0 0;padding-left:16px;flex:1;}
-  .card li{margin:3px 0;font-size:11.8px;color:#334155;line-height:1.35;}
-  .badge-tag{
-    display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.3px;
-    border-radius:4px;padding:1px 6px;text-transform:uppercase;
+  header.top .meta b { color: #fff; }
+
+  /* ── KPI Strip ── */
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    margin-top: 14px;
   }
-  .badge-prod{background:var(--teal-light);color:var(--teal);}
-  .badge-gpu{background:#EEF2FF;color:#4338CA;}
-
-  /* ── tables ── */
-  table{border-collapse:collapse;width:100%;font-size:12.5px;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,25,101,.06);border:1px solid var(--card-border);}
-  th{background:var(--blue);color:#fff;text-align:left;padding:8px 12px;font-weight:600;font-size:12px;letter-spacing:.3px;}
-  td{padding:7px 12px;border-bottom:1px solid var(--card-border);vertical-align:middle;}
-  tr:nth-child(even) td{background:#F8FAFC;}
-  tr:hover td{background:#F1F5F9;}
-  .status-tag{
-    display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;
+  .kpi {
+    background: #fff;
+    border: 1px solid var(--card-border);
+    border-left: 4.5px solid var(--blue);
+    border-radius: 8px;
+    padding: 10px 14px;
+    box-shadow: 0 1px 3px rgba(0, 25, 101, 0.05);
   }
-  .st-prod{background:#DCFCE7;color:#15803D;}
-  .st-clin{background:#E0E7FF;color:#3730A3;}
+  .kpi.teal { border-left-color: var(--teal); }
+  .kpi.coral { border-left-color: var(--coral); }
+  .kpi .v { font-size: 22px; font-weight: 800; color: var(--blue); line-height: 1.15; }
+  .kpi.teal .v { color: var(--teal); }
+  .kpi.coral .v { color: var(--coral); }
+  .kpi .l { font-size: 13px; color: var(--slate); margin-top: 3px; line-height: 1.32; font-weight: 500; }
 
-  /* ── 2 columns panels ── */
-  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-  .panel{background:#fff;border-radius:8px;padding:14px 18px;box-shadow:0 1px 3px rgba(0,25,101,.06);border:1px solid var(--card-border);}
-  .panel h3{margin:0 0 8px;font-size:13.5px;color:var(--blue);display:flex;align-items:center;gap:6px;}
-  .panel.boundary{border-left:4px solid var(--coral);}
-  .panel.delivery{border-left:4px solid var(--teal);}
-  .panel ul{margin:0;padding-left:17px;}
-  .panel li{margin:5px 0;font-size:12.2px;line-height:1.4;color:#334155;}
-
-  .caveat{
-    background:#FFFBEB;border:1px solid #FDE68A;border-left:4px solid var(--amber);
-    border-radius:8px;padding:12px 18px;margin-top:14px;font-size:12.4px;line-height:1.45;color:#92400E;
+  /* ── Section Headings ── */
+  h2.sec {
+    color: var(--blue);
+    font-size: 16px;
+    margin: 18px 0 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2.5px solid var(--teal);
+    padding-bottom: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
   }
+  h2.sec .subnote { font-size: 13px; color: var(--slate); font-weight: 400; text-transform: none; letter-spacing: 0; }
 
-  .deliver-pills{display:flex;gap:7px;flex-wrap:wrap;margin-top:8px;}
-  .pill{
-    background:#F1F5F9;border:1px solid #CBD5E1;border-radius:16px;padding:3px 10px;
-    font-size:11.5px;color:var(--navy-dark);font-family:ui-monospace,Menlo,Consolas,monospace;
+  /* ── 6 Capability Pillar Cards (3x2 Grid) ── */
+  .grid6 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
   }
-  .pill.hl{background:var(--teal-light);border-color:var(--teal);color:var(--teal);font-weight:600;}
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 12px 16px;
+    box-shadow: 0 1px 3px rgba(0, 25, 101, 0.05);
+    border: 1px solid var(--card-border);
+    border-top: 3.5px solid var(--blue);
+    display: flex;
+    flex-direction: column;
+  }
+  .card.teal { border-top-color: var(--teal); }
+  .card.coral { border-top-color: var(--coral); }
+  .card h3 {
+    margin: 0 0 3px;
+    font-size: 15.5px;
+    color: var(--blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card .tag {
+    font-size: 12.4px;
+    color: var(--teal);
+    font-weight: 600;
+    font-family: ui-monospace, Menlo, Consolas, monospace;
+    margin-bottom: 5px;
+  }
+  .card ul { margin: 2px 0 0; padding-left: 17px; }
+  .card li { margin: 3.5px 0; font-size: 13.8px; color: #334155; line-height: 1.42; }
+  .card li b { color: var(--navy-dark); }
+  .badge {
+    display: inline-block;
+    font-size: 11.2px;
+    font-weight: 700;
+    border-radius: 4px;
+    padding: 1px 7px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .b-prod { background: var(--teal-light); color: var(--teal); }
+  .b-gpu { background: #EEF2FF; color: #4338CA; }
+  .b-new { background: var(--coral-light); color: var(--coral); }
 
-  code,.mono{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.8px;}
-  footer{margin-top:24px;font-size:11.5px;color:var(--slate);text-align:center;border-top:1px solid var(--line);padding-top:14px;}
-  @media print{body{background:#fff}.card,.panel{box-shadow:none}header.top{border-radius:0}}
+  /* ── Benchmark Table ── */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 13.8px;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 25, 101, 0.05);
+    border: 1px solid var(--card-border);
+  }
+  th {
+    background: var(--blue);
+    color: #fff;
+    text-align: left;
+    padding: 8.5px 12px;
+    font-weight: 600;
+    font-size: 13.2px;
+    letter-spacing: 0.2px;
+  }
+  td {
+    padding: 7.5px 12px;
+    border-bottom: 1px solid #E2E8F0;
+    vertical-align: middle;
+    line-height: 1.42;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:nth-child(even) td { background: #F8FAFC; }
+  .sub-td { font-size: 12.4px; color: var(--slate); display: block; margin-top: 1px; }
+  .st {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12.2px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .st-ok { background: #DCFCE7; color: #15803D; }
+  .st-go { background: #E0E7FF; color: #3730A3; }
+
+  /* ── Bottom 2-Column Panels ── */
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .panel {
+    background: #fff;
+    border-radius: 8px;
+    padding: 13px 18px;
+    box-shadow: 0 1px 3px rgba(0, 25, 101, 0.05);
+    border: 1px solid var(--card-border);
+  }
+  .panel.boundary { border-left: 4.5px solid var(--coral); }
+  .panel.stack { border-left: 4.5px solid var(--teal); }
+  .panel h3 { margin: 0 0 7px; font-size: 15.2px; color: var(--blue); }
+  .panel ul { margin: 0; padding-left: 17px; }
+  .panel li { margin: 4.5px 0; font-size: 13.8px; line-height: 1.44; color: #334155; }
+  .panel li b { color: var(--navy-dark); }
+
+  .pills { display: flex; gap: 6px; flex-wrap: wrap; margin: 4px 0 9px; }
+  .pill {
+    background: #F1F5F9;
+    border: 1px solid #CBD5E1;
+    border-radius: 14px;
+    padding: 2px 10px;
+    font-size: 12.4px;
+    color: var(--navy-dark);
+    font-family: ui-monospace, Menlo, Consolas, monospace;
+  }
+  .pill.hl { background: var(--teal-light); border-color: var(--teal); color: var(--teal); font-weight: 600; }
+
+  code {
+    font-family: ui-monospace, Menlo, Consolas, monospace;
+    font-size: 12.6px;
+    background: #F1F5F9;
+    padding: 1px 5px;
+    border-radius: 4px;
+    color: var(--blue);
+  }
+  footer {
+    margin-top: 14px;
+    font-size: 12.6px;
+    color: var(--slate);
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--card-border);
+    padding-top: 9px;
+  }
+  @media print {
+    body { background: #fff; }
+    .wrap { max-width: 100%; padding: 0 10px; }
+    .card, .panel, .kpi, table { box-shadow: none; }
+    header.top { border-radius: 0; }
+  }
 </style>
 </head>
 <body>
-<header class="top">
-  <h1>Druggability Agent Platform — Comprehensive Capability One-Pager</h1>
-  <div class="sub">End-to-end computational target assessment: Multi-axis druggability scoring → Peptide structural pharmacology &amp; A100 explicit MD → Congeneric alchemical OpenFEP → PPI molecular glue engineering → AI virtual screening (DrugCLIP) → Interactive 3D WebGL &amp; Marp deck deliverables.</div>
-  <div class="meta">
-    <span>Platform: <b>druggability (v0.2.0)</b></span>
-    <span>Host: <b>Novo HPC (hpccnrd001 / A100 GPU Cluster)</b></span>
-    <span>Team: <b>Research Insights China (RIC)</b></span>
-    <span>Portfolios: <b>Incretin / GPCR Pharmacology &amp; Molecular Glues</b></span>
-    <span>Updated: <b>September 2026</b></span>
-  </div>
-</header>
 
 <div class="wrap">
+  <header class="top">
+    <div>
+      <h1>Druggability Agent Platform — Executive Capability One-Pager</h1>
+      <div class="sub">End-to-end computational target assessment &amp; structural pharmacology: Target Genetics &amp; Safety &rarr; Proteome PPI &amp; SAVs &rarr; Peptide &amp; BBB Engineering &rarr; Pocket &amp; Target Fishing &rarr; Explicit MD &amp; Alchemical FEP/TI &rarr; 3D WebGL &amp; Deck Delivery.</div>
+    </div>
+    <div class="meta">
+      Platform: <b>druggability (v0.3.0)</b><br>
+      Compute: <b>Novo HPC (A100 &amp; 8&times;L20 GPUs)</b><br>
+      Team: <b>Research Insights China (RIC) · Nov 2026</b>
+    </div>
+  </header>
 
-  <!-- ════ 5 CORE CAPABILITIES ════ -->
-  <h2 class="sec">Five Core Capability Engines <span class="subnote">Fully integrated under the top-level <code>druggability</code> namespace</span></h2>
-  <div class="grid5">
+  <!-- ════ HEADLINE KPI STRIP ════ -->
+  <div class="kpi-row">
+    <div class="kpi"><div class="v">6 Modules</div><div class="l">Unified Python &amp; CLI pipeline across SM, Peptide, PPI &amp; RNAi</div></div>
+    <div class="kpi teal"><div class="v">9 Campaigns</div><div class="l">Delivered across GPCR, Incretin, Beta-Cell &amp; Metabolic PPI</div></div>
+    <div class="kpi"><div class="v">20,260</div><div class="l">Human proteome PPI funnel (~6 GPU-h/bait; 262&times; enrichment)</div></div>
+    <div class="kpi teal"><div class="v">&gt;2,100 ns/d</div><div class="l">Explicit-solvent MD &amp; 8-&lambda; double-precision TI/FEP</div></div>
+    <div class="kpi"><div class="v">25+ APIs</div><div class="l">Open Targets, UKB WES, ChEMBL &amp; internal sc177 ELN/PDBs</div></div>
+    <div class="kpi coral"><div class="v">4-Tier Audit</div><div class="l">Strict [FACT / OBS / MECH / HYP] tagging &amp; pytest gates</div></div>
+  </div>
+
+  <!-- ════ 6 CORE CAPABILITY MODULES (3x2) ════ -->
+  <h2 class="sec">Six Core Capability Modules <span class="subnote">Modular architecture under the top-level <code>druggability</code> namespace</span></h2>
+  <div class="grid6">
     <div class="card">
-      <h3>1 · Target Profiling <span class="badge-tag badge-prod">Production</span></h3>
-      <div class="tag">druggability.profile</div>
+      <h3>1 · Target Genetics &amp; Safety <span class="badge b-prod">Production</span></h3>
+      <div class="tag">druggability.tractability · nn_data_service · 3_safety</div>
       <ul>
-        <li><b>5-Axis Evaluation</b>: Tractability, ligandability, crystal resolution, clinical precedents &amp; safety liabilities.</li>
-        <li><b>Open Targets &amp; Human Genetics</b>: Direct integration with GraphQL APIs and UK Biobank 454k WES rare variant and pQTL mapping.</li>
-        <li>Directional tier scoring (Tier 1 to 4) for early target prioritization.</li>
-      </ul>
-    </div>
-    
-    <div class="card featured">
-      <h3>2 · Peptide Pharmacology <span class="badge-tag badge-gpu">A100 GPU</span></h3>
-      <div class="tag">druggability.peptide</div>
-      <ul>
-        <li><b>Contact Affinity Engine</b>: PRODIGY physical contact breakdown (&Delta;G, K<sub>d</sub>, apolar/polar/charged).</li>
-        <li><b>Mutational Scanning</b>: High-throughput Ala &amp; 20-AA scanning for hotspot mapping and penalty profiling.</li>
-        <li><b>3D Cone Steric Probing</b>: Automated lipid exit vector audit (C18-diacid protraction clearance, projected ~160h PK half-life).</li>
+        <li><b>5-Axis Target Triage</b>: SM/AB/PROTAC tractability, ChEMBL ligandability, structure, clinical precedents &amp; bidirectional safety.</li>
+        <li><b>Human Genetics &amp; Internal Data</b>: Open Targets v4, UKB 454k/1M exomes, and <code>sc177</code> OData v4 (ELN, NNC compounds, internal PDBs).</li>
       </ul>
     </div>
 
-    <div class="card featured">
-      <h3>3 · Molecular Dynamics &amp; FEP <span class="badge-tag badge-gpu">A100 GPU</span></h3>
-      <div class="tag">druggability.md · OpenFEP</div>
+    <div class="card teal">
+      <h3>2 · Proteome PPI &amp; Interface SAVs <span class="badge b-new">New · GPU</span></h3>
+      <div class="tag">RF2-PPI (A100/L20) · Boltz-2 omicMSA · interface_variants</div>
       <ul>
-        <li><b>OpenMM Explicit-Solvent</b>: Full-atom TIP3P water + 0.15M NaCl GPU simulation (&gt;350 ns/day).</li>
-        <li><b>Congeneric Alchemical FEP</b>: Multi-leg GPU thermodynamic cycles (&Delta;&Delta;G convergence) resolving static continuum solvent false negatives.</li>
-        <li><b>Dynamic Pocket Detection</b>: Composite cryptic pocket probing on dynamic ensembles (&Delta;V, depth, hydrophobicity).</li>
+        <li><b>Proteome Partner Discovery</b>: Baker 7&times; omicMSA + RF2-PPI + AF2 funnel (43.2% recall on &gt;1,500 &Aring;&sup2; complexes; 39 frontrunners audited).</li>
+        <li><b>3D Disease-SAV Mapping</b>: Maps UniProt &amp; AlphaMissense pathogenic variants onto 6 &Aring; contact surfaces to design point-mutant controls.</li>
       </ul>
     </div>
 
     <div class="card">
-      <h3>4 · Virtual Screening <span class="badge-tag badge-gpu">A100 AI</span></h3>
-      <div class="tag">druggability.vs · BioLib</div>
+      <h3>3 · Peptide &amp; CNS/BBB Engineering <span class="badge b-gpu">A100 GPU</span></h3>
+      <div class="tag">druggability.peptide (affinity · scan · chem_mod · bbb)</div>
       <ul>
-        <li><b>DrugCLIP Engine</b>: Uni-Mol 3D pocket representation &amp; contrastive screening on A100 (22s / pocket).</li>
-        <li><b>Physics Ternary Docking</b>: AutoDock Vina / Smina multi-tier pose evaluation for molecular glues.</li>
-        <li><b>Complex Modeling &amp; Structure Recovery</b>: Boltz-2 via BioLib API; DECIMER deep-learning structure extraction from literature.</li>
+        <li><b>Contact Affinity &amp; Scanning</b>: PRODIGY physical contact networks (&Delta;G, K<sub>d</sub>) and high-throughput Ala / 20-AA mutational hotspot scans.</li>
+        <li><b>Protraction &amp; BBB Exposure</b>: 3D steric cone audit for C16/C18/C20 lipidation exit vectors + ESM-2 BBB head (test AUC = 0.89).</li>
+      </ul>
+    </div>
+
+    <div class="card teal">
+      <h3>4 · Pocket Detection &amp; Target Fishing <span class="badge b-gpu">A100 AI</span></h3>
+      <div class="tag">druggability.pocket · drugclip · vina · image2smiles</div>
+      <ul>
+        <li><b>Multi-Tier Virtual Screening</b>: Contrastive DrugCLIP (2.94M library in 22s) &rarr; tight-box Vina (&lt;2.0 &Aring; redock gate) &rarr; Boltz-2 cross-validation.</li>
+        <li><b>Off-Target Deconvolution</b>: 5-source target fishing + clinical free C<sub>max</sub>/K<sub>i</sub> occupancy gating + single-cell RNA expression triage.</li>
+      </ul>
+    </div>
+
+    <div class="card coral">
+      <h3>5 · Explicit MD &amp; Alchemical FEP/TI <span class="badge b-gpu">A100 / L20</span></h3>
+      <div class="tag">druggability.md · OpenMM 8.3 CUDA · openmmtools</div>
+      <ul>
+        <li><b>Explicit-Solvent Dynamics</b>: All-atom Amber14SB + TIP3P water + 0.15M NaCl MD; vetoes false-positive docking poses and static void artifacts.</li>
+        <li><b>Alchemical FEP &amp; Annihilation TI</b>: Congeneric relative FEP and 8-&lambda; double-precision computational alanine scanning (167 anchors audited).</li>
       </ul>
     </div>
 
     <div class="card">
-      <h3>5 · Selectivity &amp; 3D Deliver <span class="badge-tag badge-prod">Production</span></h3>
-      <div class="tag">druggability.reports</div>
+      <h3>6 · 3D Dossiers &amp; Assay Governance <span class="badge b-prod">Production</span></h3>
+      <div class="tag">druggability.report · 3Dmol.js · Marp PPTX/PDF</div>
       <ul>
-        <li><b>Family Selectivity Counter-Screens</b>: Multi-receptor counter-screen (OXTR vs V1aR/V1bR/V2R; HCAR1 vs HCAR2/3 anti-flushing).</li>
-        <li><b>Proof-by-Contradiction Simulations</b>: Mutual exclusion &amp; steric clash modeling (e.g. AZ1 vs Lactate).</li>
-        <li><b>Interactive 3D HTML &amp; Marp Decks</b>: Zero-install 3Dmol.js WebGL hubs and dual-format PPTX + vector PDF decks.</li>
+        <li><b>Zero-Install Deliverables</b>: Self-contained 3Dmol.js WebGL HTML hubs, editable NN-styled PPTX + vector PDF decks, and companion <code>.txt</code> emails.</li>
+        <li><b>Selectivity Counter-Screens</b>: Automated family counter-screens (OXTR vs V2R; HCAR1 vs HCAR2/3; PPARG–LPIN1 vs MED1/NCOA1).</li>
       </ul>
     </div>
   </div>
 
-  <!-- ════ VALIDATED BENCHMARK PROJECTS ════ -->
-  <h2 class="sec">Production-Validated Case Studies &amp; Benchmarks <span class="subnote">Real-world projects delivered with audited physical metrics</span></h2>
+  <!-- ════ VALIDATED BENCHMARKS TABLE ════ -->
+  <h2 class="sec">Production-Validated Campaigns &amp; Benchmarks <span class="subnote">All headline figures re-derived from final repository &amp; CIFS artifacts</span></h2>
   <table>
-    <tr><th>Project / Target Axis</th><th>Structural Model &amp; Methods</th><th>Headline Verified Biophysical Output</th><th>Handover Artifacts</th><th>Status</th></tr>
     <tr>
-      <td><b>OXTR vs V1aR/V1bR/V2R</b><br><span style="font-size:11px;color:var(--slate);">Lilly Oxytocin Selectivity &amp; Carbetocin (RIC-403)</span></td>
-      <td>Cryo-EM 7QVM (OXTR), 9UWI (V1aR), 7DW9 (V2R) · PRODIGY &amp; A100 Explicit MD</td>
-      <td><b>&gt;1000-fold selectivity explained</b>: Pro7Gly releases V2R TM1 constriction (3.51 &Aring;, 70.8 &Aring; dynamic ejection); Leu8 lipid exit vector verified (0 clash atoms, 4.76 &Aring; clearance, ~160h PK); Carbetocin thioether bridge &amp; allosteric PAM pocket mapped.</td>
-      <td>Interactive 3D HTML Report, 12-Slide Marp Deck (EN/ZH PPTX+PDF), A100 MD Ejection Simulation GIF, Handover Email Brief</td>
-      <td><span class="status-tag st-prod">&check; Delivered to Biologist (Mingyue)</span></td>
+      <th style="width:21%;">Campaign &amp; Ticket</th>
+      <th style="width:22%;">Modality &amp; Stack</th>
+      <th style="width:39%;">Key Verified Biophysical / Biological Finding</th>
+      <th style="width:18%;">Handover &amp; Status</th>
     </tr>
     <tr>
-      <td><b>GPR81 (HCAR1) vs HCAR2/3</b><br><span style="font-size:11px;color:var(--slate);">Anti-Flushing Selectivity &amp; Congeneric FEP</span></td>
-      <td>Active Cryo-EM 8T2S / 9KT9 · OpenFEP Multi-leg Thermodynamic Cycle · Matched-Pair Screening</td>
-      <td><b>Flushing liability eliminated</b>: HCAR1 Arg71/Phe168/Glu153 acidic anchor vs HCAR2 triple-basic clash wall (Arg70/Arg71/Lys157, +3 charge flip, &Delta;&Delta;G = +45.2 kcal/mol); AZ1 vs Lactate mutual exclusion proven by steric contradiction; 3-leg OpenFEP converged for c30 vs c31.</td>
-      <td>11-Slide Marp Deck Suite (EN/ZH PPTX+PDF), Interactive 3D WebGL Report, 45-Compound Scorecard CSV</td>
-      <td><span class="status-tag st-prod">&check; Delivered to Biologist (Huan)</span></td>
+      <td><b>PPI Frontrunners (39) &amp; Data S6 (99)</b><span class="sub-td">RIC-410 · Metabolic Interactome</span></td>
+      <td>RF2-PPI + 7-Criteria Triage + Boltz-2 + MD &amp; 110-Mutant TI</td>
+      <td><b>22/39 frontrunners pass 6/6 criteria</b> (16 therapeutic + 6 <code>3_safety RED</code> counter-screens). 11 template-free complexes MD-stable (RMSD 0.44–0.50 &Aring;): <b>PPARG–LPIN1</b> Asp424 clamp (+12.6 kcal/mol) spares H12 Pro495 edema axis; <b>RAMP3–MRAP2</b> obesity SAVs R125/L115 (+6.25/+5.21 kcal/mol).</td>
+      <td><span class="st st-go">&check; 5-Sheet XLSX + 11 PDBs</span><span class="sub-td">ZHCO / JXDL / LLJG</span></td>
     </tr>
     <tr>
-      <td><b>GIGYF1–GRB10/14–INSR</b><br><span style="font-size:11px;color:var(--slate);">Molecular Glue Feasibility (RIC-407)</span></td>
-      <td>1.79 &Aring; Crystal (7RUQ) + 3.2 &Aring; Crystal (2AUH) · UKB 454k WES In Silico Mutagenesis</td>
-      <td><b>p.Tyr498Cys collapses affinity &gt;80-fold</b> (&Delta;&Delta;G = +2.74 kcal/mol, 1.87 &Aring; from ligand, OR=5.91 T2D); <b>445 &Aring;&sup3; cryptic glue pocket</b> discovered at PPI interface (Tier 1 Tractability).</td>
-      <td>Interactive 3D HTML Report, 9-Slide Marp Deck (EN/ZH PPTX+PDF), Jira RIC-407</td>
-      <td><span class="status-tag st-clin">&check; Green Light (GO Decision)</span></td>
+      <td><b>TSPO 5-Ligand Panel &amp; 29 Pockets</b><span class="sub-td">RIC-408 · PK11195, Emapunil, FGIN</span></td>
+      <td>5-Source Curation + 17-Pocket Vina Gate + MD + 78-Anchor TI</td>
+      <td><b>CAR (NR1I3) confirmed as PK11195 #2 target</b> across 5 independent lines (1XVP &minus;10.9 kcal/mol); discovered <b>TSPO dimer pocket 4RYI_p26</b> (LEU58B +7.6 kJ/mol) and GABA-A TMD anchor <b>SER196A</b> (+20.6 kJ/mol); MD vetoed 4 false-positive docked poses.</td>
+      <td><span class="st st-ok">&check; 6-Round Dossiers</span><span class="sub-td">ZHCO · 55 unit tests</span></td>
     </tr>
     <tr>
-      <td><b>Semaglutide on GLP-1R</b><br><span style="font-size:11px;color:var(--slate);">Reference Incretin Benchmark</span></td>
-      <td>Cryo-EM 6X18 (GLP-1R:Semaglutide) · Ala-Scan &amp; Cone Steric Probing</td>
-      <td><b>K<sub>d</sub> = 277 pM</b> (&Delta;G = -13.04 kcal/mol); Aib8 DPP-4 enzymatic shield; Lys26 C18-diacid exit clearance (0 clash atoms); Lys34Arg neutral substitution.</td>
-      <td>Interactive 3D HTML Report, Mutational Energy Decomposition Matrix</td>
-      <td><span class="status-tag st-prod">&check; Method Benchmark Pass</span></td>
+      <td><b>Imatinib Beta-Cell Deconvolution</b><span class="sub-td">RIC-412 · Off-Target &amp; Exposure Gate</span></td>
+      <td>28 Candidates · 25 Gated PDBs + HPA scRNA + 250 ps MD</td>
+      <td>Identified <b>4 Tier-1 intrinsic beta-cell targets</b> (&gt;50% occ @ 260 nM free C<sub>max</sub>): <b>DDR1</b> (#1 expressed 81.4 nCPM, &minus;12.5 kcal/mol, drift 0.80 &Aring;), <b>ABL1/2</b> (ER-stress IRE1&alpha; attenuation), and <b>NQO2</b>; proved KIT/PDGFRA act via islet stroma and falsified ECHS1.</td>
+      <td><span class="st st-ok">&check; HTML Dossier + CSV</span><span class="sub-td">HQGH · 18 unit tests</span></td>
     </tr>
     <tr>
-      <td><b>GHSR Inverse Agonist</b><br><span style="font-size:11px;color:var(--slate);">Virtual Screening Campaign</span></td>
-      <td>Active/Inactive receptor states · AutoDock Vina + Boltz-2 Cross-Validation</td>
-      <td>7,931-compound commercial library screened; top-20 prioritized chemotypes triaged with RDKit Murcko scaffold clustering.</td>
-      <td>Ranked Candidate CSV, Target Dossier</td>
-      <td><span class="status-tag st-prod">&check; Complete</span></td>
+      <td><b>Beta-Cell ER Stress / UPR SMoL</b><span class="sub-td">RIC-413 · 5 Tracks &times; 9 Probes</span></td>
+      <td>Target Tractability (24 IRE1&alpha; PDBs) + Probe Selectivity &amp; Safety</td>
+      <td>Ranked <b>#1 IRE1&alpha; Kinase Allosteric (KIRA8 / 7BMK)</b> and <b>#2 ATF6 Activator AA147</b> (covalent PDIA1/P4HB prodrug, not direct ATF6 binder); flagged GSK2606414/2656157 sub-20 nM RIPK1/KIT traps (&rarr; upgrade to HC-5770 + ISRIB) and Ceapin-A7 negative control.</td>
+      <td><span class="st st-ok">&check; HTML Report + CSV</span><span class="sub-td">Delivered (JXDL)</span></td>
     </tr>
     <tr>
-      <td><b>Peptide BBB Permeability</b><br><span style="font-size:11px;color:var(--slate);">Central Nervous System Exposure</span></td>
-      <td>ESM-2 Transfer Learning + Physicochemical Lipidation Penalisers</td>
-      <td>Held-out test set <b>AUC &asymp; 0.89</b>; automated flagging of out-of-domain macrocyclic/modified peptides.</td>
-      <td>Candidate Brain Exposure Predictions CLI / API</td>
-      <td><span class="status-tag st-prod">&check; Production Service</span></td>
+      <td><b>OXTR vs V1a/V1b/V2R &amp; GLP-1R</b><span class="sub-td">RIC-403 · Oxytocin, Carbetocin &amp; Sema</span></td>
+      <td>Cryo-EM 7QVM / 7DW9 / 6X18 · PRODIGY + A100 MD + 3D Cone</td>
+      <td><b>&gt;1,000-fold selectivity explained</b>: Pro7Gly releases V2R TM1 constriction (3.51 &Aring; shift, 70.8 &Aring; MD ejection); verified <b>Leu8 C18-diacid exit vector</b> (0 clashes, 4.76 &Aring; clearance, ~160h PK) and Semaglutide GLP-1R benchmark (K<sub>d</sub> = 277 pM).</td>
+      <td><span class="st st-ok">&check; 3D HTML + 12-Slide Deck</span><span class="sub-td">Delivered (Mingyue)</span></td>
+    </tr>
+    <tr>
+      <td><b>GPR81 (HCAR1) vs HCAR2/3</b><span class="sub-td">RIC-396 · Anti-Flushing &amp; OpenFEP</span></td>
+      <td>Cryo-EM 8T2S / 9KT9 · 45-Cmpd Vina/Boltz-2 + 3-Leg OpenFEP</td>
+      <td><b>Flushing liability eliminated</b>: HCAR1 Arg71/Glu153 acidic anchor vs HCAR2 triple-basic clash wall (+3 charge flip, &Delta;&Delta;G = +45.2 kcal/mol); proved AZ1 vs Lactate steric mutual exclusion; converged 3-leg OpenFEP for c30 vs c31.</td>
+      <td><span class="st st-ok">&check; 3D HTML + Scorecard</span><span class="sub-td">Delivered (UHYG)</span></td>
+    </tr>
+    <tr>
+      <td><b>GIGYF1 Glue, GHSR VS &amp; BBB</b><span class="sub-td">RIC-407 · RIC-392 · RIC-349/409</span></td>
+      <td>Crystal 7RUQ/2AUH + UKB WES · 7,931-Cmpd Vina · ESM-2 &amp; <code>3_safety</code></td>
+      <td><b>GIGYF1–GRB10/14</b>: UKB p.Tyr498Cys drops affinity &gt;80&times; (+2.74 kcal/mol, T2D OR=5.91) with 445 &Aring;&sup3; cryptic glue pocket; <b>GHSR</b>: 20 inverse-agonist chemotypes; <b>BBB</b>: test AUC=0.89; <b>3_safety</b>: 522-pair gold benchmark (Argon F1=0.824).</td>
+      <td><span class="st st-go">&check; GO &amp; Prod Services</span><span class="sub-td">RIC Portfolio</span></td>
     </tr>
   </table>
 
-  <!-- ════ HONEST BOUNDARIES & VERACITY STANDARDS ════ -->
-  <h2 class="sec">Scientific Boundaries &amp; Rigorous Veracity Standards <span class="subnote">Audit principles enforced in every external delivery</span></h2>
+  <!-- ════ SCIENTIFIC BOUNDARIES & INFRASTRUCTURE ════ -->
+  <h2 class="sec">Scientific Boundaries, Veracity Governance &amp; Handover Hub <span class="subnote">Enforced across every computational campaign and external deliverable</span></h2>
   <div class="grid2">
     <div class="panel boundary">
-      <h3>Structure &amp; Contact Mechanics Boundaries</h3>
+      <h3>Methodological Boundaries &amp; Audit Rules</h3>
       <ul>
-        <li><b>Distinguish observation, mechanics, and hypothesis</b>: PRODIGY physical contacts and explicit-solvent MD trajectories represent dynamic mechanics; docking scores alone do <i>not</i> equate to binding affinity.</li>
-        <li><b>Single-pose pitfalls avoided via FEP &amp; Dynamics</b>: We enforce multi-frame sampling or GPU explicit solvent relaxation before calculating &Delta;&Delta;G to avoid single-pose minimization artifacts and unrelaxed cavity void penalties.</li>
-        <li><b>Proof-by-contradiction for contested binding modes</b>: When binding modes or selectivity are questioned, we actively run reverse hypothesis simulation (e.g. AZ1 vs Lactate mutual exclusion proved by severe spatial overlap).</li>
-        <li><b>Never rely on blind AI-folding scores</b>: AlphaFold/Boltz iptm serves as an initial spatial sanity check, never a surrogate for binding free energy. All molecular glue models require experimental crystal anchors (e.g., PDB: 7RUQ).</li>
+        <li><b>Positive Hypothesis Generator Only</b>: Computational models prioritize candidates and design surgical mutants; formal Tier-1/GO milestones require orthogonal wet-lab validation (co-IP, NanoBRET, SPR, HTRF).</li>
+        <li><b>AI Confidence &ne; Functional Potency</b>: Boltz-2/AF2 <code>ipTM</code> measures fold plausibility, not binding affinity (homolog negative controls can score &gt;0.90); RF2-PPI has high recall on &gt;1,500 &Aring;&sup2; interfaces (43.2%) but low recall on &lt;800 &Aring;&sup2; transient SLiMs (4.5%).</li>
+        <li><b>Dynamics Rescue Static Artifacts</b>: Top docked or mutated poses are gated by explicit-solvent MD (vetoing drifting poses) and double-precision alchemical TI/FEP (eliminating mixed-precision zero-window and static cavity artifacts).</li>
+        <li><b>Exposure &amp; Cell-Type Framing</b>: Literature activities are gated by clinical free C<sub>max</sub>/K<sub>i</sub> occupancy and human single-cell expression; every claim is tagged <code>[FACT]</code>, <code>[OBS]</code>, <code>[MECH]</code>, or <code>[HYP]</code>.</li>
       </ul>
     </div>
-    <div class="panel delivery">
-      <h3>Deliverable Standards for Stakeholders</h3>
-      <ul>
-        <li><b>100% Pure English Deliverables</b>: All external presentations, one-pagers, and interactive HTML artifacts are strictly authored in English with zero Chinese characters.</li>
-        <li><b>Zero-Install CIFS Handover</b>: Reports are authored as self-contained files (Base64 embedded figures, CDN-resilient 3D WebGL viewers) accessible via Windows UNC paths (<code>R:\DT\TDE_TV\shared_folder\QYJI\...</code>).</li>
-        <li><b>Dual Marp Deck Suite (PPTX + Vector PDF)</b>: Every presentation deck ships with both an editable PowerPoint (.pptx) and a high-fidelity vector PDF from the same canonical markdown source.</li>
-        <li><b>Companion Plain-Text Emails</b>: Every deliverable is paired with an unformatted <code>.txt</code> file to enable seamless, copy-paste email handover to biologists without Outlook formatting breakage.</li>
-      </ul>
-    </div>
-  </div>
 
-  <div class="caveat">
-    <b>Decision-Grade Evidence Principle:</b> Computational predictions are hypothesis-generating accelerators designed to narrow down vast chemical and sequence spaces. While our physical models achieve high correlation with clinical phenotypes (e.g., predicting the exact loss-of-function effect of UK Biobank variants and the anti-flushing mechanism of HCAR1), formal project milestones require orthogonal biophysical verification (e.g. Cisbio HTRF, SPR kinetics, and radiotelemetry MAP safety telemetry).
-  </div>
-
-  <!-- ════ ACTIVE PLATFORM INFRASTRUCTURE ════ -->
-  <h2 class="sec">Platform Architecture &amp; Execution Toolset <span class="subnote">Fully operational on hpccnrd001 login and compute nodes</span></h2>
-  <div class="grid2">
-    <div class="panel">
-      <h3>Production Compute &amp; Software Stack</h3>
-      <div class="deliver-pills">
-        <span class="pill hl">druggability (v0.2.0 API)</span>
-        <span class="pill hl">OpenMM 8.1 (CUDA A100)</span>
-        <span class="pill hl">OpenFEP (Alchemical &Delta;&Delta;G)</span>
-        <span class="pill hl">DrugCLIP (Uni-Mol 3D)</span>
-        <span class="pill">PRODIGY Binding Engine</span>
-        <span class="pill">Boltz-2 (BioLib API)</span>
-        <span class="pill">DECIMER (Image-to-SMILES)</span>
-        <span class="pill">Amber14SB Force Field</span>
-        <span class="pill">AutoDock Vina / Smina</span>
-        <span class="pill">RDKit Cheminformatics</span>
-        <span class="pill">Open Targets GraphQL</span>
-        <span class="pill">3Dmol.js WebGL</span>
-        <span class="pill">Marp CLI Deck Suite</span>
+    <div class="panel stack">
+      <h3>Production Compute Stack &amp; Shared Folder Handover</h3>
+      <div class="pills">
+        <span class="pill hl">druggability v0.3.0</span>
+        <span class="pill hl">OpenMM 8.3 (A100 / L20)</span>
+        <span class="pill hl">Alchemical TI / OpenFEP</span>
+        <span class="pill hl">RF2-PPI &amp; Boltz-2</span>
+        <span class="pill hl">sc177 OData (ELN/PDB)</span>
+        <span class="pill">PRODIGY &amp; Ala-Scan</span>
+        <span class="pill">DrugCLIP &amp; Vina</span>
+        <span class="pill">ESM-2 BBB Platform</span>
+        <span class="pill">3_safety Gate</span>
+        <span class="pill">3Dmol.js &amp; Marp Decks</span>
       </div>
-    </div>
-    <div class="panel">
-      <h3>Active Project Handover Links (Shared Storage)</h3>
-      <ul style="padding-left:17px;font-size:12px;margin:0;">
-        <li><b>OXTR Selectivity &amp; Carbetocin Suite (RIC-403)</b>: <code>R:\DT\TDE_TV\shared_folder\QYJI\druggability\OXTR_assessment\</code></li>
-        <li><b>GPR81 (HCAR1) Anti-Flushing Suite</b>: <code>R:\DT\TDE_TV\shared_folder\QYJI\druggability\data\gpr81_binding_modes\</code></li>
-        <li><b>GIGYF1–GRB10/14 Molecular Glue (RIC-407)</b>: <code>R:\DT\TDE_TV\shared_folder\QYJI\druggability\GIGYF1_assessment\</code></li>
-        <li><b>Semaglutide GLP-1R Incretin Benchmark</b>: <code>R:\DT\TDE_TV\shared_folder\QYJI\druggability\GLP1R_assessment\</code></li>
-        <li><b>Jira RIC Tracking Board</b>: Project tickets <code>RIC-403</code>, <code>RIC-407</code>, and Target Discovery Collaboration</li>
+      <ul>
+        <li><b>Shared Root</b>: <code>R:\DT\TDE_TV\shared_folder\QYJI\druggability\</code> (100% pure English self-contained HTML, PPTX+PDF decks, CSV/XLSX scorecards &amp; companion <code>.txt</code> emails).</li>
+        <li><b>PPI Frontrunners &amp; Data S6 (RIC-410)</b>: <code>...\BnG4K\</code> (39-pair 5-sheet XLSX, 11 docked PDBs, 2-page proposal &amp; 8-slide deck).</li>
+        <li><b>Beta-Cell &amp; Off-Target Suites</b>: <code>...\TSPO_assessment\</code> (RIC-408) · <code>...\Imatinib_beta_cell_assessment\</code> (RIC-412) · <code>...\ER_stress_SMoL\</code> (RIC-413).</li>
+        <li><b>GPCR &amp; Glue Suites</b>: <code>...\OXTR_assessment\</code> (RIC-403) · <code>...\GPR81\</code> (RIC-396) · <code>...\GIGYF1_assessment\</code> (RIC-407) · <code>...\GLP1R_assessment\</code>.</li>
       </ul>
     </div>
   </div>
 
-  <footer>Druggability Platform Architecture · Novo Nordisk Research Insights China (RIC) · Maintained by Jay (QYJI) · Verified September 2026</footer>
+  <footer>
+    <span>Druggability Agent Platform · Novo Nordisk Research Insights China (RIC) · Maintained by Qiuye Jin (QYJI)</span>
+    <span>Verified November 2026 · All metrics audited against repository unit tests &amp; primary artifacts</span>
+  </footer>
 </div>
+
 </body>
 </html>
