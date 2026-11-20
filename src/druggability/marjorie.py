@@ -225,6 +225,9 @@ def query_chembl_compounds(
         root, "chembl_latest", "Subsets", "ChemblCompound", "part-0", "*.parquet"
     )
     parquet_dir = os.path.dirname(parquet_glob)
+    # Trigger autofs/Storage-Gateway mount on compute nodes before deep stat
+    if os.path.exists(root):
+        os.listdir(root)
     if not os.path.isdir(parquet_dir):
         raise FileNotFoundError(f"ChEMBL parquet directory not found: {parquet_dir}")
 
