@@ -247,6 +247,37 @@ def _setup_parser() -> argparse.ArgumentParser:
                       help="界面判定距离阈值 Å (默认 6.0, 论文同款)")
     p_iv.add_argument("--json", action="store_true", help="输出 JSON")
 
+    # ── marjorie: Marjorie HPC 成本估算 / sbatch 模板 / NNEDH biodata 查询 ──
+    p_mj = sub.add_parser(
+        "marjorie",
+        help="Marjorie HPC (Slurm 卡时/成本估算、sbatch 生成、NNEDH /dataconnector/biodata 查询)")
+    mj_sub = p_mj.add_subparsers(dest="marjorie_cmd", required=True)
+
+    p_mj_est = mj_sub.add_parser("estimate", help="估算 Marjorie 分区卡时与费用")
+    p_mj_est.add_argument("--partition", default="gpu-spot", help="Slurm 分区 (默认 gpu-spot)")
+    p_mj_est.add_argument("--hours", type=float, required=True, help="预计运行时长 (小时)")
+    p_mj_est.add_argument("--nodes", type=int, default=1, help="节点数 (默认 1)")
+    p_mj_est.add_argument("--instance-type", default=None, help="可选实例型号 (如 g6.12xlarge)")
+    p_mj_est.add_argument("--json", action="store_true", help="输出 JSON")
+
+    p_mj_sb = mj_sub.add_parser("sbatch", help="生成 Marjorie Slurm .sbatch 脚本")
+    p_mj_sb.add_argument("--job-name", required=True, help="作业名")
+    p_mj_sb.add_argument("--cmd", required=True, help="要执行的命令")
+    p_mj_sb.add_argument("--partition", default="gpu-spot", help="Slurm 分区 (默认 gpu-spot)")
+    p_mj_sb.add_argument("--hours", type=float, default=1.0, help="时长上限 (小时, 默认 1.0)")
+    p_mj_sb.add_argument("--modules", default="", help="逗号分隔的 module (如 openmm,duckdb)")
+    p_mj_sb.add_argument("--out", default=None, help="写入 .sbatch 文件路径（省略则打印到标准输出）")
+
+    p_mj_bd = mj_sub.add_parser("biodata", help="列出 /dataconnector/biodata 可用数据集")
+    p_mj_bd.add_argument("--filter", default=None, help="按子串过滤数据集名")
+    p_mj_bd.add_argument("--root", default="/dataconnector/biodata", help="biodata 根目录")
+
+    p_mj_ch = mj_sub.add_parser("chembl-query", help="通过 DuckDB 查询本地 ChEMBL Parquet")
+    p_mj_ch.add_argument("--where", default="max_phase = 4", help="SQL WHERE 条件")
+    p_mj_ch.add_argument("--limit", type=int, default=20, help="返回行数上限 (默认 20)")
+    p_mj_ch.add_argument("--root", default="/dataconnector/biodata", help="biodata 根目录")
+    p_mj_ch.add_argument("--json", action="store_true", help="输出 JSON")
+
     return parser
 
 
@@ -871,6 +902,59 @@ def _cmd_interface_variants(args: argparse.Namespace) -> None:
     print()
 
 
+def _cmd_marjorie(args: argparse.Namespace) -> None:
+    from druggability import marjorie
+
+    if args.marjorie_cmd == "estimate":
+        est = marjorie.estimate_cost(
+            partition=args.partition,
+            hours=args.hours,
+            nodes=args.nodes,
+            instance_type=args.instance_type,
+        ).to_dict()
+        if args.json:
+            print(json.dumps(est, ensure_ascii=False, indent=2))
+            return
+        print(
+            f"[marjorie] {est['partition']} ({est['instance_type']}, spot={est['spot']}): "
+            f"{est['gpu_hours']} GPUh / {est['cpu_hours']} CPUh, "
+            f"est <= ${est['estimated_usd_upper']:.2f} ({est['pct_of_monthly_budget']:.2f}% of $5000/mo cap)"
+        )
+    elif args.marjorie_cmd == "sbatch":
+        mods = [m.strip() for m in args.modules.split(",") if m.strip()]
+        text = marjorie.render_sbatch(
+            job_name=args.job_name,
+            command=args.cmd,
+            partition=args.partition,
+            hours=args.hours,
+            modules=mods,
+        )
+        if args.out:
+            with open(args.out, "w", encoding="utf-8") as f:
+                f.write(text)
+            print(f"[marjorie] wrote {args.out}")
+        else:
+            print(text, end="")
+    elif args.marjorie_cmd == "biodata":
+        names = marjorie.list_biodata(root=args.root, pattern=args.filter)
+        for n in names:
+            print(n)
+    elif args.marjorie_cmd == "chembl-query":
+        rows = marjorie.query_chembl_compounds(
+            where=args.where,
+            limit=args.limit,
+            root=args.root,
+        )
+        if args.json:
+            print(json.dumps(rows, ensure_ascii=False, indent=2))
+        else:
+            for r in rows:
+                print(
+                    f"{r.get('compound_chembl_id')}\tphase={r.get('max_phase')}\t"
+                    f"mw={r.get('full_mwt')}\talogp={r.get('alogp')}\t{r.get('canonical_smiles')}"
+                )
+
+
 def main() -> None:
     parser = _setup_parser()
     args = parser.parse_args()
@@ -886,6 +970,7 @@ def main() -> None:
         "image2smiles": _cmd_image2smiles,
         "peptide": _cmd_peptide,
         "interface-variants": _cmd_interface_variants,
+        "marjorie": _cmd_marjorie,
     }
     fn = dispatch.get(args.command)
     if fn:

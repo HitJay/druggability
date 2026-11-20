@@ -45,6 +45,7 @@ from . import peptide
 from . import search
 from . import report
 from . import interface_variants
+from . import marjorie
 
 logger = logging.getLogger(__name__)
 
